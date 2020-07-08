@@ -107,7 +107,7 @@ Start::
 	xor a
 	jr .ok
 .gbc
-	ld a, 0
+	ld a, 1	;gbctest - set the marker for being in gbc mode
 .ok
 	ld [hGBC], a
 	jp Init
