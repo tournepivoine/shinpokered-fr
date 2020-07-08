@@ -2968,7 +2968,20 @@ wRoute18GateCurScript:: ; d669
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+wGBCBasePalPointers:: 
+	ds NUM_ACTIVE_PALS * 2 ; 8 bytes
+wGBCPal:: 
+	ds PAL_SIZE ; 8 bytes
+wLastBGP:: 
+	ds 1
+wLastOBP0:: 
+	ds 1
+wLastOBP1:: 
+	ds 1 
+wBGPPalsBuffer:: 
+	ds NUM_ACTIVE_PALS * PAL_SIZE ;32 bytes
+	
+	ds 5
 
 wObtainedHiddenItemsFlags::
 	ds 14
