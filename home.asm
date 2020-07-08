@@ -109,7 +109,7 @@ Start::
 .gbc
 	ld a, 0
 .ok
-	ld [wGBC], a
+	ld [hGBC], a
 	jp Init
 
 

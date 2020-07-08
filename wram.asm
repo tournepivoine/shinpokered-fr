@@ -1422,7 +1422,8 @@ wScriptedNPCWalkCounter:: ; cf18
 
 	ds 1
 
-wGBC:: ; cf1a
+;gbcnote - moved to hram
+;wGBC:: ; cf1a
 	ds 1
 
 wOnSGB:: ; cf1b
