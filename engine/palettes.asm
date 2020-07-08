@@ -363,7 +363,17 @@ UpdatePartyMenuBlkPacket:
 	ld [hl], e
 	ret
 
-SendSGBPacket:
+SendSGBPacket: ;gbcnote - shifted joypad polling around
+; disable ReadJoypad to prevent it from interfering with sending the packet
+	ld a, 1
+	ld [hDisableJoypadPolling], a ; don't poll joypad while sending packet
+	call _SendSGBPacket
+;re-enable joypad polling
+	xor a
+	ld [hDisableJoypadPolling], a
+	ret
+
+_SendSGBPacket:
 ;check number of packets
 	ld a, [hl]
 	and $07
@@ -373,9 +383,6 @@ SendSGBPacket:
 .loop2
 ; save B for later use
 	push bc
-; disable ReadJoypad to prevent it from interfering with sending the packet
-	ld a, 1
-	ld [hDisableJoypadPolling], a
 ; send RESET signal (P14=LOW, P15=LOW)
 	xor a
 	ld [rJOYP], a
@@ -416,8 +423,6 @@ SendSGBPacket:
 ; set P14=HIGH,P15=HIGH
 	ld a, $30
 	ld [rJOYP], a
-	xor a
-	ld [hDisableJoypadPolling], a
 ; wait for about 70000 cycles
 	call Wait7000
 ; restore (previously pushed) number of packets
