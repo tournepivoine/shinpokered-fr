@@ -428,18 +428,19 @@ SendSGBPacket:
 ; else send 16 more bytes
 	jr .loop2
 
-LoadSGB:
+LoadSGB:	;gbcnote - adjust for GBC
 	xor a
 	ld [wOnSGB], a
 	call CheckSGB
-	ret nc
-	ld a, 1
-	ld [wOnSGB], a
+	jr c, .onSGB
 	ld a, [hGBC]
 	and a
-	jr z, .notGBC
+	jr nz, .doColor
 	ret
-.notGBC
+.onSGB
+	ld a, $1
+	ld [wOnSGB], a
+.doColor
 	di
 	call PrepareSuperNintendoVRAMTransfer
 	ei
