@@ -671,6 +671,46 @@ color_index = color_index + 1
 	add hl, de	;HL now holds the base palette address offset by 2x shade in bytes (base, base+2, base+4, or base+6)
 	ret
 
+BufferBGPPal::
+; Copy wGBCPal to palette a in wBGPPalsBuffer.
+; a = indexed offset of wGBCBasePalPointers
+	push de
+	;multiply index by 8 since each index represents 8 bytes worth of data
+	add a
+	add a
+	add a
+	ld l, a
+	xor a
+	ld h, a
+	ld de, wBGPPalsBuffer
+	add hl, de	;hl now points to wBGPPalsBuffer + 8*index
+	ld de, wGBCPal
+	ld c, PAL_SIZE
+.loop	;copy the 8 bytes of wGBCPal to its indexed spot in wBGPPalsBuffer
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec c
+	jr nz, .loop
+	pop de
+	ret
+	
+_UpdateGBCPal_BGP::
+index = 0
+	REPT NUM_ACTIVE_PALS
+		ld a, [wGBCBasePalPointers + index * 2]
+		ld e, a
+		ld a, [wGBCBasePalPointers + index * 2 + 1]
+		ld d, a
+		xor a ; CONVERT_BGP
+		call DMGPalToGBCPal
+		ld a, index
+		call BufferBGPPal	; Copy wGBCPal to palette indexed in wBGPPalsBuffer.
+index = index + 1
+	ENDR
+	call TransferBGPPals	;Transfer wBGPPalsBuffer contents to rBGPD
+	ret
+	
 InitGBCPalettes:
 	ld a, $80 ; index 0 with auto-increment
 	ld [rBGPI], a
