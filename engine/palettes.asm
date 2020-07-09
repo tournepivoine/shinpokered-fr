@@ -295,6 +295,9 @@ SetPalFunctions:
 	dw SetPal_PokemonWholeScreen
 	dw SetPal_GameFreakIntro
 	dw SetPal_TrainerCard
+	;gbctest - adding packets from yellow
+	dw SendUnknownPalPacket_7205d
+	dw SendUnknownPalPacket_72064
 
 ; The length of the blk data of each badge on the Trainer Card.
 ; The Rainbow Badge has 3 entries because of its many colors.
