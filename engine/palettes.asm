@@ -440,12 +440,15 @@ LoadSGB:	;gbcnote - adjust for GBC
 	jr c, .onSGB
 	ld a, [hGBC]
 	and a
-	jr nz, .doColor
+	jr z, .onDMG
+	;if on gbc, set SGB flag but skip all the SGB vram stuff
+	ld a, $1
+	ld [wOnSGB], a
+.onDMG
 	ret
 .onSGB
 	ld a, $1
 	ld [wOnSGB], a
-.doColor
 	di
 	call PrepareSuperNintendoVRAMTransfer
 	ei
