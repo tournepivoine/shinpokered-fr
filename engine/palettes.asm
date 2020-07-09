@@ -560,6 +560,7 @@ CopyGfxToSuperNintendoVRAM:
 	call DisableLCD
 	ld a, $e4
 	ld [rBGP], a
+	call UpdateGBCPal_BGP
 	ld de, vChars1
 	ld a, [wCopyingSGBTileData]
 	and a
@@ -590,6 +591,7 @@ CopyGfxToSuperNintendoVRAM:
 	call SendSGBPacket
 	xor a
 	ld [rBGP], a
+	call UpdateGBCPal_BGP
 	ei
 	ret
 
