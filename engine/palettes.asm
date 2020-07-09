@@ -695,6 +695,36 @@ BufferBGPPal::
 	pop de
 	ret
 	
+TransferBGPPals::
+; Transfer the buffered BG palettes.
+	ld a, [rLCDC]
+	and rLCDC_ENABLE_MASK
+	jr z, .lcdDisabled
+	; have to wait until LCDC is disabled
+	; LCD should only ever be disabled during the V-blank period to prevent hardware damage
+	di	;disable interrupts
+.waitLoop
+	ld a, [rLY]
+	cp 144	;V-blank can be confirmed when the value of LY is greater than or equal to 144
+	jr c, .waitLoop
+.lcdDisabled
+	call .DoTransfer
+	ei	;enable interrupts
+	ret
+.DoTransfer:
+	xor a
+	or $80 ; set the auto-increment bit of rBPGI
+	ld [rBGPI], a
+	ld de, rBGPD
+	ld hl, wBGPPalsBuffer
+	ld c, 4 * PAL_SIZE
+.loop
+	ld a, [hli]
+	ld [de], a
+	dec c
+	jr nz, .loop
+	ret
+	
 _UpdateGBCPal_BGP::
 index = 0
 	REPT NUM_ACTIVE_PALS
