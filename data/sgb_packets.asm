@@ -198,6 +198,10 @@ BlkPacket_GameFreakIntro:
 	db $03,$0c,$0b,$0e,$0d,$03
 	db $00
 
+UnknownPacket_72751:	;gbcnote - packet from yellow
+	ATTR_BLK 1
+	ATTR_BLK_DATA %111, 1,1,0, 04,00, 15,05
+	ds 8
 
 PalPacket_Empty:          PAL_SET 0, 0, 0, 0
 PalPacket_PartyMenu:      PAL_SET PAL_MEWMON, PAL_GREENBAR, PAL_YELLOWBAR, PAL_REDBAR

@@ -1,6 +1,6 @@
 _RunPaletteCommand:
 	call GetPredefRegisters
-	ld a, b
+	ld a, b	;b holds the address of the pal command to run
 	cp $ff
 	jr nz, .next
 	ld a, [wDefaultPaletteCommand] ; use default command if command ID is $ff
@@ -16,7 +16,7 @@ _RunPaletteCommand:
 	ld h, [hl]
 	ld l, a
 	ld de, SendSGBPackets
-	push de
+	push de	;by pushing de, the next 'ret' command encountered will jump to SendSGBPackets
 	jp hl
 
 SetPal_BattleBlack:
@@ -615,13 +615,18 @@ Wait7000:
 	ret
 
 SendSGBPackets:
-	ld a, [hGBC]
+	ld a, [hGBC]	;gbcnote - replaced wGBC
 	and a
 	jr z, .notGBC
 	push de
 	call InitGBCPalettes
 	pop hl
-	;call EmptyFunc5
+	;gbcnote - initialize the second pal packet in de (now in hl) then enable the lcd
+	call InitGBCPalettes
+	ld a, [rLCDC]
+	and rLCDC_ENABLE_MASK
+	ret z
+	call Delay3
 	ret
 .notGBC
 	push de
@@ -629,6 +634,50 @@ SendSGBPackets:
 	pop hl
 	jp SendSGBPacket
 
+InitGBCPalettes:	;gbcnote - updating this to work with the Yellow code
+	ld a, [hl]
+	and $f8
+	cp $20	;check to see if hl points to a blk pal packet
+	jp z, TranslatePalPacketToBGMapAttributes	;jump if so
+	;otherwise hl points to a different pal packet or wPalPacket
+	inc hl
+index = 0
+	REPT NUM_ACTIVE_PALS
+		IF index > 0
+			pop hl
+		ENDC
+
+		ld a, [hli]	;get palette ID into 'A'
+		inc hl
+
+		IF index < (NUM_ACTIVE_PALS + -1)
+			push hl
+		ENDC
+
+		call GetGBCBasePalAddress	;get palette address into de
+		ld a, e
+		ld [wGBCBasePalPointers + index * 2], a
+		ld a, d
+		ld [wGBCBasePalPointers + index * 2 + 1], a
+
+		xor a ; CONVERT_BGP
+		call DMGPalToGBCPal
+		ld a, index
+		call TransferCurBGPData
+
+		ld a, CONVERT_OBP0
+		call DMGPalToGBCPal
+		ld a, index
+		call TransferCurOBPData
+
+		ld a, CONVERT_OBP1
+		call DMGPalToGBCPal
+		ld a, index + 4
+		call TransferCurOBPData
+index = index + 1
+	ENDR
+	ret
+	
 DMGPalToGBCPal::	;gbcnote - new function
 ; Populate wGBCPal with colors from a base palette, selected using one of the
 ; DMG palette registers.
@@ -749,31 +798,6 @@ index = index + 1
 	call TransferBGPPals	;Transfer wBGPPalsBuffer contents to rBGPD
 	ret
 	
-InitGBCPalettes:
-	ld a, $80 ; index 0 with auto-increment
-	ld [rBGPI], a
-	inc hl
-	ld c, $20
-.loop
-	ld a, [hli]
-	inc hl
-	add a
-	add a
-	add a
-	ld de, SuperPalettes
-	add e
-	jr nc, .noCarry
-	inc d
-.noCarry
-	ld a, [de]
-	ld [rBGPD], a
-	dec c
-	jr nz, .loop
-	ret
-
-;EmptyFunc5:
-;	ret
-
 CopySGBBorderTiles:
 ; SGB tile data is stored in a 4BPP planar format.
 ; Each tile is 32 bytes. The first 16 bytes contain bit planes 1 and 2, while
