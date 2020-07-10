@@ -105,10 +105,10 @@ ENDC
 	RGB  0,  9, 31
 	RGB  1,  1,  1
 
-	; PAL_MEWMON
+	; PAL_MEWMON	;reworked to match red/blue tones 
 	RGB 31, 31, 31
-	RGB 31, 31,  0
-	RGB 31,  1,  1
+	RGB 30, 17,  11
+	RGB 11,  5,  14
 	RGB  3,  3,  3
 
 	; PAL_BLUEMON
@@ -213,10 +213,11 @@ ENDC
 	RGB 31,  0,  0
 	RGB  3,  3,  3
 
-	; PAL_BADGE
+	; PAL_BADGE	
+	;re-toned to a nice teal for the cascade and earth badges
 	RGB 31, 31, 31
-	RGB 23,  8,  0
-	RGB 17, 14, 11
+	RGB  3, 11,  6
+	RGB  3, 17, 11
 	RGB  3,  3,  3
 
 	; PAL_CAVE
