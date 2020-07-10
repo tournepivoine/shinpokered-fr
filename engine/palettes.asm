@@ -279,6 +279,16 @@ SetPal_TrainerCard:
 	ld hl, PalPacket_TrainerCard
 	ld de, wTrainerCardBlkPacket
 	ret
+;gbcnote - added more pal functions
+SendUnknownPalPacket_7205d::
+	ld hl, UnknownPalPacket_72811
+	ld de, BlkPacket_WholeScreen
+	ret
+
+SendUnknownPalPacket_72064::
+	ld hl, UnknownPalPacket_72821
+	ld de, UnknownPacket_72751
+	ret
 
 SetPalFunctions:
 	dw SetPal_BattleBlack
@@ -638,7 +648,7 @@ InitGBCPalettes:	;gbcnote - updating this to work with the Yellow code
 	ld a, [hl]
 	and $f8
 	cp $20	;check to see if hl points to a blk pal packet
-	jp z, TranslatePalPacketToBGMapAttributes	;jump if so
+	ret z ;jp z, TranslatePalPacketToBGMapAttributes	;jump if so
 	;otherwise hl points to a different pal packet or wPalPacket
 	inc hl
 index = 0
@@ -660,22 +670,41 @@ index = 0
 		ld a, d
 		ld [wGBCBasePalPointers + index * 2 + 1], a
 
-		xor a ; CONVERT_BGP
+		ld a, CONVERT_BGP
 		call DMGPalToGBCPal
 		ld a, index
-		call TransferCurBGPData
+		;call TransferCurBGPData
 
 		ld a, CONVERT_OBP0
 		call DMGPalToGBCPal
 		ld a, index
-		call TransferCurOBPData
+		;call TransferCurOBPData
 
 		ld a, CONVERT_OBP1
 		call DMGPalToGBCPal
 		ld a, index + 4
-		call TransferCurOBPData
+		;call TransferCurOBPData
 index = index + 1
 	ENDR
+	ret
+
+GetGBCBasePalAddress:: ;gbcnote - new function
+; Input: a = palette ID
+; Output: de = palette address
+	push hl
+	ld l, a
+	xor a
+	ld h, a
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, GBCBasePalettes
+	add hl, de
+	ld a, l
+	ld e, a
+	ld a, h
+	ld d, a
+	pop hl
 	ret
 	
 DMGPalToGBCPal::	;gbcnote - new function
@@ -835,5 +864,6 @@ INCLUDE "data/sgb_packets.asm"
 INCLUDE "data/mon_palettes.asm"
 
 INCLUDE "data/super_palettes.asm"
+INCLUDE "data/gbc_palettes.asm"
 
 INCLUDE "data/sgb_border.asm"

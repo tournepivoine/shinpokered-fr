@@ -80,16 +80,24 @@ GBCBasePalettes:
 	RGB  1,  1,  1
 
 	; PAL_LOGO1
-	RGB 31, 31, 31
-	RGB 31, 31,  0
-	RGB 31,  0,  0
-	RGB 31,  0,  0
+IF DEF(_RED)
+	RGB 31, 31, 31	;white bg
+	RGB 31, 31,  0	;yellow logo text
+	RGB 17, 23, 10	;unused on title screen
+	RGB 15,  3,  3	;version subtitle text color
+ENDC
+IF DEF(_BLUE)
+	RGB 31, 31, 31	;white bg
+	RGB 31, 31,  0	;yellow logo text
+	RGB 21,  0,  4	;unused on title screen
+	RGB  3,  3, 15	;version subtitle text color
+ENDC
 
 	; PAL_LOGO2
-	RGB 31, 31, 31
-	RGB 31, 31,  0
-	RGB  7,  7, 25
-	RGB  0,  0, 17
+	RGB 31, 31, 31	;white bg
+	RGB 30, 30, 17	;unused on title screen
+	RGB  7,  7, 25	;blue logo text shadow
+	RGB  0,  0, 17	;blue logo text outline
 
 	; PAL_0F
 	RGB 31, 31, 31

@@ -80,23 +80,23 @@ SuperPalettes:
 	
 	; PAL_LOGO1
 IF DEF(_RED)
-	RGB 31,29,31 
-	RGB 30,30,17
-	RGB 17,23,10
-	RGB 21,0,4
+	RGB 31,29,31 	;white bg
+	RGB 30,30,17	;yellow logo text
+	RGB 17,23,10	;unused on title screen
+	RGB 21,0,4	;version subtitle text color
 ENDC
 IF DEF(_BLUE)
-	RGB 31,29,31
-	RGB 30,30,17
-	RGB 21,0,4
-	RGB 14,19,29
+	RGB 31,29,31	;white bg
+	RGB 30,30,17	;yellow logo text
+	RGB 21,0,4	;unused on title screen
+	RGB 14,19,29	;version subtitle text color
 ENDC
 
 	; PAL_LOGO2
-	RGB 31,29,31 
-	RGB 30,30,17
-	RGB 18,18,24
-	RGB 7,7,16
+	RGB 31,29,31 	;white bg
+	RGB 30,30,17	;unused on title screen
+	RGB 18,18,24	;blue logo text shadow
+	RGB 7,7,16	;blue logo text outline
 	
 	; PAL_0F
 	RGB 31,29,31 
