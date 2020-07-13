@@ -165,29 +165,46 @@ ENDC
 	RGB 11, 11,  5
 	RGB  3,  3,  3
 
+;gbcnote - retouched all the slot palettes to match the red/blue coloring
 	; PAL_SLOTS1
-	RGB 31, 31, 31
-	RGB 25,  1, 31
-	RGB 31,  0,  0
-	RGB  3,  3,  3
+	RGB 31, 31, 31	;reel background
+	RGB 21, 12, 15	;reel accents
+	RGB 21, 14,  0	;"7" fill color
+	RGB  3,  3,  3	;reel outline
 
 	; PAL_SLOTS2
-	RGB 31, 31, 31
-	RGB 31,  4, 19
-	RGB 31, 31,  0
-	RGB  3,  3,  3
+	RGB 31, 31, 31	;"3" icon fill
+	RGB 31, 31,  0	;"3" icon shape color
+IF DEF(_RED)
+	RGB 20,  8, 15	;"3" icon background color
+ENDC
+IF DEF(_BLUE)
+	RGB 9,  5, 30	
+ENDC
+	RGB  3,  3,  3	;"3" icon outline
 
 	; PAL_SLOTS3
-	RGB 31, 31, 31
-	RGB  8, 31,  0
-	RGB 31, 31,  0
-	RGB  3,  3,  3
+	RGB 31, 31, 31	;"2" icon fill
+	RGB  3, 31,  9	;"2" icon shape color
+IF DEF(_RED)
+	RGB 20,  8, 15	;"2" icon background color
+ENDC
+IF DEF(_BLUE)
+	RGB 9,  5, 30	
+ENDC
+	RGB  3,  3,  3	;"2" icon outline
 
 	; PAL_SLOTS4
-	RGB 31, 31, 31
-	RGB  0, 31, 31
-	RGB 31, 31,  0
-	RGB  3,  3,  3
+	RGB 31, 31, 31	;"1" icon fill
+IF DEF(_RED)
+	RGB  9,  5, 30	;"1" icon shape color
+	RGB 20,  8, 15	;"1" icon background color
+ENDC
+IF DEF(_BLUE)
+	RGB 20,  8, 15
+	RGB 9,  5, 30
+ENDC
+	RGB  3,  3,  3	;"1" icon outline
 
 	; PAL_BLACK
 	RGB 31, 31, 31
