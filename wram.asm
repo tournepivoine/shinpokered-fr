@@ -597,6 +597,8 @@ wDexRatingNumMonsOwned:: ; cc5c
 	ds 1
 
 wDexRatingText:: ; cc5d
+wTrainerCardBadgeAttributes:: ; cc5d
+;gbcnote - modified to match yellow
 	ds 1
 
 wSlotMachineSavedROMBank:: ; cc5e
@@ -1462,7 +1464,10 @@ wPalPacket:: ; cf2d
 
 wPartyMenuBlkPacket:: ; cf2e
 ; $30 bytes
-	ds 29
+	ds 9
+;gbcnote - modified to match yellow
+wPartyHPBarAttributes:: ; cf36
+	ds 20
 
 wExpAmountGained:: ; cf4b
 ; 2-byte big-endian number

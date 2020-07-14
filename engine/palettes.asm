@@ -648,7 +648,7 @@ InitGBCPalettes:	;gbcnote - updating this to work with the Yellow code
 	ld a, [hl]
 	and $f8
 	cp $20	;check to see if hl points to a blk pal packet
-	ret z ;jp z, TranslatePalPacketToBGMapAttributes	;jump if so
+	jp z, TranslatePalPacketToBGMapAttributes	;jump if so
 	;otherwise hl points to a different pal packet or wPalPacket
 	inc hl
 index = 0
@@ -673,7 +673,7 @@ index = 0
 		ld a, CONVERT_BGP
 		call DMGPalToGBCPal
 		ld a, index
-		;call TransferCurBGPData
+		call TransferCurBGPData
 
 		ld a, CONVERT_OBP0
 		call DMGPalToGBCPal
@@ -757,6 +757,32 @@ color_index = color_index + 1
 	add hl, de	;HL now holds the base palette address offset by 2x shade in bytes (base, base+2, base+4, or base+6)
 	ret
 
+TransferCurBGPData::
+; a = indexed offset of wGBCBasePalPointers
+	push de
+	;multiply index by 8 since each index represents 8 bytes worth of data
+	add a
+	add a
+	add a
+	or $80 ; set auto-increment bit of rBGPI
+	ld [rBGPI], a
+	ld de, rBGPD
+	ld hl, wGBCPal
+	ld a, [rLCDC]
+	and rLCDC_ENABLE_MASK
+	jr nz, .lcdEnabled
+	rept NUM_COLORS
+	call TransferPalColorLCDDisabled
+	endr
+	jr .done
+.lcdEnabled
+	rept NUM_COLORS
+	call TransferPalColorLCDEnabled
+	endr
+.done
+	pop de
+	ret	
+
 BufferBGPPal::
 ; Copy wGBCPal to palette a in wBGPPalsBuffer.
 ; a = indexed offset of wGBCBasePalPointers
@@ -810,6 +836,27 @@ TransferBGPPals::
 	dec c
 	jr nz, .loop
 	ret
+
+TransferPalColorLCDEnabled:
+; Transfer a palette color while the LCD is enabled.
+; In case we're already in H-blank or V-blank, wait for it to end. This is a
+; precaution so that the transfer doesn't extend past the blanking period.
+	ld a, [rSTAT]
+	and %10 ; mask for non-V-blank/non-H-blank STAT mode
+	jr z, TransferPalColorLCDEnabled	;repeat if still in h-blank or v-blank
+; Wait for H-blank or V-blank to begin.
+.notInBlankingPeriod
+	ld a, [rSTAT]
+	and %10 ; mask for non-V-blank/non-H-blank STAT mode
+	jr nz, .notInBlankingPeriod
+; fall through
+TransferPalColorLCDDisabled:
+; Transfer a palette color while the LCD is disabled.
+	ld a, [hli]
+	ld [de], a
+	ld a, [hli]
+	ld [de], a
+	ret
 	
 _UpdateGBCPal_BGP::
 index = 0
@@ -826,7 +873,57 @@ index = index + 1
 	ENDR
 	call TransferBGPPals	;Transfer wBGPPalsBuffer contents to rBGPD
 	ret
-	
+
+;gbcnote - new function
+TranslatePalPacketToBGMapAttributes::
+; translate the SGB pals for blk packets into something usable for the GBC
+	push hl
+	pop de
+	ld hl, PalPacketPointers
+	ld a, [hli]
+	ld c, a
+.loop
+	ld a, e
+.innerLoop
+	cp [hl]
+	jr z, .checkHighByte
+	inc hl
+	inc hl
+	dec c
+	jr nz, .innerLoop
+	ret
+.checkHighByte
+; the low byte of pointer matched, so check the high byte
+	inc hl
+	ld a, d
+	cp [hl]
+	jr z, .foundMatchingPointer
+	inc hl
+	dec c
+	jr nz, .loop
+	ret
+.foundMatchingPointer
+	callba LoadBGMapAttributes
+	ret
+
+;gbcnote - pointers from pokemon yellow
+PalPacketPointers::
+	db (palPacketPointersEnd - palPacketPointers) / 2
+palPacketPointers
+	dw BlkPacket_WholeScreen
+	dw BlkPacket_Battle
+	dw BlkPacket_StatusScreen
+	dw BlkPacket_Pokedex
+	dw BlkPacket_Slots
+	dw BlkPacket_Titlescreen
+	dw BlkPacket_NidorinoIntro
+	dw wPartyMenuBlkPacket
+	dw wTrainerCardBlkPacket
+	dw BlkPacket_GameFreakIntro
+	dw wPalPacket
+	dw UnknownPacket_72751
+palPacketPointersEnd
+
 CopySGBBorderTiles:
 ; SGB tile data is stored in a 4BPP planar format.
 ; Each tile is 32 bytes. The first 16 bytes contain bit planes 1 and 2, while
