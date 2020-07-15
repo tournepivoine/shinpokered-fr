@@ -2224,6 +2224,7 @@ UpdateGBCPal_BGP::
 	ret
 	
 UpdateGBCPal_OBP0::
+	ret
 	push af
 	ld a, [hGBC]
 	and a
@@ -2247,6 +2248,7 @@ UpdateGBCPal_OBP0::
 	ret
 	
 UpdateGBCPal_OBP1::
+	ret
 	push af
 	ld a, [hGBC]
 	and a

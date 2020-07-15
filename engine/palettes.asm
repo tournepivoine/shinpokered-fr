@@ -675,14 +675,14 @@ index = 0
 		ld a, index
 		call TransferCurBGPData
 
-		ld a, CONVERT_OBP0
-		call DMGPalToGBCPal
-		ld a, index
+		;ld a, CONVERT_OBP0
+		;call DMGPalToGBCPal
+		;ld a, index
 		;call TransferCurOBPData
 
-		ld a, CONVERT_OBP1
-		call DMGPalToGBCPal
-		ld a, index + 4
+		;ld a, CONVERT_OBP1
+		;call DMGPalToGBCPal
+		;ld a, index + 4
 		;call TransferCurOBPData
 index = index + 1
 	ENDR
@@ -903,7 +903,10 @@ TranslatePalPacketToBGMapAttributes::
 	jr nz, .loop
 	ret
 .foundMatchingPointer
+	push de
+	ld d, c
 	callba LoadBGMapAttributes
+	pop de
 	ret
 
 ;gbcnote - pointers from pokemon yellow

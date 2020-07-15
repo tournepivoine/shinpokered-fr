@@ -1,5 +1,6 @@
 LoadBGMapAttributes::
 	ld hl, BGMapAttributesPointers
+	ld c, d
 	ld a, c ; c = which packet
 	push af ; save for later (to determine if we're handling the trainer card or party menu)
 	dec a         ; read this code as:

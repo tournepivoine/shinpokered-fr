@@ -1085,8 +1085,8 @@ ReplaceFaintedEnemyMon:
 	;ldPal a, BLACK, DARK_GRAY, LIGHT_GRAY, WHITE
 	;ld [rOBP0], a
 	;ld [rOBP1], a
-	call UpdateGBCPal_OBP0
-	call UpdateGBCPal_OBP1
+	;call UpdateGBCPal_OBP0
+	;call UpdateGBCPal_OBP1
 	callab DrawEnemyPokeballs
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
