@@ -350,6 +350,16 @@ DrawPlayerCharacter:
 	ld e, a
 	ld a, [wPlayerCharacterOAMTile]
 	ld [hli], a ; tile
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;gbcnote - set the palette for the player tiles
+;These bits only work on the GBC
+	push af
+	ld a, [hl]	;Attributes/Flags
+	and %11111000
+	or  %00000010
+	ld [hl], a
+	pop af
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	inc a
 	ld [wPlayerCharacterOAMTile], a
 	inc hl
