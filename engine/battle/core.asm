@@ -187,10 +187,10 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ld [rWY], a
 	inc a
 	ld [H_AUTOBGTRANSFERENABLED], a
+	call HideSprites
 	call Delay3
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
-	call HideSprites
 	jpab PrintBeginningBattleText
 
 ; when a battle is starting, silhouettes of the player's pic and the enemy's pic are slid onto the screen
