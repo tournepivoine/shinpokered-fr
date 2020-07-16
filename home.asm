@@ -2224,7 +2224,6 @@ UpdateGBCPal_BGP::
 	ret
 	
 UpdateGBCPal_OBP0::
-	ret
 	push af
 	ld a, [hGBC]
 	and a
@@ -2238,7 +2237,7 @@ UpdateGBCPal_OBP0::
 	cp b
 	jr z, .noChangeInOBP0
 	ld d, CONVERT_OBP0
-	;callba _UpdateGBCPal_OBP
+	callba _UpdateGBCPal_OBP
 .noChangeInOBP0
 	pop hl
 	pop de
@@ -2248,7 +2247,6 @@ UpdateGBCPal_OBP0::
 	ret
 	
 UpdateGBCPal_OBP1::
-	ret
 	push af
 	ld a, [hGBC]
 	and a
@@ -2262,7 +2260,7 @@ UpdateGBCPal_OBP1::
 	cp b
 	jr z, .noChangeInOBP1
 	ld d, CONVERT_OBP1
-	;callba_UpdateGBCPal_OBP
+	callba _UpdateGBCPal_OBP
 .noChangeInOBP1
 	pop hl
 	pop de

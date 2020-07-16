@@ -675,15 +675,15 @@ index = 0
 		ld a, index
 		call TransferCurBGPData
 
-		;ld a, CONVERT_OBP0
-		;call DMGPalToGBCPal
-		;ld a, index
-		;call TransferCurOBPData
+		ld a, CONVERT_OBP0
+		call DMGPalToGBCPal
+		ld a, index
+		call TransferCurOBPData
 
-		;ld a, CONVERT_OBP1
-		;call DMGPalToGBCPal
-		;ld a, index + 4
-		;call TransferCurOBPData
+		ld a, CONVERT_OBP1
+		call DMGPalToGBCPal
+		ld a, index + 4
+		call TransferCurOBPData
 index = index + 1
 	ENDR
 	ret
@@ -837,6 +837,32 @@ TransferBGPPals::
 	jr nz, .loop
 	ret
 
+TransferCurOBPData:
+; a = indexed offset of wGBCBasePalPointers
+	push de
+	;multiply index by 8 since each index represents 8 bytes worth of data
+	add a
+	add a
+	add a
+	or $80 ; set auto-increment bit of OBPI
+	ld [rOBPI], a
+	ld de, rOBPD
+	ld hl, wGBCPal
+	ld a, [rLCDC]
+	and rLCDC_ENABLE_MASK
+	jr nz, .lcdEnabled
+	rept NUM_COLORS
+	call TransferPalColorLCDDisabled
+	endr
+	jr .done
+.lcdEnabled
+	rept NUM_COLORS
+	call TransferPalColorLCDEnabled
+	endr
+.done
+	pop de
+	ret	
+
 TransferPalColorLCDEnabled:
 ; Transfer a palette color while the LCD is enabled.
 ; In case we're already in H-blank or V-blank, wait for it to end. This is a
@@ -874,6 +900,37 @@ index = index + 1
 	call TransferBGPPals	;Transfer wBGPPalsBuffer contents to rBGPD
 	ret
 
+_UpdateGBCPal_OBP::
+; d then c = CONVERT_OBP0 or CONVERT_OBP1
+	ld a, d
+	ld c, a
+index = 0
+	REPT NUM_ACTIVE_PALS
+		ld a, [wGBCBasePalPointers + index * 2]
+		ld e, a
+		ld a, [wGBCBasePalPointers + index * 2 + 1]
+		ld d, a
+		ld a, c
+		call DMGPalToGBCPal
+		ld a, c
+		dec a
+		rlca
+		rlca
+
+		IF index > 0
+			IF index == 1
+				inc a
+			ELSE
+				add index
+			ENDC
+		ENDC
+		;OBP0: a = 0, 1, 2, or 3
+		;OBP1: a = 4, 5, 6, or 7
+		call TransferCurOBPData
+index = index + 1
+	ENDR
+	ret
+	
 ;gbcnote - new function
 TranslatePalPacketToBGMapAttributes::
 ; translate the SGB pals for blk packets into something usable for the GBC
