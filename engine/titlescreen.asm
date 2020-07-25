@@ -141,6 +141,12 @@ ENDC
 	ld [rOBP0], a
 	call UpdateGBCPal_OBP0
 
+	push de
+	ld d, CONVERT_BGP
+	ld e, 2
+	callba TransferMonPal ;gbcnote - update the bg pal for the new title mon
+	pop de
+
 ; make pokemon logo bounce up and down
 	ld bc, hSCY ; background scroll Y
 	ld hl, .TitleScreenPokemonLogoYScrolls
@@ -290,6 +296,12 @@ TitleScreenPickNewMon:
 	ld [hl], a
 	call LoadTitleMonSprite
 
+	push de
+	ld d, CONVERT_BGP
+	ld e, 2
+	callba TransferMonPal ;gbcnote - update the bg pal for the new title mon
+	pop de
+	
 	ld a, $90
 	ld [hWY], a
 	ld d, 1 ; scroll out

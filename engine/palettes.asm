@@ -1016,6 +1016,36 @@ CopySGBBorderTiles:
 	jr nz, .tileLoop
 	ret
 
+
+;gbcnote - This function loads the palette for a given pokemon index in wcf91 into a specified palette register on the GBC
+;d = CONVERT_OBP0, CONVERT_OBP1, or CONVERT_BGP
+;e = palette register # (0 to 7)
+TransferMonPal:
+	ld a, [hGBC]
+	and a
+	ret z 
+	ld a, e
+	push af
+	ld a, d
+	push af
+	ld a, [wcf91]
+	call DeterminePaletteIDOutOfBattle
+	call GetGBCBasePalAddress
+	pop af
+	cp CONVERT_BGP
+	push af
+	call DMGPalToGBCPal
+	pop af
+	jr z, .do_bgp
+	pop af
+	call TransferCurOBPData
+	ret
+.do_bgp
+	pop af
+	call TransferCurBGPData
+	ret 
+
+
 INCLUDE "data/sgb_packets.asm"
 
 INCLUDE "data/mon_palettes.asm"
