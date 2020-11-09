@@ -956,6 +956,7 @@ Audio1_ApplyWavePatternAndFrequency:
 	call Audio1_ApplyFrequencyModifier
 .asm_9642
 	ret
+	ret
 
 Audio1_SetSfxTempo:
 	call Audio1_IsCry
