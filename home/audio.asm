@@ -69,32 +69,12 @@ PlayDefaultMusicCommon::
 UpdateMusic6Times::
 ; This is called when entering a map, before fading out the current music and
 ; playing the default music (i.e. the map's music or biking/surfing music).
-	ld a, [wAudioROMBank]
-	ld b, a
-	cp BANK(Audio1_UpdateMusic)
-	jr nz, .checkForAudio2
-
-; audio 1
-	ld hl, Audio1_UpdateMusic
-	jr .next
-
-.checkForAudio2
-	cp BANK(Audio2_UpdateMusic)
-	jr nz, .audio3
-
-; audio 2
-	ld hl, Audio2_UpdateMusic
-	jr .next
-
-.audio3
-	ld hl, Audio3_UpdateMusic
-
-.next
 	ld c, 6
+UpdateMusicCTimes::
 .loop
 	push bc
 	push hl
-	call Bankswitch
+	callba Audio1_UpdateMusic
 	pop hl
 	pop bc
 	dec c

@@ -623,7 +623,7 @@ TextCommand0B::	;joenote - modified to make SFX_GET_KEY_ITEM play a previously u
 .keyitem
 	push de
 	ld a, [wAudioROMBank]
-	cp BANK(Audio2_UpdateMusic)
+	cp AUDIO_2
 	pop de
 	jr nz, .playnormally	;don't do anything special if we're not in audio bank 2
 	push de
