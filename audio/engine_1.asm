@@ -158,7 +158,7 @@ Audio1_PlayNextNote:
 	res BIT_PITCH_BEND_ON, [hl]
 	res BIT_PITCH_BEND_DECREASING, [hl]
 	ld a, c
-	cp $Ch4
+	cp Ch4
 	jr nz, .asm_918c
 	ld a, [wLowHealthAlarm]
 	bit 7, a
@@ -951,7 +951,7 @@ Audio1_ApplyWavePatternAndFrequency:
 	inc hl
 	ld [hl], d ; store frequency high byte
 	ld a, c
-	cp $Ch4
+	cp Ch4
 	jr c, .asm_9642
 	call Audio1_ApplyFrequencyModifier
 .asm_9642
@@ -1045,11 +1045,11 @@ Audio1_IsCry:
 
 Audio1_96c3:
 	ld a, [wAudioROMBank]
-	cp BANK(AUDIO_2)
+	cp BANK(Audio2_PlaySound)
 	jr nz, .asm_96dc
-	ld a, [wChannelSoundIDs + CH7]
+	ld a, [wChannelSoundIDs + Ch7]
 	ld b, a
-	ld a, [wChannelSoundIDs + CH4]
+	ld a, [wChannelSoundIDs + Ch4]
 	or b
 	cp $9d
 	jr c, .asm_96dc

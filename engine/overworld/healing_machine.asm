@@ -36,7 +36,7 @@ AnimateHealingMachine:
 	dec b
 	jr nz, .partyLoop
 	ld a, [wAudioROMBank]
-	cp AUDIO_3
+	cp BANK(Audio3_PlaySound)
 	ld [wAudioSavedROMBank], a
 	jr nz, .next
 	ld a, $ff
