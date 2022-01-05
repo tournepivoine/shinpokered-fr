@@ -1,6 +1,6 @@
 # Shin Pokémon Red and Blue: Lite Patch
 
-Version 1.23
+Version 1.23.XX
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
 
@@ -48,46 +48,16 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 - A revision control function has been added that will cancel unsupported cable links
 
 
-
 #Latest Fixes (most recent ips patch):
 ---------------
-- Readjusted the vertical positioning of some spaceworld back sprites
-- Fixed Flying and Teleporting out of maps with the forest tileset
-- Fixed messed-up warps dealing with the forest tileset
-- Fixed incorrect animation colors
-- Fixed some minor color errors in non-move battle animations
-- Changed color of normal-type attacks to yellow
-- Adjusted the Saffron Guard text for accuracy
-- Attacks reduced to zero damage now say the target is unaffected instead of missing
----
-- The project now compiles Japanese Blue
-- The project now compiles Japanese Red
-- Green and Red-JP have their original pokedex entries (adapted from Fire Red)
-- Green, Red-JP, and Blue-JP now display metric units in the pokedex
-- Green, Red-JP, and Blue-JP now have the japanese-style town map layout
-- Green, Red-JP, and Blue-JP now have their correct copyright graphics
-- Green, Red-JP, and Blue-JP now have the "PRESENTS" graphic under "Game Freak"
-- Green and Red-JP play the original shooting star sound effect
----
-- Gamma shader defaults ON if the destination code in the rom header is set to 00 (JP)
-- Pressing SELECT at the copyright info now switches the shader from its default state
-- The default state of the gamma shader can be changed with any gameboy rom header editor
-- Alternately, remove the 'j' in 'cjsv' in the Makefile to compile with a JP destination code
----
-- Engine Improvement: the 1.5x EXP boost function now has overflow protection
-- Engine Improvement: EXP Gained can now print up to five digits instead of four
-- Engine Improvement: Pokemon can now learn more than 1 more per level
-- Engine Improvement: the "LF" character mapping can be used as a line-feed
----
-- Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
-- Gym leader names have been restored on the trainer card
----
-- Reverted some AI settings for trainer classes to match the retail releases (holdovers from master branch)
+- 
 
 
 #Changes not yet in the release branch:
 -----------
--
+v1.23.01
+- Green and Red-JP have the original front sprites for fossil kabutops and fossil aerodactyl
+- Green and Red-JP have the original text box corners 
 
 
 #Bugfixes:
