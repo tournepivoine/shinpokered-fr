@@ -117,12 +117,23 @@ MainMenu:
 	ResetEvent EVENT_10E	;joenote - reset ghost marowak for safety
 	ld c, 10
 	call DelayFrames
+
+;joenote - check the rom hack version of the save and update if necessary
+;Special warp to pallet town if the save is from a different version number
+;This will prevent a number of crashes and collision issues
+	ld a, [wRomHackVersion]
+	cp HACK_VERSION
+	ld a, HACK_VERSION
+	ld [wRomHackVersion], a
+	jr nz, .pallet_warp
+
 	ld a, [wNumHoFTeams]
 	and a
 	jp z, SpecialEnterMap
 	ld a, [wCurMap] ; map ID
 	cp HALL_OF_FAME
 	jp nz, SpecialEnterMap
+.pallet_warp
 	xor a
 	ld [wDestinationMap], a
 	ld hl, wd732
@@ -343,7 +354,7 @@ HandshakeList:	;this serves as a version control passcode with FF as an end-of-l
 	db $b
 	db $ff
 VersionText:
-	db "v1.23.01L@"
+	db "v1.23.03L@"
 
 WhereWouldYouLikeText:
 	TX_FAR _WhereWouldYouLikeText
