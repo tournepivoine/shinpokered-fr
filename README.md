@@ -67,6 +67,9 @@ v1.23.03
   - Helps prevent crashes and glitches when updating an older save file
 - Adapted the japanese title screen logo, sfx, and motion for the jp builds
 - Minor timing fix to title object palette loading
+- Fixed Raticate not appearing in Unknown Dungeon 2F in Blue-Jp
+- Fixed incorrect encounters on route 13 in Blue-Jp
+
 
 #Bugfixes:
 -----------

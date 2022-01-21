@@ -1,6 +1,6 @@
 Route13Mons:
-	IF DEF(_RED)
 		db $14
+	IF DEF(_RED)
 		db 24,ODDISH
 		db 25,PIDGEY
 		db 27,PIDGEY
@@ -23,7 +23,6 @@ Route13Mons:
 		db 28, GLOOM
 		db 30, GLOOM
 	ELIF (DEF(_BLUE) || DEF(_GREEN))
-		db $14
 		db 24,BELLSPROUT
 		db 25,PIDGEY
 		db 27,PIDGEY
