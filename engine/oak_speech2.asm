@@ -222,7 +222,7 @@ IF DEF(_BLUEJP)
 DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "BLUE"
-	next "TSUNEKAZ"
+	next "TSUNEKA"
 	next "JEAN"
 	db   "@"
 DefaultNamesRival:
@@ -322,7 +322,7 @@ IF DEF(_BLUEJP)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
 	db "BLUE@"
-	db "TSUNEKAZ@"
+	db "TSUNEKA@"
 	db "JEAN@"
 DefaultNamesRivalList:
 	db "NEW NAME@"
