@@ -1,3 +1,51 @@
+;Sets the CPU speed of the GBC back to normal
+SingleCPUSpeed:
+	ld a, [hGBC]
+	and a
+	jr z, .return	;double speed is only a GBC feature
+	ld a, [rKEY1]
+	and %10000000
+	call nz, ToggleCPUSpeed
+.return
+	call GetPredefRegisters
+	ret
+;Set the cpu speed in GBC mode based on if 60fps mode is active
+SetCPUSpeed:
+	ld a, [hGBC]
+	and a
+	jr z, .return	;double speed is only a GBC feature
+	
+	ld a, [wUnusedD721]
+	and %00010000
+	rlca
+	rlca
+	rlca
+	ld b, a
+	ld a, [rKEY1]
+	and %10000000
+	cp b
+	call nz, ToggleCPUSpeed
+.return
+	call GetPredefRegisters
+	ret
+;Toggles between 2x and 1x cpu speed
+ToggleCPUSpeed:
+	di
+	ld a, [rIE]
+	push af
+	xor a
+	ld [rIE], a
+	ld [rIF], a
+	ld a, $30
+	ld [rJOYP], a
+	ld a, $01
+	ld [rKEY1], a
+	stop
+	pop af
+	ld [rIE], a
+	ei
+	ret
+
 ; This function called to store PKMN Levels. Usually at the beginning of battle.
 StorePKMNLevels:
 	push hl
