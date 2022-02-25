@@ -75,6 +75,9 @@ v1.23.05
   - It keeps a backup of the pokedex-owned flags instead of erasing them
   - Removed the unused Ivysaur flag
 - Fixed an invalid apostrophe
+- The 60fps mode has better performance when playing in GBC-mode
+  - Does this by using the double-speed feature of the GBC's processor 
+  - Uses more battery as a trade-off
 
 
 #Bugfixes:
@@ -279,8 +282,9 @@ v1.23.05
   - In the blue version intro, jigglypuff has it's own palette loaded on the GBC. 
   - Oak-speech nidorino has its color palette on the GBC.
 - Added an option to make the overworld run in 60fps
- - Feature is a proof-of-concept and is still a bit rusty
- - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
+  - Feature is a proof-of-concept and is still a bit rusty
+  - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
+  - Takes advantage of double-speed CPU mode when played as a GBC game
 - Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
 - Softlock Warp 
   - instantly teleport back to your mom's house if you get stuck or are unable to move after updating to a new patch
