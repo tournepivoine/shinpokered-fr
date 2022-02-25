@@ -69,6 +69,12 @@ v1.23.03
 - Minor timing fix to title object palette loading
 - Fixed Raticate not appearing in Unknown Dungeon 2F in Blue-Jp
 - Fixed incorrect encounters on route 13 in Blue-Jp
+v1.23.05
+- The function that shows the dex entry for starter pokemon is now more robust
+  - It now works for any pokemon (like if the starters are changed or randomized)
+  - It keeps a backup of the pokedex-owned flags instead of erasing them
+  - Removed the unused Ivysaur flag
+- Fixed an invalid apostrophe
 
 
 #Bugfixes:
@@ -450,6 +456,10 @@ v1.23.03
     - It's a single byte in the save file that gets incremented each version
     - If the save byte does not match, the player is automatically warped back to Pallet Town
     - Helps prevent crashes and glitches when updating an older save file
+  - The function that shows the dex entry for starter pokemon is now more robust
+    - It now works for any pokemon (like if the starters are changed or randomized)
+	- It keeps a backup of the pokedex-owned flags instead of erasing them
+	- Removed the unused Ivysaur flag
 
 
 #CREDITS / SPECIAL THANKS:
