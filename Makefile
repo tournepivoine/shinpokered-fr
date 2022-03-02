@@ -44,10 +44,12 @@ endif
 %.asm: ;
 
 # _RED, _BLUE, and _GREEN are the base rom tags. You can only have one of these.
-# _JPTXT modifies any base rom. It restores some japanese text translations that were censored in english.
+# _SWSPRITES modifies any base rom but cannot be used with _RGSPRITES. It uses red/blue front sprites and spaceworld back sprites.
+# _RGSPRITES modifies any base rom but cannot be used with _SWSPRITES. It uses redjp/green front sprites and regular back sprites.
 # _REDGREENJP modifies _RED or _GREEN. It reverts back certain aspects that were shared between japanese red & green.
 # _BLUEJP modifies _BLUE. It reverts back certain aspects that were unique to japanese blue.
 # _REDJP modifies _RED. It is for minor things exclusive to japanese red.
+# _JPTXT modifies any base rom. It restores some japanese text translations that were censored in english.
 # _METRIC modifies any base rom. It converts the pokedex data back to metric units.
 
 %_red.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
@@ -60,7 +62,7 @@ $(pokeblue_obj): %_blue.o: %.asm $$(dep)
 
 %_green.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokegreen_obj): %_green.o: %.asm $$(dep)
-	rgbasm -D _GREEN -D _REDGREENJP -D _JPTXT -D _METRIC -h -o $@ $*.asm
+	rgbasm -D _GREEN -D _RGSPRITES -D _REDGREENJP -D _JPTXT -D _METRIC -h -o $@ $*.asm
 
 %_bluejp.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokebluejp_obj): %_bluejp.o: %.asm $$(dep)
@@ -68,7 +70,7 @@ $(pokebluejp_obj): %_bluejp.o: %.asm $$(dep)
 
 %_redjp.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokeredjp_obj): %_redjp.o: %.asm $$(dep)
-	rgbasm -D _RED -D _REDJP -D _REDGREENJP -D _JPTXT -D _METRIC -h -o $@ $*.asm
+	rgbasm -D _RED -D _RGSPRITES -D _REDGREENJP -D _REDJP -D _JPTXT -D _METRIC -h -o $@ $*.asm
 
 #gbcnote - use cjsv to compile as GBC+DMG rom
 pokered_opt  = -cjsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON RED"

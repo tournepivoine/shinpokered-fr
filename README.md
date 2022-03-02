@@ -78,6 +78,7 @@ v1.23.05
 - The 60fps mode has better performance when playing in GBC-mode
   - Does this by using the double-speed feature of the GBC's processor 
   - Uses more battery as a trade-off
+- Cleaned up compiler tags and made it easy to compile with spaceworld-style sprites
 
 
 #Bugfixes:
@@ -476,6 +477,8 @@ v1.23.05
 - Move deleter/relearner coded by TheFakeMateo for Pokemon Red++
 - Code contributions and bugfixing by wisp92
 - GLSWV for correcting the metric conversions of height and weight data 
+- SteppoBlazer for the spaceworld-style old man back sprite
+- Poketto for the spaceworld-style Trainer Red back sprite
 
 The following folks for their great tutorials, glitch videos, and explanations across the internet
 - TheFakeMateo 
@@ -492,6 +495,7 @@ The following folks for their help in pointing out and diagnosing bugs
 - jastolze007 
 - MStern
 - TSinnohTrainer 
+- Chirutalis
 
   
 The shinpokered repository was branched from pret/pokered at merge pull request #185 committed on Jul 2, 2018
