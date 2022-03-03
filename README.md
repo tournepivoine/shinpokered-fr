@@ -79,6 +79,7 @@ v1.23.05
   - Does this by using the double-speed feature of the GBC's processor 
   - Uses more battery as a trade-off
 - Cleaned up compiler tags and made it easy to compile with spaceworld-style sprites
+- Fixed a grass tile in the Forest tileset not counting for encouner generation
 
 
 #Bugfixes:
@@ -270,7 +271,9 @@ v1.23.05
   - Water warps in seafoam island 4 & 5 are now scripted movement
   - Fixed a bug in the GetName: function that treated lists over 195 entries as item lists
   - Can Fly and Teleport out of maps using the Forest tileset
-
+  - Fixed a grass tile in the Forest tileset not counting for encouner generation
+  
+  
 #TWEAKS:
 -----------
 - Added built-in gamma shader for backlit LCD screens in GBC mode (press SELECT at the copyright screen)
