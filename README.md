@@ -56,10 +56,11 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 
 #Changes not yet in the release branch:
 -----------
-v1.23.01
+v1.23.01  
 - Green and Red-JP have the original front sprites for fossil kabutops and fossil aerodactyl
 - Green and Red-JP have the original text box corners 
-v1.23.03
+
+v1.23.03  
 - Restored intro "Presents" for all builds
 - Added rom hack version tracking for save files
   - It's a single byte in the save file that gets incremented each version
@@ -69,7 +70,8 @@ v1.23.03
 - Minor timing fix to title object palette loading
 - Fixed Raticate not appearing in Unknown Dungeon 2F in Blue-Jp
 - Fixed incorrect encounters on route 13 in Blue-Jp
-v1.23.05
+
+v1.23.05  
 - The function that shows the dex entry for starter pokemon is now more robust
   - It now works for any pokemon (like if the starters are changed or randomized)
   - It keeps a backup of the pokedex-owned flags instead of erasing them
