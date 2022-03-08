@@ -184,8 +184,15 @@ HoFMonInfoText:
 	next "TYPE2/@"
 
 HoFLoadPlayerPics:
+	ld de, RedPicBack
+	ld a, BANK(RedPicBack)
+	push de ;push back pic
+	push af ; push back bank
 	ld de, RedPicFront
 	ld a, BANK(RedPicFront)
+.doneload
+
+;load the front pic
 	call UncompressSpriteFromDE
 	ld hl, sSpriteBuffer1
 	ld de, sSpriteBuffer0
@@ -193,13 +200,20 @@ HoFLoadPlayerPics:
 	call CopyData
 	ld de, vFrontPic
 	call InterlaceMergeSpriteBuffers
-	ld de, RedPicBack
-	ld a, BANK(RedPicBack)
+
+;load the back pic
+	pop af ;pop bank bank
+	pop de ;pop back pic
 	call UncompressSpriteFromDE
+IF DEF(_SWSPRITES)
+	callba LoadUncompressedBackPics
+ELSE
 	predef ScaleSpriteByTwo
 	ld de, vBackPic
 	call InterlaceMergeSpriteBuffers
+ENDC
 	ld c, $1
+	;fall through
 
 HoFLoadMonPlayerPicTileIDs:
 ; c = base tile ID
