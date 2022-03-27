@@ -7146,8 +7146,7 @@ LoadPlayerBackPic:
 .next
 	ld a, BANK(RedPicBack)
 	call UncompressSpriteFromDE
-	
-IF DEF(_SWSPRITES)
+IF DEF(_SWBACKS)
 	callba LoadUncompressedBackPics
 ELSE
 	call SpriteScalingAndInterlacing
@@ -7817,7 +7816,7 @@ LoadMonBackPic:
 	call UncompressMonSprite
 
 ;joenote - needed for loading the 48x48 spaceworld back sprites
-IF DEF(_SWSPRITES)
+IF DEF(_SWBACKS)
 	callba LoadUncompressedBackPics
 ELSE
 	call SpriteScalingAndInterlacing
