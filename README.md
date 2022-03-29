@@ -83,6 +83,10 @@ v1.23.05
 - Cleaned up compiler tags and made it easy to compile with spaceworld-style sprites
 - Fixed a grass tile in the Forest tileset not counting for encouner generation
 
+v1.23.06  
+- Organized front and back battle sprites to be controlled via assembler tags in the makefile
+- AI can now handle fly/dig loops between the two pokemon
+
 
 #Bugfixes:
 -----------
@@ -385,8 +389,9 @@ v1.23.05
   - Will heavily discourage boosting defense against special, OHKO, or static-damaging attacks
   - Discourage exploding effects if faster than a player in fly/dig state
   - Randomly discourage usage of 2-turn moves when confused/paralyzed
-  - 50% chance that the AI is blind to a player switching ir using an item
-  
+  - 50% chance that the AI is blind to a player switching or using an item
+  - Discourage using fly/dig if faster than the player who is also picking fly/dig
+
 - Trainer ai routine #3 (choosing effective moves) has been modified
   - It now heavily discourages moves that would have no effect due to type immunity
   - zero-power buffing/debuffing moves are randomly preferenced 12.5% of the time to spice things up
