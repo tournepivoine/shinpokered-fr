@@ -41,6 +41,12 @@ OakSpeech:
 	call SetDefaultNames
 	predef InitPlayerData2
 	call RunDefaultPaletteCommand	;gbcnote - reinitialize the default palette in case the pointers got cleared
+
+;joenote - initialize hack version byte as well as...
+	ld a, HACK_VERSION
+	ld [wRomHackVersion], a
+	predef SingleCPUSpeed	;...deactivate 2x speed das it may cause visual bugs during Oak's speech
+	
 	ld a, $FF
 	call PlaySound ; stop music
 	ld a, BANK(Music_Routes2)
