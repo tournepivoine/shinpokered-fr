@@ -91,6 +91,11 @@ v1.23.06
 - Organized front and back battle sprites to be controlled via assembler tags in the makefile
 - AI can now handle fly/dig loops between the two pokemon
 
+v1.23.07  
+- Fixed pewter npc following distance in 60 fps mode
+- Fixed rom hack byte not getting set on new game
+- Battle sprite organization updates and extra backs
+
 
 #Bugfixes:
 -----------
