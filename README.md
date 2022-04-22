@@ -97,6 +97,9 @@ v1.23.07
 - Battle sprite organization updates and extra backs
 - You will now be given the choice to warp if the rom hack version does not match
 - Female trainer can be activated by compiling with the _FPLAYER tag
+- The position of both switches in Vermilion Gym are now determined at the same time
+- The switches in Vermilion Gym can now be discovered independently from one another
+- Switches in Vermilion Gym will now properly take into acount vertical adjacents
 
 
 #Bugfixes:
