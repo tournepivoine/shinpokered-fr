@@ -69,6 +69,43 @@ IsRunning:
 	ret
 	
 
+	
+;Overworld female trainer sprite functions
+LoadRedSpriteToDE:
+	ld a, [wUnusedD721]
+IF DEF(_FPLAYER)
+	ld de, RedFSprite
+	bit 0, a	;check if girl
+	jr nz, .next
+ENDC
+	ld de, RedSprite
+.next
+	res 2, a
+	ld [wUnusedD721], a
+	ret
+	
+LoadSeelSpriteToDE:
+	ld de, SeelSprite
+	ld a, [wUnusedD721]
+	set 2, a	;regardless if boy or girl, need to set override bit to use the regular sprite bank
+	ld [wUnusedD721], a
+	ret
+
+LoadRedCyclingSpriteToDE:
+	ld a, [wUnusedD721]
+IF DEF(_FPLAYER)
+	ld de, RedFCyclingSprite
+	bit 0, a	;check if girl
+	jr nz, .donefemale
+ENDC
+	ld de, RedCyclingSprite
+.donefemale
+	res 2, a
+	ld [wUnusedD721], a
+	ret
+
+
+	
 ;***************************************************************************************************
 ;these functions have been moved here from overworld.asm 
 ;and they have been modified to work with a bank call.

@@ -184,6 +184,21 @@ HoFMonInfoText:
 	next "TYPE2/@"
 
 HoFLoadPlayerPics:
+;joenote - support female trainer sprites
+IF DEF(_FPLAYER)
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr z, .loadmale
+.loadfemale
+	ld de, RedPicFBack
+	ld a, BANK(RedPicFBack)
+	push de	;push back pic
+	push af ;push back bank
+	ld de, RedPicFFront
+	ld a, BANK(RedPicFFront)
+	jr .doneload
+ENDC
+.loadmale
 	ld de, RedPicBack
 	ld a, BANK(RedPicBack)
 	push de ;push back pic

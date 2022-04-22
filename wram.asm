@@ -1240,6 +1240,7 @@ wFlags_0xcd60:: ; cd60
 ; bit 4: skip updating sprites when displaying a text ID
 ; bit 5: don't play sound when A or B is pressed in menu
 ; bit 6: tried pushing against boulder once (you need to push twice before it will move)
+; bit 7: used for some kind of dungeon warp in maps where you fall down holes (debug feature?)
 	ds 1
 
 	ds 9
@@ -1508,7 +1509,7 @@ wItemPrices:: ; cf8f
 
 wcf91:: ds 1 ; used with a lot of things (too much to list here)
 
-wWhichPokemon:: ; cf92
+wWhichPokemon:: ; cf92	;this is zero-indexed (values of 0 to 5)
 ; which pokemon you selected
 	ds 1
 
@@ -3092,6 +3093,8 @@ wUnusedD71F:: ; d71f	;joenote - used as a backup address for the wDamage value
 	ds 2
 wUnusedD721:: ; d721	;joenote - use to set various wram flags
 	ds 1
+	;bit 0 - player is female trainer if set (reserved for _FPLAYER tagged code)
+	;bit 2 - override bit 0 for specific bank switching instances (usually reserved for _FPLAYER tagged code)
 	;bit 4 - 60fps option flag
 ;;;;;;;;;;;;;;joenote - use these unused locations for debugging and parsing DV scores
 wUnusedD722:: 
@@ -3242,7 +3245,7 @@ wGrassMons:: ; d888
 wSerialEnemyDataBlock:: ; d893
 	ds 9
 
-wEnemyPartyCount:: ds 1     ; d89c
+wEnemyPartyCount:: ds 1     ; d89c	;value of 1 to 6
 wEnemyPartyMons::  ds PARTY_LENGTH + 1 ; d89d
 
 ; Overload enemy party data

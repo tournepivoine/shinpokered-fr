@@ -57,6 +57,8 @@ endif
 # _JPTXT modifies any base rom. It restores some japanese text translations that were censored in english.
 # _METRIC modifies any base rom. It converts the pokedex data back to metric units.
 
+# _FPLAYER modifies any base rom. It includes code to support a female trainer player option.
+
 %_red.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokered_obj): %_red.o: %.asm $$(dep)
 	rgbasm -D _RED -h -o $@ $*.asm

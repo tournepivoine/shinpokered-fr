@@ -1897,22 +1897,26 @@ RunMapScript::
 .return
 	ret
 
+;joenote - modified to properly load female trainer sprites using the _FPLAYER tag
 LoadWalkingPlayerSpriteGraphics::
-	ld de, RedSprite
+	callba LoadRedSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
-	ld de, SeelSprite
+	callba LoadSeelSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
-	ld de, RedCyclingSprite
+	callba LoadRedCyclingSpriteToDE
+;	ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
 	ld hl, vNPCSprites
 	push de
 	push hl
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	call CopyVideoData
 	pop hl
 	pop de
@@ -1923,9 +1927,21 @@ LoadPlayerSpriteGraphicsCommon::
 	inc d
 .noCarry
 	set 3, h
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	jp CopyVideoData
-
+.isfemaletrainer
+IF DEF(_FPLAYER)
+	lb bc, BANK(RedFSprite), $0c
+	ld a, [wUnusedD721]
+	;load the regular sprite bank if female bit cleared or overriding female bit set
+	;otherwise load the female player sprite bank
+	and %00000101
+	xor %00000001
+	jr z, .donefemale
+ENDC
+	lb bc, BANK(RedSprite), $0c
+.donefemale
+	ret
 
 ; function to load data from the map header
 LoadMapHeader::

@@ -96,6 +96,7 @@ v1.23.07
 - Fixed rom hack byte not getting set on new game
 - Battle sprite organization updates and extra backs
 - You will now be given the choice to warp if the rom hack version does not match
+- Female trainer can be activated by compiling with the _FPLAYER tag
 
 
 #Bugfixes:

@@ -7137,21 +7137,33 @@ SwapPlayerAndEnemyLevels:
 ; loads either red back pic or old man back pic
 ; also writes OAM data and loads tile patterns for the Red or Old Man back sprite's head
 ; (for use when scrolling the player sprite and enemy's silhouettes on screen)
+;joenote - modifying to allow a female trainer back sprite
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
 	ld de, RedPicBack
-	jr nz, .next
+	jr nz, .redback
 	ld de, OldManPic
-.next
+	jr .bankred
+.redback
+IF DEF(_FPLAYER)
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr z, .bankred	;go to the normal red sprite bank if boy
+	;else load girl sprites
+	ld de, RedPicFBack
+	ld a, BANK(RedPicFBack)
+	jr .next
+ENDC
+.bankred
 	ld a, BANK(RedPicBack)
+.next
 	call UncompressSpriteFromDE
 IF DEF(_SWBACKS)
 	callba LoadUncompressedBackPics
 ELSE
 	call SpriteScalingAndInterlacing
 ENDC
-
 	ld hl, wOAMBuffer
 	xor a
 	ld [hOAMTile], a ; initial tile number

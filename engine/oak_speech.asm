@@ -47,6 +47,21 @@ OakSpeech:
 	ld [wRomHackVersion], a
 	predef SingleCPUSpeed	;...deactivate 2x speed das it may cause visual bugs during Oak's speech
 	
+;joenote - give option to play as a female trainer here
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+IF DEF(_FPLAYER)
+	ld hl, AskIfGirlText
+	call PrintText
+	call NoYesChoice
+	ld a, [wCurrentMenuItem]
+	ld b, a
+	ld a, [wUnusedD721]
+	res 0, a
+	or b
+	ld [wUnusedD721], a
+	call ClearScreen
+ENDC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, $FF
 	call PlaySound ; stop music
 	ld a, BANK(Music_Routes2)
@@ -106,8 +121,17 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+;joenote - support female sprite
+IF DEF(_FPLAYER)
+	ld de, RedPicFFront
+	lb bc, BANK(RedPicFFront), $00
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr nz, .donefemale_front
+ENDC
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
+.donefemale_front	
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
 	ld hl, IntroducePlayerText
@@ -125,8 +149,17 @@ OakSpeech:
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
+;joenote - support female sprite
+IF DEF(_FPLAYER)
+	ld de, RedPicFFront
+	lb bc, BANK(RedPicFFront), $00
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr nz, .donefemale_front2
+ENDC
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
+.donefemale_front2	
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
 	ld a, [wd72d]
@@ -144,9 +177,20 @@ OakSpeech:
 	ld [MBC1RomBank], a
 	ld c, 4
 	call DelayFrames
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;joenote - support female trainer
+IF DEF(_FPLAYER)
+	ld de, RedFSprite
+	lb bc, BANK(RedFSprite), $0C
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr nz, .sprite_next
+ENDC
 	ld de, RedSprite
-	ld hl, vSprites
 	lb bc, BANK(RedSprite), $0C
+.sprite_next
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ld hl, vSprites
 	call CopyVideoData
 	ld de, ShrinkPic1
 	lb bc, BANK(ShrinkPic1), $00
@@ -264,3 +308,9 @@ IntroDisplayPicCenteredOrUpperRight:
 	xor a
 	ld [hStartTileID], a
 	predef_jump CopyUncompressedPicToTilemap
+
+IF DEF(_FPLAYER)
+AskIfGirlText::	;joenote - text to ask if female trainer
+	TX_FAR _AskIfGirlText
+	db "@"
+ENDC
