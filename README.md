@@ -146,6 +146,7 @@ v1.23.08
 - Player now faces up instead of left when stopped in the route 8 guard house
 - Fixed a graphical error when Bide unleashes energy against a 'mon that is not being displayed
 - The player can now select a move even if frozen, and this fixes a PP underflow and link desync glitch
+- Changed border block on route 16 to water to make it consistent with route 17
 
 
 #Bugfixes:
