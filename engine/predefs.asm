@@ -164,3 +164,4 @@ PredefPointers::
 	add_predef SetAttackAnimPal
 	add_predef SetCPUSpeed
 	add_predef SingleCPUSpeed
+	add_predef PrintPlayTime
