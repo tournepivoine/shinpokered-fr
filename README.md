@@ -103,6 +103,7 @@ v1.23.07
 - Fixed an issue with trapping moves being allowed on switch-in
 - Adjusted some AI anti-spam for status moves
 - Increased the maximum game clock to 32767 hours
+- Fixed typo causing incorrect game corner prizes
 
 
 #Bugfixes:
