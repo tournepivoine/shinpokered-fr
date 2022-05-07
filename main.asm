@@ -44,7 +44,6 @@ INCLUDE "engine/black_out.asm"
 ;MewPicFront:: INCBIN "pic/bmon/mew.pic"	;moved to a proper rom bank
 ;MewPicBack::  INCBIN "pic/monback/mewb.pic"
 ;INCLUDE "data/baseStats/mew.asm"	;this has been moved to be with the other pokemon base stat files
-INCLUDE "data/baseStats/missingno.asm"	;joenote - added basestats for fossil kabutops missingno
 
 INCLUDE "engine/battle/safari_zone.asm"
 
@@ -87,7 +86,7 @@ INCLUDE "engine/menu/swap_items.asm"
 
 INCLUDE "engine/overworld/pokemart.asm"
 
-INCLUDE "engine/learn_move.asm"
+;INCLUDE "engine/learn_move.asm"	;joenote - moved in order to have more space
 
 INCLUDE "engine/overworld/pokecenter.asm"
 
@@ -1896,6 +1895,7 @@ ENDC
 
 INCLUDE "engine/items/tm_prices.asm"
 
+INCLUDE "engine/learn_move.asm"	;joenote - moved in order to have more space
 
 SECTION "bank2E",ROMX,BANK[$2E]	
 ;gbcnote - This bank with hold the bg map attributes for the gameboy color among other stuff

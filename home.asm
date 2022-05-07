@@ -1099,6 +1099,11 @@ DisplayTextID::
 	jp z, DisplayPlayerBlackedOutText
 	cp TEXT_REPEL_WORE_OFF
 	jp z, DisplayRepelWoreOffText
+	
+	;joenote - close if $FF is the textID or sprite index
+	cp $FF
+	jp z, CloseTextDisplay
+	
 	ld a, [wNumSprites]
 	ld e, a
 	ld a, [hSpriteIndexOrTextID] ; sprite ID
@@ -1483,9 +1488,9 @@ DisplayListMenuIDLoop::
 	call PlaceUnfilledArrowMenuCursor
 
 ; pointless because both values are overwritten before they are read
-	ld a, $01
-	ld [wMenuExitMethod], a
-	ld [wChosenMenuItem], a
+	;ld a, $01
+	;ld [wMenuExitMethod], a
+	;ld [wChosenMenuItem], a
 
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
