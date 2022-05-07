@@ -4,7 +4,7 @@ tmhmNames:
 	db "HM02@"
 	db "HM03@"
 	db "HM04@"
-	db "HM05"
+	db "HM05@"
 	db "TM01@"
 	db "TM02@"	
 	db "TM03@"
