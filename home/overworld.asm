@@ -43,7 +43,7 @@ OverworldLoop::
 	call Check60fps
 	call z, DelayFrame
 OverworldLoopLessDelay::
-	;call DelayFrame
+	call DelayFrame
 	predef SetCPUSpeed	;2x speed
 	call LoadGBPal
 	ld a, [wd736]
