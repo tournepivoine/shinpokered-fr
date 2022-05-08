@@ -104,6 +104,7 @@ v1.23.07
 - Adjusted some AI anti-spam for status moves
 - Increased the maximum game clock to 32767 hours
 - Fixed typo causing incorrect game corner prizes
+- Assigned a proper forget-move sfx during battle
 
 
 #Bugfixes:
