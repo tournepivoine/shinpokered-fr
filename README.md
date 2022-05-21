@@ -105,6 +105,7 @@ v1.23.07
 - Increased the maximum game clock to 32767 hours
 - Fixed typo causing incorrect game corner prizes
 - Assigned a proper forget-move sfx during battle
+- Fixed input priority on menus
 
 
 #Bugfixes:
