@@ -106,6 +106,7 @@ v1.23.07
 - Fixed typo causing incorrect game corner prizes
 - Assigned a proper forget-move sfx during battle
 - Fixed input priority on menus
+- Minor adjustments to title screen and intro
 
 
 #Bugfixes:
