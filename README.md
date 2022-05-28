@@ -107,6 +107,7 @@ v1.23.07
 - Assigned a proper forget-move sfx during battle
 - Fixed input priority on menus
 - Minor adjustments to title screen and intro
+- Re-added the reference to the Kanto region in the JP translation
 
 
 #Bugfixes:
