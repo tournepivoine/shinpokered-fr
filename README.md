@@ -105,11 +105,15 @@ v1.23.07
 - Increased the maximum game clock to 32767 hours
 - Fixed typo causing incorrect game corner prizes
 - Assigned a proper forget-move sfx during battle
+- TMs and HMs have their names determined by a list now
 - Fixed input priority on menus
 - Minor adjustments to title screen and intro
 - Re-added the reference to the Kanto region in the JP translation
 - Restored SHOP and POKE building tiles in Blue-JP
 - SGB borders for JP versions are restored (with fixed centering for text)
+
+v1.23.08
+- Daycare allows HM moves on entered pokemon
 
 
 #Bugfixes:
@@ -266,6 +270,7 @@ v1.23.07
 	- However, there is a unique unused sfx in the battle audio bank that signifies getting some kind of important item
 	- This is likely what was going to be used for getting a badge at some point, and it has been restored
   - Bike music stops playing now when going down a hole
+  - Assigned a proper forget-move sfx during battle
 	
 
 - Misc. fixes
@@ -273,7 +278,10 @@ v1.23.07
   - Can no longer walk up to 4 steps with a fainted team
   - Catching a transformed pokemon no longer defaults to catching a ditto
   - Vending machine now checks for the correct amount of money
-  - Prevented byte overflow when determining the trash can with 2nd switch in vermillion gym
+  - Vermilion Gym switch puzzle fixes
+    - Prevented byte overflow when determining the trash can with 2nd switch in vermilion gym
+	- The position of both switches in Vermilion Gym are now determined at the same time
+    - The switches in Vermilion Gym can now be discovered independently from one another
   - Hidden nugget in safari entrance now obtainable
   - Slot machine reel bug fixed
   - Fixed oversights in reel functionality to better match Gamfreak's intent
@@ -302,7 +310,8 @@ v1.23.07
   - Fixed a bug in the GetName: function that treated lists over 195 entries as item lists
   - Can Fly and Teleport out of maps using the Forest tileset
   - Fixed a grass tile in the Forest tileset not counting for encouner generation
-  
+  - Fixed input priority on menus
+
   
 #TWEAKS:
 -----------
@@ -495,11 +504,15 @@ v1.23.07
     - It's a single byte in the save file that gets incremented each version
     - If the save byte does not match, the player is automatically warped back to Pallet Town
     - Helps prevent crashes and glitches when updating an older save file
+	- You will be given the choice to warp if the rom hack version does not match
   - The function that shows the dex entry for starter pokemon is now more robust
     - It now works for any pokemon (like if the starters are changed or randomized)
 	- It keeps a backup of the pokedex-owned flags instead of erasing them
 	- Removed the unused Ivysaur flag
-
+  - Increased the maximum game clock to 32767 hours
+  - Female trainer can be activated by compiling with the _FPLAYER tag
+  - TMs and HMs now have actual name lists
+  
 
 #CREDITS / SPECIAL THANKS:
 --------------------------
