@@ -4,12 +4,12 @@ Version 1.23.XX
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
 
-Download the IPS patch file of the version you want and apply it to its respective USA rom.  
+Download the patch file of the version you want and apply it to its respective USA rom.  
 Always apply patches to a fresh USA ROM or else strange glitches will occur.  
 
-**IMPORTANT**: Download the IPS patch file of the version you want and apply it to the correct USA rom. 
-- The "_origback" ips patches are alternatives for red & blue that keep the original back sprites. 
-- Always apply patches to a fresh USA ROM or else strange glitches will occur.  
+**IMPORTANT**: Download the BPS patch file of the version you want and apply it to the correct USA rom. 
+- The "_origback" BPS patches are alternatives for red & blue that keep the original back sprites. 
+- Use the tool [FLIPS](https://www.romhacking.net/utilities/1040/) to apply the BPS patches.   
 - **Red patches are applied to a USA Red ROM.**
 - **All other patches (Blues and Greens) are applied to a USA Blue ROM.**
 
@@ -53,7 +53,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 - A revision control function has been added that will cancel unsupported cable links
 
 
-#Latest Fixes (most recent ips patch):
+#Latest Fixes (most recent patch):
 ---------------
 - 
 
