@@ -17,3 +17,5 @@
 *.blk binary
 *.pic binary
 *.ips binary
+*.gif binary
+*.bps binary
