@@ -161,6 +161,13 @@ InitOptions:
 	ld [wLetterPrintingDelayFlags], a
 	ld a, 3 ; medium speed
 	ld [wOptions], a
+	ld a, [hGBC]
+	and a
+	ret z
+	;intialize 60 fps if on playing in GBC-mode
+	ld a, [wUnusedD721]
+	set 4, a
+	ld [wUnusedD721], a
 	ret
 
 LinkMenu:
