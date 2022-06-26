@@ -117,6 +117,8 @@ v1.23.08
 - ***Not in beta patch***
 - If on GBC, intitializing options turns 60 fps ON
 - Minor code correction to Twineedle to prevent future errors 
+- Added more text corrections for JP versions
+- Added sfx variations unique to JP versions
 
 
 #Bugfixes:
