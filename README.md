@@ -119,6 +119,7 @@ v1.23.08
 - Minor code correction to Twineedle to prevent future errors 
 - Added more text corrections for JP versions
 - Added sfx variations unique to JP versions
+- Leech seed health drain animation now has correct coloring on GBC
 
 
 #Bugfixes:
