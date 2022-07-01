@@ -123,6 +123,7 @@ v1.23.08
 - In GBC-mode, when a pokemon is caught, the resting ball now has a defined color
 - Tossing pokeballs have color in GBC mode
 - Fixed an issue where the shiny animation has the wrong palette for the opponent on the GBC
+- Swapped a trade NPC to a gentleman in Green and RedJP
 
 
 #Bugfixes:
