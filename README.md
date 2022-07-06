@@ -131,6 +131,7 @@ v1.23.08
 - Fixed pokemon category translation: "Rat" to "Mouse"
 - Fixed pokemon category translation: "Shellfish" to "Shell"
 - Fixed translation: Route 14 trainer's comment about the legendary birds
+<<<<<<< HEAD
 - Switched over to the xor-shift method of RNG
 - RAM adress D732 now gets cleared upon a new game
 - Fixed a bug having to do with rare instances of bending the audio pitch
@@ -176,6 +177,7 @@ v1.23.08
 - Fixed ball toss sfx not resetting the pitch envelope settings
 - Downward-moving sprites now get hidden behind text boxes
 - NPC walking animation now updates during player movement
+- Using X-Accuracy with a OHKO move now allows it to hit faster opponents
 
 
 #Bugfixes
@@ -512,6 +514,7 @@ v1.23.08
   - Sleep does not prevent choosing a move
   - Waking up from sleep does not waste the turn and the chosen move is used
   - The effect of X Accuracy is no longer applied to one-hit K.O. moves (it originally made them auto-hit)
+  - Using X-Accuracy with a OHKO move now allows it to hit faster opponents
   - Upped the power of safari balls to account for lower ball factor
   - +1 turn to sleep counter since attacks can happen on wakeup (preserves effective sleep accuracy)
   
