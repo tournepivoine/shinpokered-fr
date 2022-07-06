@@ -58,6 +58,7 @@ endif
 # _METRIC modifies any base rom. It converts the pokedex data back to metric units.
 
 # _FPLAYER modifies any base rom. It includes code to support a female trainer player option.
+# _MOVENPCS adds move deleter and relearner NPCs in a Saffron house.
 
 %_red.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokered_obj): %_red.o: %.asm $$(dep)

@@ -1529,6 +1529,13 @@ DisplayListMenuIDLoop::
 	call GetItemPrice
 	pop hl
 	ld a,[wListMenuID]
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - needed to make Mateo's move deleter/relearner work
+IF DEF(_MOVENPCS)
+	cp a, MOVESLISTMENU
+	jr z, .skipStoringItemName
+ENDC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	cp ITEMLISTMENU
 	jr nz, .skipGettingQuantity
 ; if it's an item menu
@@ -1555,6 +1562,7 @@ DisplayListMenuIDLoop::
 .storeChosenEntry ; store the menu entry that the player chose and return
 	ld de, wcd6d
 	call CopyStringToCF4B ; copy name to wcf4b
+.skipStoringItemName ;joenote - skip here if skipping storing item name
 	ld a, CHOSE_MENU_ITEM
 	ld [wMenuExitMethod], a
 	ld a, [wCurrentMenuItem]
