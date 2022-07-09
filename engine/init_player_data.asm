@@ -1,14 +1,20 @@
 InitPlayerData:
 InitPlayerData2:
 
+	;call Random
+	;ld a, [hRandomSub]
+	;ld [wPlayerID], a
+
+	;call Random
+	;ld a, [hRandomAdd]
+	;ld [wPlayerID + 1], a
+
+	;joenote - changing this to be more optimal
 	call Random
-	ld a, [hRandomSub]
 	ld [wPlayerID], a
-
 	call Random
-	ld a, [hRandomAdd]
-	ld [wPlayerID + 1], a
-
+	ld [wPlayerID+1], a
+	
 	ld a, $ff
 	ld [wUnusedD71B], a
 

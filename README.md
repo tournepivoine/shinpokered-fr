@@ -128,6 +128,7 @@ v1.23.08
 - Fixed pokemon category translation: "Rat" to "Mouse"
 - Fixed pokemon category translation: "Shellfish" to "Shell"
 - Fixed translation: Route 14 trainer's comment about the legendary birds
+- Switched over to the xor-shift method of RNG
 
 
 #Bugfixes:
