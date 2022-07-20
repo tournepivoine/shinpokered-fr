@@ -132,6 +132,7 @@ v1.23.08
 - RAM adress D732 now gets cleared upon a new game
 - Fixed a bug having to do with rare instances of bending the audio pitch
 - Cannot use poison to black yourself out of the cable club
+- Cannot use poison to black yourself out of the safari zone
 
 
 #Bugfixes:
@@ -332,7 +333,8 @@ v1.23.08
   - Fixed input priority on menus
   - RAM adress D732 now gets cleared upon starting a new game
   - Cannot use poison to black yourself out of the cable club
-
+  - Cannot use poison to black yourself out of the safari zone
+  
   
 #TWEAKS:
 -----------
