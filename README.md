@@ -130,6 +130,7 @@ v1.23.08
 - Fixed translation: Route 14 trainer's comment about the legendary birds
 - Switched over to the xor-shift method of RNG
 - RAM adress D732 now gets cleared upon a new game
+- Fixed a bug having to do with rare instances of bending the audio pitch
 
 
 #Bugfixes:
@@ -287,7 +288,8 @@ v1.23.08
 	- This is likely what was going to be used for getting a badge at some point, and it has been restored
   - Bike music stops playing now when going down a hole
   - Assigned a proper forget-move sfx during battle
-	
+  - Fixed a bug having to do with rare instances of bending the audio pitch
+  
 
 - Misc. fixes
   - Cinnabar/seafoam islands coast glitch fixed (no more missingo or artificially loading pokemon data)
