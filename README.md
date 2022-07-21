@@ -122,7 +122,6 @@ v1.23.08
 - Leech seed health drain animation now has correct coloring on GBC
 - In GBC-mode, when a pokemon is caught, the resting ball now has a defined color
 - Tossing pokeballs have color in GBC mode
-- Fixed an issue where the shiny animation has the wrong palette for the opponent on the GBC
 - The move relearner and move deleter code is now tethered to the _MOVENPCS makefile tag
 - Swapped a trade NPC to a gentleman in Green and RedJP
 - Fixed pokemon category translation: "Rat" to "Mouse"
@@ -353,10 +352,18 @@ v1.23.08
   - Scrolling mons on the title screen have their own palettes loaded on the GBC.
   - In the blue version intro, jigglypuff has it's own palette loaded on the GBC. 
   - Oak-speech nidorino has its color palette on the GBC.
+- Additional GBC color additions
+  - Scrolling mons on the title screen have their own palettes loaded on the GBC.
+  - In the blue version intro, jigglypuff has it's own palette loaded on the GBC.
+  - Oak-speech nidorino has its color palette on the GBC.
+  - When playing in GBC-mode, move animations are colored based on their type
+  - In GBC-mode, when a pokemon is caught, the resting ball now has a defined color
+  - Tossing pokeballs have color in GBC mode
 - Added an option to make the overworld run in 60fps
   - Feature is a proof-of-concept and is still a bit rusty
   - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
   - Takes advantage of double-speed CPU mode when played as a GBC game
+- Starting a New Game while in GBC-mode will default 60FPS mode to ON
 - Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
 - Softlock Warp 
   - instantly teleport back to your mom's house if you get stuck or are unable to move after updating to a new patch
@@ -378,6 +385,7 @@ v1.23.08
 - Initiating the Pokemon Tower rival battle will deactivate the following skippable rival battles
   - The Cerulean encounter
   - The SS Anne encounter
+- Daycare allows HM moves on entered pokemon
 
 
 - Fixed mistakes in the game text
@@ -404,6 +412,9 @@ v1.23.08
   - Clarified "chem" to mean grade in chemistry
   - Exp.all now prints one message when splitting exp instead of for each party member
   - Adjusted some of Giovanni's final lines for clarity
+  - Fixed pokemon category translation: "Rat" to "Mouse"
+  - Fixed pokemon category translation: "Shellfish" to "Shell"
+  - Fixed translation: Route 14 trainer's comment about the legendary birds
   
 
 - Adjustments to moves  
@@ -422,7 +433,8 @@ v1.23.08
   - Changes to Rage
 	- Now only lasts 2 to 3 moves like Bide in order to prevent an infinite loop
 	- As a tradeoff, attack boosts from rage are kept when it ends
-
+  - Minor code correction to Twineedle to prevent future errors, but this has no effect on gameplay
+  
 - Adjustment to stat mods, conditions, and items
   - Sleep does not prevent choosing a move
   - Waking up from sleep does not waste the turn and the chosen move is used
