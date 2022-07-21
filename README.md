@@ -134,6 +134,7 @@ v1.23.08
 - Cannot use poison to black yourself out of the cable club
 - Cannot use poison to black yourself out of the safari zone
 - Cannot perform the 99-stack glitch anymore
+- Fixed an offset bug with the lucky game corner machine
 
 
 #Bugfixes:
@@ -336,6 +337,7 @@ v1.23.08
   - Cannot use poison to black yourself out of the cable club
   - Cannot use poison to black yourself out of the safari zone
   - Cannot perform the 99-stack glitch anymore
+  - Fixed an offset bug with the lucky game corner machine
   
   
 #TWEAKS:
