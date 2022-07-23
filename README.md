@@ -135,6 +135,7 @@ v1.23.08
 - Cannot perform the 99-stack glitch anymore
 - Fixed an offset bug with the lucky game corner machine
 - Victory music won't play if a wild 'mon faints but the player has no 'mons remaining; it's a blackout
+- Fixed screen tearing in battle when player or 'mon slides off the screen
 
 
 #Bugfixes:
@@ -257,7 +258,9 @@ v1.23.08
     - These were removed during localization as a simple and expedient solution
     - So this is more of a correction to the localization than a strict graphical error
   - Restored intro "Presents" for all builds as localizers did not need to do this for Nintendo of America
-
+  - Fixed screen tearing in battle when player or 'mon slides off the screen
+  
+>>>>>>> 2596c6c8 (- Fixed screen tearing in battle when player or 'mon slides off the screen)
 
 - Item Fixes  
   - Great ball has a ball factor of 12 now
