@@ -47,9 +47,11 @@ TrackRunBikeSpeed:
 	ld a, [wWalkBikeSurfState]
 	dec a ; riding a bike? (0 value = TRUE)
 	call z, IsRidingBike
+IF DEF(_RUNSHOES)
 	ld a, [hJoyHeld]
 	and B_BUTTON	;holding B to speed up? (non-zero value = TRUE)
-	;call nz, IsRunning	;joenote - uncomment this line to make holding B do double-speeed while walking/surfing/biking
+	call nz, IsRunning	;joenote - make holding B do double-speeed while walking/surfing/biking
+ENDC
 	ld a, [wd736]
 	bit 7, a
 	call nz, IsSpinArrow	;player sprite spinning due to spin tiles (Rocket hideout / Viridian Gym)
