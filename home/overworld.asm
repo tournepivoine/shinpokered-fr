@@ -43,8 +43,9 @@ OverworldLoop::
 	call Check60fps
 	call z, DelayFrame
 OverworldLoopLessDelay::
-	call DelayFrame
+	;call DelayFrame
 	predef SetCPUSpeed	;2x speed
+	call CheckForSpinAndDelay
 	call LoadGBPal
 	ld a, [wd736]
 	bit 6, a ; jumping down a ledge?
@@ -2338,4 +2339,17 @@ ForceBikeOrSurf::
 Check60fps:
 	ld a, [wUnusedD721]
 	bit 4, a
+	ret
+
+;joenote - This functions checks if the spin frame is going to update for the spinning arrow tile state.
+;			If so, do not delay a frame because this will happen during LoadSpinnerArrowTiles.
+CheckForSpinAndDelay:
+	ld a, [wd736]
+	bit 7, a
+	jr z, .noSpinning
+	ld a, [wSpinnerTileFrameCount]
+	dec a
+	ret z	
+.noSpinning
+	call DelayFrame
 	ret

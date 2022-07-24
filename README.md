@@ -260,7 +260,6 @@ v1.23.08
   - Restored intro "Presents" for all builds as localizers did not need to do this for Nintendo of America
   - Fixed screen tearing in battle when player or 'mon slides off the screen
   
->>>>>>> 2596c6c8 (- Fixed screen tearing in battle when player or 'mon slides off the screen)
 
 - Item Fixes  
   - Great ball has a ball factor of 12 now
