@@ -139,6 +139,7 @@ v1.23.08
 - The running shoes code is now tethered to the _RUNSHOES makefile tag
 - Fixed screen whiteouts not looking very smooth in GBC mode (like when entering the 'mon status screen)
 - Fixed a bug from the vanilla game where boulder dust clouds do not show up well when pushing downwards
+- Fixed a bug from the vanilla game where random NPC walk delay can underflow to 255 ticks
 
 
 #Bugfixes:
@@ -263,6 +264,7 @@ v1.23.08
   - Restored intro "Presents" for all builds as localizers did not need to do this for Nintendo of America
   - Fixed screen tearing in battle when player or 'mon slides off the screen
   - Fixed a bug from the vanilla game where boulder dust clouds do not show up well when pushing downwards
+  - Fixed a bug from the vanilla game where random NPC walk delay can underflow to 255 ticks
 
 
 - Item Fixes  
