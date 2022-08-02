@@ -3880,6 +3880,8 @@ CheckPlayerStatusConditions:
 	res STORING_ENERGY, [hl] ; not using bide any more
 	ld hl, UnleashedEnergyText
 	call PrintText
+	ld a, SWIFT_EFFECT
+	ld [wPlayerMoveEffect], a	;joenote - fix graphical error with bide hitting flying/digging pokemon
 	ld a, 1
 	ld [wPlayerMovePower], a
 	ld hl, wPlayerBideAccumulatedDamage + 1
@@ -6724,6 +6726,8 @@ CheckEnemyStatusConditions:
 	res STORING_ENERGY, [hl] ; not using bide any more
 	ld hl, UnleashedEnergyText
 	call PrintText
+	ld a, SWIFT_EFFECT
+	ld [wEnemyMoveEffect], a	;joenote - fix graphical error with bide hitting flying/digging pokemon
 	ld a, $1
 	ld [wEnemyMovePower], a
 	ld hl, wEnemyBideAccumulatedDamage + 1
