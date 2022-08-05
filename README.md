@@ -4,14 +4,16 @@ Version 1.23.XX
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
 
-Download the patch file of the version you want and apply it to its respective USA rom.  
-Always apply patches to a fresh USA ROM or else strange glitches will occur.  
-
-**IMPORTANT**: Download the BPS patch file of the version you want and apply it to the correct USA rom. 
+**PATCH INFO**  
+BPS patches are provided for hard-patching a legal backup ROM of your dumped cartridge or for soft-patching.  
+Download the patch file of the version you want and apply it to the correct USA rom.  
 - The "_origback" BPS patches are alternatives for red & blue that keep the original back sprites. 
-- Use the tool [FLIPS](https://www.romhacking.net/utilities/1040/) to apply the BPS patches.   
-- **Red patches are applied to a USA Red ROM.**
-- **All other patches (Blues and Greens) are applied to a USA Blue ROM.**
+- Use the tool [FLIPS](https://www.romhacking.net/utilities/1040/) to hard-patch the BPS patch files.   
+- **Red patches (shin pokemon red, red_origback, and red-jp) are applied to USA Red.**
+  - MD5 Hash: 3d45c1ee9abd5738df46d2bdda8b57dc
+- **All other patches (Blues and Greens) are applied to USA Blue.**
+  - MD5 Hash: 50927e843568814f7ed45ec4f944bd8b
+
 
 ***Includes Pokemon Green and Japanese Red!***
 - The compiler primarily builds the graphics and cerulean cave layout back to the original japanese release.
