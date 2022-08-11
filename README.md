@@ -151,6 +151,7 @@ v1.23.08
 - Fixed reading the route 16 sign from the other side on route 17 
 - Gamma shader is now 23% faster thanks to optimizations by easyaspi314
 - The jingle for finding a hidden item will no longer be skipped during an audio fadeout
+- Added missing dungeon maps to battle transition functions
 
 
 #Bugfixes:
@@ -285,6 +286,7 @@ v1.23.08
   - Player now faces up instead of left when stopped in the route 8 guard house
   - Fixed a graphical error when Bide unleashes energy against a 'mon that is not being displayed
   - Fixed minor graphical glitch when surfing from the menu
+  - Added missing dungeon maps to battle transition functions
 
 
 - Item Fixes  
