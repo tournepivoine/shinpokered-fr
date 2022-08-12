@@ -152,6 +152,7 @@ v1.23.08
 - Gamma shader is now 23% faster thanks to optimizations by easyaspi314
 - The jingle for finding a hidden item will no longer be skipped during an audio fadeout
 - Added missing dungeon maps to battle transition functions
+- Fixed using a ledge to land on a NPC
 
 
 #Bugfixes:
@@ -372,6 +373,7 @@ v1.23.08
   - Fixed an offset bug with the lucky game corner machine
   - Minor bugfix for CollisionCheckOnWater; no effect on gameplay
   - Fixed reading the route 16 sign from the other side on route 17 
+  - Fixed using a ledge to land on a NPC
   
   
 #TWEAKS:
