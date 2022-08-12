@@ -158,6 +158,7 @@ v1.23.08
 - Fixed using a ledge to land on a NPC
 - The party heal function now detects glitch moves and loads 0 PP for them
 - Exit won't block you when warped to Fuji's house from Pokemon Tower
+- Closed 255 clone pokemon glitch and reduced saving delay to 15 frames
 
 
 #Bugfixes
@@ -381,7 +382,9 @@ v1.23.08
   - Fixed using a ledge to land on a NPC
   - The party heal function now detects glitch moves and loads 0 PP for them
   - Exit won't block you when warped to Fuji's house from Pokemon Tower
+  - Closed 255 clone pokemon glitch
   
+
 #Tweaks
 -----------
 - Added built-in gamma shader for backlit LCD screens in GBC mode (press SELECT at the copyright screen)
@@ -594,6 +597,7 @@ v1.23.08
   - Increased the maximum game clock to 32767 hours
   - Female trainer can be activated by compiling with the _FPLAYER tag
   - TMs and HMs now have actual name lists
+  - Reduced saving delay to 15 frames
   
 
 #Credits / Special Thanks
