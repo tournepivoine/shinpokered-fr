@@ -4,7 +4,8 @@ Version 1.23.XX
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
 
-**PATCH INFO**  
+#Patch Info  
+-----------
 BPS patches are provided for hard-patching a legal backup ROM of your dumped cartridge or for soft-patching.  
 Download the patch file of the version you want and apply it to the correct USA rom.  
 - The "_origback" BPS patches are alternatives for red & blue that keep the original back sprites. 
@@ -23,6 +24,7 @@ Download the patch file of the version you want and apply it to the correct USA 
 ***Now Includes Japanese Blue!***
 - Primarily builds the lists for encounters, trades, and prizes that were in the never-localized japanese release.
 - Pokedex uses metric units.
+- Other minor graphical adjustments.
 
 ***Updating Your Save File***
 Deactivate all special options and NPC toggles in the old save if it's from an earlier patch.  
@@ -33,19 +35,20 @@ To prevent this from happening, save in the outdoor Pallet Town map on the old s
 You might be blocked by invisible walls upon loading the game.  
 To fix this, you must use the Softlock Warp detailed below to teleport back to Pallet Town.  
 
-
+		
 #Compatibility Notes
 -----------
 
+- **Certain emulators are known to cause bugs due to inaccuracies in replicating the original hardware**
+  - An accurate emulator, preferably a GBC-dedicated emulator, is required in order to avoid unexpected bugs
+  - Goomba and Pizza Boy in particular are known to be problematic
+  - BGB is the supported standard due to its accuracy and debugging tools
 - Compatible with original Gameboy hardware (DMG, Super, Pocket, Color, Advance, SP)
 - Potentially compatible with Pokemon Stadium 1 & 2 (using original Nintendo hardware)
 - Might be possible to use a save from vanilla USA red/blue with this rom hack 
   - Save outside in Pallet Town before transferring over
   - Use the Softlock Warp to clear any invisible walls
 - New builds are tested and debugged with the BGB 1.5.8 emulator and verified using original hardware
-- Certain emulators are known to cause bugs due to inaccuracies in replicating the original hardware
-  - Goomba in particular is known to be problematic
-  - Due to the number of emulators in existence, BGB will be used as the supported standard
 - Link trading with an original retail cartridge appears to work properly on real hardware
 - Link trading between the lite and master branches appears to work properly on real hardware
 - Link battles are still largely untested, and they are unsupported in the following ways:
@@ -55,12 +58,12 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 - A revision control function has been added that will cancel unsupported cable links
 
 
-#Latest Fixes (most recent patch):
+#Latest Fixes (most recent patch)
 ---------------
 - 
 
 
-#Changes not yet in the release branch:
+#Changes not yet in the release branch
 -----------
 v1.23.01  
 - Green and Red-JP have the original front sprites for fossil kabutops and fossil aerodactyl
@@ -155,7 +158,7 @@ v1.23.08
 - Fixed using a ledge to land on a NPC
 
 
-#Bugfixes:
+#Bugfixes
 -----------
 
 - Battle engine fixes
@@ -376,7 +379,7 @@ v1.23.08
   - Fixed using a ledge to land on a NPC
   
   
-#TWEAKS:
+#Tweaks
 -----------
 - Added built-in gamma shader for backlit LCD screens in GBC mode (press SELECT at the copyright screen)
 	- Gamma shader defaults ON if the destination code in the rom header is set to 00 (JP)
@@ -590,7 +593,7 @@ v1.23.08
   - TMs and HMs now have actual name lists
   
 
-#CREDITS / SPECIAL THANKS:
+#Credits / Special Thanks
 --------------------------
 - The Pret team for the pokered and pokeyellow disassemblies and all the code comments that came with them
 - MoriyaFaith's pokejp project for green version assets and code referencing
