@@ -161,6 +161,7 @@ v1.23.08
 - Wavy line animation (psychic/psywave/night shade) now scrolls the top three screen lines (by easyaspi314)
 - Fixed glitchy trainer card transition screens on GB-DMG
 - Made many TextIDs close when pressing A instead of releasing A
+- Binoculars can no longer pause the overworld by holding A from the wrong side
 
 
 #Bugfixes
@@ -299,6 +300,7 @@ v1.23.08
   - Wavy line animation (psychic/psywave/night shade) now scrolls the top three screen lines
   - Fixed glitchy trainer card transition screens on GB-DMG
   - Made many TextIDs close when pressing A instead of releasing A
+  - Binoculars can no longer pause the overworld by holding A from the wrong side
 
 
 - Item Fixes  
