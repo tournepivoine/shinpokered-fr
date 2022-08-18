@@ -164,6 +164,7 @@ v1.23.08
 - Binoculars can no longer pause the overworld by holding A from the wrong side
 - Applied the pokeyellow fix for in-game trade evolutions
 - Can no longer get blocked at the cinnabar gym door
+- Tweaked the fly menu to be more responsive and snappy
 
 
 #Bugfixes
@@ -609,6 +610,7 @@ v1.23.08
   - Female trainer can be activated by compiling with the _FPLAYER tag
   - TMs and HMs now have actual name lists
   - Reduced saving delay to 15 frames
+  - Tweaked the fly menu to be more responsive and snappy
   
 
 #Credits / Special Thanks
