@@ -60,9 +60,11 @@ endif
 # _FPLAYER modifies any base rom. It includes code to support a female trainer player option.
 # _MOVENPCS adds move deleter and relearner NPCs in a Saffron house.
 # _RUNSHOES Allows player to run by holding B
+# _EXPBAR Adds an EXP bar to the battle UI
 
 %_red.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(pokered_obj): %_red.o: %.asm $$(dep)
+<<<<<<< HEAD
 	rgbasm -D _RED -h -o $@ $*.asm
 
 %_blue.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
