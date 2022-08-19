@@ -4,41 +4,50 @@ Version 1.23
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
 
-Download the IPS patch file of the version you want and apply it to its respective USA rom.  
-Always apply patches to a fresh USA ROM or else strange glitches will occur.  
+#Patch Info  
+-----------
+BPS patches are provided for entry into your preferred emulator, patching tool, or other accessory that supports the BPS format.  
+Download and enter a patch which corresponds to the ROM of which you own a lawful copy.  
+- **Red patches (shin pokemon red, red_origback, and red-jp) are intended for USA Red.**
+  - MD5 Hash: 3d45c1ee9abd5738df46d2bdda8b57dc
+- **All other patches (Blues and Greens) are intended for USA Blue.**
+  - MD5 Hash: 50927e843568814f7ed45ec4f944bd8b
+- The "_origback" patches are alternatives that keep the original back sprites. 
+
 
 ***Includes Pokemon Green and Japanese Red!***
 - The compiler primarily builds the graphics and cerulean cave layout back to the original japanese release.
 - Pokedex entries adapt the original Green version text that was translated in Fire Red.
 - Pokedex uses metric units.
-- Apply the Green ips patch to a USA Blue rom. Apply the Red-JP ips patch to a USA Red rom.
 
 ***Now Includes Japanese Blue!***
 - Primarily builds the lists for encounters, trades, and prizes that were in the never-localized japanese release.
 - Pokedex uses metric units.
-- Apply the ips patch to a USA Blue rom.
+- Other minor graphical adjustments.
 
-***Updating Your Save File***  
-New patches might crash or have issues upon loading a save from a previous patch or an unpatched game.  
-To prevent this from happening, prepare your save file in the following way:  
---> Deactivate all special options (such as 60fps mode and NPC toggles).  
---> Save in the outdoor Pallet Town map.  
+***Updating Your Save File***
+Deactivate all special options and NPC toggles in the old save if it's from an earlier patch.  
+When loading an old save file with the latest patch, the player is automatically warped to Pallet Town.  
+Normally this will be enough to update the save file without doing anything else.  
+It's possible you may still have issues upon loading a save from a previous patch or an unpatched game.  
+To prevent this from happening, save in the outdoor Pallet Town map on the old save.  
 You might be blocked by invisible walls upon loading the game.  
 To fix this, you must use the Softlock Warp detailed below to teleport back to Pallet Town.  
 
-
+		
 #Compatibility Notes
 -----------
 
+- **Certain emulators are known to cause bugs due to inaccuracies in replicating the original hardware**
+  - An accurate emulator, preferably a GBC-dedicated emulator, is required in order to avoid unexpected bugs
+  - Goomba and Pizza Boy in particular are known to be problematic
+  - BGB is the supported standard due to its accuracy and debugging tools
 - Compatible with original Gameboy hardware (DMG, Super, Pocket, Color, Advance, SP)
 - Potentially compatible with Pokemon Stadium 1 & 2 (using original Nintendo hardware)
 - Might be possible to use a save from vanilla USA red/blue with this rom hack 
   - Save outside in Pallet Town before transferring over
   - Use the Softlock Warp to clear any invisible walls
 - New builds are tested and debugged with the BGB 1.5.8 emulator and verified using original hardware
-- Certain emulators are known to cause bugs due to inaccuracies in replicating the original hardware
-  - Goomba in particular is known to be problematic
-  - Due to the number of emulators in existence, BGB will be used as the supported standard
 - Link trading with an original retail cartridge appears to work properly on real hardware
 - Link trading between the lite and master branches appears to work properly on real hardware
 - Link battles are still largely untested, and they are unsupported in the following ways:
@@ -46,7 +55,6 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
   - Link battling between a lite branch build and any other non-lite branch build
   - Link battling between builds of dissimilar revisions
 - A revision control function has been added that will cancel unsupported cable links
-
 
 
 #Latest Fixes (most recent ips patch):
