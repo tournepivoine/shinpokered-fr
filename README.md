@@ -175,6 +175,7 @@ v1.23.08
 - Can no longer change facing while pushing a boulder
 - Fixed ball toss sfx not resetting the pitch envelope settings
 - Downward-moving sprites now get hidden behind text boxes
+- NPC walking animation now updates during player movement
 
 
 #Bugfixes
@@ -317,6 +318,7 @@ v1.23.08
   - Binoculars can no longer pause the overworld by holding A from the wrong side
   - Can no longer change facing while pushing a boulder
   - Downward-moving sprites now get hidden behind text boxes
+  - NPC walking animation now updates during player movement
 
 
 - Item Fixes  
