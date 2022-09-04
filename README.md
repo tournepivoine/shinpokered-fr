@@ -177,6 +177,7 @@ v1.23.08
 - Using X-Accuracy with a OHKO move now allows it to hit faster opponents
 - Fixed hidden coins not giving the correct amount
 - Fixed NPCs treating the last visible screen column/row as off-screen
+- Slot machine no longer copies too much tile data
 
 
 #Bugfixes
@@ -414,6 +415,7 @@ v1.23.08
   - Can no longer get blocked at the cinnabar gym door
   - Fixed hidden coins not giving the correct amount
   - Fixed NPCs treating the last visible screen column/row as off-screen
+  - Slot machine no longer copies too much tile data
  
  
 #Tweaks
