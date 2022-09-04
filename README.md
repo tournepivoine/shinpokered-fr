@@ -57,13 +57,10 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 - A revision control function has been added that will cancel unsupported cable links
 
 
-#Latest Fixes (most recent patch)
----------------
-- 
-
-
-#Changes not yet in the release branch
+#Changelog From the Last Full Release
 -----------
+[View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+
 v1.23.01  
 - Green and Red-JP have the original front sprites for fossil kabutops and fossil aerodactyl
 - Green and Red-JP have the original text box corners 
@@ -118,7 +115,8 @@ v1.23.07
 
 v1.23.08
 - Daycare allows HM moves on entered pokemon
-- ***Not added to beta patch yet***
+
+***Not added to beta patch yet***  
 - If on GBC, intitializing options turns 60 fps ON
 - Minor code correction to Twineedle to prevent future errors 
 - Added more text corrections for JP versions
@@ -131,7 +129,6 @@ v1.23.08
 - Fixed pokemon category translation: "Rat" to "Mouse"
 - Fixed pokemon category translation: "Shellfish" to "Shell"
 - Fixed translation: Route 14 trainer's comment about the legendary birds
-<<<<<<< HEAD
 - Switched over to the xor-shift method of RNG
 - RAM adress D732 now gets cleared upon a new game
 - Fixed a bug having to do with rare instances of bending the audio pitch
@@ -641,7 +638,7 @@ v1.23.08
 - MoriyaFaith's pokejp project for green version assets and code referencing
 - Rangi for the tool Polished Map and the jp-style town map from Red/Blue Star
 - Exp bar coded by Danny-E 33
-- The Pokemon Prism team for the improved RNG on previous versions
+- The Pokemon Prism team for the improved RNG used in this project's previous versions
 - Patrik Rak for the new xor-shift RNG code
 - Move deleter/relearner coded by TheFakeMateo for Pokemon Red++
 - Code contributions and bugfixing by wisp92
@@ -650,14 +647,13 @@ v1.23.08
 - Poketto for the spaceworld-style Trainer Red back sprite
 - SPazzzi95 for documenting localization changes
 - easyaspi314 for optimizations to the gamma shader and wavy-line animation bugfix
-
 The following folks for their great tutorials, glitch videos, and explanations across the internet
 - TheFakeMateo 
 - Crystal_
 - ChickasaurusGL
 - v0id19
 
-The following folks for their help in pointing out and diagnosing bugs 
+The following folks for bugfix collaberation
 - kadetPirx
 - JOBOalthor1992
 - krazsen
@@ -666,7 +662,8 @@ The following folks for their help in pointing out and diagnosing bugs
 - jastolze007 
 - MStern
 - TSinnohTrainer 
-- Chirutalis
+- Chirutalis 
+- coltongit
 
   
-The shinpokered repository was branched from pret/pokered at merge pull request #185 committed on Jul 2, 2018
+The shinpokered repository was branched from pret/pokered at [merge pull request #185 committed on Jul 2, 2018](https://github.com/pret/pokered/tree/c8599831992c91e521cf1d467ccae3d9498e42ef)
