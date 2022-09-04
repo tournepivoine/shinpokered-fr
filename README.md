@@ -175,6 +175,8 @@ v1.23.08
 - Downward-moving sprites now get hidden behind text boxes
 - NPC walking animation now updates during player movement
 - Using X-Accuracy with a OHKO move now allows it to hit faster opponents
+- Fixed hidden coins not giving the correct amount
+- Fixed NPCs treating the last visible screen column/row as off-screen
 
 
 #Bugfixes
@@ -410,8 +412,10 @@ v1.23.08
   - Closed 255 clone pokemon glitch
   - Applied the pokeyellow fix for in-game trade evolutions
   - Can no longer get blocked at the cinnabar gym door
-  
-
+  - Fixed hidden coins not giving the correct amount
+  - Fixed NPCs treating the last visible screen column/row as off-screen
+ 
+ 
 #Tweaks
 -----------
 - Added built-in gamma shader for backlit LCD screens in GBC mode (press SELECT at the copyright screen)
