@@ -182,7 +182,8 @@ v1.23.08
 - Added protection against oak's lab music cutting a channel off
 - Holding B in zero delay text mode will not revert the text to FAST speed
 - Major cleanup of options constants
-
+- Fixed a minor issue where the first pokemon an opponent sends out can't be switched
+  
 
 #Bugfixes
 -----------
