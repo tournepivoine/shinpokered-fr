@@ -196,3 +196,5 @@
 - Re-fixed the celadon vending machine code
 - More fixes for AI switching
 - Made adjustment to EXP All message
+- Holding B in zero delay text mode will not revert the text to FAST speed
+- Major cleanup of options constants

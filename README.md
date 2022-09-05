@@ -180,6 +180,8 @@ v1.23.08
 - Slot machine no longer copies too much tile data
 - Fixed wrong amount of stars loaded in Gamefreak logo
 - Added protection against oak's lab music cutting a channel off
+- Holding B in zero delay text mode will not revert the text to FAST speed
+- Major cleanup of options constants
 
 
 #Bugfixes
