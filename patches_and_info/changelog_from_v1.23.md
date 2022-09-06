@@ -67,6 +67,10 @@
 
 ---
 **New features and adjustments for both branches**
+- Decoupled the harder difficulty to its own option bit and added the hard mode to the Lite branch
+  - Pressing RIGHT while the cursor is in the BATTLE STYLE box will toggle the feature on/off
+  - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
+
 - Switched over to the xor-shift method of RNG
 
 - Gamma shader is now 23% faster thanks to optimizations by easyaspi314

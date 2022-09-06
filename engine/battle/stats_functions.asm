@@ -124,6 +124,37 @@ UndoBurnParStats:
 	ld [de], a	;reset the stat change bits
 	ret
 
+;joenote - this function puts statexp per enemy pkmn level into de
+;requires a, b, de, and wCurEnemyLVL
+CalcEnemyStatEXP:
+	ld a, [wOptions]	;load game options
+	bit BIT_BATTLE_HARD, a			;check for hard mode
+	jr z, .loadzero		;load zero stat exp if not on hard mode
+	;This loads 648 stat exp per level. Note that 648 in hex is the two-byte $0288
+	ld a, $02
+	ld [H_MULTIPLICAND], a
+	ld a, $88
+	ld [H_MULTIPLICAND + 1], a
+	xor a
+	ld [H_MULTIPLICAND + 2], a
+	ld a, [wCurEnemyLVL]
+	cp 100	;make it so 648 xp / lvl maxes out at lvl 100
+	jr c, .next
+	ld a, 100
+.next
+	ld [H_MULTIPLIER], a
+	call Multiply
+	ld a, [H_MULTIPLICAND]
+	ld d, a
+	ld a, [H_MULTIPLICAND+1]
+	ld e, a
+	ret
+.loadzero
+	xor a
+	ld d, a
+	ld e, a
+	ret
+	
 	
 CalculateModifiedStats:
 	ld c, 0

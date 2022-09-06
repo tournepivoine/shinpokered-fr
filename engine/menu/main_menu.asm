@@ -547,6 +547,7 @@ DisplayOptionMenu:
 	call PlaceString
 	call PlaceSoundSetting	;joenote - display the sound setting
 	call Show60FPSSetting	;60fps - display current setting
+	call ShowHardModeSetting	;joenote - display marker for hard mode or noty
 	call ShowLaglessTextSetting	;joenote - display marker for lagless text or not
 	xor a
 	ld [wCurrentMenuItem], a
@@ -653,6 +654,10 @@ DisplayOptionMenu:
 	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleStyleCursorX], a
+	bit BIT_D_RIGHT, b	;Right button pressed
+	push af
+	call nz, ToggleHardMode	;joenote - for hard mode option
+	pop af
 	jp .eraseOldMenuCursor
 .pressedLeftInTextSpeed
 	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
@@ -751,10 +756,10 @@ PlaceSoundSetting:
 ;60fps - show the fps setting on the menu when activated
 OptionMenu60FPSText:
 	dw OptionMenu60FPSON
-	dw OptionMenu60FPSOFF
+	dw OptionMenu5SpacesOFF
 OptionMenu60FPSON:
 	db "60FPS@"
-OptionMenu60FPSOFF:
+OptionMenu5SpacesOFF:
 	db "     @"
 Toggle60FPSSetting:
 	ld a, [wUnusedD721]
@@ -773,6 +778,34 @@ Show60FPSSetting:
 	inc hl
 	ld d, [hl]
 	coord hl, $0E, $0F
+	call PlaceString
+	ret
+
+;joenote - for hard mode option
+OptionMenuHardMode:
+	dw OptionMenuHardModeON
+	dw OptionMenuHardModeOFF
+OptionMenuHardModeON:
+	db "!@"
+OptionMenuHardModeOFF:
+	db " @"
+ToggleHardMode:
+	ld a, [wOptions]
+	xor BATTLE_HARD_MODE
+	ld [wOptions], a
+	;fall through
+ShowHardModeSetting:
+	ld hl, OptionMenuHardMode
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a
+	jr nz, .print
+	inc hl
+	inc hl
+.print
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	coord hl, $0D, $0B
 	call PlaceString
 	ret
 
@@ -847,8 +880,8 @@ SetOptionsFromCursorPositions:
 .battleStyleShift
 	res BIT_BATTLE_SHIFT, d
 .storeOptions
-	ld a, [wOptions]	;joenote - preserve sound settings
-	and SOUND_STEREO_BITS
+	ld a, [wOptions]	;joenote - preserve sound and hard mode settings
+	and (SOUND_STEREO_BITS | BATTLE_HARD_MODE)
 	or d
 	;ld a, d
 	ld [wOptions], a

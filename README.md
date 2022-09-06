@@ -449,6 +449,16 @@ v1.23.08
   - Takes advantage of double-speed CPU mode when played as a GBC game
 - Starting a New Game while in GBC-mode will default 60FPS mode to ON
 - Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
+- A hard mode option has been added to provide increased difficulty
+  - Pressing RIGHT while the cursor is in the BATTLE STYLE box will toggle the feature on/off
+  - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
+  - Enemy trainer pokemon are assigned level-appropriate stat exp
+  - Enemy trainer pokemon have randomized DVs that are all 8 or better (on a scale of 0 to 15)
+  - Badge-granted stat boosts are disabled in trainer battles
+  - X-stat items have double the effect like in more recent generations
+  - Revive items cannot be used in battles
+  - Mewtwo will prevent you from using a master ball on it and use AI to choose moves
+  - Hard mode gives an additional 1.5x EXP boost in trainer battles
 - Softlock Warp 
   - instantly teleport back to your mom's house if you get stuck or are unable to move after updating to a new patch
   - sets money to at least 1000 if you have less than that

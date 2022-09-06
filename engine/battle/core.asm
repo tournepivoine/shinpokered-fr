@@ -3282,9 +3282,10 @@ SelectEnemyMove:
 	ld a, STRUGGLE ; struggle if the only move is disabled
 	jr nz, .done
 .atLeastTwoMovesAvailable
-	ld a, [wIsInBattle]
-	dec a
-	jr z, .chooseRandomMove ; wild encounter
+;joenote - made redundant; will do this in AIEnemyTrainerChooseMoves
+;	ld a, [wIsInBattle]
+;	dec a
+;	jr z, .chooseRandomMove ; wild encounter
 	xor a	;joenote - zero out a
 	callab AIEnemyTrainerChooseMoves
 .chooseRandomMove
@@ -6854,12 +6855,15 @@ LoadEnemyMonData:
 	jr nz, .storeDVs
 	ld a, [wIsInBattle]
 	cp $2 ; is it a trainer battle?
-; fixed DVs for trainer mon
-;	ld a, $98
-;	ld b, $88
-;	jr z, .storeDVs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;joenote - going to randomly determine trainer DVs (values of 8 to 15)
 	jr nz, .nottrainer	;if not a trainer then skip this part
+;joenote - load default DVs if using "hard" battle style
+	ld a, [wOptions]	;load game options
+	bit BIT_BATTLE_HARD, a			;check battle style
+; fixed DVs for trainer mon
+	ld a, $98
+	ld b, $88
+	jr z, .storeDVs	;joenote - store the fixed DVs if not hard mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;joenote - going to randomly determine trainer DVs (values of 8 to 15)
 ;load whatever default DVs are already there for the pkmn
 	ld hl, wEnemyMon1DVs
 	ld a, [wWhichPokemon]
@@ -6884,13 +6888,11 @@ LoadEnemyMonData:
 	pop bc
 	jr nz, .storeDVs	;if bit for that pkmn position is already set, then store its DVs that were just loaded
 ;not sent out before, so generate special random DVs
-	;call Random ; generate random IVs
-	;or $88	;joenote - makes trainer pkmn have average IVs at minimum
-	ld a, $88	;vanilla red/blue always has exactly average DVs
+	call Random ; generate random IVs
+	or $88	;joenote - makes trainer pkmn have average IVs at minimum
 	ld b, a
-	;call Random
-	;or $98	;joenote - makes trainer pkmn have average IVs at minimum
-	ld a, $98	;vanilla red/blue always has exactly average DVs
+	call Random
+	or $98	;joenote - makes trainer pkmn have average IVs at minimum
 	;save DVs to the party data structure, to which hl is still pointing, so that they can be recalled on a switch-in
 	ld [hl], a
 	inc hl
@@ -6930,14 +6932,14 @@ LoadEnemyMonData:
 ;is this a trainer battle? Wild pkmn do not have statexp
 	ld a, [wIsInBattle]
 	cp $2 ; is it a trainer battle?
-	jr nz, .nottrainer2
+	jr nz, .nottrainer2	;not a trainer battle, so hl will continue to point to wEnemyMonHP and b=0 for CalcStats
 	
-;this is a trainer battle, so find and save the location of HPStatExp - 1
-	ld hl, wEnemyMon1HPExp	;make hl point to HP statExp
+;this is a trainer battle, so point hl to the HP statExp address of the correct mon in the enemy party data
+	ld hl, wEnemyMon1HPExp	;make hl point to HP statExp of the first enemy party mon
 	ld a, [wWhichPokemon]	;get the party position
 	ld bc, wEnemyMon2 - wEnemyMon1	;get the size to advance between party positions
 	call AddNTimes	;advance the pointer to the correct party position
-	dec hl	;move the pointer back one position
+	dec hl	;move the pointer back one position so it points at party data wEnemyMon<x>HPExp - 1
 	;save this position to recall it later
 	ld a, h
 	ld [wUnusedD153], a
@@ -6945,17 +6947,17 @@ LoadEnemyMonData:
 	ld [wUnusedD153 + 1], a
 	
 ;has this pkmn been sent out before? If so, then it already has statExp values
-	
-	push bc
 	push hl
 	callba CheckAISentOut
 	pop hl
-	pop bc
 	jr nz, .noloops
 	
 ;the pkmn is out for the first time, so give it some statExp
 	push de	;preserve de
-	call CalcEnemyStatEXP	;based on the enemy pkmn level, get a stat exp amount into de 
+	push hl
+	callba CalcEnemyStatEXP	;based on the enemy pkmn level, get a stat exp amount into de 
+	pop hl
+	push hl	;save position for party data wEnemyMon<x>HPExp - 1
 	inc hl ; move hl forward one position to MSB of first stat exp
 	ld b, $05	;load loops into b to loop through the five stats
 .writeStatExp_loop
@@ -6965,14 +6967,9 @@ LoadEnemyMonData:
 	ld [hli], a		;load LSB and point hl to MSB of next statexp location
 	dec b
 	jr nz, .writeStatExp_loop
+	
+	pop hl	;point hl back to the saved position for party data wEnemyMon<x>HPExp - 1
 	pop de	;restore the prior de
-	
-;point hl back to the saved position for HPExp - 1
-	ld a, [wUnusedD153]
-	ld h, a
-	ld a, [wUnusedD153 + 1]
-	ld l, a
-	
 .noloops
 	ld b, $1	;make CalcStats take statExp into account
 .nottrainer2
@@ -7371,6 +7368,16 @@ ApplyBadgeStatBoosts:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr z, .return ; return if link battle
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ld a, [wOptions]	;load game options
+	bit BIT_BATTLE_HARD, a			;check for hard mode
+	jr z, .dobadgeboost	;if not hard mode, always apply badge boosts
+;joenote - only apply badge stat boosts in wild battles to keep parity with ai trainers
+	ld a, [wIsInBattle]
+	cp $1 ; is it a wild battle?
+	jr nz, .return ; return if not wild
+.dobadgeboost
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, [wObtainedBadges]
 	ld b, a
 	call .selectiveBadgeBoost	;joenote - jump down and run new section
@@ -8046,7 +8053,6 @@ SleepEffect:
 	call BattleRandom
 	and $7
 	;joenote - sleep for at least +1 count since attacks can now happen on wakeup
-	jr z, .setSleepCounter
 	;also made this more efficient
 	cp $2
 	jr c, .setSleepCounter
@@ -9590,62 +9596,6 @@ PlayBattleAnimationGotID:
 	pop hl
 	ret
 
-
-;joenote - this function puts statexp per enemy pkmn level into de
-;requires a, b, de, and wCurEnemyLVL
-CalcEnemyStatEXP:
-	;This loads 648 stat exp per level. Note that 648 in hex is the two-byte $0288
-;	ld a, $02
-;	ld [H_MULTIPLICAND], a
-;	ld a, $88
-;	ld [H_MULTIPLICAND + 1], a
-;	xor a
-;	ld [H_MULTIPLICAND + 2], a
-;	ld a, [wCurEnemyLVL]
-;	ld [H_MULTIPLIER], a
-;	call Multiply
-;	ld a, [H_MULTIPLICAND]
-;	ld d, a
-;	ld a, [H_MULTIPLICAND + 1]
-;	ld e, a
-;joenote - vanilla red/blue has 0 stat exp for all stats on all opponents
-	xor a
-	ld d, a
-	ld e, a
-	ret
-	
-;	;Alternative algorithm: adds (12 stat exp * current level) per level.
-;	ld a, [wCurEnemyLVL]
-;	ld b, a	;put the enemy's level into b. it will be used as a loop counter
-;	xor a	;make a = 0
-;	ld d, a	;clear d (use for MSB)
-;	ld e, a ;clear e (use for LSB)
-;.loop
-;	ld a, d
-;	cp a, $FF	;see if the current value of de is 65280 or more
-;	jr z, .skipadder
-;	push hl
-;	push bc
-;	xor a
-;	ld [H_MULTIPLICAND], a
-;	ld a, [wCurEnemyLVL]
-;	ld [H_MULTIPLICAND + 1], a
-;	ld a, $C
-;	ld [H_MULTIPLIER], a
-;	call Multiply
-;	ld a, e
-;	add l
-;	ld e, a
-;	ld a, d
-;	adc h
-;	ld d, a
-;	pop bc
-;	pop hl
-;.skipadder
-;	dec b; decrement b 
-;	jr nz, .loop	;loop back if b is not zero
-;	ret
-	
 
 ;joenote - function for checking and reseting the AI's already-acted bit
 CheckandResetEnemyActedBit:

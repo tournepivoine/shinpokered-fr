@@ -197,8 +197,21 @@ ItemUseBall:
 	ld a, [hl]
 
 ; The Master Ball always succeeds.
+;joenote - Adding an exception for Mewtwo! This is now the ultimate test of the player's catching skills.
+;		It will play its cry and keep the ball from having any effect.
+;		The ball is not wasted. Mewtwo's mental might prevents you from throwing it.
+;		This added difficulty is only available in hard mode.
 	cp MASTER_BALL
-	jp z, .captured
+	jr nz, .not_mball
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a ;check hard mode
+	jp z, .captured	;works as normal outside of hard mode
+	ld a, [wEnemyMon]
+	cp MEWTWO
+	jp nz, .captured ;works as normal if not mewtwo
+	call PlayCry
+	jp ItemUseNoEffect
+.not_mball
 
 ; Anything will do for the basic Poké Ball.
 	cp POKE_BALL
@@ -992,6 +1005,14 @@ ItemUseMedicine:
 	ld a, [wIsInBattle]
 	and a
 	jr z, .compareCurrentHPToMaxHP
+;joenote - at this point, trying to revive a fainted 'mon in battle
+;disallow this in hard mode
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a
+	jr z, .can_revive
+	call ItemUseNotTime
+	jp .done
+.can_revive	
 	push hl
 	push de
 	push bc
@@ -1791,8 +1812,20 @@ ItemUseXStat:
 	ld a, [hl]
 	push af ; save [wPlayerMoveEffect]
 	push hl
-	ld a, [wcf91]
-	sub X_ATTACK - ATTACK_UP1_EFFECT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - ;double the effect if using hard mode
+	ld a, [wOptions]	;load game options
+	bit BIT_BATTLE_HARD, a			;check battle style (bit set if hard mode)
+	ld a, [wcf91]	;load item#
+	jr nz, .double_effect
+	
+	sub X_ATTACK - ATTACK_UP1_EFFECT ;this is the normal 1x effect
+	jr .storeX_ItemEffect
+	
+.double_effect
+	sub X_ATTACK - ATTACK_UP2_EFFECT ;this is the 2x effect
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+.storeX_ItemEffect
 	ld [hl], a ; store player move effect
 	call PrintItemUseTextAndRemoveItem
 	ld a, XSTATITEM_ANIM ; X stat item animation ID

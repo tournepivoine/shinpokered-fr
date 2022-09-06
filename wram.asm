@@ -2425,7 +2425,7 @@ wOptions:: ; d355
 ; 1: earphone 1
 ; 2: earphone 2
 ; 3: earphone 3
-; bit 3: = unused (placeholder for hard mode)
+; bit 3: = hard mode
 ; bits 0-2 = text speed (number of frames to delay after printing a letter)
 ; 1: Fast
 ; 3: Medium
