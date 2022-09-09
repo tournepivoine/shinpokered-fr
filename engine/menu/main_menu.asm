@@ -129,6 +129,7 @@ MainMenu:
 	call ClearScreen
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerDirection], a
+	ld [wPlayerLastStopDirection], a	;joenote - set face down as last direction for 180 degree turn frame
 	ResetEvent EVENT_10E	;joenote - reset ghost marowak for safety
 	ld c, 10
 	call DelayFrames
