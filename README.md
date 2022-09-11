@@ -183,7 +183,8 @@ v1.23.08
 - Holding B in zero delay text mode will not revert the text to FAST speed
 - Major cleanup of options constants
 - Fixed a minor issue where the first pokemon an opponent sends out can't be switched
-  
+- Fixed a graphical bug on the naming screen that apears on cheapo flash carts
+
 
 #Bugfixes
 -----------
@@ -326,7 +327,8 @@ v1.23.08
   - Can no longer change facing while pushing a boulder
   - Downward-moving sprites now get hidden behind text boxes
   - NPC walking animation now updates during player movement
-
+  - Fixed a graphical bug on the naming screen that apears on cheapo flash carts
+  
 
 - Item Fixes  
   - Great ball has a ball factor of 12 now
