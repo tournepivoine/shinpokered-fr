@@ -184,6 +184,7 @@ v1.23.08
 - Major cleanup of options constants
 - Fixed a minor issue where the first pokemon an opponent sends out can't be switched
 - Fixed a graphical bug on the naming screen that apears on cheapo flash carts
+- TM/HM name list fixed so it can be in any bank
 
 
 #Bugfixes
