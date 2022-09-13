@@ -186,6 +186,7 @@ v1.23.08
 - Fixed a graphical bug on the naming screen that apears on cheapo flash carts
 - TM/HM name list fixed so it can be in any bank
 - Withdrawing or depositing a key item from/to the player's PC will default its quantity to 1
+- Fixed extra options not getting initialized correctly
 
 
 #Bugfixes
