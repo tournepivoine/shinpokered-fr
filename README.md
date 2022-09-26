@@ -113,10 +113,10 @@ v1.23.07
 - Restored SHOP and POKE building tiles in Blue-JP
 - SGB borders for JP versions are restored (with fixed centering for text)
 
-v1.23.08
+v1.23.08  
 - Daycare allows HM moves on entered pokemon
 
-***Not added to beta patch yet***  
+v1.23.09  
 - If on GBC, intitializing options turns 60 fps ON
 - Minor code correction to Twineedle to prevent future errors 
 - Added more text corrections for JP versions
