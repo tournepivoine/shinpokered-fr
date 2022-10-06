@@ -187,6 +187,14 @@ v1.23.09
 - Withdrawing or depositing a key item from/to the player's PC will default its quantity to 1
 - Fixed extra options not getting initialized correctly
 
+***Not Yet in a Patch***  
+- re-adjusted trainer randomization so that their pokemon evolve a few levels later than normal
+- trainer randomization will not allow the stronger unevolved pokemon below level 30
+- auto-evolution function now handles eevee
+- Ai layer 3 will slightly discourage a move 25% of the time if it hits neutral with no STAB
+  - Wherein a special move is being used on a 'mon with greater attack than special stat
+  - Wherein a physical move is being used on a 'mon with greater special than attack stat
+
 
 #Bugfixes
 -----------
@@ -578,6 +586,9 @@ v1.23.09
 	- heavily discourages 0-power moves if below 1/3 hp
   - Added some strategy to handle when the player uses fly/dig
   - Slightly preference regular effectiveness moves if STAB exists (25% chance per move)
+  - Slightly discourage a move 25% of the time if it hits neutral with no STAB
+    - Wherein a special move is being used on a 'mon with greater attack than special stat
+    - Wherein a physical move is being used on a 'mon with greater special than attack stat
 
 - Trainer ai routine #4 is no longer unused. It now does rudimentary trainer switching.
   - 25% chance to switch if active pkmn is below 1/3 HP and player also outspeeds AI
