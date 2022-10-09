@@ -1,8 +1,8 @@
-# Shin Pokémon Red and Blue: Lite Patch
+# Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP: Lite Patch
 
-Version 1.23.XX
+Version 1.23.09
 
-Future bugfixes here will be eventually migrated to the Shin Pokemon Red/Blue master branch
+Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
 #Patch Info  
 -----------
