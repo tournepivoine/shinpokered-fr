@@ -195,6 +195,7 @@ v1.23.09
   - Wherein a special move is being used on a 'mon with greater attack than special stat
   - Wherein a physical move is being used on a 'mon with greater special than attack stat
 - The proper forget-move poof sfx plays during battle
+- Fixed A-button input priority on the left side of the scrolling pokedex list
 
 
 #Bugfixes
@@ -419,6 +420,7 @@ v1.23.09
   - Can Fly and Teleport out of maps using the Forest tileset
   - Fixed a grass tile in the Forest tileset not counting for encouner generation
   - Fixed input priority on menus
+  - Fixed A-button input priority on the left side of the scrolling pokedex list
   - RAM adress D732 now gets cleared upon starting a new game
   - Cannot use poison to black yourself out of the cable club because entering the club now heals your party
   - Cannot use poison to black yourself out of the safari zone because the safari minigame now stops poison damage
