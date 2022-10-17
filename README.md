@@ -196,6 +196,7 @@ v1.23.09
   - Wherein a physical move is being used on a 'mon with greater special than attack stat
 - The proper forget-move poof sfx plays during battle
 - Fixed A-button input priority on the left side of the scrolling pokedex list
+- Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag
 
 
 #Bugfixes
@@ -340,6 +341,7 @@ v1.23.09
   - Downward-moving sprites now get hidden behind text boxes
   - NPC walking animation now updates during player movement
   - Fixed a graphical bug on the naming screen that apears on cheapo flash carts
+  - Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag  
   
 
 - Item Fixes  
