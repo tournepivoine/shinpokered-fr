@@ -11,6 +11,21 @@
   - Scripted events are unaffected (gifts, in-game trades, static encounters, etc)
   - The game's five legendary pokemon are excluded from randomization
   - The AREA feature of the pokedex automatically adjusts to show the new pokemon locations
+  
+- Trade evolutions no longer evolve at level 45
+- Trade evolutions now alternately evolve with a stone at a certain level with some new hinting NPC text
+  - Kadabra
+    - Use a moon stone at level 35
+	- Hinted at by a NPC in the Pewter Museum that comments on the moon stone
+  - Haunter
+    - Use a thunder stone at level 35
+	- Hinted at by the Lavender Town NPC that asks if you believe in ghosts
+  - Graveler
+    - Use a fire stone at level 35
+	- Hinted at by a NPC on Cinnabar Island that talks about the mansion
+  - Machoke
+    - Use a leaf stone at level 35
+	- Hinted at by a house NPC in Pewter City that talks about trainers teaching pokemon
 
 - A new NPC is in the north-south underground path for post-game mirror matches
 
@@ -63,6 +78,8 @@
 - Fixed an issue where the shiny animation has the wrong palette for the opponent on the GBC
 - Fixed an oversight to make it so 648 stat exp / lvl function maxes out at lvl 100
 - RemoveItemByID is now able to remove items from the backup bag space
+- Repels can no longer waste the mew encounter
+- Fixed bug in low HP alarm: Some sfx no longer get cut off when the player is at low HP
 
 
 ---
@@ -136,6 +153,7 @@
   - Wherein a physical move is being used on a 'mon with greater special than attack stat
 
 - Withdrawing or depositing a key item from/to the player's PC will default its quantity to 1
+- Item evolutions having a level requirement is now supported
 - Tweaked the fly menu to be more responsive and snappy
 - Battle sprite organization updates and extra backs
 - Organized front and back battle sprites to be controlled via assembler tags in the makefile
