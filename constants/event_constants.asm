@@ -2320,7 +2320,7 @@ const_value = 0
 	const EVENT_90D    						         ; 90D, (D868, bit 5)
 	const EVENT_90E									 ; 90E, (D868, bit 6)
 	const EVENT_90F                                  ; 90F, (D868, bit 7)
-	const EVENT_910                                  ; 910, (D869, bit 0)
+	const EVENT_910    ;debug: show damage values	 ; 910, (D869, bit 0)
 	const EVENT_BEAT_VICTORY_ROAD_1_TRAINER_0        ; 911, (D869, bit 1)
 	const EVENT_BEAT_VICTORY_ROAD_1_TRAINER_1        ; 912, (D869, bit 2)
 	const EVENT_913                                  ; 913, (D869, bit 3)

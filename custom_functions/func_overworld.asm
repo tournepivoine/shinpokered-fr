@@ -9,6 +9,8 @@ SoftlockTeleport:
 	ret z
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, [hJoyInput]
+	cp D_DOWN + A_BUTTON + SELECT
+	jp z, ShowDamageValues
 	cp D_DOWN + B_BUTTON + SELECT
 	ret nz
 	CheckEvent EVENT_GOT_POKEDEX
@@ -46,7 +48,14 @@ SoftlockTeleport:
 	ret
 	
 	
-;this function handles tracking of how bast to go on or off a bike
+ShowDamageValues:	;joenote - toggle damage values being shown in battle
+	CheckAndResetEvent EVENT_910
+	ret nz
+	SetEvent EVENT_910
+	ret
+
+	
+;this function handles tracking of how fast to go on or off a bike
 ;biking ORs with $2
 ;running by holding B ORs with $1
 TrackRunBikeSpeed:

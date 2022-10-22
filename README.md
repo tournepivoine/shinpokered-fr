@@ -198,6 +198,10 @@ v1.23.09
 - Fixed A-button input priority on the left side of the scrolling pokedex list
 - Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag
 - Item evolutions having a level requirement is now supported
+- Debug Damage Display: As a debugging cheat, damage values will be displayed in battle as the UI updates
+  - Toggled on/off the same way as the softlock warp, but by using 'A' instead of 'B'
+  - Zero damage is not displayed
+  - Damage is not displayed if either pokemon has zero HP remaining
 
 
 #Bugfixes
@@ -485,6 +489,10 @@ v1.23.09
 	- while continuing to hold DOWN, press and hold SELECT
 	- while continuing to hold those two buttons, press B
 	- the start menu should close and you will warp back to your mom's house
+- Debug Damage Display: As a debugging cheat, damage values will be displayed in battle as the UI updates
+  - Toggled on/off the same way as the softlock warp, but by using 'A' instead of 'B'
+  - Zero damage is not displayed
+  - Damage is not displayed if either pokemon has zero HP remaining
 - Slot machine coin counter runs twice as fast
 - Interaction of slot reel modes tweaked for better gameplay
 - The surfboard, a nugget, and TM 15 are hidden items added to the vermilion dock
