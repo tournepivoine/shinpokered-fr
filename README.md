@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.23.09
+Version 1.23.10
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -188,7 +188,7 @@ v1.23.09
 - Withdrawing or depositing a key item from/to the player's PC will default its quantity to 1
 - Fixed extra options not getting initialized correctly
 
-***Not Yet in a Patch***  
+v1.23.10  
 - re-adjusted trainer randomization so that their pokemon evolve a few levels later than normal
 - trainer randomization will not allow the stronger unevolved pokemon below level 30
 - auto-evolution function now handles eevee
