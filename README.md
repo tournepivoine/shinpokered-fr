@@ -1,4 +1,4 @@
-# Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP: Lite Patch
+# Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
 Version 1.23.09
 
@@ -20,7 +20,7 @@ Download and enter a patch which corresponds to the ROM of which you own a lawfu
 - Pokedex entries adapt the original Green version text that was translated in Fire Red.
 - Pokedex uses metric units.
 
-***Now Includes Japanese Blue!***
+***Includes Japanese Blue!***
 - Primarily builds the lists for encounters, trades, and prizes that were in the never-localized japanese release.
 - Pokedex uses metric units.
 - Other minor graphical adjustments.
@@ -59,6 +59,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 
 #Changelog From the Last Full Release
 -----------
+**Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.23.01  
@@ -259,6 +260,7 @@ v1.23.09
   - sleep now normal-chance hits a pkmn recharging from hyperbeam, but has no effect if it's already status-effected
   - the fly/dig invulnerability bit is cleared when a pkmn hurts itself from confusion or is fully paralyzed
   - psywave damage is always min 1 be it an opponent or yourself (prevents desync)
+  - Fixed Psywave underflow/overflow with levels of 0, 1, and above 170
   - Substitute-related fixes:
     - all hp drain moves (including dream eater and leech seed) miss against substitute
     - substitute will not work if it would bring you to exactly 0 hp
@@ -274,9 +276,11 @@ v1.23.09
   - Rest now does the following:
      - clears the toxic bit and toxic counter
      - undoes the stat changes of burn and paralysis
-  - fixed-damage moves (seismic toss, dragon rage, etc) can no longer critically hit
-  - fixed-damage moves now obey type immunities
-  - fixed-damage moves now ignore effectiveness text & sfx
+  - fixed-damage move fixes (seismic toss, dragon rage, etc):
+    - can no longer critically hit
+    - obey type immunities
+	- ignore effectiveness text & sfx
+	- use 2 bytes for damage instead of 1
   - Struggle is now TYPELESS so that it can always neutrally damage something
   - Metronome & mirror move will not increment PP if the user is transformed
      - This prevents adding PP to hidden dummy moves that prevent a pkmn from going into Struggle
@@ -298,15 +302,21 @@ v1.23.09
 	  - player/enemy pkmn is fully paralyzed or after hurting itself in confusion
     - Crash damage from jump kicks and pkmn hurting itself cannot be Countered
   - To prevent infinite loops, Rage ends after 2 to 3 turns (attack boosts are kept)
+  - Non-link enemy mons now have PP, so always run checks for 0 PP during the disable effect
   - Fixed an issue with Disable's counter on slower 'mons
 
 	
 - Graphical Fixes
+  - Gym leader names have been restored on the trainer card
+    - These were removed during localization as a simple and expedient solution
+    - So this is more of a correction to the localization than a strict graphical error
+  - Restored intro "Presents" for all builds as localizers did not need to do this for Nintendo of America
   - Glitched sprites can no longer cause a buffer overflow that corrupts the hall of fame
   - Returning from the status screen when an opponent is in substitute/minimize no longer glitches the graphics
   - PC graphic restored to celadon hotel
   - A tile in cinnabar mansion 3f is slightly modified to prevent getting permanently stuck
   - A tile in cerulean cave 1f adjusted so there isn't a walkable cliff tile
+  - Added ledge to route 25 to prevent softlock
   - After defeating the cerulean burglar rocket, the guard itself always moves to prevent getting stuck in the front door
   - No more ABCD glitched sprites when using teleport without a super gameboy
   - The transitional frame when turning 180 degrees now shows correctly
@@ -314,10 +324,10 @@ v1.23.09
   - Amazing man can no longer be triggered by text boxes or the start menu (via a code tweak from Yellow-version)
   - The rival encounters on route 22 now show an exclamation bubble that never showed up originally
   - Erika uses her pic from yellow version which alters her funerary clothes to a proper kimono
+  - Fixed a scrolling text artifact in the credits when running in GBC-mode
   - Fixed amazing man glitch when triggered by a hidden object
   - Fixed amazing man glitch in the route 16 gate
   - Fixed tower ghost pic not loading after exiting status screen
-  - Added ledge to route 25 to prevent softlock
   - Fixed bumping into invisible shrub
   - Fixed an issue with the silph co 11f elevator doors
   - Fixed a missed increment that makes a map's 15th object not update its facing properly
@@ -355,6 +365,7 @@ v1.23.09
   - Great ball has a ball factor of 12 now
   - Stone evolutions cannot be triggered via level-up anymore
   - Ether and elixer now account for PP-ups used when determining if move is at full PP
+  - PP-restoring items no longer affect transformed moves and only restore the original moves
   - EXP ALL fixes
     - should now dispense the correct exp if multiple pokemon take place in a battle
 	- no longer counts fainted pokemon when dividing exp
@@ -363,7 +374,6 @@ v1.23.09
   - Surfboard bugfixes:
 	  - cannot use the surfboard if being forced to ride the bicycle
 	  - no longer freezes the game when using it from the item menu to get back on land
-	  - the menu text will glitch a little, but only for a split-second and does not impact gameplay
   - The Full Heal used by the AI now undoes brn/par stat changes
   - Condition healing items (including using Full Restore at max hp) no longer reset all stats
     - Burn heal undoes the attack stat changes
@@ -371,7 +381,7 @@ v1.23.09
     - Full restore at max hp undoes the stat changes of brn/par
   - Full Restore when used in battle to heal HP now undoes the stat changes of brn/par
   - Pokedoll is disallowed during ghost marowak battle
-  - PP-restoring items no longer affect transformed moves and only restore the original moves
+  - Encountering Missingno will not give 128 of the item in the sixth bag slot
   
 
 - Audio fixes
@@ -393,7 +403,6 @@ v1.23.09
 
 - Misc. fixes
   - Cinnabar/seafoam islands coast glitch fixed (no more missingo or artificially loading pokemon data)
-  - Can no longer walk up to 4 steps with a fainted team
   - Catching a transformed pokemon no longer defaults to catching a ditto
   - Vending machine now checks for the correct amount of money
   - Vermilion Gym switch puzzle fixes
@@ -424,9 +433,11 @@ v1.23.09
   - Minor tweaks to the Rival's object data in various maps
   - Added nop after halt commands (safety prevention for a rare processor bug)
   - Fixed a coordinate typo in pokemon tower left by gamefreak
+  - Fixed an issue with the silph co 11f elevator doors
+  - Can no longer walk up to 4 steps with a fainted team
   - Water warps in seafoam island 4 & 5 are now scripted movement
   - Fixed a bug in the GetName: function that treated lists over 195 entries as item lists
-  - Can Fly and Teleport out of maps using the Forest tileset
+  - You can Fly and Teleport out of maps with the forest tileset
   - Fixed a grass tile in the Forest tileset not counting for encouner generation
   - Fixed input priority on menus
   - Fixed A-button input priority on the left side of the scrolling pokedex list
