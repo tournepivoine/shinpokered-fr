@@ -250,12 +250,12 @@ v1.23.10
 
 - Move fixes
   - Transform-related fixes:
-    - Move slots cannot be rearranged when transformed (prevents acquiring glitch moves).
-    - Transform will no longer copy the opponent's Transform move. It's swapped-out for Struggle
-    - Enemy DVs can no longer be manipulated by having it use transform multiple times
-    - Fixed a conflict where transforming while disabled can leave the new moves disabled
-    - Fixed a typo so now transformed 'mons retain their original palette
-    - Fixed transformed 'mons reseting their moves when learning a level-up move
+      - Move slots cannot be rearranged when transformed (prevents acquiring glitch moves)
+      - Transform will no longer copy the opponent's Transform move. It's swapped-out for Struggle.
+      - Enemy DVs can no longer be manipulated by having it use transform multiple times
+	  - Fixed a conflict where transforming while disabled can leave the new moves disabled
+	  - Fixed transformed 'mons reseting their moves when learning a level-up move
+	  - Fixed a typo so now transformed 'mons retain their original palette
   - dire hit/focus energy now quadruples crit rate instead of quarters
   - sleep now normal-chance hits a pkmn recharging from hyperbeam, but has no effect if it's already status-effected
   - the fly/dig invulnerability bit is cleared when a pkmn hurts itself from confusion or is fully paralyzed
@@ -329,7 +329,11 @@ v1.23.10
   - Fixed amazing man glitch in the route 16 gate
   - Fixed tower ghost pic not loading after exiting status screen
   - Fixed bumping into invisible shrub
-  - Fixed an issue with the silph co 11f elevator doors
+  - Fixed holding left to force past the cycling road guards
+  - Fixed being able to leave the safari zone without clearing the event
+  - Minor tweak to Pallet Town object data for Prof Oak
+  - Minor tweaks to the Rival's object data in various maps
+  - Fixed menu not clearing if A is held after saving
   - Fixed a missed increment that makes a map's 15th object not update its facing properly
   - Adjusted two spin-stop tiles in Viridian Gym
   - Made Agility's animation more apparent
@@ -426,12 +430,8 @@ v1.23.10
   - Fixed bugged npc movement constraints
   - Fixed the instant-text glitch that can happen in the bike shop
   - Fixed using escape rope in bill's house and the fan club
-  - Fixed being able to leave the safari zone without clearing the event
-  - Fixed holding left to force past the cycling road guards
-  - Minor tweak to Pallet Town object data for Prof Oak
-  - Fixed menu not clearing if A is held after saving
-  - Minor tweaks to the Rival's object data in various maps
   - Added nop after halt commands (safety prevention for a rare processor bug)
+  - Streamlined how the ghost marowak battle is triggered (now allows for non-ghost marowaks in pokemon tower)
   - Fixed a coordinate typo in pokemon tower left by gamefreak
   - Fixed an issue with the silph co 11f elevator doors
   - Can no longer walk up to 4 steps with a fainted team
@@ -531,11 +531,12 @@ v1.23.10
   - Viridian Blackboard PAR info updated
   - Cerulean badge-house guy has updated text
   - Prof. oak's speech plays the correct Nidorino cry
+  - Text for using a TM/HM now refers to the "machine" rather than just "TM"
   - Fixed daycare man capitalization
   - Fixed capitalization in safari zone entrance
+  - Fixed the flipped text for a girl in Saffron and the letter she is writing
+  - Fixed text overlap with Oak giving you pokeballs
   - Reactivated lost text that was meant to play when you lose to your rival
-  - Text for using a TM/HM now refers to the "machine" rather than just "TM"
-  - text is now properly flipped in one of the saffron houses
   - Fixed text giving the wrong description of guard spec.
   - Fixed woman on silph co 10F having a blank line in her text 
 - Made adjustments to the game text
@@ -543,9 +544,9 @@ v1.23.10
   - PC has a text prompt to tell you if its full after depositing
   - TM 18 given an actual explanation 
   - New student in viridian school explains ohko moves
-  - Clarified "chem" to mean grade in chemistry
   - Exp.all now prints one message when splitting exp instead of for each party member
   - Adjusted some of Giovanni's final lines for clarity
+  - Clarified "chem" to mean grade in chemistry
   - Fixed pokemon category translation: "Rat" to "Mouse"
   - Fixed pokemon category translation: "Shellfish" to "Shell"
   - Fixed translation: Route 14 trainer's comment about the legendary birds
@@ -573,10 +574,12 @@ v1.23.10
 - Adjustment to stat mods, conditions, and items
   - Sleep does not prevent choosing a move
   - Waking up from sleep does not waste the turn and the chosen move is used
-  - The effect of X Accuracy is no longer applied to one-hit K.O. moves (it originally made them auto-hit)
+    - The sleep counter's minimum value is increased by +1 to maintain accuracy of sleep moves
+  - Badge stat-ups are now only applied in wild pokemon battles to give parity to enemy trainers (only in hard mode)
+  - The effect of X-Accuracy is no longer applied to one-hit K.O. moves (it originally made them auto-hit)
   - Using X-Accuracy with a OHKO move now allows it to hit faster opponents
   - Upped the power of safari balls to account for lower ball factor
-  - +1 turn to sleep counter since attacks can happen on wakeup (preserves effective sleep accuracy)
+  - In hard mode, X-stat items have double the effect
   
 - Trainer ai routine #1 (recognition of stats, hp, and conditions) has been modified
   - using a move with a dream eater effect is heavily discouraged against non-sleeping opponents
@@ -596,7 +599,11 @@ v1.23.10
   - heavily discourage disable against a pkmn already disabled
   - Substitute discouraged if less that 1/4 hp remains
   - Will discourage using Haze if unstatus'd or has net-neutral or better stat mods
+  - Discourages explosion moves in proportion to HP remaining
   - Will heavily discourage boosting defense against special, OHKO, or static-damaging attacks
+  - AI layer changes that affect most 0-power moves (with only a few exceptions like heal effects)
+    - now has a hard stop on using 0-power moves on consecutive turns with a few effect exceptions
+	- heavily discourages 0-power moves if below 1/3 hp
   - Discourage exploding effects if faster than a player in fly/dig state
   - Randomly discourage usage of 2-turn moves when confused/paralyzed
   - 50% chance that the AI is blind to a player switching or using an item
@@ -604,15 +611,10 @@ v1.23.10
 
 - Trainer ai routine #3 (choosing effective moves) has been modified
   - It now heavily discourages moves that would have no effect due to type immunity
-  - zero-power buffing/debuffing moves are randomly preferenced 12.5% of the time to spice things up
-  - zero-power buffing/debuffing moves are randomly discouraged 50% of the time to let ai always have a damage option
   - OHKO moves are heavily discouraged if the ai pkmn is slower than the player pkmn (they would never hit)
   - Static damage moves are randomly preferenced 25% of the time to spice things up
   - Thunder Wave is not used against immune types
   - Poisoning moves discouraged against poison types
-  - AI layer 3 changes that affect most 0-power moves (with only a few exceptions like heal effects)
-    - now has a hard stop on using 0-power moves on consecutive turns
-	- heavily discourages 0-power moves if below 1/3 hp
   - Added some strategy to handle when the player uses fly/dig
   - Slightly preference regular effectiveness moves if STAB exists (25% chance per move)
   - Slightly discourage a move 25% of the time if it hits neutral with no STAB
@@ -650,9 +652,13 @@ v1.23.10
   -jr trainer M/F, pokemaniac, hiker, cueball, psychic, tamer, black belt, rocket, cooltrainer M/F, gentleman, channeler
   -all rival phases, all gym leaders, elite-4, prof.oak, chief
   
+- Trainer stat DVs are now randomly generated to a degree (only in hard mode)
+  - Attack DV is between 9 and 15 and always odd-numbered
+  - Defense, special, and speed DVs are between 8 and 15
+  - HP DV is a minimum of 8 since attack DV is always odd-numbered
 - Trainer AI battles now track which enemy pkmn have already been sent out, so allows for new functionality:
   - Trainer pkmn DVs are remembered between switching, and new ones won't be generated on every send-out
-  - Trainer pkmn can now have stat experience assigned to them that is scaled to their level
+  - Trainer pkmn now have stat experience assigned to them that is scaled to their level (only in hard mode)
   - These are real DVs and statEXP values that utilize the existing enemy party_struct which is normally unused by trainer AI
 - Agatha & cooltrainers will not randomly switch since they now have ai routine 4
 - Flags for dividing exp among active pokemon are now only reset after fainting an enemy pkmn
@@ -674,9 +680,6 @@ v1.23.10
   - Trainer battle prize money uses 3 bytes instead of 2, lifting the 9999 cap on winnings
   - Adjusted daycare to allow exp values over $500000
   - Allow up to 8 digits when displaying experience on the status screen
-  - Streamlined how the ghost marowak battle is triggered (now allows for non-ghost marowaks in pokemon tower)
-  - Special damage effect now uses 2 bytes for damage instead of 1
-  - Fixed Psywave underflow/overflow with levels of 0, 1, and above 170
   - Pokemon can now learn more than 1 more per level
   - The 1.5x EXP boost function now has overflow protection
   - EXP Gained can now print up to five digits instead of four
@@ -685,7 +688,7 @@ v1.23.10
     - It's a single byte in the save file that gets incremented each version
     - If the save byte does not match, the player is automatically warped back to Pallet Town
     - Helps prevent crashes and glitches when updating an older save file
-	- You will be given the choice to warp if the rom hack version does not match
+    - You will be given the choice to warp to Pallet Town if the rom hack version does not match
   - The function that shows the dex entry for starter pokemon is now more robust
     - It now works for any pokemon (like if the starters are changed or randomized)
 	- It keeps a backup of the pokedex-owned flags instead of erasing them
