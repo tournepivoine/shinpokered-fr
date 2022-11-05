@@ -69,6 +69,8 @@
 
 - Organized the female trainer code to be activated via assembler tags in the makefile (for easy reference)
 
+- Added max revives to post-game shop on celadon mart 3f
+
 
 ---
 **Hack-related fixes exclusively for the master branch**
@@ -221,6 +223,7 @@
 - Added an error trap to _Divide function for divide-by-zero calls
 - Fixed hidden coins not giving the correct amount
 - Slot machine no longer copies too much tile data
+- Corrected and clarified the quiz text in the cinnabar gym
 
 
 ---

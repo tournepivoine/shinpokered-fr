@@ -206,6 +206,9 @@ v1.23.10
 - Fixed text giving the wrong description of guard spec.
 - Fixed woman on silph co 10F having a blank line in her text 
 
+**Not yet in patch**
+- Corrected and clarified the quiz text in the cinnabar gym
+
 
 #Bugfixes
 -----------
@@ -551,6 +554,7 @@ v1.23.10
   - Fixed pokemon category translation: "Shellfish" to "Shell"
   - Fixed translation: Route 14 trainer's comment about the legendary birds
   - Restored unused text in the vermilion gym puzzle for finding the 2nd switch
+  - Corrected and clarified the quiz text in the cinnabar gym
 
   
 - Adjustments to moves  
