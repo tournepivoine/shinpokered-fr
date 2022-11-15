@@ -208,11 +208,8 @@ v1.23.10
 
 **Not yet in patch**
 - Corrected and clarified the quiz text in the cinnabar gym
-<<<<<<< HEAD
-=======
-- Relocated one of the rocket grunts in celadon city, and he now sells bulk coins in the post-game
 - Viridian gym statue will not spoil the gym leader's name reveal
->>>>>>> 41c975e4 (- Viridian gym statue will not spoil the gym leader's name reveal)
+- Fixed double-edge animation being off-center for the enemy pokemon
 
 
 #Bugfixes
