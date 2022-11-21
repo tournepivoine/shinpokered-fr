@@ -3634,6 +3634,7 @@ JoypadLowSensitivity::
 	and a ; have any buttons been newly pressed since last check?
 	jr z, .noNewlyPressedButtons
 .newlyPressedButtons
+	ld [hJoy5], a
 	ld a, 30 ; half a second delay
 	ld [H_FRAMECOUNTER], a
 	ret
