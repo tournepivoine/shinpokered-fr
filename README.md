@@ -212,6 +212,9 @@ v1.23.10
 - Fixed double-edge animation being off-center for the enemy pokemon
 - Fixed increment bug in CheckForTilePairCollisions
 - Fixed an issue where pressing a button on a menu while holding A is treated as an A-press
+- Removed restore sfx from the AI x-accuracy item
+- Added the restore sfx to all AI hp-recovery items
+- The enemy trainer's HUD is now updated after it uses a healing item
 
 
 #Bugfixes
@@ -370,7 +373,8 @@ v1.23.10
   - NPC walking animation now updates during player movement
   - Fixed a graphical bug on the naming screen that apears on cheapo flash carts
   - Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag  
-  
+  - The enemy trainer's HUD is now updated after it uses a healing item
+
 
 - Item Fixes  
   - Great ball has a ball factor of 12 now
@@ -410,6 +414,8 @@ v1.23.10
   - The jingle for finding a hidden item will no longer be skipped during an audio fadeout
   - Fixed ball toss sfx not resetting the pitch envelope settings
   - Added protection against oak's lab music cutting a channel off
+  - Removed restore sfx from the AI x-accuracy item
+  - Added the restore sfx to all AI hp-recovery items
 
 
 - Misc. fixes

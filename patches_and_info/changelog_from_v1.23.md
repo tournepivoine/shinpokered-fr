@@ -31,6 +31,8 @@
 
 - A new NPC is in the north-south underground path for post-game mirror matches
 
+- A new drink stand on the route 19 beach sells vending machine drinks
+
 - Paras is gifted in the Route 2 house in case the player has no pokemon that can learn Cut
 
 - Unused beedrill trade has been restored and placed on Route 22
@@ -72,10 +74,18 @@
 - Organized the female trainer code to be activated via assembler tags in the makefile (for easy reference)
 
 - Added max revives to post-game shop on celadon mart 3f
+- Cerulean mart sells escape rope per Yellow version
+- Fuschia mart sells hyper potions per Yellow version
 - Added a hidden max revive in celadon city
 - Added a hidden super potion in celadon city
 - Added a hidden moon stone in diglett's cave
 - Added a hidden nugget in diglett's cave
+- Added hidden potion on route 22
+- Additional hidden potion in viridian city
+- Added two hidden repels to pewter city
+- Added a hidden great ball and pokedoll on route 6
+- Added hidden max revive on route 11
+- Added hidden ultra ball on route 8
 
 
 ---
@@ -89,6 +99,7 @@
 - RemoveItemByID is now able to remove items from the backup bag space
 - Repels can no longer waste the mew encounter
 - Fixed bug in low HP alarm: Some sfx no longer get cut off when the player is at low HP
+- Holding start or select will no longer print strange HP numbers when not on the status screen
 
 
 ---
@@ -176,6 +187,10 @@
 - The move relearner and move deleter code is now tethered to the _MOVENPCS makefile tag
 - The running shoes code is now tethered to the _RUNSHOES makefile tag
 - Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag
+- The enemy trainer's HUD is now updated after it uses a healing item
+
+- Removed restore sfx from the AI x-accuracy item
+- Added the restore sfx to all AI hp-recovery items
 
 
 ---
