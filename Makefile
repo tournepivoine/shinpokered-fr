@@ -15,8 +15,6 @@ rom_obj := \
 	wram.o \
 
 pokered_obj := $(rom_obj:.o=_red.o)
-
-pokered_obj := $(rom_obj:.o=_red.o)
 pokeblue_obj := $(rom_obj:.o=_blue.o)
 pokegreen_obj := $(rom_obj:.o=_green.o)
 pokered_origback_obj := $(rom_obj:.o=_red_origback.o)
@@ -55,10 +53,8 @@ redjp: pokeredjp.gbc
 compare: $(roms)
 	@$(MD5) roms.md5
 
-clean:
-	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(pokegreen_obj) $(pokered_origback_obj) $(pokeblue_origback_obj) $(pokebluejp_obj) $(pokeredjp_obj) $(pokebluejp_origback_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+clean: tidy
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -exec rm {} +
-	$(MAKE) clean -C tools/
 
 tidy:
 	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(pokegreen_obj) $(pokered_origback_obj) $(pokeblue_origback_obj) $(pokebluejp_obj) $(pokeredjp_obj) $(pokebluejp_origback_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
@@ -70,7 +66,7 @@ tools:
 
 # Build tools when building the rom.
 # This has to happen before the rules are processed, since that's when scan_includes is run.
-ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
+ifeq (,$(filter clean tidy tools,$(MAKECMDGOALS)))
 $(info $(shell $(MAKE) -C tools))
 endif
 
@@ -143,17 +139,17 @@ pokegreen_opt = -cjsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON GREEN"
 pokebluejp_opt = -cjsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLUE"
 pokeredjp_opt = -cjsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON RED"
 
-%.gbc: $$(%_obj)
-	$(RGBLINK) -d -m $*.map -n $*.sym -l layout.link -o $@ $^
+%.gbc: $$(%_obj) layout.link
+	$(RGBLINK) -d -m $*.map -n $*.sym -l layout.link -o $@ $(filter %.o,$^)
 	$(RGBFIX) $($*_opt) $@
 
 
-gfx/blue/intro_purin_1.2bpp: $(RGBGFX) += -h
-gfx/blue/intro_purin_2.2bpp: $(RGBGFX) += -h
-gfx/blue/intro_purin_3.2bpp: $(RGBGFX) += -h
-gfx/red/intro_nido_1.2bpp: $(RGBGFX) += -h
-gfx/red/intro_nido_2.2bpp: $(RGBGFX) += -h
-gfx/red/intro_nido_3.2bpp: $(RGBGFX) += -h
+gfx/blue/intro_purin_1.2bpp: rgbgfx += -h
+gfx/blue/intro_purin_2.2bpp: rgbgfx += -h
+gfx/blue/intro_purin_3.2bpp: rgbgfx += -h
+gfx/red/intro_nido_1.2bpp: rgbgfx += -h
+gfx/red/intro_nido_2.2bpp: rgbgfx += -h
+gfx/red/intro_nido_3.2bpp: rgbgfx += -h
 
 gfx/game_boy.2bpp: tools/gfx += --remove-duplicates
 gfx/theend.2bpp: tools/gfx += --interleave --png=$<
@@ -166,7 +162,7 @@ gfx/tilesets/%.2bpp: tools/gfx += --trim-whitespace
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -o $@ $@)
 %.1bpp: %.png
-	$(RGBGFX) -d1 $(rgbgfx) -o $@ $<
+	$(RGBGFX) $(rgbgfx) -d1 -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -d1 -o $@ $@)
 %.pic:  %.2bpp
