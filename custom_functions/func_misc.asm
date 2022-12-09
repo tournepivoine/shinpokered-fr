@@ -291,7 +291,7 @@ _PrintNumber:
 
 ;joenote - adjusted to allow for 8 digits
 
-print_digit: macro
+MACRO print_digit
 
 if (\1) / $10000
 	ld a, \1 / $10000 % $100
@@ -312,7 +312,7 @@ endc
 
 	call .PrintDigit
 	call .NextDigit
-endm
+ENDM
 
 .tenmillions       print_digit 10000000
 .millions          print_digit 1000000
