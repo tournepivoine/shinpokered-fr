@@ -210,7 +210,7 @@ v1.23.10
 - Fixed text giving the wrong description of guard spec.
 - Fixed woman on silph co 10F having a blank line in her text 
 
-**Not yet in patch**
+v1.23.10  
 - Corrected and clarified the quiz text in the cinnabar gym
 - Viridian gym statue will not spoil the gym leader's name reveal
 - Fixed double-edge animation being off-center for the enemy pokemon
@@ -219,6 +219,7 @@ v1.23.10
 - Removed restore sfx from the AI x-accuracy item
 - Added the restore sfx to all AI hp-recovery items
 - The enemy trainer's HUD is now updated after it uses a healing item
+- The project now compiles with RGBDS 0.6.0 and has a script to verify the compiler version
 
 
 #Bugfixes
