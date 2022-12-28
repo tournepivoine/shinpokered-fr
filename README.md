@@ -224,6 +224,7 @@ v1.23.10
 
 **Not in current patch** 
 - Clarified the text for the super repel on 2F of the celadon dept store
+- Readjusted enemy stat exp accumulation and removed reduntant lines in CriticalHitTest
 
 
 #Bugfixes
