@@ -98,9 +98,9 @@ GainExperience:
 	jr z, .nottrainerbattle
 	call BoostExp ; if so, boost exp
 ;joenote - boost exp again in trainer battles if in hard mode
-	ld a, [wOptions]
-	bit BIT_BATTLE_HARD, a
-	call nz, BoostExp
+;	ld a, [wOptions]
+;	bit BIT_BATTLE_HARD, a
+;	call nz, BoostExp
 .nottrainerbattle
 	inc hl
 	inc hl

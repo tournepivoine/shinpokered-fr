@@ -224,8 +224,10 @@ v1.23.10
 
 **Not in current patch** 
 - Clarified the text for the super repel on 2F of the celadon dept store
-- Readjusted enemy stat exp accumulation and removed reduntant lines in CriticalHitTest
+- Readjusted enemy stat exp accumulation in hard mode
+- Removed reduntant lines in CriticalHitTest
 - Fixed trainer escape glitch via blacking out from a wild battle
+- Hard mode no longer gives an exp bonus
 
 
 #Bugfixes
@@ -520,7 +522,6 @@ v1.23.10
   - X-stat items have double the effect like in more recent generations
   - Revive items cannot be used in battles
   - Mewtwo will prevent you from using a master ball on it and use AI to choose moves
-  - Hard mode gives an additional 1.5x EXP boost in trainer battles
 - Softlock Warp 
   - instantly teleport back to your mom's house if you get stuck or are unable to move after updating to a new patch
   - sets money to at least 1000 if you have less than that
