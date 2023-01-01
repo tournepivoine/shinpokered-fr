@@ -228,6 +228,7 @@ v1.23.10
 - Removed reduntant lines in CriticalHitTest
 - Fixed trainer escape glitch via blacking out from a wild battle
 - Hard mode no longer gives an exp bonus
+- Fixed inaccurate text when getting the rock slide TM
 
 
 #Bugfixes
@@ -569,6 +570,7 @@ v1.23.10
   - Fixed text giving the wrong description of guard spec.
   - Fixed woman on silph co 10F having a blank line in her text 
   - Viridian gym statue will not spoil the gym leader's name reveal
+  - Fixed inaccurate text when getting the rock slide TM
 - Made adjustments to the game text
   - When a pkmn is caught and fills the box, a reminder is printed that the box is full
   - PC has a text prompt to tell you if its full after depositing
