@@ -59,6 +59,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
   - Link battling between a lite branch build and any other non-lite branch build
   - Link battling between builds of dissimilar revisions
 - A revision control function has been added that will cancel unsupported cable links
+- Link functions via 3DS hardware and its Virtual Console emulator are not supported at this time
 
 
 #Changelog From the Last Full Release
@@ -698,10 +699,13 @@ v1.23.10
   - Attack DV is between 9 and 15 and always odd-numbered
   - Defense, special, and speed DVs are between 8 and 15
   - HP DV is a minimum of 8 since attack DV is always odd-numbered
-- Trainer AI battles now track which enemy pkmn have already been sent out, so allows for new functionality:
-  - Trainer pkmn DVs are remembered between switching, and new ones won't be generated on every send-out
-  - Trainer pkmn now have stat experience assigned to them that is scaled to their level (only in hard mode)
-  - These are real DVs and statEXP values that utilize the existing enemy party_struct which is normally unused by trainer AI
+- Trainer pkmn now have stat experience assigned to them that is scaled to their level (only in hard mode)
+  - The stat experience total for a given level 'L' is SIGMA[n=6,L](12n+50)
+  - No stat experience is given for level 5 and below.
+  - Outside of hard mode, trainer pokemon have 0 stat experience per the vanilla games
+- These are real DVs and statEXP values that utilize the existing enemy party_struct which is normally unused by trainer AI
+- Trainer pkmn DVs are remembered between switching, and new ones won't be generated on every send-out
+- Trainer AI battles now track which enemy pkmn have already been sent out, so it supports the new DVs and stat exp
 - Agatha & cooltrainers will not randomly switch since they now have ai routine 4
 - Flags for dividing exp among active pokemon are now only reset after fainting an enemy pkmn
   - Originally these get reset every time the opponent send out a pkmn (even swithing)
