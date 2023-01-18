@@ -241,6 +241,7 @@ v1.23.10
 - Fixed the wrong text pointer in vermilion city
 - Fixed problem with the menu selection byte changing if opponent switches first (affects mimic and others)
 - If Transform copies an opponent's Transform move, and the the PP of that move is < 6, it will copy that move's instantaneous PP less 1.
+- Fixed a problem where multi-hit moves could overflow the damage effectiveness multiplier
 
 
 #Bugfixes
