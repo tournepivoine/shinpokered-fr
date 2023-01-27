@@ -238,6 +238,7 @@ v1.23.10
 - Restored the saucy innuendo for the Nugget bridge dialogue in the jp builds
 - Restored the religious text in the Pewter museum in the jp builds
 - Updating a save to a new hack version now checks to see if the elite-4 were already defeated
+- Fixed the wrong text pointer in vermilion city
 
 
 #Bugfixes
