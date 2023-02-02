@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.23.10
+Version 1.23.12
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -227,7 +227,7 @@ v1.23.10
   - The AI might still favor a STAB move or a move that works better with its own stats
 
 
-**Not in current patch** 
+v1.23.12  
 - Clarified the text for the super repel on 2F of the celadon dept store
 - Readjusted enemy stat exp accumulation in hard mode
 - Removed reduntant lines in CriticalHitTest
@@ -248,6 +248,10 @@ v1.23.10
 - AI layer 3: There is a 90.625% chance per damaging move that AI is blind to player type after player switches
 - AI layer 1: If the player used and item or switched, AI is blind to the player's sleep counter when considering dream eater
 - Restored the gray pokemon coloring used in red/blue/green versions if using red/blue/green-style front sprites.
+
+
+**Not in current patch** 
+-
 
 
 #Bugfixes
