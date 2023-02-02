@@ -251,7 +251,7 @@ v1.23.12
 
 
 **Not in current patch** 
--
+- Made the speed of japanese flashing animations more accurate to the original
 
 
 #Bugfixes
