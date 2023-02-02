@@ -54,7 +54,15 @@
 
 - Added the MIST STONE: it will max-out all the stat exp of the pokemon on which it is used
 
+- Defeat Lance with a Dragonite in your top spot and it will be given a catch rate of 168
+  - Dragonite's cry will play to confirm that this has happened
+  - You can swap with another Dragonite in your party and listen to his after-battle text again to repeat the process
+  - In this rom hack, a dragonite with this catch rate can be taught Fly via HM
+  - This catch rate makes it hold a gorgeous box if transferred to Gen 2
+  - Likewise, a dragonite holding a gorgeous box can learn fly if transferred into this rom hack
+
 - Scaled back fishing, reduced its randomness, and made it more map-dependent
+- When using the old rod, press and hold B within about 1 second to always hook a magikarp
 
 - Added spaceworld-style trainer back sprites for consistency with the spaceworld 'mon back sprites 
 - Blue-JP has spaceworld-style back sprites, and a corresponding _origback patch has been added
@@ -100,6 +108,8 @@
 - Repels can no longer waste the mew encounter
 - Fixed bug in low HP alarm: Some sfx no longer get cut off when the player is at low HP
 - Holding start or select will no longer print strange HP numbers when not on the status screen
+- Decreased time to encounter missingno by an exponential amount
+- Fixed a scripting error on route 20
 
 
 ---
@@ -107,6 +117,7 @@
 - Cleaned up compiler tags and made it easy to compile with spaceworld-style sprites
 - Female trainer can be activated by compiling with the _FPLAYER tag
 - TMs and HMs have their names determined by a list now
+- Fixed the wrong text pointer in vermilion city
 
 
 ---
@@ -301,3 +312,4 @@
 - Fixed problem with the menu selection byte changing if opponent switches first (affects mimic and others)
 - If Transform copies an opponent's Transform move, and the the PP of that move is < 6, it will copy that move's instantaneous PP less 1.
 - Fixed a problem where multi-hit moves could overflow the damage effectiveness multiplier
+- Restored the gray pokemon coloring used in red/blue/green versions if using red/blue/green-style front sprites.

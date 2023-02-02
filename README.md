@@ -247,6 +247,7 @@ v1.23.10
 - AI layer 3: The enemy is blind to the player type if considering a poisoning effect move and the payer just switched
 - AI layer 3: There is a 90.625% chance per damaging move that AI is blind to player type after player switches
 - AI layer 1: If the player used and item or switched, AI is blind to the player's sleep counter when considering dream eater
+- Restored the gray pokemon coloring used in red/blue/green versions if using red/blue/green-style front sprites.
 
 
 #Bugfixes
