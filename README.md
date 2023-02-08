@@ -252,6 +252,7 @@ v1.23.12
 
 **Not in current patch** 
 - Made the speed of japanese flashing animations more accurate to the original
+- Fixed certain text sfx not playing when using zero-delay text
 
 
 #Bugfixes
@@ -460,6 +461,7 @@ v1.23.12
   - Removed restore sfx from the AI x-accuracy item
   - Added the restore sfx to all AI hp-recovery items
   - Fixed *thud* sfx playing when exiting via a warp tile
+  - Fixed certain text sfx not playing when using zero-delay text
   
 
 - Misc. fixes
