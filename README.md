@@ -253,6 +253,7 @@ v1.23.12
 **Not in current patch** 
 - Made the speed of japanese flashing animations more accurate to the original
 - Fixed certain text sfx not playing when using zero-delay text
+- HP-UP item now preserves your HP ratio
 
 
 #Bugfixes
@@ -645,6 +646,7 @@ v1.23.12
   - Using X-Accuracy with a OHKO move now allows it to hit faster opponents
   - Upped the power of safari balls to account for lower ball factor
   - In hard mode, X-stat items have double the effect
+  - HP-UP item now preserves your HP ratio
   
 - Trainer ai routine #1 (recognition of stats, hp, and conditions) has been modified
   - using a move with a dream eater effect is heavily discouraged against non-sleeping opponents
