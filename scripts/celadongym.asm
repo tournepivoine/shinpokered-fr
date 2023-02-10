@@ -170,12 +170,12 @@ CeladonGymText1:
 	ld hl, CeladonGymText_48a63
 	ld de, CeladonGymText_48a63
 	call SaveEndBattleTextPointers
+	ld a, $4
+	ld [wGymLeaderNo], a
 	ld a, [H_SPRITEINDEX]
 	ld [wSpriteIndex], a
 	call EngageMapTrainer
 	call InitBattleEnemyParameters
-	ld a, $4
-	ld [wGymLeaderNo], a
 	ld a, $3
 	ld [wCeladonGymCurScript], a
 	ld [wCurMapScript], a

@@ -254,6 +254,7 @@ v1.23.12
 - Made the speed of japanese flashing animations more accurate to the original
 - Fixed certain text sfx not playing when using zero-delay text
 - HP-UP item now preserves your HP ratio
+- Meet Trainer jingle should not play before loading into the gym leader battle music
 
 
 #Bugfixes
@@ -463,6 +464,7 @@ v1.23.12
   - Added the restore sfx to all AI hp-recovery items
   - Fixed *thud* sfx playing when exiting via a warp tile
   - Fixed certain text sfx not playing when using zero-delay text
+  - Meet Trainer jingle should not play before loading into the gym leader battle music
   
 
 - Misc. fixes
