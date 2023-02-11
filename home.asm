@@ -4715,6 +4715,19 @@ SetMapTextPointer::
 	ld [wMapTextPtr + 1], a
 	ret
 	
+Random_BiasDV::
+; Return a random number 0-15 in A and B with a bias towards higher numbers
+	push hl
+	push de
+	push bc
+	callba _Random_BiasDV
+	pop bc
+	ld b, e
+	ld a, d
+	pop de
+	pop hl
+	ret
+	
 StatModifierRatios:
 ; first byte is numerator, second byte is denominator
 	db 25, 100  ; 0.25

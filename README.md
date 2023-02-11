@@ -255,6 +255,7 @@ v1.23.12
 - Fixed certain text sfx not playing when using zero-delay text
 - HP-UP item now preserves your HP ratio
 - Meet Trainer jingle should not play before loading into the gym leader battle music
+- Systems that generate above-average DVs now use a statistical bias instead of using 9,8,8,8 minimum
 
 
 #Bugfixes
@@ -552,7 +553,7 @@ v1.23.12
   - Pressing RIGHT while the cursor is in the BATTLE STYLE box will toggle the feature on/off
   - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
   - Enemy trainer pokemon are assigned level-appropriate stat exp
-  - Enemy trainer pokemon have randomized DVs that are all 8 or better (on a scale of 0 to 15)
+  - Enemy trainer pokemon have randomized DVs that are above-average
   - Badge-granted stat boosts are disabled in trainer battles
   - X-stat items have double the effect like in more recent generations
   - Revive items cannot be used in battles
@@ -730,10 +731,7 @@ v1.23.12
   -jr trainer M/F, pokemaniac, hiker, cueball, psychic, tamer, black belt, rocket, cooltrainer M/F, gentleman, channeler
   -all rival phases, all gym leaders, elite-4, prof.oak, chief
   
-- Trainer stat DVs are now randomly generated to a degree (only in hard mode)
-  - Attack DV is between 9 and 15 and always odd-numbered
-  - Defense, special, and speed DVs are between 8 and 15
-  - HP DV is a minimum of 8 since attack DV is always odd-numbered
+- Trainer stat DVs are now randomly generated to a degree (only in hard mode) to be above-average
 - Trainer pkmn now have stat experience assigned to them that is scaled to their level (only in hard mode)
   - The stat experience total for a given level 'L' is SIGMA[n=6,L](12n+50)
   - No stat experience is given for level 5 and below.
