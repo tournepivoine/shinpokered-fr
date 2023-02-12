@@ -256,6 +256,7 @@ v1.23.12
 - HP-UP item now preserves your HP ratio
 - Meet Trainer jingle should not play before loading into the gym leader battle music
 - Systems that generate above-average DVs now use a statistical bias instead of using 9,8,8,8 minimum
+- Added Vanilla Options Reset
 
 
 #Bugfixes
@@ -567,6 +568,14 @@ v1.23.12
 	- while continuing to hold DOWN, press and hold SELECT
 	- while continuing to hold those two buttons, press B
 	- the start menu should close and you will warp back to your mom's house
+- Vanilla Options Reset 
+  - Deactivates all special options (such as in preparation to update to a new patch)
+  - Intructions to perform:
+    - go to the start menu and put the cursor on the top option (usually POKEDEX)
+	- press and hold UP on the d-pad (the cursor will now be on EXIT)
+	- while continuing to hold UP, press and hold SELECT
+	- while continuing to hold those two buttons, press B
+	- the start menu should close and you will hear a jingle confirming that the option reset worked
 - Debug Damage Display: As a debugging cheat, damage values will be displayed in battle as the UI updates
   - Toggled on/off the same way as the softlock warp, but by using 'A' instead of 'B'
   - Zero damage is not displayed
