@@ -257,6 +257,7 @@ v1.23.12
 - Meet Trainer jingle should not play before loading into the gym leader battle music
 - Systems that generate above-average DVs now use a statistical bias instead of using 9,8,8,8 minimum
 - Added Vanilla Options Reset
+- Non-link battles in hard mode use the Stadium 1 formulas for critical hit probability
 
 
 #Bugfixes
@@ -559,6 +560,7 @@ v1.23.12
   - X-stat items have double the effect like in more recent generations
   - Revive items cannot be used in battles
   - Mewtwo will prevent you from using a master ball on it and use AI to choose moves
+  - Non-link battles in hard mode use the Stadium 1 formulas for critical hit probability
 - Softlock Warp 
   - instantly teleport back to your mom's house if you get stuck or are unable to move after updating to a new patch
   - sets money to at least 1000 if you have less than that
@@ -659,6 +661,7 @@ v1.23.12
   - Upped the power of safari balls to account for lower ball factor
   - In hard mode, X-stat items have double the effect
   - HP-UP item now preserves your HP ratio
+  - Non-link battles in hard mode use the Stadium 1 formulas for critical hit probability
   
 - Trainer ai routine #1 (recognition of stats, hp, and conditions) has been modified
   - using a move with a dream eater effect is heavily discouraged against non-sleeping opponents
