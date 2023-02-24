@@ -31,6 +31,15 @@
 
 - A new NPC is in the north-south underground path for post-game mirror matches
 
+- Added a new Clause Brother for activating the Trapping Move Clause
+  - A counter tracks if the player or the opponent use trapping moves like Wrap multiple times in a row 
+  - The counter increments only if a trapping effect move is selected to be used and it does not miss
+  - After the counter has incremented to 2, 
+    - selecting a trapping effect move additional times will make the move to go 2nd in the round 
+	- this is the same priority as the move Counter
+  - The counter only gets reset by switching or using a move that does not have the trapping effect 
+  - Reseting the counter will restore normal priority to trapping effect moves.
+  
 - A new drink stand on the route 19 beach sells vending machine drinks
 
 - Paras is gifted in the Route 2 house in case the player has no pokemon that can learn Cut
@@ -95,6 +104,14 @@
 - Added hidden max revive on route 11
 - Added hidden ultra ball on route 8
 
+- Lance now has 2 hyper potions per pokemon like the rest of the elite 4
+- The Rival battles from the SS Anne through Pokemon Tower use super potions
+- The Rival battles after Pokemon Tower and up through Route 22 2nd-round use hyper potions
+- The Champion can use Full Heals in response to a status effect with a 25% chance
+- All trainers that use any kind of potion now use it with a 50% chance if their HP is low enough
+  - Gym Leaders and mid-game Rival: below 1/5th total
+  - Elite-4 and Champion: below 1/3th total
+
 
 ---
 **Hack-related fixes exclusively for the master branch**
@@ -112,6 +129,10 @@
 - Fixed a scripting error on route 20
 - Removal of the limits on vitamins in the post-game now only applies to pokemon lvl > 30
 - Adjusted the level-up moves of starmie, cloyster, poliwrath, and exeggcutor for legality with gen-2 time-capsule
+- Enemy trainer level scaling biases the levels upwards for determining if a pokemon should be evolved
+- Strength hotkey requires facing a boulder to activate
+- Trapping moves no longer apply a speed penalty
+- If trainer scaling is on, you do not need to beat the 1st route 22 rival solo to get oak's pokeballs
 
 
 ---
@@ -131,6 +152,8 @@
 - Hard mode adjustments
   - Trainer stat exp has been re-scaled to be more realistic to attainable amounts per level
   - No longer gives an exp bonus
+  - Critical hit chance in non-link battles use the Stadium 1 formula
+  - Oak's pokeballs will be upgraded to great balls if you beat the route 22 rival in hard mode
 
 - Vanilla Options Reset: Deactivates all special options (such as in preparation to update to a new patch)
   - go to the start menu and put the cursor on the top option (usually POKEDEX)
@@ -280,6 +303,7 @@
 
 - Minor code correction to Twineedle to prevent future errors 
 - Fixed an issue where the counter for the Disable effect had the wrong distribution if the target was slower
+- You can now get Oak's pokeballs even if you evolve your starter
 
 - Fixed a bug from the vanilla game where random NPC walk delay can underflow to 255 ticks
 - Fixed an offset bug with the lucky game corner machine
