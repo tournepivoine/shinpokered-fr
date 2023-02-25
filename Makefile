@@ -89,7 +89,7 @@ endif
 # _RUNSHOES Allows player to run by holding B
 # _EXPBAR Adds an EXP bar to the battle UI
 
-# -D _JPFLASHING modifies any base rom. It restores flashing move animations that were in japanese red and green.
+# _JPFLASHING modifies any base rom. It restores flashing move animations that were in japanese red and green.
 # !!WARNING!! The flashing of the restored moves may be harmful to those with photosensitivity or epilepsy.
 # This tag would normally be added to the GREEN and RED_JP roms, but it remains inactive by default for safety.
 # Please act responsibly should you choose to compile using this tag.
