@@ -1,6 +1,6 @@
 ZoneMons1:	;Safari Zone East
 	db $1E
-	IF DEF(_RED)
+	IF DEF(_ENCRED)
 		db 24,NIDORAN_M
 		db 26,DODUO
 		db 22,PARAS
@@ -11,7 +11,7 @@ ZoneMons1:	;Safari Zone East
 		db 25,PARASECT
 		db 25,KANGASKHAN
 		db 28,SCYTHER
-	ELIF DEF(_BLUEJP)
+	ELIF DEF(_ENCBLUEJP)
 		db 24, NIDORAN_M
 		db 26, DODUO
 		db 22, PARAS
@@ -22,7 +22,7 @@ ZoneMons1:	;Safari Zone East
 		db 25, PARASECT
 		db 25, LICKITUNG
 		db 28, SCYTHER
-	ELIF (DEF(_BLUE) || DEF(_GREEN))
+	ELIF DEF(_ENCBLUEGREEN)
 		db 24,NIDORAN_F
 		db 26,DODUO
 		db 22,PARAS
