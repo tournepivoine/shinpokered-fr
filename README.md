@@ -260,9 +260,9 @@ v1.23.12
 - Non-link battles in hard mode use the Stadium 1 formulas for critical hit probability
 - You can now get Oak's pokeballs even if you evolve your starter
 - Oak's pokeballs will be upgraded to great balls if you beat the route 22 rival in hard mode
-
-
-
+- Fixed the white flash on screen transitions when playing on GBC
+	
+	
 #Bugfixes
 -----------
 
