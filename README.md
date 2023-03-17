@@ -261,6 +261,7 @@ v1.23.12
 - You can now get Oak's pokeballs even if you evolve your starter
 - Oak's pokeballs will be upgraded to great balls if you beat the route 22 rival in hard mode
 - Fixed the white flash on screen transitions when playing on GBC
+- Improved the tile block replacement function (improves cinnabar gym lag)
 	
 	
 #Bugfixes
