@@ -262,6 +262,7 @@ v1.23.12
 - Oak's pokeballs will be upgraded to great balls if you beat the route 22 rival in hard mode
 - Fixed the white flash on screen transitions when playing on GBC
 - Improved the tile block replacement function (improves cinnabar gym lag)
+- Minor tweaks to saving/loading code
 	
 	
 #Bugfixes
