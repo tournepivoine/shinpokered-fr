@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.23.12
+Version 1.23.14
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -250,7 +250,7 @@ v1.23.12
 - Restored the gray pokemon coloring used in red/blue/green versions if using red/blue/green-style front sprites.
 
 
-**Not in current patch** 
+v1.23.14  
 - Made the speed of japanese flashing animations more accurate to the original
 - Fixed certain text sfx not playing when using zero-delay text
 - HP-UP item now preserves your HP ratio
