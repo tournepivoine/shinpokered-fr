@@ -2259,8 +2259,6 @@ LoadMapData::
 
 ;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
 	call DisableLCD
-	nop
-	nop	;debugging padding
 ;	ld hl, hFlagsFFFA
 ;	set 3, [hl]
 
@@ -2293,8 +2291,6 @@ LoadMapData::
 
 ;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
 	call EnableLCD
-	nop
-	nop	;debugging padding
 ;	ld hl, hFlagsFFFA
 ;	res 3, [hl]
 
@@ -2307,8 +2303,7 @@ LoadMapData::
 	ld a, [wFlags_D733]
 	bit 1, a
 	jr nz, .restoreRomBank
-;joenote - No longer needed since the LCD is not being turned off
-;	call UpdateMusic6Times
+	call UpdateMusic6Times
 	call PlayDefaultMusicFadeOutCurrent
 .restoreRomBank
 	pop af
