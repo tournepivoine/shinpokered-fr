@@ -268,7 +268,7 @@ v1.23.14
 
 **Not in current patch**	
 - On battle slide-in, fixed the bottom window disappearing for 1 frame when playing on a DMG gameboy
-- Fixed the 1-frame white flash during battle transitions caused by LCD turning off
+- Undo the fix for disabling the LCD during LoadMapData since it creates about 250ms of lag
 
 	
 #Bugfixes
@@ -434,8 +434,7 @@ v1.23.14
   - Original flashing move animations from Red-JP and Green are tethered to the (unused) _JPFLASHING makefile tag  
   - The enemy trainer's HUD is now updated after it uses a healing item
   - Added optimizations to how OAM data is prepared so that overworld sprites wobble less
-  - On battle slide-in, fixed the bottom window disappearing for 1 frame when playing on a DMG gameboy
-  - Fixed the 1-frame white flash during battle transitions caused by LCD turning off
+  - On battle slide-in, fixed the 1-frame flicker when playing on a DMG gameboy
 
 
 - Item Fixes  
