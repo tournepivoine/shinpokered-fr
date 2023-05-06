@@ -271,7 +271,8 @@ v1.23.14
 - Undo the fix for disabling the LCD during LoadMapData since it creates about 250ms of lag
 - Added a sfx and symbol for the color correction
 - DelayFrame now manualy calls VBlank if it runs while the LCD is disabled
-- White 1-frame flash on battle load (affecting DMG and GBC modes) as been removed
+- White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
+- White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
 
 	
 #Bugfixes
@@ -438,7 +439,8 @@ v1.23.14
   - The enemy trainer's HUD is now updated after it uses a healing item
   - Added optimizations to how OAM data is prepared so that overworld sprites wobble less
   - On battle slide-in, fixed the 1-frame flicker when playing on a DMG gameboy
-  - White 1-frame flash on battle load (affecting DMG and GBC modes) as been removed
+  - White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
+  - White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
 
 
 - Item Fixes  

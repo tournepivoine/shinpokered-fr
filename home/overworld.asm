@@ -2258,9 +2258,9 @@ LoadMapData::
 	call LoadMapHeader
 
 ;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
-	call DisableLCD
-;	ld hl, hFlagsFFFA
-;	set 3, [hl]
+;	call DisableLCD
+	ld hl, hFlagsFFFA
+	set 3, [hl]
 
 	callba InitMapSprites ; load tile pattern data for sprites
 	call LoadTileBlockMap
@@ -2290,9 +2290,9 @@ LoadMapData::
 	ld [wUpdateSpritesEnabled], a
 
 ;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
-	call EnableLCD
-;	ld hl, hFlagsFFFA
-;	res 3, [hl]
+;	call EnableLCD
+	ld hl, hFlagsFFFA
+	res 3, [hl]
 
 	ld b, SET_PAL_OVERWORLD
 	call RunPaletteCommand
@@ -2303,7 +2303,7 @@ LoadMapData::
 	ld a, [wFlags_D733]
 	bit 1, a
 	jr nz, .restoreRomBank
-	call UpdateMusic6Times
+;	call UpdateMusic6Times		;joenote - not needed if the LCD is not disabled to write to vram above
 	call PlayDefaultMusicFadeOutCurrent
 .restoreRomBank
 	pop af
