@@ -273,6 +273,7 @@ v1.23.14
 - DelayFrame now manualy calls VBlank if it runs while the LCD is disabled
 - White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
 - White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
+- In hard mode, wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
 
 	
 #Bugfixes
@@ -575,6 +576,7 @@ v1.23.14
   - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
   - Enemy trainer pokemon are assigned level-appropriate stat exp
   - Enemy trainer pokemon have randomized DVs that are above-average
+  - Wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
   - Badge-granted stat boosts are disabled in trainer battles
   - X-stat items have double the effect like in more recent generations
   - Revive items cannot be used in battles

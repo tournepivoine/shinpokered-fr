@@ -56,15 +56,12 @@ DetermineWildMonDVs:
 .do_random
 	call IsInSafariZone
 	jr nz, .do_random_safari	
-	call Random
-	ld b, a
-	call Random
+.notsafari
+	call Random_DV
 	jr .load
 .do_random_safari
 ;	call Random_BiasDV		;option to make safari zone pokemon have better DVs
-	call Random
-	ld b, a
-	call Random
+	call Random_DV
 .load
 	push hl
 	ld hl, wEnemyMonDVs
