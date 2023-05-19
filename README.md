@@ -275,6 +275,7 @@ v1.23.14
 - White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
 - In hard mode, wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
 - Fixed garbage tiles display for 1 frame after a battle on the DMG
+- The silhouette effect at the start of battle now displays when playing on a DMG gameboy
 
 	
 #Bugfixes
