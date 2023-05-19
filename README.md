@@ -274,6 +274,7 @@ v1.23.14
 - White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
 - White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
 - In hard mode, wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
+- Fixed garbage tiles display for 1 frame after a battle on the DMG
 
 	
 #Bugfixes
@@ -440,8 +441,9 @@ v1.23.14
   - The enemy trainer's HUD is now updated after it uses a healing item
   - Added optimizations to how OAM data is prepared so that overworld sprites wobble less
   - On battle slide-in, fixed the 1-frame flicker when playing on a DMG gameboy
-  - White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
-  - White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
+  - White 1-frame flash on battle load (affecting DMG and GBC modes) as been removed
+  - White 1-frame flash on map load (affecting DMG and GBC modes) as been removed
+  - Fixed garbage tiles display for 1 frame after a battle on the DMG
 
 
 - Item Fixes  

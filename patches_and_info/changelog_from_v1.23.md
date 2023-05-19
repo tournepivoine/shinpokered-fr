@@ -281,8 +281,9 @@
 - Fixed a wall in cerulean cave level 3 that violated the mapping rules so was walkable
 - Improved the tile block replacement function (improves cinnabar gym lag)
 - On battle slide-in, fixed the bottom window disappearing for 1 frame when playing on a DMG gameboy
-- White 1-frame flash on battle load (affecting DMG and GBC modes) has been removed
-- White 1-frame flash on map load (affecting DMG and GBC modes) has been removed
+- White 1-frame flash on battle load (affecting DMG and GBC modes) as been removed
+- White 1-frame flash on map load (affecting DMG and GBC modes) as been removed
+- Fixed garbage tiles display for 1 frame after a battle on the DMG
 
 - The proper forget-move poof sfx plays during battle
 - Fixed a bug having to do with rare instances of bending the audio pitch
