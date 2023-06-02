@@ -276,6 +276,8 @@ v1.23.14
 - In hard mode, wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
 - Fixed garbage tiles display for 1 frame after a battle on the DMG
 - The silhouette effect at the start of battle now displays when playing on a DMG gameboy
+- Fixed the tiles in Mt. Moon floor 3 that prevent encounters
+- Fixed picking a fossil causing all trainers on Mt. Moon floor 3 to lose line of sight
 
 	
 #Bugfixes
@@ -548,6 +550,8 @@ v1.23.14
   - Slot machine no longer copies too much tile data
   - Fixed increment bug in CheckForTilePairCollisions
   - You can now get Oak's pokeballs even if you evolve your starter
+  - Fixed the tiles in Mt. Moon floor 3 that prevent encounters
+  - Fixed picking a fossil causing all trainers on Mt. Moon floor 3 to lose line of sight
  
  
 #Tweaks
