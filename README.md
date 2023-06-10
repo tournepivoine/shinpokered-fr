@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.23.14
+Version 1.23.15
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -266,7 +266,7 @@ v1.23.14
 - Adjusted intro and title screen and palettes slightly in JP red & green for accuracy
 
 
-**Not in current patch**	
+v1.23.15  
 - On battle slide-in, fixed the bottom window disappearing for 1 frame when playing on a DMG gameboy
 - Undo the fix for disabling the LCD during LoadMapData since it creates about 250ms of lag
 - Added a sfx and symbol for the color correction
@@ -279,6 +279,9 @@ v1.23.14
 - Fixed the tiles in Mt. Moon floor 3 that prevent encounters
 - Fixed picking a fossil causing all trainers on Mt. Moon floor 3 to lose line of sight
 
+
+*Not in current patch*	
+- N/A
 	
 #Bugfixes
 -----------
