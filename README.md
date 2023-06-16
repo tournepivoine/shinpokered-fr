@@ -78,9 +78,10 @@ New Areas
 	- There's a house with a Move Tutor that can teach Tradeback moves without the need for GSC's Time Capsule!
 	- It features a Team Rocket house where they will sell you TMs and Evolution Items, as well as provide a Hyper Training feature to get Max DVs!
 	- The Battle Tent from the TwitchPlaysPokemon Anniversary hack makes a return, featuring new trainers and KEP Pokemon!
-	- Garnet Cavern, located in Citrine City, houses several strong trainers and Pokémon. It seems a little familiar...
-	- Brunswick Trail, south of Citrine City, is a route that leads to Celeste Hill.
-	- Celeste Hill activates an event where the Galarian Legendary Birds can be fought. Moltres will challenge you right there, while the other two flee to the previously mentioned locations.
+	- Brunswick Trail, south-west of Citrine City, is a route that leads to Garnet Cavern, alongside a more hidden route that leads to Brunswick Grotto.
+	- Brunswick Grotto is a forest area that leads to Galarian Zapdos after a short, winding path.
+	- Garnet Cavern is a familiar-looking cave. It houses many strong Pokemon, including Galarian Articuno roosting on the bottom floor.
+	- Celeste Hill, located above Citrine City, is a mountain with several floors. Upon reaching the summit, Galarian Moltres will attack.
 - Underwater Tunnel connects Route 25 and Route 10, making Rock Tunnel skippable later.
 - Cinnabar Volcano is a new area that houses Moltres, allowing it to be obtained before Victory Road. It has a unique dark-orange palette to make it unique compared to the other caves.
 - Faraway Island from Pokemon Emerald has been added, where you can find Mew. It also has its own wild encounters, as well as an improved translation on its sign, enhancing its appearance from its source material.
