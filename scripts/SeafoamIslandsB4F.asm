@@ -154,7 +154,7 @@ ArticunoText:
 	jp TextScriptEnd
 
 ArticunoBattleText:
-	text_far _ArticunoBattleText
+	text_far _BirdBattleText
 	text_asm
 	ld a, ARTICUNO
 	call PlayCry

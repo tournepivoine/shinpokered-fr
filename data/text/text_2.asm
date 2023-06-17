@@ -1850,3 +1850,7 @@ _MeltanIncrement::
 _GameCornerArbok:: ; Putting here to be potentially farcalled somewhere else.
 	text "ARBOK: Chaaarbok!"
 	done
+
+_BirdBattleText:: ; This is defined in many places and can just be farcalled here instead.
+	text "Gyaoo!@"
+	text_end

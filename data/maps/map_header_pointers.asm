@@ -148,7 +148,8 @@ MapHeaderPointers::
 	dw LavenderPokecenter_h
 	dw PokemonTower1F_h
 	dw PokemonTower2F_h
-	dw PokemonTower3F_h
+	dw BrunswickGrotto_h
+	;dw PokemonTower3F_h
 	dw PokemonTower4F_h
 	dw PokemonTower5F_h
 	dw PokemonTower6F_h
@@ -256,5 +257,4 @@ MapHeaderPointers::
 	dw MtMoonSquareHouse_h
 	dw CelesteHillCave_h
 	dw CelesteHillOutside_h
-	dw BrunswickGrotto_h
 	assert_table_length NUM_MAPS

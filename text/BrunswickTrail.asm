@@ -33,8 +33,4 @@ _FakeTreeAttack::
 	line "in a rage!"
 	prompt
 
-_GalarianZapdosBattleText::
-	text "Gyaoo!"
-	prompt
-
 ; Martha can do the text for her things...

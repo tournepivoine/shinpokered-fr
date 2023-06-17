@@ -989,11 +989,11 @@ INCLUDE "scripts/PokemonTower2F.asm"
 INCLUDE "data/maps/objects/PokemonTower2F.asm"
 PokemonTower2F_Blocks: INCBIN "maps/PokemonTower2F.blk"
 
-; Removed for the Battle Tent.
-INCLUDE "data/maps/headers/PokemonTower3F.asm"
-INCLUDE "scripts/PokemonTower3F.asm"
-INCLUDE "data/maps/objects/PokemonTower3F.asm"
-PokemonTower3F_Blocks: INCBIN "maps/PokemonTower3F.blk"
+; Removed for Brunswick Grotto
+;INCLUDE "data/maps/headers/PokemonTower3F.asm"
+;INCLUDE "scripts/PokemonTower3F.asm"
+;INCLUDE "data/maps/objects/PokemonTower3F.asm"
+;PokemonTower3F_Blocks: INCBIN "maps/PokemonTower3F.blk"
 
 INCLUDE "data/maps/headers/PokemonTower4F.asm"
 INCLUDE "scripts/PokemonTower4F.asm"

@@ -21,8 +21,6 @@ BrunswickTrailTrainerHeaders:
 	def_trainers
 CactusTrainerHeader:
 	trainer EVENT_BEAT_CACTUS, 0, CactusBattleText, CactusBattleText, CactusBattleText
-GalarianZapdosTrainerHeader:
-	trainer EVENT_BEAT_ZAPDOSG, 0, GalarianZapdosBattleText, GalarianZapdosBattleText, GalarianZapdosBattleText
 	db -1 ; end
 
 ZapdosGuy:
@@ -78,18 +76,3 @@ CactusBattleText:
 	call WaitForSoundToFinish
 	jp TextScriptEnd
 
-GalarianZapdosText:
-	text_asm
-	ld hl, GalarianZapdosTrainerHeader
-	call TalkToTrainer
-	jp TextScriptEnd
-
-GalarianZapdosBattleText:
-	text_far _GalarianZapdosBattleText
-	text_asm
-	ld a, ZAPDOS_G
-	call PlayCry
-	call WaitForSoundToFinish
-	jp TextScriptEnd
-
-	text_end ; unused

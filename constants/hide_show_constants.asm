@@ -50,7 +50,6 @@ DEF SHOW EQU $15
 	const HS_ROUTE_24_ITEM                 ; 26 X
 	const HS_ROUTE_25_ITEM                 ; 27 X
 	const HS_CACTUS                        ; 28 X
-	const HS_BRUNSWICK_ZAPDOS_G            ; 29 X
 	const HS_DAISY_SITTING                 ; 2A
 	const HS_DAISY_WALKING                 ; 2B
 	const HS_TOWN_MAP                      ; 2C
@@ -72,7 +71,8 @@ DEF SHOW EQU $15
 	const HS_CELESTE_ARTICUNO_G            ; 3C
 	const HS_MOLTRES_G                     ; 3D X
 	const HS_POKEMON_TOWER_2F_RIVAL        ; 3E
-	const HS_POKEMON_TOWER_3F_ITEM         ; 3F X
+	const HS_BRUNSWICK_ZAPDOS_G_1            ; 29 X
+	const HS_BRUNSWICK_ZAPDOS_G_2			;was const HS_POKEMON_TOWER_3F_ITEM         ; 3F X
 	const HS_POKEMON_TOWER_4F_ITEM_1       ; 40 X
 	const HS_POKEMON_TOWER_4F_ITEM_2       ; 41 X
 	const HS_POKEMON_TOWER_4F_ITEM_3       ; 42 X
@@ -187,7 +187,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_7F_RIVAL             ; AF
 	const HS_SILPH_CO_7F_ITEM_1            ; B0 X
 	const HS_SILPH_CO_7F_ITEM_2            ; B1 X
-	const HS_SILPH_CO_7F_8                 ; B2 XXX sprite doesn't exist
+	const HS_SILPH_CO_7F_8					; B2 XXX sprite doesn't exist
 	const HS_SILPH_CO_8F_1                 ; B3
 	const HS_SILPH_CO_8F_2                 ; B4
 	const HS_SILPH_CO_8F_3                 ; B5

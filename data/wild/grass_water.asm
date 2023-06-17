@@ -147,7 +147,8 @@ WildDataPointers:
 	dw NothingWildMons
 	dw PokemonTower1FWildMons
 	dw PokemonTower2FWildMons
-	dw PokemonTower3FWildMons
+	dw BrunswickGrottoWildMons
+	;dw PokemonTower3FWildMons
 	dw PokemonTower4FWildMons
 	dw PokemonTower5FWildMons
 	dw PokemonTower6FWildMons
@@ -255,7 +256,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw CelesteHillCaveWildMons
 	dw CelesteHillWildMons ; using Celeste Hill's summit for Celeste Hill Outside
-	dw BrunswickGrottoWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -295,7 +295,8 @@ INCLUDE "data/wild/maps/Route8.asm"
 INCLUDE "data/wild/maps/Route7.asm"
 INCLUDE "data/wild/maps/PokemonTower1F.asm"
 INCLUDE "data/wild/maps/PokemonTower2F.asm"
-INCLUDE "data/wild/maps/PokemonTower3F.asm"
+INCLUDE "data/wild/maps/BrunswickGrotto.asm"
+;INCLUDE "data/wild/maps/PokemonTower3F.asm"
 INCLUDE "data/wild/maps/PokemonTower4F.asm"
 INCLUDE "data/wild/maps/PokemonTower5F.asm"
 INCLUDE "data/wild/maps/PokemonTower6F.asm"
@@ -347,4 +348,3 @@ INCLUDE "data/wild/maps/GarnetCavern1F.asm"
 INCLUDE "data/wild/maps/GarnetCavernB1F.asm"
 INCLUDE "data/wild/maps/GarnetCavern2F.asm"
 INCLUDE "data/wild/maps/CelesteHillCave.asm"
-INCLUDE "data/wild/maps/BrunswickGrotto.asm"

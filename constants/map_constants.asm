@@ -166,7 +166,8 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const LAVENDER_POKECENTER,            7,  4 ; $8F
 	map_const POKEMON_TOWER_1F,              10,  9 ; $90
 	map_const POKEMON_TOWER_2F,              10,  9 ; $91
-	map_const POKEMON_TOWER_3F,              10,  9 ; $92	- Currently unused
+	map_const BRUNSWICK_GROTTO,				 15, 12 ; $FF ; ooo
+	;map_const POKEMON_TOWER_3F,              10,  9 ; $92	- Currently unused
 	map_const POKEMON_TOWER_4F,              10,  9 ; $93	- Currently unused
 	map_const POKEMON_TOWER_5F,              10,  9 ; $94	- Currently unused
 	map_const POKEMON_TOWER_6F,              10,  9 ; $95
@@ -272,9 +273,8 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const BATTLE_TENT,                    5, 10 ; $FA
 	map_const MT_MOON_SQUARE,                13,  7 ; $FB
 	map_const MT_MOON_SQUARE_HOUSE,           4,  4 ; $FC
-	map_const CELESTE_HILL_CAVE,			 20, 19 ; $FD
-	map_const CELESTE_HILL_OUTSIDE,			 20, 18 ; $FE
-	map_const BRUNSWICK_GROTTO,				 20,  9 ; $FF ; ooo
+	map_const CELESTE_HILL_CAVE,			 19, 20 ; $FD
+	map_const CELESTE_HILL_OUTSIDE,			 18, 20 ; $FE
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps

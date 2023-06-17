@@ -150,7 +150,8 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw PokemonTower2FHS
-	dw PokemonTower3FHS
+	dw BrunswickGrottoHS ; Brunswick Grotto
+	;dw PokemonTower3FHS
 	dw PokemonTower4FHS
 	dw PokemonTower5FHS
 	dw PokemonTower6FHS
@@ -258,7 +259,6 @@ MapHSPointers:
 	dw NoHS ; Mt Moon Square House
 	dw NoHS ; Celeste Hill Cave 
 	dw NoHS ; Celeste Hill Outside
-	dw NoHS ; Brunswick Grotto, should have HS Data later.
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -326,7 +326,6 @@ Route25HS:
 	db ROUTE_25, $0A, SHOW                    ; HS_ROUTE_25_ITEM
 BrunswickTrailHS:
 	db BRUNSWICK_TRAIL, $01, SHOW             ; HS_CACTUS
-	db BRUNSWICK_TRAIL, $03, SHOW             ; HS_BRUNSWICK_ZAPDOS_G
 BluesHouseHS:
 	db BLUES_HOUSE, $01, SHOW                 ; HS_DAISY_SITTING
 	db BLUES_HOUSE, $02, HIDE                 ; HS_DAISY_WALKING
@@ -355,8 +354,11 @@ CelesteHillHS:
 	db CELESTE_HILL, $03, SHOW                ; HS_MOLTRES_G
 PokemonTower2FHS:
 	db POKEMON_TOWER_2F, $01, SHOW            ; HS_POKEMON_TOWER_2F_RIVAL
-PokemonTower3FHS:
-	db POKEMON_TOWER_3F, $04, SHOW            ; HS_POKEMON_TOWER_3F_ITEM
+BrunswickGrottoHS:
+	db BRUNSWICK_GROTTO, $01, SHOW ; HS_BRUNSWICK_ZAPDOS_G_1
+	db BRUNSWICK_GROTTO, $02, HIDE ; HS_BRUNSWICK_ZAPDOS_G_2
+;PokemonTower3FHS:
+;	db POKEMON_TOWER_3F, $04, SHOW            ; HS_POKEMON_TOWER_3F_ITEM
 PokemonTower4FHS:
 	db POKEMON_TOWER_4F, $04, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_1
 	db POKEMON_TOWER_4F, $05, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_2
@@ -504,7 +506,6 @@ SilphCo7FHS:
 	db SILPH_CO_7F, $09, SHOW                 ; HS_SILPH_CO_7F_RIVAL
 	db SILPH_CO_7F, $0A, SHOW                 ; HS_SILPH_CO_7F_ITEM_1
 	db SILPH_CO_7F, $0B, SHOW                 ; HS_SILPH_CO_7F_ITEM_2
-	db SILPH_CO_7F, $0C, SHOW                 ; HS_SILPH_CO_7F_8
 SilphCo8FHS:
 	db SILPH_CO_8F, $02, SHOW                 ; HS_SILPH_CO_8F_1
 	db SILPH_CO_8F, $03, SHOW                 ; HS_SILPH_CO_8F_2
@@ -613,6 +614,4 @@ RockTunnelB1FHS:
 	db ROCK_TUNNEL_B1F, $0B, SHOW			  ; HS_ROCK_TUNNEL_B1F_HELIX
 	db ROCK_TUNNEL_B1F, $0C, SHOW			  ; HS_ROCK_TUNNEL_B1F_AMBER
 	db ROCK_TUNNEL_B1F, $0D, SHOW			  ; HS_ROCK_TUNNEL_B1F_WING
-	db $FF, $01, SHOW ; end
-
 	assert_table_length NUM_HS_OBJECTS + 1

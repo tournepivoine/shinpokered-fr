@@ -148,7 +148,8 @@ MapHeaderBanks::
 	db BANK(LavenderPokecenter_h)
 	db BANK(PokemonTower1F_h)
 	db BANK(PokemonTower2F_h)
-	db BANK(PokemonTower3F_h)
+	db BANK(BrunswickGrotto_h)
+	;db BANK(PokemonTower3F_h)
 	db BANK(PokemonTower4F_h)
 	db BANK(PokemonTower5F_h)
 	db BANK(PokemonTower6F_h)
@@ -256,5 +257,4 @@ MapHeaderBanks::
 	db BANK(MtMoonSquareHouse_h)
 	db BANK(CelesteHillCave_h)
 	db BANK(CelesteHillOutside_h)
-	db BANK(BrunswickGrotto_h)
 	assert_table_length NUM_MAPS

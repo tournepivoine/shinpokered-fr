@@ -28,7 +28,7 @@ MoltresText:
 	jp TextScriptEnd
 
 MoltresBattleText:
-	text_far _MoltresBattleText
+	text_far _BirdBattleText
 	text_asm
 	ld a, MOLTRES
 	call PlayCry

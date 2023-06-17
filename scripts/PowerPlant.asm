@@ -106,7 +106,7 @@ VoltorbBattleText:
 	text_end
 
 ZapdosBattleText:
-	text_far _ZapdosBattleText
+	text_far _BirdBattleText
 	text_asm
 	ld a, ZAPDOS
 	call PlayCry
