@@ -6,10 +6,10 @@ CitrineCity_Object:
 	warp_event  9, 17, CITRINE_TRADEBACK_HOUSE, 1
 	warp_event 15, 17, CITRINE_POKECENTER, 1
 	warp_event 15, 27, CITRINE_MART, 1
-	warp_event 22,  5, GARNET_CAVERN_1F, 1
+	warp_event 23,  5, CELESTE_HILL_OUTSIDE, 1
 	warp_event 11,  7, BATTLE_TENT, 1
-	warp_event 35, 31, VERMILION_CITY, 6
-	warp_event 35, 30, VERMILION_CITY, 6
+	warp_event 27, 33, VERMILION_CITY, 6
+	warp_event 26, 33, VERMILION_CITY, 6
 
 	def_bg_events
 	bg_event 16, 27,  5 ; Citrine Shop
@@ -18,13 +18,13 @@ CitrineCity_Object:
 	bg_event  5, 18,  8 ; Billboard 2
 	bg_event  9,  7,  9 ; Battle Tower
 	bg_event 25, 23, 10 ; City Sign
-	bg_event 21, 26, 11 ; Directions
-	bg_event 23,  7, 12 ; Garnet Cavern Sign
+	bg_event 21, 28, 11 ; Directions
+	bg_event 25,  7, 12 ; Celeste Hill Sign
 
 	def_object_events
 	object_event 12, 18, SPRITE_BEAUTY, WALK, LEFT_RIGHT, 1 ; person
 	object_event  6,  9, SPRITE_HIKER,  WALK, LEFT_RIGHT, 2 ; person
 	object_event 20, 26, SPRITE_GENTLEMAN, STAY, UP, 3 ; person
-	object_event 10, 30, SPRITE_ROCKER, WALK, ANY_DIR, 4 ; person
+	object_event 31, 28, SPRITE_ROCKER, WALK, ANY_DIR, 4 ; person
 
 	def_warps_to CITRINE_CITY

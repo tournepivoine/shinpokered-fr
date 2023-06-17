@@ -646,8 +646,9 @@
 	const EVENT_BEAT_MOLTRES
 	const_skip 7
 	const EVENT_BEAT_CACTUS
+	const_skip 7
 	const EVENT_BEAT_ZAPDOSG
-	const_skip 6
+	const_skip 7
 	const EVENT_BEAT_DRAGONITE 
 
 ; Celadon University, Salesman
@@ -796,7 +797,11 @@
 	const_next $880
 	const EVENT_GOT_HM03
 	const EVENT_GOT_MELTAN
-	const EVENT_BIRDS_FOUND ; hehe
+	
+; Celeste Hill events
+	const_next $8A0
+	const_skip
+	const EVENT_BEAT_GALARIAN_MOLTRES
 
 ; Cerulean Cave events
 	const_next $8C0

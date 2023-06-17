@@ -1,44 +1,26 @@
 BrunswickGrotto_Script:
-	jp EnableAutoTextBoxDrawing
-
-BrunswickGrotto_TextPointers:
-	dw GZapFound
-	dw GalarianZapdosText
-	dw BrunswickSign
+	call EnableAutoTextBoxDrawing
+	ld hl, BrunswickGrottoTrainerHeaders
+	ld de, BrunswickGrotto_ScriptPointers
+	ld a, [wBrunswickGrottoCurScript]
+	call ExecuteCurMapScriptInTable
+	ld [wBrunswickGrottoCurScript], a
+	ret
+	
+BrunswickGrotto_ScriptPointers:
+	dw CheckFightingMapTrainers
+	dw DisplayEnemyTrainerTextAndStartBattle
+	dw EndTrainerBattle
 
 BrunswickGrottoTrainerHeaders:
+	def_trainers
 GalarianZapdosTrainerHeader:
 	trainer EVENT_BEAT_ZAPDOSG, 0, GZapBattleText, GZapBattleText, GZapBattleText
 	db -1
-
-GZapFound:
-	text_asm
-	ld hl, BirdTextCall
-	call PrintText
-	ld a, ZAPDOS
-	call PlayCry
-	call WaitForSoundToFinish
 	
-	ld a, $ff
-	ld [wJoyIgnore], a
-	call GBFadeOutToBlack
-	ld a, HS_BRUNSWICK_ZAPDOS_G_1
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, HS_BRUNSWICK_ZAPDOS_G_2
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-	call UpdateSprites
-	call Delay3
-	call GBFadeInFromBlack
-	
-	ld a, 0
-	ld [wJoyIgnore], a
-	
-	ld hl, GZapRunText
-	call PrintText
-	
-	jp TextScriptEnd
+BrunswickGrotto_TextPointers:
+	dw GalarianZapdosText
+	dw BrunswickSign
 
 GalarianZapdosText:
 	text_asm
@@ -49,24 +31,14 @@ GalarianZapdosText:
 GZapBattleText:
 	text_far _BirdBattleText
 	text_asm
-	ld a, ZAPDOS
+	ld a, ZAPDOS_G
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
 
-GZapRunText:
-	text "It ran off"
-	line "somewhere..."
-	prompt
-	text_end
-
-BirdTextCall:
-	text_far _BirdBattleText
-	text_end
-
 BrunswickSign:
-	text "GROTTO BIRD"
-	line "WATCHING"
+	text "BRUNSWICK"
+	line "BIRDWATCHING"
 	
 	para "The sign is"
 	line "covered in"

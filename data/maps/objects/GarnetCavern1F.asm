@@ -2,8 +2,8 @@ GarnetCavern1F_Object:
 	db $7d ; border block
 
 	def_warp_events
-	warp_event 24, 17, CITRINE_CITY, 5
-	warp_event 25, 17, CITRINE_CITY, 5
+	warp_event 24, 17, BRUNSWICK_TRAIL, 1
+	warp_event 25, 17, BRUNSWICK_TRAIL, 1
 	
 	warp_event 27,  1, GARNET_CAVERN_2F, 1
 	warp_event 23,  7, GARNET_CAVERN_2F, 2

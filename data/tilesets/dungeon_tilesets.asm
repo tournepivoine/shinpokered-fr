@@ -10,5 +10,6 @@ DungeonTilesets:
 	db FACILITY
 	db CEMETERY
 	db GYM
+	db CELESTE
 	db ROCKETHOUSE
 	db -1 ; end

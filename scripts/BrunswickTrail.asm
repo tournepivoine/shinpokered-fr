@@ -15,7 +15,7 @@ BrunswickTrail_ScriptPointers:
 BrunswickTrail_TextPointers:
 	dw FakeTreeEvent
 	dw ZapdosGuy
-	dw GalarianZapdosText
+	dw GZapFound
 
 BrunswickTrailTrainerHeaders:
 	def_trainers
@@ -75,4 +75,37 @@ CactusBattleText:
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
+	
+GZapFound:
+	text_asm
+	ld hl, BirdTextCall
+	call PrintText
+	ld a, ZAPDOS_G
+	call PlayCry
+	call WaitForSoundToFinish
+	
+	ld a, $ff
+	ld [wJoyIgnore], a
+	call GBFadeOutToBlack
+	ld a, HS_BRUNSWICK_ZAPDOS_G_1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	call Delay3
+	call GBFadeInFromBlack
+	ld a, 0
+	ld [wJoyIgnore], a
+	ld hl, GZapRunText
+	call PrintText
+	jp TextScriptEnd
+	
+GZapRunText:
+	text "It ran off"
+	line "somewhere..."
+	prompt
+	text_end
+
+BirdTextCall:
+	text_far _BirdBattleText
+	text_end
 

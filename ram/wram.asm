@@ -2054,7 +2054,7 @@ wRoute8GateCurScript:: db
 	ds 1
 wCinnabarIslandCurScript:: db
 wPokemonMansion1FCurScript:: db
-	ds 1
+wBrunswickGrottoCurScript:: db
 wPokemonMansion2FCurScript:: db
 wPokemonMansion3FCurScript:: db
 wPokemonMansionB1FCurScript:: db

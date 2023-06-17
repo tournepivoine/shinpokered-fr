@@ -149,6 +149,8 @@ SetPal_Overworld:
 	ld a, [wCurMap]
 	cp BRUNSWICK_TRAIL
 	jr z, .brunswick
+	cp BRUNSWICK_GROTTO
+	jr z, .brunswick
 	cp FIRST_INDOOR_MAP
 	jr c, .townOrRoute
 	cp POWER_PLANT
@@ -159,6 +161,8 @@ SetPal_Overworld:
 	jr z, .pachinko
 	cp GAME_CORNER_PRIZE_ROOM
 	jr z, .pachinko
+	cp CELESTE_HILL_OUTSIDE
+	jr z, .celeste
 	cp CELESTE_HILL
 	jr z, .celeste
 	cp CERULEAN_CAVE_2F
@@ -207,6 +211,9 @@ SetPal_Overworld:
 .caveDefault
 	ld a, PAL_CAVE - 1
 	jr .town
+.brunswick
+	ld a, PAL_BRUNSWICK - 1
+	jr .town
 .forest
 	ld a, [wCurMap]
 	cp SILPH_GAUNTLET_1F + 1
@@ -217,20 +224,17 @@ SetPal_Overworld:
 	jr c, .faraway
 	cp SAFARI_ZONE_CENTER + 1
 	jr c, .forestDefault
-.brunswick
-	ld a, PAL_BRUNSWICK - 1
-	jr .town
 .powerPlant
 	ld a, PAL_YELLOWMON - 1
-	jr .town
-.celeste
-	ld a, PAL_CELESTE - 1
 	jr .town
 .ship
 	ld a, PAL_VERMILION - 1
 	jr .town
 .pachinko
 	ld a, PAL_CASINO - 1
+	jr .town
+.celeste
+	ld a, PAL_CELESTE - 1
 	jr .town
 .faraway
 	ld a, PAL_ROUTE - 1
