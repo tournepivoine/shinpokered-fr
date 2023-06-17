@@ -21,6 +21,5 @@ MtMoonB2F_Object:
 	object_event 13,  6, SPRITE_FOSSIL, STAY, NONE, 8 ; person
 	object_event 25, 21, SPRITE_POKE_BALL, STAY, NONE, 9, HP_UP
 	object_event 35,  6, SPRITE_FOSSIL, STAY, NONE, 10, WING_FOSSIL
-	object_event 29,  8, SPRITE_SCIENTIST, STAY, NONE, 11, ; Crater Guard
 
 	def_warps_to MT_MOON_B2F

@@ -255,7 +255,7 @@ MapHSPointers:
 	dw RockTunnelB1FHS
 	dw GiovannisRoomHS
 	dw NoHS ; Battle Tent
-	dw NoHS ; Mt Moon Square
+	dw MtMoonSquareHS ; Mt Moon Square
 	dw NoHS ; Mt Moon Square House
 	dw NoHS ; Celeste Hill Cave 
 	dw NoHS ; Celeste Hill Outside
@@ -431,7 +431,6 @@ MtMoonB2FHS:
 	db MT_MOON_B2F, $08, SHOW                 ; HS_MT_MOON_B2F_FOSSIL_2
 	db MT_MOON_B2F, $09, SHOW                 ; HS_MT_MOON_B2F_ITEM_1
 	db MT_MOON_B2F, $0A, SHOW                 ; HS_MT_MOON_B2F_ITEM_2
-	db MT_MOON_B2F, $0B, HIDE                 ; HS_MT_MOON_CRATER_GUARD
 SSAnne2FHS:
 	db SS_ANNE_2F, $02, HIDE                  ; HS_SS_ANNE_2F_RIVAL
 SSAnne1FRoomsHS:
@@ -612,5 +611,7 @@ RockTunnelB1FHS:
 	db ROCK_TUNNEL_B1F, $0B, SHOW			  ; HS_ROCK_TUNNEL_B1F_HELIX
 	db ROCK_TUNNEL_B1F, $0C, SHOW			  ; HS_ROCK_TUNNEL_B1F_AMBER
 	db ROCK_TUNNEL_B1F, $0D, SHOW			  ; HS_ROCK_TUNNEL_B1F_WING
+MtMoonSquareHS:
+	db MT_MOON_SQUARE, $04, SHOW              ; HS_MT_MOON_CRATER_GUARD
 	db $FF, $01, SHOW ; end
 	assert_table_length NUM_HS_OBJECTS + 1

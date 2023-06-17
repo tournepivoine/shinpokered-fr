@@ -294,6 +294,7 @@ INCLUDE "text/GarnetCavernB1F.asm"
 INCLUDE "text/GarnetCavern2F.asm"
 INCLUDE "text/GiovannisRoom.asm"
 INCLUDE "text/CitrineCity.asm"
+INCLUDE "text/MtMoonSquare.asm"
 
 SECTION "Pokédex Text", ROMX
 

@@ -5,6 +5,7 @@ MtMoonSquare_TextPointers:
 	dw MtMoonSquareClefairy
 	dw MtMoonSquareClefairy
 	dw MtMoonSquareClefairy
+	dw MtMoonSquareResearcher
 	dw MtMoonSquareSign
 
 MtMoonSquareClefairy:
@@ -13,6 +14,10 @@ MtMoonSquareClefairy:
 	ld a, CLEFAIRY
 	call PlayCry
 	jp TextScriptEnd
+
+MtMoonSquareResearcher:
+	text_far _MtMoonSquareText1
+	text_end
 
 MtMoonSquareSign:
 	text "MT MOON SQUARE"
