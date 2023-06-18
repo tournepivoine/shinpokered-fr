@@ -102,7 +102,7 @@ GZapFound:
 GZapRunText:
 	text "It ran off"
 	line "somewhere..."
-	prompt
+	done
 	text_end
 
 BirdTextCall:

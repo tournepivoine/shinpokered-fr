@@ -11,6 +11,6 @@ BrunswickTrail_Object:
 	def_object_events
 	object_event 23, 11, SPRITE_FAKE_TREE, STAY, NONE, 1, CACTUS, 60 | OW_POKEMON ; person
 	object_event 37, 23, SPRITE_BRUNETTE_GIRL, STAY, DOWN, 2 ; person
-	object_event 40, 6, SPRITE_BIRD, STAY, UP, 3 ; person
+	object_event 50, 16, SPRITE_BIRD, WALK, LEFT_RIGHT, 3 ; person
 
 	def_warps_to BRUNSWICK_TRAIL
