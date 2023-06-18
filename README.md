@@ -67,6 +67,8 @@ There are some new items here, with the aim of accomodating new Pokemon, adding 
 - The Old Sea Map has been added, giving access to Faraway Island and Mew.
 - The Citrine Pass has been added, allowing access to a new post-game area based on the unused "C" map.
 - The Wing Fossil is a new item that allows Aerodactyl to be revived, as the Old Amber is instead used for Decilla.
+- The Tea from FireRed/LeafGreen and Let's Go Pikachu/Eevee is added, allowing Saffron access for free. The guards now imply they want a cup of tea.
+	- This also accomodates Mt. Moon Square's shop, which would otherwise break progression.
 
 New Areas
 ====

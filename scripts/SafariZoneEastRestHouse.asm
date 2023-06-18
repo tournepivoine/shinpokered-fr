@@ -34,6 +34,8 @@ SafariZoneRestHouse3Meltan:
 	jr nc, .bag_full
 	ld hl, ReceivedBoxText
 	call PrintText
+	ld a, SFX_GET_ITEM_1
+	call PlaySound
 	SetEvent EVENT_GOT_MELTAN
 	jr .done
 .bag_full

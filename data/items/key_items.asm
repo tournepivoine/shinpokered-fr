@@ -93,6 +93,7 @@ KeyItemFlags:
 	dbit FALSE ; UP_GRADE
 	dbit FALSE ; METAL_COAT
 	dbit TRUE  ; MYSTERY_BOX
+	dbit TRUE  ; TEA
 	dbit TRUE  ; FLOOR_B2F
 	dbit TRUE  ; FLOOR_B1F
 	dbit TRUE  ; FLOOR_1F

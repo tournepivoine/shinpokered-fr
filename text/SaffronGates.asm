@@ -1,7 +1,7 @@
 _SaffronGateText_1dfe7::
 	text "I'm on guard duty."
-	line "Gee, I'm thirsty,"
-	cont "though!"
+	line "Gee, I could use"
+	cont "a cuppa though!"
 
 	para "Oh wait there,"
 	line "the road's closed."
@@ -34,5 +34,5 @@ _SaffronGateText_1dff1::
 
 _SaffronGateText_1dff6::
 	text "Hi, thanks for"
-	line "the cool drinks!"
+	line "the TEA!"
 	done

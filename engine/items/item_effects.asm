@@ -110,6 +110,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; UP_GRADE
 	dw ItemUseEvoStone   ; METAL_COAT
 	dw ItemUseMysteryBox ; MYSTERY_BOX
+	dw UnusableItem		 ; TEA
 	dw UnusableItem      ; FLOOR_B2F
 	dw UnusableItem      ; FLOOR_B1F
     dw UnusableItem      ; FLOOR_1F

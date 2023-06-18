@@ -24,3 +24,30 @@ _CeladonMansion1Text5::
 	text "CELADON MANSION"
 	line "Manager's Suite"
 	done
+
+_CeladonMansionHasTea::
+	text "You shouldn't"
+	line "spend all your"
+	cont "money on drinks."
+	para "Try this instead."
+	prompt
+
+_CeladonMansionTeaExplanation::
+	text "Nothing beats"
+	line "thirst like some"
+	cont "hot TEA."
+	para "It truly is the"
+	line "best!"
+	done
+
+_CeladonMansionTeaNoRoom::
+	text "Your BAG is full,"
+	line "child!"
+	done
+
+_ReceivedTeaText::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end

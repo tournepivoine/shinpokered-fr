@@ -93,6 +93,7 @@ ItemNames::
 	li "UP-GRADE"
 	li "METAL COAT"
 	li "MYSTERY BOX"
+	li "TEA"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

@@ -93,6 +93,7 @@ ItemPrices::
 	bcd3 3000  ; UP_GRADE
 	bcd3 3000  ; METAL_COAT
 	bcd3 0	   ; MYSTERY_BOX
+	bcd3 0	   ; TEA
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

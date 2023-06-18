@@ -353,6 +353,11 @@ _MysteryBoxDescription:: ; GO Description: A mysterious old box. Opening it caus
 	next "box."
 	prompt
 
+_TeaDescription::
+	text "A hot drink for"
+	next "quenching thirst."
+	prompt
+
 _HM01Description::
 	text "Cuts using claws,"
 	next "scythes, etc."

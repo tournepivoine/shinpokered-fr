@@ -170,7 +170,8 @@
 ; Celadon City events
 	const_next $180
 	const EVENT_GOT_TM41
-	const_skip 11
+	const EVENT_GOT_TEA
+	const_skip 10
 	const EVENT_GOT_TM13
 	const EVENT_GOT_TM48
 	const EVENT_GOT_TM49
@@ -191,7 +192,6 @@
 	const EVENT_GOT_10_COINS
 	const EVENT_GOT_20_COINS
 	const EVENT_GOT_20_COINS_2
-	;const_skip 2
 	const EVENT_GOT_TM23
 	const EVENT_1BF ; ???
 	const_skip 32
