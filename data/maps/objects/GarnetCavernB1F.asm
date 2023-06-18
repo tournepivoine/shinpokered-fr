@@ -8,5 +8,9 @@ GarnetCavernB1F_Object:
 
 	def_object_events
 	object_event  5, 11, SPRITE_BIRD, STAY, DOWN, 1, ARTICUNO_G, 70 | OW_POKEMON ; person
-
+	object_event 24,  1, SPRITE_POKE_BALL, STAY, DOWN, 2, MAX_REVIVE
+	object_event 19,  2, SPRITE_POKE_BALL, STAY, DOWN, 3, ESCAPE_ROPE
+	object_event 22, 10, SPRITE_BIRD, STAY, DOWN, 4 ; cuno copy 1
+	object_event 14,  1, SPRITE_BIRD, STAY, DOWN, 5 ; cuno copy 2
+	
 	def_warps_to GARNET_CAVERN_B1F

@@ -14,8 +14,10 @@ GarnetCavernB1F_ScriptPointers:
 
 GarnetCavernB1F_TextPointers:
 	dw ArticunoGText
-	;dw PickUpItemText soon
-	;dw PickUpItemText
+	dw PickUpItemText
+	dw PickUpItemText
+	dw ArticunoGCopy1
+	dw ArticunoGCopy2
 
 GarnetCavernB1FTrainerHeaders:
 	def_trainers
@@ -24,16 +26,74 @@ ArticunoGTrainerHeader:
 	db -1 ; end
 
 ArticunoGText:
+	ld a, HS_ARTICUNO_G_COPY_1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_ARTICUNO_G_COPY_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	text_asm
 	ld hl, ArticunoGTrainerHeader
 	call TalkToTrainer
 	jp TextScriptEnd
 
 ArticunoGBattleText:
-	text_far _ArticunoGBattleText
+	text_far _BirdBattleText
 	text_asm
 	ld a, ARTICUNO_G
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
 
+ArticunoGCopy1:
+	text_far _BirdBattleText
+	text_asm
+	ld a, ARTICUNO_G
+	call PlayCry
+	call WaitForSoundToFinish
+	
+	ld a, $ff
+	ld [wJoyIgnore], a
+	call GBFadeOutToBlack
+	ld a, SFX_TELEPORT_ENTER_1
+	call PlaySound
+	ld a, HS_ARTICUNO_G_COPY_1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	call Delay3
+	call GBFadeInFromBlack
+	ld a, 0
+	ld [wJoyIgnore], a
+	ld hl, ArticunoGCopyText
+	call PrintText
+	jp TextScriptEnd
+
+ArticunoGCopy2:
+	text_far _BirdBattleText
+	text_asm
+	ld a, ARTICUNO_G
+	call PlayCry
+	call WaitForSoundToFinish
+	
+	ld a, $ff
+	ld [wJoyIgnore], a
+	call GBFadeOutToBlack
+	ld a, SFX_TELEPORT_ENTER_1
+	call PlaySound
+	ld a, HS_ARTICUNO_G_COPY_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	call Delay3
+	call GBFadeInFromBlack
+	ld a, 0
+	ld [wJoyIgnore], a
+	ld hl, ArticunoGCopyText
+	call PrintText
+	jp TextScriptEnd
+
+ArticunoGCopyText:
+	text "It was a copy!"
+	done
+	text_end

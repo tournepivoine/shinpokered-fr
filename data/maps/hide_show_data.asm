@@ -470,6 +470,10 @@ RocketHideoutB4FHS:
 	db ROCKET_HIDEOUT_B4F, $09, HIDE          ; HS_ROCKET_HIDEOUT_B4F_ITEM_5
 GarnetCavernB1FHS:
 	db GARNET_CAVERN_B1F, $01, SHOW           ; HS_GARNET_ARTICUNO_G, SHOW for testing reasons
+	db GARNET_CAVERN_B1F, $02, SHOW           ; HS_GARNET_ITEM_1
+	db GARNET_CAVERN_B1F, $03, SHOW           ; HS_GARNET_ITEM_2
+	db GARNET_CAVERN_B1F, $04, SHOW           ; HS_ARTICUNO_G_COPY_1
+	db GARNET_CAVERN_B1F, $05, SHOW           ; HS_ARTICUNO_G_COPY_1
 SilphCo3FHS:
 	db SILPH_CO_3F, $02, SHOW                 ; HS_SILPH_CO_3F_1
 	db SILPH_CO_3F, $03, SHOW                 ; HS_SILPH_CO_3F_2

@@ -157,6 +157,10 @@ DEF SHOW EQU $15
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_4     ; 93
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_5     ; 94
 	const HS_GARNET_ARTICUNO_G             ; 95
+	const HS_GARNET_ITEM_1
+	const HS_GARNET_ITEM_2
+	const HS_ARTICUNO_G_COPY_1
+	const HS_ARTICUNO_G_COPY_2
 	const HS_SILPH_CO_3F_1                 ; 96
 	const HS_SILPH_CO_3F_2                 ; 97
 	const HS_SILPH_CO_3F_ITEM              ; 98 X
