@@ -243,13 +243,13 @@ MtMoon3Script_49e15:
 	ret
 
 MovementData_f9e65:
-	db $06
+	db NPC_MOVEMENT_LEFT
 MovementData_f9e66:
-	db $06
-	db $06
-	db $06
-	db $06
-	db $06
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
 	db $FF
 
 MtMoon3Script6:
