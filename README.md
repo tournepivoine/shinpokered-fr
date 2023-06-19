@@ -2,7 +2,7 @@ Kanto Expansion Pak
 ===================
 This is a ROM Hack of Pokémon Red and Blue, aiming to expand the Kanto region with new Kanto-related Pokemon, more interesting locations, and QoL changes. It is a port of my [Pokemon Showdown Mod](https://github.com/PlagueVonKarma?tab=repositories), in a sense.
 
-If playing on an emulator, BGB is strongly recommended for its accuracy and features. VBA's inaccuracies can cause unintended glitches. This hack is fully playable on official hardware as well.
+If playing on an emulator, BGB is strongly recommended for its accuracy and features. Inaccurate emulators, such as VBA and TGB Dual, can experience unintended glitches. This hack is fully playable on official hardware as well.
 
 New Pokemon:
 ====
@@ -209,8 +209,6 @@ Known Bugs
 - Dome and Wing Fossils in Rock Tunnel B1F don't show properly.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
-- The Brunswick Trail Bird event is unfinished, Zapdos causes it to crash.
-- Jessie and James in Mt. Moon aren't loaded in properly, making them appear to be invisible.
 - Meltan spawned via the Mystery Box will use the moves of the Pokemon they are replacing.
 - GiveMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
 - Text scrolls immediately when receiving the Pokemon from the Vermilion Beauty.
@@ -319,7 +317,7 @@ Much like in Let's Go Pikachu and Let's Go Eevee, traders are available who will
 
 Version exclusivity was factored in, instead moving Raticate and Golem to the cities without a trader, which were strangely appropriate thematically.
 
-Galarian and Paldean formes are accessed on the S.S. Anne, which now returns after receiving the Marsh Badge. Hisuian formes are found in the wild in Bill's Garden, which is accessible in the post-game. The idea is a prototype version of his Time Capsule yanks them in or something.
+Galarian and Paldean formes are accessed on the S.S. Anne, which now returns after receiving the Marsh Badge. Hisuian formes are found in the wild in Bill's Garden, which is accessible in the post-game. The idea is a prototype version of his Time Capsule yanks them in or something. The Galarian Birds are found on a post-game island.
 
 Given many of these evolve via stones, we've given them their pre-evolution's learnsets to ensure they remain functional. Should the current situation change, the trades will be changed to the pre-evolutions and their learnsets shifted appropriately.
 
