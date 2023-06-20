@@ -6,7 +6,7 @@ CelesteHillCaveWildMons:
 	db 52, MAROWAK
 	db 52, GRAVELER
 	db 51, MAROWAK
-	db 53, TOEDSCOOL
+	db 53, CROBAT
 	db 53, RHYDON
 	db 53, STEELIX
 	db 54, GOLEM
