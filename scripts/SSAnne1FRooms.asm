@@ -26,6 +26,7 @@ SSAnne1FRooms_TextPointers:
 	dw SSAnne8Text11
 	dw PerrserkerTrade
 	dw WeezingTrade
+	dw SSAnneNurse
 
 SSAnne8TrainerHeaders:
 	def_trainers
@@ -151,3 +152,18 @@ WeezingTrade:
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
+
+SSAnneNurse:
+	text_far _SilphCo9Text_5d8e5
+	text_asm
+	predef HealParty
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, SSAnneNurseDone
+	call PrintText
+	jp TextScriptEnd
+
+SSAnneNurseDone:
+	text_far _SSAnneNurseDone
+	text_end

@@ -55,3 +55,4 @@ Music:
 	dba Music_Sakaki
 	dba Music_Victory4
 	dba Music_Kinchou01
+	dba Music_Mewtwo01

@@ -377,6 +377,7 @@ INCLUDE "crysaudio/music/RBY/digda01.asm"
 INCLUDE "crysaudio/music/RBY/field06.asm"
 INCLUDE "crysaudio/music/RBY/victory4.asm"
 INCLUDE "crysaudio/music/RBY/kinchou01.asm"
+INCLUDE "crysaudio/music/RBY/mewtwo01.asm"
 
 SECTION "TCG Songs 1", ROMX
 

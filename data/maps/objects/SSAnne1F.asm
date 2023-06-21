@@ -4,9 +4,9 @@ SSAnne1F_Object:
 	def_warp_events
 	warp_event 26,  0, VERMILION_DOCK, 2
 	warp_event 27,  0, VERMILION_DOCK, 2
-	warp_event 31,  8, SS_ANNE_1F_ROOMS, 1
+	warp_event 19,  8, SS_ANNE_1F_ROOMS, 1
 	warp_event 23,  8, SS_ANNE_1F_ROOMS, 2
-	warp_event 19,  8, SS_ANNE_1F_ROOMS, 3
+	warp_event 31,  8, SS_ANNE_1F_ROOMS, 3
 	warp_event 15,  8, SS_ANNE_1F_ROOMS, 4
 	warp_event 11,  8, SS_ANNE_1F_ROOMS, 5
 	warp_event  7,  8, SS_ANNE_1F_ROOMS, 6

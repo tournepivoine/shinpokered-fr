@@ -61,6 +61,7 @@
 	const MUSIC_SAKAKI
 	const MUSIC_VICTORY4
 	const MUSIC_KINCHOU01
+	const MUSIC_MEWTWO01
 
 	const NUM_SONGS
 

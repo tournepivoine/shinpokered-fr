@@ -107,6 +107,7 @@ Improved Areas
 - Viridian Gym now has a minor new area once you make Giovanni leave.
 - Various Move Tutors from FireRed and LeafGreen have been distributed around the region, instead giving their respective TMs.
 - The S.S. Anne now returns after getting the Marsh Badge and features trades for Galarian forms & Evolutions, as well as Paldean Tauros.
+- The healer from the S.S. Anne is now featured in the rightmost room on 1F.
 - A few existing areas have unique palettes to make them stand out:
 	- The Game Corner has a new palette, meant to reflect the bright, exciting colours that casinos and pachinko parlours tend to have.
 	- The Seafoam Islands have a cyan-coloured palette to make it seem more like an ice cave. Lorelei's room also has it.
@@ -120,6 +121,7 @@ QoL Enhancements
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
 - All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
 - Bag capacity is increased from 20 to 30 items.
+- Pokemon Box capacity is now 280 Pokemon with 14 boxes.
 - New Pokedex entries for most Pokemon are available, sourced from the original 1996 Pokedex book by Creatures Inc., restoring a ton of old Kanto lore. Thanks to [Dr. Lava and Nob Ogasawara](http://lavacutcontent.com/1996-creatures-pokedex-translation-1/) for their incredible work translating and writing about it!
 - Pikachu and Eevee are now starters, featuring fully functional Rival lineups. If you pick Pikachu, he picks Eevee, and if you pick Eevee, he picks Pikachu! Their growth rates have been changed to Medium Slow to give them the early-game power spike the other starters have.
 - Item Descriptions are available!
@@ -213,6 +215,9 @@ Known Bugs
 - GiveMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
 - Text scrolls immediately when receiving the Pokemon from the Vermilion Beauty.
 - HP DV does not appear to display correctly.
+- Vermilion City sign near Diglett's Cave doesn't show correctly (prolly just an event thing)
+- Vermilion Beauty gives wrong Pokemon when cats are chosen
+- Cancelling teaching with a TM and choosing another crashes the game
 
 Evolution Methods for new Pokemon
 ====
@@ -331,7 +336,9 @@ Credits
 * Paulluxx - Showdown Mod assistance
 * DuoM2 - Showdown Mod assistance 
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
+* BlueZangoose / Vimescarrot - Pokemon box expansion, general assistance.
 * Frrf - Assisting with the development of the Pikachu / Eevee Mode, debugging
+* LuciShrimp - Mewtwo & Galarian Bird custom battle music
 * dannye33 - Assisting with crysaudio implementation
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
 * Chatot4444 - Assisting with gym scaling code

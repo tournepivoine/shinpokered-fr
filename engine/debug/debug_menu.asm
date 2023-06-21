@@ -108,7 +108,7 @@ TestBattle:
 	ld [hl], a
 
 	; Player's Pokemon.
-	ld a, NIDOREIGN
+	ld a, MEW
 	ld [wcf91], a
 	ld a, 100
 	ld [wCurEnemyLVL], a
@@ -130,7 +130,7 @@ TestBattle:
 	ld [hli], a
 	
 	; Opponent's Pokemon.
-	ld a, SANDY_SHOCKS
+	ld a, MEWTWO ; Test new theme
 	ld [wCurOpponent], a
 	ld a, 100 ; Set the level you want here.
 	ld [wCurEnemyLVL], a
