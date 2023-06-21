@@ -328,12 +328,13 @@ GetBoxSRAMLocation:
 	ret
 
 BoxSRAMPointerTable:
-	dw sBox1 ; sBox7
-	dw sBox2 ; sBox8
-	dw sBox3 ; sBox9
-	dw sBox4 ; sBox10
-	dw sBox5 ; sBox11
-	dw sBox6 ; sBox12
+	dw sBox1 ; sBox8
+	dw sBox2 ; sBox9
+	dw sBox3 ; sBox10
+	dw sBox4 ; sBox11
+	dw sBox5 ; sBox12
+	dw sBox6 ; sBox13
+	dw sBox7 ; sBox14
 
 ChangeBox::
 	ld hl, WhenYouChangeBoxText
@@ -404,7 +405,7 @@ CopyBoxToOrFromSRAM:
 	dec a
 	ld [hl], a
 
-	ld hl, sBox1 ; sBox7
+	ld hl, sBox1 ; sBox8
 	ld bc, sBank2AllBoxesChecksum - sBox1
 	call SAVCheckSum
 	ld [sBank2AllBoxesChecksum], a ; sBank3AllBoxesChecksum
@@ -419,11 +420,11 @@ DisplayChangeBoxMenu:
 	ldh [hAutoBGTransferEnabled], a
 	ld a, A_BUTTON | B_BUTTON
 	ld [wMenuWatchedKeys], a
-	ld a, 11
+	ld a, 13	; # of items in list (0-indexed)
 	ld [wMaxMenuItem], a
-	ld a, 1
+	ld a, 1		; Y position of cursor
 	ld [wTopMenuItemY], a
-	ld a, 12
+	ld a, 12	; X position of cursor
 	ld [wTopMenuItemX], a
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
@@ -438,7 +439,7 @@ DisplayChangeBoxMenu:
 	ld hl, ChooseABoxText
 	call PrintText
 	hlcoord 11, 0
-	ld b, 12
+	ld b, 14	;	box list textbox height
 	ld c, 7
 	call TextBoxBorder
 	ld hl, hUILayoutFlags
@@ -468,7 +469,7 @@ DisplayChangeBoxMenu:
 	hlcoord 18, 1
 	ld de, wBoxMonCounts
 	ld bc, SCREEN_WIDTH
-	ld a, $c
+	ld a, 15	;	Number of loops
 .loop
 	push af
 	ld a, [de]
@@ -501,7 +502,9 @@ BoxNames:
 	next "BOX 9"
 	next "BOX10"
 	next "BOX11"
-	next "BOX12@"
+	next "BOX12"
+	next "BOX13"
+	next "BOX14@"
 
 BoxNoText:
 	db "BOX No.@"
@@ -526,19 +529,21 @@ EmptyAllSRAMBoxes:
 
 EmptySRAMBoxesInBank:
 ; marks every box in the current SRAM bank as empty
-	ld hl, sBox1 ; sBox7
+	ld hl, sBox1 ; sBox8
 	call EmptySRAMBox
-	ld hl, sBox2 ; sBox8
+	ld hl, sBox2 ; sBox9
 	call EmptySRAMBox
-	ld hl, sBox3 ; sBox9
+	ld hl, sBox3 ; sBox10
 	call EmptySRAMBox
-	ld hl, sBox4 ; sBox10
+	ld hl, sBox4 ; sBox11
 	call EmptySRAMBox
-	ld hl, sBox5 ; sBox11
+	ld hl, sBox5 ; sBox12
 	call EmptySRAMBox
-	ld hl, sBox6 ; sBox12
+	ld hl, sBox6 ; sBox13
 	call EmptySRAMBox
-	ld hl, sBox1 ; sBox7
+	ld hl, sBox7 ; sBox14
+	call EmptySRAMBox
+	ld hl, sBox1 ; sBox8
 	ld bc, sBank2AllBoxesChecksum - sBox1
 	call SAVCheckSum
 	ld [sBank2AllBoxesChecksum], a ; sBank3AllBoxesChecksum
@@ -582,17 +587,19 @@ GetMonCountsForAllBoxes:
 	ret
 
 GetMonCountsForBoxesInBank:
-	ld a, [sBox1] ; sBox7
+	ld a, [sBox1] ; sBox8
 	ld [hli], a
-	ld a, [sBox2] ; sBox8
+	ld a, [sBox2] ; sBox9
 	ld [hli], a
-	ld a, [sBox3] ; sBox9
+	ld a, [sBox3] ; sBox10
 	ld [hli], a
-	ld a, [sBox4] ; sBox10
+	ld a, [sBox4] ; sBox11
 	ld [hli], a
-	ld a, [sBox5] ; sBox11
+	ld a, [sBox5] ; sBox12
 	ld [hli], a
-	ld a, [sBox6] ; sBox12
+	ld a, [sBox6] ; sBox13
+	ld [hli], a
+	ld a, [sBox7] ; sBox14
 	ld [hli], a
 	ret
 
