@@ -2282,6 +2282,8 @@ ItemUseTMHM:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr z, .useMachine
+	ld a, ITEM_NAME ; tm thing from BlueZangoose/vimescarrot
+    ld [wNameListType], a; if you decide not to use the machine, change the list type back to item list. FIXES THE TM CRASH BUG
 	ld a, 2
 	ld [wActionResultOrTookBattleTurn], a ; item not used
 	ret

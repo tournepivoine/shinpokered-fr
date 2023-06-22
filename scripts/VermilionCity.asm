@@ -266,6 +266,8 @@ VermilionCity_TextPointers:
 	dw VermilionCityText4
 	dw VermilionCityText5
 	dw VermilionCityText6
+	dw RoingusText
+	dw VermilionBeauty
 	dw VermilionCityText7
 	dw VermilionCityText8
 	dw MartSignText
@@ -273,8 +275,6 @@ VermilionCity_TextPointers:
 	dw VermilionCityText11
 	dw VermilionCityText12
 	dw VermilionCityText13
-	dw RoingusText
-	dw VermilionBeauty
 
 VermilionCityText1:
 	text_far _VermilionCityText1
@@ -516,16 +516,22 @@ VermilionBeauty:
 	call GetMonName
 	ld hl, BeautyFinish
 	call PrintText
-	
-	lb bc, PERSIAN, 16
-	ld a, [wBeautyChoice] ; Let's make sure they actually need Persian.
-	cp PERSIAN ; Do they?
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here. GivePokemon is very hasty.
+	lb bc, PERSIAN, 16 ; because we're elitists, let's see if they chose cats first.
+	ld a, [wBeautyChoice] ; *sigh*, but if they're dog lovers, let's make sure they actually want Persian.
+	cp PERSIAN ; Do they? If yes, skip.
 	jr z, .skip2 ; electric boogaloo
 	lb bc, ARCANINE, 16 ; ok but skip2 means arc never gets loaded in. very good sequel. disney would NEVER.
 .skip2
 	call GivePokemon
+	jr nc, .done
 	call LoadScreenTilesFromBuffer1 ; saves us from some corruption disasters if nicknaming.
 	SetEvent EVENT_VERMILION_BEAUTY_DONE ; and now we can finally rest.
+	ld hl, wd72e
+	set 0, [hl]
 .done
 	jp TextScriptEnd
 

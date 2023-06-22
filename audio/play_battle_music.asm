@@ -46,9 +46,9 @@ PlayBattleMusic::
 .finalBattle
 	ld a, MUSIC_FINAL_BATTLE
 	jr .playSong
-.wildBattle
-	ld a, MUSIC_WILD_BATTLE
 .mewtwoBattle
 	ld a, MUSIC_MEWTWO01
+.wildBattle
+	ld a, MUSIC_WILD_BATTLE
 .playSong
 	jp PlayMusic

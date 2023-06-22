@@ -212,12 +212,9 @@ Known Bugs
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
 - Meltan spawned via the Mystery Box will use the moves of the Pokemon they are replacing.
-- GiveMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
-- Text scrolls immediately when receiving the Pokemon from the Vermilion Beauty.
 - HP DV does not appear to display correctly.
-- Vermilion City sign near Diglett's Cave doesn't show correctly (prolly just an event thing)
-- Vermilion Beauty gives wrong Pokemon when cats are chosen
-- Cancelling teaching with a TM and choosing another crashes the game
+- Vermilion Beauty gives the wrong Pokemon when cats are chosen, seems to be an issue with wBeautyChoice.
+- GetMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
 
 Evolution Methods for new Pokemon
 ====

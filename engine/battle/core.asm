@@ -6282,6 +6282,7 @@ LoadEnemyMonData:
 	
 	ld a, MELTAN ; Meltan is loaded...
 	ld [wEnemyMonSpecies2], a ; Here!
+	ld [wcf91], a
 
 .skip ; Standard loading.
 	ld a, [wEnemyMonSpecies2]
