@@ -211,7 +211,6 @@ Known Bugs
 - Dome and Wing Fossils in Rock Tunnel B1F don't show properly.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
-- Meltan spawned via the Mystery Box will use the moves of the Pokemon they are replacing.
 - HP DV does not appear to display correctly.
 - Vermilion Beauty gives the wrong Pokemon when cats are chosen, seems to be an issue with wBeautyChoice.
 - GetMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
