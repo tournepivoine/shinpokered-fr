@@ -128,7 +128,6 @@ DEF SHOW EQU $15
 	const HS_MT_MOON_B2F_FOSSIL_2          ; 76
 	const HS_MT_MOON_B2F_ITEM_1            ; 77 X
 	const HS_MT_MOON_B2F_ITEM_2            ; 78 X
-	const HS_MT_MOON_CRATER_GUARD          ; 79
 	const HS_SS_ANNE_2F_RIVAL              ; 7A
 	const HS_SS_ANNE_1F_ROOMS_ITEM         ; 7B X
 	const HS_SS_ANNE_2F_ROOMS_ITEM_1       ; 7C X
@@ -262,10 +261,11 @@ DEF SHOW EQU $15
 	const HS_MT_MOON_CRATER_ITEM_7         ; F9
 	const HS_MT_MOON_CRATER_ITEM_8         ; FA
 	const HS_MT_MOON_CRATER_ITEM_9         ; FB
-	const HS_GIOVANNIS_ROOM_ITEM_1		   ; FC
-	const HS_GIOVANNIS_ROOM_ITEM_2		   ; FD
-	const HS_ROCK_TUNNEL_B1F_DOME		   ; FE
-	const HS_ROCK_TUNNEL_B1F_HELIX		   ; FF
-	const HS_ROCK_TUNNEL_B1F_AMBER		   ; 100
-	const HS_ROCK_TUNNEL_B1F_WING		   ; 101
+	const HS_GIOVANNIS_ROOM_ITEM_1         ; FC
+	const HS_GIOVANNIS_ROOM_ITEM_2         ; FD
+	const HS_ROCK_TUNNEL_B1F_DOME          ; FE
+	const HS_ROCK_TUNNEL_B1F_HELIX         ; FF
+	const HS_ROCK_TUNNEL_B1F_AMBER         ; 100
+	const HS_ROCK_TUNNEL_B1F_WING          ; 101
+	const HS_MT_MOON_CRATER_GUARD          ; 102
 DEF NUM_HS_OBJECTS EQU const_value
