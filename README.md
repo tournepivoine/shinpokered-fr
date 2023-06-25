@@ -282,6 +282,7 @@ v1.23.15
 
 *Not in current patch*	
 - Fixed an underflow issue which caused trainers above the player to not see beyond 3 spaces downward
+- Fixed the pokeflute posting the wrong message in wild pokemon battles
 
 
 #Bugfixes
@@ -474,6 +475,7 @@ v1.23.15
   - Full Restore when used in battle to heal HP now undoes the stat changes of brn/par
   - Pokedoll is disallowed during ghost marowak battle
   - Encountering Missingno will not give 128 of the item in the sixth bag slot
+  - Fixed the pokeflute posting the wrong message in wild pokemon battles
   
 
 - Audio fixes
