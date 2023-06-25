@@ -14,10 +14,10 @@ PlayBattleMusic::
 	jr .playSong
 .notGymLeaderBattle
 	ld a, [wCurOpponent]
+	cp MEWTWO ; Needs to be before OPP_ID_OFFSET to skip the wild check.
+	jr z, .mewtwoBattle
 	cp OPP_ID_OFFSET
 	jr c, .wildBattle
-	cp MEWTWO
-	jr z, .mewtwoBattle
 	cp OPP_YUJIROU
 	jr z, .Elite4Battle
 	cp OPP_LORELEI ; elite four now play the gym leader battle theme
@@ -48,6 +48,7 @@ PlayBattleMusic::
 	jr .playSong
 .mewtwoBattle
 	ld a, MUSIC_MEWTWO01
+	jr .playSong
 .wildBattle
 	ld a, MUSIC_WILD_BATTLE
 .playSong
