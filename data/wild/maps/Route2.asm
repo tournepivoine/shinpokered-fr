@@ -3,9 +3,9 @@ Route2WildMons:
 	db  4, RATTATA
 	db  3, PIDGEY
 	db  4, PIDGEY
-	db  4, WEEDLE
+	db  3, WEEDLE
 	db  3, KONYA
-	db  4, CATERPIE
+	db  3, CATERPIE
 	db  4, WEEDLE
 	db  4, CATERPIE
 	db  4, KONYA

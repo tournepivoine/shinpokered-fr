@@ -67,11 +67,6 @@ _OaksLabReceivedMonText::
 	text "!@"
 	text_end
 
-_OaksLabLastMonText:: ; figure out what to do with this
-	text "That's PROF.OAK's"
-	line "last #MON!"
-	done
-
 _OaksLabText_1d2f0::
 	text "OAK: Now, <PLAYER>,"
 	line "which #MON do"

@@ -324,8 +324,12 @@ Given many of these evolve via stones, we've given them their pre-evolution's le
 
 Credits
 ====
-* Plague von Karma - Creator of the Showdown Mod, Developer, Maps, and occasional spriter (assisting with Tsubomitto, Carapthor)
-* Martha's Against Humanity - Developer, Pokémon implementation, tweaks of Albatross's sprites, a few maps (Citrine City, Cinnabar Volcano)
+As the open source nature of this project implies, people are free to use what's here for their own ends, **so long as credit is given.** Specific credits are always encouraged as well. If you have any questions on this, contact @ plague_von_karma on Discord.
+
+If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues!
+
+* Plague von Karma - Creator of the Showdown Mod, Developer, Scenarios, Balancing, Maps, Event scripting, and occasional spriter (assisting with Tsubomitto, Carapthor)
+* Martha's Against Humanity - Developer, Pokémon implementation, Event scripting, tweaks of Albatross's sprites, a few maps (Citrine City, Cinnabar Volcano)
 * Ema Skye - Developer, Maps, Showdown Mod assistance
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance

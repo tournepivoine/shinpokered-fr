@@ -2,7 +2,7 @@
 BrockData:
 	db $FF, 10, GEODUDE, 11, DECILLA, 13, ONIX, 0                                            ; 0 badges
 	db $FF, 19, GEODUDE, 18, KABUTO, 19, DECILLA, 21, ONIX, 0                                ; 1
-	db $FF, 22, GRAVELER, 21, OMANYTE, 21, KABUTO, 23, DECILLA, 25, ONIX, 0                  ; 2
+	db $FF, 22, GRAVELER, 21, OMANYTE, 21, KABUTO, 23, DECILLA, 24, ONIX, 0                  ; 2
 	db $FF, 29, GRAVELER, 28, OMANYTE, 28, KABUTO, 29, DECILLA, 31, ONIX, 0                  ; 3
 	db $FF, 38, GOLEM, 37, OMANYTE, 37, KABUTO, 38, NIDOREIGN, 40, GYAOON, 0,                ; 4
 	db $FF, 41, GOLEM, 40, OMASTAR, 40, KABUTOPS, 41, NIDOREIGN, 43, GYAOON, 0               ; 5

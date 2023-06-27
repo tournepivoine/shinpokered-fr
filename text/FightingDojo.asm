@@ -123,8 +123,3 @@ _WantHitmonchanText::
 	line "piston punching"
 	cont "HITMONCHAN?"
 	done
-
-_OtherHitmonText::
-	text "Better not get"
-	line "greedy..."
-	done

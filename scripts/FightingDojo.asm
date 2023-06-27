@@ -310,5 +310,5 @@ WantHitmonchanText:
 	text_end
 
 OtherHitmonText:
-	text_far _OtherHitmonText
+	text_far _GreedyBastardText
 	text_end

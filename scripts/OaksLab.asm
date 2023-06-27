@@ -1071,7 +1071,7 @@ OaksLabScript_1d22d:
 	jp TextScriptEnd
 
 OaksLabLastMonText:
-	text_far _OaksLabLastMonText
+	text_far _GreedyBastardText
 	text_end
 
 OaksLabText32:
