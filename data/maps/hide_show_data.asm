@@ -384,6 +384,7 @@ PokemonMansion1FHS:
 FightingDojoHS:
 	db FIGHTING_DOJO, $06, SHOW               ; HS_FIGHTING_DOJO_GIFT_1
 	db FIGHTING_DOJO, $07, SHOW               ; HS_FIGHTING_DOJO_GIFT_2
+	db FIGHTING_DOJO, $08, SHOW               ; HS_FIGHTING_DOJO_GIFT_3
 SilphCo1FHS:
 	db SILPH_CO_1F, $01, HIDE                 ; HS_SILPH_CO_1F_RECEPTIONIST
 PowerPlantHS:

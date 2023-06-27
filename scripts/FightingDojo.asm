@@ -21,6 +21,8 @@ FightingDojo_ScriptPointers:
 	dw FightingDojoScript3
 
 FightingDojoScript1:
+	CheckEvent EVENT_POST_GAME_ATTAINED ; Required in the case you have cleared the game, but not cleared the dojo. It's an optional deal.
+	ret nz
 	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
 	ret nz
 	call CheckFightingMapTrainers
@@ -33,18 +35,18 @@ FightingDojoScript1:
 	ldh [hJoyHeld], a
 	ld [wcf0d], a
 	ld a, [wYCoord]
-	cp 3
+	cp 2
 	ret nz
 	ld a, [wXCoord]
 	cp 4
 	ret nz
 	ld a, $1
 	ld [wcf0d], a
-	ld a, PLAYER_DIR_RIGHT
+	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a
 	ld a, $1
 	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_LEFT
+	ld a, SPRITE_FACING_DOWN
 	ldh [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
 	ld a, $1
@@ -59,11 +61,11 @@ FightingDojoScript3:
 	ld a, [wcf0d]
 	and a
 	jr z, .asm_5cde4
-	ld a, PLAYER_DIR_RIGHT
+	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a
 	ld a, $1
 	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_LEFT
+	ld a, SPRITE_FACING_DOWN
 	ldh [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
 
@@ -71,7 +73,7 @@ FightingDojoScript3:
 	ld a, $f0
 	ld [wJoyIgnore], a
 	SetEventRange EVENT_BEAT_KARATE_MASTER, EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
-	ld a, $8
+	ld a, $9
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	xor a
@@ -88,6 +90,7 @@ FightingDojo_TextPointers:
 	dw FightingDojoText5
 	dw FightingDojoText6
 	dw FightingDojoText7
+	dw FightingDojoTextHitmontop
 	dw FightingDojoText8
 
 FightingDojoTrainerHeaders:
@@ -104,10 +107,36 @@ FightingDojoTrainerHeader3:
 
 FightingDojoText1: ; gym scaling can be removed to make space
 	text_asm
+	CheckEvent EVENT_POST_GAME_ATTAINED ; No need to view previous stuff, technically you can skip Bide this way but I think that's hilarious
+	jp z, .normalProcessing
 	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
 	jp nz, .continue1
 	CheckEventReuseA EVENT_BEAT_KARATE_MASTER
 	jp nz, .continue2
+.rematchMode ; Rematch functionality. Just loads pre-battle text and his trainer.
+	ld hl, KoichiRematchPreBattleText
+	call PrintText
+	ld c, BANK(Music_MeetMaleTrainer)
+	ld a, MUSIC_MEET_MALE_TRAINER
+	call PlayMusic
+	set 6, [hl]
+	set 7, [hl]
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	ld hl, KoichiRematchDefeatedText
+	ld de, KoichiRematchDefeatedText
+	call SaveEndBattleTextPointers
+	call EngageMapTrainer
+	ld a, OPP_BLACKBELT
+	ld [wCurOpponent], a
+	ld a, 10 ; Silph Gauntlet lineup.
+	ld [wTrainerNo], a
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	ld a, $1
+	ld [wGymLeaderNo], a
+	jr .asm_9dba4
+.normalProcessing
 	ld hl, FightingDojoText_5ce8e
 	call PrintText
 	ld hl, wd72d
@@ -134,12 +163,15 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a
+	ld a, $1
+	ld [wGymLeaderNo], a ; play gym music
 	
 	;ends here
 	
 	ld a, $3
 	ld [wFightingDojoCurScript], a
 	ld [wCurMapScript], a
+	SetEvent EVENT_DEFEATED_FIGHTING_DOJO
 	jr .asm_9dba4
 .continue1
 	ld hl, FightingDojoText_5ce9d
@@ -239,10 +271,18 @@ FightingDojoAfterBattleText4:
 	text_far _FightingDojoAfterBattleText4
 	text_end
 
+; So get this, the game had an EVENT_GOT_HITMONCHAN and EVENT_GOT_HITMONLEE here.
+; However, in the way it was being used...
+; You can just make it EVENT_GOT_HITMON and be outright better off.
+; So when implementing the new stuff, I made this optimisation. 
+; Oh, and because of the new Dojo structure, I had to rework the EVENT_DEFEATED_FIGHTING_DOJO system, to ensure people don't grab their prizes early.
+
 FightingDojoText6:
 ; Hitmonlee Poké Ball
 	text_asm
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
+	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	jr z, .Oi
+	CheckEvent EVENT_GOT_HITMON
 	jr z, .GetMon
 	ld hl, OtherHitmonText
 	call PrintText
@@ -266,7 +306,12 @@ FightingDojoText6:
 	ld a, HS_FIGHTING_DOJO_GIFT_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	SetEvents EVENT_GOT_HITMONLEE, EVENT_DEFEATED_FIGHTING_DOJO
+	SetEvents EVENT_GOT_HITMON
+	jr .done
+.Oi
+	ld hl, OiMateText
+	call PrintText
+	;fallthrough
 .done
 	jp TextScriptEnd
 
@@ -277,7 +322,9 @@ WantHitmonleeText:
 FightingDojoText7:
 ; Hitmonchan Poké Ball
 	text_asm
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
+	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	jr z, .Oi
+	CheckEvent EVENT_GOT_HITMON
 	jr z, .GetMon
 	ld hl, OtherHitmonText
 	call PrintText
@@ -296,12 +343,55 @@ FightingDojoText7:
 	ld c, 30
 	call GivePokemon
 	jr nc, .done
-	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO
+	SetEvent EVENT_GOT_HITMON
 
 	; once Poké Ball is taken, hide sprite
 	ld a, HS_FIGHTING_DOJO_GIFT_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	jr .done
+.Oi
+	ld hl, OiMateText
+	call PrintText
+	;fallthrough
+.done
+	jp TextScriptEnd
+
+FightingDojoTextHitmontop:
+; Hitmontop Poké Ball
+	text_asm
+	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	jr z, .Oi
+	CheckEvent EVENT_GOT_HITMON
+	jr z, .GetMon
+	ld hl, OtherHitmonText
+	call PrintText
+	jr .done
+.GetMon
+	ld a, HITMONTOP
+	call DisplayPokedex
+	ld hl, WantHitmontopText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .done
+	ld a, [wcf91]
+	ld b, a
+	ld c, 30
+	call GivePokemon
+	jr nc, .done
+	SetEvent EVENT_GOT_HITMON
+
+	; once Poké Ball is taken, hide sprite
+	ld a, HS_FIGHTING_DOJO_GIFT_3
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	jr .done
+.Oi
+	ld hl, OiMateText
+	call PrintText
+	;fallthrough
 .done
 	jp TextScriptEnd
 
@@ -309,6 +399,22 @@ WantHitmonchanText:
 	text_far _WantHitmonchanText
 	text_end
 
+WantHitmontopText:
+	text_far _WantHitmontopText
+	text_end
+
 OtherHitmonText:
 	text_far _GreedyBastardText
+	text_end
+
+OiMateText:
+	text_far _OiMateText
+	text_end
+
+KoichiRematchPreBattleText:
+	text_far _KoichiRematchPreBattleText
+	text_end
+
+KoichiRematchDefeatedText:
+	text_far _KoichiRematchDefeatedText
 	text_end

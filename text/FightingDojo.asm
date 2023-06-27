@@ -123,3 +123,33 @@ _WantHitmonchanText::
 	line "piston punching"
 	cont "HITMONCHAN?"
 	done
+
+_WantHitmontopText::
+	text "You want the"
+	line "capoeira fighter"
+	cont "HITMONTOP?"
+	done
+
+_OiMateText::
+	text "What do you think"
+	line "you're doing?"
+	
+	para "Fight like a true"
+	line "warrior!"
+	done
+
+_KoichiRematchPreBattleText::
+	text "Ho, <PLAYER>!"
+	
+	para "Did you return"
+	line "to spar with us"
+	cont "again?"
+	
+	para "Aha! Then I"
+	line "won't hold back!"
+	done
+
+_KoichiRematchDefeatedText::
+	text "I have"
+	line "been defeated"
+	cont "once more..."

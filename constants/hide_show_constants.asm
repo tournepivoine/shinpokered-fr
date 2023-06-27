@@ -88,6 +88,7 @@ DEF SHOW EQU $15
 	const HS_POKEMON_MANSION_1F_ITEM_2     ; 4E X
 	const HS_FIGHTING_DOJO_GIFT_1          ; 4F
 	const HS_FIGHTING_DOJO_GIFT_2          ; 50
+	const HS_FIGHTING_DOJO_GIFT_3
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 51
 	const HS_VOLTORB_1                     ; 52 X
 	const HS_VOLTORB_2                     ; 53 X

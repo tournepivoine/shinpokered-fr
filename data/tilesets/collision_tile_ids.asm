@@ -68,7 +68,7 @@ Plateau_Coll::
 	coll_tiles $1b, $23, $2c, $2d, $3b, $45
 
 PreGym_Coll::
-	coll_tiles $0B, $0E, $1E, $1F
+	coll_tiles $0B, $0E, $1E, $1F, $11
 
 Citrine_Coll::
 	coll_tiles $2C, $31, $3F, $55, $0E, $2F, $23, $20, $10, $03, $1C, $1B, $0B, $0C, $21, $39, $3C, $48, $49, $58, $59
