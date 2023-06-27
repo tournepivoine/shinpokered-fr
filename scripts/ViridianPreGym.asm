@@ -34,7 +34,6 @@ YujirouHasBeenBeaten:
 ViridianPreGym_TextPointers:
 	dw YujirouText
 	dw YujirouHasBeenBeaten
-	dw YujirouRematch
 	dw ViridianPreGymText1
 	dw ViridianPreGymText2
 	dw ViridianPreGymGuide
@@ -55,6 +54,9 @@ ViridianPreGymTrainerHeader1:
 
 YujirouText:
 	text_asm
+	
+	CheckEvent EVENT_POST_GAME_ATTAINED ; No need to view previous stuff
+	jr nz, .rematchMode
 	
 	CheckEvent EVENT_BEAT_YUJIROU
 	jr nz, .YujirouBeaten
@@ -82,6 +84,29 @@ YujirouText:
 	ld [wViridianPreGymCurScript], a
 	ld [wCurMapScript], a
 	jr .done
+.rematchMode ; Rematch functionality. Just loads pre-battle text and his trainer.
+	ld hl, YujirouIntro2
+	call PrintText
+	ld c, BANK(Music_MeetMaleTrainer)
+	ld a, MUSIC_MEET_MALE_TRAINER
+	call PlayMusic
+	set 6, [hl]
+	set 7, [hl]
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	ld hl, YujirouLoseText2
+	ld de, YujirouWinText
+	call SaveEndBattleTextPointers
+	call EngageMapTrainer
+	ld a, OPP_BROCK
+	ld [wCurOpponent], a
+	ld a, 9
+	ld [wTrainerNo], a
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	ld a, $1
+	ld [wGymLeaderNo], a
+	jr .done
 .YujirouBeaten
 	ld hl, YujirouAfterBattleText
 	call PrintText
@@ -104,36 +129,6 @@ YujirouWinText::
 YujirouAfterBattleText::
 	text_far _YujirouAfterBattleText
 	text_end
-
-YujirouRematch:
-	text_asm
-	ld hl, YujirouIntro2
-	call PrintText
-	
-	ld c, BANK(Music_MeetMaleTrainer)
-	ld a, MUSIC_MEET_MALE_TRAINER
-	call PlayMusic
-	
-	ld hl, wd72d
-	set 6, [hl]
-	set 7, [hl]
-	call Delay3
-	ld a, OPP_YUJIROU
-	ld [wCurOpponent], a
-	ld a, 2
-	ld [wTrainerNo], a
-	ld [wIsTrainerBattle], a
-	ld a, $2
-	ld [wViridianPreGymCurScript], a
-	ld hl, YujirouLoseText2
-	ld de, YujirouWinText
-	call SaveEndBattleTextPointers
-	jp TextScriptEnd
-	jr .done
- .done
-	ld hl, YujirouAfterBattleText2
-	call PrintText
-	jp TextScriptEnd
 
 YujirouIntro2::
 	text_far _YujirouIntro2

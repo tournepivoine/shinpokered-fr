@@ -86,6 +86,8 @@ HiddenObjectMaps:
 	db CELADON_UNIVERSITY_POKECENTER
 	db CITRINE_POKECENTER
 	db BATTLE_TENT
+	db VERMILION_DOCK
+	db MT_MOON_CRATER
 	db -1 ; end
 
 HiddenObjectPointers:
@@ -177,6 +179,8 @@ HiddenObjectPointers:
 	dw CeladonUniversityPokecenterHiddenObjects
 	dw CitrinePokecenterHiddenObjects
 	dw BattleTentHiddenObjects
+	dw VermilionDockHiddenObjects
+	dw MtMoonCraterHiddenObjects
 
 MACRO hidden_object
 	db \2 ; y coord
@@ -639,4 +643,15 @@ Route4HiddenObjects:
 
 BattleTentHiddenObjects:
 	hidden_object 9,  16, SPRITE_FACING_UP, OpenPokemonCenterPC
+	db -1
+
+VermilionDockHiddenObjects:
+	hidden_object 21,  0, OLD_SEA_MAP, HiddenItems
+	db -1
+
+MtMoonCraterHiddenObjects:
+	hidden_object 17, 20, HEART_STONE, HiddenItems
+	hidden_object 20, 20, POISON_STONE, HiddenItems
+	hidden_object 20, 17, BLK_AUGURITE, HiddenItems
+	hidden_object 32, 45, OLD_AMBER, HiddenItems
 	db -1

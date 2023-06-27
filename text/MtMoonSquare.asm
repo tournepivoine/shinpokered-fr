@@ -19,5 +19,5 @@ _MtMoonSquareText1::
 	line "research is done,"
 	cont "only authorized"
 	cont "individuals may"
-	cont "enter the crater."
+	cont "enter the CRATER."
 	done

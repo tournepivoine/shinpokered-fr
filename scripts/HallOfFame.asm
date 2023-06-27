@@ -138,7 +138,6 @@ PostGameSetup:
 
 ObjectsToShow:
 	db HS_ROUTE_1_OAK ; Oak post-game fight
-	db HS_YUJIROU_REMATCH ; Yujirou rematch
 	db -1 ; end
 
 ObjectsToHide:

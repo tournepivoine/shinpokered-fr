@@ -75,7 +75,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw ViridianPreGymHS
+	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
@@ -100,7 +100,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw VermilionDockHS
+	dw NoHS
 	dw NoHS
 	dw SSAnne2FHS
 	dw NoHS
@@ -152,7 +152,7 @@ MapHSPointers:
 	dw PokemonTower2FHS
 	dw BrunswickGrottoHS ; Brunswick Grotto
 	;dw PokemonTower3FHS
-	dw PokemonTower4FHS
+	dw NoHS ; Pokemon Tower 4F, removed for constant space
 	dw PokemonTower5FHS
 	dw PokemonTower6FHS
 	dw PokemonTower7FHS
@@ -357,10 +357,10 @@ BrunswickGrottoHS:
 	db BRUNSWICK_GROTTO, $01, SHOW            ; HS_BRUNSWICK_ZAPDOS_G_2
 ;PokemonTower3FHS:
 ;	db POKEMON_TOWER_3F, $04, SHOW            ; HS_POKEMON_TOWER_3F_ITEM
-PokemonTower4FHS:
-	db POKEMON_TOWER_4F, $04, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_1
-	db POKEMON_TOWER_4F, $05, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_2
-	db POKEMON_TOWER_4F, $06, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_3
+;PokemonTower4FHS:
+;	db POKEMON_TOWER_4F, $04, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_1
+;	db POKEMON_TOWER_4F, $05, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_2
+;	db POKEMON_TOWER_4F, $06, SHOW            ; HS_POKEMON_TOWER_4F_ITEM_3
 PokemonTower5FHS:
 	db POKEMON_TOWER_5F, $06, SHOW            ; HS_POKEMON_TOWER_5F_ITEM
 PokemonTower6FHS:
@@ -518,7 +518,6 @@ SilphCo10FHS:
 	db SILPH_CO_10F, $03, SHOW                ; HS_SILPH_CO_10F_3
 	db SILPH_CO_10F, $04, SHOW                ; HS_SILPH_CO_10F_ITEM_1
 	db SILPH_CO_10F, $05, SHOW                ; HS_SILPH_CO_10F_ITEM_2
-	db SILPH_CO_10F, $06, SHOW                ; HS_SILPH_CO_10F_ITEM_3
 SilphCo11FHS:
 	db SILPH_CO_11F, $03, SHOW                ; HS_SILPH_CO_11F_1
 	db SILPH_CO_11F, $04, SHOW                ; HS_SILPH_CO_11F_2
@@ -586,8 +585,6 @@ SeafoamIslandsB4FHS:
 	db SEAFOAM_ISLANDS_B4F, $01, HIDE         ; HS_SEAFOAM_ISLANDS_B4F_BOULDER_1
 	db SEAFOAM_ISLANDS_B4F, $02, HIDE         ; HS_SEAFOAM_ISLANDS_B4F_BOULDER_2
 	db SEAFOAM_ISLANDS_B4F, $03, SHOW         ; HS_ARTICUNO
-VermilionDockHS:
-	db VERMILION_DOCK, $01, SHOW              ; HS_OLD_SEA_MAP
 FarawayIslandInsideHS:
 	db FARAWAY_ISLAND_INSIDE, $01, SHOW       ; HS_MEW
 PokemonMansionB2FHS:
@@ -595,19 +592,11 @@ PokemonMansionB2FHS:
 	db POKEMON_MANSION_B2F, $04, SHOW         ; HS_POKEMON_MANSION_B2F_ITEM_2
 Route1HS:
 	db ROUTE_1, $03, HIDE                     ; HS_ROUTE_1_OAK
-ViridianPreGymHS:
-	db VIRIDIAN_PRE_GYM, $01, SHOW            ; HS_YUJIROU
-	db VIRIDIAN_PRE_GYM, $02, HIDE            ; HS_YUJIROU_REMATCH
 MtMoonCraterHS:
 	db MT_MOON_CRATER, $01, SHOW              ; HS_MT_MOON_CRATER_ITEM_1
 	db MT_MOON_CRATER, $02, SHOW              ; HS_MT_MOON_CRATER_ITEM_2
 	db MT_MOON_CRATER, $03, SHOW              ; HS_MT_MOON_CRATER_ITEM_3
 	db MT_MOON_CRATER, $04, SHOW              ; HS_MT_MOON_CRATER_ITEM_4
-	db MT_MOON_CRATER, $05, SHOW              ; HS_MT_MOON_CRATER_ITEM_5
-	db MT_MOON_CRATER, $06, SHOW              ; HS_MT_MOON_CRATER_ITEM_6
-	db MT_MOON_CRATER, $07, SHOW              ; HS_MT_MOON_CRATER_ITEM_7
-	db MT_MOON_CRATER, $08, SHOW              ; HS_MT_MOON_CRATER_ITEM_8
-	db MT_MOON_CRATER, $09, SHOW              ; HS_MT_MOON_CRATER_ITEM_9
 GiovannisRoomHS:
 	db GIOVANNIS_ROOM, $05, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_1
 	db GIOVANNIS_ROOM, $06, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_2
@@ -618,5 +607,4 @@ RockTunnelB1FHS:
 	db ROCK_TUNNEL_B1F, $0D, SHOW			  ; HS_ROCK_TUNNEL_B1F_WING
 MtMoonSquareHS:
 	db MT_MOON_SQUARE, $04, SHOW              ; HS_MT_MOON_CRATER_GUARD
-	db $FF, $01, SHOW ; end
 	assert_table_length NUM_HS_OBJECTS + 1
