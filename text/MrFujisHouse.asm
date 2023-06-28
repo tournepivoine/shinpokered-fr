@@ -27,15 +27,6 @@ _LavenderHouse1Text_1d8f9::
 	cont "nice to hug!"
 	done
 
-_LavenderHouse1Text3::
-	text "SANDSHREW: Pikii!@"
-	text_end
-
-_LavenderHouse1Text4::
-	text "BULBASAUR: Bubba!"
-	line "Zoar!@"
-	text_end
-
 _LavenderHouse1Text_1d94c::
 	text "MR.FUJI: <PLAYER>."
 
@@ -88,7 +79,3 @@ _LavenderHouse1Text6::
 	para "Gone! It's been"
 	line "clipped out!"
 	done
-
-_LavenderHouse1Text7::
-	text "ODDISH: Orddissh!@"
-	text_end

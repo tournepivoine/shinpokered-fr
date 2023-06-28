@@ -258,4 +258,5 @@ DEF SHOW EQU $15
 	const HS_ROCK_TUNNEL_B1F_AMBER         ; F8
 	const HS_ROCK_TUNNEL_B1F_WING          ; F9
 	const HS_MT_MOON_CRATER_GUARD          ; FA
+	const HS_DAYCARE_BULBASAUR			   ; FB
 DEF NUM_HS_OBJECTS EQU const_value

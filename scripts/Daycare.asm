@@ -3,6 +3,12 @@ Daycare_Script:
 
 Daycare_TextPointers:
 	dw DayCareMText1
+	dw DaycareMelanie
+	dw DaycareBulbasaur
+	dw DaycareOddish
+	dw DaycareSandshrew
+	dw DaycareRibbito
+	dw DaycareBook
 
 DayCareMText1:
 	text_asm
@@ -267,3 +273,142 @@ DayCareHeresYourMonText:
 DayCareNotEnoughMoneyText:
 	text_far _DayCareNotEnoughMoneyText
 	text_end
+
+; This is porting the Yellow Melanie event to Red.
+; Because we don't have Pikachu for happiness, the condition is made to be
+; the Cascade Badge instead.
+; We could hide her entirely with regards to the starter system, it would just
+; look super cringe
+DaycareMelanie:
+	text_asm
+	CheckEvent EVENT_GOT_BULBASAUR
+	jr nz, .gotBulbasaur
+
+	ld hl, MelanieText1 ; Firstly, important text.
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here. it's very hasty.
+	
+	ld a, [wObtainedBadges] ; load the badge count
+	bit BIT_CASCADEBADGE, a
+	jr z, .superDone ; no? d'oh! darn those brock skippers!
+	
+	; If they picked any of the main 3 they can't get this.
+	ld a, [wPlayerStarter]
+	cp STARTER1
+	jr z, .notTheOne
+	cp STARTER2
+	jr z, .notTheOne
+	cp STARTER3
+	jr z, .notTheOne
+	
+	ld hl, MelanieText2 ; yes? let's continue, then.
+	call PrintText
+	
+	call YesNoChoice ; let's get things going.
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused ; imagine refusing a bulbasaur tbh
+	
+	lb bc, BULBASAUR, 5 ; load the bulbasaur
+	call GivePokemon ; attempt to give the bulbasaur
+	jr nc, .fullParty ; if it's fucked just go here
+	ld a, HS_DAYCARE_BULBASAUR ; hide the bulbasaur
+	ld [wMissableObjectIndex], a ; badababa
+	predef HideObject ; pow
+	SetEvent EVENT_GOT_BULBASAUR
+	
+	ld hl, MelanieText3
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here.
+	jr .superDone ; anyway tons of textscriptends is cringe so let's do things better this time
+.gotBulbasaur ; If they have Bulbasaur, just go here.
+	ld hl, MelanieText4
+	jr .done
+.refused ; If they refused, they're not the one.
+	ld hl, MelanieText5
+	jr .done
+.fullParty ; if they have a full party they can get knotted
+	ld hl, MelanieText6
+	jr .done
+.notTheOne ; If they started with the original trio, they're not the one.
+	ld hl, MelanieText7
+	; fallthrough
+.done
+	call PrintText
+	; fallthrough
+.superDone
+	jp TextScriptEnd
+
+DaycareBulbasaur:
+	text_far _BulbasaurText
+	text_asm
+	ld a, BULBASAUR
+	call PlayCry
+	jp TextScriptEnd
+
+DaycareOddish:
+	text_far _OddishText
+	text_asm
+	ld a, ODDISH
+	call PlayCry
+	jp TextScriptEnd
+
+DaycareSandshrew:
+	text_far _SandshrewText
+	text_asm
+	ld a, SANDSHREW
+	call PlayCry
+	jp TextScriptEnd
+
+DaycareRibbito:
+	text_far _RibbitoText
+	text_asm
+	ld a, RIBBITO
+	call PlayCry
+	jp TextScriptEnd
+
+_RibbitoText:
+	text "RIBBITO: Ribbi"
+	line "ribbi!"
+	done
+
+MelanieText1:
+	text_far _MelanieText1
+	text_end
+
+MelanieText2:
+	text_far _MelanieText2
+	text_end
+
+MelanieText3:
+	text_far _MelanieText3
+	text_end
+	
+MelanieText4:
+	text_far _MelanieText4
+	text_end
+	
+MelanieText5:
+	text_far _MelanieText5
+	text_end
+
+MelanieText6:
+	text_far _MelanieText6
+	text_end
+
+MelanieText7:
+	text_far _MelanieText7
+	text_end
+
+DaycareBook:
+	text "It's a drawing of"
+	line "a TRAINER with a"
+	cont "PIKACHU and an"
+	cont "EEVEE!"
+	done

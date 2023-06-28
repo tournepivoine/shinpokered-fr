@@ -101,6 +101,7 @@ Improved Areas
 - Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its beta music!
 - Route 25 has been given a facelift, adding Bill's Lighthouse in place of the Sea Cottage.
 - The Fighting Dojo has been revamped, featuring a design reminiscent of the prototype versions; rough floors, the elder in the back, and more. Additionally, you can now get a Hitmontop as a third option. The Karate Master is also now treated somewhat more like a Gym Leader, having Gym Scaling and a Rematch system. 
+- The Day Care now contains a PC and Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.
 - Cinnabar Island is a lot bigger, with the volcano being added to it. The mansion seems different too...
 	- Cinnabar Lab's Trade Room now features the Trader, who will evolve trade-evolving Pokemon for you!
 - Pokemon Tower was shortened, being less intensive and adding room for more maps.

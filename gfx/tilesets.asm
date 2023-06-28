@@ -8,8 +8,6 @@ RedsHouse2_GFX::    INCBIN "gfx/tilesets/reds_house.2bpp"
 RedsHouse1_Block::
 RedsHouse2_Block::  INCBIN "gfx/blocksets/reds_house.bst"
 
-House_GFX::         INCBIN "gfx/tilesets/house.2bpp"
-House_Block::       INCBIN "gfx/blocksets/house.bst"
 Mansion_GFX::       INCBIN "gfx/tilesets/mansion.2bpp"
 Mansion_Block::     INCBIN "gfx/blocksets/mansion.bst"
 ShipPort_GFX::      INCBIN "gfx/tilesets/ship_port.2bpp"
@@ -77,3 +75,6 @@ RocketHouse_Block::		INCBIN "gfx/blocksets/rockethouse.bst"
 
 BetaMart_GFX::		INCBIN "gfx/tilesets/betamart.2bpp"
 BetaMart_Block::		INCBIN "gfx/blocksets/betamart.bst"
+
+House_GFX::         INCBIN "gfx/tilesets/house.2bpp"
+House_Block::       INCBIN "gfx/blocksets/house.bst"

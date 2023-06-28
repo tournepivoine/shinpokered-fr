@@ -78,7 +78,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
+	dw DaycareHS
 	dw NoHS
 	dw NoHS
 	dw CelesteHillHS
@@ -349,6 +349,8 @@ CeruleanCaveHS:
 	db CERULEAN_CAVE_1F, $01, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_1
 	db CERULEAN_CAVE_1F, $02, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_2
 	db CERULEAN_CAVE_1F, $03, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_3
+DaycareHS:
+	db DAYCARE, $03, SHOW 					  ; HS_DAYCARE_BULBASAUR
 CelesteHillHS:
 	db CELESTE_HILL, $01, SHOW                ; HS_MOLTRES_G
 PokemonTower2FHS:

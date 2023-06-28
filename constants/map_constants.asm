@@ -94,7 +94,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const VIRIDIAN_PRE_GYM,               5,  7 ; $47	- was CERULEAN_TRASHED_HOUSE_COPY
 	map_const ROUTE_5_GATE,                   4,  3 ; $48
 	map_const UNDERGROUND_PATH_ROUTE_5,       4,  4 ; $49
-	map_const DAYCARE,                        4,  4 ; $4A
+	map_const DAYCARE,                        6,  4 ; $4A
 	map_const ROUTE_6_GATE,                   4,  3 ; $4B
 	map_const UNDERGROUND_PATH_ROUTE_6,       4,  4 ; $4C
 	map_const CELESTE_HILL,                  11, 11 ; $4D	- Was copy of above & unused

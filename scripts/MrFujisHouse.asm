@@ -54,14 +54,14 @@ LavenderHouse1Text_1d8f9:
 	text_end
 
 LavenderHouse1Text3:
-	text_far _LavenderHouse1Text3
+	text_far _SandshrewText
 	text_asm
 	ld a, SANDSHREW
 	call PlayCry
 	jp TextScriptEnd
 
 LavenderHouse1Text4:
-	text_far _LavenderHouse1Text4
+	text_far _BulbasaurText
 	text_asm
 	ld a, BULBASAUR
 	call PlayCry
@@ -113,7 +113,7 @@ LavenderHouse1Text6:
 	text_end
 
 LavenderHouse1Text7:
-	text_far _LavenderHouse1Text7
+	text_far _OddishText
 	text_asm
 	ld a, ODDISH
 	call PlayCry
