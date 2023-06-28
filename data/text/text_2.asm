@@ -684,6 +684,11 @@ _ViridianBlackboardPoisonText::
 
 	para "Poison lingers"
 	line "after battles."
+	
+	para "If a #MON is"
+	line "badly poisoned,"
+	cont "it could worsen"
+	cont "over time!"
 
 	para "Use an ANTIDOTE"
 	line "to cure poison!"
@@ -693,6 +698,9 @@ _ViridianBlackboardPrlzText::
 	text "Paralysis could"
 	line "make #MON"
 	cont "moves misfire!"
+	
+	para "It even lowers"
+	line "their SPEED!"
 
 	para "Paralysis remains"
 	line "after battles."
@@ -702,8 +710,8 @@ _ViridianBlackboardPrlzText::
 	prompt
 
 _ViridianBlackboardBurnText::
-	text "A burn reduces"
-	line "power and speed."
+	text "A burn reduces a"
+	line "#MON's ATTACK."
 	cont "It also causes"
 	cont "ongoing damage."
 

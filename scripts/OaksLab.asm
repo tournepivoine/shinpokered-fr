@@ -885,6 +885,7 @@ OaksLabText4:
 ; $6 = Eevee
 OaksLabTextPikachu:
 	text_asm
+	call PikachuEeveeMode
 	ld a, STARTER5
 	ld [wRivalStarterTemp], a
 	ld a, $8
@@ -895,6 +896,7 @@ OaksLabTextPikachu:
 
 OaksLabTextEevee:
 	text_asm
+	call PikachuEeveeMode
 	ld a, STARTER4
 	ld [wRivalStarterTemp], a
 	ld a, $7
@@ -1345,3 +1347,22 @@ OaksLabText10:
 OaksLabText_1d405:
 	text_far _OaksLabText_1d405
 	text_end
+
+; This is used to display Damien and Officer Jenny for Charmander and Squirtle, respectively.
+; It was set up in this way to easily add new things for the mode.
+; By default, all Pikachu/Eevee Mode things are hidden - more efficient.
+PikachuEeveeMode:
+	ld hl, PikachuEeveeShows
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	push hl
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	pop hl
+	jr .loop
+
+PikachuEeveeShows:
+	db HS_DAMIEN ; Charmander guy
+	db -1 ; end

@@ -65,3 +65,40 @@ _Route24BattleText1::
 	text "I saw your feat"
 	line "from the grass!"
 	done
+
+_Route24DamienText1::
+	text "This CHARMANDER"
+	line "is pathetic!"
+	
+	para "It couldn't beat"
+	line "the weakest of"
+	cont "opponents!"
+
+	para "I should release"
+	line "it. It keeps"
+	cont "following me."
+
+	para "Huh? You want"
+	line "it?"
+	done
+
+_Route24DamienText2::
+	text "Sure. Take it."
+	done
+
+_Route24DamienText3::
+	text "I guess I'll"
+	line "leave it on some"
+	cont "rock. Ha!"
+	done
+
+_Route24DamienText4::
+	text "How's it doing?"
+	line "It couldn't even"
+	cont "beat a KRABBY!"
+	done
+
+_DamienFullParty::
+	text "Huh? Your PARTY"
+	line "is full?"
+	done

@@ -140,15 +140,18 @@ _ViridianPreGymSign2::
 _ViridianPreGymSign3::
 	text "TRAINER TIPS"
 	
-	para "Paralysis lowers"
-	line "a #MON's SPEED!"
+	para "If a #MON is"
+	line "confused, it will"
+	cont "sometimes hurt"
+	cont "itself!"
 	
-	para "Burns lower a"
-	line "#MON's ATTACK!"
+	para "It does not remain"
+	line "after battles."
 	
-	para "Cure them with"
-	line "PARALYZ HEAL and"
-	cont "BURN HEAL!"
+	para "It can also be"
+	cont "cured by swapping"
+	cont "your #MON during"
+	cont "the battle!"
 	done
 
 _ViridianPreGymSign4::

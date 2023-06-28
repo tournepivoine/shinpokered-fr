@@ -163,7 +163,25 @@ IF DEF(_DEBUG)
 	ld a, STARTER5
 	ld [hl], a
 
+	; This is used to display Damien and Officer Jenny for Charmander and Squirtle, respectively.
+	; It was set up in this way to easily add new things for the mode.
+	; By default, all Pikachu/Eevee Mode things are hidden - more efficient.
+	ld hl, DebugPikachuEeveeShows
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	push hl
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	pop hl
+	jr .loop
+
 	ret
+
+DebugPikachuEeveeShows:
+		db HS_DAMIEN ; Charmander guy
+		db -1 ; end
 
 DebugSetPokedexEntries:
 	ld b, wPokedexOwnedEnd - wPokedexOwned

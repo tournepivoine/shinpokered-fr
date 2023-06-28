@@ -99,6 +99,7 @@ Improved Areas
 - Jessie and James have been backported from Yellow, appearing in Mt. Moon, Rocket Hideout, Pokemon Tower, and Silph Co. Additionally, they have a post-game fight.
 - Rock Tunnel has a more workable map, now being easier to go through and having new areas to explore. Includes a way to get renewable fossils, items, and other interesting bits and pieces. Overall, it makes Flash much more rewarding to bring, showing you where the items and content are instead of being an inconvenience. 
 - Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its beta music!
+- Route 24 now features Damien, the Charmander trainer from Yellow, who only appears if Pikachu or Eevee are chosen. His text has been altered to be more accurate to his anime appearance. It also has a house where you can get a Fishing Rod.
 - Route 25 has been given a facelift, adding Bill's Lighthouse in place of the Sea Cottage.
 - The Fighting Dojo has been revamped, featuring a design reminiscent of the prototype versions; rough floors, the elder in the back, and more. Additionally, you can now get a Hitmontop as a third option. The Karate Master is also now treated somewhat more like a Gym Leader, having Gym Scaling and a Rematch system. 
 - The Day Care now contains a PC and Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.

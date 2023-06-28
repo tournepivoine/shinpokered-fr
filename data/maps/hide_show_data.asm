@@ -322,6 +322,7 @@ Route22HS:
 Route24HS:
 	db ROUTE_24, $01, SHOW                    ; HS_NUGGET_BRIDGE_GUY
 	db ROUTE_24, $08, SHOW                    ; HS_ROUTE_24_ITEM
+	db ROUTE_24, $09, HIDE					  ; HS_DAMIEN
 Route25HS:
 	db ROUTE_25, $0A, SHOW                    ; HS_ROUTE_25_ITEM
 BrunswickTrailHS:
@@ -349,8 +350,6 @@ CeruleanCaveHS:
 	db CERULEAN_CAVE_1F, $01, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_1
 	db CERULEAN_CAVE_1F, $02, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_2
 	db CERULEAN_CAVE_1F, $03, SHOW            ; HS_CERULEAN_CAVE_1F_ITEM_3
-DaycareHS:
-	db DAYCARE, $03, SHOW 					  ; HS_DAYCARE_BULBASAUR
 CelesteHillHS:
 	db CELESTE_HILL, $01, SHOW                ; HS_MOLTRES_G
 PokemonTower2FHS:
@@ -609,4 +608,6 @@ RockTunnelB1FHS:
 	db ROCK_TUNNEL_B1F, $0D, SHOW			  ; HS_ROCK_TUNNEL_B1F_WING
 MtMoonSquareHS:
 	db MT_MOON_SQUARE, $04, SHOW              ; HS_MT_MOON_CRATER_GUARD
+DaycareHS:
+	db DAYCARE, $03, SHOW 					  ; HS_DAYCARE_BULBASAUR
 	assert_table_length NUM_HS_OBJECTS + 1

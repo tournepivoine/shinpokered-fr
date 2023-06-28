@@ -50,6 +50,7 @@ DEF SHOW EQU $15
 	const HS_ROUTE_22_RIVAL_2              ; 24
 	const HS_NUGGET_BRIDGE_GUY             ; 25
 	const HS_ROUTE_24_ITEM                 ; 26 X
+	const HS_DAMIEN						   ; FC
 	const HS_ROUTE_25_ITEM                 ; 27 X
 	const HS_CACTUS                        ; 28
 	const HS_BRUNSWICK_ZAPDOS_G_1          ; 29
