@@ -40,7 +40,7 @@ _SilphCo5Text10::
 	text "It's a #MON"
 	line "REPORT!"
 
-	para "Over 160 #MON"
+	para "Over 180 #MON"
 	line "techniques have"
 	cont "been confirmed."
 	done
@@ -49,7 +49,12 @@ _SilphCo5Text11::
 	text "It's a #MON"
 	line "REPORT!"
 
-	para "4 #MON evolve"
+	para "KADABRA evolves"
 	line "only when traded"
 	cont "by link-cable."
+
+	para "Further testing is"	; changed due to increased number of new trade evos
+	line "needed to discover"
+	cont "more species that"
+	cont "evolve this way."
 	done

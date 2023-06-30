@@ -694,7 +694,8 @@ INCLUDE "data/maps/headers/Route21.asm"
 INCLUDE "data/maps/objects/Route21.asm"
 Route21_Blocks: INCBIN "maps/Route21.blk"
 
-Route12SuperRodHouse_Blocks:
+Route12SuperRodHouse_Blocks: INCBIN "maps/Route12SuperRodHouse.blk"
+
 Daycare_Blocks: INCBIN "maps/Daycare.blk"
 
 ;FuchsiaGoodRodHouse_Blocks: INCBIN "maps/FuchsiaGoodRodHouse.blk"
