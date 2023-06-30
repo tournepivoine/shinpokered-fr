@@ -266,7 +266,7 @@ VermilionCity_TextPointers:
 	dw VermilionCityText4
 	dw VermilionCityText5
 	dw VermilionCityText6
-	dw RoingusText
+	dw OfficerJennySquirtle
 	dw VermilionBeauty
 	dw VermilionCityText7
 	dw VermilionCityText8
@@ -437,8 +437,69 @@ VermilionCityText13:
 	text_far _VermilionCityText13
 	text_end
 
-RoingusText:
-	text_far _RoingusText
+OfficerJennySquirtle:
+	text_asm
+	CheckEvent EVENT_GOT_SQUIRTLE
+	jr nz, .howDoing
+	ld a, [wObtainedBadges]
+	bit 3, a ; THUNDERBADGE
+	jr z, .noBadge
+	ld hl, OfficerJennyHasBadge
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refuse
+	ld a, SQUIRTLE
+	ld [wd11e], a
+	ld [wcf91], a
+	call GetMonName
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	lb bc, SQUIRTLE, 15
+	call GivePokemon
+	ld a, [wAddedToParty]
+	and a
+	call z, WaitForTextScrollButtonPress
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, OfficerJennyGive
+	call PrintText
+	SetEvent EVENT_GOT_SQUIRTLE
+	jp TextScriptEnd
+
+.howDoing
+	ld hl, OfficerJennyHowDoing
+	jr .done
+.noBadge
+	ld hl, OfficerJennyNoBadge
+	jr .done
+.refuse
+	ld hl, OfficerJennyRefuse
+	; fallthrough
+.done
+	call PrintText
+	jp TextScriptEnd
+
+OfficerJennyNoBadge:
+	text_far _OfficerJennyText1
+	text_end
+
+OfficerJennyHasBadge:
+	text_far _OfficerJennyText2
+	text_end
+
+OfficerJennyGive:
+	text_far _OfficerJennyText3
+	text_waitbutton
+	text_end
+
+OfficerJennyRefuse:
+	text_far _OfficerJennyText4
+	text_end
+
+OfficerJennyHowDoing:
+	text_far _OfficerJennyText5
 	text_end
 
 VermillionCityPassSelectionText:

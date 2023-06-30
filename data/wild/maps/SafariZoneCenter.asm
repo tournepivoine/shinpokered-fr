@@ -7,9 +7,9 @@ SafariZoneCenterWildMons:
 	db 31, MAROWAK
 	db 25, SLOWPOKE
 	db 31, LICKITUNG
-	db 30, PARASECT
-	db 23, TRAMPEL
 	db 23, CHANSEY
+	db 23, DEER
+	db 23, TRAMPEL
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

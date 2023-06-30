@@ -97,16 +97,18 @@ Improved Areas
 	- To encourage this, Gym Leaders now have level scaling, giving more consistent challenge across the game. 
 - Giovanni now uses his unused theme song from Yellow, and has his LGPE monologue in the Rocket Hideout.
 - Jessie and James have been backported from Yellow, appearing in Mt. Moon, Rocket Hideout, Pokemon Tower, and Silph Co. Additionally, they have a post-game fight.
-- Rock Tunnel has a more workable map, now being easier to go through and having new areas to explore. Includes a way to get renewable fossils, items, and other interesting bits and pieces. Overall, it makes Flash much more rewarding to bring, showing you where the items and content are instead of being an inconvenience. 
 - Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its beta music!
-- Route 24 now features Damien, the Charmander trainer from Yellow, who only appears if Pikachu or Eevee are chosen. His text has been altered to be more accurate to his anime appearance. It also has a house where you can get a Fishing Rod.
-- Route 25 has been given a facelift, adding Bill's Lighthouse in place of the Sea Cottage.
-- The Fighting Dojo has been revamped, featuring a design reminiscent of the prototype versions; rough floors, the elder in the back, and more. Additionally, you can now get a Hitmontop as a third option. The Karate Master is also now treated somewhat more like a Gym Leader, having Gym Scaling and a Rematch system. 
 - The Day Care now contains a PC and Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.
+- Route 24 now features a Fishing Rod house; it's basically a Super Rod. It also features Damien, the Charmander trainer from Yellow. He only appears if Pikachu or Eevee are chosen. His text has been altered to be more accurate to his anime appearance. It also has a house where you can get a Fishing Rod.
+- Route 25 has been given a facelift, adding Bill's Lighthouse in place of the Sea Cottage.
+- Vermilion City now features Officer Jenny with the Squirtle. She only appears if Pikachu or Eevee are chosen.
+- Rock Tunnel has a more workable map, now being easier to go through and having new areas to explore. Includes a way to get renewable fossils, items, and other interesting bits and pieces. Overall, it makes Flash much more rewarding to bring, showing you where the items and content are instead of being an inconvenience. 
+- Pokemon Tower was shortened, being less intensive and adding room for more maps.
+- Fuchsia City has been made to resemble the more walkable LGPE version, removing the Cut trees among other things.
+- The Fighting Dojo has been revamped, featuring a design reminiscent of the prototype versions; rough floors, the elder in the back, and more. Additionally, you can now get a Hitmontop as a third option. The Karate Master is also now treated somewhat more like a Gym Leader, having Gym Scaling and a Rematch system. 
+- Silph Co's pathing was completely overhauled to make navigating it less tedious.
 - Cinnabar Island is a lot bigger, with the volcano being added to it. The mansion seems different too...
 	- Cinnabar Lab's Trade Room now features the Trader, who will evolve trade-evolving Pokemon for you!
-- Pokemon Tower was shortened, being less intensive and adding room for more maps.
-- Silph Co's pathing was completely overhauled to make navigating it less tedious.
 - Viridian Gym now has a minor new area once you make Giovanni leave.
 - Various Move Tutors from FireRed and LeafGreen have been distributed around the region, instead giving their respective TMs.
 - The S.S. Anne now returns after getting the Marsh Badge and features trades for Galarian forms & Evolutions, as well as Paldean Tauros.

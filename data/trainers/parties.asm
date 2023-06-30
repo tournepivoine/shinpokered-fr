@@ -681,7 +681,7 @@ StudentData:
 
 FirefighterData:
 ; For Cerulean Gym
-	db 15, POLIWAG, SQUIRTLE, CHEEP, 0
+	db 15, POLIWAG, CHEEP, SQUIRTLE, 0
 ; Silph Gauntlet 3F (S.S Anne)
 	db 64, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0   ; mostly water-types, but adding other types that hit Fire super-effectively
 

@@ -8,8 +8,8 @@ SafariZoneEastWildMons:
 	db 23, EXEGGCUTE
 	db 24, KANGASKHAN
 	db 25, PINSIR
-	db 7, CHANSEY
-	db 28, SCYTHER
+	db  7, CHANSEY
+	db 28, DEER
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

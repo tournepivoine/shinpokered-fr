@@ -14,12 +14,12 @@ FuchsiaCity_Object:
 
 	def_bg_events
 	bg_event 29, 19, 11 ; FuchsiaCityText11
-	bg_event 25, 15, 12 ; FuchsiaCityText12
+	bg_event 25, 17, 12 ; FuchsiaCityText12
 	bg_event 17,  5, 13 ; FuchsiaCityText13
 	bg_event  6, 13, 14 ; MartSignText
 	bg_event 20, 27, 15 ; PokeCenterSignText
 	bg_event 27, 29, 16 ; FuchsiaCityText16
-	bg_event 21, 15, 17 ; FuchsiaCityText17
+	bg_event 21, 17, 17 ; FuchsiaCityText17
 	bg_event  3, 29, 18 ; FuchsiaCityText18
 	bg_event 33,  7, 19 ; FuchsiaCityText19
 	bg_event 27,  7, 20 ; FuchsiaCityText20
@@ -30,7 +30,7 @@ FuchsiaCity_Object:
 
 	def_object_events
 	object_event 10, 12, SPRITE_YOUNGSTER, WALK, LEFT_RIGHT, 1 ; person
-	object_event 28, 17, SPRITE_GAMBLER, WALK, LEFT_RIGHT, 2 ; person
+	object_event 28, 18, SPRITE_GAMBLER, WALK, LEFT_RIGHT, 2 ; person
 	object_event 30, 14, SPRITE_FISHER, STAY, DOWN, 3 ; person
 	object_event 24,  8, SPRITE_YOUNGSTER, STAY, UP, 4 ; person
 	object_event 31,  5, SPRITE_CHANSEY, STAY, ANY_DIR, 5 ; person

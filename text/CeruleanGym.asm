@@ -81,8 +81,8 @@ _CeruleanGymAfterBattleText1::
 _CeruleanGymBattleText2::
 	text "Splash!"
 
-	para "I'm first up!"
-	line "Let's do it!"
+	para "I'm up! Let's"
+	line "do it!"
 	done
 
 _CeruleanGymEndBattleText2::
@@ -96,6 +96,27 @@ _CeruleanGymAfterBattleText2::
 
 	para "She won't lose to"
 	line "someone like you!"
+	done
+
+_CeruleanGymBattleText3::
+	text "Don't skip out on"
+	line "fire safety!"
+	done
+
+_CeruleanGymEndBattleText3::
+	text "I got"
+	line "burned..."
+	prompt
+
+_CeruleanGymAfterBattleText3::
+	text "Why is a FIRE-"
+	line "FIGHTER in a"
+	cont "GYM for water"
+	cont "#MON?"
+	
+	para "Haha! You have to" ; Actually happens in real life!
+	line "check for short"
+	cont "circuits!"
 	done
 
 _CeruleanGymGuidePreBattleText::

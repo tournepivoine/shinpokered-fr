@@ -63,6 +63,7 @@
 	const_skip 18
 	const EVENT_BEAT_CERULEAN_GYM_TRAINER_0
 	const EVENT_BEAT_CERULEAN_GYM_TRAINER_1
+	const EVENT_BEAT_CERULEAN_GYM_TRAINER_2
 	const EVENT_GOT_TM01
 	const EVENT_GOT_TM05
 	const EVENT_GOT_TM11
@@ -71,6 +72,7 @@
 
 ; Silph Gauntlet events		; Why is there so much free space here, my god
 	; 1F Trainers
+	const_next $d1
 	const EVENT_BEAT_GAUNTLET_YOUNGSTER
 	const EVENT_BEAT_GAUNTLET_BUG_CATCHER
 	const EVENT_BEAT_GAUNTLET_STUDENT

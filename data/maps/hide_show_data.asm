@@ -7,7 +7,7 @@ MapHSPointers:
 	dw ViridianCityHS
 	dw PewterCityHS
 	dw CeruleanCityHS
-	dw NoHS
+	dw VermilionCityHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
@@ -284,6 +284,8 @@ CeruleanCityHS:
 	db CERULEAN_CITY, $06, HIDE               ; HS_CERULEAN_GUARD_1
 	db CERULEAN_CITY, $0A, SHOW               ; HS_CERULEAN_CAVE_GUY
 	db CERULEAN_CITY, $0B, SHOW               ; HS_CERULEAN_GUARD_2
+VermilionCityHS:
+	db VERMILION_CITY, $07, HIDE			  ; HS_VERMILION_JENNY
 SaffronCityHS:
 	db SAFFRON_CITY, $01, SHOW                ; HS_SAFFRON_CITY_1
 	db SAFFRON_CITY, $02, SHOW                ; HS_SAFFRON_CITY_2

@@ -1365,4 +1365,5 @@ PikachuEeveeMode:
 
 PikachuEeveeShows:
 	db HS_DAMIEN ; Charmander guy
+	db HS_VERMILION_JENNY ; Squirtle
 	db -1 ; end

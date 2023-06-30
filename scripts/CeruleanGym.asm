@@ -66,7 +66,7 @@ CeruleanGymReceiveTM11:
 	set BIT_CASCADEBADGE, [hl]
 
 	; deactivate gym trainers
-	SetEvents EVENT_BEAT_CERULEAN_GYM_TRAINER_0, EVENT_BEAT_CERULEAN_GYM_TRAINER_1
+	SetEvents EVENT_BEAT_CERULEAN_GYM_TRAINER_0, EVENT_BEAT_CERULEAN_GYM_TRAINER_1, EVENT_BEAT_CERULEAN_GYM_TRAINER_2
 
 	jp CeruleanGymResetScripts
 
@@ -75,6 +75,7 @@ CeruleanGym_TextPointers:
 	dw CeruleanGymTrainerText1
 	dw CeruleanGymTrainerText2
 	dw CeruleanGymGuideText
+	dw CeruleanGymTrainerText3
 	dw MistyCascadeBadgeInfoText
 	dw ReceivedTM11Text
 	dw TM11NoRoomText
@@ -85,6 +86,8 @@ CeruleanGymTrainerHeader0:
 	trainer EVENT_BEAT_CERULEAN_GYM_TRAINER_0, 3, CeruleanGymBattleText1, CeruleanGymEndBattleText1, CeruleanGymAfterBattleText1
 CeruleanGymTrainerHeader1:
 	trainer EVENT_BEAT_CERULEAN_GYM_TRAINER_1, 3, CeruleanGymBattleText2, CeruleanGymEndBattleText2, CeruleanGymAfterBattleText2
+CeruleanGymTrainerHeader2:
+	trainer EVENT_BEAT_CERULEAN_GYM_TRAINER_2, 3, CeruleanGymBattleText3, CeruleanGymEndBattleText3, CeruleanGymAfterBattleText3
 	db -1 ; end
 
 MistyText:
@@ -225,6 +228,24 @@ CeruleanGymEndBattleText2:
 
 CeruleanGymAfterBattleText2:
 	text_far _CeruleanGymAfterBattleText2
+	text_end
+
+CeruleanGymTrainerText3:
+	text_asm
+	ld hl, CeruleanGymTrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+
+CeruleanGymBattleText3:
+	text_far _CeruleanGymBattleText3
+	text_end
+
+CeruleanGymEndBattleText3:
+	text_far _CeruleanGymEndBattleText3
+	text_end
+
+CeruleanGymAfterBattleText3:
+	text_far _CeruleanGymAfterBattleText3
 	text_end
 
 CeruleanGymGuideText:
