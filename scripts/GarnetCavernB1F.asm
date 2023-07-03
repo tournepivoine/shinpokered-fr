@@ -26,13 +26,13 @@ ArticunoGTrainerHeader:
 	db -1 ; end
 
 ArticunoGText:
+	text_asm
 	ld a, HS_ARTICUNO_G_COPY_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	ld a, HS_ARTICUNO_G_COPY_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	text_asm
 	ld hl, ArticunoGTrainerHeader
 	call TalkToTrainer
 	jp TextScriptEnd
