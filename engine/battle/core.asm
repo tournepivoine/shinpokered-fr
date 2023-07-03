@@ -854,16 +854,16 @@ FaintEnemyPokemon:
 	; Increment the Candy Jar count.
 	ld a, [wCandyJarCount] ; Grab the jar.
 	cp 40 ; Do we have 40?
-	jr z, .skip ; If yes, no more candies.
+	jr z, .skipFilling1 ; If yes, no more candies.
 	inc a ; Increment candy count.
 	ld [wCandyJarCount], a ; Store candy count.
 	
-	; For engine\overworld\clear_variables.asm
-	; Needed so the Mystery Box effect isn't cleared upon leaving battle.
-	ld a, $01
-	ld [wDontSwitchOffMysteryBoxYet], a
-	
-	ld hl, _MeltanIncrement ; Load text to show it's going up.
+.skipFilling1
+	ld hl, MeltanFullJar ; Special message for when the jar is full
+	cp 40
+	jr z, .skipFilling2
+	ld hl, MeltanIncrement ; Load text to show it's going up.
+.skipFilling2
 	call PrintText ; Yep text.
 	call PrintEmptyString ; vs text likes this.
 .skip
@@ -6262,29 +6262,8 @@ LoadEnemyMonData:
 	cp LINK_STATE_BATTLING
 	jp z, LoadEnemyMonFromParty
 	
-	; Mystery Box functionality.
-	; First, we need to check if it's a trainer battle, or everyone will use Meltan.
-	ld a, [wIsInBattle]
-	cp $2 ; is it a trainer battle?
-	jr z, .skip ; If so, skip.
-	
-	; Upon initiating a battle, if not a trainer battle, check if the Mystery Box has been activated.
-	; ~50% of the time, Meltan will replace what you encounter.
-	ld a, [wMysteryBoxActive] ; Load the box.
-	cp $01 ; Check if it's active.
-	jr nz, .skip ; If not, load a normal Pokemon. I know this looks sort of weird, it's just how it panned out.
-	
-	; This didn't work for some reason. It seems unnecessary, anyway...
-	;call Random
-	;and a
-	;cp 128 ; Compare Random (a) with 128 (b).
-	;jr z, .cont ; If not within range, normal Pokemon appears. 50% chance.
-	
-	ld a, MELTAN ; Meltan is loaded...
-	ld [wEnemyMonSpecies2], a ; Here!
-	ld [wcf91], a
-
-.skip ; Standard loading.
+	; New Meltan encounter code in engine/battle/wild_encounters.asm
+	; It's way less buggy and just works better
 	ld a, [wEnemyMonSpecies2]
 	ld [wEnemyMonSpecies], a
 	ld [wd0b5], a
@@ -7269,3 +7248,11 @@ VermilionBeautyCheck:
 	ld [wBeautyCounter], a ; and get the FUCK out of my office!!!
 .skipCounting
 	ret
+
+MeltanIncrement:
+	text_far _MeltanIncrement
+	text_end
+
+MeltanFullJar:
+	text_far _MeltanFullJar
+	text_end
