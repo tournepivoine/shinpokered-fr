@@ -1,4 +1,5 @@
 SilphCo4F_Object:
+;;;;;;;;;;;;; Ema note: this floor is dummied out
 	db $2e ; border block
 
 	def_warp_events
