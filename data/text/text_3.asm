@@ -328,3 +328,8 @@ _TradeCenterText1::
 _ColosseumText1::
 	text "!"
 	done
+
+_MeltanFullJar::
+	text "The CANDY JAR"
+	line "is full!"
+	prompt
