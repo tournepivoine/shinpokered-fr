@@ -12,7 +12,7 @@ FuchsiaCity_TextPointers:
 	dw FuchsiaCityText8
 	dw FuchsiaCityText9
 	dw FuchsiaCityText10
-	dw FuchsiaCityText11
+	dw SubstituteGuy
 	dw FuchsiaCityText12
 	dw FuchsiaCityText13
 	dw MartSignText
@@ -26,7 +26,6 @@ FuchsiaCity_TextPointers:
 	dw FuchsiaCityText22
 	dw FuchsiaCityText23
 	dw FuchsiaCityText24
-	dw SubstituteGuy
 
 FuchsiaCityText1:
 	text_far _FuchsiaCityText1
@@ -54,7 +53,6 @@ FuchsiaCityText10:
 	text_end
 
 FuchsiaCityText12:
-FuchsiaCityText11:
 	text_far _FuchsiaCityText11
 	text_end
 
