@@ -120,8 +120,8 @@ endif
 kep_pad        = 0x00
 kep_debug_pad  = 0xff
 
-kep_opt        = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "KEP HACK"
-kep_debug_opt  = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "KEP HACK"
+kep_opt        = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "PKMN: EXPN. PAK"
+kep_debug_opt  = -jsv -n 0 -k 01 -l 0x33 -m 0x13 -r 03 -t "PKMN: EXPN. PAK"
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -p $($*_pad) -d -m $*.map -n $*.sym -l layout.link -o $@ $(filter %.o,$^)
