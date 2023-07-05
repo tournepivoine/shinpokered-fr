@@ -173,7 +173,9 @@ QoL Enhancements
 Bug Fixes
 ====
 Many non-multiplayer, non-battle related bugs have been fixed. Battle-related bugs have been preserved for the sake of the RBY battle experience. Bugs that are fixed are ones that objectively hurt the gameplay experience, so glitches like the Mew Glitch, which arguably add to the gameplay, are preserved. Much of the fixes made here can be attributed to [the tutorials](https://github.com/pret/pokered/wiki/Bugs-and-Glitches) made by the good people at pret.
-- Fixed various translation errors (eg. Route 14 Birdkeeper's "birds of prey" line, Koji and Atsuko in Fuschia.)
+- Fixed various translation errors/retcons (eg. Route 14 Birdkeeper's "birds of prey" line, Koji and Atsuko in Fuschia.)
+- More accurate translations from FRLG/LGPE (eg. Bill not being a PokeManiac, but a "Pokemon fanatic" from LGPE) have been ported.
+- Some grammar tweaks have been made (eg. If a move is disabled, it now has an upper-case D instead of a lower-case one.)
 - Blaine is no longer addicted to Super Potions.
 - CoolTrainerF no longer switches a lot.
 - Transformed Pokemon aren't presumed to be Dittos! Mew and Animon function correctly with this at play.
@@ -206,7 +208,6 @@ and more!
 - Trainer Name Pointers are removed, as the localised games don't need to use the file at all.
 - Dakutens are removed, as the Japanese accents aren't used in English releases.
 - Blank Leader Name code is removed; before, this would only be for the PNGs.
-- Some grammar tweaks have been made (eg. If a move is disabled, it now has an upper-case D instead of a lower-case one.)
 
 Known Bugs
 ====

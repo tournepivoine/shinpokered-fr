@@ -12,7 +12,8 @@ _CeruleanPokecenterText3::
 	line "about BILL?"
 
 	para "Everyone calls"
-	line "him a #MANIAC!"
+	line "him a #MON"
+	cont "fanatic!"
 
 	para "I think people"
 	line "are just jealous"

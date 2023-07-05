@@ -5,9 +5,11 @@ _BillsHouseText_1e865::
 
 	para "Call me BILL!"
 	line "I'm a true blue"
-	cont "#MANIAC! Hey!"
-	cont "What's with that"
-	cont "skeptical look?"
+	cont "#MON fanatic!" ; restoring the more accurate translation from LGPE
+	
+	para "Hey! What's with"
+	line "that skeptical"
+	cont "look?"
 
 	para "I'm not joshing"
 	line "you, I screwed up"

@@ -43,7 +43,7 @@ _CeruleanCityText_19677::
 
 	para "After all, BILL's"
 	line "world famous as a"
-	cont "#MANIAC!"
+	cont "#MON fanatic!"
 
 	para "He invented the"
 	line "#MON Storage"
