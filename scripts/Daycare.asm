@@ -312,7 +312,7 @@ DaycareMelanie:
 	and a
 	jr nz, .refused ; imagine refusing a bulbasaur tbh
 	
-	lb bc, BULBASAUR, 10 ; load the bulbasaur
+	lb bc, BULBASAUR, 12 ; load the bulbasaur
 	call GivePokemon ; attempt to give the bulbasaur
 	jr nc, .fullParty ; if it's fucked just go here
 	ld a, HS_DAYCARE_BULBASAUR ; hide the bulbasaur

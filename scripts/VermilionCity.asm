@@ -456,7 +456,7 @@ OfficerJennySquirtle:
 	call GetMonName
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	lb bc, SQUIRTLE, 15
+	lb bc, SQUIRTLE, 16
 	call GivePokemon
 	ld a, [wAddedToParty]
 	and a

@@ -124,6 +124,7 @@ QoL Enhancements
 ====
 - A girl option is now available, featuring the sprite from Pokemon Anniversary Red, which is based on Green's manga appearance.
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
+	- The protagonist is also referred to in a gender neutral manner. This changes like, 2-3 lines in the whole game.
 - All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
 - Bag capacity is increased from 20 to 30 items.
 - Pokemon Box capacity is now 280 Pokemon with 14 boxes.
@@ -142,11 +143,11 @@ QoL Enhancements
 - PP symbol is displayed in the battle menu. PP displayed before, it just looks nicer now. Done by changing a straggler Japanese character.
 - Lorelei, Bruno, and Agatha now play the Gym Leader Battle theme.
 - Trainer DVs are perfect-15s.
-- The protagonist is referred to in a gender neutral manner.
 - PC added to Celadon Hotel where the invisible event usually is. Why not?
 - Artificial Save Delay has been removed.
 - Ultra Balls now have a Ball Modifier of 4, instead of 8. This makes them better for general-purpose than Great Balls. Safari Balls have the same effect by proxy. 
 - Yellow learnset changes are imported; eg. Flash Venonat, with tweaks made to ensure nothing is lost from RB either.
+- Gift Pokemon now use levels from LGPE; for example, the Silph Co. Lapras is now L34.
 - Event moves can now be taught via TM/HM;
 	- TM16 (Pay Day) can be taught to Fearow and Rapidash ('98 Shogakukan)
 	- TM23 (Dragon Rage) can be taught to Magikarp (July '98 Shogakukan)
