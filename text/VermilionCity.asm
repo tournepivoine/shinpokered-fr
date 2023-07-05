@@ -199,20 +199,30 @@ _BeautyChoice:: ; this is separate for the in-progress event.
 	para "See you then!"
 	done
 
-_BeautyFinish::
+_BeautyFinish1:: ; I hate this, but it has to be this way. wBeautyChoice refuses to work.
 	text "Oh! You've caught"
-	line "5 "
-	text_ram wcd6d
-	text "!"
-	prompt
+	line "5 GROWLITHE!"
+	done
 
-_BeautyExplain::
-	text "When "
-	text_ram wcd6d
+_BeautyFinish2::
+	text "Oh! You've caught"
+	line "5 MEOWTH!"
+	done
+
+_BeautyExplain1::
+	text "When MEOWTH"
 	line "evolves, it will"
 	cont "look like this."
-	
-	para "Hm? Why did I"
+	prompt
+
+_BeautyExplain2::
+	text "When GROWLITHE"
+	line "evolves, it will"
+	cont "look like this."
+	prompt
+
+_BeautyExplainCont::
+	text "Hm? Why did I"
 	line "make you catch"
 	cont "the opposite"
 	cont "#MON?"

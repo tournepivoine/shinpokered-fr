@@ -32,10 +32,10 @@ YujirouHasBeenBeaten:
 	jp ViridianPreGymResetScripts
 
 ViridianPreGym_TextPointers:
-	dw YujirouText
-	dw YujirouHasBeenBeaten
 	dw ViridianPreGymText1
 	dw ViridianPreGymText2
+	dw YujirouText
+	dw YujirouHasBeenBeaten
 	dw ViridianPreGymGuide
 	dw ViridianPreGymSign1
 	dw ViridianPreGymSign2
@@ -45,7 +45,7 @@ ViridianPreGym_TextPointers:
 	dw ViridianPreGymStatue2
 
 ViridianPreGymTrainerHeaders:
-	def_trainers 3
+	def_trainers
 ViridianPreGymTrainerHeader0:
 	trainer EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_0, 3, ViridianPreGymBattleText1, ViridianPreGymEndBattleText1, ViridianPreGymAfterBattleText1
 ViridianPreGymTrainerHeader1:
@@ -98,9 +98,9 @@ YujirouText:
 	ld de, YujirouWinText
 	call SaveEndBattleTextPointers
 	call EngageMapTrainer
-	ld a, OPP_BROCK
+	ld a, OPP_YUJIROU
 	ld [wCurOpponent], a
-	ld a, 9
+	ld a, 2
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a

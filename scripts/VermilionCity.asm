@@ -525,13 +525,15 @@ PassRefuse:
 ; LGPE Beauty who gives you a Persian or Arcanine depending on the game.
 ; Here, we make it a Cats vs Dogs question and change based on that.
 ; The way it works is it makes the player catch the opposite Pokemon, and then get the one they picked.
-; So Meowth gets Arcanine, and Growlithe gets Persian.
-; This code is kind of schizophrenic but it does the job.
+; Meowth = Arcanine
+; Growlithe = Persian
+; This code is nightmare fuel but it does the job.
+; Basically, at some point, wBeautyChoice stops working for reasons scientists are still trying to figure out.
 VermilionBeauty:
 	text_asm
 	
 	CheckEvent EVENT_VERMILION_BEAUTY_DONE ; First, check if the event is actually done.
-	jp nz, BeautyDone ; Yes? Alright, no need for this.
+	jp nz, .beautyDone ; Yes? Alright, no need for this.
 	
 	ld a, [wBeautyChoice] ; Next, we check if wBeautyChoice has been set. This saves an event constant.
 	cp 0 ; It will never be 0 if the player has made their choice.
@@ -545,11 +547,11 @@ VermilionBeauty:
 	jr z, .eventIsFinished ; Big if true.
 	jr nz, .eventInProgress ; Small if false.
 
+; Let us start the game.
 .eventStart
 	ld hl, BeautyText1 ; Let's open the text.
 	call PrintText
 	call CatsDogsChoice
-	
 	ld a, [wCurrentMenuItem] ; Let's load what they picked. 0 is cats, 1 is dogs.
 	and a
 	jr nz, .getArcanine ; Skip storing Growlithe if dogs.
@@ -559,23 +561,27 @@ VermilionBeauty:
 	ld a, MEOWTH
 .skip ; Now we land here.
 	ld [wBeautyChoice], a ; Finally store the choice in wBeautyChoice.
-	
 	ld hl, BeautyText2 ; Now spit it out.
 	call PrintText
-	
-.eventInProgress ; This is a jump point for if the event was already started.
+
+; This is a jump point for if the event was already started.
+.eventInProgress
 	ld a, [wBeautyChoice]
 	ld [wd11e], a
 	call GetMonName
 	ld hl, BeautyChoice
 	call PrintText
 	jr .done ; no give pokemon. bad.
+
+; Now if the event is finished, she needs to hand the Pokemon over.
 .eventIsFinished
 	call SaveScreenTilesToBuffer1 ; saves us from some corruption disasters if nicknaming.
+	ld hl, BeautyFinish1
 	ld a, [wBeautyChoice]
-	ld [wd11e], a
-	call GetMonName
-	ld hl, BeautyFinish
+	cp GROWLITHE
+	jr z, .skip2
+	ld hl, BeautyFinish2
+.skip2
 	call PrintText
 	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
 	and a ; yep, here too.
@@ -583,27 +589,32 @@ VermilionBeauty:
 	call EnableAutoTextBoxDrawing ; and here. GivePokemon is very hasty.
 	lb bc, PERSIAN, 16 ; because we're elitists, let's see if they chose cats first.
 	ld a, [wBeautyChoice] ; *sigh*, but if they're dog lovers, let's make sure they actually want Persian.
-	cp PERSIAN ; Do they? If yes, skip.
-	jr z, .skip2 ; electric boogaloo
+	cp GROWLITHE ; Do they? If yes, skip.
+	jr z, .skip3 ; electric boogaloo
 	lb bc, ARCANINE, 16 ; ok but skip2 means arc never gets loaded in. very good sequel. disney would NEVER.
-.skip2
+.skip3
 	call GivePokemon
 	jr nc, .done
 	call LoadScreenTilesFromBuffer1 ; saves us from some corruption disasters if nicknaming.
 	SetEvent EVENT_VERMILION_BEAUTY_DONE ; and now we can finally rest.
 	ld hl, wd72e
 	set 0, [hl]
-.done
-	jp TextScriptEnd
+	jr .done
 
-; This needs to be separate for reasons I refuse to elaborate on for fear of angering God.
-BeautyDone:
-	text_asm
+; Now if it's already been said and done, we go here.
+; Due to man-made horrors beyond my comprehension, we need to split the text here.
+.beautyDone
+	ld hl, BeautyExplain1
 	ld a, [wBeautyChoice]
-	ld [wd11e], a
-	call GetMonName
-	ld hl, BeautyExplain
+	cp GROWLITHE
+	jr z, .skip4
+	ld hl, BeautyExplain2
+.skip4
 	call PrintText
+	ld hl, BeautyExplainCont
+	call PrintText
+	;fallthrough
+.done
 	jp TextScriptEnd
 
 ; displays cats/dogs choice
@@ -637,10 +648,22 @@ BeautyChoice:
 	text_far _BeautyChoice
 	text_end
 
-BeautyFinish:
-	text_far _BeautyFinish
+BeautyFinish1:
+	text_far _BeautyFinish1
 	text_end
 
-BeautyExplain:
-	text_far _BeautyExplain
+BeautyFinish2:
+	text_far _BeautyFinish2
+	text_end
+
+BeautyExplain1:
+	text_far _BeautyExplain1
+	text_end
+
+BeautyExplain2:
+	text_far _BeautyExplain2
+	text_end
+
+BeautyExplainCont:
+	text_far _BeautyExplainCont
 	text_end

@@ -212,13 +212,10 @@ Known Bugs
 - Only portions of spinner tiles animate.
 - Occasionally, menu text sets itself to scroll.
 - The lone Rocket in Viridian Gym's basement needs to be directly spoken to to be battled.
-- Pokedex is very laggy during a playthrough, and seen/owned are being weird (possibly due to a change made when adding extra starters..?)
-- Dome and Wing Fossils in Rock Tunnel B1F don't show properly.
+- Pokedex does not load a full dex properly due to a soft limit of 248.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
-- HP DV does not appear to display correctly.
-- Vermilion Beauty gives the wrong Pokemon when cats are chosen, seems to be an issue with wBeautyChoice.
-- GetMonName doesn't work properly for the Vermilion Beauty after receiving the Pokemon, jank ensues.
+- HP DV does not appear to display correctly in the viewer.
 
 Evolution Methods for new Pokemon
 ====

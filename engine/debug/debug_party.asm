@@ -53,7 +53,7 @@ IF DEF(_DEBUG)
 	; Set BeautyChoice to GROWLITHE to test the other choice.
 	ld a, 5
 	ld [wBeautyCounter], a 
-	ld a, MEOWTH
+	ld a, GROWLITHE
 	ld [wBeautyChoice], a
 	
 	; Test Post-Game Functionality.
