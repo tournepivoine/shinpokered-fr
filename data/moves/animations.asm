@@ -999,6 +999,7 @@ ConstrictAnim:
 	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
 	db -1 ; end
 
+NastyPlotAnim:
 AmnesiaAnim:
 	battle_anim AMNESIA, SUBANIM_0_STATUS_CONFUSED, 0, 8
 	battle_anim AMNESIA, SUBANIM_0_STATUS_CONFUSED, 0, 8
@@ -1206,11 +1207,6 @@ KowtowCleaveAnim:
 
 DisarmingVoiceAnim:
 	battle_anim DISARMING_VOICE, SUBANIM_0_HEART_1_MUSIC, 1, 6
-	db -1 ; end
-
-NastyPlotAnim:
-	battle_anim AMNESIA, SUBANIM_0_STATUS_CONFUSED, 0, 8
-	battle_anim AMNESIA, SUBANIM_0_STATUS_CONFUSED, 0, 8
 	db -1 ; end
 
 BallTossAnim:

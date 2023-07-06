@@ -8,7 +8,7 @@ DEF SHOW EQU $15
 ; (they are either items or sprites that deactivate after battle
 ; and are detected in wMissableObjectList)
 ; However, these constants are still required to synchronise properly
-; with the hide/show list, so you can't just remove them.
+; Factoring in the hide/show list, so you can't just remove them.
 
 	const_def
 	const HS_PALLET_TOWN_OAK               ; 00

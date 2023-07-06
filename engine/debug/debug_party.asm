@@ -25,7 +25,7 @@ IshiharaTeam:
 	db MELTAN, 90
 	db TRAMPEL, 90
 IF DEF(_DEBUG)
-	db TAUROS_PB, 90
+	db MEWTWO, 90
 	db SNORLAX, 50
 ENDC
 	db -1 ; end
@@ -93,15 +93,16 @@ IF DEF(_DEBUG)
 	ld a, 15
 	ld [hl], a
 	
-	; Blaze Tauros (Pokemon 4) has a full moveset
+	; Mewtwo (Pokemon 4) has a full moveset
+	; Use for sweeping the 4.
 	ld hl, wPartyMon4Moves
-	ld a, FIRE_BLAST
+	ld a, AMNESIA
 	ld [hli], a
-	ld a, LOW_KICK
+	ld a, PSYCHIC_M
 	ld [hli], a
-	ld a, FIRE_SPIN
+	ld a, THUNDERBOLT
 	ld [hli], a
-	ld a, HYPER_BEAM
+	ld a, RECOVER
 	ld [hl], a
 	ld hl, wPartyMon1PP
 	ld a, 99
@@ -147,10 +148,11 @@ IF DEF(_DEBUG)
 .items_end
 
 	; Complete the Pokédex.
-	ld hl, wPokedexOwned
-	call DebugSetPokedexEntries
-	ld hl, wPokedexSeen
-	call DebugSetPokedexEntries
+	; Comment out (except for the event) to test post-game setup.
+	;ld hl, wPokedexOwned
+	;call DebugSetPokedexEntries
+	;ld hl, wPokedexSeen
+	;call DebugSetPokedexEntries
 	SetEvent EVENT_GOT_POKEDEX
 
 	; Rival chose Pikachu,
