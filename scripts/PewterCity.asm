@@ -6,7 +6,7 @@ PewterCity_Script:
 
 PewterCity_ScriptPointers:
 	dw PewterCityScript0
-;	dw PewterCityScript1
+	dw PewterCityScript1
 	dw PewterCityScript2
 	dw PewterCityScript3
 	dw PewterCityScript4
@@ -44,49 +44,49 @@ PewterCityScript0:
 ;	dbmapcoord 37, 19
 ;	db -1 ; end
 
-;PewterCityScript1:
-;	ld a, [wNPCMovementScriptPointerTableNum]
-;	and a
-;	ret nz
-;	ld a, $3
-;	ldh [hSpriteIndex], a
-;	ld a, SPRITE_FACING_UP
-;	ldh [hSpriteFacingDirection], a
-;	call SetSpriteFacingDirectionAndDelay
-;	ld a, ($3 << 4) | SPRITE_FACING_UP
-;	ldh [hSpriteImageIndex], a
-;	call SetSpriteImageIndexAfterSettingFacingDirection
-;	call PlayDefaultMusic
-;	ld hl, wFlags_0xcd60
-;	set 4, [hl]
-;	ld a, $d
-;	ldh [hSpriteIndexOrTextID], a
-;	call DisplayTextID
-;	ld a, $3c
-;	ldh [hSpriteScreenYCoord], a
-;	ld a, $30
-;	ldh [hSpriteScreenXCoord], a
-;	ld a, 12
-;	ldh [hSpriteMapYCoord], a
-;	ld a, 17
-;	ldh [hSpriteMapXCoord], a
-;	ld a, $3
-;	ld [wSpriteIndex], a
-;	call SetSpritePosition1
-;	ld a, $3
-;	ldh [hSpriteIndex], a
-;	ld de, MovementData_PewterMuseumGuyExit
-;	call MoveSprite
-;	ld a, $2
-;	ld [wPewterCityCurScript], a
-;	ret
+PewterCityScript1:
+	ld a, [wNPCMovementScriptPointerTableNum]
+	and a
+	ret nz
+	ld a, $3
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_UP
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+	ld a, ($3 << 4) | SPRITE_FACING_UP
+	ldh [hSpriteImageIndex], a
+	call SetSpriteImageIndexAfterSettingFacingDirection
+	call PlayDefaultMusic
+	ld hl, wFlags_0xcd60
+	set 4, [hl]
+	ld a, $d
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+	ld a, $3c
+	ldh [hSpriteScreenYCoord], a
+	ld a, $30
+	ldh [hSpriteScreenXCoord], a
+	ld a, 12
+	ldh [hSpriteMapYCoord], a
+	ld a, 17
+	ldh [hSpriteMapXCoord], a
+	ld a, $3
+	ld [wSpriteIndex], a
+	call SetSpritePosition1
+	ld a, $3
+	ldh [hSpriteIndex], a
+	ld de, MovementData_PewterMuseumGuyExit
+	call MoveSprite
+	ld a, $2
+	ld [wPewterCityCurScript], a
+	ret
 
-;MovementData_PewterMuseumGuyExit:
-;	db NPC_MOVEMENT_DOWN
-;	db NPC_MOVEMENT_DOWN
-;	db NPC_MOVEMENT_DOWN
-;	db NPC_MOVEMENT_DOWN
-;	db -1 ; end
+MovementData_PewterMuseumGuyExit:
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db -1 ; end
 
 PewterCityScript2:
 	ld a, [wd730]

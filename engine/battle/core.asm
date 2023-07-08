@@ -6282,8 +6282,7 @@ LoadEnemyMonData:
 	jr z, .storeDVs
 ; random DVs for wild mon
 	call BattleRandom
-	ld a, ATKDEFDV_TRAINER
-	ld b, SPDSPCDV_TRAINER
+	ld b, a
 	call BattleRandom 
 .storeDVs 
 	ld hl, wEnemyMonDVs

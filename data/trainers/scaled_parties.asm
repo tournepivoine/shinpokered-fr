@@ -4,11 +4,11 @@ BrockData:
 	db $FF, 19, GEODUDE, 18, KABUTO, 19, DECILLA, 21, ONIX, 0                                ; 1
 	db $FF, 22, GRAVELER, 21, OMANYTE, 21, KABUTO, 23, DECILLA, 24, ONIX, 0                  ; 2
 	db $FF, 29, GRAVELER, 28, OMANYTE, 28, KABUTO, 29, DECILLA, 31, ONIX, 0                  ; 3
-	db $FF, 38, GOLEM, 37, OMANYTE, 37, KABUTO, 38, NIDOREIGN, 40, GYAOON, 0,                ; 4
-	db $FF, 41, GOLEM, 40, OMASTAR, 40, KABUTOPS, 41, NIDOREIGN, 43, GYAOON, 0               ; 5
-	db $FF, 45, GOLEM, 44, OMASTAR, 44, KABUTOPS, 45, NIDOREIGN, 47, GYAOON, 0               ; 6
-	db $FF, 47, GOLEM, 46, OMASTAR, 46, KABUTOPS, 48, NIDOREIGN, 48, KLEAVOR, 50, GYAOON, 0  ; 7 (unused)
-	db $FF, 66, GOLEM, 67, OMASTAR, 67, KABUTOPS, 66, ARCANINE_H, 67, KLEAVOR, 70, GYAOON, 0 ; 8 (postgame)
+	db $FF, 38, GOLEM, 37, OMANYTE, 37, KABUTO, 38, ONIX, 40, GYAOON, 0,                	 ; 4
+	db $FF, 41, GOLEM, 40, OMASTAR, 40, KABUTOPS, 41, STEELIX, 43, GYAOON, 0                 ; 5
+	db $FF, 45, GOLEM, 44, OMASTAR, 44, KABUTOPS, 45, STEELIX, 47, GYAOON, 0                 ; 6
+	db $FF, 47, GOLEM, 46, OMASTAR, 46, KABUTOPS, 48, KLEAVOR, 48, STEELIX, 50, GYAOON, 0    ; 7 (unused)
+	db $FF, 66, GOLEM, 67, OMASTAR, 67, KABUTOPS, 66, ARCANINE_H, 67, STEELIX, 70, GYAOON, 0 ; 8 (postgame)
 
 MistyData:
 	db $FF, 10, STARYU, 11, GYOPIN, 13, WEIRDUCK, 0                                              ; 0 badges
@@ -95,7 +95,7 @@ BrunoData:
 	db $FF, 74, POLIWRATH, 75, STEELIX, 75, SIRFETCHD, 76, PURAKKUSU, 76, MACHAMP, 78, ZAPDOS_G, 0
 
 AgathaData:
-	db $FF, 57, CROAKOZUNA, 56, ANNIHILAPE, 56, CROBAT, 58, MAROWAK_A, 58, UMBREON, 60, GENGAR, 0
+	db $FF, 57, ARBOK, 56, ANNIHILAPE, 56, CROBAT, 58, MAROWAK_A, 58, UMBREON, 60, GENGAR, 0
 ; post-game rematch team (currently unused)
 	db $FF, 77, ANNIHILAPE, 76, CROBAT, 76, MAROWAK_A, 78, UMBREON, 78, GENGAR, 80, MOLTRES_G, 0
 

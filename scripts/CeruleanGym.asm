@@ -43,7 +43,7 @@ CeruleanGymMistyPostBattle:
 	ld [wJoyIgnore], a
 
 CeruleanGymReceiveTM11:
-	ld a, $5
+	ld a, $7
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_MISTY
@@ -56,7 +56,7 @@ CeruleanGymReceiveTM11:
 	SetEvent EVENT_GOT_TM11
 	jr .gymVictory
 .BagFull
-	ld a, $7
+	ld a, $8
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 .gymVictory

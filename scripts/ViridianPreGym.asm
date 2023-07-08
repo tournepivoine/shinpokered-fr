@@ -80,7 +80,7 @@ YujirouText:
 	ld hl, YujirouLoseText
 	ld de, YujirouWinText
 	call SaveEndBattleTextPointers
-	ld a, $3
+	ld a, $2
 	ld [wViridianPreGymCurScript], a
 	ld [wCurMapScript], a
 	jr .done

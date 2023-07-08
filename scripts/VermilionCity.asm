@@ -441,8 +441,7 @@ OfficerJennySquirtle:
 	text_asm
 	CheckEvent EVENT_GOT_SQUIRTLE
 	jr nz, .howDoing
-	ld a, [wObtainedBadges]
-	bit 3, a ; THUNDERBADGE
+	CheckEvent EVENT_BEAT_LT_SURGE
 	jr z, .noBadge
 	ld hl, OfficerJennyHasBadge
 	call PrintText
