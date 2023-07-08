@@ -26,7 +26,8 @@ IshiharaTeam:
 	db TRAMPEL, 90
 IF DEF(_DEBUG)
 	db MEWTWO, 90
-	db SNORLAX, 50
+	db RAICHU_A, 50
+	db CROCKY, 90
 ENDC
 	db -1 ; end
 
