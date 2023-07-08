@@ -141,7 +141,6 @@ PostGameSetup:
 ResetLegendaryPokemon:
 	ld a, DEX_ARTICUNO ; Load dex number
 	ld [wd11e], a ; Store in wd11e (input for IsPokemonBitSet)
-	ld hl, wPokedexOwned ; Grab the owned thing while you're at it
 	call HoFIsPokemonBitSet ; Is it owned?
 	jr nz, .skipArticuno ; If owned, skip
 	ResetEvent EVENT_BEAT_ARTICUNO ; If not, reset the event...
@@ -244,6 +243,7 @@ ObjectsToHide:
 ; Farcalling this caused weird issues so I'm just using a clone
 ; This is a function used in engine/menus/pokedex.asm to check if a Pokemon is in the dex.
 ; We use this to reset Legendary Pokemon after the Elite Four.
+; It does have the optimisation of loading wPokedexOwned for processing, anyway.
 ; tests if a pokemon's bit is set in the seen or owned pokemon bit fields
 ; INPUT:
 ; [wd11e] = pokedex number
