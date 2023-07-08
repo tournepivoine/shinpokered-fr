@@ -131,8 +131,7 @@ PostGameSetup:
 	cp -1
 	ret z
 	push hl
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 	pop hl
 	jr .loop2
 
@@ -147,8 +146,7 @@ ResetLegendaryPokemon:
 	jr nz, .skipArticuno ; If owned, skip
 	ResetEvent EVENT_BEAT_ARTICUNO ; If not, reset the event...
 	ld a, HS_ARTICUNO
-	ld [wMissableObjectIndex], a
-	predef ShowObject ; And restore the hide/show.
+	call ShowThis ; And restore the hide/show.
 .skipArticuno ; Rinse and repeat.
 	ld a, DEX_ZAPDOS
 	ld [wd11e], a
@@ -156,8 +154,7 @@ ResetLegendaryPokemon:
 	jr z, .skipZapdos
 	ResetEvent EVENT_BEAT_ZAPDOS
 	ld a, HS_ZAPDOS
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipZapdos
 	ld a, DEX_MOLTRES
 	ld [wd11e], a
@@ -165,8 +162,7 @@ ResetLegendaryPokemon:
 	jr z, .skipMoltres
 	ResetEvent EVENT_BEAT_MOLTRES
 	ld a, HS_MOLTRES
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipMoltres
 	; Omega is special.
 	; If Omega wasn't obtained, it'll be available somewhere else on Silph Co. 11F.
@@ -177,8 +173,7 @@ ResetLegendaryPokemon:
 ;	jr nz, .skipOmega
 ;	ResetEvent EVENT_BEAT_OMEGA_2
 ;	ld a, HS_OMEGA_2
-;	ld [wMissableObjectIndex], a
-;	predef ShowObject
+;	call ShowThis
 ;.skipOmega
 	; Mew's hints aren't until the post-game, but is available regardless.
 	; So, we put this here.
@@ -188,8 +183,7 @@ ResetLegendaryPokemon:
 	jr z, .skipMew
 	ResetEvent EVENT_BEAT_MEW
 	ld a, HS_MEW
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipMew
 	; If you haven't cleared the game yet, you've not met the Galarian Birds.
 	; So we may as well skip processing all this.
@@ -201,8 +195,7 @@ ResetLegendaryPokemon:
 	jr z, .skipArticunoG
 	ResetEvent EVENT_BEAT_ARTICUNO_G
 	ld a, HS_GARNET_ARTICUNO_G
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipArticunoG
 	ld a, DEX_ZAPDOS_G
 	ld [wd11e], a
@@ -210,8 +203,7 @@ ResetLegendaryPokemon:
 	jr z, .skipZapdosG
 	ResetEvent EVENT_BEAT_ZAPDOSG
 	ld a, HS_BRUNSWICK_ZAPDOS_G_2
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipZapdosG
 	ld a, DEX_MOLTRES_G
 	ld [wd11e], a
@@ -219,8 +211,7 @@ ResetLegendaryPokemon:
 	jr z, .skipMoltresG
 	ResetEvent EVENT_BEAT_GALARIAN_MOLTRES
 	ld a, HS_MOLTRES_G
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipMoltresG
 	ld a, DEX_MEWTWO
 	ld [wd11e], a
@@ -228,13 +219,17 @@ ResetLegendaryPokemon:
 	jr z, .skipGalarianBirdsAndMewtwo
 	ResetEvent EVENT_BEAT_MEWTWO
 	ld a, HS_MEWTWO
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	call ShowThis
 .skipGalarianBirdsAndMewtwo
 	; We set this last to save on processing earlier in the script.
 	SetEvent EVENT_POST_GAME_ATTAINED
 	ret
-	
+
+ShowThis:
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ret
+
 ObjectsToShow:
 	db HS_ROUTE_1_OAK ; Oak post-game fight
 	db -1 ; end
