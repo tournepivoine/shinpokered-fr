@@ -140,7 +140,6 @@ PostGameSetup:
 ; It's really suboptimal and I think there is a way to make it better.
 ResetLegendaryPokemon:
 	ld a, DEX_ARTICUNO ; Load dex number
-	ld [wd11e], a ; Store in wd11e (input for IsPokemonBitSet)
 	call HoFIsPokemonBitSet ; Is it owned?
 	jr nz, .skipArticuno ; If owned, skip
 	ResetEvent EVENT_BEAT_ARTICUNO ; If not, reset the event...
@@ -148,7 +147,6 @@ ResetLegendaryPokemon:
 	call ShowThis ; And restore the hide/show.
 .skipArticuno ; Rinse and repeat.
 	ld a, DEX_ZAPDOS
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipZapdos
 	ResetEvent EVENT_BEAT_ZAPDOS
@@ -156,7 +154,6 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipZapdos
 	ld a, DEX_MOLTRES
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipMoltres
 	ResetEvent EVENT_BEAT_MOLTRES
@@ -177,7 +174,6 @@ ResetLegendaryPokemon:
 	; Mew's hints aren't until the post-game, but is available regardless.
 	; So, we put this here.
 	ld a, DEX_MEW
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipMew
 	ResetEvent EVENT_BEAT_MEW
@@ -189,7 +185,6 @@ ResetLegendaryPokemon:
 	CheckEvent EVENT_POST_GAME_ATTAINED
 	jp z, .skipGalarianBirdsAndMewtwo
 	ld a, DEX_ARTICUNO_G
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipArticunoG
 	ResetEvent EVENT_BEAT_ARTICUNO_G
@@ -197,7 +192,6 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipArticunoG
 	ld a, DEX_ZAPDOS_G
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipZapdosG
 	ResetEvent EVENT_BEAT_ZAPDOSG
@@ -205,7 +199,6 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipZapdosG
 	ld a, DEX_MOLTRES_G
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipMoltresG
 	ResetEvent EVENT_BEAT_GALARIAN_MOLTRES
@@ -213,7 +206,6 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipMoltresG
 	ld a, DEX_MEWTWO
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr z, .skipGalarianBirdsAndMewtwo
 	ResetEvent EVENT_BEAT_MEWTWO
@@ -252,6 +244,7 @@ ObjectsToHide:
 ; 0 = Not Owned
 ; 1 = Owned
 HoFIsPokemonBitSet:
+	ld [wd11e], a
 	ld hl, wPokedexOwned
 	ld a, [wd11e]
 	dec a
