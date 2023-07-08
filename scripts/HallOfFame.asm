@@ -219,7 +219,6 @@ ResetLegendaryPokemon:
 ShowThis:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ret
 
 ObjectsToShow:
 	db HS_ROUTE_1_OAK ; Oak post-game fight
