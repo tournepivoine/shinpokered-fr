@@ -93,6 +93,18 @@ GaryScript2:
 	jr .saveTrainerId
 .saveTrainerId
 	ld [wTrainerNo], a
+	
+	CheckEvent EVENT_POST_GAME_ATTAINED
+	jr z, .skip
+	ld a, [wTrainerNo]
+	inc a
+	inc a
+	inc a
+	inc a
+	inc a
+	; surely there is a better way
+	ld [wTrainerNo], a
+.skip
 	ld a, 1
 	ld [wIsTrainerBattle], a
 

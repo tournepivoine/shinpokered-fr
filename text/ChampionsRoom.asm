@@ -1,7 +1,7 @@
 _GaryChampionIntroText::
 	text "<RIVAL>: Hey!"
 
-	para "I was looking"
+	para "I was looking" ; this just barely works for a refight
 	line "forward to seeing"
 	cont "you, <PLAYER>!"
 
@@ -143,4 +143,35 @@ _GaryText_7612a::
 
 	para "<PLAYER>!"
 	line "Come with me!"
+	done
+
+; this stuff is unused for now the champion room is kinda complicated
+; may not use at all as this whole title defence thing was only rly started in gen 7
+_BlueRematchText::
+	text "uhhh"
+	
+	done
+
+_BlueRematchEndBattleText::
+	text "Aw man,"
+	line "what was I"
+	cont "doing?"
+	prompt
+
+_BlueRematchAfterBattleText::
+	text "Tch..."
+	
+	para "As long as I can"
+	line "battle strong"
+	cont "TRAINERs, I don't"
+	cont "care what happens."
+	
+	para "You get what I"
+	line "mean, right?"
+	cont "You'd better come"
+	cont "back again!"
+	
+	para "For now, though..."
+	line "Go through."
+	
 	done

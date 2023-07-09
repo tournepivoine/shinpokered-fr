@@ -16,7 +16,7 @@ LoreleiShowOrHideExitBlock:
 	ret z
 	ld hl, wBeatLorelei
 	set 1, [hl]
-	CheckEvent EVENT_BEAT_LORELEIS_ROOM_TRAINER_0
+	CheckEitherEventSet EVENT_BEAT_LORELEIS_ROOM_TRAINER_0, EVENT_BEAT_LORELEIS_ROOM_TRAINER_1
 	jr z, .blockExitToNextRoom
 	ld a, $5
 	jr .setExitBlock
@@ -123,12 +123,24 @@ LoreleisRoomTrainerHeaders:
 	def_trainers
 LoreleisRoomTrainerHeader0:
 	trainer EVENT_BEAT_LORELEIS_ROOM_TRAINER_0, 0, LoreleiBeforeBattleText, LoreleiEndBattleText, LoreleiAfterBattleText
+LoreleisRoomTrainerHeader1:
+	trainer EVENT_BEAT_LORELEIS_ROOM_TRAINER_1, 0, LoreleiRematchText, LoreleiRematchEndBattleText, LoreleiRematchAfterBattleText
 	db -1 ; end
 
 LoreleiText1:
 	text_asm
 	ld hl, LoreleisRoomTrainerHeader0
+	CheckEvent EVENT_POST_GAME_ATTAINED
+	jr z, .skip
+	ld hl, LoreleisRoomTrainerHeader1
+.skip
 	call TalkToTrainer
+	CheckEvent EVENT_POST_GAME_ATTAINED
+	jr z, .skip2
+	ld a, [wTrainerNo]
+	inc a
+	ld [wTrainerNo], a
+.skip2
 	jp TextScriptEnd
 
 LoreleiBeforeBattleText:
@@ -146,3 +158,16 @@ LoreleiAfterBattleText:
 LoreleiDontRunAwayText:
 	text_far _LoreleiDontRunAwayText
 	text_end
+
+LoreleiRematchText:
+	text_far _LoreleiRematchText
+	text_end
+
+LoreleiRematchEndBattleText:
+	text_far _LoreleiRematchEndBattleText
+	text_end
+
+LoreleiRematchAfterBattleText:
+	text_far _LoreleiRematchAfterBattleText
+	text_end
+

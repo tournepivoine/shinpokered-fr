@@ -1,5 +1,5 @@
 _LoreleiBeforeBattleText::
-	text "Welcome to"
+	text "Welcome to the"
 	line "#MON LEAGUE!"
 
 	para "I am LORELEI of"
@@ -32,8 +32,40 @@ _LoreleiAfterBattleText::
 	cont "Go on ahead!"
 
 	para "You only got a"
-	line "taste of #MON"
-	cont "LEAGUE power!"
+	line "taste of the"
+	cont "#MON LEAGUE's"
+	cont "power!"
+	done
+
+_LoreleiRematchText::
+	text "Welcome to the"
+	line "#MON LEAGUE!"
+	
+	para "Hey, fantastic"
+	line "timing! I was"
+	cont "just thinking"
+	cont "how I'd like to"
+	cont "battle you."
+	
+	para "I hope you're"
+	line "ready!"
+	done
+	
+_LoreleiRematchEndBattleText::
+	text "Argh!"
+	line "How?!"
+	prompt
+
+_LoreleiRematchAfterBattleText::
+	text "I may have lost"
+	line "to you, but I'll"
+	cont "never give up on"
+	cont "ice #MON!"
+	
+	para "You should aim to"
+	line "win using #MON"
+	cont "you like best,"
+	cont "too!"
 	done
 
 _LoreleiDontRunAwayText::
