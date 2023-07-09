@@ -153,7 +153,9 @@ _MtMoonJessieJamesText3::
 	prompt
 
 _MtMoonJessieJamesText4::
-	text "TEAM ROCKET, blast"
-	line "off at the speed"
-	cont "of light!@"
+	text "Looks like TEAM"
+	line "ROCKET's blasting"
+	cont "off!"
+	
+	para "We'll be back!@"
 	text_end

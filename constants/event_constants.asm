@@ -771,7 +771,10 @@
 	const_skip 5
 	const EVENT_BEAT_SILPH_CO_10F_TRAINER_0
 	const EVENT_BEAT_SILPH_CO_10F_TRAINER_1
-	const_skip 5
+	const_skip 2
+	const EVENT_780 ; jessie and james
+	const EVENT_781 ; jessie and james
+	const EVENT_782 ; jessie and james
 	const EVENT_SILPH_CO_10_UNLOCKED_DOOR
 	const_skip 11
 	const EVENT_BEAT_SILPH_CO_11F_TRAINER_0

@@ -739,11 +739,11 @@ JackData:
 	db 70, ANIMON, PURAKKUSU, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...
 
 JessieJamesData:
-	db 14, EKANS, MEOWTH, KOFFING, 0 ; Mt. Moon
-	db 25, KOFFING, LICKITUNG, MEOWTH, EKANS, 0 ; Rocket Hideout
+	db 14, MEOWTH, EKANS, KOFFING, 0 ; Mt. Moon
+	db 25, MEOWTH, EKANS, LICKITUNG, KOFFING, 0 ; Rocket Hideout
 	db 27, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, 0 ; Pokemon Tower
-	db 31, WEEZING, ARBOK, LICKITUNG, VICTREEBEL, GYARADOS, MEOWTH, 0 ; Silph Co.
-	db $FF, 80, MEOWTH, 72, ARBOK, 71, WEEZING, 74, LICKILICKY, 74, VICTREEBEL, 74, GYARADOS, 0 ; Citrine Rocket House
+	db 37, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, GYARADOS, 0 ; Silph Co.
+	db $FF, 80, MEOWTH, 72, LICKILICKY, 72, ARBOK, 71, VICTREEBEL, 74, WEEZING, 76, GYARADOS, 0 ; Citrine Rocket House
 
 INCLUDE "data/trainers/scaled_parties.asm"
 INCLUDE "data/trainers/rival_parties.asm"

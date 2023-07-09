@@ -161,16 +161,16 @@ ResetLegendaryPokemon:
 	call ShowThis
 .skipMoltres
 	; Omega is special.
-	; If Omega wasn't obtained, it'll be available somewhere else on Silph Co. 11F.
-	; Commented out until we actually do this.
-;	ld a, DEX_OMEGA
-;	ld [wd11e], a
-;	call HoFIsPokemonBitSet
-;	jr nz, .skipOmega
-;	ResetEvent EVENT_BEAT_OMEGA_2
-;	ld a, HS_OMEGA_2
-;	call ShowThis
-;.skipOmega
+	; If Omega wasn't caught, it'll be available in the empty room of Silph Co. 11F.
+	; In my mind, Omega was sent there, pending eventual scrapping for spare parts.
+	ld a, DEX_OMEGA
+	ld [wd11e], a
+	call HoFIsPokemonBitSet
+	jr nz, .skipOmega
+	ResetEvent EVENT_BEAT_OMEGA ; Reusing the old event - it's completely free to use.
+	ld a, HS_OMEGA_2
+	call ShowThis
+.skipOmega
 	; Mew's hints aren't until the post-game, but is available regardless.
 	; So, we put this here.
 	ld a, DEX_MEW

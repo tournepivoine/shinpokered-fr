@@ -1,6 +1,6 @@
 	db DEX_OMEGA ; pokedex id
 
-	db 101, 100, 120,  25,  95
+	db 101, 106, 120,  25,  95
 	;   hp  atk  def  spd  spc
 
 	db STEEL, STEEL ; type

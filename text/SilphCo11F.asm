@@ -2,6 +2,13 @@ _SilphCoPresidentText::
 	text "CHIEF: Thank"
 	line "you for saving"
 	cont "SILPH!"
+	
+	para "And...sorry about"
+	line "that OMEGA model."
+	cont "It must have seen"
+	cont "you as a threat."
+	
+	para "Anyway!"
 
 	para "I will never"
 	line "forget you saved"
@@ -54,8 +61,13 @@ _SilphCo11Text2::
 	line "you for rescuing"
 	cont "all of us!"
 
-	para "We admire your"
-	line "courage."
+	para "Hmm? OMEGA?"
+	
+	para "All I know is the"
+	line "CHIEF quickly"
+	cont "started making it"
+	cont "last year."
+	
 	done
 
 _SilphCo11Text3::
@@ -135,10 +147,7 @@ _SilphCo10Text_6237b::
 	done
 
 _OmegaBattleText::
-	text "ROCKET: Hey, kid!"
-	line "Watch out!"
-	
-	para "Bzzt! Clank!"
+	text "Bzzt! Clank!"
 	prompt
 
 ; Fun fact: For some reason, this text is stored in 10F. Seems to be a beta element - they ARE encountered in 11F.

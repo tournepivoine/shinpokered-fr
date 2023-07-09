@@ -1,9 +1,9 @@
 	db DEX_CRYITHAN ; pokedex id
 
-	db  92,  83,  76, 118, 101
+	db  92,  93,  76, 108, 121
 	;   hp  atk  def  spd  spc
 
-	db WATER, DRAGON ; type
+	db DRAGON, DRAGON ; type
 	db 9 ; catch rate
 	db 210 ; base exp
 

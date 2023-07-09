@@ -79,8 +79,8 @@ SabrinaData:
 GiovanniData: ; is not scaled as he is always fought last
 ; Rocket Hideout B4F
 	db $FF, 30, BEEDRILL, 32, RHYHORN, 32, KANGASKHAN, 34, PERSIAN, 0
-; Silph Co. 11F
-	db $FF, 37, KANGASKHAN, 36, NIDOKING, 37, NIDOQUEEN, 40, PERSIAN, 42, RHYDON, 0
+; Silph Co. 11F - did you know this team was weaker than the rival in vanilla level-wise?
+	db $FF, 40, BEEDRILL, 42, RHYDON, 42, KANGASKHAN, 43, NIDOKING, 43, NIDOQUEEN, 45, PERSIAN, 0 ; if persian slash is desirable, make it L47.
 ; Viridian Gym
 	db $FF, 47, TRAMPEL, 46, DUGTRIO, 46, NIDOQUEEN, 48, GUARDIA, 48, NIDOKING, 50, RHYPERIOR, 0
 

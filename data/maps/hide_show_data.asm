@@ -522,10 +522,12 @@ SilphCo10FHS:
 	db SILPH_CO_10F, $04, SHOW                ; HS_SILPH_CO_10F_ITEM_1
 	db SILPH_CO_10F, $05, SHOW                ; HS_SILPH_CO_10F_ITEM_2
 SilphCo11FHS:
-	db SILPH_CO_11F, $03, SHOW                ; HS_SILPH_CO_11F_1
-	db SILPH_CO_11F, $04, SHOW                ; HS_SILPH_CO_11F_2
-	db SILPH_CO_11F, $05, SHOW                ; HS_SILPH_CO_11F_3
-	db SILPH_CO_11F, $06, SHOW                ; HS_OMEGA
+	db SILPH_CO_11F, $03, SHOW                ; Giovanni
+	db SILPH_CO_11F, $04, SHOW                ; James
+	db SILPH_CO_11F, $05, SHOW                ; Rocket
+	db SILPH_CO_11F, $06, SHOW                ; James
+	db SILPH_CO_11F, $07, SHOW                ; HS_OMEGA
+	db SILPH_CO_11F, $08, HIDE                ; HS_OMEGA_2
 UnderwaterTunnelHS:
 	db UNDERWATER_TUNNEL, $01, SHOW           ; HS_DRAGONITE
 CinnabarVolcanoHS:

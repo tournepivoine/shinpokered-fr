@@ -199,9 +199,11 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_10F_ITEM_2           ; BA X best deck
 	const HS_SILPH_CO_10F_ITEM_3           ; BB X
 	const HS_SILPH_CO_11F_1                ; BC
-	const HS_SILPH_CO_11F_2                ; BD
+	const HS_SILPH_CO_11F_JAMES            ; BD
 	const HS_SILPH_CO_11F_3                ; BE
+	const HS_SILPH_CO_11F_JESSIE           ; BD
 	const HS_OMEGA                         ; BF
+	const HS_OMEGA_2
 	const HS_DRAGONITE                     ; C0
 	const HS_MOLTRES                       ; C1
 	const HS_POKEMON_MANSION_2F_ITEM       ; C2 X
@@ -260,5 +262,5 @@ DEF SHOW EQU $15
 	const HS_ROCK_TUNNEL_B1F_AMBER         ; F8
 	const HS_ROCK_TUNNEL_B1F_WING          ; F9
 	const HS_MT_MOON_CRATER_GUARD          ; FA
-	const HS_DAYCARE_BULBASAUR			   ; FB
+	const HS_DAYCARE_BULBASAUR			   ; FB should be FD
 DEF NUM_HS_OBJECTS EQU const_value

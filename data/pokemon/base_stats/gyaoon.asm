@@ -1,6 +1,6 @@
 	db DEX_GYAOON ; pokedex id
 
-	db 101, 110, 100,  30,  95
+	db 101, 124, 100,  30,  95
 	;   hp  atk  def  spd  spc
 
 	db ROCK, ROCK ; type

@@ -1,6 +1,6 @@
 	db DEX_TRAMPEL ; pokedex id
 
-	db 130, 100,  90,  56,  64
+	db 110, 100,  90,  56,  64
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, GROUND ; type
