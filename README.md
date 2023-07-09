@@ -137,7 +137,8 @@ QoL Enhancements
 - Fast text has no frame delay between text scrolling, doubling the scroll speed. It's also been made the default option, so you don't need to go into the Options menu for it.
 	- "Instatext" has also been made a selectable feature, courtesy of BlueZangoose.
 - The Old and Good Rods have been removed, and the Super Rod, now called the Fishing Rod, is obtained in Pewter City. All fishing encounter tables have been altered to roughly match the levels of the surrounding routes. 
-- Upon defeating the Elite Four, Legendary Pokemon encounters are reset, like in later games.
+- The Elite Four and Champion now have improved teams in the post-game. The Elite Four will use refight text based on their LGPE appearances.
+	- Plus, upon defeating the Elite Four, Legendary Pokemon encounters are reset, like in later games!
 - Traded Pokemon ("Outsiders") can now be nicknamed at the Name Rater's House.
 - HP bar has been doubled in speed, having a 1 frame delay per pixel rather than 2.
 - The blinking animation when hit by moves like Tackle now repeats 4 instead of 6 times, speeding up battles by a bit while not sacrificing impact.
