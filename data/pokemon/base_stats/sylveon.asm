@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/sylveon.pic", 0, 1 ; sprite dimensions
 	dw SylveonPicFront, SylveonPicBack
 
-	db TACKLE, SAND_ATTACK, QUICK_ATTACK, FAIRY_WIND ; level 1 learnset
+	db TACKLE, SAND_ATTACK, QUICK_ATTACK, DISARMING_VOICE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
