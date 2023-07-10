@@ -24,6 +24,7 @@ Music:
 	dba Music_Routes4
 	dba Music_RBYIndigoPlateau
 	dba Music_Lavenbar
+	dba Music_Citrine
 	dba Music_GymLeaderBattle
 	dba Music_TrainerBattle
 	dba Music_WildBattle
