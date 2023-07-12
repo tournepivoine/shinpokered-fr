@@ -1,5 +1,5 @@
 BrunswickGrotto_Object:
-	db $0 ; border block
+	db $3 ; border block
 
 	def_warp_events
 	warp_event 24, 23, BRUNSWICK_TRAIL, 2

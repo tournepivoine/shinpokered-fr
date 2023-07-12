@@ -7,8 +7,8 @@ Route1_Script:
 Route1_TextPointers:
 	dw Route1Text1
 	dw Route1Text2
-	dw Route1Text3
 	dw Route1OakText
+	dw Route1Text3
 
 Route1Text1:
 	text_asm
@@ -100,10 +100,10 @@ Route1OakText:
 .Pikachu
 	cp STARTER4
 	jr nz, .Eevee
-	ld a, $4 ; If Pikachu, Espeon
+	ld a, $4 ; If Pikachu, all 3
 	jr .done
 .Eevee
-	ld a, $5 ; If Eevee, Gorochu
+	ld a, $5 ; If Eevee, also all 3
 	jr .done
 .refused
 	ld hl, OakNo

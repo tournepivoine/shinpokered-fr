@@ -7,9 +7,9 @@ Museum2F_TextPointers:
 	dw Museum2FText3
 	dw Museum2FText4
 	dw Museum2FText5
+	dw SeismicTossGuy
 	dw Museum2FText6
 	dw Museum2FText7
-	dw SeismicTossGuy
 
 Museum2FText1:
 	text_far _Museum2FText1

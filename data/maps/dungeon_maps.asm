@@ -13,6 +13,9 @@ DungeonMaps1:
 	db DIGLETTS_CAVE
 	db UNDERWATER_TUNNEL
 	db CINNABAR_VOLCANO_FLOORS
+	db CELESTE_HILL
+	db CELESTE_HILL_OUTSIDE
+	db CELESTE_HILL_CAVE
 	db -1 ; end
 
 ; GetBattleTransitionID_IsDungeonMap checks if wCurMap

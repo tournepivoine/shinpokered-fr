@@ -345,7 +345,7 @@ EngineerData:
 	db 21, KOTORA, VOLTORB, 0
 	db 18, MAGNEMITE, MAGNEMITE, MAGNETITE, 0
 ; Silph Gauntlet 3F (S.S Anne)
-	db 64, ELECTRODE, GOLEM_A, MAGNEZONE, GOROTORA, PERRSERKER, SCIZOR, 0   ; The Engineer trainer EXCLUSIVELY uses Magnemites and Voltorbs in normal battles, so I kinda had to improvise with his team a bit...
+	db 64, ELECTRODE, SANDSLASH_A, MAGNEZONE, GOROTORA, PERRSERKER, SCIZOR, 0   ; The Engineer trainer EXCLUSIVELY uses Magnemites and Voltorbs in normal battles, so I kinda had to improvise with his team a bit...
 
 ; Super Rod encounter showcase, basically
 FisherData:
@@ -462,12 +462,13 @@ PsychicData:
 	db 65, SLOWBRO, EXEGGUTOR, STARMIE, MR_RIME, ESPEON, ALAKAZAM, 0 
 
 ; Electric specialist with depressingly little representation.
-; Not even a Silph Gauntlet entry! What a joke!
 RockerData:
 ; Vermilion Gym
 	db 20, VOLTORB, MAGNEMITE, MAGNETITE, 0
 ; Route 12
 	db 29, VOLTORB, ELECTRODE, 0
+; Silph Gauntlet 3F (S.S Anne)
+	db 64, ELECTIVIRE, ELECTRODE, MAGNEZONE, GOLEM_A, GOROCHU, JOLTEON, 0
 
 ; Psychic, Poison, and a little bit of Voltorb.
 JugglerData:
@@ -577,7 +578,7 @@ RocketData:
 	db 15, EKANS, ZUBAT, 0
 ; Game Corner
 	db 22, ZUBAT, KOFFING, RATICATE, ARBOK, 0
-; Rocket Hideout B1F WHY THE FUCK WAS IT AN L42 HYPNO N SHITE WTFFFFF BRO
+; Rocket Hideout B1F
 	db 22, DROWZEE, KOFFING, ARBOK, 0
 ; Rocket Hideout B1F
 	db 21, RATICATE, RATICATE, 0

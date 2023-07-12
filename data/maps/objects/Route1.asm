@@ -4,12 +4,12 @@ Route1_Object:
 	def_warp_events
 
 	def_bg_events
-	bg_event  9, 27, 3 ; Route1Text3
+	bg_event  9, 27, 4 ; Route1Text3
 
 	def_object_events
 	object_event  5, 24, SPRITE_YOUNGSTER, WALK, UP_DOWN, 1 ; person
 	object_event 15, 13, SPRITE_YOUNGSTER, WALK, LEFT_RIGHT, 2 ; person
-	object_event 10, 25, SPRITE_OAK, STAY, RIGHT, 4 ; oak
+	object_event 10, 25, SPRITE_OAK, STAY, RIGHT, 3 ; oak
 
 	def_warps_to ROUTE_1
 
