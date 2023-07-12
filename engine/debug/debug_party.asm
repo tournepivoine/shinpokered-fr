@@ -187,9 +187,9 @@ DebugPikachuEevee:
 	jr .loop
 
 DebugPikachuEeveeShows:
-		db HS_DAMIEN ; Charmander guy
-		db HS_VERMILION_JENNY ; Squirtle
-		db -1 ; end
+	db HS_DAMIEN ; Charmander guy
+	db HS_VERMILION_JENNY ; Squirtle
+	db -1 ; end
 
 DebugSetPokedexEntries:
 	ld b, wPokedexOwnedEnd - wPokedexOwned
@@ -203,6 +203,7 @@ DebugSetPokedexEntries:
 
 DebugItemsList:
 	db MASTER_BALL, 99
+	db SILPHLETTER, 1
 	db MYSTERY_BOX, 1
 	db CANDY_JAR, 1
 	db BICYCLE, 1

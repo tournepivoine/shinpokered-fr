@@ -358,6 +358,11 @@ _TeaDescription::
 	next "quenching thirst."
 	prompt
 
+_SilphLetterDescription::
+	text "A LETTER from"
+	next "the SILPH CHIEF."
+	prompt
+
 _HM01Description::
 	text "Cuts using claws,"
 	next "scythes, etc."

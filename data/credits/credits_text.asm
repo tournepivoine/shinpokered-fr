@@ -254,4 +254,4 @@ CredChatot:
 CredEni:
 	db -3, "ENIGAMI@"
 CredVort:
-	db -4, "VORTIENE@"
+	db -3, "VORTIENE@"

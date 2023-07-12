@@ -94,6 +94,7 @@ ItemPrices::
 	bcd3 3000  ; METAL_COAT
 	bcd3 0	   ; MYSTERY_BOX
 	bcd3 0	   ; TEA
+	bcd3 0	   ; SILPHLETTER
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

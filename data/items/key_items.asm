@@ -94,6 +94,7 @@ KeyItemFlags:
 	dbit FALSE ; METAL_COAT
 	dbit TRUE  ; MYSTERY_BOX
 	dbit TRUE  ; TEA
+	dbit TRUE  ; SILPHLETTER
 	dbit TRUE  ; FLOOR_B2F
 	dbit TRUE  ; FLOOR_B1F
 	dbit TRUE  ; FLOOR_1F

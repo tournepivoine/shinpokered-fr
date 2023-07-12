@@ -117,7 +117,7 @@ MainMenu:
 	ld a, [wCurMap] ; map ID
 	cp HALL_OF_FAME
 	jp nz, SpecialEnterMap
-	xor a
+	ld a, REDS_HOUSE_2F
 	ld [wDestinationMap], a
 	ld hl, wd732
 	set 2, [hl] ; fly warp or dungeon warp

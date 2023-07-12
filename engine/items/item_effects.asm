@@ -111,6 +111,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; METAL_COAT
 	dw ItemUseMysteryBox ; MYSTERY_BOX
 	dw UnusableItem		 ; TEA
+	dw ItemUseLetter	 ; SILPHLETTER
 	dw UnusableItem      ; FLOOR_B2F
 	dw UnusableItem      ; FLOOR_B1F
     dw UnusableItem      ; FLOOR_1F
@@ -125,6 +126,16 @@ ItemUsePtrTable:
 	dw UnusableItem      ; FLOOR_10F
 	dw UnusableItem      ; FLOOR_11F
 	dw UnusableItem      ; FLOOR_14F
+
+ItemUseLetter:
+	text_asm
+	ld hl, ChiefLetterText
+	call PrintText
+	jp TextScriptEnd
+
+ChiefLetterText:
+	text_far _ChiefLetterText
+	text_end
 
 ItemUseMysteryBox:
 	; Mystery Box can't be used in battle.
