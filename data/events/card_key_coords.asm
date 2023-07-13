@@ -24,8 +24,8 @@ CardKeyTable2:
 	db SILPH_CO_5F, $05, $07, 13
 	db SILPH_CO_6F, $0C, $05, 14
 	db SILPH_CO_6F, $0D, $05, 15
-	db SILPH_CO_8F, $08, $07, 16
-	db SILPH_CO_8F, $09, $07, 17
+	;db SILPH_CO_8F, $08, $07, 16
+	;db SILPH_CO_8F, $09, $07, 17
 	db SILPH_CO_9F, $08, $03, 18
 	db SILPH_CO_9F, $09, $03, 19
 	db -1 ; end

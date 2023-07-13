@@ -217,7 +217,7 @@ MapHeaderBanks::
 	db BANK(SilphCo5F_h)
 	db BANK(SilphCo6F_h)
 	db BANK(SilphCo7F_h)
-	db BANK(SilphCo8F_h)
+	;db BANK(SilphCo8F_h)
 	db BANK(PokemonMansion2F_h)
 	db BANK(PokemonMansion3F_h)
 	db BANK(PokemonMansionB1F_h)

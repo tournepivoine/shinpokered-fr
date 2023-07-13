@@ -217,7 +217,7 @@ MapHeaderPointers::
 	dw SilphCo5F_h
 	dw SilphCo6F_h
 	dw SilphCo7F_h
-	dw SilphCo8F_h
+	;dw SilphCo8F_h
 	dw PokemonMansion2F_h
 	dw PokemonMansion3F_h
 	dw PokemonMansionB1F_h

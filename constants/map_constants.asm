@@ -235,7 +235,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SILPH_CO_5F,                   15,  9 ; $D3
 	map_const SILPH_CO_6F,                   13,  9 ; $D4
 	map_const SILPH_CO_7F,                   13,  9 ; $D5
-	map_const SILPH_CO_8F,                   13,  9 ; $D6
+	;map_const SILPH_CO_8F,                   13,  9 ; $D6
 	map_const POKEMON_MANSION_2F,            15, 14 ; $D7
 	map_const POKEMON_MANSION_3F,            15,  9 ; $D8
 	map_const POKEMON_MANSION_B1F,           15, 14 ; $D9

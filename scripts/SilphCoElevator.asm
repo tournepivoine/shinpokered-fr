@@ -65,7 +65,7 @@ SilphCoElevatorWarpMaps:
 	db 2, SILPH_CO_5F
 	db 2, SILPH_CO_6F
 	db 2, SILPH_CO_7F
-	db 2, SILPH_CO_8F
+	;db 2, SILPH_CO_8F
 	db 2, SILPH_CO_9F
 	db 2, SILPH_CO_10F
 	db 1, SILPH_CO_11F

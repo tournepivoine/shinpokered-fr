@@ -219,7 +219,7 @@ MapHSPointers:
 	dw SilphCo5FHS
 	dw SilphCo6FHS
 	dw SilphCo7FHS
-	dw SilphCo8FHS
+	;dw SilphCo8FHS
 	dw PokemonMansion2FHS
 	dw PokemonMansion3FHS
 	dw PokemonMansionB1FHS
@@ -511,10 +511,10 @@ SilphCo7FHS:
 	db SILPH_CO_7F, $09, SHOW                 ; HS_SILPH_CO_7F_RIVAL
 	db SILPH_CO_7F, $0A, SHOW                 ; HS_SILPH_CO_7F_ITEM_1
 	db SILPH_CO_7F, $0B, SHOW                 ; HS_SILPH_CO_7F_ITEM_2
-SilphCo8FHS:
-	db SILPH_CO_8F, $02, SHOW                 ; HS_SILPH_CO_8F_1
-	db SILPH_CO_8F, $03, SHOW                 ; HS_SILPH_CO_8F_2
-	db SILPH_CO_8F, $04, SHOW                 ; HS_SILPH_CO_8F_3
+;SilphCo8FHS:
+;	db SILPH_CO_8F, $02, SHOW                 ; HS_SILPH_CO_8F_1
+;	db SILPH_CO_8F, $03, SHOW                 ; HS_SILPH_CO_8F_2
+;	db SILPH_CO_8F, $04, SHOW                 ; HS_SILPH_CO_8F_3
 SilphCo10FHS:
 	db SILPH_CO_10F, $01, SHOW                ; HS_SILPH_CO_10F_1
 	db SILPH_CO_10F, $02, SHOW                ; HS_SILPH_CO_10F_2

@@ -190,9 +190,9 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_7F_RIVAL             ; B1
 	const HS_SILPH_CO_7F_ITEM_1            ; B2 X
 	const HS_SILPH_CO_7F_ITEM_2            ; B3	X
-	const HS_SILPH_CO_8F_1                 ; B4
-	const HS_SILPH_CO_8F_2                 ; B5
-	const HS_SILPH_CO_8F_3                 ; B6
+	;const HS_SILPH_CO_8F_1                 ; B4
+	;const HS_SILPH_CO_8F_2                 ; B5
+	;const HS_SILPH_CO_8F_3                 ; B6
 	const HS_SILPH_CO_10F_1                ; B7
 	const HS_SILPH_CO_10F_2                ; B8
 	const HS_SILPH_CO_10F_ITEM_1           ; B9 X
