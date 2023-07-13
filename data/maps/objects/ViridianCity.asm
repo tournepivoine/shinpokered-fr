@@ -11,7 +11,7 @@ ViridianCity_Object:
 	warp_event 12, 15, VIRIDIAN_PRE_GYM, 1
 
 	def_bg_events
-	bg_event 17, 17,  8 ; ViridianCityText8
+	bg_event 23, 17,  8 ; ViridianCityText8
 	bg_event 19,  1,  9 ; ViridianCityText9
 	bg_event 21, 29, 10 ; ViridianCityText10
 	bg_event 30, 19, 11 ; MartSignText
