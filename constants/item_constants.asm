@@ -103,6 +103,7 @@ DEF SAFARI_ROCK EQU $16 ; overload
 	const METAL_COAT	; $5C
 	const MYSTERY_BOX	; $5D
 	const TEA			; $5E
+	const SILPHLETTER	; $5F
 DEF NUM_ITEMS EQU const_value - 1
 
 ; elevator floors use item IDs

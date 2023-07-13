@@ -94,6 +94,7 @@ ItemNames::
 	li "METAL COAT"
 	li "MYSTERY BOX"
 	li "TEA"
+	li "SILPH LETTER"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

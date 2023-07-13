@@ -1991,7 +1991,8 @@ wPalletTownCurScript:: db
 wCitrineRocketHouseCurScript:: db
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
-	ds 2
+wRedsHouse1FCurScript:: db
+	ds 1
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db
