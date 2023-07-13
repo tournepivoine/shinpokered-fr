@@ -15,44 +15,47 @@ ChiefLetter1:
 	jr nz, .done
 	; with the way this is being done, coords will be unnecessary.
 	; this will trigger the minute you enter the house.
-	call UpdateSprites
-	call PlayerSeeMom
-	
-	ld a, $ff
-	ld [wJoyIgnore], a
+	ld a, PLAYER_DIR_DOWN
+	ld [wPlayerMovingDirection], a
+	call UpdateSprites ; idk most movement scripts use this fsr
+	call PlayerSeeMom ; Show a cute little emotion bubble from the player.
+	jr MovePlayer ; Now kick the player upstairs. If you do this any other way, the game freaks out (eg. constant emotion bubbles, rsts)
+.done
+	ret
+
+MovePlayer:
+	ld a, $ff ; Firstly...
+	ld [wJoyIgnore], a ; No joypad inputs. No funny business. RLE is weird as fuck without it.
 	ld hl, wSimulatedJoypadStatesEnd
 	ld de, PlayerSeeMom_RLEMovement
 	call DecodeRLEList
 	dec a
 	ld [wSimulatedJoypadStatesIndex], a
-	call StartSimulatingJoypadStates
-	
-	ld a, $2
-	ld [wRedsHouse1FCurScript], a
-	ld [wCurMapScript], a
-.done
+	call StartSimulatingJoypadStates ; By this point, we're auto-moving.
+	ld a, $1 ; Now...
+	ld [wRedsHouse1FCurScript], a ; Get kicked up another flight to ChiefLetter2.
+	ld [wCurMapScript], a ; Safety.
 	ret
 
 ChiefLetter2:
-	ld a, [wSimulatedJoypadStatesIndex]
+	ld a, [wSimulatedJoypadStatesIndex] ; This ties up the loose ends with the RLE.
 	and a
 	ret nz
-	call Delay3
-
-	ld a, $1
-	ldh [hSpriteIndex], a
+	call Delay3 ; Next...
 	
-	ld a, SPRITE_FACING_LEFT
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
+	xor a ; Now...
+	ld [wJoyIgnore], a ; The player needs to be able to mash A.
+	ld a, $1 ; Load Mom's NPC ID
+	ldh [hSpriteIndex], a ; Slap it in the index
+	ld a, SPRITE_FACING_RIGHT ; Get this ready
+	ldh [hSpriteFacingDirection], a ; Now she'll face right, simulatiung talking to her.
+	call SetSpriteFacingDirectionAndDelay ; Get this all out.
+	call DisplayTextID ; Display her text ID, using the same thing from before.
+	; We did a little tomfoolery with her base text to make this work. Look below if you dare.
 	
-	ld hl, MomGreeting
-	call PrintText
-	SetEvent EVENT_LETTER_RECEIVED
-	
-	ld a, $1
+	ld a, $0 ; Anyway, kick the player back downstairs so the script can ret z for the rest of time.
 	ld [wRedsHouse1FCurScript], a
-	ld [wCurMapScript], a
+	ld [wCurMapScript], a ; aaand safety.
 	ret
 
 PlayerSeeMom:
@@ -75,10 +78,16 @@ PlayerSeeMom_RLEMovement:
 RedsHouse1F_TextPointers:
 	dw RedsHouse1FMomText
 	dw RedsHouse1FTVText
-	dw MomGreeting
 
 RedsHouse1FMomText:
 	text_asm
+	CheckEvent EVENT_POST_GAME_ATTAINED ; If the player hasn't got to the post game, we should never deal with this terribleness.
+	jr z, .normalProcessing ; So go to normal processing. Also if you go to debug without the post-game and letter events set up then this will loop infinitely. Please be reasonable.
+	CheckEvent EVENT_FUCK ; If some bozo triggers this I am going to be shocked.
+	jr nz, .bagWasFullButIsntNow ; No, seriously, you have to beat the Elite Four with a full bag. Ain't that a challenge?
+	CheckEvent EVENT_LETTER_RECEIVED ; Anyway, this was hell to debug. Let's go through the post-game together.
+	jr z, .letterSequence; This was all done so DisplayTextID could be used to get around a ton of bullshit.
+.normalProcessing
 	ld a, [wd72e]
 	bit 3, a ; received a Pokémon from Oak?
 	jr nz, .heal
@@ -87,6 +96,48 @@ RedsHouse1FMomText:
 	jr .done
 .heal
 	call MomHealPokemon
+	jr .done
+.letterSequence ; Look I know this code is cursed as fuck just bear with me
+	SetEvent EVENT_LETTER_RECEIVED ; Firstly, set the letter event
+	ld hl, MomYoureBack
+	call PrintText
+	lb bc, SILPHLETTER, 1 ; Alright, let's try to give the letter over.
+	call GiveItem ; Attempt is made.
+	jr nc, .bag_full ; If this triggers, you are a demented psychopath who needs to touch grass.
+	jr .LetterCanBeReceived ; If you're not weird, you can get it. Doing it this way saves a few instructions above.
+.bag_full ; Psycho zone.
+	ld hl, MomBagFull
+	call PrintText
+	SetEvent EVENT_FUCK ; Set the funny event that I really wish I didn't need to have set up.
+	jr .done
+.stillHavent ; Giga psycho zone. You get here if you still haven't sorted out your bag.
+	ld hl, MomBagStillFull
+	call PrintText
+	jr .done
+.bagWasFullButIsntNow ; So now, if the weird kid has finally done their bag, we can progress.
+	ld hl, MomSavedIt
+	call PrintText
+	lb bc, SILPHLETTER, 1 ; We do this twice as otherwise it's a jr nightmare I don't want to debug
+	call GiveItem
+	jr nc, .stillHavent ; If they think they're smart, tough, it's a loop.
+	; Otherwise, fallthrough
+.LetterCanBeReceived ; Jump here when getting the letter is possible.
+	ld hl, ReceivedChiefLetterText ; So now they get their letter.
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here.
+	ld hl, ChiefLetterText
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip. again. i tried making it a func but it got funky.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here.
+	ld hl, MomAmazing
+	call PrintText
+	ResetEvent EVENT_FUCK ; Anyway, unset this and never deal with it again. This resets mom to her normal state.
+	; fallthrough
 .done
 	jp TextScriptEnd
 
@@ -145,24 +196,6 @@ TVWrongSideText:
 
 ; Post-Game stuff here.
 
-MomGreeting:
-	text_asm
-	ld hl, MomYoureBack
-	call PrintText
-	lb bc, SILPHLETTER, 1
-	call GiveItem
-	ld hl, ReceivedChiefLetterText
-	call PrintText
-	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
-	and a ; yep, here too.
-	call z, WaitForTextScrollButtonPress ; and here.
-	call EnableAutoTextBoxDrawing ; and here.
-	ld hl, ChiefLetterText
-	call PrintText
-	ld hl, MomAmazing
-	call PrintText
-	jp TextScriptEnd
-
 ChiefLetterText:
 	text_far _ChiefLetterText
 	text_end
@@ -173,8 +206,21 @@ MomYoureBack:
 
 ReceivedChiefLetterText:
 	text_far _ReceivedChiefLetterText
+	sound_get_item_1
 	text_end
 
 MomAmazing:
 	text_far _MomAmazing
+	text_end
+
+MomBagFull:
+	text_far _MomBagFull
+	text_end
+
+MomSavedIt:
+	text_far _MomSavedIt
+	text_end
+
+MomBagStillFull:
+	text_far _MomBagStillFull
 	text_end

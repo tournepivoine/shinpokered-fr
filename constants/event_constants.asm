@@ -3,13 +3,16 @@
 ; Pallet Town events
 	const_def
 	const EVENT_FOLLOWED_OAK_INTO_LAB
-	const EVENT_GOT_BULBASAUR
-	const EVENT_54F ; Charmander
+	const EVENT_GOT_BULBASAUR ; Day Care Melanie
+	const EVENT_54F ; Route 24, Damien's Charmander
 	const EVENT_HALL_OF_FAME_DEX_RATING
-	const EVENT_GOT_SQUIRTLE
+	const EVENT_GOT_SQUIRTLE ; Vermilion Officer Jenny
 	const EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	const EVENT_LETTER_RECEIVED
-	const_skip 16
+	const EVENT_FUCK ; If you trigger this you're a psychopath. Used for mom and oak post-game scenes.
+	const EVENT_RECEIVED_CITRINE_PASS
+	const EVENT_BEAT_OAK_ONCE
+	const_skip 13
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING

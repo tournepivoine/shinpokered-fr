@@ -1,8 +1,36 @@
 Route1_Script:
-	jp EnableAutoTextBoxDrawing
-	;ld hl, Route1_ScriptPointers
+	call EnableAutoTextBoxDrawing
+	ld hl, Route1_ScriptPointers
 	ld a, [wRoute1CurScript]
 	jp CallFunctionInTable
+
+Route1_ScriptPointers:
+	dw Route1Script0
+	dw OakVibeCheck
+
+Route1Script0:
+	ret ; yeah it's just a switch-off. shush.
+
+OakVibeCheck:
+	SetEvent EVENT_BEAT_OAK_ONCE ; This is set every time, but it doesn't matter, it sticks at 1 anyway.
+	CheckEvent EVENT_RECEIVED_CITRINE_PASS ; Before we do, has the player got the pass?
+	jr nz, .skip ; Yes? Now we go to auto-ret. 
+	jr OakFirstWin ; Otherwise, move to the first win script to set that up.
+.skip
+	ld a, $0
+	ld [wRoute1CurScript], a
+	ret
+
+OakFirstWin:
+	CheckEvent EVENT_RECEIVED_CITRINE_PASS
+	jr nz, .skip
+	ld a, $3
+	ldh [hSpriteIndex], a
+	call DisplayTextID
+.skip
+	ld a, $0
+	ld [wRoute1CurScript], a
+	ret
 
 Route1_TextPointers:
 	dw Route1Text1
@@ -60,10 +88,19 @@ Route1Text3:
 ; text
 Route1OakText:
 	text_asm
-	ld hl, OakBeforeBattleText
+	CheckEvent EVENT_BEAT_OAK_ONCE ; But if they've not beaten Oak, we need something else.
+	jr z, .skip ; So if they have, skip the next command.
+	CheckEvent EVENT_RECEIVED_CITRINE_PASS ; This is used for DisplayTextID. Is checked when Oak has been beaten once.
+	jp z, OakReceivePass
+.skip
+	CheckEvent EVENT_BEAT_OAK_ONCE ; I am like, 99.9% sure there's another way to do this.
+	ld hl, OakFirstBattleText ; Load this only if the Citrine Pass hasn't been obtained yet.
+	jr z, .skip2
+	ld hl, OakBeforeBattleText ; If he's been beaten before, load the usual prebattle text
+.skip2
 	call PrintText
 
-	call YesNoChoice
+	call YesNoChoice ; Do they want in?
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refused
@@ -86,40 +123,80 @@ Route1OakText:
 	cp STARTER2
 	jr nz, .NotSquirtle 
 	ld a, $2 ; If Charmander, Venusaur
-	jr .done
+	jr .battleSetup
 .NotSquirtle
 	cp STARTER3
 	jr nz, .Charmander
 	ld a, $3 ; If Bulbasaur, Totartle
-	jr .done
+	jr .battleSetup
 .Charmander
 	cp STARTER1
 	jr nz, .Pikachu
 	ld a, $1 ; If Squirtle, Charizard
-	jr .done
+	jr .battleSetup
 .Pikachu
 	cp STARTER4
 	jr nz, .Eevee
 	ld a, $4 ; If Pikachu, all 3
-	jr .done
+	jr .battleSetup
 .Eevee
 	ld a, $5 ; If Eevee, also all 3
-	jr .done
+	jr .battleSetup
 .refused
 	ld hl, OakNo
 	call PrintText
-	jp TextScriptEnd
-.done
+	jr .done
+.battleSetup
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a
-
-	ld a, $2
-	ld [wRoute1CurScript], a
 	
 	ld hl, OakDefeatedText
 	ld de, OakWonText
 	call SaveEndBattleTextPointers
+
+	ld a, $1
+	ld [wRoute1CurScript], a
+.done
+	jp TextScriptEnd
+
+OakReceivePass:
+	CheckEvent EVENT_FUCK ; This is for if the player is stupid
+	jp nz, .tryAgain
+	ld hl, OakFirstWinText
+	call PrintText
+	lb bc, CITRINE_PASS, 1
+	call GiveItem
+	jr nc, .bagFull
+	jr .getPass
+.tryAgain
+	ld hl, OakTryAgain
+	call PrintText
+	lb bc, CITRINE_PASS, 1
+	call GiveItem
+	jr nc, .bagStillFull
+	jr .getPass
+.bagFull
+	ld hl, OakBagFull
+	call PrintText
+	SetEvent EVENT_FUCK
+	jr .done
+.bagStillFull
+	ld hl, OakBagStillFull
+	call PrintText
+	jr .done
+.getPass
+	ld hl, ReceivedCitrinePassText
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here.
+	ld hl, OakCitrineExplain
+	call PrintText
+	SetEvent EVENT_RECEIVED_CITRINE_PASS
+	; fallthrough
+.done
 	jp TextScriptEnd
 
 OakBeforeBattleText:
@@ -140,4 +217,33 @@ OakYes:
 
 OakNo:
 	text_far _OakNo
+	text_end
+
+OakFirstBattleText:
+	text_far _OakFirstBattleText
+	text_end
+
+OakFirstWinText:
+	text_far _OakFirstWin
+	text_end
+
+ReceivedCitrinePassText:
+	text_far _ReceivedCitrinePassText
+	sound_get_item_2
+	text_end
+
+OakCitrineExplain:
+	text_far _OakCitrineExplain
+	text_end
+
+OakTryAgain:
+	text_far _OakTryAgain
+	text_end
+
+OakBagFull:
+	text_far _OakBagFull
+	text_end
+
+OakBagStillFull:
+	text_far _OakBagStillFull
 	text_end

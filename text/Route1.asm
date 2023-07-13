@@ -49,17 +49,19 @@ _Route1Text3::
 	cont "VIRIDIAN CITY"
 	done
 
-_OakBeforeBattleText::
-	text "OAK: Oh, my!"
+_OakFirstBattleText::
+	text "OAK: Ah, yes!"
+	line "<PLAYER>!"
 	
-	para "It seems you"
-	line "caught me during"
-	cont "during my lunch"
-	cont "hour!"
+	para "Good to see you!"
 	
-	para "<PLAYER>, you"
-	line "have truly come"
-	cont "into your own!"
+	para "The last time we"
+	line "met here, you"
+	cont "didn't even have"
+	cont "your first"
+	cont "#MON..."
+	
+	para "Anyway! <PLAYER>!"
 	
 	para "Your #MON"
 	line "LEAGUE challenge"
@@ -71,7 +73,18 @@ _OakBeforeBattleText::
 	para "How about we"
 	line "spar a bit?"
 	cont "What say you?"
+	done
+
+_OakBeforeBattleText::
+	text "OAK: Oh, my!"
 	
+	para "It seems you"
+	line "caught me during"
+	cont "during my lunch"
+	cont "hour!"
+	
+	para "Did you come for"
+	line "a rematch?"
 	done
 
 _OakDefeatedText::
@@ -82,19 +95,86 @@ _OakDefeatedText::
 	prompt
 
 _OakWonText::
-	text "Back in my day,"
-	line "I was a serious"
-	cont "TRAINER!"
+	text "I still"
+	line "have it!"
 	prompt
 	
 _OakYes::
 	text "Back in my day,"
 	line "I was a serious"
 	cont "TRAINER! Prepare"
-	cont "yourself, <PLAYER>!"
+	cont "yourself!"
 	prompt
 
 _OakNo::
-	text "Maybe another"
-	line "time!"
+	text "Another time,"
+	line "then?"
+	done
+	
+_OakFirstWin::
+	text "OAK: I thought you"
+	line "would fight more"
+	cont "like AGATHA, but I"
+	cont "see myself in"
+	cont "you..."
+	
+	para "It reminds me of"
+	line "the old days..."
+	
+	para "But, now is not"
+	line "the time for"
+	cont "that."
+	
+	para "<PLAYER>!"
+	line "I have a gift for"
+	cont "you."
+	prompt
+
+_ReceivedCitrinePassText::
+	text "<PLAYER> received"
+	line "the @"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
+_OakCitrineExplain::
+	text "This is a ticket"
+	line "to CITRINE CITY."
+	
+	para "It's a place where"
+	line "the best TRAINERs"
+	cont "go to become far"
+	cont "stronger."
+	
+	para "Some strange BIRD"
+	line "#MON will come"
+	cont "to roost there,"
+	cont "but they are so"
+	cont "fast and vicious,"
+	cont "few can even get"
+	cont "close to them..."
+	
+	para "Perhaps you can"
+	line "make history once"
+	cont "again!"
+	done
+
+_OakTryAgain::
+	text "OAK: Ok! Have you"
+	line "made room in your"
+	cont "BAG?"
+	prompt
+
+_OakBagFull::
+	text "Ah! Your BAG is"
+	line "full. Go back to"
+	cont "your house and"
+	cont "make room!"
+	done
+
+_OakBagStillFull::
+	text "Ohoho, not so"
+	line "fast! It's still"
+	cont "full. Your PC can"
+	cont "store items, yes?"
 	done
