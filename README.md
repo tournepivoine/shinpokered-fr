@@ -59,16 +59,17 @@ Naturally, these types get appropriate moves. They are currently distributed to 
 New Items:
 ====
 There are some new items here, with the aim of accomodating new Pokemon, adding features, and acting as methods of getting to new locations. 
-- To accomodate Meltan, the Mystery Box from Pokemon GO is featured. When used, wild encounters are replaced with Meltan until one leaves the location.
-	- The Candy Jar is a new key item that allows Meltan Candy to be collected. Defeating a Meltan rewards 10 Candy, and once 400 are collected, it turns into an evolution item to evolve Meltan into Melmetal.
+- The Wing Fossil is a new item that allows Aerodactyl to be revived, as the Old Amber is instead used for Decilla. It's hidden in Mt. Moon.
+- The Tea from FireRed/LeafGreen and Let's Go Pikachu/Eevee is added, allowing Saffron access for free. The guards now imply they want a cup of tea.
+	- This also accomodates Mt. Moon Square's shop, which would otherwise break progression due to its contents. Hint hint!
 - The Ice, Poison and Heart Stones have been added, the latter two being from the SpaceWorld '97 demo.
 	- Additional evolution items include the Protector, Black Augurite, Up-Grade, Dubious Disc, and the Metal Coat.
+- To accomodate Meltan, the Mystery Box from Pokemon GO is featured. When used, wild encounters are replaced with Meltan until one leaves the location. It can be obtained in the Safari Zone.
+	- The Candy Jar is a new key item that allows Meltan Candy to be collected. Defeating a Meltan rewards 10 Candy, and once 400 are collected, it turns into an evolution item to evolve Meltan into Melmetal. It can be obtained in the Indigo Plateau Lobby.
 - The Bottle Cap has been added alongside a Hyper Training feature, acting as effectively a Gold Bottle Cap.
 - The Old Sea Map has been added, giving access to Faraway Island and Mew.
-- The Citrine Pass has been added, allowing access to a new post-game area based on the unused "C" map.
-- The Wing Fossil is a new item that allows Aerodactyl to be revived, as the Old Amber is instead used for Decilla.
-- The Tea from FireRed/LeafGreen and Let's Go Pikachu/Eevee is added, allowing Saffron access for free. The guards now imply they want a cup of tea.
-	- This also accomodates Mt. Moon Square's shop, which would otherwise break progression.
+- The Silph Letter allows access to a new post-game challenge, obtained after completing the game.
+- The Citrine Pass has been added, allowing access to a new post-game area based on the unused "C" map. It can be obtained in the post-game.
 
 New Areas
 ====
@@ -112,7 +113,7 @@ Improved Areas
 - Viridian Gym now has a minor new area once you make Giovanni leave.
 - Various Move Tutors from FireRed and LeafGreen have been distributed around the region, instead giving their respective TMs.
 - The S.S. Anne now returns after getting the Marsh Badge and features trades for Galarian forms & Evolutions, as well as Paldean Tauros.
-- The healer from the S.S. Anne is now featured in the rightmost room on 1F.
+- The healer from the S.S. Anne is now featured in the rightmost room on 1F. It works identically to in FRLG.
 - A few existing areas have unique palettes to make them stand out:
 	- The Game Corner has a new palette, meant to reflect the bright, exciting colours that casinos and pachinko parlours tend to have.
 	- The Seafoam Islands have a cyan-coloured palette to make it seem more like an ice cave. Lorelei's room also has it.
@@ -341,16 +342,16 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance
 * Paulluxx - Showdown Mod assistance
-* DuoM2 - Showdown Mod assistance 
+* DuoM2 - Showdown Mod assistance
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
-* Frrf - Assisting with the development of the Pikachu / Eevee Mode, debugging
 * LuciShrimp - Mewtwo & Galarian Bird custom battle music
 * dannye33 - Assisting with crysaudio implementation
+* Frrf - Assisting with the development of the Pikachu / Eevee Mode + 5 Starters scenes in Oak's Lab, debugging
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
-* Chatot4444 - Assisting with gym scaling code
-* Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly
-* ZumiIsawhat? - Restorations of beta OST
+* Chatot4444 - Assisting with gym scaling code.
+* Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly.
+* ZumiIsawhat? - Restorations of beta OST.
 * FrenchOrange - Reconstructions of various overworld beta sprites.
 * Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites
 * Vortiene - Reused a bit of code from their pureRGB hack. Assisted in bug fixes.
@@ -358,7 +359,9 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * jojobear13 & Mateo - HP/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld!
 * wrulfy - Technical advice
+* suloku - Technical advice regarding setting where you spawn after beating the Elite Four.
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.
+* ViWalls - Extremely early adopter of the hack who repeatedly reported bugs and gave general opinions.
 
 Original README.md proceeding;
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]

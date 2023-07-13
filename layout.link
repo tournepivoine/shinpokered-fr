@@ -110,14 +110,14 @@ ROMX $14
 ROMX $15
 	"Maps 11"
 	"Battle Engine 9"
-	"Maps 12"
 ROMX $16
+	"Maps 12"
 	"Maps 13"
 	"Battle Engine 10"
 	"Maps 14"
 	"Saffron Guards"
-	"Diploma"
 ROMX $17
+	"Diploma"
 	"Maps 15"
 	"Starter Dex"
 	"Maps 16"

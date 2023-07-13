@@ -26,16 +26,18 @@ ViridianGymYujirouPostBattle:
 	jp z, ViridianGymResetScripts
 	ld a, $f0
 	ld [wJoyIgnore], a
-
-YujirouHasBeenBeaten:
-	SetEvent EVENT_BEAT_YUJIROU, EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_0, EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_1
+	
+	SetEvents EVENT_BEAT_YUJIROU, EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_0, EVENT_BEAT_VIRIDIAN_PREGYM_TRAINER_1 ; Needs to be set here for the correct text to pop up.
+	ld a, $3
+	ld [hSpriteIndex], a
+	call DisplayTextID
+	
 	jp ViridianPreGymResetScripts
 
 ViridianPreGym_TextPointers:
 	dw ViridianPreGymText1
 	dw ViridianPreGymText2
 	dw YujirouText
-	dw YujirouHasBeenBeaten
 	dw ViridianPreGymGuide
 	dw ViridianPreGymSign1
 	dw ViridianPreGymSign2
@@ -72,15 +74,24 @@ YujirouText:
 	set 6, [hl]
 	set 7, [hl]
 	call Delay3
+	
+	; gym scaling spaghetti code begins here - remove initial parameters as we're making our own
 	ld a, OPP_YUJIROU
 	ld [wCurOpponent], a
-	ld a, 1
+	
+	ld hl, wObtainedBadges ; Picking the team based on badge count. Need +1 so it loads the right team: remember, you're fighting for the badge! Thanks to Chatot4444 for the help.
+	ld b, 1
+	call CountSetBits
+	ld a, [wNumSetBits]
+	inc a
 	ld [wTrainerNo], a
+	
+	ld a, 1
 	ld [wIsTrainerBattle], a
 	ld hl, YujirouLoseText
 	ld de, YujirouWinText
 	call SaveEndBattleTextPointers
-	ld a, $2
+	ld a, $3
 	ld [wViridianPreGymCurScript], a
 	ld [wCurMapScript], a
 	jr .done
@@ -100,7 +111,7 @@ YujirouText:
 	call EngageMapTrainer
 	ld a, OPP_YUJIROU
 	ld [wCurOpponent], a
-	ld a, 2
+	ld a, 10
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a

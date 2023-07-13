@@ -57,9 +57,6 @@ IF DEF(_DEBUG)
 	ld a, GROWLITHE
 	ld [wBeautyChoice], a
 	
-	; Test Post-Game Functionality.
-	SetEvent EVENT_POST_GAME_ATTAINED
-	
 	; Get all badges except Earth Badge.
 	ld a, ~(1 << BIT_EARTHBADGE)
 	ld [wObtainedBadges], a
@@ -155,6 +152,9 @@ IF DEF(_DEBUG)
 	;ld hl, wPokedexSeen
 	;call DebugSetPokedexEntries
 	SetEvent EVENT_GOT_POKEDEX
+	
+	; Test Post-Game Functionality.
+	;SetEvent EVENT_POST_GAME_ATTAINED
 
 	; Rival chose Pikachu,
 	; Player chose Eevee.
