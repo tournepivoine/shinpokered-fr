@@ -700,7 +700,6 @@ Daycare_Blocks: INCBIN "maps/Daycare.blk"
 
 ;FuchsiaGoodRodHouse_Blocks: INCBIN "maps/FuchsiaGoodRodHouse.blk"
 
-
 SECTION "Maps 12", ROMX
 
 INCLUDE "scripts/Route2.asm"
@@ -727,10 +726,6 @@ INCLUDE "data/maps/headers/Daycare.asm"
 INCLUDE "scripts/Daycare.asm"
 INCLUDE "data/maps/objects/Daycare.asm"
 
-INCLUDE "data/maps/headers/Route12SuperRodHouse.asm"
-INCLUDE "scripts/Route12SuperRodHouse.asm"
-INCLUDE "data/maps/objects/Route12SuperRodHouse.asm"
-
 INCLUDE "data/maps/headers/SilphCo8F.asm"
 INCLUDE "scripts/SilphCo8F.asm"
 INCLUDE "data/maps/objects/SilphCo8F.asm"
@@ -738,6 +733,10 @@ SilphCo8F_Blocks: INCBIN "maps/SilphCo8F.blk"
 
 
 SECTION "Maps 13", ROMX
+
+INCLUDE "data/maps/headers/Route12SuperRodHouse.asm"
+INCLUDE "scripts/Route12SuperRodHouse.asm"
+INCLUDE "data/maps/objects/Route12SuperRodHouse.asm"
 
 INCLUDE "data/maps/headers/Route6.asm"
 INCLUDE "data/maps/objects/Route6.asm"
