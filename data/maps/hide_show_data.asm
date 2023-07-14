@@ -259,6 +259,7 @@ MapHSPointers:
 	dw NoHS ; Mt Moon Square House
 	dw NoHS ; Celeste Hill Cave 
 	dw NoHS ; Celeste Hill Outside
+	dw BrunswickGladeHS
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -357,7 +358,7 @@ CelesteHillHS:
 PokemonTower2FHS:
 	db POKEMON_TOWER_2F, $01, SHOW            ; HS_POKEMON_TOWER_2F_RIVAL
 BrunswickGrottoHS:
-	db BRUNSWICK_GROTTO, $01, SHOW            ; HS_BRUNSWICK_ZAPDOS_G_2
+	db BRUNSWICK_GROTTO, $01, HIDE            ; HS_BRUNSWICK_ZAPDOS_G_2
 ;PokemonTower3FHS:
 ;	db POKEMON_TOWER_3F, $04, SHOW            ; HS_POKEMON_TOWER_3F_ITEM
 ;PokemonTower4FHS:
@@ -614,4 +615,8 @@ MtMoonSquareHS:
 	db MT_MOON_SQUARE, $04, SHOW              ; HS_MT_MOON_CRATER_GUARD
 DaycareHS:
 	db DAYCARE, $03, SHOW 					  ; HS_DAYCARE_BULBASAUR
+BrunswickGladeHS:
+	db BRUNSWICK_GLADE, $01, HIDE            ; HS_GLADE_GZAP_1
+	db BRUNSWICK_GLADE, $02, HIDE            ; HS_GLADE_GZAP_2
+	db BRUNSWICK_GLADE, $03, HIDE            ; HS_GLADE_GZAP_3
 	assert_table_length NUM_HS_OBJECTS + 1

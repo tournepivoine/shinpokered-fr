@@ -1396,3 +1396,8 @@ INCLUDE "data/maps/headers/BrunswickGrotto.asm"
 INCLUDE "scripts/BrunswickGrotto.asm"
 INCLUDE "data/maps/objects/BrunswickGrotto.asm"
 BrunswickGrotto_Blocks: INCBIN "maps/BrunswickGrotto.blk"
+
+INCLUDE "data/maps/headers/BrunswickGlade.asm"
+INCLUDE "scripts/BrunswickGlade.asm"
+INCLUDE "data/maps/objects/BrunswickGlade.asm"
+BrunswickGlade_Blocks: INCBIN "maps/BrunswickGlade.blk"

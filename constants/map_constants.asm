@@ -275,6 +275,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const MT_MOON_SQUARE_HOUSE,           4,  4 ; $FC
 	map_const CELESTE_HILL_CAVE,	         20, 18 ; $FD
 	map_const CELESTE_HILL_OUTSIDE,	         20, 18 ; $FE
+	map_const BRUNSWICK_GLADE,				 19, 20 ; $FE should be this, i cut silph 8f before this but never updated the $s.
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps

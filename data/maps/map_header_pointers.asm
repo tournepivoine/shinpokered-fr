@@ -257,4 +257,5 @@ MapHeaderPointers::
 	dw MtMoonSquareHouse_h
 	dw CelesteHillCave_h
 	dw CelesteHillOutside_h
+	dw BrunswickGlade_h
 	assert_table_length NUM_MAPS

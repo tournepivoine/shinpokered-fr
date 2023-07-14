@@ -87,9 +87,14 @@ GZapFound:
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call GBFadeOutToBlack
+	ld a, SFX_RUN
+	call PlaySound
 	ld a, HS_BRUNSWICK_ZAPDOS_G_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_GLADE_GZAP_1
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack

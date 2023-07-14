@@ -263,4 +263,7 @@ DEF SHOW EQU $15
 	const HS_ROCK_TUNNEL_B1F_WING          ; F9
 	const HS_MT_MOON_CRATER_GUARD          ; FA
 	const HS_DAYCARE_BULBASAUR			   ; FB should be FD
+	const HS_GLADE_GZAP_1
+	const HS_GLADE_GZAP_2
+	const HS_GLADE_GZAP_3 ; we're at 250
 DEF NUM_HS_OBJECTS EQU const_value
