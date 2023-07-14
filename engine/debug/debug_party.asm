@@ -24,11 +24,9 @@ IshiharaTeam:
 	db EXEGGUTOR_A, 90
 	db MELTAN, 90
 	db TRAMPEL, 90
-IF DEF(_DEBUG)
 	db MEWTWO, 90
 	db RAICHU_A, 50
-	db CROCKY, 90
-ENDC
+	db CROCKY, 5
 	db -1 ; end
 
 DebugStart:

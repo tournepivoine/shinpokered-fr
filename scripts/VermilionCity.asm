@@ -226,24 +226,22 @@ PassListings:
 	ld a, [hl]
 	ldh [hItemToRemoveID], a
 	cp S_S_TICKET
-	jr z, .choseSSAnne
+	jp z, VermilionCityText3.playerHasTicket ; Saves time and less risk of bugs
 	cp OLD_SEA_MAP
 	jr z, .choseFaraway
 	cp CITRINE_PASS
 	jr z, .choseCitrine
 ; god bless the safari game and pokemon tower 7f for being the few times a forcewarp exists
 ; For some reason, these aren't working properly...
-.choseSSAnne
-	jp VermilionCityText3.playerHasTicket ; Saves time and less risk of bugs
 .choseFaraway
 	ld hl, EventVermillionCityOldSeaMap
 	call PrintText
-    ld a, FARAWAY_ISLAND_OUTSIDE
-    ldh [hWarpDestinationMap], a
-    ld a, $1
-    ld [wDestinationWarpID], a
-	call WarpFound2
-    jr .done
+	ld a, FARAWAY_ISLAND_OUTSIDE
+	ld [wDestinationMap], a
+	ld hl, wd732
+	set 2, [hl] ; fly warp or dungeon warp
+	call SpecialWarpIn
+	jp SpecialEnterMap
 .choseCitrine
 	ld hl, EventVermillionCityCitrinePass
 	call PrintText

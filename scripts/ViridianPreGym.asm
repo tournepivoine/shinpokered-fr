@@ -56,13 +56,10 @@ ViridianPreGymTrainerHeader1:
 
 YujirouText:
 	text_asm
-	
 	CheckEvent EVENT_POST_GAME_ATTAINED ; No need to view previous stuff
 	jr nz, .rematchMode
-	
 	CheckEvent EVENT_BEAT_YUJIROU
-	jr nz, .YujirouBeaten
-	
+	jp nz, .YujirouBeaten
 	ld hl, YujirouIntro
 	call PrintText
 	
@@ -73,7 +70,12 @@ YujirouText:
 	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]
-	call Delay3
+	ld hl, YujirouLoseText
+	ld de, YujirouWinText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
 	
 	; gym scaling spaghetti code begins here - remove initial parameters as we're making our own
 	ld a, OPP_YUJIROU
@@ -88,9 +90,6 @@ YujirouText:
 	
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld hl, YujirouLoseText
-	ld de, YujirouWinText
-	call SaveEndBattleTextPointers
 	ld a, $3
 	ld [wViridianPreGymCurScript], a
 	ld [wCurMapScript], a
@@ -121,7 +120,6 @@ YujirouText:
 .YujirouBeaten
 	ld hl, YujirouAfterBattleText
 	call PrintText
-	jr .done
 .done
 	jp TextScriptEnd
 

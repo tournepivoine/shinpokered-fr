@@ -16,7 +16,7 @@ ViridianPreGym_Object:
 	def_object_events
 	object_event  6,  9, SPRITE_GIRL, STAY, LEFT, 1, OPP_STUDENT, 1 ; person, Trainer 1
 	object_event  3,  8, SPRITE_GIRL, STAY, RIGHT, 2, OPP_STUDENT, 2 ; person, Trainer 2
-	object_event  5,  2, SPRITE_YOUNGSTER, STAY, NONE, 3 ; person, Yujirou
+	object_event  5,  2, SPRITE_YOUNGSTER, STAY, NONE, 3, OPP_YUJIROU, 1 ; person, Yujirou
 	object_event  1,  6, SPRITE_GYM_GUIDE, STAY, DOWN, 4 ; person
 
 	def_warps_to VIRIDIAN_PRE_GYM
