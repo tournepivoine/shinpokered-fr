@@ -1,5 +1,5 @@
 CelesteHill_Object:
-	db $0 ; border block
+	db $2 ; border block
 
 	def_warp_events
 	warp_event 10, 21, CELESTE_HILL_OUTSIDE, 7

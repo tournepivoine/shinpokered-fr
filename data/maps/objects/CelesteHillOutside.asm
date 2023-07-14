@@ -1,5 +1,5 @@
 CelesteHillOutside_Object:
-	db $3 ; border block
+	db $2 ; border block
 
 	def_warp_events
 	warp_event 18, 35, CITRINE_CITY, 5

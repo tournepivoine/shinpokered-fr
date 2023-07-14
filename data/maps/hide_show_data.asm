@@ -286,7 +286,7 @@ CeruleanCityHS:
 	db CERULEAN_CITY, $0A, SHOW               ; HS_CERULEAN_CAVE_GUY
 	db CERULEAN_CITY, $0B, SHOW               ; HS_CERULEAN_GUARD_2
 VermilionCityHS:
-	db VERMILION_CITY, $07, HIDE			  ; HS_VERMILION_JENNY
+	db VERMILION_CITY, $07, HIDE              ; HS_VERMILION_JENNY
 SaffronCityHS:
 	db SAFFRON_CITY, $01, SHOW                ; HS_SAFFRON_CITY_1
 	db SAFFRON_CITY, $02, SHOW                ; HS_SAFFRON_CITY_2
@@ -304,6 +304,8 @@ SaffronCityHS:
 	db SAFFRON_CITY, $0E, SHOW                ; HS_SAFFRON_CITY_E
 	db SAFFRON_CITY, $0F, HIDE                ; HS_SAFFRON_CITY_F
 	db SAFFRON_CITY, $1A, HIDE                ; HS_SAFFRON_CITY_UP_GRADE
+Route1HS:
+	db ROUTE_1, $03, HIDE                     ; HS_ROUTE_1_OAK
 Route2HS:
 	db ROUTE_2, $01, SHOW                     ; HS_ROUTE_2_ITEM_1
 	db ROUTE_2, $02, SHOW                     ; HS_ROUTE_2_ITEM_2
@@ -325,7 +327,7 @@ Route22HS:
 Route24HS:
 	db ROUTE_24, $01, SHOW                    ; HS_NUGGET_BRIDGE_GUY
 	db ROUTE_24, $08, SHOW                    ; HS_ROUTE_24_ITEM
-	db ROUTE_24, $09, HIDE					  ; HS_DAMIEN
+	db ROUTE_24, $09, HIDE                    ; HS_DAMIEN
 Route25HS:
 	db ROUTE_25, $0A, SHOW                    ; HS_ROUTE_25_ITEM
 BrunswickTrailHS:
@@ -474,7 +476,7 @@ RocketHideoutB4FHS:
 	db ROCKET_HIDEOUT_B4F, $08, HIDE          ; HS_ROCKET_HIDEOUT_B4F_ITEM_4
 	db ROCKET_HIDEOUT_B4F, $09, HIDE          ; HS_ROCKET_HIDEOUT_B4F_ITEM_5
 GarnetCavernB1FHS:
-	db GARNET_CAVERN_B1F, $01, SHOW           ; HS_GARNET_ARTICUNO_G, SHOW for testing reasons
+	db GARNET_CAVERN_B1F, $01, SHOW           ; HS_GARNET_ARTICUNO_G
 	db GARNET_CAVERN_B1F, $02, SHOW           ; HS_GARNET_ITEM_1
 	db GARNET_CAVERN_B1F, $03, SHOW           ; HS_GARNET_ITEM_2
 	db GARNET_CAVERN_B1F, $04, SHOW           ; HS_ARTICUNO_G_COPY_1
@@ -512,10 +514,6 @@ SilphCo7FHS:
 	db SILPH_CO_7F, $09, SHOW                 ; HS_SILPH_CO_7F_RIVAL
 	db SILPH_CO_7F, $0A, SHOW                 ; HS_SILPH_CO_7F_ITEM_1
 	db SILPH_CO_7F, $0B, SHOW                 ; HS_SILPH_CO_7F_ITEM_2
-;SilphCo8FHS:
-;	db SILPH_CO_8F, $02, SHOW                 ; HS_SILPH_CO_8F_1
-;	db SILPH_CO_8F, $03, SHOW                 ; HS_SILPH_CO_8F_2
-;	db SILPH_CO_8F, $04, SHOW                 ; HS_SILPH_CO_8F_3
 SilphCo10FHS:
 	db SILPH_CO_10F, $01, SHOW                ; HS_SILPH_CO_10F_1
 	db SILPH_CO_10F, $02, SHOW                ; HS_SILPH_CO_10F_2
@@ -596,27 +594,24 @@ FarawayIslandInsideHS:
 PokemonMansionB2FHS:
 	db POKEMON_MANSION_B2F, $03, SHOW         ; HS_POKEMON_MANSION_B2F_ITEM_1
 	db POKEMON_MANSION_B2F, $04, SHOW         ; HS_POKEMON_MANSION_B2F_ITEM_2
-Route1HS:
-	db ROUTE_1, $03, HIDE                     ; HS_ROUTE_1_OAK
 MtMoonCraterHS:
 	db MT_MOON_CRATER, $01, SHOW              ; HS_MT_MOON_CRATER_ITEM_1
 	db MT_MOON_CRATER, $02, SHOW              ; HS_MT_MOON_CRATER_ITEM_2
 	db MT_MOON_CRATER, $03, SHOW              ; HS_MT_MOON_CRATER_ITEM_3
-	db MT_MOON_CRATER, $04, SHOW              ; HS_MT_MOON_CRATER_ITEM_4
 GiovannisRoomHS:
 	db GIOVANNIS_ROOM, $05, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_1
 	db GIOVANNIS_ROOM, $06, SHOW              ; HS_GIOVANNIS_ROOM_ITEM_2
 RockTunnelB1FHS:
-	db ROCK_TUNNEL_B1F, $0A, SHOW			  ; HS_ROCK_TUNNEL_B1F_DOME
-	db ROCK_TUNNEL_B1F, $0B, SHOW			  ; HS_ROCK_TUNNEL_B1F_HELIX
-	db ROCK_TUNNEL_B1F, $0C, SHOW			  ; HS_ROCK_TUNNEL_B1F_AMBER
-	db ROCK_TUNNEL_B1F, $0D, SHOW			  ; HS_ROCK_TUNNEL_B1F_WING
+	db ROCK_TUNNEL_B1F, $0A, SHOW             ; HS_ROCK_TUNNEL_B1F_DOME
+	db ROCK_TUNNEL_B1F, $0B, SHOW             ; HS_ROCK_TUNNEL_B1F_HELIX
+	db ROCK_TUNNEL_B1F, $0C, SHOW             ; HS_ROCK_TUNNEL_B1F_AMBER
+	db ROCK_TUNNEL_B1F, $0D, SHOW             ; HS_ROCK_TUNNEL_B1F_WING
 MtMoonSquareHS:
 	db MT_MOON_SQUARE, $04, SHOW              ; HS_MT_MOON_CRATER_GUARD
 DaycareHS:
-	db DAYCARE, $03, SHOW 					  ; HS_DAYCARE_BULBASAUR
+	db DAYCARE, $03, SHOW                     ; HS_DAYCARE_BULBASAUR
 BrunswickGladeHS:
 	db BRUNSWICK_GLADE, $01, HIDE            ; HS_GLADE_GZAP_1
 	db BRUNSWICK_GLADE, $02, HIDE            ; HS_GLADE_GZAP_2
 	db BRUNSWICK_GLADE, $03, HIDE            ; HS_GLADE_GZAP_3
-	assert_table_length NUM_HS_OBJECTS + 1
+	assert_table_length NUM_HS_OBJECTS

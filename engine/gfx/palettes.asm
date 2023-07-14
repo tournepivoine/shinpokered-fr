@@ -144,17 +144,17 @@ SetPal_Overworld:
 	jr z, .PokemonTowerOrAgatha
 	cp CAVERN
 	jr z, .caveOrBruno
-	cp FOREST
-	jr z, .forest
 	ld a, [wCurMap]
 	cp BRUNSWICK_TRAIL
-	jr z, .brunswick
-	cp BRUNSWICK_GROTTO
 	jr z, .brunswick
 	cp FIRST_INDOOR_MAP
 	jr c, .townOrRoute
 	cp POWER_PLANT
 	jr z, .powerPlant
+	cp BRUNSWICK_GLADE
+	jr z, .brunswick
+	cp BRUNSWICK_GROTTO
+	jr z, .brunswick
 	cp SILPH_GAUNTLET_3F
 	jr z, .ship
 	cp GAME_CORNER
@@ -165,6 +165,8 @@ SetPal_Overworld:
 	jr z, .celeste
 	cp CELESTE_HILL
 	jr z, .celeste
+	cp SILPH_GAUNTLET_5F
+	jr z, .trans
 	cp CERULEAN_CAVE_2F
 	jr c, .normalDungeonOrBuilding
 	cp LORELEIS_ROOM
@@ -214,16 +216,6 @@ SetPal_Overworld:
 .brunswick
 	ld a, PAL_BRUNSWICK - 1
 	jr .town
-.forest
-	ld a, [wCurMap]
-	cp SILPH_GAUNTLET_1F + 1
-	jr c, .faraway
-	cp SILPH_GAUNTLET_5F
-	jr z, .forestDefault
-	cp MT_MOON_CRATER + 1
-	jr c, .faraway
-	cp SAFARI_ZONE_CENTER + 1
-	jr c, .forestDefault
 .powerPlant
 	ld a, PAL_YELLOWMON - 1
 	jr .town
@@ -251,7 +243,7 @@ SetPal_Overworld:
 .volcano
 	ld a, PAL_VOLCANO - 1
 	jr .town
-.forestDefault
+.trans
 	ld a, PAL_FUCHSIA - 1
 	jr .town
 

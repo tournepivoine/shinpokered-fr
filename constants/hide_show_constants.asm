@@ -21,7 +21,7 @@ DEF SHOW EQU $15
 	const HS_CERULEAN_GUARD_1              ; 07
 	const HS_CERULEAN_CAVE_GUY             ; 08
 	const HS_CERULEAN_GUARD_2              ; 09
-	const HS_VERMILION_JENNY			   ; FC
+	const HS_VERMILION_JENNY
 	const HS_SAFFRON_CITY_1                ; 0A
 	const HS_SAFFRON_CITY_2                ; 0B
 	const HS_SAFFRON_CITY_3                ; 0C
@@ -38,6 +38,7 @@ DEF SHOW EQU $15
 	const HS_SAFFRON_CITY_E                ; 17
 	const HS_SAFFRON_CITY_F                ; 18
 	const HS_SAFFRON_CITY_UP_GRADE         ; 19
+	const HS_ROUTE_1_OAK                   ; F0
 	const HS_ROUTE_2_ITEM_1                ; 1A X
 	const HS_ROUTE_2_ITEM_2                ; 1B X
 	const HS_ROUTE_4_ITEM                  ; 1C X
@@ -51,7 +52,7 @@ DEF SHOW EQU $15
 	const HS_ROUTE_22_RIVAL_2              ; 24
 	const HS_NUGGET_BRIDGE_GUY             ; 25
 	const HS_ROUTE_24_ITEM                 ; 26 X
-	const HS_DAMIEN						   ; FC
+	const HS_DAMIEN
 	const HS_ROUTE_25_ITEM                 ; 27 X
 	const HS_CACTUS                        ; 28
 	const HS_BRUNSWICK_ZAPDOS_G_1          ; 29
@@ -89,7 +90,7 @@ DEF SHOW EQU $15
 	const HS_POKEMON_MANSION_1F_ITEM_2     ; 4B X
 	const HS_FIGHTING_DOJO_GIFT_1          ; 4C
 	const HS_FIGHTING_DOJO_GIFT_2          ; 4D
-	const HS_FIGHTING_DOJO_GIFT_3		   ; 4E
+	const HS_FIGHTING_DOJO_GIFT_3          ; 4E
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 4F
 	const HS_VOLTORB_1                     ; 50 X
 	const HS_VOLTORB_2                     ; 51 X
@@ -158,9 +159,9 @@ DEF SHOW EQU $15
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_4     ; 90
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_5     ; 91
 	const HS_GARNET_ARTICUNO_G             ; 92
-	const HS_GARNET_ITEM_1				   ; 93
+	const HS_GARNET_ITEM_1                 ; 93
 	const HS_GARNET_ITEM_2                 ; 94
-	const HS_ARTICUNO_G_COPY_1			   ; 95
+	const HS_ARTICUNO_G_COPY_1             ; 95
 	const HS_ARTICUNO_G_COPY_2             ; 96
 	const HS_SILPH_CO_3F_1                 ; 97
 	const HS_SILPH_CO_3F_2                 ; 98
@@ -190,9 +191,6 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_7F_RIVAL             ; B1
 	const HS_SILPH_CO_7F_ITEM_1            ; B2 X
 	const HS_SILPH_CO_7F_ITEM_2            ; B3	X
-	;const HS_SILPH_CO_8F_1                 ; B4
-	;const HS_SILPH_CO_8F_2                 ; B5
-	;const HS_SILPH_CO_8F_3                 ; B6
 	const HS_SILPH_CO_10F_1                ; B7
 	const HS_SILPH_CO_10F_2                ; B8
 	const HS_SILPH_CO_10F_ITEM_1           ; B9 X
@@ -251,7 +249,6 @@ DEF SHOW EQU $15
 	const HS_MEW                           ; ED
 	const HS_POKEMON_MANSION_B2F_ITEM_1    ; EE
 	const HS_POKEMON_MANSION_B2F_ITEM_2    ; EF
-	const HS_ROUTE_1_OAK                   ; F0
 	const HS_MT_MOON_CRATER_ITEM_1         ; F1
 	const HS_MT_MOON_CRATER_ITEM_2         ; F2
 	const HS_MT_MOON_CRATER_ITEM_3         ; F3
@@ -262,7 +259,7 @@ DEF SHOW EQU $15
 	const HS_ROCK_TUNNEL_B1F_AMBER         ; F8
 	const HS_ROCK_TUNNEL_B1F_WING          ; F9
 	const HS_MT_MOON_CRATER_GUARD          ; FA
-	const HS_DAYCARE_BULBASAUR			   ; FB should be FD
+	const HS_DAYCARE_BULBASAUR             ; FB should be FD
 	const HS_GLADE_GZAP_1
 	const HS_GLADE_GZAP_2
 	const HS_GLADE_GZAP_3 ; we're at 250

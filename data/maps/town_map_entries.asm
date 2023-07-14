@@ -95,7 +95,7 @@ InternalMapEntries:
 	internal_map CELADON_HOTEL,                  7,  5, CeladonCityName
 	internal_map LAVENDER_POKECENTER,           14,  5, LavenderTownName
 	internal_map POKEMON_TOWER_2F,              15,  5, PokemonTowerName
-	internal_map BRUNSWICK_GROTTO,               6, 10, BrunswickGrottoName
+	internal_map BRUNSWICK_GROTTO,               6, 10, BrunswickGladeName
 	internal_map POKEMON_TOWER_7F,              15,  5, PokemonTowerName
 	internal_map LAVENDER_CUBONE_HOUSE,         14,  5, LavenderTownName
 	internal_map WARDENS_HOUSE,                  8, 13, FuchsiaCityName
@@ -138,4 +138,5 @@ InternalMapEntries:
 	internal_map BATTLE_TENT,                    7,  9, CitrineCityName
 	internal_map MT_MOON_SQUARE_HOUSE,           6,  1, MountMoonName
 	internal_map CELESTE_HILL_OUTSIDE,           7,  9, CelesteHillName
+	internal_map BRUNSWICK_GLADE,                6, 10, BrunswickGladeName
 	db -1 ; end
