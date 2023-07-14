@@ -24,9 +24,10 @@ New Types:
 ====
 To accomodate the new Pokemon, the Dark, Steel, and Fairy types are added. They are effectively "tacked on", with no vanilla Pokemon or moves being changed, which is a big part of what this hack wants. 
 
-Dark and Steel use their SpaceWorld '97 type matchups because these revisions were produced prior to the national tournament that year, and thus before Game Freak made appropriate balancing changes. Thus, what you get here are types that are very different, but maintain the core RBY experience. Fairy lacks a confirmed older revision, so it remains the same as XY's, which has not yet changed, and if it does, this hack will not change with it. Closer to RBY is what we want!
+Dark and Steel use their SpaceWorld '97 type matchups because these revisions were produced prior to the national tournament that year, and thus before Game Freak made appropriate balancing changes. Thus, what you get here are types that are very different, but maintain the core RBY experience. Normal and Psychic remain extremely powerful types, BoltBeam remains perfect coverage, and so on. Fairy lacks a confirmed older revision, so it remains the same as XY's, which has not yet changed, and if it does, this hack will not change with it. Closer to RBY is what we want!
 
 Changes at a glance:
+- Fairy is identical to its XY release, which at the time of writing remains the same as modern releases.
 - Dark and Steel use their type effectiveness from the SW97 demo, aiming to be closer to RBY experience.
 - Bite is still Normal-type.
 - The Clefairy, Mime Jr, and Jigglypuff lines are not Steel or Fairy-type, respectively.
@@ -80,27 +81,31 @@ New Areas
 - Citrine City is a new island city that can be accessed in the postgame.
 	- There's a house with a Move Tutor that can teach Tradeback moves without the need for GSC's Time Capsule!
 	- It features a Team Rocket house where they will sell you TMs and Evolution Items, as well as provide a Hyper Training feature to get Max DVs!
-	- The Battle Tent from the TwitchPlaysPokemon Anniversary hack makes a return, featuring new trainers and KEP Pokemon!
+	- The Battle Tent from the TwitchPlaysPokemon Anniversary hack makes a return, featuring new trainers and Pokemon!
 	- Brunswick Trail, south-west of Citrine City, is a route that leads to Garnet Cavern, alongside a more hidden route that leads to Brunswick Grotto.
-	- Brunswick Grotto is a forest area that leads to Galarian Zapdos after a short, winding path.
+	- Brunswick Grotto is a large, lush forest area that leads to Galarian Zapdos.
 	- Garnet Cavern is a familiar-looking cave. It houses many strong Pokemon, including Galarian Articuno roosting on the bottom floor.
 	- Celeste Hill, located above Citrine City, is a mountain with several floors. Upon reaching the summit, Galarian Moltres will attack.
 - Underwater Tunnel connects Route 25 and Route 10, making Rock Tunnel skippable later.
-- Cinnabar Volcano is a new area that houses Moltres, allowing it to be obtained before Victory Road. It has a unique dark-orange palette to make it unique compared to the other caves.
+- Cinnabar Volcano is a new area that houses Moltres, allowing it to be obtained before Victory Road. It has a unique dark-orange palette to help make it unique compared to the other caves.
 - Faraway Island from Pokemon Emerald has been added, where you can find Mew. It also has its own wild encounters, as well as an improved translation on its sign, enhancing its appearance from its source material.
 - Mt. Moon Crater is a new area based on Area Zero in Pokemon Scarlet and Violet, accessible in the post-game. Here, you can encounter Scream Tail and Sandy Shocks via random encounter, just like the original!
-- Bill's Garden is accessible in the post-game with access to all "one-time deals", just like in the mythos!
+- Bill's Garden is accessible in the post-game, housing all the "one-time deals", just like in the mythos!
+	- This area also houses Hisuian Arcanine and Electrode, the idea being that Bill's Time Machine has brought them back from the truly distant past!
 - Silph Co. holds a special challenge for Pokemon League Champions...
 
 Improved Areas
 ====
-- Some barriers to travel across the region have been removed (for example, Pewter City can be left without defeating Brock) allowing for more open world gameplay. Not all, though! 
+- Some barriers to travel across the region have been removed (for example, Pewter City can be left without defeating Brock) allowing for slightly more open world gameplay. Not all, though! 
 	- To encourage this, Gym Leaders now have level scaling, giving more consistent challenge across the game. 
-- Giovanni now uses his unused theme song from Yellow, and has his LGPE monologue in the Rocket Hideout.
-- Jessie and James have been backported from Yellow, appearing in Mt. Moon, Rocket Hideout, Pokemon Tower, and Silph Co. Additionally, they have a post-game fight.
+	- In effect, you get two stages: Pewter/Cerulean/Vermilion, then Celadon/Fuchsia/Saffron/Cinnabar. Some limits were placed due to the power spike introduced by Celadon City.
+- Giovanni now uses his unused theme song from Yellow, plus has his LGPE monologue in the Rocket Hideout.
+- Jessie and James have been backported from Yellow, appearing in Mt. Moon, Rocket Hideout, Pokemon Tower, and Silph Co. Additionally, they have a closure role in the post-game.
 - Diglett's Cave has a more detailed map with Onix, Wiglett, and Wugtrio also appearing! It also has its beta music!
-- The Day Care now contains a PC and Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.
-- Route 24 now features a Fishing Rod house; it's basically a Super Rod. It also features Damien, the Charmander trainer from Yellow. He only appears if Pikachu or Eevee are chosen. His text has been altered to be more accurate to his anime appearance. It also has a house where you can get a Fishing Rod.
+- The Day Care now contains a PC, is generally more detailed, and houses Melanie from Yellow. If you pick Pikachu or Eevee and beat Misty, Melanie will give you a Bulbasaur.
+- Route 24 now features two things;
+	- There's a new Fishing Rod house, which merges all the Rods in the game.
+	- It also features Damien, the Charmander trainer from Yellow. He only appears if Pikachu or Eevee are chosen, and his text has been altered to be more accurate to his anime appearance.
 - Route 25 has been given a facelift, adding Bill's Lighthouse in place of the Sea Cottage.
 - Vermilion City now features Officer Jenny with the Squirtle. She only appears if Pikachu or Eevee are chosen.
 - Rock Tunnel has a more workable map, now being easier to go through and having new areas to explore. Includes a way to get renewable fossils, items, and other interesting bits and pieces. Overall, it makes Flash much more rewarding to bring, showing you where the items and content are instead of being an inconvenience. 
