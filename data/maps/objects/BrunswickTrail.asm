@@ -9,7 +9,12 @@ BrunswickTrail_Object:
 
 	def_object_events
 	object_event 23, 11, SPRITE_FAKE_TREE, STAY, NONE, 1, CACTUS, 60 | OW_POKEMON ; person
-	object_event 37, 23, SPRITE_BRUNETTE_GIRL, STAY, DOWN, 2 ; person
-	object_event 54,  9, SPRITE_BIRD, STAY, DOWN, 3 ; person
+	object_event 40, 21, SPRITE_COOLTRAINER_M, STAY, UP, 2, OPP_BIRD_KEEPER, 12 ; person
+	object_event 29, 14, SPRITE_BEAUTY, STAY, DOWN, 3, OPP_BEAUTY, 16 ; person
+	object_event 25, 21, SPRITE_FISHER, STAY, DOWN, 4, OPP_FISHER, 13 ; person
+	object_event 10, 10, SPRITE_HIKER, STAY, RIGHT, 5 ; person, Cave guy
+	object_event 54,  9, SPRITE_BIRD, STAY, UP, 6 ; person, GZap
+	object_event  6, 16, SPRITE_BRUNETTE_GIRL, STAY, LEFT, 7 ; person, Lover1
+	object_event  6, 15, SPRITE_BRUNETTE_GIRL, STAY, LEFT, 8 ; person, Lover2
 
 	def_warps_to BRUNSWICK_TRAIL

@@ -14,17 +14,90 @@ BrunswickTrail_ScriptPointers:
 
 BrunswickTrail_TextPointers:
 	dw FakeTreeEvent
-	dw ZapdosGuy
+	dw BrunswickTrainer1
+	dw BrunswickTrainer2
+	dw BrunswickTrainer3
+	dw CaveGuy
 	dw GZapFound
+	dw Lover1
+	dw Lover2
 
 BrunswickTrailTrainerHeaders:
 	def_trainers
 CactusTrainerHeader:
 	trainer EVENT_BEAT_CACTUS, 0, CactusBattleText, CactusBattleText, CactusBattleText
+BrunswickTrainerHeader0:
+	trainer EVENT_BEAT_BRUNSWICK_TRAINER_0, 4, BrunswickBattleText1, BrunswickEndBattleText1, BrunswickAfterBattleText1
+BrunswickTrainerHeader1:
+	trainer EVENT_BEAT_BRUNSWICK_TRAINER_1, 4, BrunswickBattleText2, BrunswickEndBattleText2, BrunswickAfterBattleText2
+BrunswickTrainerHeader2:
+	trainer EVENT_BEAT_BRUNSWICK_TRAINER_2, 1, BrunswickBattleText3, BrunswickEndBattleText3, BrunswickAfterBattleText3
 	db -1 ; end
 
-ZapdosGuy:
-	text_far _ZapdosGuy
+Lover1:
+	text_far _Lover1
+	text_end
+
+Lover2:
+	text_far _Lover2
+	text_end
+
+BrunswickTrainer1:
+	text_asm
+	ld hl, BrunswickTrainerHeader0
+	call TalkToTrainer
+	jp TextScriptEnd
+
+BrunswickBattleText1:
+	text_far _BrunswickBattleText1
+	text_end
+
+BrunswickEndBattleText1:
+	text_far _BrunswickEndBattleText1
+	text_end
+
+BrunswickAfterBattleText1:
+	text_far _BrunswickAfterBattleText1
+	text_end
+
+BrunswickTrainer2:
+	text_asm
+	ld hl, BrunswickTrainerHeader1
+	call TalkToTrainer
+	jp TextScriptEnd
+
+BrunswickBattleText2:
+	text_far _BrunswickBattleText2
+	text_end
+
+BrunswickEndBattleText2:
+	text_far _BrunswickEndBattleText2
+	text_end
+
+BrunswickAfterBattleText2:
+	text_far _BrunswickAfterBattleText2
+	text_end
+
+BrunswickTrainer3:
+	text_asm
+	ld hl, BrunswickTrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+
+BrunswickBattleText3:
+	text_far _BrunswickBattleText3
+	text_end
+
+BrunswickEndBattleText3:
+	text_far _BrunswickEndBattleText3
+	text_end
+
+BrunswickAfterBattleText3:
+	text_far _BrunswickAfterBattleText3
+	text_end
+
+CaveGuy:
+	text_far _CaveGuy
 	text_end
 
 FakeTreeNoCut: 

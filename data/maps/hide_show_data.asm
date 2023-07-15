@@ -332,7 +332,7 @@ Route25HS:
 	db ROUTE_25, $0A, SHOW                    ; HS_ROUTE_25_ITEM
 BrunswickTrailHS:
 	db BRUNSWICK_TRAIL, $01, SHOW             ; HS_CACTUS
-	db BRUNSWICK_TRAIL, $03, SHOW 		  ; HS_BRUNSWICK_ZAPDOS_G_1
+	db BRUNSWICK_TRAIL, $06, SHOW 		 	  ; HS_BRUNSWICK_ZAPDOS_G_1
 BluesHouseHS:
 	db BLUES_HOUSE, $01, SHOW                 ; HS_DAISY_SITTING
 	db BLUES_HOUSE, $02, HIDE                 ; HS_DAISY_WALKING

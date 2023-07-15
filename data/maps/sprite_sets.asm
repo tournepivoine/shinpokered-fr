@@ -209,7 +209,7 @@ SpriteSets:
 	db SPRITE_HIKER
 	db SPRITE_COOLTRAINER_F ; free slot, add as needed.
 	db SPRITE_COOLTRAINER_M ; free slot, add as needed.
-	db SPRITE_GUARD ; free slot, add as needed.
+	db SPRITE_FISHER ; free slot, add as needed.
 	db SPRITE_POKE_BALL ; probably not free
 	db SPRITE_FAKE_TREE
 
