@@ -10,13 +10,33 @@ _CaveGuy:: ; Used to describe GZap, but the beauty seemed funnier. Needed some l
 	done
 
 _Lover1::
-	text "Comment to be"
-	line "written."
+	text "ALICE: This spot"
+	line "is where she"
+	cont "confessed to me."
+	
+	para "Now it's by far"
+	line "my favorite place"
+	cont "in all of KANTO!"
+	
+	para "Though, any place"
+	line "seems perfect as"
+	cont "long as she's by"
+	cont "my side..."
 	done
 
 _Lover2::
-	text "Comment to be"
-	line "written."
+	text "CHELSIE: I adore"
+	line "visiting this"
+	cont "TRAIL with my"
+	cont "girlfriend!"
+	
+	para "Watching the sun"
+	line "set as the waves"
+	cont "gently roll by..."
+	
+	para "It's a beautiful"
+	line "sight, but not as"
+	cont "beautiful as her!"
 	done
 
 _BrunswickBattleText1::

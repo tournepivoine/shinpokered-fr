@@ -14,7 +14,7 @@ BrunswickTrail_Object:
 	object_event 25, 21, SPRITE_FISHER, STAY, DOWN, 4, OPP_FISHER, 13 ; person
 	object_event 10, 10, SPRITE_HIKER, STAY, RIGHT, 5 ; person, Cave guy
 	object_event 54,  9, SPRITE_BIRD, STAY, UP, 6 ; person, GZap
-	object_event  6, 16, SPRITE_BRUNETTE_GIRL, STAY, LEFT, 7 ; person, Lover1
+	object_event  6, 16, SPRITE_COOLTRAINER_F, STAY, LEFT, 7 ; person, Lover1
 	object_event  6, 15, SPRITE_BRUNETTE_GIRL, STAY, LEFT, 8 ; person, Lover2
 
 	def_warps_to BRUNSWICK_TRAIL
