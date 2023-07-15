@@ -225,33 +225,33 @@ JrTrainerFData:
 PokemaniacData:
 ; Route 10
 	db 30, RHYHORN, LICKITUNG, 0
-	db 20, CUBONE, SLOWPOKE, 0
+	db 21, CHARMELEON, CUBONE, 0
 ; Rock Tunnel B1F
 	db 20, SLOWPOKE, LICKITUNG, RHYHORN, 0
 	db 22, CHARMANDER, CUBONE, 0
 	db 25, SKIMPER, 0
 ; Victory Road 2F
-	db 40, CHARMELEON, LAPRAS, LICKILICKY, RHYDON, 0
+	db 40, BAWLIGUA, LAPRAS, LICKILICKY, RHYDON, 0
 ; Rock Tunnel 1F
 	db 23, CUBONE, SLOWPOKE, 0
-; Silph Gauntlet (currently 2F but may move up to 5F)
+; Silph Gauntlet 2F (Mt. Moon)
 	db 63, GUARDIA, SLOWKING, CHARIZARD, STEELIX, LICKILICKY, RHYPERIOR, 0
 
-; Feels almost aimless...
+; The Super Nerd has some weird choices, but I think they're mostly inorganic Pokemon, except for Fire-types that the Cinnabar Gym Trainers use.
 SuperNerdData:
 ; Mt. Moon 1F
 	db 11, MAGNEMITE, VOLTORB, 0
 ; Mt. Moon B2F - the fossil guy fight
 	db 12, GRIMER, VOLTORB, KOFFING, 0
 ; Route 8
-	db 20, VOLTORB, KOFFING, VOLTORB, MAGNEMITE, 0
-	db 22, GRIMER, MUK, GRIMER, 0
-	db 26, KOFFING, 0
+	db 20, GRIMER, KOFFING, KOFFING, MAGNEMITE, 0
+	db 22, VOLTORB, KOFFING, MAGNETITE, 0
+	db 26, ELECTRODE, 0
 ; Unused
 	db 30, PORYGON, 0 ; - used in celadon university
 	db 25, MAGNETITE, ELECTRODE, KABUTO, OMANYTE, 0 ; - used in celadon university
 ; Silph Gauntlet 2F (Mt. Moon)
-	db 63, ELECTRODE, MUK, KABUTOPS, OMASTAR, MAGNEZONE, MAGMORTAR, 0
+	db 63, ELECTRODE, MUK, KABUTOPS, OMASTAR, MAGNEZONE, PORYGONZ, 0
 ; Cinnabar Gym
 	db 36, VULPIX, NINETALES, CHARIZARD, 0
 	db 34, PONYTA, CHARMANDER, RAPIDASH, ARCANINE, 0
@@ -261,30 +261,31 @@ SuperNerdData:
 ; Expanding the Hiker's cast is hard, as Rock-types are actually quite limited.
 ; Machop is more of an exception and not the rule, it's just "strong".
 ; So, I have added a few Ground-types that you could reasonably expect to see in each area.
+; The Zubat line should also be there given how prevalent they tend to be inside caves...
 HikerData:
 ; Mt. Moon 1F
 	db 10, GEODUDE, GEODUDE, ONIX, 0
 ; Route 25
 	db 15, MACHOP, GEODUDE, 0
-	db 13, GEODUDE, GEODUDE, MACHOP, GEODUDE, 0
+	db 13, GEODUDE, ZUBAT, MACHOP, ZUBAT, 0
 	db 17, ONIX, 0
 ; Route 9
 	db 21, GEODUDE, ONIX, 0
 	db 20, GEODUDE, MACHOP, DIGLETT, 0
 ; Route 10
 	db 21, CUBONE, ONIX, 0
-	db 19, SANDSHREW, GRAVELER, 0
+	db 19, ZUBAT, GRAVELER, 0
 ; Rock Tunnel B1F
 	db 21, GEODUDE, GEODUDE, GRAVELER, 0 ; The "Self-Destructing Hiker", fairly notorious and good to keep
-	db 23, NIDOKING, 0 ; could be a little strong, but I'll give it a go
+	db 24, GOLBAT, 0
 ; Route 9/Rock Tunnel B1F
 	db 20, MACHOP, RHYHORN, 0
 ; Rock Tunnel 1F
 	db 19, GEODUDE, MACHOP, RHYHORN, 0
-	db 20, MACHOP, DIGLETT, ONIX, 0
+	db 20, ZUBAT, DIGLETT, ONIX, 0
 	db 21, GEODUDE, GRAVELER, 0
 ; Silph Gauntlet 2F (Mt. Moon)
-	db 63, STEELIX, GOLEM, MACHAMP, CROBAT, CROAKOZUNA, GUARDIA, 0
+	db 63, STEELIX, GOLEM, MACHAMP, CROBAT, DUGTRIO, GUARDIA, 0
 
 ; Poison Pokemon. Poison Pokemon everywhere.
 ; Much of this seems to represent the pollution caused by petrol gas.
@@ -317,7 +318,7 @@ BikerData:
 	db 28, GRIMER, GRIMER, SEADRA, 0
 	db 29, MAGMAR, 0
 ; Silph Gauntlet 5F (Safari Zone)
-	db 66, GENGAR, MUK_A, WEEZING, FLAREON, KINGDRA, CHARIZARD, 0
+	db 66, GOROTORA, MUK_A, WEEZING, FLAREON, KINGDRA, CHARIZARD, 0
 
 ; Fire specialist
 BurglarData:
@@ -486,7 +487,7 @@ JugglerData:
 ; Victory Road 2F
 	db 48, ELECTRODE, HYPNO, MR_MIME, 0 ; buffed roster
 ; Silph Gauntlet 5F (Safari Zone)
-	db 66, HYPNO, MR_MIME, ALAKAZAM, ELECTRODE, GENGAR, SLOWKING, 0
+	db 66, HYPNO, MR_MIME, ALAKAZAM, ELECTRODE, VICTREEBEL, SLOWKING_G, 0
 ; Fuchsia Gym
 	db 38, UMBREON, 0
 ; Fuchsia Gym
@@ -505,7 +506,7 @@ TamerData:
 ; Victory Road 2F
 	db 44, KANGASKHAN, TAUROS, GOLDUCK, PRIMEAPE, 0
 ; Silph Gauntlet 5F (Safari Zone)
-	db 66, RHYPERIOR, GOLDUCK, KANGASKHAN, ANNIHILAPE, TRAMPEL, TAUROS, 0
+	db 66, RHYPERIOR, ARBOK, KANGASKHAN, ANNIHILAPE, TRAMPEL, TAUROS, 0
 
 ; yep bird yep bird yep bird yep bird
 ; If nothing else, just make them less agonising to fight.
@@ -720,25 +721,27 @@ ChannelerData:
 	db 38, ESPEON, 0
 	db 33, JYNX, EXEGGCUTE, KADABRA, 0
 
-; Normal specialists
+; Mostly Normal specialists
 StudentData:
 ; Viridian Pre-Gym
 	db 4, PIDGEY, RATTATA, 0
 	db 6, CLEFAIRY, 0
 ; Silph Gauntlet 1F (Viridian Forest)
-	db 62, CLEFABLE, PENDRAKEN, WIGGLYTUFF, BARUNDA, BELLOSSOM, NINETALES_A, 0		; may revise
+	db 62, WIGGLYTUFF, PIDGEOT, TRAMPEL, CLEFABLE, KANGASKHAN, DEER, 0   ; all Normal types that Yujirou doesn't use
 ; Celadon University
 	db 22, BULBASAUR, CHARMANDER, SQUIRTLE, 0
 
-; Water specialists
+; Mainly Water specialists, but can also use anything else that hits Fire super-effectively
 FirefighterData:
-; For Cerulean Gym
+; Cerulean Gym
 	db 15, POLIWAG, CHEEP, SQUIRTLE, 0
 ; Silph Gauntlet 3F (S.S Anne)
-	db 64, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0   ; mostly water-types, but adding other types that hit Fire super-effectively
+	db 64, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0
 
 JuniorData:
-
+; Silph Gauntlet 2F (Mt. Moon)
+	db 63, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0   ; no idea what to do with this guy's team, so I'll redo this later 
+	
 JackData:
 ; Silph Gauntlet 7F (Chief's Office)
 	db 70, ANIMON, PURAKKUSU, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...

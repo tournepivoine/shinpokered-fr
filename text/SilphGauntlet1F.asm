@@ -42,18 +42,21 @@ _SilphGauntlet1FAfterBattleText2::
 	done
 
 _SilphGauntlet1FBattleText3::
-	text "Go, CLEFABLE!"
-	line "Let's win this!"
+	text "Comment to be"
+	line "written."
+	cont "STUDENT"
 	done
 
 _SilphGauntlet1FEndBattleText3::
-	text "Aww..."
-	line "Not enough!"
+	text "Comment to be"
+	line "written."
+	cont "STUDENT"
 	prompt
 
 _SilphGauntlet1FAfterBattleText3::
-	text "You still fought"
-	line "well, CLEFABLE!"
+	text "Comment to be"
+	line "written."
+	cont "STUDENT"
 	done
 
 _SilphGauntlet1FBattleText4::
@@ -102,10 +105,8 @@ _SilphGauntlet1FEndBattleText6::
 	prompt
 
 _SilphGauntlet1FAfterBattleText6::
-	text "Huh? AERODACTYL"
-	line "isn't a bird?"
-	
-	para "It has wings, it's"
-	line "good enough!"
+	text "Comment to be"
+	line "written."
+	cont "BIRD KEEPER"
 	done
 	

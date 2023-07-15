@@ -2018,7 +2018,7 @@ wRedsHouse2FCurScript:: db
 wViridianMartCurScript:: db
 wRoute22GateCurScript:: db
 wCeruleanCityCurScript:: db
-	ds 7
+	ds 5
 wSSAnneBowCurScript:: db
 wViridianForestCurScript:: db
 wMuseum1FCurScript:: db
@@ -2030,7 +2030,6 @@ wRoute21CurScript:: db
 wSafariZoneGateCurScript:: db
 wRockTunnelB1FCurScript:: db
 wRockTunnel1FCurScript:: db
-	ds 1
 wRoute11CurScript:: db
 wRoute12CurScript:: db
 wRoute15CurScript:: db
@@ -2049,7 +2048,6 @@ wRocketHideoutB1FCurScript:: db
 wRocketHideoutB2FCurScript:: db
 wRocketHideoutB3FCurScript:: db
 wRocketHideoutB4FCurScript:: db
-	ds 1
 wRoute6GateCurScript:: db
 wRoute8GateCurScript:: db
 	ds 1
@@ -2087,7 +2085,11 @@ wLancesRoomCurScript:: db
 wPokemonMansionB2FCurScript:: db
 wMtMoonCraterCurScript:: db
 wSilphGauntlet1FCurScript:: db
+wSilphGauntlet2FCurScript:: db
+wSilphGauntlet3FCurScript:: db
 wSilphGauntlet4FCurScript:: db
+wSilphGauntlet5FCurScript:: db
+wSilphGauntlet6FCurScript:: db
 wSilphCo10FCurScript:: db
 wSilphCo11FCurScript:: db
 wCelesteHillCurScript:: db

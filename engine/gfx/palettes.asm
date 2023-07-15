@@ -161,6 +161,8 @@ SetPal_Overworld:
 	jr z, .pachinko
 	cp GAME_CORNER_PRIZE_ROOM
 	jr z, .pachinko
+	cp SILPH_GAUNTLET_1F
+	jr z, .faraway
 	cp CELESTE_HILL_OUTSIDE
 	jr z, .celeste
 	cp CELESTE_HILL

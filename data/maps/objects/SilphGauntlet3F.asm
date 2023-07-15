@@ -22,5 +22,12 @@ SilphGauntlet3F_Object:
 	def_bg_events
 
 	def_object_events
+	object_event 13, 13, SPRITE_SAILOR, STAY, UP, 1, OPP_SAILOR, 9
+	object_event 12, 23, SPRITE_COOLTRAINER_M, STAY, DOWN, 2, OPP_FIREFIGHTER, 2
+	object_event  2, 23, SPRITE_GENTLEMAN, STAY, DOWN, 3, OPP_GENTLEMAN, 4
+	object_event 21, 12, SPRITE_SUPER_NERD, STAY, DOWN, 4, OPP_ENGINEER, 4
+	object_event  6,  7, SPRITE_ROCKER, STAY, RIGHT, 5, OPP_ROCKER, 3
+	object_event 22, 23, SPRITE_FISHER, STAY, DOWN, 6, OPP_FISHER, 12
+	object_event 30, 23, SPRITE_BEAUTY, STAY, RIGHT, 7, OPP_BEAUTY, 11
 
 	def_warps_to SILPH_GAUNTLET_3F
