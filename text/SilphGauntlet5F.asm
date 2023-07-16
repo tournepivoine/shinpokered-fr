@@ -1,126 +1,137 @@
 _SilphGauntlet5FBattleText1::
-	text "Comment to be"
-	line "written."
-	cont "JUGGLER"
+	text "Welcome to 5F!"
+	line "Feeling tired?"
 	done
 
 _SilphGauntlet5FEndBattleText1::
-	text "Comment to be"
-	line "written."
-	cont "JUGGLER"
+	text "Oops!"
+	line "Dropped my balls"
+	cont "again!" ; it's just so fucking funny
 	prompt
 
 _SilphGauntlet5FAfterBattleText1::
-	text "Comment to be"
-	line "written."
-	cont "JUGGLER"
+	text "You have what it"
+	line "takes to beat"
+	cont "the strongest of"
+	cont "TRAINERs."
+	
+	para "You have my"
+	line "support!"
 	done
 
 _SilphGauntlet5FBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "BIKER"
+	text "How does he expect"
+	line "me to ride out"
+	cont "here?!"
 	done
 
 _SilphGauntlet5FEndBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "BIKER"
+	text "Ugh!"
+	line "Awful! Awful!"
 	prompt
 
 _SilphGauntlet5FAfterBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "BIKER"
+	text "This floor is a"
+	line "graveyard! That"
+	cont "CHIEF has a sick"
+	cont "sense of humor!"
 	done
 
 _SilphGauntlet5FBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "CUE BALL"
+	text "Alright, alright!"
+	line "Put 'em up!"
 	done
 
 _SilphGauntlet5FEndBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "CUE BALL"
+	text "Too"
+	line "strong!"
 	prompt
 
 _SilphGauntlet5FAfterBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "CUE BALL"
+	text "Unlike that wimp"
+	line "over there, I"
+	cont "ain't scared of"
+	cont "cemetaries!"
 	done
 
 _SilphGauntlet5FBattleText4::
-	text "Comment to be"
-	line "written."
-	cont "SWIMMER"
+	text "Hah! Thought you"
+	line "could get away?"
 	done
 
 _SilphGauntlet5FEndBattleText4::
-	text "Comment to be"
-	line "written."
-	cont "SWIMMER"
+	text "Hmph!"
 	prompt
 
 _SilphGauntlet5FAfterBattleText4::
-	text "Comment to be"
-	line "written."
-	cont "SWIMMER"
+	text "There's not much"
+	line "room to swim..."
+	
+	para "And did CHIEF have"
+	line "to add #MON?!"
+	cont "They're strong,"
+	cont "too!"
 	done
 
 _SilphGauntlet5FBattleText5::
-	text "Comment to be"
-	line "written."
-	cont "TAMER"
+	text "Before # BALLs,"
+	line "We TAMERs ruled"
+	cont "the roost!"
 	done
 
 _SilphGauntlet5FEndBattleText5::
-	text "Comment to be"
-	line "written."
-	cont "TAMER"
+	text "Argh!"
 	prompt
 
 _SilphGauntlet5FAfterBattleText5::
-	text "Comment to be"
-	line "written."
-	cont "TAMER"
+	text "Huh? Yeah! We"
+	line "used our whips!"
+	
+	para "...hey, what's"
+	line "with that stare?"
 	done
 
 _SilphGauntlet5FBattleText6::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER F"
+	text "Once, I was the"
+	line "CHAMPION!"
 	done
 
 _SilphGauntlet5FEndBattleText6::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER F"
+	text "I'm"
+	line "washed up..."
 	prompt
 
 _SilphGauntlet5FAfterBattleText6::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER F"
+	text "Many TRAINERs have"
+	line "held the title of"
+	cont "CHAMPION!"
+	
+	para "In fact, I've"
+	line "recognised a few"
+	cont "around here!"
 	done
 	
 _SilphGauntlet5FBattleText7::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER M"
+	text "So you're the"
+	line "current champ?"
+	
+	para "You don't seem"
+	line "strong. Play ball!"
 	done
 
 _SilphGauntlet5FEndBattleText7::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER M"
+	text "It's"
+	line "all wrong..."
 	prompt
 
 _SilphGauntlet5FAfterBattleText7::
-	text "Comment to be"
-	line "written."
-	cont "COOLTRAINER M"
+	text "I'm surprised you"
+	line "don't use many"
+	cont "of the classic"
+	cont "techniques."
+	
+	para "I guess they're"
+	line "classic for a"
+	cont "reason..."
 	done
 	

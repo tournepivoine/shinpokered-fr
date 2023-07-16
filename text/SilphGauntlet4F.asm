@@ -115,7 +115,7 @@ _SilphGauntlet4FBattleText6::		; hehehe buryman joke
 	done
 
 _SilphGauntlet4FEndBattleText6::	; not sure what to put here, first line extends too long so I have to change it anyway
-	text "Finally,"
+	text "Ahh,"
 	line "fresh meat!"
 	prompt
 

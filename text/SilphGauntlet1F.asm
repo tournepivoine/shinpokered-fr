@@ -42,21 +42,21 @@ _SilphGauntlet1FAfterBattleText2::
 	done
 
 _SilphGauntlet1FBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "STUDENT"
+	text "I'm at the top"
+	line "of my university!"
+	cont "It's only up from"
+	cont "here!"
 	done
 
 _SilphGauntlet1FEndBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "STUDENT"
+	text "Not"
+	line "enough..."
 	prompt
 
 _SilphGauntlet1FAfterBattleText3::
-	text "Comment to be"
-	line "written."
-	cont "STUDENT"
+	text "You could be a"
+	line "top STUDENT at"
+	cont "CELADON UNI!"
 	done
 
 _SilphGauntlet1FBattleText4::
@@ -105,8 +105,9 @@ _SilphGauntlet1FEndBattleText6::
 	prompt
 
 _SilphGauntlet1FAfterBattleText6::
-	text "Comment to be"
-	line "written."
-	cont "BIRD KEEPER"
+	text "That CHIEF..."
+	
+	para "What does he want"
+	line "us for, anyway?"
 	done
 	
