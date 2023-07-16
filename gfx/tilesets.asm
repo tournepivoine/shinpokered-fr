@@ -78,3 +78,7 @@ BetaMart_Block::		INCBIN "gfx/blocksets/betamart.bst"
 
 House_GFX::         INCBIN "gfx/tilesets/house.2bpp"
 House_Block::       INCBIN "gfx/blocksets/house.bst"
+
+SECTION "Tilesets 5", ROMX
+Jacky_GFX::         INCBIN "gfx/tilesets/jacky.2bpp"
+Jacky_Block::       INCBIN "gfx/blocksets/jacky.bst"

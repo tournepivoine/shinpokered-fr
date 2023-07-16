@@ -1992,7 +1992,7 @@ wCitrineRocketHouseCurScript:: db
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
 wRedsHouse1FCurScript:: db
-	ds 1
+wCeladonMansionRoofHouseCurScript:: db
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db

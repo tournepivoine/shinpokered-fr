@@ -81,3 +81,6 @@ RocketHouse_Coll::
 
 BetaMart_Coll::
 	coll_tiles $01, $11, $1C, $1D, $1E, $1F, $0C, $0D, $0E, $0F, $4D, $4C
+
+Jacky_Coll::
+	coll_tiles $01, $40, $11, $04, $14, $02, $03, $13, $12, 

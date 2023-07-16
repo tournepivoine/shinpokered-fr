@@ -30,4 +30,5 @@
 	const CELESTE	   ; 26
 	const ROCKETHOUSE
 	const BETAMART
+	const JACKY
 DEF NUM_TILESETS EQU const_value

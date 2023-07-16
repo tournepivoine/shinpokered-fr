@@ -12,7 +12,9 @@
 	const EVENT_FUCK ; If you trigger this you're a psychopath. Used for mom and oak post-game scenes.
 	const EVENT_RECEIVED_CITRINE_PASS
 	const EVENT_BEAT_OAK_ONCE
-	const_skip 13
+	const EVENT_BEAT_JACKY
+	const EVENT_GOT_MANSION_GIFT
+	const_skip 11
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING

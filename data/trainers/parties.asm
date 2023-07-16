@@ -743,8 +743,10 @@ JuniorData:
 	db 63, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0   ; no idea what to do with this guy's team, so I'll redo this later 
 	
 JackData:
+; Celadon University Roof House
+	db 23, MANKEY, MACHOP, SCYTHER, HITMONCHAN, 0 ; Scyther is Kage-Maru. 
 ; Silph Gauntlet 7F (Chief's Office)
-	db 70, ANIMON, PURAKKUSU, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...
+;	db 70, ANIMON, ANNIHILAPE, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...
 
 JessieJamesData:
 	db 14, MEOWTH, EKANS, KOFFING, 0 ; Mt. Moon

@@ -98,7 +98,6 @@ PewterNidoranHouse_Blocks:
 PewterSpeechHouse_Blocks:
 ViridianNicknameHouse_Blocks: INCBIN "maps/ViridianNicknameHouse.blk"
 
-CeladonMansionRoofHouse_Blocks:
 ViridianSchoolHouse_Blocks: INCBIN "maps/ViridianSchoolHouse.blk"
 
 CeruleanTrashedHouse_Blocks: INCBIN "maps/CeruleanTrashedHouse.blk"
@@ -172,10 +171,6 @@ INCLUDE "data/maps/headers/VermilionDock.asm"
 INCLUDE "scripts/VermilionDock.asm"
 INCLUDE "data/maps/objects/VermilionDock.asm"
 VermilionDock_Blocks: INCBIN "maps/VermilionDock.blk"
-
-INCLUDE "data/maps/headers/CeladonMansionRoofHouse.asm"
-INCLUDE "scripts/CeladonMansionRoofHouse.asm"
-INCLUDE "data/maps/objects/CeladonMansionRoofHouse.asm"
 
 INCLUDE "data/maps/headers/FuchsiaMart.asm"
 INCLUDE "scripts/FuchsiaMart.asm"
@@ -1401,3 +1396,8 @@ INCLUDE "data/maps/headers/BrunswickGlade.asm"
 INCLUDE "scripts/BrunswickGlade.asm"
 INCLUDE "data/maps/objects/BrunswickGlade.asm"
 BrunswickGlade_Blocks: INCBIN "maps/BrunswickGlade.blk"
+
+INCLUDE "data/maps/headers/CeladonMansionRoofHouse.asm"
+INCLUDE "scripts/CeladonMansionRoofHouse.asm"
+INCLUDE "data/maps/objects/CeladonMansionRoofHouse.asm"
+CeladonMansionRoofHouse_Blocks: INCBIN "maps/CeladonMansionRoofHouse.blk"

@@ -38,4 +38,5 @@ Tilesets:
 	tileset Celeste,      -1, -1, -1, $18, TILEANIM_WATER
 	tileset RocketHouse, $0A, -1, -1,  -1, TILEANIM_NONE
 	tileset BetaMart,    $18, -1, -1,  -1, TILEANIM_NONE
+	tileset Jacky,	 	  -1,  -1,  -1, -1, TILEANIM_NONE
 	assert_table_length NUM_TILESETS
