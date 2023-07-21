@@ -64,10 +64,6 @@ _SaffronCityText11::
 	cont "media action."
 	done
 
-_SaffronCityText12::
-	text "PIDGEOT: Bi bibii!@"
-	text_end
-
 _SaffronCityText13::
 	text "I saw ROCKET"
 	line "BOSS escaping"

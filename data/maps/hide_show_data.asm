@@ -300,10 +300,9 @@ SaffronCityHS:
 	db SAFFRON_CITY, $0A, HIDE                ; HS_SAFFRON_CITY_A
 	db SAFFRON_CITY, $0B, HIDE                ; HS_SAFFRON_CITY_B
 	db SAFFRON_CITY, $0C, HIDE                ; HS_SAFFRON_CITY_C
-	db SAFFRON_CITY, $0D, HIDE                ; HS_SAFFRON_CITY_D
-	db SAFFRON_CITY, $0E, SHOW                ; HS_SAFFRON_CITY_E
+	db SAFFRON_CITY, $0D, SHOW                ; HS_SAFFRON_CITY_D
+	db SAFFRON_CITY, $0E, HIDE                ; HS_SAFFRON_CITY_E
 	db SAFFRON_CITY, $0F, HIDE                ; HS_SAFFRON_CITY_F
-	db SAFFRON_CITY, $1A, HIDE                ; HS_SAFFRON_CITY_UP_GRADE
 Route1HS:
 	db ROUTE_1, $03, HIDE                     ; HS_ROUTE_1_OAK
 Route2HS:

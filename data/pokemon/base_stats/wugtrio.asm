@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    HYPER_BEAM,   RAGE,	       EARTHQUAKE,   FISSURE,      \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   CUT,          SURF
+	     SUBSTITUTE,   CUT,          SURF
 	; end
 
 	db BANK(WugtrioPicFront)

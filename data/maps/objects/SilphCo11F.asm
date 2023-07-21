@@ -16,7 +16,7 @@ SilphCo11F_Object:
 	object_event  2,  8, SPRITE_JAMES, STAY, UP, 4
 	object_event  3, 16, SPRITE_ROCKET, STAY, UP, 5, OPP_ROCKET, 41
 	object_event  3,  8, SPRITE_JESSIE, STAY, UP, 6
-	object_event  6, 11, SPRITE_MONSTER, STAY, UP, 11, OMEGA, 45 | OW_POKEMON
-	object_event 15, 15, SPRITE_MONSTER, STAY, UP, 12, OMEGA, 75 | OW_POKEMON
+	object_event  6, 11, SPRITE_MONSTER, STAY, UP, 11, OMEGA, 40 | OW_POKEMON
+	object_event 15, 15, SPRITE_MONSTER, STAY, UP, 12, OMEGA, 65 | OW_POKEMON
 
 	def_warps_to SILPH_CO_11F

@@ -499,7 +499,7 @@ JugglerData:
 TamerData:
 ; Fuchsia Gym
 	db 34, NIDOQUEEN, ARBOK, 0
-	db 33, ARBOK, NIDOKING, ARBOK, 0
+	db 33, ARBOK, NIDOKING, TSUBOMITTO, 0
 ; Viridian Gym
 	db 43, RHYDON, 0
 	db 39, SANDSLASH, TRAMPEL, 0
@@ -541,7 +541,8 @@ BirdKeeperData:
 ; Uses Silph products and Steel-types
 ChiefData:
 ; Silph Gauntlet 7F
-	db $FF, 73, PORYGON2, 72, LAPRAS, 73, SCIZOR, 73, MAGNEZONE, 75, PORYGONZ, 77, OMEGA, 0
+	db $FF, 71, MAGNEZONE, 70, LAPRAS, 71, PURAKKUSU, 71, GENGAR, 73, PORYGONZ, 75, OMEGA, 0
+; Lapras and Gengar are used here since Lapras is given by a Silph worker, and Gengar represents the Silph Scope.
 
 ; Poison- and Electric-type Pokemon
 ScientistData:
@@ -743,17 +744,17 @@ JuniorData:
 	db 63, BLASTOISE, OMASTAR, SANDSLASH, KINGDRA, GUARDIA, POLIWRATH, 0   ; no idea what to do with this guy's team, so I'll redo this later 
 	
 JackData:
-; Celadon University Roof House
-	db 23, MANKEY, MACHOP, SCYTHER, HITMONCHAN, 0 ; Scyther is Kage-Maru. 
+; Celadon Mansion Roof House
+	db 23, MANKEY, PORYGON, HITMONCHAN, SCYTHER, 0 ; Scyther is Kage-Maru. 
 ; Silph Gauntlet 7F (Chief's Office)
 ;	db 70, ANIMON, ANNIHILAPE, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...
 
 JessieJamesData:
-	db 14, MEOWTH, EKANS, KOFFING, 0 ; Mt. Moon
+	db 15, MEOWTH, EKANS, KOFFING, 0 ; Mt. Moon
 	db 25, MEOWTH, EKANS, LICKITUNG, KOFFING, 0 ; Rocket Hideout
-	db 27, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, 0 ; Pokemon Tower
-	db 37, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, GYARADOS, 0 ; Silph Co.
-	db $FF, 80, MEOWTH, 72, LICKILICKY, 72, ARBOK, 71, VICTREEBEL, 74, WEEZING, 76, GYARADOS, 0 ; Citrine Rocket House
+	db 28, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, 0 ; Pokemon Tower
+	db 37, MEOWTH, LICKILICKY, ARBOK, VICTREEBEL, WEEZING, GYARADOS, 0 ; Silph Co.
+	db $FF, 80, MEOWTH, 73, LICKILICKY, 75, ARBOK, 73, VICTREEBEL, 75, WEEZING, 71, GYARADOS, 0 ; Citrine Rocket House
 
 INCLUDE "data/trainers/scaled_parties.asm"
 INCLUDE "data/trainers/rival_parties.asm"

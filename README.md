@@ -97,6 +97,8 @@ New Areas
 New Music
 ====
 - Mewtwo has its own theme song, being a demake of the iconic Stadium battle theme. Composed by LuciShrimp.
+- Several pieces of unused music, including Digda01, Victory4, Field6, Kincho01, and Giovanni's theme have been implemented.
+	- A remix of the unused Koukan (trading) music is also used as a town theme. Composed by BGVC.
 
 Improved Areas
 ====
@@ -361,6 +363,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
 * Chatot4444 - Assisting with gym scaling code.
 * Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly.
+* Ness the Unexplained - Helped with writing NPC dialogue and Pokédex entries for new Pokémon such as Gyopin.
 * ZumiIsawhat? - Restorations of beta OST.
 * FrenchOrange - Reconstructions of various overworld beta sprites.
 * Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites
@@ -368,6 +371,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red, which we used as reference points for the Girl sprites and the Battle Tent.
 * jojobear13 & Mateo - HP/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld!
+* BGVC - Composed the original 4-channel version of the unused trading music.
 * wrulfy - Technical advice
 * suloku - Technical advice regarding setting where you spawn after beating the Elite Four.
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.

@@ -13,12 +13,11 @@ SaffronCity_TextPointers:
 	dw SaffronCityText9
 	dw SaffronCityText10
 	dw SaffronCityText11
-	dw SaffronCityText12
 	dw SaffronCityText13
 	dw SaffronCityText14
 	dw SaffronCityText15
-	dw SaffronCityText16
 	dw SaffronCityUpGrade
+	dw SaffronCityText16
 	dw SaffronCityText17
 	dw SaffronCityText18
 	dw MartSignText
@@ -71,11 +70,6 @@ SaffronCityText10:
 
 SaffronCityText11:
 	text_far _SaffronCityText11
-	text_end
-
-SaffronCityText12:
-	text_far _SaffronCityText12
-	sound_cry_pidgeot
 	text_end
 
 SaffronCityText13:

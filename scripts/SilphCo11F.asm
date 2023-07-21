@@ -95,7 +95,7 @@ SilphCo11ScriptOmegaBattle:
 	call DisplayTextID
 	ld a, OMEGA
 	ld [wCurOpponent], a
-	ld a, 45
+	ld a, 40
 	ld [wCurEnemyLVL], a
 	ld a, 0
 	ld [wIsTrainerBattle], a
@@ -180,9 +180,6 @@ MissableObjectIDs_6219b:
 	db HS_SILPH_CO_7F_2
 	db HS_SILPH_CO_7F_3
 	db HS_SILPH_CO_7F_4
-	;db HS_SILPH_CO_8F_1
-	;db HS_SILPH_CO_8F_2
-	;db HS_SILPH_CO_8F_3
 	db HS_SILPH_CO_10F_1
 	db HS_SILPH_CO_10F_2
 	db HS_SILPH_CO_11F_1
