@@ -130,7 +130,7 @@ TestBattle:
 	ld [hli], a
 	
 	; Opponent's Pokemon.
-	ld a, MEWTWO ; Test new theme
+	ld a, ARTICUNO ; Test new theme
 	ld [wCurOpponent], a
 	ld a, 100 ; Set the level you want here.
 	ld [wCurEnemyLVL], a

@@ -8,8 +8,8 @@ CitrineCity_Object:
 	warp_event 15, 27, CITRINE_MART, 1
 	warp_event 23,  5, CELESTE_HILL_OUTSIDE, 1
 	warp_event 11,  7, BATTLE_TENT, 1
-	warp_event 27, 33, VERMILION_CITY, 6
-	warp_event 26, 33, VERMILION_CITY, 6
+	warp_event 27, 33, VERMILION_CITY, 9
+	warp_event 26, 33, VERMILION_CITY, 10
 
 	def_bg_events
 	bg_event 16, 27,  5 ; Citrine Shop

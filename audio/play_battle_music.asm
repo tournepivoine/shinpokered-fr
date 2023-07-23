@@ -13,9 +13,25 @@ PlayBattleMusic::
 	ld a, MUSIC_GYM_LEADER_BATTLE
 	jr .playSong
 .notGymLeaderBattle
-	ld a, [wCurOpponent]
+	ld a, [wCurOpponent] ; This can probably be made better with a list thing but uhhh idk how to do it. seethe.
 	cp MEWTWO ; Needs to be before OPP_ID_OFFSET to skip the wild check.
 	jr z, .mewtwoBattle
+	cp ARTICUNO
+	jr z, .legendaryBattle
+	cp ZAPDOS
+	jr z, .legendaryBattle
+	cp MOLTRES
+	jr z, .legendaryBattle
+	cp MEW
+	jr z, .legendaryBattle
+	cp OMEGA
+	jr z, .legendaryBattle
+	cp ARTICUNO_G ; Temporary - plans for galar bird themes have been made.
+	jr z, .legendaryBattle
+	cp ZAPDOS_G
+	jr z, .legendaryBattle
+	cp MOLTRES_G
+	jr z, .legendaryBattle
 	cp OPP_ID_OFFSET
 	jr c, .wildBattle
 	cp OPP_YUJIROU
@@ -35,8 +51,6 @@ PlayBattleMusic::
 	cp OPP_CHIEF
 	jr z, .finalBattle 
 	jr nz, .normalTrainerBattle
-	ld a, MUSIC_FINAL_BATTLE
-	jr .playSong
 .Elite4Battle
 	ld a, MUSIC_GYM_LEADER_BATTLE
 	jr .playSong
@@ -48,6 +62,9 @@ PlayBattleMusic::
 	jr .playSong
 .mewtwoBattle
 	ld a, MUSIC_MEWTWO01
+	jr .playSong
+.legendaryBattle
+	ld a, MUSIC_LEGENDARYBATTLE
 	jr .playSong
 .wildBattle
 	ld a, MUSIC_WILD_BATTLE

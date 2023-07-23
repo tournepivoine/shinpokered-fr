@@ -57,3 +57,4 @@ Music:
 	dba Music_Victory4
 	dba Music_Kinchou01
 	dba Music_Mewtwo01
+	dba Music_LegendaryBattle

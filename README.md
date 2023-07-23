@@ -96,7 +96,9 @@ New Areas
 
 New Music
 ====
-- Mewtwo has its own theme song, being a demake of the iconic Stadium battle theme. Composed by LuciShrimp.
+- Mewtwo has its own battle theme: A demake of the iconic Stadium track! It features some creative deviations to give it a distinct Game Boy feel while fitting with Mewtwo's mystique. Composed by LuciShrimp.
+- Mew and the Kantonian Birds have their own battle theme, a demake of the FireRed/LeafGreen pitch-shifted remix. Not simply pitching it up, percussion elements have been added to give it that rustic FRLG "feel" that distinguishes it from the original games. Composed by LuciShrimp.
+- Pokemon Yellow's various tracks have been backported, such as Jessie and James's encounter theme.
 - Several pieces of unused music, including Digda01, Victory4, Field6, Kincho01, and Giovanni's theme have been implemented.
 	- A remix of the unused Koukan (trading) music is also used as a town theme. Composed by BGVC.
 
@@ -357,7 +359,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * DuoM2 - Showdown Mod assistance
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
-* LuciShrimp - Mewtwo & Galarian Bird custom battle music
+* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music
 * dannye33 - Assisting with crysaudio implementation
 * Frrf - Assisting with the development of the Pikachu / Eevee Mode + 5 Starters scenes in Oak's Lab, debugging
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
