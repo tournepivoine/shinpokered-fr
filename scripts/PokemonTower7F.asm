@@ -306,10 +306,10 @@ PokemonTower7Text3:
 	ld a, HS_MR_FUJIS_HOUSE_MR_FUJI
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ld a, HS_SAFFRON_CITY_E
+	ld a, HS_SAFFRON_CITY_D
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_SAFFRON_CITY_F
+	ld a, HS_SAFFRON_CITY_E
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld a, $b
