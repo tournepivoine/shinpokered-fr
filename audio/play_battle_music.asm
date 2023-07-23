@@ -26,6 +26,12 @@ PlayBattleMusic::
 	jr z, .legendaryBattle
 	cp OMEGA
 	jr z, .legendaryBattle
+	cp SNORLAX ; Just like LGPE. Snorlax is basically a legendary in RBY, so I love this.
+	jr z, .legendaryBattle
+	cp VOLTORB ; The way this works makes the wild theme still play when encountering normal Voltorb/Electrode. Convenient and makes it work like LGPE.
+	jr z, .legendaryBattle
+	cp ELECTRODE
+	jr z, .legendaryBattle
 	cp ARTICUNO_G ; Temporary - plans for galar bird themes have been made.
 	jr z, .legendaryBattle
 	cp ZAPDOS_G

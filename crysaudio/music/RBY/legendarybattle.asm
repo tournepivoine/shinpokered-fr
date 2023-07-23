@@ -1,11 +1,11 @@
-Music_UntitledSong:
+Music_LegendaryBattle:
 	channel_count 4
-	channel 1, Music_UntitledSong_Ch1
-	channel 2, Music_UntitledSong_Ch2
-	channel 3, Music_UntitledSong_Ch3
-	channel 4, Music_UntitledSong_Ch4
+	channel 1, Music_LegendaryBattle_Ch1
+	channel 2, Music_LegendaryBattle_Ch2
+	channel 3, Music_LegendaryBattle_Ch3
+	channel 4, Music_LegendaryBattle_Ch4
 
-Music_UntitledSong_Ch1:
+Music_LegendaryBattle_Ch1:
 	volume 7, 7
 	octave 1
 	duty_cycle 2
@@ -497,7 +497,7 @@ Music_UntitledSong_Ch1:
 	octave 8
 	sound_loop 0, .mainLoop
 
-Music_UntitledSong_Ch2:
+Music_LegendaryBattle_Ch2:
 	note_type 6, 15, 8
 	duty_cycle 3
 	volume_envelope 15, 7
@@ -661,7 +661,7 @@ Music_UntitledSong_Ch2:
 	octave 8
 	sound_loop 0, .mainLoop
 
-Music_UntitledSong_Ch3:
+Music_LegendaryBattle_Ch3:
 	note_type 6, 1, 0
 	octave 5
 	vibrato 0, 4, 1
@@ -1825,7 +1825,7 @@ Music_UntitledSong_Ch3:
 	octave 8
 	sound_loop 0, .mainLoop
 
-Music_UntitledSong_Ch4:
+Music_LegendaryBattle_Ch4:
 	toggle_noise 0
 	drum_speed 12
 	rest 16
