@@ -171,7 +171,7 @@ _UpGradeExplanationText::
 	cont "but even now,"
 	cont "it's outdated."
 	
-	text "The UP-GRADE"
+	para "The UP-GRADE"
 	line "should remedy"
 	cont "that!"
 	

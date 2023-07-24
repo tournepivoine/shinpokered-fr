@@ -447,6 +447,7 @@ OfficerJennySquirtle:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refuse
+	call SaveScreenTilesToBuffer1 ; prevents nickname screen corruption
 	ld a, SQUIRTLE
 	ld [wd11e], a
 	ld [wcf91], a

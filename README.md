@@ -237,6 +237,8 @@ Known Bugs
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
 - HP DV does not appear to display correctly in the viewer.
+- Silph Co.'s warps are mismatched following a restructuring in maps, one on Floor 5 leads to a Glitch City.
+- Fake Tears and Nasty Plot don't quite look right when done from the opponent's side.
 
 Evolution Methods for new Pokemon
 ====
@@ -347,36 +349,41 @@ Given many of these evolve via stones, we've given them their pre-evolution's le
 
 Credits
 ====
-As the open source nature of this project implies, people are free to use what's here for their own ends, **so long as credit is given.** Specific credits are always encouraged as well. If you have any questions on this, contact @ plague_von_karma on Discord.
+As the open source nature of this project implies, people are free to reuse what's here for their own ends, **so long as credit is given, to this hack and those who worked on what you reuse.** Additionally, we strongly urge you to make any projects using KEP's content open source. KEP strongly supports the [free software movement](https://www.fsf.org/about/) and its four essential freedoms. If you have any questions on the topic of content reuse, contact @ plague_von_karma on Discord.
 
-If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues!
+KEP spriters hold the policy of requiring sprites to be used with direct credit for non-commerical purposes. Credit Albatross and Martha's Against Humanity in any case of using them. Helix Chamber spriters have a "must credit" policy as well, and precise credits for them are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
 
-* Plague von Karma - Creator of the Showdown Mod, Developer, Scenarios, Balancing, Maps, Event scripting, and occasional spriter (assisting with Tsubomitto, Carapthor)
-* Martha's Against Humanity - Developer, Pokémon implementation, Event scripting, tweaks of Albatross's sprites, a few maps (Citrine City, Cinnabar Volcano)
-* Ema Skye - Developer, Maps, Showdown Mod assistance
+If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues! We very much appreciate them!
+
+* Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, Meltan implementation, Yellow backports, and occasional spriter (assisting with Tsubomitto, Carapthor)
+* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon sprite, a few maps (Citrine City, Cinnabar Volcano)
+* Ema Skye - Developer, Maps (Underwater Tunnel, Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
+* BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
+* Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
+* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance
 * Paulluxx - Showdown Mod assistance
 * DuoM2 - Showdown Mod assistance
-* Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
-* BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
-* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music
-* dannye33 - Assisting with crysaudio implementation
-* Frrf - Assisting with the development of the Pikachu / Eevee Mode + 5 Starters scenes in Oak's Lab, debugging
+* dannye33 - Assisting with crysaudio implementation.
+* Frrf - Assisting with the development of the Pikachu / Eevee Mode + 5 Starters scenes in Oak's Lab, debugging.
 * erosunica - Assistance with developing Celadon University & Citrine City, plus sources for various subjects.
 * Chatot4444 - Assisting with gym scaling code.
 * Enigami - Reworking the Battle Tent's RestoreTeam code to make it work properly.
 * Ness the Unexplained - Helped with writing NPC dialogue and Pokédex entries for new Pokémon such as Gyopin.
 * ZumiIsawhat? - Restorations of beta OST.
 * FrenchOrange - Reconstructions of various overworld beta sprites.
-* Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites
+* Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
 * Vortiene - Reused a bit of code from their pureRGB hack. Assisted in bug fixes.
-* Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red, which we used as reference points for the Girl sprites and the Battle Tent.
-* jojobear13 & Mateo - HP/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
-* Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld!
-* BGVC - Composed the original 4-channel version of the unused trading music.
-* wrulfy - Technical advice
+* Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red's repository, where we reused the Green/FemC sprites and the Battle Tent.
+* jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
+* Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld, and generally being an amazing individual.
+* BGVC - Composed the original 4-channel version of the unused Koukan (trading) music.
+* SatoMew - Technical advice.
+* wrulfy - Technical advice.
 * suloku - Technical advice regarding setting where you spawn after beating the Elite Four.
+* Molk - Balancing of some beta Pokemon, most notably Deer.
+* Shellnuts - Balancing of some beta Pokemon, especially Omega; made the type chart suggestions to balance Galarian Moltres properly.
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.
 * ViWalls - Extremely early adopter of the hack who repeatedly reported bugs and gave general opinions.
 

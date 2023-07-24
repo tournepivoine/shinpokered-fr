@@ -109,6 +109,8 @@ FightingDojoText1: ; gym scaling can be removed to make space
 	text_asm
 	CheckEvent EVENT_POST_GAME_ATTAINED ; No need to view previous stuff, technically you can skip Bide this way but I think that's hilarious
 	jp z, .normalProcessing
+	CheckEvent EVENT_GOT_HITMON ; failsafe
+	jp nz, .continue2
 	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
 	jp nz, .continue1
 	CheckEventReuseA EVENT_BEAT_KARATE_MASTER

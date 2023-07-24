@@ -290,6 +290,7 @@ Route24Damian:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .asm_515d0
+	call SaveScreenTilesToBuffer1 ; prevents nickname screen corruption
 	ld a, CHARMANDER
 	ld [wd11e], a
 	ld [wcf91], a

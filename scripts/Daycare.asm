@@ -291,9 +291,8 @@ DaycareMelanie:
 	call z, WaitForTextScrollButtonPress ; and here.
 	call EnableAutoTextBoxDrawing ; and here. it's very hasty.
 	
-	ld a, [wObtainedBadges] ; load the badge count
-	bit BIT_CASCADEBADGE, a
-	jr z, .superDone ; no? d'oh! darn those brock skippers!
+	CheckEvent EVENT_BEAT_MISTY ; Beat Misty?
+	jr z, .superDone ; Didn't beat Misty? It's over. It's just over. 
 	
 	; If they picked any of the main 3 they can't get this.
 	ld a, [wPlayerStarter]
@@ -311,7 +310,7 @@ DaycareMelanie:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refused ; imagine refusing a bulbasaur tbh
-	
+	call SaveScreenTilesToBuffer1 ; prevents nickname screen corruption
 	lb bc, BULBASAUR, 12 ; load the bulbasaur
 	call GivePokemon ; attempt to give the bulbasaur
 	jr nc, .fullParty ; if it's fucked just go here
