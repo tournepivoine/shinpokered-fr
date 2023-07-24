@@ -18,6 +18,23 @@ With this criteria, we get:
 
 Johto baby Pokemon and regional pre-evolutions were omitted due to RBY using an 8-bit register. This hack as-is just barely manages to fit everything. A refactor to a 16-bit register is possible and has been done before, but only on a really old pokered version that would require a ton of its own refactoring to be modernised. It's just not feasible at this current time.
 
+In general, the following Pokemon are not available;
+- Pichu
+- Cleffa
+- Igglybuff
+- Tyrogue
+- Smoochum
+- Elekid
+- Magby
+- Mime Jr.
+- Happiny
+- Munchlax
+- Erebebii (prototype Elekid pre-evoluton in May98 GSC sprite cache)
+- Hinaazu (SW97 Baby Doduo)
+- Betobebii (SW97 Baby Grimer)
+- Pudi (SW97 Baby Growlithe)
+- Regional form pre-evolutions (eg. Alolan Vulpix, Galarian Slowpoke)
+
 Mega Evolutions and Gigantamax forms are not in the game mainly by choice. There are no held items and there isn't a special button or anything, so it felt kind of weird to add, would deviate significantly from the RBY experience, and requires a pretty big overhaul to the battle system. It's definitely possible, just not for me.
 
 New Types:
@@ -374,7 +391,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * ZumiIsawhat? - Restorations of beta OST.
 * FrenchOrange - Reconstructions of various overworld beta sprites.
 * Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
-* Vortiene - Reused a bit of code from their pureRGB hack. Assisted in bug fixes.
+* Vortiene/Vortyne - Reused a bit of code from their pureRGB hack. Assisted in bug fixes. Used their sprite sheet generator.
 * Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red's repository, where we reused the Green/FemC sprites and the Battle Tent.
 * jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld, and generally being an amazing individual.
