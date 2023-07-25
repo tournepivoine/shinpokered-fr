@@ -8,7 +8,7 @@ ViridianForestWildMons:
 	db  5, WEEDLE
 	db  7, KAKUNA
 	db  7, METAPOD
-	db  5, KOKANA ; FIXME: Add considerations for STARTER4/Pikachu so it isn't rendered redundant. For now, it's a Kokana.
+	db  3, KOTORA ; A replacement for the early starter Pikachu. I think this is an amazing compromise that helps actualise Kotora's "mascot status" when it comes to prototype Pokemon.
 	db  9, PIDGEOTTO
 	end_grass_wildmons
 

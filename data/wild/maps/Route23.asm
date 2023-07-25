@@ -1,14 +1,14 @@
 Route23WildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 41, ARBOK
-	db 40, TANGELA
+	db 40, SANDSLASH
 	db 38, FEAROW
-	db 38, RHYHORN
+	db 38, RHYDON
 	db 38, EXEGGCUTE
 	db 40, PRIMEAPE
-	db 41, PINSIR
+	db 41, EXEGGCUTE
 	db 43, EXEGGCUTE
-	db 41, WEIRDUCK
+	db 41, CHANSEY
 	db 38, TAUROS
 	end_grass_wildmons
 

@@ -4,7 +4,7 @@ Route12WildMons:
 	db 25, PIDGEOTTO
 	db 23, BLASTYKE
 	db 24, ODDISH
-	db 22, SQUIRTLE
+	db 22, BARUNDA
 	db 26, BARUNDA
 	db 26, GLOOM
 	db 27, FARFETCHD
