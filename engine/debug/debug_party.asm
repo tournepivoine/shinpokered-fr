@@ -205,6 +205,7 @@ DebugItemsList:
 	db MYSTERY_BOX, 1
 	db CANDY_JAR, 1
 	db BICYCLE, 1
+	db EXP_ALL, 1
 	db FULL_RESTORE, 99
 	db MAX_REPEL, 99
 	db RARE_CANDY, 99

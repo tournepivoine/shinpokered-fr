@@ -877,6 +877,9 @@ FaintEnemyPokemon:
 	push af
 	jr z, .giveExpToMonsThatFought ; if no exp all, then jump
 
+; Features suloku's exp all modernisations https://pastebin.com/23r3tLSc
+; Basically, we have to make it round up to not lose that crumb of exp points
+
 ; the player has exp all
 ; first, we halve the values that determine exp gain
 ; the enemy mon base stats are added to stat exp, so they are halved
@@ -884,7 +887,11 @@ FaintEnemyPokemon:
 	ld hl, wEnemyMonBaseStats
 	ld b, $7
 .halveExpDataLoop
+	ld a, [hl]
+	and a, $01
 	srl [hl]
+	add a, [hl]
+	ld [hl], a
 	inc hl
 	dec b
 	jr nz, .halveExpDataLoop

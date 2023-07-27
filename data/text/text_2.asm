@@ -1233,9 +1233,10 @@ _GainedText::
 	line "@"
 	text_end
 
+; changed to be used with suloku's exp all modernisations https://pastebin.com/23r3tLSc
 _WithExpAllText::
-	text "with EXP.ALL,"
-	cont "@"
+	text "Party gained"
+	next "@"
 	text_end
 
 _BoostedText::

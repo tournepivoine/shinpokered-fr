@@ -2,8 +2,20 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
-	call DivideExpDataByNumMonsGainingExp
+;	call DivideExpDataByNumMonsGainingExp removed to modernise exp. all: https://pastebin.com/23r3tLSc
+	
+	; suloku's modernised boosted exp
+	ld a, [wBoostExpByExpAll] ;load in a if the EXP All is being used
+	ld hl, WithExpAllText ; this is preparing the text to show
+	and a ;check wBoostExpByExpAll value
+	jr z, .skipExpAll ; if wBoostExpByExpAll is zero, we are not using it, so we don't show anything and keep going on
+	call PrintText ; if the code reaches this point it means we have the Exp.All, so show the message
+.skipExpAll
+	
 	ld hl, wPartyMon1
+	xor a
+;	ld [wWhichPokemon], a
+;	ld hl, wPartyMon1
 	xor a
 	ld [wWhichPokemon], a
 .partyMonLoop ; loop over each mon and add gained exp
@@ -142,14 +154,18 @@ GainExperience:
 	ld [hld], a
 	dec hl
 .next2
-	push hl
-	ld a, [wWhichPokemon]
-	ld hl, wPartyMonNicks
-	call GetPartyMonName
-	ld hl, GainedText
-	call PrintText
-	xor a ; PLAYER_PARTY_DATA
-	ld [wMonDataLocation], a
+    push hl
+    ld a, [wWhichPokemon]
+    ld hl, wPartyMonNicks
+    call GetPartyMonName
+    ld a, [wBoostExpByExpAll]
+    and a
+    jr nz, .skipExpText
+    ld hl, GainedText
+    call PrintText
+.skipExpText
+    xor a ; PLAYER_PARTY_DATA
+    ld [wMonDataLocation], a
 	call LoadMonData
 	pop hl
 	ld bc, wPartyMon1Level - wPartyMon1Exp
@@ -324,28 +340,26 @@ DivideExpDataByNumMonsGainingExp:
 	jr nz, .divideLoop
 	ret
 
-; multiplies exp by 1.5...NOT!!!! - PvK
+; This is only used for Trainer Battles now.
 BoostExp:
-	; ldh a, [hQuotient + 2]
-	; ld b, a
-	; ldh a, [hQuotient + 3]
-	; ld c, a
-	; srl b
-	; rr c
-	; add c
-	; ldh [hQuotient + 3], a
-	; ldh a, [hQuotient + 2]
-	; adc b
-	; ldh [hQuotient + 2], a
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	ld c, a
+	srl b
+	rr c
+	add c
+	ldh [hQuotient + 3], a
+	ldh a, [hQuotient + 2]
+	adc b
+	ldh [hQuotient + 2], a
 	ret
 
+; Here we use suloku's exp all modernisation and remove boosted exp
+; https://pastebin.com/23r3tLSc
 GainedText:
 	text_far _GainedText
 	text_asm
-	ld a, [wBoostExpByExpAll]
-	ld hl, WithExpAllText
-	and a
-	ret nz
 	ld hl, ExpPointsText
 	;ld a, [wGainBoostedExp]
 	;and a
@@ -359,6 +373,7 @@ WithExpAllText:
 	ld hl, ExpPointsText
 	ret
 
+; Repurposed for "applying exp" message.
 BoostedText:
 	text_far _BoostedText
 

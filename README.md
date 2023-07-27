@@ -161,6 +161,7 @@ QoL Enhancements
 - All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
 - Bag capacity is increased from 20 to 30 items.
 - Pokemon Box capacity is now 280 Pokemon with 14 boxes.
+- Exp. All now works like the modern Exp. Share, giving all party members max exp. It also only has one message, though it does still take time to calculate all the exp being thrown around. It'll take around 3 seconds to calculate, sort of like saving.
 - New Pokedex entries for most Pokemon are available, sourced from the original 1996 Pokedex book by Creatures Inc., restoring a ton of old Kanto lore. Thanks to [Dr. Lava and Nob Ogasawara](http://lavacutcontent.com/1996-creatures-pokedex-translation-1/) for their incredible work translating and writing about it!
 - Pikachu and Eevee are now starters, featuring fully functional Rival lineups. If you pick Pikachu, he picks Eevee, and if you pick Eevee, he picks Pikachu! Their growth rates have been changed to Medium Slow to give them the early-game power spike the other starters have.
 - Item Descriptions are available!
@@ -398,7 +399,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * BGVC - Composed the original 4-channel version of the unused Koukan (trading) music.
 * SatoMew - Technical advice.
 * wrulfy - Technical advice.
-* suloku - Technical advice regarding setting where you spawn after beating the Elite Four.
+* suloku - Technical advice regarding setting where you spawn after beating the Elite Four, Exp. All modernisation code
 * Molk - Balancing of some beta Pokemon, most notably Deer.
 * Shellnuts - Balancing of some beta Pokemon, especially Omega; made the type chart suggestions to balance Galarian Moltres properly.
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.
