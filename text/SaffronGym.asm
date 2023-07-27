@@ -58,6 +58,11 @@ _TM46ExplanationText::
 	line "It uses powerful"
 	cont "psychic waves to"
 	cont "inflict damage!"
+	
+	para "Also..."
+	
+	para "I sense a ship has" ; This is the use for the badge now, no?
+	line "returned for you."
 	done
 
 _TM46NoRoomText::

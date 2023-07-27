@@ -13,16 +13,22 @@ ResetChiefScript:
 	ret
 
 SilphGauntlet7F_ScriptPointers:
-	;dw ChiefScript0
 	dw ChiefScript1
 	dw ChiefScript2
 	dw ChiefScript3
-	dw ChiefScript10
-
-ChiefScript0: ; this is used in the champion script but it doesn't seem to be needed here.
-	ret
+	dw ChiefScript4
 
 ChiefScript1:
+	CheckEvent EVENT_BEAT_CHIEF
+	jr nz, .skip
+	ld a, PLAYER_DIR_UP
+	ld [wPlayerMovingDirection], a
+	call UpdateSprites
+	jr MovePlayerToChief
+.skip
+	ret
+
+MovePlayerToChief:
 	ld a, $ff
 	ld [wJoyIgnore], a
 	ld hl, wSimulatedJoypadStatesEnd
@@ -31,8 +37,9 @@ ChiefScript1:
 	dec a
 	ld [wSimulatedJoypadStatesIndex], a
 	call StartSimulatingJoypadStates
-	ld a, $2
+	ld a, $1
 	ld [wSilphGauntlet7FCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 ChiefEntrance_RLEMovement:
@@ -45,15 +52,16 @@ ChiefScript2:
 	ret nz
 	call Delay3
 	xor a
+	
 	ld [wJoyIgnore], a
 	ld hl, wOptions
 	res 7, [hl]  ; Turn on battle animations like with Blue
-	;ld a, $1
-	;ldh [hSpriteIndexOrTextID], a
-	;call DisplayTextID
 	
-	ld hl, ChiefText1
-	call PrintText
+	ld a, $1
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+	ld a, $2
+	ld [wSilphGauntlet7FCurScript], a
 	ret
 
 ChiefScript3:
@@ -72,18 +80,24 @@ ChiefScript3:
 	ld a, $1
 	ldh [hSpriteIndex], a
 	call SetSpriteMovementBytesToFF
-	ld a, $4
+	ld a, $3
 	ld [wSilphGauntlet7FCurScript], a
 	jp TextScriptEnd
 
-ChiefScript10:
+ChiefScript4:
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	ret nz
 	xor a
 	ld [wJoyIgnore], a
+	
+	; Grant Mewtwo access
+	ld a, HS_CERULEAN_CAVE_GUY
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	
 	ld a, $0
-	ld [wChampionsRoomCurScript], a
+	ld [wSilphGauntlet7FCurScript], a
 	ret
 
 ChiefScript_That_Seems_Needed:
@@ -96,16 +110,28 @@ ChiefScript_That_Seems_Needed:
 
 SilphGauntlet7F_TextPointers:
 	dw ChiefText1
-;	dw ChiefText2
+	dw ChiefPC
+	dw ChiefPainting1
+	dw ChiefPainting2
 
 ChiefText1:
 	text_asm
-	CheckEvent EVENT_BEAT_CHIEF
-	ld hl, ChiefAfterBattleText
-	jr z, .printText
+	CheckEvent EVENT_BEAT_CHIEF ; Check if Chief was beaten
+	jr nz, .chiefBeaten ; If Chief has been beaten, skip the trainer loading
+	; standard processing
 	ld hl, ChiefMonologue
-.printText
 	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
+	and a ; yep, here too.
+	call z, WaitForTextScrollButtonPress ; and here.
+	call EnableAutoTextBoxDrawing ; and here.
+	
+	CheckEvent EVENT_USED_MASTER_BALL ; Check if the Master Ball has been used.
+	ld hl, ChiefMonologueMasterBallNotUsed ; Load not used by default.
+	jr z, .masterBallSkip ; In which case, we can skip.
+	ld hl, ChiefMonologueMasterBallUsed ; If you get here, it's been used.
+.masterBallSkip ; Now if it's been used, fall through to here.
+	call PrintText ; Now print the text.
 	
 	ld c, BANK(Music_MeetEvilTrainer)
 	ld a, MUSIC_MEET_EVIL_TRAINER
@@ -125,10 +151,24 @@ ChiefText1:
 	ld hl, ChiefDefeatedText
 	ld de, ChiefVictoryText
 	call SaveEndBattleTextPointers
+	jr .done
+.chiefBeaten
+	ld hl, ChiefAfterBattleText
+	call PrintText
+	; fallthrough
+.done
 	jp TextScriptEnd
 
 ChiefMonologue:
 	text_far _ChiefMonologue
+	text_end
+
+ChiefMonologueMasterBallUsed:
+	text_far _ChiefMonologueMasterBallUsed
+	text_end
+
+ChiefMonologueMasterBallNotUsed:
+	text_far _ChiefMonologueMasterBallNotUsed
 	text_end
 
 ChiefDefeatedText:
@@ -143,6 +183,21 @@ ChiefAfterBattleText:
 	text_far _ChiefAfterBattleText
 	text_end
 
+ChiefPC:
+	text_far _ChiefPCText
+	text_end
+
+ChiefPainting1:
+	text_far _ChiefPainting1
+	text_end
+
+ChiefPainting2:
+	text_far _ChiefPainting2
+	text_end
+
+; Originally, Chief was going to give you the Candy Jar.
+; But this would relegate Melmetal to the post-game, which feels wrong.
+; Instead, he gives you access to Mewtwo.
 ;ChiefText2:
 ;	text_asm
 ;	CheckEvent EVENT_GOT_CANDY_JAR
@@ -181,6 +236,4 @@ ChiefAfterBattleText:
 
 ;CandyJarNoRoomText:
 ;	text_far _CandyJarNoRoomText
-;	text_end
-
 ;	text_end

@@ -172,7 +172,16 @@ ItemUseBall:
 	and a
 	jp z, ItemUseNotTime
 
+; By this point, the Master Ball is possible to use.
+; This changes Chief's dialogue in the end-game.
+	ld hl, wcf91 ; Get item ID
+	ld a, [hl] ; Ayup
+	cp MASTER_BALL ; Is it the Master Ball fam?
+	jr nz, .masterBallSkip ; Aye? 
+	SetEvent EVENT_USED_MASTER_BALL ; Aye.
+	
 ; Balls can't catch trainers' Pokémon.
+.masterBallSkip ; Get kicked over here if it's not.
 	dec a
 	jp nz, ThrowBallAtTrainerMon
 

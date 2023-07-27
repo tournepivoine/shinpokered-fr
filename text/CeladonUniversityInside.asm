@@ -16,12 +16,10 @@ _CeladonUniversityInsideText2::
 	done
 
 _CeladonUniversityInsideText3::
-	text "Tremors keep"
-	line "happening in"
-	cont "VICTORY ROAD."
-	
-	para "WESTWOOD, can you"
-	line "meet me at SILPH?"
+	text "It's a paper"
+	line "speculating on"
+	cont "the idea of a"
+	cont "man-made #MON."
 	
 	done
 

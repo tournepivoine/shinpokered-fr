@@ -1,7 +1,7 @@
 VictoryRoad1FWildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 34, MACHOKE
-	db 36, RHYDON
+	db 36, STEELIX
 	db 32, GOLBAT
 	db 36, SANDSLASH
 	db 39, SANDSLASH

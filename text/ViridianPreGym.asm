@@ -149,7 +149,7 @@ _ViridianPreGymSign3::
 	line "after battles."
 	
 	para "It can also be"
-	cont "cured by swapping"
+	line "cured by swapping"
 	cont "your #MON during"
 	cont "the battle!"
 	done

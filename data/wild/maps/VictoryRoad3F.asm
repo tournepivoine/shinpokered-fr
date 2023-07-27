@@ -1,7 +1,7 @@
 VictoryRoad3FWildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 34, MACHOKE
-	db 36, TRAMPEL
+	db 36, STEELIX
 	db 32, GOLBAT
 	db 42, SANDSLASH
 	db 40, VENOMOTH

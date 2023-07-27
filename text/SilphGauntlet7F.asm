@@ -13,7 +13,7 @@ _ChiefMonologue::
 	cont "for the ultimate"
 	cont "#MON, aren't"
 	cont "you?"
-
+	
 	para "That MASTER"
 	line "BALL... I should"
 	cont "never have given"
@@ -22,19 +22,39 @@ _ChiefMonologue::
 	cont "GIOVANNI gone,"
 	cont "our company is"
 	cont "going under!"
+	prompt
 
-	para "Now there's only"
+_ChiefMonologueMasterBallNotUsed::
+	text "Now there's only"
 	line "one way to catch" 
 	cont "MEWTWO, and it's"
 	cont "in your hands!" 
 	
-	para "<PLAYER>! Give me"
-	line "that BALL!"
+	para "<PLAYER>!"
+	
+	para "Give me that BALL!"
+	prompt
+
+_ChiefMonologueMasterBallUsed::
+	text "...what? You used"
+	line "the MASTER BALL?!"
+	
+	para "You stupid child!"
+	line "I can't believe"
+	cont "this!"
+	
+	para "Argh..."
+	
+	para "<PLAYER>!"
+	line "You...you..." ; Trying to emphasise rage. I think this is the best we can get.
+	
+	para "You are in for"
+	line "a world of hurt!" ; Like Giovanni, but with a slightly more pompous tone in using "hurt".
 	prompt
 
 _ChiefDefeatedText::
-	text "CHIEF: No!"
-	line "I...I..."
+	text "No! I..."
+	line "I..."
 	prompt
 
 _ChiefVictoryText::
@@ -49,8 +69,8 @@ _ChiefAfterBattleText::
 	cont "GIOVANNI has to"
 	cont "be stronger than"
 	cont "me. No product"
-	cont "I have can"
-	cont "trounce you."
+	cont "I have is capable"
+	cont "of trouncing you."
 
 	para "I wanted to make"
 	line "an ultimate BALL"
@@ -73,3 +93,29 @@ _ChiefAfterBattleText::
 	
 	done
 
+_ChiefPCText::
+	text "It's a PC with"
+	line "blueprints for"
+	cont "OMEGA!"
+	
+	para "It was meant"
+	line "for..."
+	
+	para "The CELADON GAME"
+	line "CORNER?!"
+	done
+
+_ChiefPainting1::
+	text "It's a painting"
+	line "of an unknown"
+	cont "#MON."
+	
+	para "It's small and"
+	line "has large feet."
+	done
+
+_ChiefPainting2::
+	text "It's a picture"
+	line "of GYAOON, an"
+	cont "extinct #MON!"
+	done

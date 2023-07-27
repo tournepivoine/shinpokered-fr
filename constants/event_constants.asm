@@ -14,7 +14,8 @@
 	const EVENT_BEAT_OAK_ONCE
 	const EVENT_BEAT_JACKY
 	const EVENT_GOT_MANSION_GIFT
-	const_skip 11
+	const EVENT_USED_MASTER_BALL ; Used to determine Chief's dialogue in the end-game.
+	const_skip 10
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
