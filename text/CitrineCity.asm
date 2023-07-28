@@ -13,8 +13,8 @@ _CitrineCityBillboard2::
 
 _CitrineCitySignText::
 	text "CITRINE CITY"
-	line "A shining city"
-	cont "of brilliance."
+	line "The Land of"
+	cont "Shining Sunlight"
 	done
 
 _CitrineShopSignText::
@@ -29,19 +29,23 @@ _CitrineCityTower::
 	done
 
 _CitrineCityCavern::
-	text "GARNET CAVERN"
-	line "WARNING: Strong"
-	cont "#MON within."
+	text "GATE TO"
+	line "CELESTE HILL"
+
+	para "Stay safe! Look"
+	line "out for strong"
+	cont "#MON!"
 	done
 
 _CitrineCityDirections::
-	para "NORTH: BATTLE"
-	line "TOWER"
+	para "NORTH WEST:"
+	line "BATTLE TOWER"
 	
-	para "EAST: PIER"
+	para "NORTH EAST:"
+	line "CELESTE HILL"
 
-	para "SOUTH: BRUNSWICK"
-	line "TRAIL"
+	para "SOUTH WEST:"
+	line "BRUNSWICK TRAIL"
 	done
 
 _CitrineCityText1::
@@ -73,9 +77,9 @@ _CitrineCityText3::
 
 _CitrineCityText4::
 	text "Some BIRD #MON"
-	line "roost on a hill"
-	cont "close by once"
-	cont "a year."
+	line "roost on the"
+	cont "hill north of"
+	cont "here every year."
 	
 	para "The locals call"
 	line "them ARTICUNO,"
@@ -84,7 +88,7 @@ _CitrineCityText4::
 	
 	para "But they look"
 	line "nothing like"
-	cont "them! They're"
-	cont "like different"
-	cont "#MON!"
+	cont "them! It's like"
+	cont "they're totally"
+	cont "new #MON!"
 	done

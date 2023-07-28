@@ -26,6 +26,7 @@ _ViridianMartText2::
 	done
 
 _ViridianMartText3::
-	text "No! POTIONs are"
-	line "all sold out."
+	text "The shop finally"
+	line "has some POTIONs"
+	cont "in stock."
 	done

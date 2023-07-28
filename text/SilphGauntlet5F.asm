@@ -20,21 +20,21 @@ _SilphGauntlet5FAfterBattleText1::
 	done
 
 _SilphGauntlet5FBattleText2::
-	text "How does he expect"
-	line "me to ride out"
-	cont "here?!"
+	text "I can tell that"
+	line "you're no match"
+	cont "for PSI power!"
 	done
 
 _SilphGauntlet5FEndBattleText2::
-	text "Ugh!"
-	line "Awful! Awful!"
+	text "I was"
+	line "wrong..."
 	prompt
 
 _SilphGauntlet5FAfterBattleText2::
-	text "This floor is a"
-	line "graveyard! That"
-	cont "CHIEF has a sick"
-	cont "sense of humor!"
+	text "Be careful while"
+	line "you're here. That"
+	cont "CHIEF gives me"
+	cont "the creeps..."
 	done
 
 _SilphGauntlet5FBattleText3::
@@ -51,7 +51,7 @@ _SilphGauntlet5FAfterBattleText3::
 	text "Unlike that wimp"
 	line "over there, I"
 	cont "ain't scared of"
-	cont "cemetaries!"
+	cont "that CHIEF guy!"
 	done
 
 _SilphGauntlet5FBattleText4::

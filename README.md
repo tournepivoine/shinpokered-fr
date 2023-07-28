@@ -373,9 +373,9 @@ KEP spriters hold the policy of requiring sprites to be used with direct credit 
 
 If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues! We very much appreciate them!
 
-* Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, Meltan implementation, Yellow backports, and occasional spriter (assisting with Tsubomitto, Carapthor)
-* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon sprite, a few maps (Citrine City, Cinnabar Volcano)
-* Ema Skye - Developer, Maps (Underwater Tunnel, Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
+* Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, male/female character selection, Meltan implementation, Yellow backports, and occasional spriter (assisting with Tsubomitto, Carapthor)
+* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon, Tsubomitto and Animon sprites, Maps (Citrine City, Cinnabar Volcano, Underwater Tunnel, Silph Gauntlet,), SGB border, new palettes for postgame areas and Game Corner, etc.
+* Ema Skye - Developer, Maps (Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
 * LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music

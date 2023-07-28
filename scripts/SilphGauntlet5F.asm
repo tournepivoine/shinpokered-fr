@@ -26,7 +26,7 @@ SilphGauntlet5FTrainerHeaders:
 SilphGauntlet5FTrainerHeader0:
 	trainer EVENT_BEAT_GAUNTLET_JUGGLER, 3, SilphGauntlet5FBattleText1, SilphGauntlet5FEndBattleText1, SilphGauntlet5FAfterBattleText1
 SilphGauntlet5FTrainerHeader1:
-	trainer EVENT_BEAT_GAUNTLET_BIKER, 1, SilphGauntlet5FBattleText2, SilphGauntlet5FEndBattleText2, SilphGauntlet5FAfterBattleText2
+	trainer EVENT_BEAT_GAUNTLET_PSYCHIC, 1, SilphGauntlet5FBattleText2, SilphGauntlet5FEndBattleText2, SilphGauntlet5FAfterBattleText2
 SilphGauntlet5FTrainerHeader2:
 	trainer EVENT_BEAT_GAUNTLET_CUE_BALL, 2, SilphGauntlet5FBattleText3, SilphGauntlet5FEndBattleText3, SilphGauntlet5FAfterBattleText3
 SilphGauntlet5FTrainerHeader3:

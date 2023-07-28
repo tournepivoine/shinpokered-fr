@@ -66,7 +66,7 @@ SilphGauntlet4FTrainerHeader1:
 SilphGauntlet4FTrainerHeader2:
 	trainer EVENT_BEAT_GAUNTLET_ROCKET, 2, SilphGauntlet4FBattleText3, SilphGauntlet4FEndBattleText3, SilphGauntlet4FAfterBattleText3
 SilphGauntlet4FTrainerHeader3:
-	trainer EVENT_BEAT_GAUNTLET_PSYCHIC, 2, SilphGauntlet4FBattleText4, SilphGauntlet4FEndBattleText4, SilphGauntlet4FAfterBattleText4
+	trainer EVENT_BEAT_GAUNTLET_BIKER, 2, SilphGauntlet4FBattleText4, SilphGauntlet4FEndBattleText4, SilphGauntlet4FAfterBattleText4
 SilphGauntlet4FTrainerHeader4:
 	trainer EVENT_BEAT_GAUNTLET_BURGLAR, 2, SilphGauntlet4FBattleText5, SilphGauntlet4FEndBattleText5, SilphGauntlet4FAfterBattleText5
 SilphGauntlet4FTrainerHeader5:

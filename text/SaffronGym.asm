@@ -55,13 +55,13 @@ _TM46ExplanationText::
 	text_start
 
 	para "TM46 is PSYWAVE!"
-	line "It uses powerful"
-	cont "psychic waves to"
-	cont "inflict damage!"
+	line "It uses psychic"
+	cont "power to inflict"
+	cont "varying damage!"		; text altered to make Psywave's effect more clear
 	
 	para "Also..."
 	
-	para "I sense a ship has" ; This is the use for the badge now, no?
+	para "I sense a ship has" 	; This is the use for the badge now that disobedience is removed
 	line "returned for you."
 	done
 
@@ -130,8 +130,7 @@ _SaffronGymEndBattleText2::
 
 _SaffronGymAfterBattleText2::
 	text "Psychic #MON"
-	line "fear only ghosts"
-	cont "and bugs!"
+	line "fear only bugs!" ; changed to the Yellow version because this guy LIES in RGB
 	done
 
 _SaffronGymBattleText3::

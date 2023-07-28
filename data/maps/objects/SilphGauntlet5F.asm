@@ -9,7 +9,7 @@ SilphGauntlet5F_Object:
 
 	def_object_events
 	object_event 11,  6, SPRITE_ROCKER, STAY, LEFT, 1, OPP_JUGGLER, 6
-	object_event  4, 12, SPRITE_BIKER, STAY, LEFT, 2, OPP_BIKER, 16
+	object_event  4, 12, SPRITE_YOUNGSTER, STAY, RIGHT, 2, OPP_PSYCHIC_TR, 5
 	object_event 16, 14, SPRITE_GAMBLER, STAY, RIGHT, 3, OPP_CUE_BALL, 10
 	object_event  9, 14, SPRITE_SWIMMER, STAY, DOWN, 4, OPP_SWIMMER, 16
 	object_event  3, 14, SPRITE_ROCKER, STAY, DOWN, 5, OPP_TAMER, 6

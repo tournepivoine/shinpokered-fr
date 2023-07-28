@@ -13,7 +13,8 @@ Music_Citrine_branch_a91b:
 	note_type 12, 1, 8
 	octave 4
 	volume_envelope 7, 7
-	vibrato 3, 1, 6
+	vibrato 8, 2, 4
+	duty_cycle 3
 	note E_, 1
 	rest 1
 	octave 3
@@ -196,7 +197,8 @@ Music_Citrine_branch_a9d8:
 	note_type 12, 1, 8
 	octave 4
 	volume_envelope 7, 7
-	vibrato 4, 1, 5
+	vibrato 5, 1, 5
+	duty_cycle 3
 	note E_, 1
 	rest 1
 	note G#, 1
@@ -345,6 +347,7 @@ Music_Citrine_branch_a9d8:
 Music_Citrine_Ch3:
 	note_type 4, 1, 0
 	octave 4
+	volume_envelope 1, 1
 	note E_, 6
 	rest 6
 	octave 3

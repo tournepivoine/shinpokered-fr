@@ -247,9 +247,9 @@ SuperNerdData:
 	db 20, GRIMER, KOFFING, KOFFING, MAGNEMITE, 0
 	db 22, VOLTORB, KOFFING, MAGNETITE, 0
 	db 26, ELECTRODE, 0
-; Unused
-	db 30, PORYGON, 0 ; - used in celadon university
-	db 25, MAGNETITE, ELECTRODE, KABUTO, OMANYTE, 0 ; - used in celadon university
+; Unused - both now used in Celadon University
+	db 30, PORYGON, 0 ;
+	db 25, MAGNETITE, ELECTRODE, KABUTO, OMANYTE, 0 ;
 ; Silph Gauntlet 2F (Mt. Moon)
 	db 63, ELECTRODE, MUK, KABUTOPS, OMASTAR, MAGNEZONE, PORYGONZ, 0
 ; Cinnabar Gym
@@ -317,8 +317,8 @@ BikerData:
 	db 26, KOFFING, KOFFING, GRIMER, KOFFING, 0
 	db 28, GRIMER, GRIMER, SEADRA, 0
 	db 29, MAGMAR, 0
-; Silph Gauntlet 5F (Safari Zone)
-	db 66, GOROTORA, MUK_A, WEEZING, FLAREON, KINGDRA, CHARIZARD, 0
+; Silph Gauntlet 4F (Lavender Tower)
+	db 65, GOROTORA, MUK_A, WEEZING, FLAREON, KINGDRA, CHARIZARD, 0
 
 ; Fire specialist
 BurglarData:
@@ -463,8 +463,8 @@ PsychicData:
 	db 34, MR_MIME, KADABRA, 0
 	db 33, SLOWKING, SLOWBRO, 0 ; not as strong as it looks, has no good attacks
 	db 38, JYNX, 0
-; Silph Gauntlet 4F (Lavender Tower)
-	db 65, SLOWBRO, EXEGGUTOR, STARMIE, MR_RIME, ESPEON, ALAKAZAM, 0 
+; Silph Gauntlet 5F (Safari Zone)
+	db 66, SLOWBRO, EXEGGUTOR, STARMIE, MR_RIME, ESPEON, ALAKAZAM, 0 
 
 ; Electric specialist with depressingly little representation.
 RockerData:
@@ -541,7 +541,7 @@ BirdKeeperData:
 ; Uses Silph products and Steel-types
 ChiefData:
 ; Silph Gauntlet 7F
-	db $FF, 71, MAGNEZONE, 70, LAPRAS, 71, PURAKKUSU, 71, GENGAR, 73, PORYGONZ, 75, OMEGA, 0
+	db $FF, 71, MAGNEZONE, 70, LAPRAS, 71, PURAKKUSU, 70, GENGAR, 73, PORYGONZ, 75, OMEGA, 0
 ; Lapras and Gengar are used here since Lapras is given by a Silph worker, and Gengar represents the Silph Scope.
 
 ; Poison- and Electric-type Pokemon
@@ -750,11 +750,11 @@ JackData:
 ;	db 70, ANIMON, ANNIHILAPE, HITMONLEE, PORYGON2, HITMONCHAN, SCIZOR, 0   ; not 100% sure what to do with this guy...
 
 JessieJamesData:
-	db 15, MEOWTH, EKANS, KOFFING, 0 ; Mt. Moon
-	db 25, MEOWTH, EKANS, LICKITUNG, KOFFING, 0 ; Rocket Hideout
-	db 28, MEOWTH, LICKITUNG, ARBOK, VICTREEBEL, WEEZING, 0 ; Pokemon Tower
-	db 37, MEOWTH, LICKILICKY, ARBOK, VICTREEBEL, WEEZING, GYARADOS, 0 ; Silph Co.
-	db $FF, 80, MEOWTH, 73, LICKILICKY, 75, ARBOK, 73, VICTREEBEL, 75, WEEZING, 71, GYARADOS, 0 ; Citrine Rocket House
+	db $FF, 17, MEOWTH, 14, EKANS, 14, KOFFING, 0 ; Mt. Moon
+	db $FF, 30, MEOWTH, 26, EKANS, 24, LICKITUNG, 26, KOFFING, 0 ; Rocket Hideout
+	db $FF, 34, MEOWTH, 29, ARBOK, 27, LICKITUNG, 29, WEEZING, 27, VICTREEBEL, 0 ; Pokemon Tower
+	db $FF, 42, MEOWTH, 37, ARBOK, 35, LICKILICKY, 37, WEEZING, 35, VICTREEBEL, 34, GYARADOS, 0 ; Silph Co.
+	db $FF, 80, MEOWTH, 75, ARBOK, 73, LICKILICKY, 75, WEEZING, 73, VICTREEBEL, 71, GYARADOS, 0 ; Citrine Rocket House
 
 INCLUDE "data/trainers/scaled_parties.asm"
 INCLUDE "data/trainers/rival_parties.asm"
