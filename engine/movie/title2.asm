@@ -90,9 +90,9 @@ TitleBallYTable:
 TitleScreenAnimateBallIfStarterOut:
 ; Animate the TitleBall if a starter just got scrolled out.
 	ld a, [wTitleMonSpecies]
-	cp VENUSAUR
+	cp GOROCHU
 	jr z, .ok
-	cp CHARIZARD
+	cp SYLVEON
 	jr z, .ok
 	cp TOTARTLE
 	ret nz

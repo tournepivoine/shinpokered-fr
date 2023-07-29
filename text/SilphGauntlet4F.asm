@@ -75,7 +75,7 @@ _SilphGauntlet4FEndBattleText4::
 	line "Awful! Awful!"
 	prompt
 
-_SilphGauntle45FAfterBattleText4::
+_SilphGauntlet4FAfterBattleText4::
 	text "This floor is a"
 	line "graveyard! That"
 	cont "CHIEF has a sick"

@@ -120,7 +120,7 @@ DisplayTitleScreen:
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
 
-	ld a, GYAOON
+	ld a, SCREAM_TAIL
 	ld [wTitleMonSpecies], a
 	call LoadTitleMonSprite
 
