@@ -16,7 +16,7 @@ GainExperience:
 	xor a
 ;	ld [wWhichPokemon], a
 ;	ld hl, wPartyMon1
-	xor a
+;	xor a
 	ld [wWhichPokemon], a
 .partyMonLoop ; loop over each mon and add gained exp
 	inc hl
