@@ -227,8 +227,8 @@ BluesHouseHiddenObjects:
 OaksLabHiddenObjects:
 	hidden_object  4,  0, SPRITE_FACING_UP, DisplayOakLabLeftPoster
 	hidden_object  5,  0, SPRITE_FACING_UP, DisplayOakLabRightPoster
-	hidden_object  0,  1, SPRITE_FACING_UP, DisplayOakLabEmailText
-	hidden_object  1,  1, SPRITE_FACING_UP, DisplayOakLabEmailText
+;	hidden_object  0,  1, SPRITE_FACING_UP, DisplayOakLabEmailText
+;	hidden_object  1,  1, SPRITE_FACING_UP, DisplayOakLabEmailText
 	db -1 ; end
 
 ViridianMartHiddenObjects:
