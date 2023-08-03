@@ -51,7 +51,7 @@ B2FComputer2:
 	
 B2FMissingNo:
 	text_far _B2FMissingNo
-	text_end ; i'll figure this out another time
+	text_end
 
 B2FTrioPods:
 	text_far _TrioPods

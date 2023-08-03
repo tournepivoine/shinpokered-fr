@@ -8,7 +8,6 @@ MrFujisHouse_TextPointers:
 	dw LavenderHouse1Text3
 	dw LavenderHouse1Text4
 	dw LavenderHouse1Text5
-	dw LavenderHouse1Text6
 	dw LavenderHouse1Text7
 
 LavenderHouse1Text1:
@@ -106,10 +105,6 @@ FluteNoRoomText:
 
 MrFujiAfterFluteText:
 	text_far _MrFujiAfterFluteText
-	text_end
-
-LavenderHouse1Text6:
-	text_far _LavenderHouse1Text6
 	text_end
 
 LavenderHouse1Text7:

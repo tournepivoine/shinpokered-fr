@@ -64,7 +64,12 @@ _B2FComputer2::
 	done
 
 _B2FMissingNo::
-	text "" ; no "done" will cause a (hopefully) inconsequential error to appear.
+	text "A multicolored,"
+	line "glitched block"
+	cont "is visible on"
+	cont "this screen."
+
+	done
 
 _TrioPods::
 	text "Stagnant fluid"

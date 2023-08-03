@@ -33,9 +33,9 @@ _Mansion4Text7::
 	line "MEWTWO is far too"
 	cont "powerful."
 
-	text "It's no use..."
+	para "It's no use..."
 	
-	text "I cannot control"
+	para "I cannot control"
 	line "it!"
 	
 	done

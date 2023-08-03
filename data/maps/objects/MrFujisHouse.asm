@@ -13,7 +13,6 @@ MrFujisHouse_Object:
 	object_event  6,  4, SPRITE_SANDSHREW, STAY, UP, 3 ; person
 	object_event  1,  3, SPRITE_BULBASAUR, STAY, NONE, 4 ; person
 	object_event  3,  1, SPRITE_MR_FUJI, STAY, NONE, 5 ; person
-	object_event  3,  3, SPRITE_POKEDEX, STAY, NONE, 6 ; person
-	object_event  0,  4, SPRITE_ODDISH, STAY, NONE, 7 ; person
+	object_event  0,  4, SPRITE_ODDISH, STAY, NONE, 6 ; person
 
 	def_warps_to MR_FUJIS_HOUSE

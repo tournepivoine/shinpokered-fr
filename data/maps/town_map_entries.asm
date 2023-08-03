@@ -109,7 +109,7 @@ InternalMapEntries:
 	internal_map MR_PSYCHICS_HOUSE,             10,  5, SaffronCityName
 	internal_map ROUTE_15_GATE_2F,               9, 13, Route15Name
 	internal_map ROUTE_16_FLY_HOUSE,             4,  5, Route16Name
-	internal_map ROUTE_12_SUPER_ROD_HOUSE,      14, 10, Route12Name
+	internal_map ROUTE_12_SUPER_ROD_HOUSE,      10,  1, Route24Name
 	internal_map ROUTE_18_GATE_2F,               7, 13, Route18Name
 	internal_map SEAFOAM_ISLANDS_1F,             5, 15, SeafoamIslandsName
 	internal_map ROUTE_22_GATE,                  0,  7, Route22Name
@@ -121,7 +121,7 @@ InternalMapEntries:
 	internal_map ROCKET_HIDEOUT_ELEVATOR,        7,  5, RocketHQName
 	internal_map CITRINE_MART,                   7, 10, CitrineCityName
 	internal_map GARNET_CAVERN_B1F,              6, 10, GarnetCavernName
-;	internal_map SILPH_CO_8F,                   10,  5, SilphCoName
+	internal_map SILPH_CO_7F,                   10,  5, SilphCoName
 	internal_map POKEMON_MANSION_B1F,            2, 15, PokemonMansionName
 	internal_map SAFARI_ZONE_NORTH_REST_HOUSE,   8, 12, SafariZoneName
 	internal_map CERULEAN_CAVE_1F,               9,  1, CeruleanCaveName

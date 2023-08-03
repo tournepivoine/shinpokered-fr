@@ -38,7 +38,7 @@ _CitrineCityCavern::
 	done
 
 _CitrineCityDirections::
-	para "NORTH WEST:"
+	text "NORTH WEST:"
 	line "BATTLE TOWER"
 	
 	para "NORTH EAST:"

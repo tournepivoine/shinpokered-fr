@@ -3,7 +3,7 @@ _YujirouIntro::
 	line "VIRIDIAN's LEADER-"
 	cont "to-be!"
 	
-	para "Me and LICKITUNG"
+	para "Me and my #MON"   ; originally Lickitung, but didn't work when taking rematches into account
 	line "will beat anyone"
 	cont "who comes our"
 	cont "way!"
@@ -28,9 +28,9 @@ _YujirouAfterBattleText::
 	para "..."
 	
 	para "I won't give up!"
-	line "Me and LICKITUNG"
-	cont "will train until"
-	cont "become the best"
+	line "I'll train with"
+	cont "my POKEMON until"
+	cont "we're the best"
 	cont "there is!"
 	
 	para "One day, we will"
@@ -39,7 +39,7 @@ _YujirouAfterBattleText::
 	done
 
 _YujirouIntro2::
-	text "Hey! You're back!"
+	text "Hey! It's you!"
 	
 	para "After GIOVANNI got"
 	line "exposed for who"
@@ -145,13 +145,13 @@ _ViridianPreGymSign3::
 	cont "sometimes hurt"
 	cont "itself!"
 	
-	para "It does not remain"
-	line "after battles."
+	para "It will be cured"
+	line "after a battle."
 	
-	para "It can also be"
-	line "cured by swapping"
-	cont "your #MON during"
-	cont "the battle!"
+	para "Switching out a"
+	line "confused #MON"
+	cont "will also cure"
+	cont "it!"
 	done
 
 _ViridianPreGymSign4::

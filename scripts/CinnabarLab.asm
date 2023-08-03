@@ -4,11 +4,11 @@ CinnabarLab_Script:
 
 CinnabarLab_TextPointers:
 	dw Lab1Text1
+	dw Lab1RowanText
 	dw Lab1Text2
 	dw Lab1Text3
 	dw Lab1Text4
 	dw Lab1Text5
-	dw Lab1Text6 ; rowan
 
 Lab1Text1:
 	text_far _Lab1Text1
@@ -30,6 +30,6 @@ Lab1Text5:
 	text_far _Lab1Text5
 	text_end
 
-Lab1Text6:
+Lab1RowanText:
 	text_far _Lab1Text6
 	text_end

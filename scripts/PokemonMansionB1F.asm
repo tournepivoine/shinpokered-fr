@@ -49,7 +49,7 @@ Mansion4Script_Switches::
 	ret nz
 	xor a
 	ldh [hJoyHeld], a
-	ld a, $9
+	ld a, $a
 	ldh [hSpriteIndexOrTextID], a
 	jp DisplayTextID
 
@@ -67,8 +67,8 @@ PokemonMansionB1F_TextPointers:
 	dw PickUpItemText
 	dw Mansion4Text7
 	dw PickUpItemText
-	dw Mansion3Text6
 	dw MansionGuardText
+	dw Mansion3Text6
 
 Mansion4TrainerHeaders:
 	def_trainers
