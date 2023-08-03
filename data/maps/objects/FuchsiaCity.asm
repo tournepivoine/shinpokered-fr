@@ -2,7 +2,7 @@ FuchsiaCity_Object:
 	db $f ; border block
 
 	def_warp_events
-	warp_event  5, 13, FUCHSIA_MART, 1
+	warp_event 15, 19, FUCHSIA_MART, 1
 	warp_event 11, 27, FUCHSIA_BILLS_GRANDPAS_HOUSE, 1
 	warp_event 19, 27, FUCHSIA_POKECENTER, 1
 	warp_event 27, 27, WARDENS_HOUSE, 1
@@ -15,7 +15,7 @@ FuchsiaCity_Object:
 	def_bg_events
 	bg_event 25, 17, 12 ; FuchsiaCityText12
 	bg_event 17,  5, 13 ; FuchsiaCityText13
-	bg_event  6, 13, 14 ; MartSignText
+	bg_event 16, 19, 14 ; MartSignText
 	bg_event 20, 27, 15 ; PokeCenterSignText
 	bg_event 27, 29, 16 ; FuchsiaCityText16
 	bg_event 21, 17, 17 ; FuchsiaCityText17

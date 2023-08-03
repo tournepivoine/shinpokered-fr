@@ -80,8 +80,8 @@ There are some new items here, with the aim of accomodating new Pokemon, adding 
 - The Wing Fossil is a new item that allows Aerodactyl to be revived, as the Old Amber is instead used for Decilla. It's hidden in Mt. Moon.
 - The Tea from FireRed/LeafGreen and Let's Go Pikachu/Eevee is added, allowing Saffron access for free. The guards now imply they want a cup of tea.
 	- This also accomodates Mt. Moon Square's shop, which would otherwise break progression due to its contents. Hint hint!
-- The Ice, Poison and Heart Stones have been added, the latter two being from the SpaceWorld '97 demo.
-	- Additional evolution items include the Protector, Black Augurite, Up-Grade, Dubious Disc, and the Metal Coat.
+- The Ice, Poison and Heart Stones have been added, the latter two being from the SpaceWorld '97 demo. These can be obtained in Fuchsia City.
+	- Additional evolution items include the Protector, Black Augurite, Up-Grade, Dubious Disc, and the Metal Coat. These can be obtained in various locations in-game, but the post-game island has renewable options as well.
 - To accomodate Meltan, the Mystery Box from Pokemon GO is featured. When used, wild encounters are replaced with Meltan until one leaves the location. It can be obtained in the Safari Zone.
 	- The Candy Jar is a new key item that allows Meltan Candy to be collected. Defeating a Meltan rewards 10 Candy, and once 400 are collected, it turns into an evolution item to evolve Meltan into Melmetal. It can be obtained in the Indigo Plateau Lobby.
 - The Bottle Cap has been added alongside a Hyper Training feature, acting as effectively a Gold Bottle Cap.
