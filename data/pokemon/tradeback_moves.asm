@@ -530,6 +530,8 @@ GyaoonTradebackMoves:
 	db 1, THUNDERPUNCH ; TM
 	db 1, FIRE_PUNCH ; TM
 	db 1, FLAMETHROWER ; Tutor
+	db 1, THRASH ; Egg Move
+	db 1, LICK ; Egg Move
 	db 0
 
 NidoreignTradebackMoves:
@@ -682,6 +684,7 @@ BarundaTradebackMoves:
 	db 1, PSYBEAM ; Egg Move from Psychic-types.
 	db 1, HYPNOSIS ; Egg Move from Psychic-types, interesting buff.
 	db 1, MINIMIZE ; Egg Move from...Chansey?
+	db 1, SPLASH ; Egg Move
 	db 0
 
 MagmarTradebackMoves:
@@ -769,19 +772,24 @@ TrampelTradebackMoves:
 	db 1, FIRE_PUNCH ; TM
 	db 1, THUNDERPUNCH ; TM
 	db 1, COMET_PUNCH ; Egg Move from Kangaskhan
+	db 1, THRASH ; Egg Move
 	db 0
 
 CrockyTradebackMoves:
 	db 1, HEADBUTT ; TM
-	db 1, ROAR ; TM
 	db 1, GROWL ; New Level-Up Move
+	db 1, FIRE_PUNCH ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, SWORDS_DANCE ; Egg Move from Charmander
+	db 1, FLAMETHROWER ; Tutor
 	db 0
 
 BlottleTradebackMoves:
-	db 1, HEADBUTT ; TM, bit of a stretch but seems fine
 	db 1, POISON_GAS ; Legacy Egg Move
 	db 1, SMOG ; Legacy Egg Move
 	db 1, PSYBEAM ; Egg Move
+	db 1, WATERFALL ; HM
+	db 1, AURORA_BEAM ; Egg Move
 	db 0
 
 FarfetchdTradebackMoves:
@@ -814,13 +822,16 @@ DragoniteTradebackMoves:
 CactusTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
-	db 1, MINIMIZE ; Egg Move..?
+	db 1, SWORDS_DANCE ; Egg Move
+	db 1, LEECH_SEED ; Egg Move
 	db 0
 
 JaggTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, ROAR ; TM
 	db 1, SHARPEN ; NYPC-like Event
+	db 1, THRASH ; Egg Move
+	db 1, AGILITY ; Egg Move
 	db 0
 
 BittybatTradebackMoves:
@@ -894,6 +905,7 @@ KrabbyTradebackMoves:
 
 CheepTradebackMoves:
 	db 1, HEADBUTT ; TM
+	db 1, WATERFALL ; HM
 	db 1, DOUBLE_KICK ; Egg Move
 	db 1, WING_ATTACK ; Egg Move (from Sato?)
 	db 0
@@ -901,8 +913,12 @@ CheepTradebackMoves:
 JabettaTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, ROAR ; TM
+	db 1, ICE_PUNCH ; TM
+	db 1, WATERFALL ; HM
 	db 1, DOUBLE_KICK ; Egg Move
 	db 1, WING_ATTACK ; Egg Move (from Sato?)
+	db 1, AURORA_BEAM ; Egg Move
+	db 1, AGILITY ; Egg Move
 	db 0
 
 MikonTradebackMoves:
@@ -1233,10 +1249,11 @@ PurakkusuTradebackMoves:
 	db 0
 
 PendrakenTradebackMoves:
-	db 1, HEADBUTT ; TM, bit of a stretch but seems fine
 	db 1, POISON_GAS ; Legacy Egg Move
 	db 1, SMOG ; Legacy Egg Move
 	db 1, PSYBEAM ; Egg Move
+	db 1, WATERFALL ; HM
+	db 1, AURORA_BEAM ; Egg Move
 	db 0
 
 CaterpieTradebackMoves:
@@ -1368,6 +1385,8 @@ DecillaTradebackMoves:
 	db 1, THUNDERPUNCH ; TM
 	db 1, FIRE_PUNCH ; TM
 	db 1, FLAMETHROWER ; Tutor
+	db 1, THRASH ; Egg Move
+	db 1, LICK ; Egg Move
 	db 0
 
 KinglerTradebackMoves:
@@ -1530,18 +1549,24 @@ KotoraTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, SCREECH ; Egg Move, likely from Persian.
+	db 1, CHARM ; Egg Move
+	db 1, THRASH ; Egg Move
 	db 0
 
 GaotoraTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, SCREECH ; Egg Move, likely from Persian.
+	db 1, CHARM ; Egg Move
+	db 1, THRASH ; Egg Move
 	db 0
 
 GorotoraTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, SCREECH ; Egg Move, likely from Persian.
+	db 1, CHARM ; Egg Move
+	db 1, THRASH ; Egg Move
 	db 0
 
 PuchikoonTradebackMoves:
@@ -2135,6 +2160,7 @@ RapidashGTradebackMoves:
 	db 1, THRASH
 	db 1, LOW_KICK
 	db 1, FURY_ATTACK
+	db 1, DREAM_EATER
 	db 0
 	
 SlowbroGTradebackMoves:
