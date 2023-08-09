@@ -524,7 +524,12 @@ TangelaTradebackMoves:
 	db 0
 
 GyaoonTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, ICE_PUNCH ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, FLAMETHROWER ; Tutor
 	db 0
 
 NidoreignTradebackMoves:
@@ -672,7 +677,11 @@ GolemTradebackMoves:
 	db 0
 
 BarundaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, PSYBEAM ; Egg Move from Psychic-types.
+	db 1, HYPNOSIS ; Egg Move from Psychic-types, interesting buff.
+	db 1, MINIMIZE ; Egg Move from...Chansey?
 	db 0
 
 MagmarTradebackMoves:
@@ -685,7 +694,13 @@ MagmarTradebackMoves:
 	db 0
 
 BuuTradebackMoves:
-	
+	db 1, THUNDERPUNCH ; TM
+	db 1, HEADBUTT ; TM
+	db 1, DIZZY_PUNCH ; Odd Egg
+	db 1, BARRIER ; Egg Move
+	db 1, KARATE_CHOP ; Egg Move
+	db 1, SCREECH ; Egg Move
+	db 1, ROLLING_KICK ; Egg Move. Like Electabuzz, but I think it's athletic enough.
 	db 0
 
 ElectabuzzTradebackMoves:
@@ -712,7 +727,9 @@ KoffingTradebackMoves:
 	db 0
 
 DeerTradebackMoves:
-	
+	db 1, HEADBUTT ; TM, oh boy
+	db 1, ROAR ; TM
+	db 1, QUICK_ATTACK ; Egg Move
 	db 0
 
 MankeyTradebackMoves:
@@ -746,15 +763,25 @@ TaurosTradebackMoves:
 	db 0
 
 TrampelTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, COMET_PUNCH ; Egg Move from Kangaskhan
 	db 0
 
 CrockyTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, GROWL ; New Level-Up Move
 	db 0
 
 BlottleTradebackMoves:
-	
+	db 1, HEADBUTT ; TM, bit of a stretch but seems fine
+	db 1, POISON_GAS ; Legacy Egg Move
+	db 1, SMOG ; Legacy Egg Move
+	db 1, PSYBEAM ; Egg Move
 	db 0
 
 FarfetchdTradebackMoves:
@@ -785,11 +812,15 @@ DragoniteTradebackMoves:
 	db 0
 
 CactusTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, MINIMIZE ; Egg Move..?
 	db 0
 
 JaggTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, SHARPEN ; NYPC-like Event
 	db 0
 
 BittybatTradebackMoves:
@@ -862,11 +893,16 @@ KrabbyTradebackMoves:
 	db 0
 
 CheepTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DOUBLE_KICK ; Egg Move
+	db 1, WING_ATTACK ; Egg Move (from Sato?)
 	db 0
 
 JabettaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, DOUBLE_KICK ; Egg Move
+	db 1, WING_ATTACK ; Egg Move (from Sato?)
 	db 0
 
 MikonTradebackMoves:
@@ -910,11 +946,19 @@ RaichuTradebackMoves:
 	db 0
 
 RibbitoTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, THUNDERPUNCH ; TM, seems REALLY cool
+	db 1, ICE_PUNCH ; TM
+	db 1, LOW_KICK ; Egg Move, gives something to use with Swords Dance. Breaks Normal-types...sorta.
+	db 1, HAZE ; Egg Move
 	db 0
 
 CroakozunaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, THUNDERPUNCH ; TM, seems REALLY cool
+	db 1, ICE_PUNCH ; TM
+	db 1, LOW_KICK ; Egg Move, gives something to use with Swords Dance. Breaks Normal-types...sorta.
+	db 1, HAZE ; Egg Move
 	db 0
 
 DratiniTradebackMoves:
@@ -977,11 +1021,18 @@ SeadraTradebackMoves:
 	db 0
 
 BawliguaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, THRASH ; Egg Move from Totodile
+	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
+	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
 	db 0
 
 CryithanTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, THRASH ; Egg Move from Totodile
+	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
+	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
 	db 0
 
 SandshrewTradebackMoves:
@@ -1182,7 +1233,10 @@ PurakkusuTradebackMoves:
 	db 0
 
 PendrakenTradebackMoves:
-	
+	db 1, HEADBUTT ; TM, bit of a stretch but seems fine
+	db 1, POISON_GAS ; Legacy Egg Move
+	db 1, SMOG ; Legacy Egg Move
+	db 1, PSYBEAM ; Egg Move
 	db 0
 
 CaterpieTradebackMoves:
@@ -1287,8 +1341,14 @@ KonyaTradebackMoves:
 	db 1, HYPNOSIS
 	db 0
 
+; Omegedge will be unable to breed.
 OmegaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROAR ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, FLAMETHROWER ; Tutor
 	db 0
 
 MukTradebackMoves:
@@ -1302,7 +1362,12 @@ MukTradebackMoves:
 	db 0
 
 DecillaTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, ICE_PUNCH ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, FLAMETHROWER ; Tutor
 	db 0
 
 KinglerTradebackMoves:
@@ -1460,16 +1525,23 @@ SeakingTradebackMoves:
 	db 1, SWORDS_DANCE
 	db 0
 
+; Ok so Kotora LITERALLY has a learnset...but we used it already.
 KotoraTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, SCREECH ; Egg Move, likely from Persian.
 	db 0
 
 GaotoraTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, SCREECH ; Egg Move, likely from Persian.
 	db 0
 
 GorotoraTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, SCREECH ; Egg Move, likely from Persian.
 	db 0
 
 PuchikoonTradebackMoves:
@@ -1583,7 +1655,10 @@ MagnemiteTradebackMoves:
 	db 0
 
 SkimperTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, THRASH ; Egg Move from Totodile
+	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
+	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
 	db 0
 
 GorochuTradebackMoves:
@@ -1656,17 +1731,17 @@ TotartleTradebackMoves:
 	db 1, MIST
 	db 1, ROAR
 	db 0
-	
+
 ArticunoGTradebackMoves:
-	
+	db 1, ROAR ; TM
 	db 0
 
 ZapdosGTradebackMoves:
-	
+	db 1, ROAR ; TM
 	db 0
 
 MoltresGTradebackMoves:
-	
+	db 1, ROAR ; TM
 	db 0
 
 OddishTradebackMoves:
@@ -1895,7 +1970,8 @@ KasanagiTradebackMoves:
 	db 0
 
 CarapthorTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ABSORB ; Egg Move from Parasect
 	db 0
 	
 MagnezoneTradebackMoves:
@@ -1918,59 +1994,91 @@ AnnihilapeTradebackMoves:
 	db 0
 
 ScreamTailTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DREAM_EATER ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, ICE_PUNCH ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, FLAMETHROWER ; Tutor
 	db 0
 
 SandyShocksTradebackMoves:
-	
+	db 1, TRI_ATTACK ; Crystal Level-Up move on Magneton, would add here too
 	db 0
 
 WiglettTradebackMoves:
-	
+	db 1, SCREECH ; Egg Move
 	db 0
 
 WugtrioTradebackMoves:
-	
+	db 1, SCREECH ; Egg Move
 	db 0
 
 ToedscoolTradebackMoves:
-	
+	db 1, GROWTH ; Egg Move
 	db 0
 
 ToedscruelTradebackMoves:
-	
+	db 1, GROWTH ; Egg Move, apocalypse surely???? /s
 	db 0
-	
+
+; I was hoping to give this Hypnosis but Galarian Meowth specifically doesn't get it. L.
 PerrserkerTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DEFENSE_CURL ; TM
+	db 1, ROAR ; TM
+	db 1, AMNESIA ; Egg Move. Yes, it gets this.
 	db 0
 
 SirfetchdTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, ROLLING_KICK ; Egg Move. As a treat.
+	db 1, QUICK_ATTACK ; Egg Move
 	db 0
 
+; Mr. Mime's - nothing I would add
 MrRimeTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
+	db 1, DREAM_EATER ; TM
+	db 1, THUNDERPUNCH ; TM
+	db 1, FIRE_PUNCH ; TM
+	db 1, ICE_PUNCH ; TM
+	db 1, HYPNOSIS ; Egg Move
+	db 1, PSYBEAM ; Egg Move
 	db 0
 	
 MeltanTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
 	db 0
 
 MelmetalTradebackMoves:
-	
+	db 1, HEADBUTT ; TM
 	db 0
 	
+; Much of the regional forms have the same rough learnsets, so I'm applying and adapting them. Has some cool results.
+
 ArcanineHTradebackMoves:
-	
+	db 1, FIRE_SPIN ; Egg Move
+	db 1, HEADBUTT ; TM
+	db 1, THRASH ; Egg Move
 	db 0
 	
-ElectrodeHTradebackMoves:
-	
+ElectrodeHTradebackMoves: ; No Agility cus NYPC
+	db 1, HEADBUTT ; TM
 	db 0
-	
+
+; Raticate's, nothing to add or take away
+; Counter Dark-type is funny.
 RaticateATradebackMoves:
-	
+	db 1, DEFENSE_CURL
+	db 1, HEADBUTT
+	db 1, BITE
+	db 1, COUNTER
+	db 1, FURY_SWIPES
+	db 1, SCREECH
+	db 1, ROAR
+	db 1, CUT
+	db 1, STRENGTH
 	db 0
 	
 RaichuATradebackMoves:
@@ -1983,41 +2091,76 @@ RaichuATradebackMoves:
 	db 1, PETAL_DANCE
 	db 1, SING
 	db 0
-	
+
+; Sandslash's
 SandslashATradebackMoves:
-	
+	db 1, COUNTER ; Egg Move
+	db 1, DEFENSE_CURL ; TM
+	db 1, HEADBUTT ; TM
 	db 0
 	
 NinetalesATradebackMoves:
-	
+	db 1, DISABLE
+	db 1, HEADBUTT
+	db 1, HYPNOSIS
 	db 0
 
 DugtrioATradebackMoves:
-	
+	db 1, SCREECH
+	db 1, TRI_ATTACK
 	db 0
 	
 PersianATradebackMoves:
-	
+	db 1, DEFENSE_CURL
+	db 1, DREAM_EATER
+	db 1, HEADBUTT
+	db 1, AMNESIA
+	db 1, HYPNOSIS
+	db 1, ROAR
 	db 0
 	
 GolemATradebackMoves:
-	
+	db 1, FIRE_PUNCH
+	db 1, THUNDERPUNCH
+	db 1, HEADBUTT
+	db 1, FLAMETHROWER
 	db 0
 	
 RapidashGTradebackMoves:
-	
+	db 1, TACKLE
+	db 1, HEADBUTT
+	db 1, DOUBLE_KICK
+	db 1, HYPNOSIS
+	db 1, QUICK_ATTACK
+	db 1, THRASH
+	db 1, LOW_KICK
+	db 1, FURY_ATTACK
 	db 0
 	
 SlowbroGTradebackMoves:
-	
+	db 1, TACKLE
+	db 1, DREAM_EATER
+	db 1, FLAMETHROWER
+	db 1, STOMP
+	db 1, ICE_PUNCH
 	db 0
 
 SlowkingGTradebackMoves:
-	
+	db 1, TACKLE
+	db 1, DREAM_EATER
+	db 1, FLAMETHROWER
+	db 1, STOMP
+	db 1, ICE_PUNCH
 	db 0
 
 MukATradebackMoves:
-	
+	db 1, HEADBUTT
+	db 1, FLAMETHROWER
+	db 1, THUNDERPUNCH
+	db 1, FIRE_PUNCH
+	db 1, ICE_PUNCH
+	db 1, HAZE
+	db 1, LICK
 	db 0
 
 ExeggutorATradebackMoves:
@@ -2045,15 +2188,26 @@ WeezingGTradebackMoves:
 	db 0
 
 TaurosPTradebackMoves:
-	
+	db 1, HORN_ATTACK
+	db 1, THRASH
+	db 1, HEADBUTT
+	db 1, QUICK_ATTACK
 	db 0
 
 TaurosPATradebackMoves:
-	
+	db 1, HORN_ATTACK
+	db 1, THRASH
+	db 1, SURF
+	db 1, HEADBUTT
+	db 1, QUICK_ATTACK
 	db 0
 
 TaurosPBTradebackMoves:
-	
+	db 1, HORN_ATTACK
+	db 1, THRASH
+	db 1, HEADBUTT
+	db 1, FLAMETHROWER
+	db 1, QUICK_ATTACK
 	db 0
 	
 FossilKabutopsTradebackMoves:
