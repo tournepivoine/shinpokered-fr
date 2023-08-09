@@ -71,11 +71,11 @@ _NidokingDexEntry:: ; new entry
 _SlowbroDexEntry:: ; new entry
 	text "A SLOWPOKE that"
 	next "hunts in the sea"
-	next "will occasionally"
+	next "may be bitten by"
 	
-	page "be bitten by a"
-	next "TAABAN, causing"
-	next "it to evolve"
+	page "a wild DISTURBAN,"
+	next "making it evolve"
+	next "into SLOWBRO"
 	dex
 
 _IvysaurDexEntry::
@@ -701,13 +701,13 @@ _PikachuDexEntry:: ; new entry
 	dex
 
 _RaichuDexEntry:: ; new entry, reworded since Trampel is a Ground type so cannot be KO'd by an electric move...
-	text "Even a TRAMPEL's"
-	next "thick skin would"
-	next "struggle to handle"
+	text "A THUNDERBOLT from"
+	next "RAICHU contains"
+	next "such high voltage"
 
-	page "RAICHU's shocks,"
-	next "which can reach"
-	next "100,000 volts"
+	page "that a TRAMPEL's"
+	next "thick skin can't"
+	next "withstand it"
 	dex
 
 _DratiniDexEntry:: ; new entry, doctored the entry with the originally intended lore.
@@ -1297,7 +1297,7 @@ _SeakingDexEntry:: ; new entry
 
 	page "boulders to"
 	next "prepare for"
-	next "spawning GYOPIN"
+	next "spawning ORFRY"
 	dex
 
 _PonytaDexEntry:: ; new entry

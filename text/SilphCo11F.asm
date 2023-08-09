@@ -4,7 +4,7 @@ _SilphCoPresidentText::
 	cont "SILPH!"
 	
 	para "And...sorry about"
-	line "that OMEGA model."
+	line "that OMEGADGE."
 	cont "It must have seen"
 	cont "you as a threat."
 	
@@ -61,7 +61,7 @@ _SilphCo11Text2::
 	line "you for rescuing"
 	cont "all of us!"
 
-	para "Hmm? OMEGA?"
+	para "Hmm? OMEGADGE?"
 	
 	para "All I know is the"
 	line "CHIEF quickly"

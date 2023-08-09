@@ -2931,18 +2931,18 @@ ScreamTailEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 51, SCREECH
-	db 55, DAZZLE_GLEAM
-	db 55, DRAININGKISS
+	db 56, SCREECH
+	db 63, DAZZLE_GLEAM
+	db 70, DRAININGKISS
 	db 0
 
 SandyShocksEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 51, SUPERSONIC
-	db 55, SCREECH
-	db 55, METAL_SOUND
+	db 56, SUPERSONIC
+	db 63, SCREECH
+	db 70, EARTHQUAKE
 	db 0
 
 WiglettEvosMoves:
@@ -3169,7 +3169,7 @@ PersianAEvosMoves:
 	db 22, FEINT_ATTACK
 	db 30, PAY_DAY
 	db 33, SLASH
-;	db 38, NASTY_PLOT
+	db 38, NASTY_PLOT
 	db 49, NIGHT_SLASH
 	db 0
 	

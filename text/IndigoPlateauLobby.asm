@@ -41,7 +41,7 @@ _ReceivedCandyJarText::
 	text_end
 
 _CandyJarExplanationText::
-	text "Me and CRYITHAN"
+	text "Me and IGUANARCH"
 	line "are so ready for"
 	cont "the LEAGUE!"
 	

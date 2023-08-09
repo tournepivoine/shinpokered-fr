@@ -17,13 +17,14 @@ _SilphGauntlet4FEndBattleText1::
 	prompt
 
 _SilphGauntlet4FAfterBattleText1::
-	text "Good job getting"
-	line "past our OMEGA,"
-	cont "too."
-	
-	para "We had trouble"
+	text "We had trouble"
 	line "controlling that"
-	cont "brute!"
+	cont "OMEGADGE brute!"
+
+	para "I've noted down"
+	line "some flaws we"
+	cont "must fix in the"
+	cont "next model..."
 	done
 
 _SilphGauntlet4FBattleText2::

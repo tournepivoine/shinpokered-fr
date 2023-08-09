@@ -69,9 +69,9 @@ _KotoraDexEntry::
 	dex
 
 _JaggDexEntry::
-	text "Known as the"
+	text "Also known as the"
 	next "Sailor's Scourge,"
-	next "it rams its"
+	next "SHARPOON rams its"
 
 	page "proud horn into"
 	next "the hulls of"
@@ -139,13 +139,13 @@ _RibbitoDexEntry::
 	dex
 
 _CryithanDexEntry::
-	text "During a battle,"
-	next "this #MON cries"
-	next "to dishearten the"
+	text "Highly aggressive,"
+	next "it drives other"
+	next "#MON away with"
 
-	page "enemy. It strikes"
-	next "once the foe lets"
-	next "its guard down"
+	page "its strong tail"
+	next "before finishing"
+	next "them with SLASH"
 	dex
 
 _BlastykeDexEntry::
@@ -179,13 +179,13 @@ _SkimperDexEntry::
 	dex
 
 _BawliguaDexEntry::
-	text "Often basks in"
-	next "the sunlight. If"
-	next "its temperature"
+	text "Often climbs atop"
+	next "branches to feast"
+	next "on foliage. When"
 
-	page "rises too high,"
-	next "it cries to"
-	next "cool itself down"
+	page "under attack, it"
+	next "stuns foes with an"
+	next "unnerving GLARE"
 	dex
 
 _PuchikoonDexEntry::		; referenced from various Ponyta entries. Funny how both Vulpix and Ponyta do this...
@@ -283,7 +283,7 @@ _OmegaDexEntry::
 	next "by SILPH CO."
 	next "Modeled after the"
 
-	page "extinct GYAOON,"
+	page "extinct GAWARHED,"
 	next "it's said to pack"
 	next "devastating power"
 	dex
@@ -394,8 +394,8 @@ _TaabanDexEntry::
 	next "While draining its"
 
 	page "host's nutrients,"
-	next "TAABAN injects it"
-	next "with potent venom"
+	next "DISTURBAN injects"
+	next "it with venom"
 	dex
 
 _KokanaDexEntry::
@@ -481,9 +481,9 @@ _UmbreonDexEntry::	; Entry alludes to its scrapped Poison type, and I thought it
 _LeafeonDexEntry::
 	text "It has a distinct"
 	next "aroma that changes"
-	next "with age. A"
+	next "with age. While"
 
-	page "younger LEAFEON"
+	page "it's young, it"
 	next "typically smells"
 	next "like fresh grass"
 	dex
@@ -529,7 +529,7 @@ _PolitoedDexEntry::
 	dex
 
 _SlowkingDexEntry::
-	text "TAABAN's poison"
+	text "DISTURBAN's venom"
 	next "stimulated its"
 	next "brain, making it"
 
@@ -909,17 +909,17 @@ _RapidashGDexEntry::
 	dex
 
 _SlowbroGDexEntry::
-	text "The TAABAN that"
+	text "The DISTUBAN that"
 	next "bit SLOWBRO has"
 	next "made it poisonous."
 	
-	page "TAABAN's tongue"
+	page "DISTURBAN's tongue"
 	next "can be squeezed"
 	next "to spit poison"
 	dex
 
 _SlowkingGDexEntry::
-	text "The TAABAN that"
+	text "The DISTURBAN that"
 	next "bit SLOWKING has"
 	next "assumed control."
 	
