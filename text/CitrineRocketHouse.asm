@@ -85,6 +85,9 @@ _JamesSeesBottleCap::
 	cont "I'll make your"
 	cont "#MON a little"
 	cont "stronger!"
+	
+	para "You'll only need"
+	line "to do it once!"
 	done
 
 _JamesYes::

@@ -341,7 +341,7 @@ OaksLabHS:
 	db OAKS_LAB, $02, SHOW                    ; HS_STARTER_BALL_1
 	db OAKS_LAB, $03, SHOW                    ; HS_STARTER_BALL_2
 	db OAKS_LAB, $04, SHOW                    ; HS_STARTER_BALL_3
-	db OAKS_LAB, $05, SHOW                    ; HS_OAKS_LAB_OAK_1
+	db OAKS_LAB, $05, HIDE                    ; HS_OAKS_LAB_OAK_1
 	db OAKS_LAB, $07, SHOW                    ; HS_STARTER_BALL_4
 	db OAKS_LAB, $08, SHOW                    ; HS_STARTER_BALL_5
 	db OAKS_LAB, $06, HIDE                    ; HS_OAKS_LAB_OAK_2

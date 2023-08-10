@@ -71,6 +71,7 @@ JamesText:
 	; Thanks to Vimescarrot for giving me pointers on this!
 	ld a, [wWhichPokemon] ; Find the Pokemon's position in party.
 	ld hl, wPartyMon1DVs ; Load DVs into hl
+	
 	ld bc, wPartyMon2 - wPartyMon1 ; This gets to the right slot for DVs
 	call AddNTimes ; Gets us there
 	ld a, %11111111 ; Load FFFF FFFF, perfect 15s
@@ -98,10 +99,13 @@ JamesText:
 	ld hl, JamesNoCap
 	call PrintText
 	jr .done
+.alreadyTrained
+	ld hl, JamesAlreadyTrained
+	call PrintText
+	jr .done
 .refused
 	ld hl, JamesNo
 	call PrintText
-	jr .done
 .done
 	jp TextScriptEnd
 
@@ -195,4 +199,11 @@ JamesNo:
 
 JamesDone:
 	text_far _JamesDone
+	text_end
+
+JamesAlreadyTrained:
+	text "That #MON is"
+	line "strong enough"
+	cont "already!"
+	done
 	text_end
