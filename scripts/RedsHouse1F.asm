@@ -48,7 +48,7 @@ ChiefLetter2:
 	ld a, $1 ; Load Mom's NPC ID
 	ldh [hSpriteIndex], a ; Slap it in the index
 	ld a, SPRITE_FACING_RIGHT ; Get this ready
-	ldh [hSpriteFacingDirection], a ; Now she'll face right, simulatiung talking to her.
+	ldh [hSpriteFacingDirection], a ; Now she'll face right, simulating talking to her.
 	call SetSpriteFacingDirectionAndDelay ; Get this all out.
 	call DisplayTextID ; Display her text ID, using the same thing from before.
 	; We did a little tomfoolery with her base text to make this work. Look below if you dare.

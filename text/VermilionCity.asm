@@ -163,12 +163,11 @@ _VermillionCityCitrinePass::
 	text "<PLAYER> flashed"
 	line "the CITRINE PASS!"
 
-	para "Ah! You must be"
-	line "pretty strong to"
-	cont "have this PASS!"
+	para "Crikey!"
 	
-	para "Come on, come"
-	line "on!"
+	para "Right this way!"
+	line "I can't believe"
+	cont "it..."
 	done
 
 _VermillionCityHarborRefuse::
