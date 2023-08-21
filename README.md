@@ -287,6 +287,7 @@ v1.23.15
 - Fixed some debugging features
 - Press and hold A+SELECT at the title screen to print the current RNG seed at the main menu
 - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
+- Improved fade-to-black and fade-to-white transitions when playing on GBC in 60FPS mode
 
 
 #Bugfixes
@@ -590,6 +591,7 @@ v1.23.15
   - Feature is a proof-of-concept and is still a bit rusty
   - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
   - Takes advantage of double-speed CPU mode when played as a GBC game
+- Improved fade-to-black and fade-to-white transitions when playing on GBC in 60FPS mode
 - Starting a New Game while in GBC-mode will default 60FPS mode to ON
 - Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
 - A hard mode option has been added to provide increased difficulty

@@ -1,6 +1,8 @@
 **New features exclusively for the master branch**
 - Added nuzlocke mode
 
+- Hold SELECT and press START on the bag menu to auto-sort your items
+
 - The girl in Oak's lab toggles a built-in randomizer for wild pokemon and your starters
   - Shuffles all pokemon that can be gained through walking, surfing, fishing, or from the game corner
   - If activated early enough, your starter pokemon options are shuffled as well
@@ -185,6 +187,7 @@
 - The 60fps mode has better performance when playing in GBC-mode
   - Does this by using the double-speed feature of the GBC's processor 
   - Uses more battery as a trade-off
+- Improved fade-to-black and fade-to-white transitions when playing on GBC in 60FPS mode
   
 - Added optimizations to how OAM data is prepared so that overworld sprites wobble less
 
