@@ -32,6 +32,12 @@ PlayBattleMusic::
 	jr z, .legendaryBattle
 	cp ELECTRODE
 	jr z, .legendaryBattle
+	cp DRATINI ; In the Tajiri lore, the Dratini family is considered legendary. Also, we have a static Dragonite. I think the appearance of Dratini in the Safari Zone with this theme could also add some reeeeeal nice hype to the whole ordeal.
+	jr z, .legendaryBattle
+	cp DRAGONAIR
+	jr z, .legendaryBattle
+	cp DRAGONITE
+	jr z, .legendaryBattle
 	cp ARTICUNO_G ; Temporary - plans for galar bird themes have been made.
 	jr z, .legendaryBattle
 	cp ZAPDOS_G
