@@ -287,7 +287,7 @@ v1.23.15
 - Fixed some debugging features
 - Press and hold A+SELECT at the title screen to print the current RNG seed at the main menu
 - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
-- Improved fade-to-black and fade-to-white transitions when playing on GBC in 60FPS mode
+- Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
 
 
@@ -593,7 +593,6 @@ v1.23.15
   - Feature is a proof-of-concept and is still a bit rusty
   - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
   - Takes advantage of double-speed CPU mode when played as a GBC game
-- Improved fade-to-black and fade-to-white transitions when playing on GBC in 60FPS mode
 - Starting a New Game while in GBC-mode will default 60FPS mode to ON
 - Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
 - A hard mode option has been added to provide increased difficulty
@@ -641,6 +640,8 @@ v1.23.15
   - The Cerulean encounter
   - The SS Anne encounter
 - Daycare allows HM moves on entered pokemon
+- Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
+- The silhouette effect at the start of battle now displays when playing on a DMG gameboy
 
 - Fixed mistakes in the game text
   - Attacks reduced to zero damage now say the target is unaffected instead of missing
