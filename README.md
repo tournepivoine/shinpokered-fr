@@ -289,6 +289,7 @@ v1.23.15
 - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
 - Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
+- Only boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8 in hard mode
 
 
 #Bugfixes
@@ -600,6 +601,7 @@ v1.23.15
   - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
   - Enemy trainer pokemon are assigned level-appropriate stat exp
   - Enemy trainer pokemon have randomized DVs that are above-average
+  - Boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8
   - Wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
   - Badge-granted stat boosts are disabled in trainer battles
   - X-stat items have double the effect like in more recent generations
