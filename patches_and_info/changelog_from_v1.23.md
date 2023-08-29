@@ -1,7 +1,7 @@
 **New features exclusively for the master branch**
 - Added nuzlocke mode
 
-- Hold SELECT and press START on the bag menu to auto-sort your items
+- Hold SELECT and press START while on the bag menu or PC item box menu to auto-sort your items
 
 - The girl in Oak's lab toggles a built-in randomizer for wild pokemon and your starters
   - Shuffles all pokemon that can be gained through walking, surfing, fishing, or from the game corner
@@ -142,6 +142,7 @@
 - Trapping moves no longer apply a speed penalty
 - If trainer scaling is on, you do not need to beat the 1st route 22 rival solo to get oak's pokeballs
 - Fixed an issue with the level scaling feature that inadvertantly biased non-special trainers to higher levels
+- Fixed a problem where the champion whould not work with level scaling
 
 
 ---
@@ -164,6 +165,8 @@
   - Critical hit chance in non-link battles use the Stadium 1 formula
   - Oak's pokeballs will be upgraded to great balls if you beat the route 22 rival in hard mode
   - Wild pokemon DVs get 1 re-roll each if less than 4, biasing them upwards a little bit
+  - Trainers now roll their DVs twice and use the better result
+  - Only boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8 in hard mode
 
 - Vanilla Options Reset: Deactivates all special options (such as in preparation to update to a new patch)
   - go to the start menu and put the cursor on the top option (usually POKEDEX)
@@ -299,6 +302,7 @@
 - Fixed garbage tiles display for 1 frame after a battle on the DMG
 - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
 - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
+- Fixed transitions when entering and exiting Rock Tunnel
 
 - The proper forget-move poof sfx plays during battle
 - Fixed a bug having to do with rare instances of bending the audio pitch

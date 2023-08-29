@@ -289,6 +289,8 @@ v1.23.15
 - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
 - Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
+- Only boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8 in hard mode
+- Fixed transitions when entering and exiting Rock Tunnel
 
 
 #Bugfixes
@@ -460,6 +462,7 @@ v1.23.15
   - Fixed garbage tiles display for 1 frame after a battle on the DMG
   - Fixed a bug where HP bar animation can print the wrong tile for 1 frame
   - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
+  - Fixed transitions when entering and exiting Rock Tunnel
 
 
 - Item Fixes  
