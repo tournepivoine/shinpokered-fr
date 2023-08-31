@@ -22,8 +22,8 @@ ClearVariablesOnEnterMap::
 	ld a, [wDontSwitchOffMysteryBoxYet] ; Load WRAM bit.
 	and a ; Did a battle just happen?
 	jr nz, .skip ; Yes? Off you go then.
-	ld a, $0 ; No? Let's zero both of these out then.
-	ld [wMysteryBoxActive], a ; This is now deactivated.
-	ld [wDontSwitchOffMysteryBoxYet], a ; To be activated when a Meltan is defeated later.
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
 .skip
+	ld a, $0 ; No? Let's zero this out then.
+	ld [wDontSwitchOffMysteryBoxYet], a ; To be activated when a Meltan is defeated later.
 	ret

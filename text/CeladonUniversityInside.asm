@@ -30,8 +30,9 @@ _KHRP::
 	line "use DRAGON RAGE!"
 	
 	para "Huh? You want to"
-	line "teach it to yours?"
-	cont "Sure! Take this!"
+	line "teach yours?"
+	
+	para "Sure! Take this!"
 	
 	prompt
 

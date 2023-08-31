@@ -144,8 +144,7 @@ ItemUseMysteryBox:
 	jp nz, ItemUseNotTime
 	; Sets a variable in WRAM that'll trigger a Meltan wild encounter.
 	; Handled in engine\core.asm
-	ld a, $1
-	ld [wMysteryBoxActive], a
+	SetEvent EVENT_MYSTERY_BOX_ACTIVATED
 	ld hl, MysteryBoxText ; Simple text is shown. Ambiguous to the user, identical to GO.
 	call PrintText
 	jp TextScriptEnd
@@ -1601,6 +1600,7 @@ ThrewRockText:
 
 ; also used for Dig out-of-battle effect
 ItemUseEscapeRope:
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED ; get this shit outta here
 	ld a, [wIsInBattle]
 	and a
 	jr nz, .notUsable

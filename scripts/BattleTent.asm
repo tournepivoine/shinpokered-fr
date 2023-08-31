@@ -630,19 +630,19 @@ BattleTentGuy2:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refused ; If 0, move to refused.
-	jr .cont ; Otherwise, continue as if nothing happened.
+.cont
+	ld hl, BattleTentGuy2_Init ; Load the next battle.
+	; fallthrough
+.skip2 ; This handles BattleTentGuy2_Streak and BattleTentGuy2_Init at once.
+	call PrintText
+	jr .done
 .refused
 	ld hl, BattleTentGuy2_Win
 	call PrintText
 	ld a, 9 ; Load BattleTent_PlayerWalkBack, which takes it from here.
-	ld [wBattleTentCurScript], a
-	jp TextScriptEnd
-.cont
-	ld hl, BattleTentGuy2_Init ; Load the next battle.
-	jr .skip2
-
-.skip2 ; This handles BattleTentGuy2_Streak and BattleTentGuy2_Init at once.
-	call PrintText
+	ld [wBattleTentCurScript], a ; For some reason, this isn't working properly, even if jp'd.
+	; fallthrough
+.done
 	jp TextScriptEnd
 	
 BattleTentTrainer:

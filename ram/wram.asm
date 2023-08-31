@@ -2162,11 +2162,13 @@ wFossilMon:: db
 ; Once used, the count will reset.
 wCandyJarCount:: db
 
+; Cut due to glitches involving the save feature.
 ; Used for Meltan implementation. Replaced unused Card Key function.
 ; When byte is $01, Meltan has a chance to replace a Pokemon that appears.
 	; $00 - Not Active
 	; $01 - Active
-wMysteryBoxActive:: db
+;wMysteryBoxActive:: db
+ds 1
 
 ; ClearVariablesOnEnterMap does everything I want, except when leaving battle, so this switches off that specific aspect.
 ; This is achieved through some jank in engine\core.asm and engine\overworld\clear_variables.asm.

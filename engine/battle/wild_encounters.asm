@@ -88,9 +88,8 @@ TryDoWildEncounter:
 	; This used to be in engine/battle/core.asm.
 	; However, it was a bit buggy as the implementation was forced.
 	; So instead, we do this:
-	ld a, [wMysteryBoxActive] ; Load the box.
-	cp $01 ; Check if it's active.
-	jr z, .meltanEncounter ; If so, skip this.
+	CheckEvent EVENT_MYSTERY_BOX_ACTIVATED
+	jr nz, .meltanEncounter ; If so, skip this.
 	ld b, 0
 	add hl, bc
 	ld a, [hli]
