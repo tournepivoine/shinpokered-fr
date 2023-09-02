@@ -248,13 +248,13 @@ and more!
 
 Known Bugs
 ====
+Comprehensive list can be found on Discord.
 - Only portions of spinner tiles animate.
 - Occasionally, menu text sets itself to scroll.
 - The lone Rocket in Viridian Gym's basement needs to be directly spoken to to be battled.
 - Pokedex does not load a full dex properly due to a soft limit of 248.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
-- HP DV does not appear to display correctly in the viewer.
 - Silph Co.'s warps are mismatched following a restructuring in maps, one on Floor 5 leads to a Glitch City.
 - Fake Tears and Nasty Plot don't quite look right when done from the opponent's side.
 
