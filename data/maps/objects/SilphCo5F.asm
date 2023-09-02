@@ -2,8 +2,8 @@ SilphCo5F_Object:
 	db $2e ; border block
 
 	def_warp_events
-	warp_event 24,  0, SILPH_CO_7F, 2
 	warp_event 26,  0, SILPH_CO_3F, 2
+	warp_event 24,  0, SILPH_CO_7F, 2
 ;	warp_event 20,  0, SILPH_CO_ELEVATOR, 1
 ;	warp_event 27,  3, SILPH_CO_7F, 6
 ;	warp_event  9, 15, SILPH_CO_9F, 5

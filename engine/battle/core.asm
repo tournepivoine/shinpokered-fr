@@ -1594,6 +1594,9 @@ TryRunningFromBattle:
 	cp BATTLE_TYPE_SAFARI
 	jp z, .canEscape ; jump if it's a safari battle
 	ld a, [wLinkState]
+	ld a, [wCurOpponent]
+	cp OMEGA
+	jp z, .omegaCantEscape
 	cp LINK_STATE_BATTLING
 	jp z, .canEscape
 	ld a, [wIsInBattle]
@@ -1666,6 +1669,9 @@ TryRunningFromBattle:
 	ld [wActionResultOrTookBattleTurn], a ; you lose your turn when you can't escape
 	ld hl, CantEscapeText
 	jr .printCantEscapeOrNoRunningText
+.omegaCantEscape
+	ld hl, NoRunningOmega
+	jr .printCantEscapeOrNoRunningText
 .trainerBattle
 	ld hl, NoRunningText
 .printCantEscapeOrNoRunningText
@@ -1710,6 +1716,13 @@ CantEscapeText:
 
 NoRunningText:
 	text_far _NoRunningText
+	text_end
+
+NoRunningOmega:
+	text "It's far too"
+	line "aggressive! You"
+	cont "can't run!"
+	prompt
 	text_end
 
 GotAwayText:

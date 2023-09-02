@@ -206,8 +206,9 @@ BillsHouseText_1e8cb:
 
 BillsHouseText3:
 	text_asm
-	ld hl, BillsHouseText_1e8da
-	call PrintText
+	ld a, TRADE_FOR_ARCANINE_H
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
 	jp TextScriptEnd
 
 BillsHouseText_1e8da:

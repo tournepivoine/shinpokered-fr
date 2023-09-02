@@ -83,10 +83,11 @@ _BillsHouseText_1e8cb::
 	done
 
 _BillsHouseText_1e8da::
-	text "BILL: Look, bud,"
-	line "just check out"
-	cont "some of my rare"
-	cont "#MON on my PC!"
+	text "BILL: Say, pal,"
+	line "you wouldn't"
+	cont "happen to have"
+	cont "one of these,"
+	cont "would you?"
 	done
 
 _BillsHouseNidorino::

@@ -11,9 +11,12 @@ FuchsiaHouse1Text1:
 	text_far _FuchsiaHouse1Text1
 	text_end
 
-FuchsiaHouse1Text2:
-	text_far _FuchsiaHouse1Text2
-	text_end
+FuchsiaHouse1Text2: ; Bill's Grandfather
+	text_asm
+	ld a, TRADE_FOR_ELECTRODE_H
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd
 
 FuchsiaHouse1Text3:
 	text_far _FuchsiaHouse1Text3

@@ -28,7 +28,7 @@ DEF SLOTS_SOMEONESKEYS EQU $ff
 	const TRADE_FOR_JIMBO
 	const TRADE_FOR_MICHELLE
 	const TRADE_FOR_JENNY
-	const TRADE_FOR_CRINKLES
+;	const TRADE_FOR_CRINKLES - removed due to a new limit being found w/ electrode-h
 	const TRADE_FOR_RICKY 
 	const TRADE_WITH_SELF ; Celadon University
 	const TRADE_FOR_RATICATE_A ; LGPE Trade references - Viridian
@@ -51,6 +51,8 @@ DEF SLOTS_SOMEONESKEYS EQU $ff
 	const TRADE_FOR_MR_RIME
 	const TRADE_FOR_PERRSERKER
 	const TRADE_FOR_SIRFETCHD
+	const TRADE_FOR_ARCANINE_H
+	const TRADE_FOR_ELECTRODE_H
 DEF NUM_NPC_TRADES EQU const_value
 
 ; in game trade dialog sets
@@ -61,9 +63,11 @@ DEF NUM_NPC_TRADES EQU const_value
 	const TRADE_DIALOGSET_HAPPY
 	const TRADE_DIALOGSET_SELF
 	const TRADE_DIALOGSET_REGION ; consistency with LGPE
-	const TRADE_DIALOGSET_TAUROSC ; Fighting Tauros lovers
+	const TRADE_DIALOGSET_TAUROSC ; Fighting Tauros Brothers!
 	const TRADE_DIALOGSET_TAUROSA
 	const TRADE_DIALOGSET_TAUROSB
+	const TRADE_DIALOGSET_BILL
+	const TRADE_DIALOGSET_GRAMPS
 
 ; badges
 ; wObtainedBadges and wBeatGymFlags bits

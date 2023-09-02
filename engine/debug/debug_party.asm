@@ -25,8 +25,8 @@ IshiharaTeam:
 	db MELTAN, 90
 	db TRAMPEL, 90
 	db MEWTWO, 90
-	db RAICHU_A, 50
-	db CROCKY, 5
+	db ELECTRODE, 50
+	db ARCANINE, 50
 	db -1 ; end
 
 DebugStart:

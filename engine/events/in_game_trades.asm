@@ -276,6 +276,8 @@ InGameTradeTextPointers:
 	dw TradeTextPointers6 ; Combat Tauros
 	dw TradeTextPointers7 ; Aqua Tauros
 	dw TradeTextPointers8 ; Blaze Tauros
+	dw TradeTextPointersBill
+	dw TradeTextPointersGramps
 
 TradeTextPointers1:
 	dw WannaTrade1Text
@@ -332,6 +334,20 @@ TradeTextPointers8: ; Aqua Tauros
 	dw WrongMon8Text
 	dw Thanks6Text
 	dw AfterTrade8Text
+
+TradeTextPointersBill: ; Bill
+	dw BillWannaTradeText
+	dw BillNoTradeText
+	dw BillWrongMonText
+	dw BillThanksText
+	dw BillAfterTradeText
+
+TradeTextPointersGramps: ; Bill's grandfather
+	dw GrampsWannaTradeText
+	dw GrampsNoTradeText
+	dw GrampsWrongMonText
+	dw GrampsThanksText
+	dw GrampsAfterTradeText
 
 ConnectCableText:
 	text_far _ConnectCableText
@@ -462,3 +478,111 @@ WrongMon8Text:
 AfterTrade8Text:
 	text_far _AfterTrade8Text
 	text_end
+
+BillWannaTradeText:
+	text "BILL: Say, bud,"
+	line "do you happen"
+	cont "to have an"
+	cont "ARCANINE?"
+	
+	para "I caught this"
+	line "special one in"
+	cont "my experiments,"
+	cont "but it's not"
+	cont "tame at all."
+	
+	para "If you trade"
+	line "me yours, you"
+	cont "can have it!"
+	done
+	text_end
+
+BillNoTradeText:
+	text "No? Well, it"
+	line "isn't going"
+	cont "anywhere..."
+	done
+	text_end
+
+BillWrongMonText:
+	text "That's no"
+	line "ARCANINE, bud!"
+	cont "You trying to"
+	cont "con me?"
+	done
+	text_end
+
+BillThanksText:
+	text "Thanks a bunch!"
+	done
+	text_end
+
+BillAfterTradeText:
+	text "I've been working"
+	line "on a machine to"
+	cont "connect with the"
+	cont "past."
+	
+	para "That's how I got"
+	line "that ARCANINE!"
+	
+	para "Take care of it,"
+	line "would ya?"
+	done
+	text_end
+	
+GrampsWannaTradeText:
+	text "Hmm? You've met"
+	line "BILL?"
+
+	para "He's my grandson!"
+	
+	para "He gave me this"
+	line "ELECTRODE that"
+	cont "reminds me of my"
+	cont "younger years,"
+	cont "but..."
+	
+	para "It's just too"
+	line "aggressive! Do"
+	cont "you mind trading"
+	cont "me a more modern"
+	cont "one?"
+	done
+	text_end
+
+GrampsNoTradeText:
+	text "No? Oh..."
+	done
+	text_end
+
+GrampsWrongMonText:
+	text "My eyes aren't"
+	line "what they used"
+	cont "to be..."
+	
+	para "But that's no"
+	line "ELECTRODE!"
+	done
+	text_end
+
+GrampsThanksText:
+	text "Thank you so"
+	line "much!"
+	done
+	text_end
+
+GrampsAfterTradeText:
+	text "I don't know"
+	line "where BILL got"
+	cont "that ELECTRODE."
+	
+	para "He said something"
+	line "about a time"
+	cont "machine..."
+	
+	para "That has to be"
+	line "impossible..."
+	done
+	text_end
+
