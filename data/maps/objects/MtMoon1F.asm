@@ -7,6 +7,7 @@ MtMoon1F_Object:
 	warp_event  5,  5, MT_MOON_B1F, 1
 	warp_event 17, 11, MT_MOON_B1F, 3
 	warp_event 25, 15, MT_MOON_B1F, 4
+	warp_event  9,  5, MT_MOON_B1F, 9
 
 	def_bg_events
 	bg_event 15, 23, 14 ; MtMoon1Text14
@@ -23,7 +24,7 @@ MtMoon1F_Object:
 	object_event  2,  2, SPRITE_POKE_BALL, STAY, NONE, 9, POISON_STONE
 	object_event 35, 31, SPRITE_POKE_BALL, STAY, NONE, 10, RARE_CANDY
 	object_event 36, 23, SPRITE_POKE_BALL, STAY, NONE, 11, ESCAPE_ROPE
-	object_event 20, 33, SPRITE_POKE_BALL, STAY, NONE, 12, POTION
+	object_event 20, 33, SPRITE_POKE_BALL, STAY, NONE, 12, MOON_STONE
 	object_event  5, 32, SPRITE_POKE_BALL, STAY, NONE, 13, TM_WATER_GUN
 
 	def_warps_to MT_MOON_1F
