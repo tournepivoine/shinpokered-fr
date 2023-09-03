@@ -695,12 +695,10 @@ PidgeyEvosMoves:
 	db 44, MIRROR_MOVE
 	db 0
 
-SlowpokeEvosMoves: ; The Galarica items could be a decent way to add the Galarian forms...
+SlowpokeEvosMoves:
 ; Evolutions
-	db EV_LEVEL, 37, SLOWBRO
 	db EV_ITEM, HEART_STONE, 1, SLOWKING
-	; db EV_ITEM, GALARICA_CUFF, 1, SLOWBRO_G
-	; db EV_ITEM, GALARICA_WREATH, 1, SLOWKING_G
+	db EV_LEVEL, 37, SLOWBRO
 	db 0
 ; Learnset
 	db 18, DISABLE
