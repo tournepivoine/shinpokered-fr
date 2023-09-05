@@ -251,12 +251,13 @@ Known Bugs
 Comprehensive list can be found on Discord.
 - Only portions of spinner tiles animate.
 - Occasionally, menu text sets itself to scroll.
-- The lone Rocket in Viridian Gym's basement needs to be directly spoken to to be battled.
+- Giovanni's Room crashes the game.
 - Pokedex does not load a full dex properly due to a soft limit of 248.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
 - The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
-- Silph Co.'s warps are mismatched following a restructuring in maps, one on Floor 5 leads to a Glitch City.
 - Fake Tears and Nasty Plot don't quite look right when done from the opponent's side.
+- The door mat tiles added recently warp the player when they walk on another (Citrine mats, arrow tiles...)
+- James doesn't check for Max DVs when Hyper Training.
 
 Evolution Methods for new Pokemon
 ====
