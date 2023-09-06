@@ -55,6 +55,7 @@
   - Side effect: Because trainer 'mons can't be shiny in regular difficulty, hard mode gives more chances to find wild shinies
 
 - Added new superboss at the seafoam shore (activated the same as the existing missingno fight)
+- Beating the seafoam missingo battle will certify you as a pokemon master on your diploma
 
 - Show Mewtwo to Mr. Fuji after beating the Elite 4 for a M.GENE
 
@@ -245,6 +246,8 @@
   - It now works for any pokemon (like if the starters are changed or randomized)
   - It keeps a backup of the pokedex-owned flags instead of erasing them
   - Removed the unused Ivysaur flag
+
+- The female trainer pic will now display on the diploma if applicable
 
 - AI can now handle fly/dig loops between the two pokemon
 - Adjusted some AI anti-spam for status moves
