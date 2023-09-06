@@ -804,7 +804,7 @@ v1.23.15
 - Trainer AI battles now track which enemy pkmn have already been sent out, so it supports the new DVs and stat exp
 - Agatha & cooltrainers will not randomly switch since they now have ai routine 4
 - Flags for dividing exp among active pokemon are now only reset after fainting an enemy pkmn
-  - Originally these get reset every time the opponent send out a pkmn (even swithing)
+  - Originally these get reset every time the opponent send out a pkmn (even switching)
   - Was never really noticed since most trainers never switch nor would have the opportunity
   - Changed based on user feedback since many trainers now try to switch
 
