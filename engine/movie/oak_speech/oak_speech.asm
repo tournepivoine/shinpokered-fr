@@ -65,6 +65,8 @@ OakSpeech:
 	call FadeInIntroPic
 	ld hl, OakSpeechText1
 	call PrintText
+	
+.charChoice
 	ld hl, BoyGirlText  ; added to the same file as the other oak text
   	call PrintText     ; show this text
   	call BoyGirlChoice ; added routine at the end of this file
@@ -73,6 +75,25 @@ OakSpeech:
 	call GBFadeOutToWhite
 	call ClearScreen
 	
+	ld de, RedPicFront
+	lb bc, BANK(RedPicFront), $00
+	ld a, [wPlayerSex] 	; check sex
+	and a      				; check sex
+	jr z, .NotGreen0
+	ld de, GreenPicFront
+	lb bc, BANK(GreenPicFront), $00
+.NotGreen0
+	call IntroDisplayPicCenteredOrUpperRight
+	call FadeInIntroPic
+	ld hl, IsThisOk
+	call PrintText
+	call YesNoChoice ; Do they want in?
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .charChoice
+	
+	call GBFadeOutToWhite
+	call ClearScreen
 	ld a, [wPlayerSex] ; Let's change the Nidorins based on the choice. It's really cute and makes use of an unused command sound.
 	and a
 	jr z, .Nidorino
@@ -96,7 +117,6 @@ OakSpeech:
 	call LoadFlippedFrontSpriteByMonIndex
 	call MovePicLeft
 	ld hl, OakSpeechText2Red
-	jr .cont
 
 .cont
 	call PrintText
@@ -293,8 +313,8 @@ IntroDisplayPicCenteredOrUpperRight:
 	InitBoyGirlTextBoxParameters::
 	   ld a, $1 ; loads the value for the unused North/West choice, that was changed to say Boy/Girl
  	   ld [wTwoOptionMenuID], a
- 	   coord hl, 13, 7 
- 	   ld bc, $80e
+ 	   coord hl, 12, 7
+ 	   ld bc, $80d
  	   ret
  	   
 	DisplayBoyGirlChoice::
@@ -306,3 +326,8 @@ IntroDisplayPicCenteredOrUpperRight:
 BoyGirlText: ; This is new so we had to add a reference to get it to compile
     text_far _BoyGirlText
     text_end
+
+IsThisOk:
+	text "Is this OK?"
+	prompt
+	text_end

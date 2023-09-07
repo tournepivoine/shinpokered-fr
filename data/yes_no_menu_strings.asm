@@ -8,7 +8,7 @@ TwoOptionMenuStrings:
 	table_width 5, TwoOptionMenuStrings
 	; width, height, blank line before first menu item?, text pointer
 	two_option_menu 4, 3, FALSE, .YesNoMenu
-	two_option_menu 5, 3, FALSE, .BoyGirlMenu
+	two_option_menu 6, 3, FALSE, .BoyGirlMenu
 	two_option_menu 6, 4, TRUE,  .CatsDogsMenu
 	two_option_menu 6, 3, FALSE, .YesNoMenu
 	two_option_menu 6, 3, FALSE, .NorthEastMenu
@@ -28,8 +28,8 @@ TwoOptionMenuStrings:
 ; There is probably a better way to word this...
 ; Replaced North/West
 .BoyGirlMenu:
-	db   "BOY"
-	next "GIRL@"
+	db   "RED"
+	next "GREEN@"
 
 ; For the Vermilion Beauty event.
 ; Replaced South/East

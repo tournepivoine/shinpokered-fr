@@ -1830,8 +1830,7 @@ _PromptToCutText::
 	done
 
 _BoyGirlText::
-    text "Firstly, are you a"
-	line "boy or a girl?"
+    text "Choose a look!"
     done
 
 _MysteryBoxText::

@@ -155,7 +155,7 @@ Improved Areas
 
 QoL Enhancements
 ====
-- A girl option is now available, featuring the sprite from Pokemon Anniversary Red, which is based on Green's manga appearance.
+- A feminine character option is now available, featuring the sprite from Pokemon Anniversary Red, which is based on Green's manga appearance.
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
 	- The protagonist is also referred to in a gender neutral manner. This changes like, 2-3 lines in the whole game.
 - All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
