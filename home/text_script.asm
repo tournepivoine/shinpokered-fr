@@ -189,10 +189,6 @@ DisplayPokemonFaintedText::
 	call PrintText
 	jp AfterDisplayingTextID
 
-PokemonFaintedText::
-	text_far _PokemonFaintedText
-	text_end
-
 DisplayPlayerBlackedOutText::
 	ld hl, PlayerBlackedOutText
 	call PrintText
@@ -200,10 +196,6 @@ DisplayPlayerBlackedOutText::
 	res 5, a ; reset forced to use bike bit
 	ld [wd732], a
 	jp HoldTextDisplayOpen
-
-PlayerBlackedOutText::
-	text_far _PlayerBlackedOutText
-	text_end
 
 DisplayRepelWoreOffText::
 	ld hl, RepelWoreOffText

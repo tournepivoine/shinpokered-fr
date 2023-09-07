@@ -68,6 +68,7 @@ ROMX $8
 ;	"Bill's PC"
 ;	"Audio Engine 2"
 ;	"Music 2"
+	"Battle Engine 9"
 ROMX $9
 	"Pics 1"
 	"Battle Engine 3"
@@ -109,7 +110,6 @@ ROMX $14
 	"Trainer Sight"
 ROMX $15
 	"Maps 11"
-	"Battle Engine 9"
 	"Maps 12"
 ROMX $16
 	"Maps 13"

@@ -21,14 +21,22 @@ SECTION "rst18", ROM0[$0018]
 	ds $20 - @, 0 ; unused
 
 SECTION "rst20", ROM0[$0020]
-	rst $38
+_CopyData::
+	jp CopyData
 
-	ds $28 - @, 0 ; unused
+; PureRGBnote: MOVED: 5 extra bytes of space left here, may as well move something here that puts the space to some use	
+PokemonFaintedText::
+	text_far _PokemonFaintedText
+	text_end
 
 SECTION "rst28", ROM0[$0028]
-	rst $38
+_PrintText::
+	jp PrintText
 
-	ds $30 - @, 0 ; unused
+; PureRGBnote: MOVED: 5 extra bytes of space left here, may as well move something here that puts the space to some use	
+PlayerBlackedOutText::
+	text_far _PlayerBlackedOutText
+	text_end
 
 SECTION "rst30", ROM0[$0030]
 	rst $38
