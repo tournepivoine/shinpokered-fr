@@ -159,6 +159,8 @@ QoL Enhancements
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
 	- The protagonist is also referred to in a gender neutral manner. This changes like, 2-3 lines in the whole game.
 - All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
+- Various moves have had their animations altered to be less intensive for photosensitive individuals, including every animation that was dimmed on the 3DS (Most notably Blizzard and Thunderbolt). This was done with the aim of also improving the move's animations overall, so some look a little flashier.
+	- Full list includes Body Slam, Glare, Disable, Blizzard, BubbleBeam, Confusion, Dream Eater, Explosion, Guillotine, Hyper Beam, Mega Kick, Mega Punch, Psychic, Reflect, Rock Slide, Selfdestruct, Spore, and Thunderbolt.
 - PureRGB's AI enhancements are ported over; said hack was made by Vortiene. In general, it isn't as stupid as it was before.
 - Bag capacity is increased from 20 to 30 items.
 - Pokemon Box capacity is now 280 Pokemon with 14 boxes.
