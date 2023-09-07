@@ -228,8 +228,6 @@ DebugItemsList:
 	db BOTTLE_CAP, 99
 	db -1 ; end
 
-DebugUnusedList:
-	db -1 ; end
 ELSE
 	ret
 ENDC

@@ -4,8 +4,8 @@ IndigoPlateauLobby_Object:
 	def_warp_events
 	warp_event  7, 11, LAST_MAP, 1
 	warp_event  8, 11, LAST_MAP, 2
-	warp_event  8,  0, HALL_OF_FAME, 1 ; test post-game setup
-	;warp_event  8,  0, LORELEIS_ROOM, 1
+	;warp_event  8,  0, HALL_OF_FAME, 1 ; test post-game setup
+	warp_event  8,  0, LORELEIS_ROOM, 1
 
 	def_bg_events
 

@@ -113,7 +113,6 @@ HallofFameRoomText1:
 ; Post-Game Functionality
 ; This script is adapted from the Silph Co. 11F script that reforms Saffron City.
 ; It replaces the Cerulean Cave Guard bit, adapting him into the whole ordeal.
-
 PostGameSetup:
 	ld hl, ObjectsToHide
 .loop1 ; Hides
@@ -135,6 +134,7 @@ PostGameSetup:
 	call ShowThis
 	pop hl
 	jr .loop2
+	; do NOT put a ret here it's going to ret if zero earlier in the script BE EFFICIENT ffs
 
 ; Begin conditional shows for Legendary Pokemon.
 ; Here, we check if a Pokemon is owned, and if it is, we reset their events.
@@ -165,11 +165,10 @@ ResetLegendaryPokemon:
 	; If Omega wasn't caught, it'll be available in the empty room of Silph Co. 11F.
 	; In my mind, Omega was sent there, pending eventual scrapping for spare parts.
 	ld a, DEX_OMEGA
-	ld [wd11e], a
 	call HoFIsPokemonBitSet
 	jr nz, .skipOmega
 	ResetEvent EVENT_BEAT_OMEGA ; Reusing the old event - it's completely free to use.
-	ld a, HS_OMEGA_2
+	ld a, HS_OMEGA_2 ; However, we want to use the different Omega placement!
 	call ShowThis
 .skipOmega
 	; Mew's hints aren't until the post-game, but is available regardless.
@@ -181,10 +180,8 @@ ResetLegendaryPokemon:
 	ld a, HS_MEW
 	call ShowThis
 .skipMew
-	; If you haven't cleared the game yet, you've not met the Galarian Birds.
-	; So we may as well skip processing all this.
 	CheckEvent EVENT_POST_GAME_ATTAINED
-	jp z, .skipGalarianBirdsAndMewtwo
+	jp z, .skipGalarianBirdsAndMewtwo ; If you haven't cleared the game yet, you've not met the Galarian Birds. So we may as well skip processing all this.
 	ld a, DEX_ARTICUNO_G
 	call HoFIsPokemonBitSet
 	jr z, .skipArticunoG
@@ -220,6 +217,7 @@ ResetLegendaryPokemon:
 ShowThis:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+	ret
 
 ObjectsToShow:
 	db HS_ROUTE_1_OAK ; Oak post-game fight
