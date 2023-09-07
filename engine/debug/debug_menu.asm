@@ -145,6 +145,7 @@ TestBattle:
 	jr .loop
 
 BattleDebugItemsList:
+	db X_ACCURACY, 99 ; Test Guillotine animation
 	db FULL_RESTORE, 99
 	db MAX_ELIXER, 99
 	db FULL_HEAL, 99
@@ -152,7 +153,6 @@ BattleDebugItemsList:
 	db X_SPECIAL, 99
 	db X_DEFEND, 99
 	db X_SPEED, 99
-	db X_ACCURACY, 99
 	db DIRE_HIT, 99
 	db GUARD_SPEC, 99
 	db POKE_FLUTE, 1
