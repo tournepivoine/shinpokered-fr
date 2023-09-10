@@ -291,6 +291,10 @@ v1.23.15
 - Fixed junk tiles displaying for 1 frame when the game resets after displaying THE END
 - Only boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8 in hard mode
 - Fixed transitions when entering and exiting Rock Tunnel
+- The female trainer pic will now display on the diploma if applicable
+- The eating/angry message in safari battles will no longer display incorrectly when returning to neutral
+- The eating/angry safari state counter correctly increases by 1-5 turns instead of 0-4 turns
+- Safari battles correctly reset the catch rate when either eating/angry state returns to neutral
 
 
 #Bugfixes
@@ -332,6 +336,10 @@ v1.23.15
     - If non-crit damage would be >= crit damage, the regular modified stat values are applied instead
   - The player can now select a move even if frozen, and this fixes a PP underflow and link desync glitch
   - Accounted for underflow with switch-out messages
+  - Safari Zone engine fixes:
+    - The eating/angry message in safari battles will no longer display incorrectly when returning to neutral
+	- The eating/angry safari state counter correctly increases by 1-5 turns instead of 0-4 turns
+	- Safari battles correctly reset the catch rate when either eating/angry state returns to neutral
 
 
 - Move fixes
