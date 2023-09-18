@@ -628,6 +628,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 
 #Credits / Special Thanks
 --------------------------
+- Jojobear13's wife, for copywriting and voicework
 - The Pret team for the pokered and pokeyellow disassemblies and all the code comments that came with them
 - MoriyaFaith's pokejp project for green version assets and code referencing
 - Rangi for the tool Polished Map and the jp-style town map from Red/Blue Star
