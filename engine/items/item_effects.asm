@@ -128,6 +128,9 @@ ItemUsePtrTable:
 	dw UnusableItem      ; FLOOR_14F
 
 ItemUseLetter:
+	ld a, [wIsInBattle]
+	and a
+	jp nz, ItemUseNotTime
 	text_asm
 	ld hl, ChiefLetterText
 	call PrintText
