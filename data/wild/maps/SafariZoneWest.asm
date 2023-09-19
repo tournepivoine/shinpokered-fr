@@ -7,9 +7,9 @@ SafariZoneWestWildMons:
 	db 33, VENOMOTH
 	db 26, EXEGGCUTE
 	db 25, MAROWAK
-	db 31, SCYTHER
+	db 25, SCYTHER
 	db 26, TAUROS
-	db 28, PINSIR
+	db 25, CHANSEY
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

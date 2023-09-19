@@ -5,8 +5,8 @@ Gauntlet5FWildMons:
 	db 55, EXEGGUTOR
 	db 55, SCYTHER
 	db 55, PINSIR
-	db 56, KANGASKHAN
 	db 56, TAUROS
+	db 56, KANGASKHAN
 	db 57, TRAMPEL
 	db 57, CHANSEY
 	db 59, DRAGONITE

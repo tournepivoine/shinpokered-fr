@@ -1,16 +1,16 @@
-	db DEX_BAWLIGUA ; pokedex id
+	db DEX_SQUEAMATA ; pokedex id
 
-	db  72,  53,  46,  98,  81
+	db  62,  43,  36,  88,  71
 	;   hp  atk  def  spd  spc
 
 	db DRAGON, DRAGON ; type
-	db 45 ; catch rate
-	db 144 ; base exp
+	db 60 ; catch rate
+	db 67 ; base exp
 
-	INCBIN "gfx/pokemon/front/bawligua.pic", 0, 1 ; sprite dimensions
-	dw BawliguaPicFront, BawliguaPicBack
+	INCBIN "gfx/pokemon/front/squeamata.pic", 0, 1 ; sprite dimensions
+	dw SqueamataPicFront, SqueamataPicBack
 
-	db SCRATCH, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
+	db SCRATCH, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -18,8 +18,8 @@
 	     WATER_GUN,    RAGE,         DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   CUT,          \
-	     SURF,         STRENGTH
+	     SURF
 	; end
 
-	db BANK(BawliguaPicFront)
-	assert BANK(BawliguaPicFront) == BANK(BawliguaPicBack)
+	db BANK(SqueamataPicFront)
+	assert BANK(SqueamataPicFront) == BANK(SqueamataPicBack)

@@ -4,12 +4,12 @@ RockTunnelB1FWildMons:
 	db 17, ZUBAT
 	db 17, RIBBITO
 	db 15, MACHOP
-	db 16, SLOWPOKE
-	db 18, BITTYBAT
+	db 16, RIBBITO
+	db 18, ZUBAT
 	db 17, MACHOP
-	db 17, PSYDUCK
-	db 13, CROCKY
-	db 18, CROCKY
+	db 17, ONIX
+	db 13, GAVILLAIN
+	db 18, GAVILLAIN
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

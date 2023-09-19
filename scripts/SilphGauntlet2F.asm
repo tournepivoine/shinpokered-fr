@@ -21,17 +21,17 @@ SilphGauntlet2F_TextPointers:
 	dw SilphGauntlet2FText6
 	
 SilphGauntlet2FTrainerHeaders:
-	def_trainers 7
+	def_trainers
 SilphGauntlet2FTrainerHeader0:
 	trainer EVENT_BEAT_GAUNTLET_LASS, 2, SilphGauntlet2FBattleText1, SilphGauntlet2FEndBattleText1, SilphGauntlet2FAfterBattleText1
 SilphGauntlet2FTrainerHeader1:
-	trainer EVENT_BEAT_GAUNTLET_JUNIOR, 1, SilphGauntlet2FBattleText2, SilphGauntlet2FEndBattleText2, SilphGauntlet2FAfterBattleText2
+	trainer EVENT_BEAT_GAUNTLET_HIKER, 1, SilphGauntlet2FBattleText2, SilphGauntlet2FEndBattleText2, SilphGauntlet2FAfterBattleText2
 SilphGauntlet2FTrainerHeader2:
-	trainer EVENT_BEAT_GAUNTLET_HIKER, 1, SilphGauntlet2FBattleText3, SilphGauntlet2FEndBattleText3, SilphGauntlet2FAfterBattleText3
+	trainer EVENT_BEAT_GAUNTLET_SUPER_NERD, 1, SilphGauntlet2FBattleText3, SilphGauntlet2FEndBattleText3, SilphGauntlet2FAfterBattleText3
 SilphGauntlet2FTrainerHeader3:
-	trainer EVENT_BEAT_GAUNTLET_SUPER_NERD, 1, SilphGauntlet2FBattleText4, SilphGauntlet2FEndBattleText4, SilphGauntlet2FAfterBattleText4
+	trainer EVENT_BEAT_GAUNTLET_POKEMANIAC, 1, SilphGauntlet2FBattleText4, SilphGauntlet2FEndBattleText4, SilphGauntlet2FAfterBattleText4
 SilphGauntlet2FTrainerHeader4:
-	trainer EVENT_BEAT_GAUNTLET_POKEMANIAC, 3, SilphGauntlet2FBattleText5, SilphGauntlet2FEndBattleText5, SilphGauntlet2FAfterBattleText5
+	trainer EVENT_BEAT_GAUNTLET_BEAUTY, 3, SilphGauntlet2FBattleText5, SilphGauntlet2FEndBattleText5, SilphGauntlet2FAfterBattleText5
 SilphGauntlet2FTrainerHeader5:
 	trainer EVENT_BEAT_GAUNTLET_BLACK_BELT, 1, SilphGauntlet2FBattleText6, SilphGauntlet2FEndBattleText6, SilphGauntlet2FAfterBattleText6
 	db -1 ; end

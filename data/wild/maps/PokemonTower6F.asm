@@ -9,7 +9,7 @@ PokemonTower6FWildMons:
 	db 26, HAUNTER
 	db 22, CUBONE
 	db 27, HAUNTER
-	db 28, BARUNDA
+	db 28, BALUMBA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

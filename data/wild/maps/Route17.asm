@@ -1,14 +1,14 @@
 Route17WildMons:
 	def_grass_wildmons 25 ; encounter rate
 	db 25, FEAROW
-	db 27, RATICATE
+	db 27, KOFFING
 	db 25, RATICATE
-	db 24, PUCHIKOON
-	db 27, RATICATE
+	db 24, KOLTA
+	db 27, GRIMER
 	db 26, DODUO
 	db 28, DODUO
-	db 29, PUCHIKOON
-	db 25, PONYTA
+	db 29, PONYTA
+	db 28, PONYTA
 	db 27, DODRIO
 	end_grass_wildmons
 

@@ -4,8 +4,8 @@ Route1WildMons:
 	db  2, RATTATA
 	db  3, RATTATA
 	db  3, PIDGEY
-	db  2, KONYA
-	db  3, KONYA
+	db  2, COINPUR
+	db  3, COINPUR
 	db  3, PIDGEY
 	db  4, RATTATA
 	db  4, PIDGEY

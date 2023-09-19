@@ -1,10 +1,10 @@
 Route21WildMons:
 	def_grass_wildmons 25 ; encounter rate
-	db 21, RATICATE
-	db 23, PIDGEOTTO
-	db 30, BARUNDA
-	db 30, MR_MIME
-	db 29, MR_MIME
+	db 27, RATICATE
+	db 28, PIDGEOTTO
+	db 30, BALUMBA
+	db 28, GLOOM
+	db 28, WEEPINBELL
 	db 29, TOEDSCOOL
 	db 29, TOEDSCOOL
 	db 28, TANGELA
@@ -18,7 +18,7 @@ Route21WildMons:
 	db 35, BLOTTLE
 	db 35, BLOTTLE
 	db 30, TENTACOOL
-	db 35, BARUNDA
+	db 35, BALUMBA
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
 	db 35, PENDRAKEN

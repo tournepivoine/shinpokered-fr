@@ -8,14 +8,14 @@ NoThanksText:
 
 PrizeMenuMon1Entries:
 	db CUBONE
-	db BLASTYKE
-	db CACTUS
+	db CACTORMUS
+	db SQUEAMATA
 	db "@"
 
 PrizeMenuMon1Cost:
-	bcd2 200
-	bcd2 700
-	bcd2 1700
+	bcd2 500
+	bcd2 1000
+	bcd2 2000
 	db "@"
 
 PrizeMenuMon2Entries:
@@ -27,7 +27,7 @@ PrizeMenuMon2Entries:
 PrizeMenuMon2Cost:
 	bcd2 3500
 	bcd2 3500
-	bcd2 6500
+	bcd2 7000
 	db "@"
 
 PrizeMenuTMsEntries:
@@ -37,7 +37,7 @@ PrizeMenuTMsEntries:
 	db "@"
 
 PrizeMenuTMsCost:
-	bcd2 3300
-	bcd2 5500
-	bcd2 7700
+	bcd2 3000
+	bcd2 5000
+	bcd2 7000
 	db "@"

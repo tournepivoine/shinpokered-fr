@@ -1,4 +1,4 @@
-	db DEX_BARUNDA ; pokedex id
+	db DEX_BALUMBA ; pokedex id
 
 	db  90,  50,  30, 125, 100
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 137 ; base exp
 
-	INCBIN "gfx/pokemon/front/barunda.pic", 0, 1 ; sprite dimensions
-	dw BarundaPicFront, BarundaPicBack
+	INCBIN "gfx/pokemon/front/balumba.pic", 0, 1 ; sprite dimensions
+	dw BalumbaPicFront, BalumbaPicBack
 
 	db FAIRY_WIND, GROWL, DRAININGKISS, NO_MOVE ; level 1 learnset
 	db GROWTH_FAST ; growth rate
@@ -22,5 +22,5 @@
 	     FLASH
 	; end
 
-	db BANK(BarundaPicFront)
-	assert BANK(BarundaPicFront) == BANK(BarundaPicBack)
+	db BANK(BalumbaPicFront)
+	assert BANK(BalumbaPicFront) == BANK(BalumbaPicBack)

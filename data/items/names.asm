@@ -108,6 +108,6 @@ ItemNames::
 	li "8F"
 	li "9F"
 	li "10F"
-	li "11F"
+	li "GO HOME"	; dummy text used for the ferry system
 	li "B4F"
 	assert_list_length NUM_ITEMS + NUM_FLOORS

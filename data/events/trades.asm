@@ -2,16 +2,16 @@ TradeMons:
 ; entries correspond to TRADE_FOR_* constants
 	table_width 3 + NAME_LENGTH, TradeMons
 	; give mon, get mon, dialog id, nickname
-	db POLIWHIRL,  JYNX,        TRADE_DIALOGSET_CASUAL,    "LOLA@@@@@@@" ; Jynx trade replaces the useless Nidorino one 
-	db ABRA,       MR_MIME,     TRADE_DIALOGSET_CASUAL,    "MARCEL@@@@@"
-	db BUTTERFREE, BEEDRILL,    TRADE_DIALOGSET_HAPPY,     "CHIKUCHIKU@"
-	db HAUNTER,    KADABRA,     TRADE_DIALOGSET_EVOLUTION, "HARRY@@@@@@" ; New trade to complete the 4 main trade evos
-	db SPEAROW,    FARFETCHD,   TRADE_DIALOGSET_HAPPY,     "DUX@@@@@@@@"
-	db PERSIAN,    TAUROS,      TRADE_DIALOGSET_CASUAL,    "JIMBO@@@@@@" ; From JP Blue
-	db MACHOKE,    HAUNTER,     TRADE_DIALOGSET_EVOLUTION, "MICHELLE@@@" ; From JP Blue
-	db KADABRA,    GRAVELER,    TRADE_DIALOGSET_EVOLUTION, "JENNY@@@@@@" ; From JP Blue
-	db CUBONE,     MACHOKE,     TRADE_DIALOGSET_HAPPY,     "RICKY@@@@@@" ; From Yellow
-	db NO_MON,     NO_MON,      TRADE_DIALOGSET_SELF,      "Unseen@@@@@" ; Celadon Uni Trader
+	db POLIWHIRL,  JYNX,        TRADE_DIALOGSET_CASUAL,    "LOLA@@@@@@@" ; Cerulean City 
+	db ABRA,       MR_MIME,     TRADE_DIALOGSET_CASUAL,    "MARCEL@@@@@" ; Route 2
+	db BUTTERFREE, BEEDRILL,    TRADE_DIALOGSET_HAPPY,     "CHIKUCHIKU@" ; Route 11-12 gate, will be moved to Viridian Forest gate
+	db RAICHU,     KADABRA,     TRADE_DIALOGSET_EVOLUTION, "HARRY@@@@@@" ; Citrine City, new trade to complete the 4 main trade evos
+	db SPEAROW,    FARFETCHD,   TRADE_DIALOGSET_HAPPY,     "DUX@@@@@@@@" ; Vermilion City
+	db PERSIAN,    TAUROS,      TRADE_DIALOGSET_CASUAL,    "JIMBO@@@@@@" ; Route 17-18 gate, from JP Blue
+	db MACHOKE,    HAUNTER,     TRADE_DIALOGSET_EVOLUTION, "MICHELLE@@@" ; Cinnabar Lab, from JP Blue
+	db KADABRA,    GRAVELER,    TRADE_DIALOGSET_EVOLUTION, "JENNY@@@@@@" ; Cinnabar Lab, from JP Blue (probably going to move these since you get the Trader here anyway...)
+	db CUBONE,     MACHOKE,     TRADE_DIALOGSET_HAPPY,     "RICKY@@@@@@" ; Route 5-6 Underground Path, from Yellow
+	db NO_MON,     NO_MON,      TRADE_DIALOGSET_SELF,      "Unseen@@@@@" ; The Trader
 	db RATICATE,   RATICATE_A,  TRADE_DIALOGSET_REGION,    "RATICATE@@@" ; Viridian - LGPE trades begin here
 	db GOLEM,      GOLEM_A,     TRADE_DIALOGSET_REGION,    "GOLEM@@@@@@" ; Pewter
 	db NINETALES,  NINETALES_A, TRADE_DIALOGSET_REGION,    "NINETALES@@" ; Cerulean
@@ -31,7 +31,7 @@ TradeMons:
 	db WEEZING,    WEEZING_G,   TRADE_DIALOGSET_REGION,    "WEEZING@@@@"
 	db MR_MIME,    MR_RIME,     TRADE_DIALOGSET_CASUAL,    "CHURCHILL@@" ; Winston Churchill, notable "city gent" 
 	db PERSIAN,    PERRSERKER,  TRADE_DIALOGSET_HAPPY,     "ERIK@@@@@@@" ; One of the most famous vikings
-	db MADAAMU,    SIRFETCHD,   TRADE_DIALOGSET_HAPPY,     "LANCELOT@@@" ; Influential knight of the round table
+	db LUXWAN,     SIRFETCHD,   TRADE_DIALOGSET_HAPPY,     "LANCELOT@@@" ; Influential knight of the round table
 	db ARCANINE,   ARCANINE_H,  TRADE_DIALOGSET_BILL,	   "ARCANINE@@@"
 	db ELECTRODE,  ELECTRODE_H, TRADE_DIALOGSET_GRAMPS,    "ELECTRODE@@"
 	assert_table_length NUM_NPC_TRADES

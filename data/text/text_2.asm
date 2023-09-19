@@ -592,8 +592,8 @@ _Route15UpstairsBinocularsText::
 
 _AerodactylFossilText::
 	text "AERODACTYL Fossil"
-	line "It can be found"
-	cont "in WING FOSSILS."
+	line "A primitive and"
+	cont "rare #MON."
 	done
 
 _KabutopsFossilText::
@@ -603,15 +603,15 @@ _KabutopsFossilText::
 	done
 
 _ScarletBook1::
-    text "SCREAM TAIL"
-	line "A screaming,"
-	cont "JIGGLYPUFF-like"
-	cont "#MON."
+	text "SCREAM TAIL"
+	line "A JIGGLYPUFF-like"
+	cont "#MON with a"
+	cont "savage nature."
     
     done
 
 _ScarletBook2::
-    text "SANDY SHOCKS"
+	text "SANDY SHOCKS"
 	line "A theropod-like"
 	cont "relative of"
 	cont "MAGNETON."

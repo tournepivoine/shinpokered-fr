@@ -10,17 +10,17 @@ VermilionCity_Object:
 	warp_event 18, 31, VERMILION_DOCK, 1
 	warp_event 19, 31, VERMILION_DOCK, 1
 	warp_event 15, 13, VERMILION_TRADE_HOUSE, 1
-	warp_event 10, 31, FARAWAY_ISLAND_OUTSIDE, 1
-	warp_event 26, 31, CITRINE_CITY, 7
+	warp_event 10, 31, VERMILION_FERRY_DOCK, 1
+	warp_event 11, 31, VERMILION_FERRY_DOCK, 1
 
 	def_bg_events
-	bg_event 27,  3, 11 ; VermilionCityText7
-	bg_event 37, 13, 12 ; VermilionCityText8
-	bg_event 24, 13, 13 ; MartSignText
-	bg_event 12,  3, 14 ; PokeCenterSignText
-	bg_event  7, 13, 15 ; VermilionCityText11
-	bg_event  7, 19, 16 ; VermilionCityText12
-	bg_event 29, 15, 17 ; VermilionCityText13
+	bg_event 27,  3,  9 ; VermilionCityText7
+	bg_event 37, 13, 10 ; VermilionCityText8
+	bg_event 24, 13, 11 ; MartSignText
+	bg_event 12,  3, 12 ; PokeCenterSignText
+	bg_event  7, 13, 13 ; VermilionCityText11
+	bg_event  7, 19, 14 ; VermilionCityText12
+	bg_event 29, 15, 15 ; VermilionCityText13
 
 	def_object_events
 	object_event 23,  5, SPRITE_BEAUTY, WALK, LEFT_RIGHT, 1 ; person
@@ -31,7 +31,5 @@ VermilionCity_Object:
 	object_event 25, 27, SPRITE_SAILOR, WALK, LEFT_RIGHT, 6 ; person
 	object_event 19,  8, SPRITE_OFFICER_JENNY, STAY, ANY_DIR, 7 ; squirtle event
 	object_event 12, 13, SPRITE_BEAUTY, STAY, DOWN, 8 ; arc/pers event
-	object_event 11, 30, SPRITE_SAILOR, STAY, UP, 9 ; person - Faraway Island
-	object_event 27, 30, SPRITE_SAILOR, STAY, UP, 10 ; person - Citrine City
 
 	def_warps_to VERMILION_CITY

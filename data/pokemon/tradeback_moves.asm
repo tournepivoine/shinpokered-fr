@@ -35,7 +35,7 @@ TradebackMovesPointerTable:
 	dw BlastoiseTradebackMoves
 	dw PinsirTradebackMoves
 	dw TangelaTradebackMoves
-	dw GyaoonTradebackMoves
+	dw GawarhedTradebackMoves
 	dw NidoreignTradebackMoves
 	dw GrowlitheTradebackMoves
 	dw OnixTradebackMoves
@@ -54,26 +54,26 @@ TradebackMovesPointerTable:
 	dw PsyduckTradebackMoves
 	dw DrowzeeTradebackMoves
 	dw GolemTradebackMoves
-	dw BarundaTradebackMoves
+	dw BalumbaTradebackMoves
 	dw MagmarTradebackMoves
 	dw BuuTradebackMoves
 	dw ElectabuzzTradebackMoves
 	dw MagnetonTradebackMoves
 	dw KoffingTradebackMoves
-	dw DeerTradebackMoves
+	dw RamooseTradebackMoves
 	dw MankeyTradebackMoves
 	dw SeelTradebackMoves
 	dw DiglettTradebackMoves
 	dw TaurosTradebackMoves
 	dw TrampelTradebackMoves
-	dw CrockyTradebackMoves
+	dw GavillainTradebackMoves
 	dw BlottleTradebackMoves
 	dw FarfetchdTradebackMoves
 	dw VenonatTradebackMoves
 	dw DragoniteTradebackMoves
-	dw CactusTradebackMoves
-	dw JaggTradebackMoves
-	dw BittybatTradebackMoves
+	dw CactormusTradebackMoves
+	dw SharpoonTradebackMoves
+	dw WiglettTradebackMoves
 	dw DoduoTradebackMoves
 	dw PoliwagTradebackMoves
 	dw JynxTradebackMoves
@@ -85,7 +85,7 @@ TradebackMovesPointerTable:
 	dw KrabbyTradebackMoves
 	dw CheepTradebackMoves
 	dw JabettaTradebackMoves
-	dw MikonTradebackMoves
+	dw VulpiiiTradebackMoves
 	dw VulpixTradebackMoves
 	dw NinetalesTradebackMoves
 	dw PikachuTradebackMoves
@@ -98,8 +98,8 @@ TradebackMovesPointerTable:
 	dw KabutopsTradebackMoves
 	dw HorseaTradebackMoves
 	dw SeadraTradebackMoves
-	dw BawliguaTradebackMoves
-	dw CryithanTradebackMoves
+	dw MinistareTradebackMoves
+	dw IguanarchTradebackMoves
 	dw SandshrewTradebackMoves
 	dw SandslashTradebackMoves
 	dw OmanyteTradebackMoves
@@ -119,13 +119,13 @@ TradebackMovesPointerTable:
 	dw WeedleTradebackMoves
 	dw KakunaTradebackMoves
 	dw BeedrillTradebackMoves
-	dw MadaamuTradebackMoves
+	dw LuxwanTradebackMoves
 	dw DodrioTradebackMoves
 	dw PrimeapeTradebackMoves
 	dw DugtrioTradebackMoves
 	dw VenomothTradebackMoves
 	dw DewgongTradebackMoves
-	dw PurakkusuTradebackMoves
+	dw TriculesTradebackMoves
 	dw PendrakenTradebackMoves
 	dw CaterpieTradebackMoves
 	dw MetapodTradebackMoves
@@ -138,13 +138,13 @@ TradebackMovesPointerTable:
 	dw MewtwoTradebackMoves
 	dw SnorlaxTradebackMoves
 	dw MagikarpTradebackMoves
-	dw KonyaTradebackMoves
-	dw OmegaTradebackMoves
+	dw CoinpurTradebackMoves
+	dw OmegadgeTradebackMoves
 	dw MukTradebackMoves
 	dw DecillaTradebackMoves
 	dw KinglerTradebackMoves
 	dw CloysterTradebackMoves
-	dw MagnetiteTradebackMoves
+	dw WugtrioTradebackMoves
 	dw ElectrodeTradebackMoves
 	dw ClefableTradebackMoves
 	dw WeezingTradebackMoves
@@ -160,13 +160,13 @@ TradebackMovesPointerTable:
 	dw BulbasaurTradebackMoves
 	dw VenusaurTradebackMoves
 	dw TentacruelTradebackMoves
-	dw GyopinTradebackMoves
+	dw OrfryTradebackMoves
 	dw GoldeenTradebackMoves
 	dw SeakingTradebackMoves
 	dw KotoraTradebackMoves
 	dw GaotoraTradebackMoves
 	dw GorotoraTradebackMoves
-	dw PuchikoonTradebackMoves
+	dw KoltaTradebackMoves
 	dw PonytaTradebackMoves
 	dw RapidashTradebackMoves
 	dw RattataTradebackMoves
@@ -178,7 +178,7 @@ TradebackMovesPointerTable:
 	dw AerodactylTradebackMoves
 	dw BlastykeTradebackMoves
 	dw MagnemiteTradebackMoves
-	dw SkimperTradebackMoves
+	dw SqueamataTradebackMoves
 	dw GorochuTradebackMoves
 	dw CharmanderTradebackMoves
 	dw SquirtleTradebackMoves
@@ -195,7 +195,6 @@ TradebackMovesPointerTable:
 	dw BellsproutTradebackMoves
 	dw WeepinbellTradebackMoves
 	dw VictreebelTradebackMoves
-	dw MonjaTradebackMoves
 	dw ScizorTradebackMoves
 	dw RhyperiorTradebackMoves
 	dw EspeonTradebackMoves
@@ -206,7 +205,7 @@ TradebackMovesPointerTable:
 	dw LickilickyTradebackMoves
 	dw TangrowthTradebackMoves
 	dw KleavorTradebackMoves
-	dw TsubomittoTradebackMoves
+	dw BellignanTradebackMoves
 	dw SteelixTradebackMoves
 	dw BlisseyTradebackMoves
 	dw HitmontopTradebackMoves
@@ -219,17 +218,15 @@ TradebackMovesPointerTable:
 	dw SlowkingTradebackMoves
 	dw ElectivireTradebackMoves
 	dw MagmortarTradebackMoves
-	dw TaabanTradebackMoves
+	dw DisturbanTradebackMoves
 	dw KokanaTradebackMoves
-	dw KasanagiTradebackMoves
+	dw PupalTradebackMoves
 	dw CarapthorTradebackMoves
 	dw MagnezoneTradebackMoves
 	dw PorygonZTradebackMoves
 	dw AnnihilapeTradebackMoves
 	dw ScreamTailTradebackMoves
-	dw SandyShocksTradebackMoves
-	dw WiglettTradebackMoves
-	dw WugtrioTradebackMoves	
+	dw SandyShocksTradebackMoves	
 	dw ToedscoolTradebackMoves
 	dw ToedscruelTradebackMoves
 	dw PerrserkerTradebackMoves
@@ -523,7 +520,7 @@ TangelaTradebackMoves:
 	db 1, REFLECT
 	db 0
 
-GyaoonTradebackMoves:
+GawarhedTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, ICE_PUNCH ; TM
@@ -678,7 +675,7 @@ GolemTradebackMoves:
 	db 1, FLAMETHROWER
 	db 0
 
-BarundaTradebackMoves:
+BalumbaTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, PSYBEAM ; Egg Move from Psychic-types.
@@ -729,7 +726,7 @@ KoffingTradebackMoves:
 	db 1, SCREECH
 	db 0
 
-DeerTradebackMoves:
+RamooseTradebackMoves:
 	db 1, HEADBUTT ; TM, oh boy
 	db 1, ROAR ; TM
 	db 1, QUICK_ATTACK ; Egg Move
@@ -775,7 +772,7 @@ TrampelTradebackMoves:
 	db 1, THRASH ; Egg Move
 	db 0
 
-CrockyTradebackMoves:
+GavillainTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, GROWL ; New Level-Up Move
 	db 1, FIRE_PUNCH ; TM
@@ -819,14 +816,14 @@ DragoniteTradebackMoves:
 	db 1, HYDRO_PUMP
 	db 0
 
-CactusTradebackMoves:
+CactormusTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
 	db 1, SWORDS_DANCE ; Egg Move
 	db 1, LEECH_SEED ; Egg Move
 	db 0
 
-JaggTradebackMoves:
+SharpoonTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, ROAR ; TM
 	db 1, SHARPEN ; NYPC-like Event
@@ -834,9 +831,9 @@ JaggTradebackMoves:
 	db 1, AGILITY ; Egg Move
 	db 0
 
-BittybatTradebackMoves:
-	db 1, QUICK_ATTACK
-	db 0
+;BittybatTradebackMoves:
+;	db 1, QUICK_ATTACK
+;	db 0
 
 DoduoTradebackMoves:
 	db 1, SWIFT
@@ -885,7 +882,6 @@ ZapdosTradebackMoves:
 	db 0
 
 DittoTradebackMoves:
-	
 	db 0
 
 MeowthTradebackMoves:
@@ -908,6 +904,8 @@ CheepTradebackMoves:
 	db 1, WATERFALL ; HM
 	db 1, DOUBLE_KICK ; Egg Move
 	db 1, WING_ATTACK ; Egg Move (from Sato?)
+	db 1, AURORA_BEAM ; Egg Move
+	db 1, AGILITY ; Egg Move
 	db 0
 
 JabettaTradebackMoves:
@@ -921,7 +919,7 @@ JabettaTradebackMoves:
 	db 1, AGILITY ; Egg Move
 	db 0
 
-MikonTradebackMoves:
+VulpiiiTradebackMoves:
 	db 1, HEADBUTT
 	db 1, DISABLE
 	db 1, HYPNOSIS
@@ -1036,19 +1034,19 @@ SeadraTradebackMoves:
 	db 1, HAZE
 	db 0
 
-BawliguaTradebackMoves:
+MinistareTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, THRASH ; Egg Move from Totodile
 	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
 	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
 	db 0
 
-CryithanTradebackMoves:
+IguanarchTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, ROAR ; TM
 	db 1, THRASH ; Egg Move from Totodile
-	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
-	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
+	db 1, MIST ; Egg Move from Squirtle
+	db 1, QUICK_ATTACK ; Egg Move
 	db 0
 
 SandshrewTradebackMoves:
@@ -1188,18 +1186,15 @@ PoliwrathTradebackMoves:
 	db 0
 
 WeedleTradebackMoves:
-	
 	db 0
 
 KakunaTradebackMoves:
-	
 	db 0
 
 BeedrillTradebackMoves:
-	
 	db 0
 
-MadaamuTradebackMoves:
+LuxwanTradebackMoves:
 	db 1, HEADBUTT
 	db 1, GUST
 	db 1, MIRROR_MOVE
@@ -1242,7 +1237,7 @@ DewgongTradebackMoves:
 	db 1, SLAM
 	db 0
 
-PurakkusuTradebackMoves:
+TriculesTradebackMoves:
 	db 1, HEADBUTT
 	db 1, FURY_ATTACK
 	db 1, ROCK_THROW
@@ -1257,15 +1252,12 @@ PendrakenTradebackMoves:
 	db 0
 
 CaterpieTradebackMoves:
-	
 	db 0
 
 MetapodTradebackMoves:
-	
 	db 0
 
 ButterfreeTradebackMoves:
-	
 	db 0
 
 MachampTradebackMoves:
@@ -1350,7 +1342,7 @@ MagikarpTradebackMoves:
 	db 1, BUBBLE
 	db 0
 
-KonyaTradebackMoves:
+CoinpurTradebackMoves:
 	db 1, DEFENSE_CURL
 	db 1, DREAM_EATER
 	db 1, HEADBUTT
@@ -1358,8 +1350,8 @@ KonyaTradebackMoves:
 	db 1, HYPNOSIS
 	db 0
 
-; Omegedge will be unable to breed.
-OmegaTradebackMoves:
+; Omegadge will be unable to breed.
+OmegadgeTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, ROAR ; TM
 	db 1, THUNDERPUNCH ; TM
@@ -1401,9 +1393,9 @@ CloysterTradebackMoves:
 	db 1, SCREECH
 	db 0
 
-MagnetiteTradebackMoves:
-	db 1, AGILITY
-	db 0
+;MagnetiteTradebackMoves:
+;	db 1, AGILITY
+;	db 0
 
 ElectrodeTradebackMoves:
 	db 1, HEADBUTT
@@ -1523,7 +1515,7 @@ TentacruelTradebackMoves:
 	db 1, CONFUSE_RAY
 	db 0
 
-GyopinTradebackMoves:
+OrfryTradebackMoves:
 	db 1, HAZE
 	db 1, HYDRO_PUMP
 	db 1, PSYBEAM
@@ -1556,7 +1548,7 @@ KotoraTradebackMoves:
 GaotoraTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
-	db 1, SCREECH ; Egg Move, likely from Persian.
+	db 1, SCREECH ; Egg Move
 	db 1, CHARM ; Egg Move
 	db 1, THRASH ; Egg Move
 	db 0
@@ -1564,12 +1556,12 @@ GaotoraTradebackMoves:
 GorotoraTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, DEFENSE_CURL ; TM
-	db 1, SCREECH ; Egg Move, likely from Persian.
+	db 1, SCREECH ; Egg Move
 	db 1, CHARM ; Egg Move
 	db 1, THRASH ; Egg Move
 	db 0
 
-PuchikoonTradebackMoves:
+KoltaTradebackMoves:
 	db 1, TACKLE
 	db 1, HEADBUTT
 	db 1, FLAMETHROWER
@@ -1679,11 +1671,11 @@ MagnemiteTradebackMoves:
 	db 1, AGILITY
 	db 0
 
-SkimperTradebackMoves:
+SqueamataTradebackMoves:
 	db 1, HEADBUTT ; TM
 	db 1, THRASH ; Egg Move from Totodile
-	db 1, MIST ; Egg Move from Squirtle, interesting but not good Gen 1 applications, being a screen and all. Also, a pun on "misting" terrariums.
-	db 1, QUICK_ATTACK ; Egg Move, but will need to figure out a route in the Monster Egg Group; alternatively, Monster/Field, so Ponyta could pass it down.
+	db 1, MIST ; Egg Move from Squirtle
+	db 1, QUICK_ATTACK ; Egg Move
 	db 0
 
 GorochuTradebackMoves:
@@ -1805,13 +1797,13 @@ VictreebelTradebackMoves:
 	db 1, LEECH_LIFE
 	db 0
 
-MonjaTradebackMoves:
-	db 1, FLASH
-	db 1, HEADBUTT
-	db 1, AMNESIA
-	db 1, CONFUSION
-	db 1, REFLECT
-	db 0
+;MonjaTradebackMoves:
+;	db 1, FLASH
+;	db 1, HEADBUTT
+;	db 1, AMNESIA
+;	db 1, CONFUSION
+;	db 1, REFLECT
+;	db 0
 
 ScizorTradebackMoves:
 	db 1, HEADBUTT
@@ -1887,7 +1879,7 @@ KleavorTradebackMoves:
 	db 1, SONICBOOM
 	db 0
 
-TsubomittoTradebackMoves:
+BellignanTradebackMoves:
 	db 1, FLASH
 	db 1, LEECH_LIFE
 	db 0
@@ -1917,7 +1909,6 @@ CrobatTradebackMoves:
 	db 0
 
 AnimonTradebackMoves:
-	
 	db 0
 	
 BellossomTradebackMoves:
@@ -1981,22 +1972,19 @@ MagmortarTradebackMoves:
 	db 1, SCREECH
 	db 0
 	
-TaabanTradebackMoves:
+DisturbanTradebackMoves:
 	db 1, BARRIER
 	db 1, SCREECH
 	db 0
 	
 KokanaTradebackMoves:
-	
 	db 0
 
-KasanagiTradebackMoves:
-	
+PupalTradebackMoves:
 	db 0
 
 CarapthorTradebackMoves:
 	db 1, HEADBUTT ; TM
-	db 1, ABSORB ; Egg Move from Parasect
 	db 0
 	
 MagnezoneTradebackMoves:
@@ -2237,13 +2225,10 @@ TaurosPBTradebackMoves:
 	db 0
 	
 FossilKabutopsTradebackMoves:
-	
 	db 0
 
 FossilAerodactylTradebackMoves:
-	
 	db 0
 
 MonGhostTradebackMoves:
-	
 	db 0

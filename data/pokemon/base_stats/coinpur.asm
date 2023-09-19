@@ -1,4 +1,4 @@
-	db DEX_KONYA ; pokedex id
+	db DEX_COINPUR ; pokedex id
 
 	db  35,  40,  30,  85,  35
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 255 ; catch rate
 	db 53 ; base exp
 
-	INCBIN "gfx/pokemon/front/konya.pic", 0, 1 ; sprite dimensions
-	dw KonyaPicFront, KonyaPicBack
+	INCBIN "gfx/pokemon/front/coinpur.pic", 0, 1 ; sprite dimensions
+	dw CoinpurPicFront, CoinpurPicBack
 
 	db SCRATCH, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -20,5 +20,5 @@
 	     REST,         SUBSTITUTE
 	; end
 
-	db BANK(KonyaPicFront)
-	assert BANK(KonyaPicFront) == BANK(KonyaPicBack)
+	db BANK(CoinpurPicFront)
+	assert BANK(CoinpurPicFront) == BANK(CoinpurPicBack)

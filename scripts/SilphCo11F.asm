@@ -72,7 +72,7 @@ SilphCo11Script_6217b:
 	ld a, $7
 	ldh [hSpriteIndex], a ; TODO: Make Omega look at the player.
 	call MoveOmegaSprite
-	ld a, OMEGA
+	ld a, OMEGADGE
 	ld [wcf91], a
 	call PlayCry
 	ld a, SFX_STOP_ALL_MUSIC
@@ -93,7 +93,7 @@ SilphCo11ScriptOmegaBattle:
 	ld a, 11
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
-	ld a, OMEGA
+	ld a, OMEGADGE
 	ld [wCurOpponent], a
 	ld a, 40
 	ld [wCurEnemyLVL], a
@@ -165,16 +165,16 @@ MissableObjectIDs_6219b:
 	db HS_SAFFRON_CITY_E
 	db HS_SILPH_CO_3F_1
 	db HS_SILPH_CO_3F_2
-	db HS_SILPH_CO_4F_1
-	db HS_SILPH_CO_4F_2
-	db HS_SILPH_CO_4F_3
+	;db HS_SILPH_CO_4F_1
+	;db HS_SILPH_CO_4F_2
+	;db HS_SILPH_CO_4F_3
 	db HS_SILPH_CO_5F_1
 	db HS_SILPH_CO_5F_2
 	db HS_SILPH_CO_5F_3
 	db HS_SILPH_CO_5F_4
-	db HS_SILPH_CO_6F_1
-	db HS_SILPH_CO_6F_2
-	db HS_SILPH_CO_6F_3
+	;db HS_SILPH_CO_6F_1
+	;db HS_SILPH_CO_6F_2
+	;db HS_SILPH_CO_6F_3
 	db HS_SILPH_CO_7F_1
 	db HS_SILPH_CO_7F_2
 	db HS_SILPH_CO_7F_3
@@ -630,16 +630,16 @@ SaffronCityRockets:
 	db HS_SAFFRON_CITY_E
 	db HS_SILPH_CO_3F_1
 	db HS_SILPH_CO_3F_2
-	db HS_SILPH_CO_4F_1
-	db HS_SILPH_CO_4F_2
-	db HS_SILPH_CO_4F_3
+	;db HS_SILPH_CO_4F_1
+	;db HS_SILPH_CO_4F_2
+	;db HS_SILPH_CO_4F_3
 	db HS_SILPH_CO_5F_1
 	db HS_SILPH_CO_5F_2
 	db HS_SILPH_CO_5F_3
 	db HS_SILPH_CO_5F_4
-	db HS_SILPH_CO_6F_1
-	db HS_SILPH_CO_6F_2
-	db HS_SILPH_CO_6F_3
+	;db HS_SILPH_CO_6F_1
+	;db HS_SILPH_CO_6F_2
+	;db HS_SILPH_CO_6F_3
 	db HS_SILPH_CO_7F_1
 	db HS_SILPH_CO_7F_2
 	db HS_SILPH_CO_7F_3
@@ -802,7 +802,7 @@ Omega2Text:
 Omega2BattleText:
 	text_far _OmegaBattleText
 	text_asm
-	ld a, OMEGA
+	ld a, OMEGADGE
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

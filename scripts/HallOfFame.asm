@@ -164,7 +164,7 @@ ResetLegendaryPokemon:
 	; Omega is special.
 	; If Omega wasn't caught, it'll be available in the empty room of Silph Co. 11F.
 	; In my mind, Omega was sent there, pending eventual scrapping for spare parts.
-	ld a, DEX_OMEGA
+	ld a, DEX_OMEGADGE
 	call HoFIsPokemonBitSet
 	jr nz, .skipOmega
 	ResetEvent EVENT_BEAT_OMEGA ; Reusing the old event - it's completely free to use.

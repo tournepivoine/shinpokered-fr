@@ -1,4 +1,4 @@
-	db DEX_GYOPIN ; pokedex id
+	db DEX_ORFRY ; pokedex id
 
 	db  35,  57,  50,  53,  40
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 255 ; catch rate
 	db 57 ; base exp
 
-	INCBIN "gfx/pokemon/front/gyopin.pic", 0, 1 ; sprite dimensions
-	dw GyopinPicFront, GyopinPicBack
+	INCBIN "gfx/pokemon/front/orfry.pic", 0, 1 ; sprite dimensions
+	dw OrfryPicFront, OrfryPicBack
 
 	db PECK, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -20,5 +20,5 @@
 	     SUBSTITUTE,   SURF
 	; end
 
-	db BANK(GyopinPicFront)
-	assert BANK(GyopinPicFront) == BANK(GyopinPicBack)
+	db BANK(OrfryPicFront)
+	assert BANK(OrfryPicFront) == BANK(OrfryPicBack)

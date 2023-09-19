@@ -1,4 +1,4 @@
-	db DEX_TSUBOMITTO ; pokedex id
+	db DEX_BELLIGNAN ; pokedex id
 
 	db  80, 120,  65,  70,  85
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 191 ; base exp
 
-	INCBIN "gfx/pokemon/front/tsubomitto.pic", 0, 1 ; sprite dimensions
-	dw TsubomittoPicFront, TsubomittoPicBack
+	INCBIN "gfx/pokemon/front/bellignan.pic", 0, 1 ; sprite dimensions
+	dw BellignanPicFront, BellignanPicBack
 
 	db SLEEP_POWDER, RAZOR_LEAF, LOVELY_KISS, ACID ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
@@ -20,5 +20,5 @@
 	     CUT
 	; end
 
-	db BANK(TsubomittoPicFront)
-	assert BANK(TsubomittoPicFront) == BANK(TsubomittoPicBack)
+	db BANK(BellignanPicFront)
+	assert BANK(BellignanPicFront) == BANK(BellignanPicBack)

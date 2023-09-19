@@ -4,6 +4,8 @@ MACRO mon_cry
 	db \2, \3
 ENDM
 
+; THIS FILE IS NOW UNUSED DUE TO THE CRYSAUDIO PATCH USING A DIFFERENT SYSTEM
+
 CryData::
 	table_width 3, CryData
 	; base cry, pitch, length
@@ -197,7 +199,7 @@ CryData::
 	mon_cry SFX_CRY_21, $55, $01 ; Bellsprout
 	mon_cry SFX_CRY_25, $44, $20 ; Weepinbell
 	mon_cry SFX_CRY_25, $66, $CC ; Victreebel
-	mon_cry SFX_CRY_12, $93, $00 ; Monja
+	; mon_cry SFX_CRY_12, $93, $00 ; Monja
 	mon_cry SFX_CRY_1F, $40, $01 ; Pudi
 	mon_cry SFX_CRY_00, $00, $00 ; Scizor
 	mon_cry SFX_CRY_00, $00, $00 ; Rhyperior
@@ -231,8 +233,6 @@ CryData::
 	mon_cry SFX_CRY_20, $00, $1C ; Annihilape
 	mon_cry SFX_CRY_0E, $FA, $80 ; Scream Tail
 	mon_cry SFX_CRY_1C, $1F, $DD ; Sandy Shocks
-	mon_cry SFX_CRY_00, $00, $00 ; Wiglett
-	mon_cry SFX_CRY_00, $00, $00 ; Wugtrio
 	mon_cry SFX_CRY_00, $00, $00 ; Toedscool
 	mon_cry SFX_CRY_00, $00, $00 ; Toedscruel
 	mon_cry SFX_CRY_19, $1A, $40 ; Perrserker

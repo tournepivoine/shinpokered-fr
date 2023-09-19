@@ -1,4 +1,4 @@
-	db DEX_PURAKKUSU ; pokedex id
+	db DEX_TRICULES ; pokedex id
 
 	db  65, 125, 140,  85,  55
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 25 ; catch rate
 	db 209 ; base exp
 
-	INCBIN "gfx/pokemon/front/purakkusu.pic", 0, 1 ; sprite dimensions
-	dw PurakkusuPicFront, PurakkusuPicBack
+	INCBIN "gfx/pokemon/front/tricules.pic", 0, 1 ; sprite dimensions
+	dw TriculesPicFront, TriculesPicBack
 
 	db VICEGRIP, HARDEN, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -20,5 +20,5 @@
 	     REST,         SUBSTITUTE,   CUT,          STRENGTH
 	; end
 
-	db BANK(PurakkusuPicFront)
-	assert BANK(PurakkusuPicFront) == BANK(PurakkusuPicBack)
+	db BANK(TriculesPicFront)
+	assert BANK(TriculesPicFront) == BANK(TriculesPicBack)

@@ -55,20 +55,20 @@ INCLUDE "scripts/IndigoPlateauLobby.asm"
 INCLUDE "data/maps/objects/IndigoPlateauLobby.asm"
 IndigoPlateauLobby_Blocks: INCBIN "maps/IndigoPlateauLobby.blk"
 
-INCLUDE "data/maps/headers/SilphCo4F.asm"
-INCLUDE "scripts/SilphCo4F.asm"
-INCLUDE "data/maps/objects/SilphCo4F.asm"
-SilphCo4F_Blocks: INCBIN "maps/SilphCo4F.blk"
+INCLUDE "data/maps/headers/CitrineFerryDock.asm"
+INCLUDE "scripts/CitrineFerryDock.asm"
+INCLUDE "data/maps/objects/CitrineFerryDock.asm"
+CitrineFerryDock_Blocks: INCBIN "maps/CitrineFerryDock.blk"
 
 INCLUDE "data/maps/headers/SilphCo5F.asm"
 INCLUDE "scripts/SilphCo5F.asm"
 INCLUDE "data/maps/objects/SilphCo5F.asm"
 SilphCo5F_Blocks: INCBIN "maps/SilphCo5F.blk"
 
-INCLUDE "data/maps/headers/SilphCo6F.asm"
-INCLUDE "scripts/SilphCo6F.asm"
-INCLUDE "data/maps/objects/SilphCo6F.asm"
-SilphCo6F_Blocks: INCBIN "maps/SilphCo6F.blk"
+INCLUDE "data/maps/headers/VermilionFerryDock.asm"
+INCLUDE "scripts/VermilionFerryDock.asm"
+INCLUDE "data/maps/objects/VermilionFerryDock.asm"
+VermilionFerryDock_Blocks: INCBIN "maps/VermilionFerryDock.blk"
 
 
 SECTION "Maps 3", ROMX
@@ -779,10 +779,10 @@ INCLUDE "scripts/PokemonFanClub.asm"
 INCLUDE "data/maps/objects/PokemonFanClub.asm"
 PokemonFanClub_Blocks: INCBIN "maps/PokemonFanClub.blk"
 
-INCLUDE "data/maps/headers/SilphCo2F.asm"
-INCLUDE "scripts/SilphCo2F.asm"
-INCLUDE "data/maps/objects/SilphCo2F.asm"
-SilphCo2F_Blocks: INCBIN "maps/SilphCo2F.blk"
+INCLUDE "data/maps/headers/SeagallopFerry.asm"
+INCLUDE "scripts/SeagallopFerry.asm"
+INCLUDE "data/maps/objects/SeagallopFerry.asm"
+SeagallopFerry_Blocks: INCBIN "maps/SeagallopFerry.blk"
 
 INCLUDE "data/maps/headers/SilphCo3F.asm"
 INCLUDE "scripts/SilphCo3F.asm"

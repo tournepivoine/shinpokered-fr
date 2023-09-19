@@ -128,53 +128,6 @@ _VermilionCityText15::
 	line "has returned!"
 	done
 
-_RoingusText:: ; new NPC made as an inside joke, with a slight reference to Mew
-	text "I wanna discover"
-	line "a new species of"
-	cont "#MON someday!"
-
-	para "If I'm the first"
-	line "to discover it, I"
-	cont "could name it!"
-
-	para "I'm gonna call"
-	line "it... ROINGUS!"
-	done
-
-; Text for the new pass system.
-_VermillionCityPassSelectionText::
-	text "Which PASS do you"
-	line "want to present?"
-	prompt
-	
-_VermillionCityOldSeaMap::
-	text "<PLAYER> flashed"
-	line "the OLD SEA MAP!"
-
-	para "My, my. I haven't"
-	line "seen this in a"
-	cont "long time."
-	
-	para "Come. I'll take"
-	line "you there."
-	done
-
-_VermillionCityCitrinePass::
-	text "<PLAYER> flashed"
-	line "the CITRINE PASS!"
-
-	para "Crikey!"
-	
-	para "Right this way!"
-	line "I can't believe"
-	cont "it..."
-	done
-
-_VermillionCityHarborRefuse::
-	text "Alright! Have a"
-	line "nice day!"
-	done
-
 _BeautyText1::
 	text "Hey! Do you like"
 	line "cats or dogs?"

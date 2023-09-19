@@ -3,13 +3,13 @@ Route23WildMons:
 	db 41, ARBOK
 	db 40, SANDSLASH
 	db 38, FEAROW
-	db 38, RHYDON
+	db 38, ARBOK
 	db 38, EXEGGCUTE
 	db 40, PRIMEAPE
-	db 41, EXEGGCUTE
-	db 43, EXEGGCUTE
-	db 41, CHANSEY
-	db 38, TAUROS
+	db 37, EXEGGCUTE
+	db 38, EXEGGCUTE
+	db 40, FEAROW
+	db 41, SANDSLASH
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

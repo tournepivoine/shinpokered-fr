@@ -3,38 +3,39 @@ _GiovannisRoomText1::
 	line "EARTH - GIOVANNI"
 	
 	para "In this book, I"
-	line "will reveal"
-	cont "RHYDON's"
-	cont "highest form."
+	line "will reveal the"
+	cont "highest form of"
+	cont "RHYDON."
 	
 	para "Its name is"
 	line "RHYPERIOR."
-	
-	para "However, it"
+	cont "However, it"
 	cont "cannot be"
 	cont "obtained with"
 	cont "items found in"
-	cont "KANTO."
+	cont "KANTO naturally."
 	
-	para "It needs an item"
-	line "called a"
-	cont "PROTECTOR."
+	para "A PROTECTOR is"
+	line "required, which"
+	cont "we managed to"
+	cont "import here."
 	
 	para "It unfortunately"
 	line "fails to address"
 	cont "RHYDON's poor"
-	cont "SPEED."
-	
-	para "Ergo, it cannot"
-	line "use my FISSURE"
-	cont "technique to"
-	cont "its complete"
-	cont "potential."
-	
+	cont "SPEED. Ergo, it"
+	cont "cannot use my"
+	cont "own technique,"
+	cont "FISSURE, to its"
+	cont "full potential."	
 	done
 
 _GiovannisRoomText2::
-	text "Aug 1st, 1975"
+	text "It's a torn-out"
+	line "page from an"
+	cont "old diary..."
+	
+	para "Aug 1st, 1975"
 	line "I managed to"
 	cont "get my first"
 	cont "#MON."
@@ -64,7 +65,7 @@ _GiovannisRoomText3::
 	
 	para "PROTECTOR: ¥3,000"
 
-	para "GUARD SPEC: ¥4,200"
+	para "DIRE HIT: ¥5,200"
 
 	para "DEVELOPMENT OF"
 	line "TM27: ¥15,000"
@@ -85,25 +86,4 @@ _GiovannisRoomText4::
 	
 	para "1977?!"
 	
-	done
-
-_GiovannisRoomBattleText2::
-	text "Hey! Intruders"
-	line "aren't welcome in"
-	cont "the BOSS's room!"
-
-	para "I'm his last"
-	line "line of defence!"
-	done
-
-_GiovannisRoomEndBattleText2::
-	text "Oww!"
-	line "Beaten!"
-	prompt
-
-_GiovannisRoomAfterBattleTxt2::
-	text "What?! Are you"
-	line "serious? TEAM"
-	cont "ROCKET is"
-	cont "disbanding?"
 	done

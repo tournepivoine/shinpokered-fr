@@ -10,8 +10,8 @@ _CaveGuy:: ; Used to describe GZap, but the beauty seemed funnier. Needed some l
 	done
 
 _Lover1::
-	text "ALICE: This spot"
-	line "is where she"
+	text "Here's the spot"
+	line "where she first"
 	cont "confessed to me."
 	
 	para "Now it's by far"
@@ -25,7 +25,7 @@ _Lover1::
 	done
 
 _Lover2::
-	text "CHELSIE: I adore"
+	text "I absolutely love"
 	line "visiting this"
 	cont "TRAIL with my"
 	cont "girlfriend!"
@@ -71,7 +71,7 @@ _BrunswickEndBattleText2::
 _BrunswickAfterBattleText2::
 	text "I saw a BIRD"
 	line "#MON with huge"
-	cont "feet sprint past"
+	cont "legs sprint past"
 	cont "me!"
 	
 	para "It almost blew me"
@@ -118,10 +118,10 @@ _FakeTreeAttack::
 	line "to hack away..."
 	
 	para "But it was a"
-	line "CACTUS!"
+	line "CACTORMUS!"
 	
-	para "CACTUS retaliated"
-	line "in a rage!"
+	para "It retaliated in"
+	line "a rage!"
 	prompt
 
 ; Martha can do the text for her things...

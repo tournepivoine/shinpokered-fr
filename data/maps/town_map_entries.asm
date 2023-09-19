@@ -121,6 +121,11 @@ InternalMapEntries:
 	internal_map ROCKET_HIDEOUT_ELEVATOR,        7,  5, RocketHQName
 	internal_map CITRINE_MART,                   7, 10, CitrineCityName
 	internal_map GARNET_CAVERN_B1F,              6, 10, GarnetCavernName
+	internal_map VERMILION_FERRY_DOCK,          10,  9, VermilionCityName
+	internal_map SILPH_CO_3F,                   10,  5, SilphCoName
+	internal_map CITRINE_FERRY_DOCK,             7, 10, CitrineCityName
+	internal_map SILPH_CO_5F,                   10,  5, SilphCoName
+	internal_map SEAGALLOP_FERRY,               10,  9, VermilionCityName
 	internal_map SILPH_CO_7F,                   10,  5, SilphCoName
 	internal_map POKEMON_MANSION_B1F,            2, 15, PokemonMansionName
 	internal_map SAFARI_ZONE_NORTH_REST_HOUSE,   8, 12, SafariZoneName

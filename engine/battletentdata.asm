@@ -228,11 +228,11 @@ BTMonList::
 	db TRAMPEL
 	db SNORLAX
 	db BUTTERFREE
-	db PURAKKUSU
+	db TRICULES
 	db SCIZOR
 	db PARASECT
 ; Rock+Fighting set
-	db GYAOON
+	db GAWARHED
 	db KABUTOPS
 	db RHYPERIOR
 	db ARCANINE_H
@@ -246,7 +246,7 @@ BTMonList::
 	db LAPRAS
 	db GYARADOS
 	db BLASTOISE
-	db JAGG
+	db SHARPOON
 	db POLITOED
 	db PENDRAKEN
 ; Electric+Fire set
@@ -268,7 +268,7 @@ BTMonList::
 	db NINETALES_A
 	db MR_RIME
 ; Flying+Fire set
-	db MADAAMU
+	db LUXWAN
 	db AERODACTYL
 	db DRAGONITE
 	db DODRIO
@@ -277,13 +277,13 @@ BTMonList::
 	db RAPIDASH
 	db TAUROS_PB
 ; Normal+Grass set
-	db DEER
+	db RAMOOSE
 	db CHANSEY
 	db KANGASKHAN
 	db RATICATE_A
 	db TANGROWTH
-	db CACTUS
-	db TSUBOMITTO
+	db CACTORMUS
+	db BELLIGNAN
 	db VICTREEBEL
 ; Ghost+Ground+Poison set
 	db STEELIX
@@ -299,9 +299,9 @@ BTMonList::
 	db PORYGONZ
 	db CLEFABLE
 	db RATICATE
-	db CROCKY
+	db GAVILLAIN
 	db EXEGGUTOR_A
-	db CRYITHAN
+	db IGUANARCH
 	db KINGDRA
 	
 	

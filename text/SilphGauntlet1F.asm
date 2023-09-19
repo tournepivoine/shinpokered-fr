@@ -87,7 +87,7 @@ _SilphGauntlet1FEndBattleText5::
 	prompt
 
 _SilphGauntlet1FAfterBattleText5::
-	text "TSUBOMITTO loves"
+	text "BELLIGNAN loves"
 	line "eating bugs, so"
 	cont "it's perfect"
 	cont "for me!"

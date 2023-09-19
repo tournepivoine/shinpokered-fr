@@ -1,4 +1,4 @@
-	db DEX_DEER ; pokedex id
+	db DEX_RAMOOSE ; pokedex id
 
 	db  85, 110,  85,  60,  90
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 165 ; base exp
 
-	INCBIN "gfx/pokemon/front/deer.pic", 0, 1 ; sprite dimensions
-	dw DeerPicFront, DeerPicBack
+	INCBIN "gfx/pokemon/front/ramoose.pic", 0, 1 ; sprite dimensions
+	dw RamoosePicFront, RamoosePicBack
 
 	db TACKLE, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -21,5 +21,5 @@
 	     FLASH
 	; end
 
-	db BANK(DeerPicFront)
-	assert BANK(DeerPicFront) == BANK(DeerPicBack)
+	db BANK(RamoosePicFront)
+	assert BANK(RamoosePicFront) == BANK(RamoosePicBack)

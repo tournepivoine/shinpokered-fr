@@ -50,19 +50,11 @@ VermilionCityScript0:
 	ld a, $3
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
-	ld a, [wObtainedBadges] ; ship returns after obtaining the marsh badge
-	bit 5, a
+	CheckEvent EVENT_BEAT_SABRINA
 	jr nz, .default
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .shipHasDeparted
 .default
-	ld hl, OldSeaMapCheckCoords
-	call ArePlayerCoordsInArray
-	jp c, MovePlayerVermilion
-	ld hl, CitrineCityCheckCoords
-	call ArePlayerCoordsInArray
-	jp c, MovePlayerVermilion
-	
 	ld b, S_S_TICKET
 	predef GetQuantityOfItemInBag
 	ld a, b
@@ -78,21 +70,9 @@ VermilionCityScript0:
 	ld [wVermilionCityCurScript], a
 	ret
 
-SSAnneTicketCheckCoords: ; Mother coords - use to universally trigger the same event
-	dbmapcoord 18, 30 ; S. S. Anne
-	dbmapcoord 10, 30 ; Faraway Island
-	dbmapcoord 26, 30 ; Citrine City
+SSAnneTicketCheckCoords:
+	dbmapcoord 18, 30
 	db -1 ; end
-
-; I know it looks awful but I use the individual ones to launch off the new ticket script.
-; We don't need an S.S. Anne one, as I'm using a process of elimination check system.
-OldSeaMapCheckCoords:
-	dbmapcoord 10, 30
-	db -1
-
-CitrineCityCheckCoords:
-	dbmapcoord 26, 30
-	db -1
 
 VermilionCityScript4:
 	ld hl, SSAnneTicketCheckCoords
@@ -136,186 +116,12 @@ VermilionCityScript1:
 	ld [wVermilionCityCurScript], a
 	ret
 
-; We call these four commands to stop text from autoskipping 4 times, may as well just make this.
 TheAutoskipStopinator:
 	ld a, [wSimulatedJoypadStatesEnd] ; ensuring that the text doesn't autoskip.
 	and a ; yep, here too.
 	call z, WaitForTextScrollButtonPress ; and here.
 	call EnableAutoTextBoxDrawing ; and here. 
 	ret
-
-; So get this: If you check multiple tickets, there's a really janky crash.
-; I can't be fucked fixing it, so let's force the player through the warp instead.
-; Yes, I'm serious. 
-MovePlayerVermilion:
-	ld a, PLAYER_DIR_DOWN
-	ld [wPlayerMovingDirection], a
-	call UpdateSprites
-	ld a, $ff ; Firstly...
-	ld [wJoyIgnore], a ; No joypad inputs. No funny business. RLE is weird as fuck without it.
-	ld hl, wSimulatedJoypadStatesEnd
-	ld de, WalkIntoWarp_RLEMovement
-	call DecodeRLEList
-	dec a
-	ld [wSimulatedJoypadStatesIndex], a
-	call StartSimulatingJoypadStates ; By this point, we're auto-moving.
-	ld a, $0
-	ld [wVermilionCityCurScript], a ; safety
-	ret
-
-WalkIntoWarp_RLEMovement:
-	db D_DOWN, 2
-	db -1 ; end
-
-; ================================================================
-; THIS IS NO LONGER USED, KEPT IN CASE A BETTER WARP SYSTEM COMES UP.
-; Alright, so I'll explain the issue.
-; For some reason, all the warp methods that exist do not seem to like this system.
-; Faraway Island would load but have botched collision and break when you leave.
-; Citrine City would outright crash.
-; Bank movements and stuff were tried but nothing seemed to work as desired.
-; Instead, we use a triple-harbour method, which makes the city look more lively anyway.
-
-;VermillionCityScript_GetPassesInBag:
-; Gets a list of Passes in the player's bag.
-; Ripped and modified from the fossil guy
-;	xor a
-;	ld [wFilteredBagItemsCount], a
-;	ld de, wFilteredBagItems
-;	ld hl, PassList
-;.loop
-;	ld a, [hli]
-;	and a
-;	jr z, .done
-;	push hl
-;	push de
-;	ld [wd11e], a
-;	ld b, a
-;	predef GetQuantityOfItemInBag
-;	pop de
-;	pop hl
-;	ld a, b
-;	and a
-;	jr z, .loop
-
-;	; A Pass is in the bag
-;	ld a, [wd11e]
-;	ld [de], a
-;	inc de
-;	push hl
-;	ld hl, wFilteredBagItemsCount
-;	inc [hl]
-;	pop hl
-;	jr .loop
-;.done
-;	ld a, $ff
-;	ld [de], a
-;	ret
-
-;PassList:
-;	db S_S_TICKET
-;	db OLD_SEA_MAP
-;	db CITRINE_PASS
-;	;db RAINBOW_PASS I planned this for a while, but the space wasn't there, and the scope was strange.
-;	db 0 ; end
-
-;PrintPassesInBag:
-; Prints each pass in the player's bag on a separate line in the menu.
-;	ld hl, wFilteredBagItems
-;	xor a
-;	ldh [hItemCounter], a
-;.loop
-;	ld a, [hli]
-;	cp $ff
-;	ret z
-;	push hl
-;	ld [wd11e], a
-;	call GetItemName
-;	hlcoord 2, 2
-;	ldh a, [hItemCounter]
-;	ld bc, SCREEN_WIDTH * 2
-;	call AddNTimes
-;	ld de, wcd6d
-;	call PlaceString
-;	ld hl, hItemCounter
-;	inc [hl]
-;	pop hl
-;	jr .loop
-
-;PassListings:
-;	ld hl, VermillionCityPassSelectionText
-;	call PrintText
-;	call VermillionCityScript_GetPassesInBag
-;	ld hl, wd730
-;	set 6, [hl]
-;	xor a
-;	ld [wCurrentMenuItem], a
-;	ld a, A_BUTTON | B_BUTTON
-;	ld [wMenuWatchedKeys], a
-;	ld a, [wFilteredBagItemsCount]
-;	dec a
-;	ld [wMaxMenuItem], a
-;	ld a, 2
-;	ld [wTopMenuItemY], a
-;	ld a, 1
-;	ld [wTopMenuItemX], a
-;	ld a, [wFilteredBagItemsCount]
-;	dec a
-;	ld bc, 2
-;	ld hl, 3
-;	call AddNTimes
-;	dec l
-;	ld b, l
-;	ld c, $d
-;	hlcoord 0, 0
-;	call TextBoxBorder
-;	call UpdateSprites
-;	call PrintPassesInBag
-;	ld hl, wd730
-;	res 6, [hl]
-;	call HandleMenuInput
-;	bit BIT_B_BUTTON, a
-;	jr nz, .cancelledPass
-;	ld hl, wFilteredBagItems
-;	ld a, [wCurrentMenuItem]
-;	ld d, 0
-;	ld e, a
-;	add hl, de
-;	ld a, [hl]
-;	ldh [hItemToRemoveID], a
-;	cp S_S_TICKET
-;	jp z, VermilionCityText3.playerHasTicket ; Saves time and less risk of bugs
-;	cp OLD_SEA_MAP
-;	jr z, .choseFaraway
-;	cp CITRINE_PASS
-;	jr z, .choseCitrine
-; god bless the safari game and pokemon tower 7f for being the few times a forcewarp exists
-; For some reason, these aren't working properly...
-;.choseFaraway
-;	ld hl, EventVermillionCityOldSeaMap
-;	call PrintText
-;	ld a, FARAWAY_ISLAND_OUTSIDE
-;	ld [wDestinationMap], a
-;	ld hl, wd732
-;	set 2, [hl] ; fly warp or dungeon warp
-;	call SpecialWarpIn
-;	jp SpecialEnterMap
-;.choseCitrine
-;	ld hl, EventVermillionCityCitrinePass
-;	call PrintText
-;	ld a, CITRINE_CITY
-;	ldh [hWarpDestinationMap], a
-;	ld a, $6
-;	ld [wDestinationWarpID], a
-;	call WarpFound2
-;	jr .done
-;.cancelledPass
-;	ld hl, PassRefuse
-;	call PrintText
-;.done
-;	ret
-;
-; ================================================================
 
 VermilionCity_TextPointers:
 	dw VermilionCityText1
@@ -326,8 +132,6 @@ VermilionCity_TextPointers:
 	dw VermilionCityText6
 	dw OfficerJennySquirtle
 	dw VermilionBeauty
-	dw EventVermillionCityOldSeaMapGreeting
-	dw EventVermillionCityCitrinePassGreeting
 	dw VermilionCityText7
 	dw VermilionCityText8
 	dw MartSignText
@@ -362,36 +166,8 @@ VermilionCityTextSSAnneDeparted:
 	text_end
 
 VermilionCityText3:
-	text_asm
-	
-	; Checking the location that the script flagged earlier. 
-	; Instead of using an item checker, this is more effective and easy on memory.
-	; Also, it doesn't get cross-threaded if you have multiples of the same thing. I had issues working around that one - I ain't a programmer by trade, unfortunately, I'm a TEFL student.
-	; Anyway, the code kicks you to different versions of the same script; I've had them isolated to call text in a way that's easier architecturally. Otherwise, we're checking the item found every time, and I'm 90% sure that nicks a WRAM entry.
-	; All in all: Yes, this is suboptimal, but I've been doing this for months. Sue me.
-	ld hl, OldSeaMapCheckCoords
-	call ArePlayerCoordsInArray
-	jr c, HasOldSeaMap
-	ld hl, CitrineCityCheckCoords
-	call ArePlayerCoordsInArray
-	jp c, HasCitrinePass
-	
-	; If you have neither, this will continue as normal, see? 
-	; This is why we needed the child coords.
-	
-	; Before the coord system, we used this with the unused pass listing code.
-	; See where the issues arose? Possibly a neat exercise!
-	;ld b, OLD_SEA_MAP
-	;predef GetQuantityOfItemInBag
-	;ld a, b
-	;and a
-	;jp nz, PassListings
-	;ld b, CITRINE_PASS
-	;predef GetQuantityOfItemInBag
-	;ld a, b
-	;and a
-	;jp nz, PassListings
-	
+	text_asm	
+
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .shipHasDeparted
 	ld a, [wSpritePlayerStateData1FacingDirection]
@@ -428,13 +204,9 @@ VermilionCityText3:
 .end
 	jp TextScriptEnd
 
-.inFrontOfOrBehindGuardCoords ; This can be all at once don't worry.
-	dbmapcoord 19, 29 ; in front of guard - S. S. Anne
-	dbmapcoord 19, 31 ; behind guard - S. S. Anne
-	dbmapcoord 11, 29 ; Faraway Island
-	dbmapcoord 11, 31 ; Faraway Island
-	dbmapcoord 27, 29 ; Citrine City
-	dbmapcoord 27, 31 ; Citrine City
+.inFrontOfOrBehindGuardCoords
+	dbmapcoord 19, 29 ; in front of guard
+	dbmapcoord 19, 31 ; behind guard
 	db -1 ; end
 
 SSAnneWelcomeText4:
@@ -457,93 +229,6 @@ SSAnneNotHereText:
 	text_far _SSAnneNotHereText
 	text_end
 
-HasOldSeaMap:
-	text_asm
-	ld a, [wSpritePlayerStateData1FacingDirection]
-	cp SPRITE_FACING_RIGHT
-	jr z, .greetPlayer
-	ld hl, VermilionCityText3.inFrontOfOrBehindGuardCoords
-	call ArePlayerCoordsInArray
-	jr nc, .greetPlayerAndCheckTicket
-.greetPlayer
-	ld hl, EventVermillionCityOldSeaMapGreeting
-	call PrintText
-	jr .end
-.greetPlayerAndCheckTicket
-	ld hl, EventVermillionCityOldSeaMapGreeting
-	call PrintText
-	call TheAutoskipStopinator
-	ld b, OLD_SEA_MAP
-	predef GetQuantityOfItemInBag
-	ld a, b
-	and a
-	jr nz, .playerHasTicket
-	ld hl, EventVermillionCityOldSeaMapGreetCheck
-	call PrintText
-	jr .end
-.playerHasTicket
-	ld hl, EventVermillionCityOldSeaMap
-	call PrintText
-	ld a, $4
-	ld [wVermilionCityCurScript], a
-.end
-	jp TextScriptEnd
-
-EventVermillionCityOldSeaMapGreeting:
-	text "I am looking for"
-	line "a certain map..."
-	done
-	text_end
-
-EventVermillionCityOldSeaMapGreetCheck:
-	text "Do you have it?"
-	done
-	text_end
-
-HasCitrinePass:
-	text_asm
-	ld a, [wSpritePlayerStateData1FacingDirection]
-	cp SPRITE_FACING_RIGHT
-	jr z, .greetPlayer
-	ld hl, VermilionCityText3.inFrontOfOrBehindGuardCoords
-	call ArePlayerCoordsInArray
-	jr nc, .greetPlayerAndCheckTicket
-.greetPlayer
-	ld hl, EventVermillionCityCitrinePassGreeting
-	call PrintText
-	jr .end
-.greetPlayerAndCheckTicket
-	ld hl, EventVermillionCityCitrinePassGreeting
-	call PrintText
-	call TheAutoskipStopinator
-	ld b, CITRINE_PASS
-	predef GetQuantityOfItemInBag
-	ld a, b
-	and a
-	jr nz, .playerHasTicket
-	ld hl, EventVermillionCityCitrinePassGreetCheck
-	call PrintText
-	jr .end
-.playerHasTicket
-	ld hl, EventVermillionCityCitrinePass
-	call PrintText
-	ld a, $4
-	ld [wVermilionCityCurScript], a
-.end
-	jp TextScriptEnd
-
-EventVermillionCityCitrinePassGreeting:
-	text "Hah! I only serve"
-	line "strong TRAINERs!"
-	done
-	text_end
-
-EventVermillionCityCitrinePassGreetCheck:
-	text "Gonna need to see"
-	line "proof, shrimp!"
-	done
-	text_end
-
 VermilionCityText4:
 	text_far _VermilionCityText4
 	text_end
@@ -563,8 +248,7 @@ VermilionCityText14:
 
 VermilionCityText6:
 	text_asm
-	ld a, [wObtainedBadges]
-	bit 5, a ; after obtaining the marsh badge the ship returns
+	CheckEvent EVENT_BEAT_SABRINA
 	jr z, .default
 	ld hl, VermilionCityText15
 	ret
@@ -665,24 +349,8 @@ OfficerJennyHowDoing:
 	text_far _OfficerJennyText5
 	text_end
 
-VermillionCityPassSelectionText:
-	text_far _VermillionCityPassSelectionText
-	text_end
-
-EventVermillionCityOldSeaMap:
-	text_far _VermillionCityOldSeaMap
-	text_end
-
-EventVermillionCityCitrinePass:
-	text_far _VermillionCityCitrinePass
-	text_end
-
 EventVermillionCitySSTicket:
 	text_far _SSAnneFlashedTicketText
-	text_end
-
-PassRefuse:
-	text_far _VermillionCityHarborRefuse
 	text_end
 
 ; LGPE Beauty who gives you a Persian or Arcanine depending on the game.

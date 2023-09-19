@@ -1,16 +1,8 @@
 GiovannisRoom_Script:
-	call EnableAutoTextBoxDrawing
-	ld hl, GiovannisRoomTrainerHeaders
-	ld de, RocketHideoutB1F_ScriptPointers
-	ld a, [wRocketHideoutB1FCurScript]
-	call ExecuteCurMapScriptInTable
-	ld [wRocketHideoutB1FCurScript], a
-	ret
+	jp EnableAutoTextBoxDrawing
 
 GiovannisRoom_ScriptPointers:
 	dw GiovannisRoomScript0
-	dw DisplayEnemyTrainerTextAndStartBattle
-	dw EndTrainerBattle
 	dw GiovannisRoomScript4
 
 GiovannisRoomScript0:
@@ -127,13 +119,6 @@ GiovannisRoom_TextPointers:
 	dw GiovannisRoomText4
 	dw PickUpItemText
 	dw PickUpItemText
-	dw GiovannisRoomText7
-
-GiovannisRoomTrainerHeaders:
-	def_trainers
-GiovannisRoomTrainerHeader0:
-	trainer EVENT_BEAT_ROCKET_HIDEOUT_1_TRAINER_0, 3, GiovannisRoomBattleText2, GiovannisRoomEndBattleText2, GiovannisRoomAfterBattleTxt2
-	db -1 ; end
 
 GiovannisRoomText1:
 	text_far _GiovannisRoomText1
@@ -149,22 +134,4 @@ GiovannisRoomText3:
 
 GiovannisRoomText4:
 	text_far _GiovannisRoomText4
-	text_end
-
-GiovannisRoomText7:
-	text_asm
-	ld hl, GiovannisRoomTrainerHeader0
-	call TalkToTrainer
-	jp TextScriptEnd
-
-GiovannisRoomBattleText2:
-	text_far _GiovannisRoomBattleText2
-	text_end
-
-GiovannisRoomEndBattleText2:
-	text_far _GiovannisRoomEndBattleText2
-	text_end
-
-GiovannisRoomAfterBattleTxt2:
-	text_far _GiovannisRoomAfterBattleTxt2
 	text_end

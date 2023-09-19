@@ -56,7 +56,7 @@ ENDM
 	warp_tiles $5E
 
 .ForestWarpTileIDs:
-	warp_tiles $5A, $5C, $3A, $30, $50, $51 ; $30, $50, and $51 are for Faraway Island, intended for the upward ($58) and downward ($59) blocks we use to signify warps. - PvK
+	warp_tiles $5A, $5C, $3A
 
 .DojoWarpTileIDs:
 .GymWarpTileIDs:

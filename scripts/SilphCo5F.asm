@@ -47,6 +47,42 @@ SilphCo5GateCoords:
 	dbmapcoord  7,  5
 	db -1 ; end
 
+SilphCo4Script_19d5d:
+	push hl
+	ld hl, wCardKeyDoorY
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+	ld c, a
+	xor a
+	ldh [hUnlockedSilphCoDoors], a
+	pop hl
+.asm_19d69
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_19d85
+	push hl
+	ld hl, hUnlockedSilphCoDoors
+	inc [hl]
+	pop hl
+	cp b
+	jr z, .asm_19d7a
+	inc hl
+	jr .asm_19d69
+.asm_19d7a
+	ld a, [hli]
+	cp c
+	jr nz, .asm_19d69
+	ld hl, wCardKeyDoorY
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ret
+.asm_19d85
+	xor a
+	ldh [hUnlockedSilphCoDoors], a
+	ret
+
 SilphCo5Script_19f9e:
 	EventFlagAddress hl, EVENT_SILPH_CO_5_UNLOCKED_DOOR1
 	ldh a, [hUnlockedSilphCoDoors]
@@ -94,6 +130,16 @@ SilphCo5TrainerHeader2:
 SilphCo5TrainerHeader3:
 	trainer EVENT_BEAT_SILPH_CO_5F_TRAINER_3, 3, SilphCo5BattleText5, SilphCo5EndBattleText5, SilphCo5AfterBattleText5
 	db -1 ; end
+
+SilphCo6Script_1a22f:
+	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
+	jr nz, .asm_1a238
+	jr .asm_1a23a
+.asm_1a238
+	ld h, d
+	ld l, e
+.asm_1a23a
+	jp PrintText
 
 SilphCo5Text1:
 	text_asm

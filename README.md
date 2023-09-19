@@ -9,10 +9,10 @@ New Pokemon:
 The Kanto Expansion Pak's ethos is to add every "Kanto-related" Pokemon to RBY without fundamentally changing the grander metagame. What's defined as "Kanto-related" is a Pokemon that evolves from an existing Kanto Pokemon, made an appearance in a Kanto-based game (LGPE), is a regional variant, or was a Kanto-related Pokemon cut during the development of an official game.
 
 With this criteria, we get:
-- The 34 known beta Pokemon that were cut from Red and Green; eg. Gorochu, Deer
-- Evolutions or pre-evolutions of a Kanto Pokemon found in a future generation eg. Kleavor, Glaceon, Annihilape
-- Evolutions of Kanto Pokemon found in the SpaceWorld '97 demo of Gold and Silver; eg. Madaamu, Purakkusu
-- All fully-evolved regional variants of Kanto Pokemon; eg. Hisuian Arcanine, Galarian Slowbro, Paldean Tauros, Alolan Muk
+- The 34 known beta Pokemon that were cut from Red and Green; eg. Gorochu, Kotora
+- Evolutions or pre-evolutions of a Kanto Pokemon found in a future generation eg. Steelix, Glaceon, Kleavor, Annihilape
+- Evolutions of Kanto Pokemon found in the SpaceWorld '97 demo of Gold and Silver; eg. Luxwan, Bellignan
+- All fully-evolved regional variants of Kanto Pokemon; eg. Alolan Muk, Galarian Slowbro, Hisuian Arcanine, Paldean Tauros
 - Meltan and Melmetal from Let's Go Pikachu and Let's Go Eevee.
 - Paradox Pokemon from Scarlet & Violet; Scream Tail and Sandy Shocks.
 
@@ -29,11 +29,15 @@ In general, the following Pokemon are not available;
 - Mime Jr.
 - Happiny
 - Munchlax
-- Erebebii (prototype Elekid pre-evoluton in May98 GSC sprite cache)
-- Hinaazu (SW97 Baby Doduo)
-- Betobebii (SW97 Baby Grimer)
-- Pudi (SW97 Baby Growlithe)
-- Regional form pre-evolutions (eg. Alolan Vulpix, Galarian Slowpoke)
+- Bittybat (prototype Zubat pre-evolution from Red and Green)
+- Magnetite (prototype middle stage between Magnemite and Magneton)
+- Elebaby (prototype Elekid pre-evolution in May98 GSC sprite cache)
+- Burgela (SW97 Baby Tangela)
+- Paraspor (SW97 Baby Paras)
+- Dodaerie (SW97 Baby Doduo)
+- Smujj (SW97 Baby Grimer)
+- Pupperon (SW97 Baby Growlithe)
+- Regional form pre-evolutions (eg. Alolan Vulpix, Galarian Slowpoke, Hisuian Voltorb)
 
 Mega Evolutions and Gigantamax forms are not in the game mainly by choice. There are no held items and there isn't a special button or anything, so it felt kind of weird to add, would deviate significantly from the RBY experience, and requires a pretty big overhaul to the battle system. It's definitely possible, just not for me.
 
@@ -49,7 +53,7 @@ Changes at a glance:
 - Bite is still Normal-type.
 - The Clefairy, Mime Jr, and Jigglypuff lines are not Steel or Fairy-type, respectively.
 	- This (and Bite) was done to ensure the original Kanto Pokemon were unaltered in any way.
-	- While Magnemite, Magnetite, and Magneton are pure Electric, Magnezone is part-Steel.
+	- While Magnemite and Magneton are pure Electric, Magnezone is part-Steel.
 	- Scream Tail remains Fairy/Psychic.
 - Fire remains neutral against Ice.
 - Bug and Poison remain super effective against each other.
@@ -95,7 +99,7 @@ New Areas
 	- This is a reference to a Magikarp event from July 1998, and includes the lore from it and other areas of Pokemon's early worldbuilding.
 	- There are features new infinitely re-battleable trainers for grinding money.
 	- There's a Move Deleter and Move Relearner, allowing for HM deletion and getting back lost moves.
-- Citrine City is a new island city that can be accessed in the postgame.
+- Citrine City is a new island city that can be accessed in the postgame through a new port in Vermillion.
 	- There's a house with a Move Tutor that can teach Tradeback moves without the need for GSC's Time Capsule!
 	- It features a Team Rocket house where they will sell you TMs and Evolution Items, as well as provide a Hyper Training feature to get Max DVs!
 	- The Battle Tent from the TwitchPlaysPokemon Anniversary hack makes a return, featuring new trainers and Pokemon!
@@ -114,8 +118,8 @@ New Areas
 New Music
 ====
 - Mewtwo has its own battle theme: A demake of the iconic Stadium track! It features some creative deviations to give it a distinct Game Boy feel while fitting with Mewtwo's mystique. Composed by LuciShrimp.
-- Mew and the Kantonian Birds have their own battle theme, a demake of the FireRed/LeafGreen pitch-shifted remix. Not simply pitching it up, percussion elements have been added to give it that rustic FRLG "feel" that distinguishes it from the original games. Composed by LuciShrimp.
-	- Limited static encounters, such as the Power Plant Voltorb/Electrode, Snorlax, and the restored prototype Omega, also use this theme, much like Let's Go Pikachu and Eevee.
+- Mew and the Legendary Birds have their own battle theme, a demake of the FireRed/LeafGreen pitch-shifted remix. Not simply pitching it up, percussion elements have been added to give it that rustic FRLG "feel" that distinguishes it from the original games. Composed by LuciShrimp.
+	- Limited static encounters, such as the two sleeping Snorlax, and the restored prototype Omega, also use this theme.
 - Pokemon Yellow's various tracks have been backported, such as Jessie and James's encounter theme.
 - Several pieces of unused music, including Digda01, Victory4, Field6, Kincho01, and Giovanni's theme have been implemented.
 	- A remix of the unused Koukan (trading) music is also used as a town theme. Composed by BGVC.
@@ -158,7 +162,7 @@ QoL Enhancements
 - A feminine character option is now available, featuring the sprite from Pokemon Anniversary Red, which is based on Green's manga appearance.
 	- To accomodate this, Celadon Gym's trainers use their more neutral text from Crystal.
 	- The protagonist is also referred to in a gender neutral manner. This changes like, 2-3 lines in the whole game.
-- All 151 original Pokemon, plus an additional 100, can be obtained without the use of trading or glitches, including Mew!
+- All 151 original Pokemon, plus an additional 97, can be obtained without the use of trading or glitches, including Mew!
 - Various moves have had their animations altered to be less intensive for photosensitive individuals, including every animation that was dimmed on the 3DS (Most notably Blizzard and Thunderbolt). This was done with the aim of also improving the move's animations overall, so some look a little flashier.
 	- Full list includes Body Slam, Glare, Disable, Blizzard, BubbleBeam, Confusion, Dream Eater, Explosion, Guillotine, Hyper Beam, Mega Kick, Mega Punch, Psychic, Reflect, Rock Slide, Selfdestruct, Spore, and Thunderbolt.
 - PureRGB's AI enhancements are ported over; said hack was made by Vortiene. In general, it isn't as stupid as it was before.
@@ -200,8 +204,8 @@ QoL Enhancements
 	- 3x BAR now gives 400 coins (used to be 100)
 	- 3x 7s now gives 900 coins (used to be 300)
 - Game Corner prizes have been altered;
-	- Blue's superior prices are used, so Porygon only costs 6500 coins.
-	- New prizes include: Cubone, Blastyke, and Cactus.
+	- Prices have been changed, so Porygon doesn't require 9999 coins.
+	- New prizes include: Cubone, Cactus, and Squeamata
 	- The Moon Stone is available over TM23 (Dragon Rage). Dragon Rage is still available in Celadon University!
 - Spinner tiles move faster.
 - Fight Debug now allows moves other than Pound.
@@ -254,13 +258,14 @@ Known Bugs
 Comprehensive list can be found on Discord.
 - Only portions of spinner tiles animate.
 - Occasionally, menu text sets itself to scroll.
-- Giovanni's Room crashes the game.
-- Pokedex does not load a full dex properly due to a soft limit of 248.
 - The Tradeback Tutor doesn't work properly with Rhydon for reasons likely related to its index number of 1.
-- The Vermilion Passes are very unstable (Faraway warps are weird unless you battle, Citrine outright crashes).
 - Fake Tears and Nasty Plot don't quite look right when done from the opponent's side.
 - The door mat tiles added recently warp the player when they walk on another (Citrine mats, arrow tiles...)
 - James doesn't check for Max DVs when Hyper Training.
+- Citrine Dock's warp doesn't work, meaning you have to leave Citrine using Fly
+- LAST_MAP isn't updated properly when sailing from Vermilion to Citrine
+- After reloading the game after beating the Elite Four, Pallet Town's correct palette isn't loaded in until after leaving the house.
+- The Gym Leaders on Floor 6 of Silph Gauntlet don't play the correct music in battle
 
 Evolution Methods for new Pokemon
 ====
@@ -270,16 +275,16 @@ Due to the odd way some new Pokemon evolve, methods are listed here.
 - To accomodate new additions and ensure everything makes sense, some Pokemon have also had their methods changed. These situations are usually very extreme.
 
 Changed Methods:
-- Shellder -> Cloyster | Use Ice Stone (Accomodating Taaban)
+- Shellder -> Cloyster | Use Ice Stone (Accomodating Disturban)
 - Gloom -> Vileplume | Use Poison Stone (Accomodating Bellossom)
 - Nidorino -> Nidoking | L36 OR use Poison Stone (Level up method from prototype, accomodating Nidoreign)
 - Nidorina -> Nidoqueen | L36 OR use Poison Stone (Level up method from prototype, accomodating Nidoreign)
 
 New Pokemon:
 - Chansey -> Blissey | L45
-- Ditto -> Animon | Use Metal Coat
+- Ditto -> Mimmeo | Use Metal Coat
 - Electabuzz -> Electivire | Use Thunder Stone
-- Farfetch'd -> Madaamu | L24
+- Farfetch'd -> Luxwan | L24
 - Gloom -> Bellossom | Use Leaf Stone
 - Golbat -> Crobat | L44
 - Lickitung -> Lickilicky | L32
@@ -287,7 +292,7 @@ New Pokemon:
 - Magneton -> Magnezone | Use Thunder Stone
 - Marowak -> Guardia | Use Heart Stone
 - Onix -> Steelix | L38 OR use Metal Coat
-- Pinsir -> Purakkusu | L42 OR use Metal Coat
+- Pinsir -> Tricules | L42 OR use Metal Coat
 - Poliwhirl -> Politoed | Use Heart Stone
 - Porygon -> Porygon2 | Use Up-Grade
 - Porygon2 -> Porygon-Z | Use Dubious Disc
@@ -296,30 +301,28 @@ New Pokemon:
 - Scyther -> Scizor | L41 OR use Metal Coat
 - Scyther -> Kleavor | Use Black Augurite
 - Seadra -> Kingdra | Trade
-- Shellder -> Taaban | Use Water Stone
+- Shellder -> Disturban | Use Water Stone
 - Slowpoke -> Slowking | Use Heart Stone 
 - Tangela -> Tangrowth | L44
-- Weepinbell -> Tsubomitto | Use Poison Stone
+- Weepinbell -> Bellignan | Use Poison Stone
 
 Kanto Beta Pokemon:
-- Bittybat -> Zubat | L15
 - Blastyke -> Blastoise | L36
 - Blottle -> Pendraken | L30
 - Cheep -> Jabetta | L30
-- Decilla -> Gyaoon | L40
+- Coinpur -> Meowth | L14
+- Decilla -> Gawarhed | L40
 - Gyopin -> Goldeen | L16
-- Kokana -> Kasanagi | L7
-- Kasanagi -> Carapthor | L10
-- Konya -> Meowth | L14
+- Kokana -> Pupal | L7
+- Pupal -> Carapthor | L10
 - Kotora -> Gaotora -> Gorotora | L16, L36
-- Magnemite -> Magnetite -> Magneton | L20, L30
-- Mikon -> Vulpix | L15
+- Kolta -> Ponyta | L20
 - Nidorino OR Nidorina -> Nidoreign | Moon Stone
 - Psyduck -> Weirduck -> Golduck | L22, L33
-- Puchikoon -> Ponyta | L20
 - Raichu -> Gorochu | Trade
 - Ribbito -> Croakozuna | L30
-- Skimper -> Bawligua -> Cryithan | L30, L50
+- Squeamata -> Ministare -> Iguanarch | L30, L50
+- Vulpiii -> Vulpix | L15
 - Wartortle -> Totartle | L36, replaces Blastoise
 
 Eeveelutions:
@@ -328,24 +331,6 @@ Eeveelutions:
 - Leafeon | Leaf Stone
 - Glaceon | Ice Stone
 - Sylveon | Moon Stone
-
-The Evolution Stone Glitch is being made a feature by moving the Pokemon's constants appropriately. It happens by defeating a Pokemon using a certain Pokemon, while levelling up the respective Pokemon that wants to evolve. Thus, by using a stone, you now have a way to save on them, making all evolutions replicable as long as the Pokemon is kept in possession. We're making each Pokemon that applies to this glitch thematically appropriate.
-
-The following will apply:
-- Clefable for Moon Stone
-- Electivire for Thunder Stone
-- Magmortar for Fire Stone
-- Poliwrath for Water Stone
-- Politoed for Heart Stone
-- Victreebel for Leaf Stone
-- Tsubomitto for Poison Stone
-- Cloyster for Ice Stone
-- Melmetal for Candy Jar
-- Kleavor for Black Augurite
-- Porygon2 for Up-Grade
-- Porygon-Z for Dubious Disc
-- Rhyperior for Protector
-- Steelix for Metal Coat
 
 Accessing Regional variants
 ====
@@ -377,8 +362,8 @@ KEP spriters hold the policy of requiring sprites to be used with direct credit 
 
 If you use our implementations of anything at all, it is encouraged to submit Pull Requests for bug fixes if you find any issues! We very much appreciate them!
 
-* Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, male/female character selection, Meltan implementation, Yellow backports, and occasional spriter (assisting with Tsubomitto, Carapthor)
-* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon, Tsubomitto and Animon sprites, Maps (Citrine City, Cinnabar Volcano, Underwater Tunnel, Silph Gauntlet,), SGB border, new palettes for postgame areas and Game Corner, etc.
+* Plague von Karma - Creator of the Showdown Mod, Director, Developer, Scenarios, Balancing, Dialogue, Pokedex entries, Maps (Mt. Moon Crater, Galarian Bird dungeons, Rock Tunnel, Cinnabar Volcano floors, enhanced Diglett's Cave, Shinjuku Jacky's room, and more), Event scripting, Hyper Training, FRLG Tea, post-game rematches, male/female character selection, Meltan implementation, Yellow backports, and occasional spriter (assisting with Bellignan, Carapthor)
+* Martha's Against Humanity - Developer, Pokémon implementation, Pokedex entries, Event scripting, tweaks of Albatross's sprites, Sylveon, Bellignan and Mimmeo sprites, Maps (Citrine City, Cinnabar Volcano, Underwater Tunnel, Silph Gauntlet,), SGB border, new palettes for postgame areas and Game Corner, etc.
 * Ema Skye - Developer, Maps (Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)

@@ -7,9 +7,9 @@ Gauntlet1FWildMons:
 	db 51, BEEDRILL
 	db 52, VENOMOTH
 	db 52, CARAPTHOR
-	db 53, RAICHU
+	db 53, TANGELA
 	db 53, CARAPTHOR
-	db 55, VENUSAUR
+	db 55, GOROTORA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

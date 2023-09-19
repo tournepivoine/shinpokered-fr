@@ -15,39 +15,18 @@ _SilphGauntlet2FAfterBattleText1::
 	cont "application..."
 	done
 
-; I am not sure if Junior should be here.
-; At most, a later floor. He's meant to be Blue's little brother, no?
-; Need a proper discussion on what to do with him, even the OG devs didn't know what to do.
 _SilphGauntlet2FBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "JUNIOR"
-	done
-
-_SilphGauntlet2FEndBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "JUNIOR"
-	prompt
-
-_SilphGauntlet2FAfterBattleText2::
-	text "Comment to be"
-	line "written."
-	cont "JUNIOR"
-	done
-
-_SilphGauntlet2FBattleText3::
 	text "This is no place"
 	line "to hike! Now I'm"
 	cont "mad!"
 	done
 
-_SilphGauntlet2FEndBattleText3::
+_SilphGauntlet2FEndBattleText2::
 	text "Bah!"
 	line "Too much!"
 	prompt
 
-_SilphGauntlet2FAfterBattleText3::
+_SilphGauntlet2FAfterBattleText2::
 	text "That CHIEF!"
 	
 	para "Always cutting"
@@ -55,18 +34,18 @@ _SilphGauntlet2FAfterBattleText3::
 	cont "stand it!"
 	done
 
-_SilphGauntlet2FBattleText4::
+_SilphGauntlet2FBattleText3::
 	text "Umm..."
 	
 	para "Battle me!"
 	done
 
-_SilphGauntlet2FEndBattleText4::
+_SilphGauntlet2FEndBattleText3::
 	text "It's"
 	line "no big deal..."
 	prompt
 
-_SilphGauntlet2FAfterBattleText4::
+_SilphGauntlet2FAfterBattleText3::
 	text "I don't get out"
 	line "much..."
 	
@@ -76,18 +55,18 @@ _SilphGauntlet2FAfterBattleText4::
 	cont "always wanted..."
 	done
 
-_SilphGauntlet2FBattleText5::
+_SilphGauntlet2FBattleText4::
 	text "Hahaha! This is"
 	line "great! So many"
 	cont "rare #MON! Show"
 	cont "me yours, now!"
 	done
 
-_SilphGauntlet2FEndBattleText5::
+_SilphGauntlet2FEndBattleText4::
 	text "Argh!"
 	prompt
 
-_SilphGauntlet2FAfterBattleText5::
+_SilphGauntlet2FAfterBattleText4::
 	text "The second I heard"
 	line "of the #MON"
 	cont "I could meet here,"
@@ -97,6 +76,24 @@ _SilphGauntlet2FAfterBattleText5::
 	line "expected to see"
 	cont "#MON like yours,"
 	cont "though!"
+	done
+
+_SilphGauntlet2FBattleText5::
+	text "If I win this,"
+	line "CHIEF will love"
+	cont "me for sure!"
+	done
+
+_SilphGauntlet2FEndBattleText5::
+	text "No!"
+	line "Not here..."
+	prompt
+
+_SilphGauntlet2FAfterBattleText5::
+	text "Huh? Why CHIEF?"
+	
+	para "I just want his"
+	line "money!" ; hahahahahaha
 	done
 
 _SilphGauntlet2FBattleText6::
@@ -120,7 +117,7 @@ _SilphGauntlet2FAfterBattleText6::
 	line "powerful."
 	
 	para "Keep battling,"
-	cont "and you will"
+	line "and you will"
 	cont "surely succeed."
 	done
 	

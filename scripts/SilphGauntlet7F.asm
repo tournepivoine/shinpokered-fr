@@ -95,6 +95,7 @@ ChiefScript4:
 	ld a, HS_CERULEAN_CAVE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	; ResetEventRange SILPH_GAUNTLET_EVENTS_START, SILPH_GAUNTLET_EVENTS_END, 1 ; I want this to reset the trainers so you can refight them, but I'm very unsure how this works...
 	
 	ld a, $0
 	ld [wSilphGauntlet7FCurScript], a

@@ -116,22 +116,5 @@ _SilphGauntlet3FAfterBattleText6::
 	cont "this in their"
 	cont "fishing gear?!"
 	done
-	
-_SilphGauntlet3FBattleText7::
-	text "If I win this,"
-	line "CHIEF will love"
-	cont "me for sure!"
-	done
 
-_SilphGauntlet3FEndBattleText7::
-	text "No!"
-	line "Not here..."
-	prompt
-
-_SilphGauntlet3FAfterBattleText7::
-	text "Huh? Why CHIEF?"
-	
-	para "I just want his"
-	line "money!" ; hahahahahaha
-	done
 	

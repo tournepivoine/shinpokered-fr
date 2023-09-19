@@ -19,10 +19,9 @@ SilphGauntlet3F_TextPointers:
 	dw SilphGauntlet3FText4
 	dw SilphGauntlet3FText5
 	dw SilphGauntlet3FText6
-	dw SilphGauntlet3FText7
 	
 SilphGauntlet3FTrainerHeaders:
-	def_trainers 5
+	def_trainers
 SilphGauntlet3FTrainerHeader0:
 	trainer EVENT_BEAT_GAUNTLET_SAILOR, 1, SilphGauntlet3FBattleText1, SilphGauntlet3FEndBattleText1, SilphGauntlet3FAfterBattleText1
 SilphGauntlet3FTrainerHeader1:
@@ -35,8 +34,6 @@ SilphGauntlet3FTrainerHeader4:
 	trainer EVENT_BEAT_GAUNTLET_ROCKER, 1, SilphGauntlet3FBattleText5, SilphGauntlet3FEndBattleText5, SilphGauntlet3FAfterBattleText5
 SilphGauntlet3FTrainerHeader5:
 	trainer EVENT_BEAT_GAUNTLET_FISHER, 2, SilphGauntlet3FBattleText6, SilphGauntlet3FEndBattleText6, SilphGauntlet3FAfterBattleText6
-SilphGauntlet3FTrainerHeader6:
-	trainer EVENT_BEAT_GAUNTLET_BEAUTY, 3, SilphGauntlet3FBattleText7, SilphGauntlet3FEndBattleText7, SilphGauntlet3FAfterBattleText7
 	db -1 ; end
 	
 SilphGauntlet3FText1:
@@ -145,24 +142,6 @@ SilphGauntlet3FEndBattleText6:
 
 SilphGauntlet3FAfterBattleText6:
 	text_far _SilphGauntlet3FAfterBattleText6
-	text_end
-	
-SilphGauntlet3FText7:
-	text_asm
-	ld hl, SilphGauntlet3FTrainerHeader6
-	call TalkToTrainer
-	jp TextScriptEnd
-
-SilphGauntlet3FBattleText7:
-	text_far _SilphGauntlet3FBattleText7
-	text_end
-
-SilphGauntlet3FEndBattleText7:
-	text_far _SilphGauntlet3FEndBattleText7
-	text_end
-
-SilphGauntlet3FAfterBattleText7:
-	text_far _SilphGauntlet3FAfterBattleText7
 	text_end
 
 	text_end

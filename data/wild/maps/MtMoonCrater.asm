@@ -5,11 +5,11 @@ MtMoonCraterMons:
 	db 53, RAICHU
 	db 52, VENOMOTH
 	db 52, DUGTRIO
-	db 55, ESPEON
-	db 55, UMBREON
+	db 55, RAICHU
+	db 55, CHANSEY
 	db 50, SANDY_SHOCKS
 	db 50, SCREAM_TAIL
-	db 56, CHANSEY ; I don't like this but I also don't like the Paradox Pokemon not both being 4%. Sue me.
+	db 50, SCREAM_TAIL
 	end_grass_wildmons
 	
 	def_water_wildmons 10 ; encounter rate
@@ -21,6 +21,6 @@ MtMoonCraterMons:
 	db 52, CROAKOZUNA
 	db 54, CROAKOZUNA
 	db 50, WUGTRIO
-	db 56, WUGTRIO
-	db 50, VAPOREON
+	db 51, WUGTRIO
+	db 52, WUGTRIO
 	end_water_wildmons

@@ -1,4 +1,4 @@
-	db DEX_MADAAMU ; pokedex id
+	db DEX_LUXWAN ; pokedex id
 
 	db  72, 105,  75,  70,  63
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 25 ; catch rate
 	db 196 ; base exp
 
-	INCBIN "gfx/pokemon/front/madaamu.pic", 0, 1 ; sprite dimensions
-	dw MadaamuPicFront, MadaamuPicBack
+	INCBIN "gfx/pokemon/front/luxwan.pic", 0, 1 ; sprite dimensions
+	dw LuxwanPicFront, LuxwanPicBack
 
 	db PECK, SAND_ATTACK, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -21,5 +21,5 @@
 	     FLY
 	; end
 
-	db BANK(MadaamuPicFront)
-	assert BANK(MadaamuPicFront) == BANK(MadaamuPicBack)
+	db BANK(LuxwanPicFront)
+	assert BANK(LuxwanPicFront) == BANK(LuxwanPicBack)

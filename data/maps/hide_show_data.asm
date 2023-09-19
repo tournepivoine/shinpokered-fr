@@ -150,8 +150,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw PokemonTower2FHS
-	dw BrunswickGrottoHS ; Brunswick Grotto
-	;dw PokemonTower3FHS
+	dw BrunswickGrottoHS
 	dw NoHS ; Pokemon Tower 4F, removed for constant space
 	dw PokemonTower5FHS
 	dw PokemonTower6FHS
@@ -203,7 +202,7 @@ MapHSPointers:
 	dw VictoryRoad2FHS
 	dw NoHS
 	dw NoHS
-	dw DiglettsCaveHS
+	dw NoHS
 	dw VictoryRoad3FHS
 	dw RocketHideoutB1FHS
 	dw RocketHideoutB2FHS
@@ -215,9 +214,9 @@ MapHSPointers:
 	dw GarnetCavernB1FHS
 	dw NoHS
 	dw SilphCo3FHS
-	dw SilphCo4FHS
+	dw NoHS
 	dw SilphCo5FHS
-	dw SilphCo6FHS
+	dw NoHS
 	dw SilphCo7FHS
 	;dw SilphCo8FHS
 	dw PokemonMansion2FHS
@@ -408,7 +407,7 @@ PowerPlantHS:
 	db POWER_PLANT, $0D, SHOW                 ; HS_POWER_PLANT_ITEM_4
 	db POWER_PLANT, $0E, SHOW                 ; HS_POWER_PLANT_ITEM_5
 VictoryRoad2FHS:
-	db VICTORY_ROAD_2F, $06, SHOW             ; HS_GYAOON
+	db VICTORY_ROAD_2F, $06, SHOW             ; HS_VICTORY_ROAD_2F_ITEM_0
 	db VICTORY_ROAD_2F, $07, SHOW             ; HS_VICTORY_ROAD_2F_ITEM_1
 	db VICTORY_ROAD_2F, $08, SHOW             ; HS_VICTORY_ROAD_2F_ITEM_2
 	db VICTORY_ROAD_2F, $09, SHOW             ; HS_VICTORY_ROAD_2F_ITEM_3
@@ -448,8 +447,6 @@ SSAnneB1FRoomsHS:
 	db SS_ANNE_B1F_ROOMS, $09, SHOW           ; HS_SS_ANNE_B1F_ROOMS_ITEM_1
 	db SS_ANNE_B1F_ROOMS, $0A, SHOW           ; HS_SS_ANNE_B1F_ROOMS_ITEM_2
 	db SS_ANNE_B1F_ROOMS, $0B, SHOW           ; HS_SS_ANNE_B1F_ROOMS_ITEM_3
-DiglettsCaveHS:
-	db DIGLETTS_CAVE, $01, SHOW               ; HS_WUGTRIO
 VictoryRoad3FHS:
 	db VICTORY_ROAD_3F, $05, SHOW             ; HS_VICTORY_ROAD_3F_ITEM_1
 	db VICTORY_ROAD_3F, $06, SHOW             ; HS_VICTORY_ROAD_3F_ITEM_2
@@ -484,13 +481,13 @@ SilphCo3FHS:
 	db SILPH_CO_3F, $02, SHOW                 ; HS_SILPH_CO_3F_1
 	db SILPH_CO_3F, $03, SHOW                 ; HS_SILPH_CO_3F_2
 	db SILPH_CO_3F, $04, SHOW                 ; HS_SILPH_CO_3F_ITEM
-SilphCo4FHS:
-	db SILPH_CO_4F, $02, SHOW                 ; HS_SILPH_CO_4F_1
-	db SILPH_CO_4F, $03, SHOW                 ; HS_SILPH_CO_4F_2
-	db SILPH_CO_4F, $04, SHOW                 ; HS_SILPH_CO_4F_3
-	db SILPH_CO_4F, $05, SHOW                 ; HS_SILPH_CO_4F_ITEM_1
-	db SILPH_CO_4F, $06, SHOW                 ; HS_SILPH_CO_4F_ITEM_2
-	db SILPH_CO_4F, $07, SHOW                 ; HS_SILPH_CO_4F_ITEM_3
+;SilphCo4FHS:
+;	db SILPH_CO_4F, $02, SHOW                 ; HS_SILPH_CO_4F_1
+;	db SILPH_CO_4F, $03, SHOW                 ; HS_SILPH_CO_4F_2
+;	db SILPH_CO_4F, $04, SHOW                 ; HS_SILPH_CO_4F_3
+;	db SILPH_CO_4F, $05, SHOW                 ; HS_SILPH_CO_4F_ITEM_1
+;	db SILPH_CO_4F, $06, SHOW                 ; HS_SILPH_CO_4F_ITEM_2
+;	db SILPH_CO_4F, $07, SHOW                 ; HS_SILPH_CO_4F_ITEM_3
 SilphCo5FHS:
 	db SILPH_CO_5F, $02, SHOW                 ; HS_SILPH_CO_5F_1
 	db SILPH_CO_5F, $03, SHOW                 ; HS_SILPH_CO_5F_2
@@ -499,12 +496,12 @@ SilphCo5FHS:
 	db SILPH_CO_5F, $06, SHOW                 ; HS_SILPH_CO_5F_ITEM_1
 	db SILPH_CO_5F, $07, SHOW                 ; HS_SILPH_CO_5F_ITEM_2
 	db SILPH_CO_5F, $08, SHOW                 ; HS_SILPH_CO_5F_ITEM_3
-SilphCo6FHS:
-	db SILPH_CO_6F, $06, SHOW                 ; HS_SILPH_CO_6F_1
-	db SILPH_CO_6F, $07, SHOW                 ; HS_SILPH_CO_6F_2
-	db SILPH_CO_6F, $08, SHOW                 ; HS_SILPH_CO_6F_3
-	db SILPH_CO_6F, $09, SHOW                 ; HS_SILPH_CO_6F_ITEM_1
-	db SILPH_CO_6F, $0A, SHOW                 ; HS_SILPH_CO_6F_ITEM_2
+;SilphCo6FHS:
+;	db SILPH_CO_6F, $06, SHOW                 ; HS_SILPH_CO_6F_1
+;	db SILPH_CO_6F, $07, SHOW                 ; HS_SILPH_CO_6F_2
+;	db SILPH_CO_6F, $08, SHOW                 ; HS_SILPH_CO_6F_3
+;	db SILPH_CO_6F, $09, SHOW                 ; HS_SILPH_CO_6F_ITEM_1
+;	db SILPH_CO_6F, $0A, SHOW                 ; HS_SILPH_CO_6F_ITEM_2
 SilphCo7FHS:
 	db SILPH_CO_7F, $05, SHOW                 ; HS_SILPH_CO_7F_1
 	db SILPH_CO_7F, $06, SHOW                 ; HS_SILPH_CO_7F_2

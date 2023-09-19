@@ -59,11 +59,11 @@ SilphCoElevatorFloors:
 SilphCoElevatorWarpMaps:
 	; warp number, map id
 	db 3, SILPH_CO_1F
-	db 2, SILPH_CO_2F
+	;db 2, SILPH_CO_2F
 	db 2, SILPH_CO_3F
-	db 2, SILPH_CO_4F
+	;db 2, SILPH_CO_4F
 	db 2, SILPH_CO_5F
-	db 2, SILPH_CO_6F
+	;db 2, SILPH_CO_6F
 	db 2, SILPH_CO_7F
 	;db 2, SILPH_CO_8F
 	db 2, SILPH_CO_9F

@@ -6,10 +6,10 @@ SafariZoneNorthWildMons:
 	db 25, TANGELA
 	db 30, VENOMOTH
 	db 27, EXEGGCUTE
-	db 30, DODRIO
-	db 32, KANGASKHAN
-	db 26, CHANSEY
-	db 28, TAUROS
+	db 28, DODRIO
+	db 27, TAUROS
+	db 26, TRAMPEL
+	db 28, KANGASKHAN
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

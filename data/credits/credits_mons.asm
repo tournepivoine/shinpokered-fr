@@ -15,7 +15,7 @@ CreditsMons:
 	db VENUSAUR
 	db CHARIZARD
 	db TOTARTLE
-	db OMEGA
+	db OMEGADGE
 	db ARTICUNO_G
 	db ZAPDOS_G
 	db MOLTRES_G

@@ -105,7 +105,7 @@ DEF SHOW EQU $15
 	const HS_POWER_PLANT_ITEM_3            ; 5B X
 	const HS_POWER_PLANT_ITEM_4            ; 5C X
 	const HS_POWER_PLANT_ITEM_5            ; 5D X
-	const HS_GYAOON                        ; 5E X
+	const HS_VICTORY_ROAD_2F_ITEM_0        ; 5E X
 	const HS_VICTORY_ROAD_2F_ITEM_1        ; 5F X
 	const HS_VICTORY_ROAD_2F_ITEM_2        ; 60 X
 	const HS_VICTORY_ROAD_2F_ITEM_3        ; 61 X
@@ -137,7 +137,6 @@ DEF SHOW EQU $15
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_1      ; 7B X
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_2      ; 7C X
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_3      ; 7D X
-	const HS_WUGTRIO                       ; 7E X 
 	const HS_VICTORY_ROAD_3F_ITEM_1        ; 7F X
 	const HS_VICTORY_ROAD_3F_ITEM_2        ; 80 X
 	const HS_VICTORY_ROAD_3F_BOULDER       ; 81
@@ -165,12 +164,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_3F_1                 ; 97
 	const HS_SILPH_CO_3F_2                 ; 98
 	const HS_SILPH_CO_3F_ITEM              ; 99 X
-	const HS_SILPH_CO_4F_1                 ; 9A
-	const HS_SILPH_CO_4F_2                 ; 9B
-	const HS_SILPH_CO_4F_3                 ; 9C
-	const HS_SILPH_CO_4F_ITEM_1            ; 9D X
-	const HS_SILPH_CO_4F_ITEM_2            ; 9E X
-	const HS_SILPH_CO_4F_ITEM_3            ; 9F X
+
 	const HS_SILPH_CO_5F_1                 ; A0
 	const HS_SILPH_CO_5F_2                 ; A1
 	const HS_SILPH_CO_5F_3                 ; A2
@@ -178,11 +172,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_5F_ITEM_1            ; A4 X
 	const HS_SILPH_CO_5F_ITEM_2            ; A5 X
 	const HS_SILPH_CO_5F_ITEM_3            ; A6 X
-	const HS_SILPH_CO_6F_1                 ; A7
-	const HS_SILPH_CO_6F_2                 ; A8
-	const HS_SILPH_CO_6F_3                 ; A9
-	const HS_SILPH_CO_6F_ITEM_1            ; AA X
-	const HS_SILPH_CO_6F_ITEM_2            ; AB X
+
 	const HS_SILPH_CO_7F_1                 ; AC
 	const HS_SILPH_CO_7F_2                 ; AE
 	const HS_SILPH_CO_7F_3                 ; AF

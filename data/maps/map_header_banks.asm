@@ -149,7 +149,6 @@ MapHeaderBanks::
 	db BANK(PokemonTower1F_h)
 	db BANK(PokemonTower2F_h)
 	db BANK(BrunswickGrotto_h)
-	;db BANK(PokemonTower3F_h)
 	db BANK(PokemonTower4F_h)
 	db BANK(PokemonTower5F_h)
 	db BANK(PokemonTower6F_h)
@@ -211,13 +210,12 @@ MapHeaderBanks::
 	db BANK(CitrineMart_h) ; was UNUSED_MAP_CC
 	db BANK(GarnetCavern1F_h) ; was UNUSED_MAP_CD
 	db BANK(GarnetCavernB1F_h) ; was UNUSED_MAP_CE
-	db BANK(SilphCo2F_h)
+	db BANK(VermilionFerryDock_h)
 	db BANK(SilphCo3F_h)
-	db BANK(SilphCo4F_h)
+	db BANK(CitrineFerryDock_h)
 	db BANK(SilphCo5F_h)
-	db BANK(SilphCo6F_h)
+	db BANK(SeagallopFerry_h)
 	db BANK(SilphCo7F_h)
-	;db BANK(SilphCo8F_h)
 	db BANK(PokemonMansion2F_h)
 	db BANK(PokemonMansion3F_h)
 	db BANK(PokemonMansionB1F_h)

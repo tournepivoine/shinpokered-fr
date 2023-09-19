@@ -1,0 +1,6 @@
+VermilionFerryDock_Script:
+	jp EnableAutoTextBoxDrawing
+
+VermilionFerryDock_TextPointers:
+
+	text_end

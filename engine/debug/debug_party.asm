@@ -144,11 +144,10 @@ IF DEF(_DEBUG)
 .items_end
 
 	; Complete the Pokédex.
-	; Comment out (except for the event) to test post-game setup.
-	;ld hl, wPokedexOwned
-	;call DebugSetPokedexEntries
-	;ld hl, wPokedexSeen
-	;call DebugSetPokedexEntries
+	ld hl, wPokedexOwned
+	call DebugSetPokedexEntries
+	ld hl, wPokedexSeen
+	call DebugSetPokedexEntries
 	SetEvent EVENT_GOT_POKEDEX
 	
 	; Test Post-Game Functionality.

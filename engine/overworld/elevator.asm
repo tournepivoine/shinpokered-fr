@@ -39,6 +39,47 @@ ShakeElevator::
 	call UpdateSprites
 	jp PlayDefaultMusic
 
+ShakeElevatorFerry::
+	ld de, -$20
+	call ShakeElevatorRedrawRow
+	ld de, SCREEN_HEIGHT * $20
+	call ShakeElevatorRedrawRow
+	call Delay3
+	ld a, SFX_STOP_ALL_MUSIC
+	call PlaySound
+	ldh a, [hSCY]
+	ld d, a
+	ld e, $1
+	ld b, 100
+.shakeLoop ; scroll the BG up and down and play a sound effect
+	ld a, e
+	xor $fe
+	ld e, a
+	add d
+	ldh [hSCY], a
+	push bc
+	ld c, 0 ; BANK(SFX_Collision_1)
+	ld a, SFX_COLLISION
+	call PlaySound
+	pop bc
+	ld c, 2
+	call DelayFrames
+	dec b
+	jr nz, .shakeLoop
+	ld a, d
+	ldh [hSCY], a
+	ld a, SFX_STOP_ALL_MUSIC
+	call PlaySound
+	ld c, 0 ; BANK(SFX_SS_Anne_Horn)
+	ld a, SFX_SS_ANNE_HORN
+	call PlaySound
+;.musicLoop
+;	ld a, [wChannelSoundIDs + CHAN5]
+;	cp SFX_SAFARI_ZONE_PA
+;	jr z, .musicLoop
+	call UpdateSprites
+	jp PlayDefaultMusic
+
 ShakeElevatorRedrawRow:
 ; This function is used to redraw certain portions of the screen, but it does
 ; not appear to ever result in any visible effect, so this function seems to

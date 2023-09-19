@@ -58,7 +58,7 @@ SilphGauntlet4F_TextPointers:
 	dw PurifiedZoneText
 	
 SilphGauntlet4FTrainerHeaders:
-	def_trainers 4
+	def_trainers
 SilphGauntlet4FTrainerHeader0:
 	trainer EVENT_BEAT_GAUNTLET_SCIENTIST, 1, SilphGauntlet4FBattleText1, SilphGauntlet4FEndBattleText1, SilphGauntlet4FAfterBattleText1
 SilphGauntlet4FTrainerHeader1:

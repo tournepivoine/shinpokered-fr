@@ -1,4 +1,4 @@
-	db DEX_CACTUS ; pokedex id
+	db DEX_CACTORMUS ; pokedex id
 
 	db  60,  95, 100,  90,  75
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 177 ; base exp
 
-	INCBIN "gfx/pokemon/front/cactus.pic", 0, 1 ; sprite dimensions
-	dw CactusPicFront, CactusPicBack
+	INCBIN "gfx/pokemon/front/cactormus.pic", 0, 1 ; sprite dimensions
+	dw CactormusPicFront, CactormusPicBack
 
 	db BARRAGE, SAND_ATTACK, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -21,5 +21,5 @@
 	     TRI_ATTACK,   SUBSTITUTE
 	; end
 
-	db BANK(CactusPicFront)
-	assert BANK(CactusPicFront) == BANK(CactusPicBack)
+	db BANK(CactormusPicFront)
+	assert BANK(CactormusPicFront) == BANK(CactormusPicBack)

@@ -96,7 +96,7 @@ _ChiefAfterBattleText::
 _ChiefPCText::
 	text "It's a PC with"
 	line "blueprints for"
-	cont "OMEGA!"
+	cont "OMEGADGE!"
 	
 	para "It was meant"
 	line "for..."
@@ -115,7 +115,7 @@ _ChiefPainting1::
 	done
 
 _ChiefPainting2::
-	text "It's a picture"
-	line "of GYAOON, an"
+	text "It's a painting"
+	line "of GAWARHED, an"
 	cont "extinct #MON!"
 	done

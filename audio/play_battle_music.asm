@@ -24,13 +24,9 @@ PlayBattleMusic::
 	jr z, .legendaryBattle
 	cp MEW
 	jr z, .legendaryBattle
-	cp OMEGA
+	cp OMEGADGE
 	jr z, .legendaryBattle
 	cp SNORLAX ; Just like LGPE. Snorlax is basically a legendary in RBY, so I love this.
-	jr z, .legendaryBattle
-	cp VOLTORB ; The way this works makes the wild theme still play when encountering normal Voltorb/Electrode. Convenient and makes it work like LGPE.
-	jr z, .legendaryBattle
-	cp ELECTRODE
 	jr z, .legendaryBattle
 	cp DRATINI ; In the Tajiri lore, the Dratini family is considered legendary. Also, we have a static Dragonite. I think the appearance of Dratini in the Safari Zone with this theme could also add some reeeeeal nice hype to the whole ordeal.
 	jr z, .legendaryBattle
@@ -38,7 +34,7 @@ PlayBattleMusic::
 	jr z, .legendaryBattle
 	cp DRAGONITE
 	jr z, .legendaryBattle
-	cp ARTICUNO_G ; Temporary - plans for galar bird themes have been made.
+	cp ARTICUNO_G
 	jr z, .legendaryBattle
 	cp ZAPDOS_G
 	jr z, .legendaryBattle
@@ -56,9 +52,9 @@ PlayBattleMusic::
 	jr z, .Elite4Battle
 	cp OPP_LANCE
 	jr z, .Elite4Battle
+	cp OPP_PROF_OAK ; could also use the final battle theme, but I think the gym leader/elite 4 theme fits better instead. I'm happy to change this if it isn't well-liked.
+	jr z, .Elite4Battle 
 	cp OPP_RIVAL3
-	jr z, .finalBattle 
-	cp OPP_PROF_OAK ; may as well, right?
 	jr z, .finalBattle 
 	cp OPP_CHIEF
 	jr z, .finalBattle 

@@ -6,9 +6,9 @@ VictoryRoad1FWildMons:
 	db 36, SANDSLASH
 	db 39, SANDSLASH
 	db 42, GOLBAT
-	db 41, CROCKY
+	db 41, GAVILLAIN
 	db 41, RHYDON
-	db 42, GUARDIA
+	db 42, MAROWAK
 	db 43, HITMONTOP ; LGPE Rare Spawn
 	end_grass_wildmons
 

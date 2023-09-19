@@ -166,8 +166,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const LAVENDER_POKECENTER,            7,  4 ; $8F
 	map_const POKEMON_TOWER_1F,              10,  9 ; $90
 	map_const POKEMON_TOWER_2F,              10,  9 ; $91
-	map_const BRUNSWICK_GROTTO,              15, 12 ; $92
-	; map_const POKEMON_TOWER_3F,              10,  9 ; $92	- Currently unused
+	map_const BRUNSWICK_GROTTO,              15, 12 ; $92	- Was Pokemon Tower 3F
 	map_const POKEMON_TOWER_4F,              10,  9 ; $93	- Currently unused
 	map_const POKEMON_TOWER_5F,              10,  9 ; $94	- Currently unused
 	map_const POKEMON_TOWER_6F,              10,  9 ; $95
@@ -229,13 +228,12 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const CITRINE_MART,             	  4,  4 ; $CD	- was UNUSED_MAP_CC
 	map_const GARNET_CAVERN_1F,              15,  9 ; $CE	- was UNUSED_MAP_CD
 	map_const GARNET_CAVERN_B1F,             15,  9 ; $CF	- was UNUSED_MAP_CE
-	map_const SILPH_CO_2F,                   15,  9 ; $D0
+	map_const VERMILION_FERRY_DOCK,          14,  6 ; $D0	- was SILPH_CO_2F
 	map_const SILPH_CO_3F,                   15,  9 ; $D1
-	map_const SILPH_CO_4F,                   15,  9 ; $D2
+	map_const CITRINE_FERRY_DOCK,            14,  6 ; $D2	- was SILPH_CO_4F
 	map_const SILPH_CO_5F,                   15,  9 ; $D3
-	map_const SILPH_CO_6F,                   13,  9 ; $D4
+	map_const SEAGALLOP_FERRY,                5,  4 ; $D4	- was SILPH_CO_6F
 	map_const SILPH_CO_7F,                   13,  9 ; $D5
-	;map_const SILPH_CO_8F,                   13,  9 ; $D6
 	map_const POKEMON_MANSION_2F,            15, 14 ; $D7
 	map_const POKEMON_MANSION_3F,            15,  9 ; $D8
 	map_const POKEMON_MANSION_B1F,           15, 14 ; $D9

@@ -1,4 +1,4 @@
-	db DEX_OMEGA ; pokedex id
+	db DEX_OMEGADGE ; pokedex id
 
 	db 101, 106, 120,  25,  95
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 25 ; catch rate
 	db 204 ; base exp
 
-	INCBIN "gfx/pokemon/front/omega.pic", 0, 1 ; sprite dimensions
-	dw OmegaPicFront, OmegaPicBack
+	INCBIN "gfx/pokemon/front/omegadge.pic", 0, 1 ; sprite dimensions
+	dw OmegadgePicFront, OmegadgePicBack
 
 	db SUPERSONIC, METAL_SOUND, TACKLE, MAGNET_BOMB ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -22,5 +22,5 @@
            TRI_ATTACK,   SUBSTITUTE,   STRENGTH,     FLASH
 	; end
 
-	db BANK(OmegaPicFront)
-	assert BANK(OmegaPicFront) == BANK(OmegaPicBack)
+	db BANK(OmegadgePicFront)
+	assert BANK(OmegadgePicFront) == BANK(OmegadgePicBack)

@@ -59,16 +59,15 @@ SuperRodData:
 	db 4
 	db 5, MAGIKARP
 	db 7, MAGIKARP
-	db 5, GYOPIN
-	db 7, GYOPIN
+	db 5, ORFRY
+	db 7, ORFRY
 
 .Group2:	; Route 4, Cerulean, Route 24, Route 6
-	db 5
+	db 4
 	db 12, MAGIKARP
 	db 12, POLIWAG
-	db 12, GYOPIN
+	db 12, ORFRY
 	db 12, PSYDUCK
-	db 12, CHEEP
 
 .Group3:	; Route 11, Route 25, Vermilion
 	db 5
@@ -84,50 +83,47 @@ SuperRodData:
 	db 20, PSYDUCK
 	db 20, TENTACOOL
 	db 20, BLOTTLE
-	db 20, MAGIKARP
+	db 20, KRABBY
 
 .Group5:	; Route 13, Route 17, Route 18, Fuchsia
-	db 7
+	db 6
 	db 25, HORSEA
 	db 25, POLIWHIRL
 	db 25, KRABBY
-	db 20, SKIMPER
 	db 25, CHEEP
 	db 25, BLOTTLE
 	db 25, GOLDEEN
 
 .Group6:	; Safari Zone
-	db 7
+	db 6
 	db 15, DRATINI
 	db 20, SLOWPOKE
 	db 25, KRABBY
 	db 25, WEIRDUCK
 	db 25, POLIWHIRL
 	db 30, DRAGONAIR
-	db 20, SKIMPER
 
 .Group7:	; Bill's Garden
 	db 6
 	db 50, SQUIRTLE
-	db 50, WARTORTLE
-	db 50, TOTARTLE
+	db 50, SQUIRTLE
+	db 50, DRATINI
 	db 50, DRATINI
 	db 50, DRAGONAIR
 	db 55, DRAGONITE
 
 .Group8:	; Sea Routes, Route 23, Seafoam Islands, Underwater Tunnel
-	db 7
+	db 6
 	db 30, STARYU
 	db 30, HORSEA
 	db 30, SHELLDER
-	db 30, PENDRAKEN
-	db 30, JAGG
+	db 30, SHARPOON
 	db 30, BLASTYKE
 	db 30, GOLDEEN
 
 .Group9:	; Citrine, Brunswick, Garnet
-	db 10
-	db 50, JAGG
+	db 8
+	db 50, SHARPOON
 	db 50, SEAKING
 	db 50, KINGLER
 	db 50, SEADRA
@@ -135,21 +131,17 @@ SuperRodData:
 	db 50, GYARADOS
 	db 50, JABETTA
 	db 50, CROAKOZUNA
-	db 50, BLASTOISE
-	db 50, LAPRAS
 
 .Group10:	; Cerulean Cave
-	db 10
+	db 8
 	db 50, SLOWBRO
 	db 50, SEAKING
 	db 50, KINGLER
-	db 50, WUGTRIO
 	db 50, SHELLDER
 	db 50, GYARADOS
 	db 50, JABETTA
 	db 50, CROAKOZUNA
 	db 50, GOLDUCK
-	db 100, MAGIKARP 
 
 .Group11:	; Celadon
 	db 7

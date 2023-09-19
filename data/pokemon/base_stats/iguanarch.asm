@@ -1,16 +1,16 @@
-	db DEX_CRYITHAN ; pokedex id
+	db DEX_IGUANARCH ; pokedex id
 
-	db  92,  93,  76, 108, 121
+	db 102,  93,  76, 108, 121
 	;   hp  atk  def  spd  spc
 
 	db DRAGON, DRAGON ; type
 	db 9 ; catch rate
 	db 210 ; base exp
 
-	INCBIN "gfx/pokemon/front/cryithan.pic", 0, 1 ; sprite dimensions
-	dw CryithanPicFront, CryithanPicBack
+	INCBIN "gfx/pokemon/front/iguanarch.pic", 0, 1 ; sprite dimensions
+	dw IguanarchPicFront, IguanarchPicBack
 
-	db SCRATCH, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
+	db SCRATCH, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -21,5 +21,5 @@
 	     CUT,          SURF,         STRENGTH
 	; end
 
-	db BANK(CryithanPicFront)
-	assert BANK(CryithanPicFront) == BANK(CryithanPicBack)
+	db BANK(IguanarchPicFront)
+	assert BANK(IguanarchPicFront) == BANK(IguanarchPicBack)

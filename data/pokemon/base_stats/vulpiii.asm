@@ -1,4 +1,4 @@
-	db DEX_MIKON ; pokedex id
+	db DEX_VULPIII ; pokedex id
 
 	db  28,  31,  30,  60,  60
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 255 ; catch rate
 	db 53 ; base exp
 
-	INCBIN "gfx/pokemon/front/mikon.pic", 0, 1 ; sprite dimensions
-	dw MikonPicFront, MikonPicBack
+	INCBIN "gfx/pokemon/front/vulpiii.pic", 0, 1 ; sprite dimensions
+	dw VulpiiiPicFront, VulpiiiPicBack
 
 	db EMBER, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -19,5 +19,5 @@
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE
 	; end
 
-	db BANK(MikonPicFront)
-	assert BANK(MikonPicFront) == BANK(MikonPicBack)
+	db BANK(VulpiiiPicFront)
+	assert BANK(VulpiiiPicFront) == BANK(VulpiiiPicBack)

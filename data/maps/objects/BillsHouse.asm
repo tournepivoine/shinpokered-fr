@@ -2,8 +2,8 @@ BillsHouse_Object:
 	db $d ; border block
 
 	def_warp_events
-	warp_event  2,  7, LAST_MAP, 1
-	warp_event  3,  7, LAST_MAP, 1
+	warp_event  2,  7, ROUTE_25, 1
+	warp_event  3,  7, ROUTE_25, 1
 	warp_event 11,  0, BILLS_GARDEN, 1
 
 	def_bg_events

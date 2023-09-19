@@ -362,6 +362,7 @@ SECTION "Engine Spillover", ROMX
 
 INCLUDE "engine/menus/item_descriptions.asm"
 INCLUDE "engine/items/tm_prices.asm"
+INCLUDE "engine/overworld/ferry_script.asm"
 
 _PartyMenuBattleTentText::
 	text "Select which"

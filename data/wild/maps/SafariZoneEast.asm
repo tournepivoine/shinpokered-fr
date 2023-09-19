@@ -4,12 +4,12 @@ SafariZoneEastWildMons:
 	db 26, DODUO
 	db 22, TANGELA
 	db 25, RHYHORN
-	db 33, LICKITUNG
+	db 23, LICKITUNG
 	db 23, EXEGGCUTE
-	db 24, KANGASKHAN
+	db 24, TAUROS
 	db 25, PINSIR
+	db 24, KANGASKHAN
 	db  7, CHANSEY
-	db 28, DEER
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

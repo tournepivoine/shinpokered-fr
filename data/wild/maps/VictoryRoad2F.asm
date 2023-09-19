@@ -6,9 +6,9 @@ VictoryRoad2FWildMons:
 	db 36, SANDSLASH
 	db 39, SANDSLASH
 	db 42, MACHOKE
-	db 41, CROCKY
+	db 41, GAVILLAIN
 	db 40, RHYDON
-	db 40, GUARDIA
+	db 40, MAROWAK
 	db 43, HITMONLEE ; LGPE Rare Spawn
 	end_grass_wildmons
 

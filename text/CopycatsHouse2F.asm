@@ -63,7 +63,7 @@ _TM31NoRoomText::
 	text_end
 
 _CopycatsHouse2FText2::
-	text "It's a JAGG"
+	text "It's a SHARPOON"
 	line "doll with cute,"
 	cont "round eyes!"
 	done

@@ -144,7 +144,7 @@ FakeTreeEvent:
 CactusBattleText:
 	text_far _FakeTreeAttack
 	text_asm
-	ld a, CACTUS
+	ld a, CACTORMUS
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

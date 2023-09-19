@@ -37,6 +37,42 @@ SilphCo3GateCoords:
 	dbmapcoord  8,  4
 	db -1 ; end
 
+SilphCo2Script_59d43:
+	push hl
+	ld hl, wCardKeyDoorY
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+	ld c, a
+	xor a
+	ldh [hUnlockedSilphCoDoors], a
+	pop hl
+.asm_59d4f
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_59d6b
+	push hl
+	ld hl, hUnlockedSilphCoDoors
+	inc [hl]
+	pop hl
+	cp b
+	jr z, .asm_59d60
+	inc hl
+	jr .asm_59d4f
+.asm_59d60
+	ld a, [hli]
+	cp c
+	jr nz, .asm_59d4f
+	ld hl, wCardKeyDoorY
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ret
+.asm_59d6b
+	xor a
+	ldh [hUnlockedSilphCoDoors], a
+	ret
+
 SilphCo3Script_59fad:
 	EventFlagAddress hl, EVENT_SILPH_CO_3_UNLOCKED_DOOR1
 	ldh a, [hUnlockedSilphCoDoors]

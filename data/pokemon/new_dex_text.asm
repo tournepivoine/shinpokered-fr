@@ -1,4 +1,4 @@
-_GyaoonDexEntry::			; Changed to past tense to be more consistent with other fossil entries
+_GawarhedDexEntry::			; Changed to past tense to be more consistent with other fossil entries
 	text "Very dangerous"
 	next "and frequently"
 	next "rampaged wildly."
@@ -18,7 +18,7 @@ _GuardiaDexEntry::			; Cubone gets a happy ending!
 	next "ready to evolve"
 	dex
 
-_DeerDexEntry::
+_RamooseDexEntry::
 	text "It wildly swings"
 	next "its huge antlers"
 	next "to deter threats."
@@ -28,7 +28,7 @@ _DeerDexEntry::
 	next "prized by hunters"
 	dex
 
-_MadaamuDexEntry::			; Official entry from GS beta, reworded
+_LuxwanDexEntry::			; Official entry from GS beta, reworded
 	text "A species that is"
 	next "rarely seen. It"
 	next "always holds a"
@@ -68,7 +68,7 @@ _KotoraDexEntry::
 	next "pet regardless"
 	dex
 
-_JaggDexEntry::
+_SharpoonDexEntry::
 	text "Also known as the"
 	next "Sailor's Scourge,"
 	next "SHARPOON rams its"
@@ -98,7 +98,7 @@ _GaotoraDexEntry::			; references real tiger hunting
 	next "tough fangs"
 	dex
 
-_CactusDexEntry::
+_CactormusDexEntry::
 	text "Found in arid"
 	next "regions. Its legs"
 	next "are adapted for"
@@ -108,7 +108,7 @@ _CactusDexEntry::
 	next "rocky terrain"
 	dex
 
-_KonyaDexEntry::
+_CoinpurDexEntry::
 	text "Its eyesight is"
 	next "still developing,"
 	next "so it cannot see"
@@ -118,7 +118,7 @@ _KonyaDexEntry::
 	next "hoard small coins"
 	dex
 
-_BittybatDexEntry::	
+_BittybatDexEntry::			; unused
 	text "Flits about in"
 	next "dark caves. A"
 	next "swarm of BITTYBAT"
@@ -138,7 +138,7 @@ _RibbitoDexEntry::
 	next "appear larger"
 	dex
 
-_CryithanDexEntry::
+_IguanarchDexEntry::
 	text "Highly aggressive,"
 	next "it drives other"
 	next "#MON away with"
@@ -168,7 +168,7 @@ _BuuDexEntry::
 	next "in the tundra"
 	dex
 
-_SkimperDexEntry::
+_SqueamataDexEntry::
 	text "Incredibly timid,"
 	next "it flees at the"
 	next "smallest sign of"
@@ -178,7 +178,7 @@ _SkimperDexEntry::
 	next "difficult task"
 	dex
 
-_BawliguaDexEntry::
+_MinistareDexEntry::
 	text "Often climbs atop"
 	next "branches to feast"
 	next "on foliage. When"
@@ -188,7 +188,7 @@ _BawliguaDexEntry::
 	next "unnerving GLARE"
 	dex
 
-_PuchikoonDexEntry::		; referenced from various Ponyta entries. Funny how both Vulpix and Ponyta do this...
+_KoltaDexEntry::		; referenced from various Ponyta entries. Funny how both Vulpix and Ponyta do this...
 	text "A weak runner that"
 	next "gradually becomes"
 	next "faster by chasing"
@@ -198,7 +198,7 @@ _PuchikoonDexEntry::		; referenced from various Ponyta entries. Funny how both V
 	next "hot to touch"
 	dex
 
-_GyopinDexEntry::			; reworked, thank you Ness :3  ~M
+_OrfryDexEntry::				; reworked, thank you Ness :3  ~Martha
 	text "Its tiny fins make"
 	next "it an unskilled"
 	next "swimmer. It fends"
@@ -218,7 +218,7 @@ _GorochuDexEntry::
 	next "physical strength"
 	dex
 
-_MikonDexEntry::
+_VulpiiiDexEntry::
 	text "While young, it"
 	next "has three soft,"
 	next "gorgeous tails."
@@ -278,7 +278,7 @@ _GorotoraDexEntry::
 	next "#MON trainers"
 	dex
 
-_OmegaDexEntry::
+_OmegadgeDexEntry::
 	text "A recent creation"
 	next "by SILPH CO."
 	next "Modeled after the"
@@ -288,7 +288,7 @@ _OmegaDexEntry::
 	next "devastating power"
 	dex
 
-_PurakkusuDexEntry::		; Official entry from GS beta, reworded
+_TriculesDexEntry::		; Official entry from GS beta, reworded
 	text "Withstands foes'"
 	next "attacks with its"
 	next "sturdy body, then"
@@ -308,7 +308,7 @@ _TrampelDexEntry::
 	next "using its trunk"
 	dex
 
-_CrockyDexEntry::
+_GavillainDexEntry::
 	text "Its huge eyes can"
 	next "glow to brighten"
 	next "its surroundings."
@@ -328,7 +328,7 @@ _PendrakenDexEntry::
 	next "before attacking"
 	dex
 
-_MagnetiteDexEntry::
+_MagnetiteDexEntry::		; unused
 	text "Occasionally, it"
 	next "attracts so much"
 	next "metal to itself"
@@ -348,7 +348,7 @@ _NidoreignDexEntry::
 	next "and NIDORINO"
 	dex
 
-_BarundaDexEntry::
+_BalumbaDexEntry::
 	text "Often mistaken"
 	next "for an ordinary"
 	next "balloon. If its"
@@ -358,7 +358,7 @@ _BarundaDexEntry::
 	next "shrill screech"
 	dex
 
-_TsubomittoDexEntry::		; references Sprout Tower in Johto
+_BellignanDexEntry::		; references Sprout Tower in Johto
 	text "A plant #MON"
 	next "that's revered in"
 	next "another region."
@@ -368,7 +368,7 @@ _TsubomittoDexEntry::		; references Sprout Tower in Johto
 	next "found in soil"
 	dex
 
-_AnimonDexEntry::
+_MimmeoDexEntry::
 	text "A sudden mutation"
 	next "of DITTO, its"
 	next "mimicry skills"
@@ -378,7 +378,7 @@ _AnimonDexEntry::
 	next "in an instant"
 	dex
 
-_MonjaDexEntry::
+_MonjaDexEntry::			; unused
 	text "As it runs about,"
 	next "the vines on its"
 	next "head may obscure"
@@ -388,7 +388,7 @@ _MonjaDexEntry::
 	next "trip and fall"
 	dex
 
-_TaabanDexEntry::
+_DisturbanDexEntry::
 	text "It evolved after"
 	next "biting a SLOWPOKE."
 	next "While draining its"
@@ -408,7 +408,7 @@ _KokanaDexEntry::
 	next "their roots"
 	dex
 
-_KasanagiDexEntry::
+_PupalDexEntry::
 	text "While awaiting"
 	next "evolution, it"
 	next "barely moves. If"
@@ -419,8 +419,8 @@ _KasanagiDexEntry::
 	dex
 
 _CarapthorDexEntry::
-	text "Often called the"
-	next "Forest Gent,"
+	text "It's often called"
+	next "the Forest Gent."
 	next "CARAPTHOR strolls"
 
 	page "around forests"
@@ -434,7 +434,7 @@ _ScizorDexEntry::
 	next "objects with ease."
 
 	page "Battles between it"
-	next "and PURAKKUSU are"
+	next "and TRICULES are"
 	next "a sight to behold"
 	dex
 
@@ -649,23 +649,23 @@ _PorygonZDexEntry::
 	dex
 	
 _KleavorDexEntry::
-	text "The axes on its"
-	next "forearms are not"
-	next "only tough, but"
+	text "Capable of cutting"
+	next "down a fully-grown"
+	next "tree in one slice,"
 
-	page "sharp enough to"
-	next "fall huge trees"
-	next "in a single slice"
+	page "thanks to the two"
+	next "sharp stone axes"
+	next "that it wields"
 	dex
 
 _AnnihilapeDexEntry::
 	text "Fuelled by a new,"
 	next "spirit-like power,"
-	next "ANNIHILAPE's blows"
+	next "its punches have"
 
-	page "break the minds"
-	next "and bones of its"
-	next "opponents"
+	page "enough power to"
+	next "shatter both minds"
+	next "and bones alike"
 	dex
 	
 _WiglettDexEntry::
@@ -689,13 +689,13 @@ _WugtrioDexEntry::
 	dex
 	
 _ToedscoolDexEntry::
-	text "Looks similar to"
-	next "TENTACOOL, but it"
-	next "is a completely"
+	text "It scatters spores"
+	next "as it runs around."
+	next "The flaps that can"
 
-	page "different species."
-	next "It scatters spores"
-	next "as it runs around"
+	page "fall from its body"
+	next "are chewy, and are"
+	next "used in recipes"
 	dex
 	
 _ToedscruelDexEntry::
@@ -709,23 +709,23 @@ _ToedscruelDexEntry::
 	dex
 	
 _ScreamTailDexEntry::
-	text "It matches the"
-	next "description of"
-	next "an ancient"
+	text "It resembles a"
+	next "creature depicted"
+	next "in a strange book,"
 
-	page "JIGGLYPUFF that"
-	next "was found in a"
-	next "strange book"
+	page "believed to be a"
+	next "JIGGLYPUFF from"
+	next "ancient times"
 	dex
 	
 _SandyShocksDexEntry::
-	text "Greatly resembles"
-	next "MAGNETON. Some"
-	next "speculate that"
+	text "Shares many traits"
+	next "with an ancient"
+	next "MAGNETON described"
 
-	page "MAGNETON looked"
-	next "like this over"
-	next "10,000 years ago"
+	page "in a mysterious"
+	next "book, but little"
+	next "else is known"
 	dex
 
 _MeltanDexEntry::
@@ -815,7 +815,7 @@ _ArcanineHDexEntry::
 	
 	page "its foe before"
 	next "biting it in a"
-	next "vicious rage" ; reference to Raging Fury, its signature move.
+	next "vicious rage" ; reference to Raging Fury
 	dex
 
 _ElectrodeHDexEntry::
@@ -868,7 +868,7 @@ _NinetalesADexEntry::
 	next "from its home"
 	dex
 
-_DugtrioADexEntry::		; revised to add more info
+_DugtrioADexEntry::
 	text "The metal whiskers"
 	next "on its heads help"
 	next "protect it from"
@@ -946,7 +946,7 @@ _ExeggutorADexEntry::
 	page "However, as a"
 	next "result, its PSI"
 	next "has weakened"
-	dex ; consider revising
+	dex
 
 _MarowakADexEntry::
 	text "While dancing in"
@@ -969,33 +969,33 @@ _WeezingGDexEntry::
 	dex
 
 _TaurosPDexEntry::
-	text "Known as the"
-	next "Combat Breed,"
-	next "this TAUROS uses"
+	text "The Combat Breed"
+	next "of this variant of"
+	next "TAUROS uses its"
 	
-	page "its short horns to"
+	page "short horns to"
 	next "target its foe's"
 	next "weak points"
 	dex
 
 _TaurosPBDexEntry::
-	text "Known as the"
-	next "Blaze Breed,"
-	next "this TAUROS can"
+	text "People often call"
+	next "this TAUROS the"
+	next "Blaze Breed, due"
 	
-	page "expel hot air from"
-	next "its nostrils and"
+	page "to its ability to"
 	next "heat up its horns"
+	next "and expel hot air"
 	dex
 
 _TaurosPADexEntry::
-	text "Known as the"
-	next "Aqua Breed,"
-	next "this TAUROS can"
+	text "Known as the Aqua"
+	next "Breed, this form"
+	next "of TAUROS shoots"
 	
-	page "shoot water at"
-	next "high pressure from"
-	next "its horns"
+	page "high-pressure jets"
+	next "of water from the"
+	next "tips of its horns"
 	dex
 
 _MissingNoDexEntry::

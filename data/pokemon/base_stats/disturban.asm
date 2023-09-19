@@ -1,4 +1,4 @@
-	db DEX_TAABAN ; pokedex id
+	db DEX_DISTURBAN ; pokedex id
 
 	db  70, 125, 145,  50,  70
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 60 ; catch rate
 	db 203 ; base exp
 
-	INCBIN "gfx/pokemon/front/taaban.pic", 0, 1 ; sprite dimensions
-	dw TaabanPicFront, TaabanPicBack
+	INCBIN "gfx/pokemon/front/disturban.pic", 0, 1 ; sprite dimensions
+	dw DisturbanPicFront, DisturbanPicBack
 
 	db TACKLE, WITHDRAW, BITE, WATER_GUN ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -21,5 +21,5 @@
 	     EXPLOSION,    TRI_ATTACK,   SUBSTITUTE,   SURF, 	     STRENGTH
 	; end
 
-	db BANK(TaabanPicFront)
-	assert BANK(TaabanPicFront) == BANK(TaabanPicBack)
+	db BANK(DisturbanPicFront)
+	assert BANK(DisturbanPicFront) == BANK(DisturbanPicBack)

@@ -2,18 +2,18 @@
 ; This goes for Brock's Steelix, Misty's Starmie, Surge's Gorochu, Erika's Bellossom, Koga's Crobat, Sabrina's Alakazam, Blaine's Arcanine, and Giovanni's Rhyperior.
 ; In addition, for the rematches, all the leaders should have a regional variant (see the LGPE E4 rematches), plus a starter where applicable.
 BrockData:
-	db $FF, 10, GEODUDE, 11, DECILLA, 13, ONIX, 0                                            ; 0 badges
-	db $FF, 19, GEODUDE, 18, KABUTO, 19, DECILLA, 21, ONIX, 0                                ; 1
-	db $FF, 22, GRAVELER, 21, OMANYTE, 21, KABUTO, 23, DECILLA, 24, ONIX, 0                  ; 2
-	db $FF, 29, GRAVELER, 28, OMANYTE, 28, KABUTO, 29, DECILLA, 31, ONIX, 0                  ; 3
-	db $FF, 38, GOLEM, 37, OMANYTE, 37, KABUTO, 38, DECILLA, 40, STEELIX, 0,                 ; 4
-	db $FF, 41, GOLEM, 40, OMASTAR, 40, KABUTOPS, 41, GYAOON, 43, STEELIX, 0                 ; 5
-	db $FF, 45, GOLEM, 44, OMASTAR, 44, KABUTOPS, 45, GYAOON, 47, STEELIX, 0                 ; 6
-	db $FF, 47, GOLEM, 46, OMASTAR, 46, KABUTOPS, 48, GYAOON, 48, KLEAVOR, 50, STEELIX, 0    ; 7 (unused)
-	db $FF, 67, GOLEM, 66, GYAOON, 66, ARCANINE_H, 67, OMASTAR, 67, KABUTOPS, 70, STEELIX, 0 ; 8 (postgame)
+	db $FF, 10, GEODUDE, 11, DECILLA, 13, ONIX, 0                                              ; 0 badges
+	db $FF, 19, GEODUDE, 18, KABUTO, 19, DECILLA, 21, ONIX, 0                                  ; 1
+	db $FF, 22, GRAVELER, 21, OMANYTE, 21, KABUTO, 23, DECILLA, 24, ONIX, 0                    ; 2
+	db $FF, 29, GRAVELER, 28, OMANYTE, 28, KABUTO, 29, DECILLA, 31, ONIX, 0                    ; 3
+	db $FF, 38, GOLEM, 37, OMANYTE, 37, KABUTO, 38, DECILLA, 40, STEELIX, 0,                   ; 4
+	db $FF, 41, GOLEM, 40, OMASTAR, 40, KABUTOPS, 41, GAWARHED, 43, STEELIX, 0                 ; 5
+	db $FF, 45, GOLEM, 44, OMASTAR, 44, KABUTOPS, 45, GAWARHED, 47, STEELIX, 0                 ; 6
+	db $FF, 47, GOLEM, 46, OMASTAR, 46, KABUTOPS, 48, GAWARHED, 48, KLEAVOR, 50, STEELIX, 0    ; 7 (unused)
+	db $FF, 67, GOLEM, 66, GAWARHED, 66, ARCANINE_H, 67, OMASTAR, 67, KABUTOPS, 70, STEELIX, 0 ; 8 (postgame)
 
 MistyData:
-	db $FF, 10, STARYU, 11, GYOPIN, 13, WEIRDUCK, 0                                              ; 0 badges
+	db $FF, 10, HORSEA, 11, STARYU, 13, WEIRDUCK, 0                                              ; 0 badges
 	db $FF, 19, HORSEA, 18, GOLDEEN, 19, WEIRDUCK, 21, STARMIE, 0                                ; 1
 	db $FF, 22, HORSEA, 21, CHEEP, 21, GOLDEEN, 23, WEIRDUCK, 25, STARMIE, 0                     ; 2
 	db $FF, 29, HORSEA, 28, JABETTA, 28, GOLDEEN, 29, WEIRDUCK, 31, STARMIE, 0                   ; 3
@@ -26,8 +26,8 @@ MistyData:
 LtSurgeData:
 	db $FF, 10, VOLTORB, 11, PIKACHU, 13, GAOTORA, 0                                                ; 0 badges
 	db $FF, 19, VOLTORB, 18, PIKACHU, 19, GAOTORA, 21, ELECTABUZZ, 0                                ; 1
-	db $FF, 22, VOLTORB, 21, GAOTORA, 21, MAGNETITE, 23, ELECTABUZZ, 25, RAICHU, 0                  ; 2
-	db $FF, 29, ELECTRODE, 28, GAOTORA, 28, MAGNETITE, 29, ELECTABUZZ, 31, GOROCHU, 0               ; 3
+	db $FF, 22, VOLTORB, 21, GAOTORA, 21, MAGNEMITE, 23, ELECTABUZZ, 25, RAICHU, 0                  ; 2
+	db $FF, 29, ELECTRODE, 28, GAOTORA, 28, MAGNEMITE, 29, ELECTABUZZ, 31, RAICHU, 0                ; 3
 	db $FF, 38, ELECTRODE, 37, GOROTORA, 37, MAGNETON, 38, ELECTABUZZ, 40, GOROCHU, 0               ; 4
 	db $FF, 41, ELECTRODE, 40, GOROTORA, 40, MAGNETON, 41, ELECTABUZZ, 43, GOROCHU, 0               ; 5
 	db $FF, 45, ELECTRODE, 44, GOROTORA, 44, MAGNEZONE, 45, ELECTIVIRE, 47, GOROCHU, 0              ; 6
@@ -39,10 +39,10 @@ ErikaData:
 	db $FF, 19, BELLSPROUT, 18, TOEDSCOOL, 19, ODDISH, 21, TANGELA, 0                                   ; 1
 	db $FF, 22, BELLSPROUT, 21, PARAS, 21, TOEDSCOOL, 23, TANGELA, 25, GLOOM, 0                         ; 2
 	db $FF, 29, WEEPINBELL, 28, PARASECT, 28, TOEDSCOOL, 29, TANGELA, 31, BELLOSSOM, 0                  ; 3
-	db $FF, 38, VICTREEBEL, 37, PARASECT, 37, CACTUS, 38, TANGELA, 40, BELLOSSOM, 0                     ; 4
-	db $FF, 41, VICTREEBEL, 40, PARASECT, 40, CACTUS, 41, BELLOSSOM, 43, TANGROWTH, 0                   ; 5
-	db $FF, 45, VICTREEBEL, 44, PARASECT, 45, CACTUS, 45, BELLOSSOM, 47, TANGROWTH, 0                   ; 6
-	db $FF, 47, VICTREEBEL, 46, PARASECT, 46, CACTUS, 48, BELLOSSOM, 48, LEAFEON, 50, TANGROWTH, 0      ; 7 (unused)
+	db $FF, 38, VICTREEBEL, 37, PARASECT, 37, CACTORMUS, 38, TANGELA, 40, BELLOSSOM, 0                  ; 4
+	db $FF, 41, VICTREEBEL, 40, PARASECT, 40, CACTORMUS, 41, BELLOSSOM, 43, TANGROWTH, 0                ; 5
+	db $FF, 45, VICTREEBEL, 44, PARASECT, 45, CACTORMUS, 45, BELLOSSOM, 47, TANGROWTH, 0                ; 6
+	db $FF, 47, VICTREEBEL, 46, PARASECT, 46, CACTORMUS, 48, BELLOSSOM, 48, LEAFEON, 50, TANGROWTH, 0   ; 7 (unused)
 	db $FF, 67, BELLOSSOM, 67, TOEDSCRUEL, 66, ELECTRODE_H, 66, LEAFEON, 67, VENUSAUR, 70, TANGROWTH, 0 ; 8 (postgame)
 
 KogaData:
@@ -54,7 +54,7 @@ KogaData:
 	db $FF, 41, VENOMOTH, 40, TENTACRUEL, 40, MUK, 41, WEEZING, 43, CROBAT, 0                ; 5
 	db $FF, 45, VENOMOTH, 44, TENTACRUEL, 44, MUK, 45, WEEZING, 47, CROBAT, 0                ; 6
 	db $FF, 47, VENOMOTH, 46, NIDOKING, 46, TENTACRUEL, 48, MUK, 48, WEEZING, 50, CROBAT, 0  ; 7 (unused)
-	db $FF, 67, VENOMOTH, 66, TSUBOMITTO, 66, SLOWBRO_G, 67, MUK, 67, WEEZING, 70, CROBAT, 0 ; 8 (postgame)
+	db $FF, 67, VENOMOTH, 66, BELLIGNAN, 66, SLOWBRO_G, 67, MUK, 67, WEEZING, 70, CROBAT, 0  ; 8 (postgame)
 
 BlaineData:
 	db $FF, 10, VULPIX, 11, GROWLITHE, 13, PONYTA, 0                                                 ; 0 badges (unused)
@@ -92,9 +92,9 @@ LoreleiData:
 	db $FF, 68, JYNX, 67, CLOYSTER, 67, NINETALES_A, 69, MR_RIME, 69, GLACEON, 71, LAPRAS, 0
 
 BrunoData:
-	db $FF, 55, HITMONCHAN, 54, STEELIX, 54, SIRFETCHD, 56, HITMONLEE, 56, PURAKKUSU, 58, MACHAMP, 0
+	db $FF, 55, HITMONCHAN, 54, STEELIX, 54, SIRFETCHD, 56, HITMONLEE, 56, TRICULES, 58, MACHAMP, 0
 ; post-game rematch team (currently unused)
-	db $FF, 70, HITMONTOP, 69, STEELIX, 69, SIRFETCHD, 71, POLIWRATH, 71, PURAKKUSU, 73, MACHAMP, 0
+	db $FF, 70, HITMONTOP, 69, STEELIX, 69, SIRFETCHD, 71, POLIWRATH, 71, TRICULES, 73, MACHAMP, 0
 
 AgathaData:
 	db $FF, 57, ANNIHILAPE, 56, CROBAT, 56, MAROWAK_A, 58, ARBOK, 58, UMBREON, 60, GENGAR, 0
@@ -102,22 +102,22 @@ AgathaData:
 	db $FF, 72, ANNIHILAPE, 71, CROBAT, 71, MAROWAK_A, 73, ARBOK, 73, UMBREON, 75, GENGAR, 0
 
 LanceData:
-	db $FF, 59, CROCKY, 58, GYARADOS, 58, EXEGGUTOR_A, 60, CRYITHAN, 60, KINGDRA, 62, DRAGONITE, 0
+	db $FF, 59, GAVILLAIN, 58, GYARADOS, 58, EXEGGUTOR_A, 60, IGUANARCH, 60, KINGDRA, 62, DRAGONITE, 0
 ; post-game rematch team (currently unused)
-	db $FF, 74, CROCKY, 73, GYARADOS, 73, EXEGGUTOR_A, 75, CRYITHAN, 75, KINGDRA, 77, DRAGONITE, 0
+	db $FF, 74, GAVILLAIN, 73, GYARADOS, 73, EXEGGUTOR_A, 75, IGUANARCH, 75, KINGDRA, 77, DRAGONITE, 0
 
 YujirouData: ; was unused juggler
-	db $FF, 4, KONYA, 5, RATTATA, 8, LICKITUNG, 0                                             ; 0
-	db $FF, 10, KONYA, 11, RATTATA, 13, LICKITUNG, 0                                          ; 1
+	db $FF, 4, COINPUR, 5, RATTATA, 8, LICKITUNG, 0                                             ; 0
+	db $FF, 10, COINPUR, 11, RATTATA, 13, LICKITUNG, 0                                          ; 1
 	db $FF, 19, MEOWTH, 18, RATICATE, 19, FARFETCHD, 21, LICKITUNG, 0                         ; 2
 	db $FF, 22, MEOWTH, 21, RATICATE, 21, FARFETCHD, 23, JIGGLYPUFF, 25, LICKITUNG, 0         ; 3
-	db $FF, 29, PERSIAN, 28, RATICATE, 28, MADAAMU, 29, JIGGLYPUFF, 31, LICKITUNG, 0          ; 4
-	db $FF, 38, PERSIAN, 37, RATICATE, 37, MADAAMU, 38, CHANSEY, 40, LICKITUNG, 0,            ; 5
-	db $FF, 41, PERSIAN, 40, TAUROS, 40, MADAAMU, 41, CHANSEY, 43, LICKILICKY, 0              ; 6
-	db $FF, 45, PERSIAN, 44, TAUROS, 44, MADAAMU, 45, CHANSEY, 47, LICKILICKY, 0              ; 7
-	db $FF, 47, PERSIAN, 46, TAUROS, 46, MADAAMU, 48, BLISSEY, 48, SNORLAX, 50, LICKILICKY, 0 ; 8
+	db $FF, 29, PERSIAN, 28, RATICATE, 28, LUXWAN, 29, JIGGLYPUFF, 31, LICKITUNG, 0           ; 4
+	db $FF, 38, PERSIAN, 37, RATICATE, 37, LUXWAN, 38, CHANSEY, 40, LICKITUNG, 0,             ; 5
+	db $FF, 41, PERSIAN, 40, TAUROS, 40, LUXWAN, 41, CHANSEY, 43, LICKILICKY, 0               ; 6
+	db $FF, 45, PERSIAN, 44, TAUROS, 44, LUXWAN, 45, CHANSEY, 47, LICKILICKY, 0               ; 7
+	db $FF, 47, PERSIAN, 46, TAUROS, 46, LUXWAN, 48, BLISSEY, 48, SNORLAX, 50, LICKILICKY, 0  ; 8
 ; post-game rematch team
-	db $FF, 66, PERSIAN, 67, TAUROS, 67, MADAAMU, 66, BLISSEY, 67, SNORLAX, 70, LICKILICKY, 0
+	db $FF, 66, PERSIAN, 67, TAUROS, 67, LUXWAN, 66, BLISSEY, 67, SNORLAX, 70, LICKILICKY, 0
 
 BlackbeltData:
 ; Koichi parties
@@ -139,7 +139,7 @@ BlackbeltData:
 ; Viridian Gym	- changed to fit the Ground-type gym theme
 	db 40, SANDSLASH, GOLEM, 0
 	db 43, GUARDIA, 0
-	db 38, CACTUS, DUGTRIO, STEELIX, 0
+	db 38, CACTORMUS, DUGTRIO, STEELIX, 0
 ; Victory Road 2F
 	db 43, MACHOKE, MACHOP, MACHOKE, 0
 ; Silph Gauntlet 2F (Mt. Moon)

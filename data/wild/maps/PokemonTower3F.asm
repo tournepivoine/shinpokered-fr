@@ -3,8 +3,8 @@ PokemonTower3FWildMons:
 	db 20, GASTLY
 	db 21, GASTLY
 	db 22, GASTLY
-	db 15, MIKON
-	db 16, MIKON
+	db 15, VULPIII
+	db 16, VULPIII
 	db 18, VULPIX
 	db 24, VULPIX
 	db 20, CUBONE

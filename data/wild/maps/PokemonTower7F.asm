@@ -8,7 +8,7 @@ PokemonTower7FWildMons:
 	db 28, HAUNTER
 	db 22, CUBONE
 	db 24, CUBONE
-	db 28, BARUNDA
+	db 28, BALUMBA
 	db 30, GENGAR
 	end_grass_wildmons
 

@@ -9,7 +9,7 @@ Gauntlet3FWildMons:
 	db 54, GOLDUCK
 	db 55, BLASTOISE
 	db 55, GOLDUCK
-	db 57, TOTARTLE
+	db 57, LAPRAS
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

@@ -22,7 +22,7 @@ SilphGauntlet5F_TextPointers:
 	dw SilphGauntlet5FText7
 	
 SilphGauntlet5FTrainerHeaders:
-	def_trainers 2
+	def_trainers
 SilphGauntlet5FTrainerHeader0:
 	trainer EVENT_BEAT_GAUNTLET_JUGGLER, 3, SilphGauntlet5FBattleText1, SilphGauntlet5FEndBattleText1, SilphGauntlet5FAfterBattleText1
 SilphGauntlet5FTrainerHeader1:

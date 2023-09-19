@@ -149,7 +149,6 @@ MapHeaderPointers::
 	dw PokemonTower1F_h
 	dw PokemonTower2F_h
 	dw BrunswickGrotto_h
-	;dw PokemonTower3F_h
 	dw PokemonTower4F_h
 	dw PokemonTower5F_h
 	dw PokemonTower6F_h
@@ -211,13 +210,12 @@ MapHeaderPointers::
 	dw CitrineMart_h ; UNUSED_MAP_CC
 	dw GarnetCavern1F_h ; UNUSED_MAP_CD, used hideout elevator
 	dw GarnetCavernB1F_h ; UNUSED_MAP_CE, used hideout elevator
-	dw SilphCo2F_h
+	dw VermilionFerryDock_h
 	dw SilphCo3F_h
-	dw SilphCo4F_h
+	dw CitrineFerryDock_h
 	dw SilphCo5F_h
-	dw SilphCo6F_h
+	dw SeagallopFerry_h
 	dw SilphCo7F_h
-	;dw SilphCo8F_h
 	dw PokemonMansion2F_h
 	dw PokemonMansion3F_h
 	dw PokemonMansionB1F_h

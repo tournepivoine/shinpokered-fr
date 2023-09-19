@@ -1595,7 +1595,7 @@ TryRunningFromBattle:
 	jp z, .canEscape ; jump if it's a safari battle
 	ld a, [wLinkState]
 	ld a, [wCurOpponent]
-	cp OMEGA
+	cp OMEGADGE
 	jp z, .omegaCantEscape
 	cp LINK_STATE_BATTLING
 	jp z, .canEscape
@@ -6417,28 +6417,31 @@ LoadEnemyMonData:
 	ld de, wEnemyMonNick
 	ld bc, NAME_LENGTH
 	call CopyData
-	cp BATTLE_TENT
-	jr z, .skipSeenFlagAdding ; one of Battle Tower's rules
+	;ld a, [wCurMap]
+	;cp BATTLE_TENT
+	;jr z, .skipSeenFlagAdding ; one of Battle Tower's rules
 	ld a, [wEnemyMonSpecies2]
 	ld [wd11e], a
 	predef IndexToPokedex
-	call IsGhostBattle ; this prevents it from being identified early
-	jr nz, .noMarkSeen ; part of the ghost fix
+	;call IsGhostBattle ; this prevents it from being identified early
+	;jr nz, .noMarkSeen ; part of the ghost fix
 	ld a, [wd11e]
 	dec a
 	ld c, a
 	ld b, FLAG_SET
 	ld hl, wPokedexSeen
 	predef FlagActionPredef ; mark this mon as seen in the pokedex
-.noMarkSeen ; part of the ghost fix
-	ld hl, wEnemyMonLevel
-	ld de, wEnemyMonUnmodifiedLevel
-	ld bc, 1 + NUM_STATS * 2
-	call CopyData
-	ld a, $7 ; default stat mod
-	ld b, NUM_STAT_MODS ; number of stat mods
-	ld hl, wEnemyMonStatMods
-.skipSeenFlagAdding
+
+;.noMarkSeen ; this is supposed to be a ghost fix but it causes the pokedex to just...never update so I'm commenting it out
+;	ld hl, wEnemyMonLevel
+;	ld de, wEnemyMonUnmodifiedLevel
+;	ld bc, 1 + NUM_STATS * 2
+;	call CopyData
+;	ld a, $7 ; default stat mod
+;	ld b, NUM_STAT_MODS ; number of stat mods
+;	ld hl, wEnemyMonStatMods
+;.skipSeenFlagAdding
+
 	ld hl, wEnemyMonLevel
 	ld de, wEnemyMonUnmodifiedLevel
 	ld bc, $b

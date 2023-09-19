@@ -3,7 +3,7 @@ Gauntlet4FWildMons:
 	db 53, HAUNTER
 	db 53, GUARDIA
 	db 54, NINETALES
-	db 54, BARUNDA
+	db 54, BALUMBA
 	db 54, GUARDIA
 	db 55, NINETALES
 	db 55, HYPNO
