@@ -276,6 +276,7 @@ OaksLabScript8:
 	jp .moveBlue
 
 .LeftBallMovement ; with the new layout, LeftBallMovement2 seems unnecessary and can merely be proc'd twice.
+	db NPC_MOVEMENT_RIGHT ; if he picks bulbasaur
 	db NPC_MOVEMENT_RIGHT
 	db -1 ; end
 
