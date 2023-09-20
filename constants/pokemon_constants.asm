@@ -221,7 +221,7 @@
 	const ELECTIVIRE         ; $D4
 	const MAGMORTAR          ; $D5
 	const DISTURBAN          ; $D6
-	const GENTLARVA             ; $D7
+	const GENTLARVA          ; $D7
 	const PUPAL              ; $D8
 	const CARAPTHOR          ; $D9
 	const MAGNEZONE          ; $DA

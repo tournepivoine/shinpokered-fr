@@ -30,7 +30,7 @@ MonsterNames::
 	db "BLASTOISE@"
 	db "PINSIR@@@@"
 	db "TANGELA@@@"
-	db "GAWARHED@@"
+	db "GAWARHED@@"	; Gyaoon
 	db "NIDOREIGN@"
 	db "GROWLITHE@"
 	db "ONIX@@@@@@"
@@ -49,25 +49,25 @@ MonsterNames::
 	db "PSYDUCK@@@"
 	db "DROWZEE@@@"
 	db "GOLEM@@@@@"
-	db "BALUMBA@@@"
+	db "BALUMBA@@@"	; Barunda
 	db "MAGMAR@@@@"
 	db "BUU@@@@@@@"
 	db "ELECTABUZZ"
 	db "MAGNETON@@"
 	db "KOFFING@@@"
-	db "RAMOOSE@@@"
+	db "RAMOOSE@@@"	; Deer
 	db "MANKEY@@@@"
 	db "SEEL@@@@@@"
 	db "DIGLETT@@@"
 	db "TAUROS@@@@"
 	db "TRAMPEL@@@"
-	db "GAVILLAIN@"
+	db "GAVILLAIN@"	; Crocky
 	db "BLOTTLE@@@"
 	db "FARFETCH'D"
 	db "VENONAT@@@"
 	db "DRAGONITE@"
-	db "CACTORMUS@"
-	db "SHARPOON@@"
+	db "CACTORMUS@"	; Cactus
+	db "SHARPOON@@"	; Jagg
 	db "WIGLETT@@@"
 	db "DODUO@@@@@"
 	db "POLIWAG@@@"
@@ -80,7 +80,7 @@ MonsterNames::
 	db "KRABBY@@@@"
 	db "CHEEP@@@@@"
 	db "JABETTA@@@"
-	db "VULPIII@@@"
+	db "VULPIII@@@"	; Mikon
 	db "VULPIX@@@@"
 	db "NINETALES@"
 	db "PIKACHU@@@"
@@ -93,8 +93,8 @@ MonsterNames::
 	db "KABUTOPS@@"
 	db "HORSEA@@@@"
 	db "SEADRA@@@@"
-	db "MINISTARE@"
-	db "IGUANARCH@"
+	db "MINISTARE@"	; Bawligua
+	db "IGUANARCH@"	; Cryithan
 	db "SANDSHREW@"
 	db "SANDSLASH@"
 	db "OMANYTE@@@"
@@ -114,13 +114,13 @@ MonsterNames::
 	db "WEEDLE@@@@"
 	db "KAKUNA@@@@"
 	db "BEEDRILL@@"
-	db "LUXWAN@@@@"
+	db "LUXWAN@@@@"	; Madaamu
 	db "DODRIO@@@@"
 	db "PRIMEAPE@@"
 	db "DUGTRIO@@@"
 	db "VENOMOTH@@"
 	db "DEWGONG@@@"
-	db "TRICULES@@"
+	db "TRICULES@@"	; Purakkusu
 	db "PENDRAKEN@"
 	db "CATERPIE@@"
 	db "METAPOD@@@"
@@ -133,8 +133,8 @@ MonsterNames::
 	db "MEWTWO@@@@"
 	db "SNORLAX@@@"
 	db "MAGIKARP@@"
-	db "COINPUR@@@"
-	db "OMEGADGE@@"
+	db "COINPUR@@@"	; Konya
+	db "OMEGADGE@@"	; Omega
 	db "MUK@@@@@@@"
 	db "DECILLA@@@"
 	db "KINGLER@@@"
@@ -155,13 +155,13 @@ MonsterNames::
 	db "BULBASAUR@"
 	db "VENUSAUR@@"
 	db "TENTACRUEL"
-	db "ORFRY@@@@@"
+	db "ORFRY@@@@@"	; Gyopin
 	db "GOLDEEN@@@"
 	db "SEAKING@@@"
 	db "KOTORA@@@@"
 	db "GAOTORA@@@"
 	db "GOROTORA@@"
-	db "KOLTA@@@@@"
+	db "KOLTA@@@@@"	; Puchikoon
 	db "PONYTA@@@@"
 	db "RAPIDASH@@"
 	db "RATTATA@@@"
@@ -173,7 +173,7 @@ MonsterNames::
 	db "AERODACTYL"
 	db "BLASTYKE@@"
 	db "MAGNEMITE@"
-	db "SQUEAMATA@"
+	db "SQUEAMATA@"	; Skimper
 	db "GOROCHU@@@"
 	db "CHARMANDER"
 	db "SQUIRTLE@@"
@@ -200,12 +200,12 @@ MonsterNames::
 	db "LICKILICKY"
 	db "TANGROWTH@"
 	db "KLEAVOR@@@"
-	db "BELLIGNAN@"
+	db "BELLIGNAN@"	; Tsubomitto
 	db "STEELIX@@@"
 	db "BLISSEY@@@"
 	db "HITMONTOP@"
 	db "CROBAT@@@@"
-	db "MIMMEO@@@@"
+	db "MIMMEO@@@@"	; Animon
 	db "BELLOSSOM@"
 	db "PORYGON2@@"
 	db "KINGDRA@@@"
@@ -213,8 +213,8 @@ MonsterNames::
 	db "SLOWKING@@"
 	db "ELECTIVIRE"
 	db "MAGMORTAR@"
-	db "DISTURBAN@"
-	db "GENTLARVA@" ; Gentlarva
+	db "DISTURBAN@"	; Taaban
+	db "GENTLARVA@" ; Kokana
 	db "PUPAL@@@@@" ; Kasanagi
 	db "CARAPTHOR@"
 	db "MAGNEZONE@"
