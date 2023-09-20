@@ -168,7 +168,7 @@ QoL Enhancements
 - PureRGB's AI enhancements are ported over; said hack was made by Vortiene. In general, it isn't as stupid as it was before.
 - Bag capacity is increased from 20 to 30 items.
 - Pokemon Box capacity is now 280 Pokemon with 14 boxes.
-- Exp. All now works like the modern Exp. Share, giving all party members max exp. It also only has one message, though it does still take time to calculate all the exp being thrown around. It'll take around 3 seconds to calculate, sort of like saving.
+- Exp. All now works like the modern Exp. Share, giving all party members max exp. It also only has one message, though it does still take time to calculate all the exp being thrown around. It'll take around 3 seconds to calculate, sort of like saving. Oh, and it's a Key Item now, so you can't sell it by accident.
 - New Pokedex entries for most Pokemon are available, sourced from the original 1996 Pokedex book by Creatures Inc., restoring a ton of old Kanto lore. Thanks to [Dr. Lava and Nob Ogasawara](http://lavacutcontent.com/1996-creatures-pokedex-translation-1/) for their incredible work translating and writing about it!
 - Pikachu and Eevee are now starters, featuring fully functional Rival lineups. If you pick Pikachu, he picks Eevee, and if you pick Eevee, he picks Pikachu! Their growth rates have been changed to Medium Slow to give them the early-game power spike the other starters have.
 - Item Descriptions are available!
@@ -383,16 +383,16 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
 * Vortiene/Vortyne - Reused a bit of code from their pureRGB hack, including their Trainer AI. Assisted in bug fixes. Used their sprite sheet generator.
 * Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red's repository, where we reused the Green/FemC sprites and the Battle Tent.
-* jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of.
+* jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of. Thanks specifically to Mateo's Red++ for the ferry system!
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld, and generally being an amazing individual.
 * BGVC - Composed the original 4-channel version of the unused Koukan (trading) music.
 * SatoMew - Technical advice.
 * wrulfy - Technical advice.
 * suloku - Technical advice regarding setting where you spawn after beating the Elite Four, Exp. All modernisation code
-* Molk - Balancing of some beta Pokemon, most notably Deer.
-* Shellnuts - Balancing of some beta Pokemon, especially Omega; made the type chart suggestions to balance Galarian Moltres properly.
 * 大吟醸 (Daiginjo) - Assistance in translating the Tamamushi University Student Book, allowing for an accurate adaptation of the location.
-* ViWalls - Extremely early adopter of the hack who repeatedly reported bugs and gave general opinions.
+* Molk - Balancing of some beta Pokemon, most notably Ramoose.
+* Shellnuts - Balancing of some beta Pokemon, especially Omegadge. Made the SW97 type chart suggestion to balance Galarian Moltres; this would go on to define the mod's identity.
+* ViWalls - Extremely early adopter of the hack who reported numerous bugs and gave many useful suggestions as a prime member of our target audience.
 
 Original README.md proceeding;
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]

@@ -78,11 +78,11 @@ ItemPrices::
 	bcd3 0     ; was OLD_ROD, now CANDY_SACK. Plan to be one-of-a-kind, so 0 to discourage sale a la Master Ball.
 	bcd3 9800  ; was GOOD_ROD, now BOTTLE_CAP. Sells for 5000 in SV, but making it in-line with the Stat Exp items feels right.
 	bcd3 0     ; SUPER_ROD
-	bcd3 0     ; PP_UP
+	bcd3 3000  ; PP_UP
 	bcd3 0     ; ETHER
 	bcd3 0     ; MAX_ETHER
 	bcd3 0     ; ELIXER
-	bcd3 0     ; MAX_ELIXER
+	bcd3 3000  ; MAX_ELIXER
 	bcd3 2100  ; ICE_STONE
 	bcd3 3000  ; PROTECTOR
 	bcd3 2100  ; POISON_STONE
