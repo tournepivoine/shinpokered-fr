@@ -2041,7 +2041,7 @@ wSSAnneB1FRoomsCurScript:: db
 wVermilionCityCurScript:: db
 wPokemonTower2FCurScript:: db
 wPokemonTower3FCurScript:: db
-wPokemonTower4FCurScript:: db
+	ds 1 ;was wPokemonTower4FCurScript
 wPokemonTower5FCurScript:: db
 wPokemonTower6FCurScript:: db
 wPokemonTower7FCurScript:: db

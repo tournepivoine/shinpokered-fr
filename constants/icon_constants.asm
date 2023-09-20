@@ -12,9 +12,9 @@
 	const ICON_GRASS     ; $7
 	const ICON_SNAKE     ; $8
 	const ICON_QUADRUPED ; $9
-	const ICON_PIKACHU   ; $A
-	const ICON_SMALL_BIRD; $0B
-	const ICON_CAT 		 ; 0C
+	const ICON_PIKACHU   ; $0A
+	const ICON_CAT		 ; $0B
+	const ICON_SMALL_BIRD; $0C
 
 DEF ICON_TRADEBUBBLE EQU $0e
 

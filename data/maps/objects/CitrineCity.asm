@@ -6,7 +6,7 @@ CitrineCity_Object:
 	warp_event  9, 17, CITRINE_TRADEBACK_HOUSE, 1
 	warp_event 15, 17, CITRINE_POKECENTER, 1
 	warp_event 15, 27, CITRINE_MART, 1
-	warp_event 23,  5, CELESTE_HILL_OUTSIDE, 1
+	warp_event 23,  5, CELESTE_HILL_GATE, 4
 	warp_event 11,  7, BATTLE_TENT, 1
 	warp_event 26, 31, CITRINE_FERRY_DOCK, 1
 	warp_event 27, 31, CITRINE_FERRY_DOCK, 1

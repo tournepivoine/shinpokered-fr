@@ -22,7 +22,7 @@ Route24_ScriptPointers:
 	dw Route24Script4
 
 Route24Script0:
-	CheckEvent EVENT_GOT_NUGGET
+	CheckEvent EVENT_BEAT_ROUTE24_ROCKET
 	jp nz, CheckFightingMapTrainers
 	ld hl, CoordsData_5140e
 	call ArePlayerCoordsInArray
@@ -106,9 +106,9 @@ Route24TrainerHeader5:
 ; We added the infinite Nugget glitch from FRLG to own the libs
 Route24Text1:
 	text_asm
-	ResetEvent EVENT_NUGGET_REWARD_AVAILABLE
-	;CheckEvent EVENT_GOT_NUGGET
-	;jr nz, .got_item
+	;ResetEvent EVENT_NUGGET_REWARD_AVAILABLE
+	CheckEvent EVENT_BEAT_ROUTE24_ROCKET
+	jr nz, .got_item
 	ld hl, Route24Text_51510
 	call PrintText
 	lb bc, NUGGET, 1
@@ -142,7 +142,7 @@ Route24Text1:
 .bag_full
 	ld hl, Route24Text_51521
 	call PrintText
-	SetEvent EVENT_NUGGET_REWARD_AVAILABLE
+;	SetEvent EVENT_NUGGET_REWARD_AVAILABLE
 	jp TextScriptEnd
 
 Route24Text_51510:

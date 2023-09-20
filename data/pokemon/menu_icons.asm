@@ -110,7 +110,7 @@ MonPartyData:
 	nybble ICON_MON       ; Lickitung
 	nybble ICON_MON       ; Lickilicky
 	nybble ICON_SMALL_BIRD ; Farfetch'd
-	nybble ICON_BIRD	  ; Madaamu
+	nybble ICON_SMALL_BIRD	  ; Luxwan
 	nybble ICON_SMALL_BIRD ; Sirfetch'd
 	nybble ICON_MON       ; Drowzee
 	nybble ICON_MON       ; Hypno

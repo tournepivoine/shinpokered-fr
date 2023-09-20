@@ -73,8 +73,8 @@
 	const SPRITE_CHANSEY                 ; $44
 	const SPRITE_JESSIE                  ; $45
 	const SPRITE_JAMES                   ; $46
-	const SPRITE_CAT
 	const SPRITE_SMALL_BIRD
+	const SPRITE_CAT
 	const SPRITE_ARBOK
 	const SPRITE_KOFFING
 	const SPRITE_DIGLETT

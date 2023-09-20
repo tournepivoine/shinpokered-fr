@@ -78,8 +78,8 @@ SpriteSheetPointerTable:
 	overworld_sprite ChanseySprite, 12          ; SPRITE_CHANSEY
 	overworld_sprite JessieSprite, 12           ; SPRITE_JESSIE
 	overworld_sprite JamesSprite, 12            ; SPRITE_JAMES
-	overworld_sprite CatSprite, 12 ; SPRITE_CAT
 	overworld_sprite SmallBirdSprite, 12 ; SPRITE_SMALL_BIRD
+	overworld_sprite CatSprite, 12 ; SPRITE_CAT
 	overworld_sprite ArbokSprite, 12 ; SPRITE_ARBOK
 	overworld_sprite KoffingSprite, 12 ; SPRITE_KOFFING
 	overworld_sprite DiglettSprite, 12 ; SPRITE_DIGLETT

@@ -29,8 +29,7 @@ _CitrineCityTower::
 	done
 
 _CitrineCityCavern::
-	text "GATE TO"
-	line "CELESTE HILL"
+	text "CELESTE HILL"
 
 	para "Stay safe! Look"
 	line "out for strong"

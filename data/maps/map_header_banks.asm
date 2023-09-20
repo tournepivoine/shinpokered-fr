@@ -149,7 +149,7 @@ MapHeaderBanks::
 	db BANK(PokemonTower1F_h)
 	db BANK(PokemonTower2F_h)
 	db BANK(BrunswickGrotto_h)
-	db BANK(PokemonTower4F_h)
+	db BANK(CelesteHillGate_h) ; was pokemon tower 4f
 	db BANK(PokemonTower5F_h)
 	db BANK(PokemonTower6F_h)
 	db BANK(PokemonTower7F_h)

@@ -167,7 +167,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const POKEMON_TOWER_1F,              10,  9 ; $90
 	map_const POKEMON_TOWER_2F,              10,  9 ; $91
 	map_const BRUNSWICK_GROTTO,              15, 12 ; $92	- Was Pokemon Tower 3F
-	map_const POKEMON_TOWER_4F,              10,  9 ; $93	- Currently unused
+	map_const CELESTE_HILL_GATE,              5,  4 ; $93	- Was Pokemon Tower 4F
 	map_const POKEMON_TOWER_5F,              10,  9 ; $94	- Currently unused
 	map_const POKEMON_TOWER_6F,              10,  9 ; $95
 	map_const POKEMON_TOWER_7F,              10,  9 ; $96

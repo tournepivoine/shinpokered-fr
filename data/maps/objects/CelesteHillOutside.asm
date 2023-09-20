@@ -2,8 +2,8 @@ CelesteHillOutside_Object:
 	db $2 ; border block
 
 	def_warp_events
-	warp_event 18, 35, CITRINE_CITY, 5
-	warp_event 19, 35, CITRINE_CITY, 5
+	warp_event 18, 35, CELESTE_HILL_GATE, 1
+	warp_event 19, 35, CELESTE_HILL_GATE, 2
 	warp_event 16, 23, CELESTE_HILL_CAVE, 1
 	warp_event 36, 11, CELESTE_HILL_CAVE, 5
 	warp_event 2, 9, CELESTE_HILL_CAVE, 6

@@ -1526,7 +1526,7 @@ OmegadgeDexEntry:
 	text_end
 
 NidoreignDexEntry:
-	db "POISON PIN@"
+	db "LUNAR@"
 	db 3,7
 	dw 800
 	text_far _NidoreignDexEntry

@@ -338,14 +338,14 @@ _MagnetiteDexEntry::		; unused
 	next "levitating"
 	dex
 
-_NidoreignDexEntry:: ; Consider revising. Could expand on why the Nidos are associated with the Moon Stone at all. They're based on the Moon Rabbit of East Asian mythology.
-	text "Exposure to a"
-	next "MOON STONE caused"
-	next "its evolution. It"
+_NidoreignDexEntry:: ; The Nidos are based on the Moon Rabbit of East Asian mythology, so we're expanding on this with actual moon references.
+	text "It's said to come"
+	next "from the moon."
+	next "Its poisonous"
 
-	page "combines traits"
-	next "of both NIDORINA"
-	next "and NIDORINO"
+	page "spines are used"
+	next "to make powerful"
+	next "MAX ELIXERs"
 	dex
 
 _BalumbaDexEntry::

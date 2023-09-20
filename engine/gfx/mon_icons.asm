@@ -92,7 +92,7 @@ PartyMonSpeeds:
 LoadMonPartySpriteGfx:
 ; Load mon party sprite tile patterns into VRAM during V-blank.
 	ld hl, MonPartySpritePointers
-	ld a, $22 ; Number of pointers in the list in hex. eg. Yellow has 30, so 1E is used.
+	ld a, $24 ; Number of pointers in the list in hex. eg. Yellow has 30, so 1E is used.
 
 LoadAnimSpriteGfx:
 ; Load animated sprite tile patterns into VRAM during V-blank. hl is the address

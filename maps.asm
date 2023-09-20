@@ -985,10 +985,11 @@ PokemonTower2F_Blocks: INCBIN "maps/PokemonTower2F.blk"
 ;INCLUDE "data/maps/objects/PokemonTower3F.asm"
 ;PokemonTower3F_Blocks: INCBIN "maps/PokemonTower3F.blk"
 
-INCLUDE "data/maps/headers/PokemonTower4F.asm"
-INCLUDE "scripts/PokemonTower4F.asm"
-INCLUDE "data/maps/objects/PokemonTower4F.asm"
-PokemonTower4F_Blocks: INCBIN "maps/PokemonTower4F.blk"
+; Replaced Pokemon Tower 4F. You'll see lots of leftovers!
+INCLUDE "data/maps/headers/CelesteHillGate.asm"
+INCLUDE "scripts/CelesteHillGate.asm"
+INCLUDE "data/maps/objects/CelesteHillGate.asm"
+CelesteHillGate_Blocks: INCBIN "maps/CelesteHillGate.blk"
 
 INCLUDE "data/maps/headers/PokemonTower5F.asm"
 INCLUDE "scripts/PokemonTower5F.asm"

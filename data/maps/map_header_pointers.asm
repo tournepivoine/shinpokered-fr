@@ -149,7 +149,7 @@ MapHeaderPointers::
 	dw PokemonTower1F_h
 	dw PokemonTower2F_h
 	dw BrunswickGrotto_h
-	dw PokemonTower4F_h
+	dw CelesteHillGate_h ; was pokemon tower 4f
 	dw PokemonTower5F_h
 	dw PokemonTower6F_h
 	dw PokemonTower7F_h
