@@ -149,14 +149,14 @@ ResetLegendaryPokemon:
 .skipArticuno ; Rinse and repeat.
 	ld a, DEX_ZAPDOS
 	call HoFIsPokemonBitSet
-	jr z, .skipZapdos
+	jr nz, .skipZapdos
 	ResetEvent EVENT_BEAT_ZAPDOS
 	ld a, HS_ZAPDOS
 	call ShowThis
 .skipZapdos
 	ld a, DEX_MOLTRES
 	call HoFIsPokemonBitSet
-	jr z, .skipMoltres
+	jr nz, .skipMoltres
 	ResetEvent EVENT_BEAT_MOLTRES
 	ld a, HS_MOLTRES
 	call ShowThis
@@ -175,7 +175,7 @@ ResetLegendaryPokemon:
 	; So, we put this here.
 	ld a, DEX_MEW
 	call HoFIsPokemonBitSet
-	jr z, .skipMew
+	jr nz, .skipMew
 	ResetEvent EVENT_BEAT_MEW
 	ld a, HS_MEW
 	call ShowThis
@@ -184,28 +184,28 @@ ResetLegendaryPokemon:
 	jp z, .skipGalarianBirdsAndMewtwo ; If you haven't cleared the game yet, you've not met the Galarian Birds. So we may as well skip processing all this.
 	ld a, DEX_ARTICUNO_G
 	call HoFIsPokemonBitSet
-	jr z, .skipArticunoG
+	jr nz, .skipArticunoG
 	ResetEvent EVENT_BEAT_ARTICUNO_G
 	ld a, HS_GARNET_ARTICUNO_G
 	call ShowThis
 .skipArticunoG
 	ld a, DEX_ZAPDOS_G
 	call HoFIsPokemonBitSet
-	jr z, .skipZapdosG
+	jr nz, .skipZapdosG
 	ResetEvent EVENT_BEAT_ZAPDOSG
 	ld a, HS_BRUNSWICK_ZAPDOS_G_2
 	call ShowThis
 .skipZapdosG
 	ld a, DEX_MOLTRES_G
 	call HoFIsPokemonBitSet
-	jr z, .skipMoltresG
+	jr nz, .skipMoltresG
 	ResetEvent EVENT_BEAT_GALARIAN_MOLTRES
 	ld a, HS_MOLTRES_G
 	call ShowThis
 .skipMoltresG
 	ld a, DEX_MEWTWO
 	call HoFIsPokemonBitSet
-	jr z, .skipGalarianBirdsAndMewtwo
+	jr nz, .skipGalarianBirdsAndMewtwo
 	ResetEvent EVENT_BEAT_MEWTWO
 	ld a, HS_MEWTWO
 	call ShowThis

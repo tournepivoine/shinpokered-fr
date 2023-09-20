@@ -1,5 +1,10 @@
 GiovannisRoom_Script:
-	jp EnableAutoTextBoxDrawing
+	call EnableAutoTextBoxDrawing
+	ld de, GiovannisRoom_ScriptPointers
+	ld a, [wGiovannisRoomCurScript]
+	call ExecuteCurMapScriptInTable
+	ld [wGiovannisRoomCurScript], a
+	ret
 
 GiovannisRoom_ScriptPointers:
 	dw GiovannisRoomScript0
@@ -13,7 +18,7 @@ GiovannisRoomScript0:
 	ld hl, GiovannisRoomArrowTilePlayerMovement
 	call DecodeArrowMovementRLE
 	cp $ff
-	jp z, CheckFightingMapTrainers
+	jr z, .done ; Normally this checks for map trainers, but since there's none, we can remove them.
 	ld hl, wd736
 	set 7, [hl]
 	call StartSimulatingJoypadStates
@@ -21,10 +26,12 @@ GiovannisRoomScript0:
 	call PlaySound
 	ld a, $ff
 	ld [wJoyIgnore], a
-	ld a, $3
+	ld a, $1
 	ld [wCurMapScript], a
+.done
 	ret
 
+; Some tile movements were removed due to either being unnecessary or ports from Viridian Gym itself.
 GiovannisRoomArrowTilePlayerMovement:
 	map_coord_movement 12, 16, GiovannisRoomArrowMovement1
 	map_coord_movement 14, 15, GiovannisRoomArrowMovement2
@@ -34,11 +41,8 @@ GiovannisRoomArrowTilePlayerMovement:
 	map_coord_movement 15, 8, GiovannisRoomArrowMovement7
 	map_coord_movement 12, 9, GiovannisRoomArrowMovement8
 	map_coord_movement 14, 9, GiovannisRoomArrowMovement9
-	map_coord_movement 13, 10, GiovannisRoomArrowMovement10
 	map_coord_movement 15, 10, GiovannisRoomArrowMovement11
-	map_coord_movement 12, 11, GiovannisRoomArrowMovement12
 	map_coord_movement 14, 11, GiovannisRoomArrowMovement13
-	map_coord_movement 14, 5, GiovannisRoomArrowMovement14
 	db -1 ; end
 
 GiovannisRoomArrowMovement1:
@@ -78,32 +82,18 @@ GiovannisRoomArrowMovement9:
 	db D_UP, 1
 	db -1 ; end
 
-GiovannisRoomArrowMovement10:
-	db D_RIGHT, 5
-	db -1 ; end
-
 GiovannisRoomArrowMovement11:
 	db D_RIGHT, 3
-	db -1 ; end
-
-GiovannisRoomArrowMovement12:
-	db D_UP, 1
-	db D_RIGHT, 2
-	db D_UP, 2
 	db -1 ; end
 
 GiovannisRoomArrowMovement13:
 	db D_UP, 3
 	db -1 ; end
-	
-GiovannisRoomArrowMovement14:
-	db D_RIGHT, 4
-	db -1 ; end
 
 GiovannisRoomScript4:
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
-	jp nz, LoadSpinnerArrowTiles
+	jr nz, .GiovannisRoomLoadSpinnerArrow
 	xor a
 	ld [wJoyIgnore], a
 	ld hl, wd736
@@ -111,6 +101,8 @@ GiovannisRoomScript4:
 	ld a, $0
 	ld [wCurMapScript], a
 	ret
+.GiovannisRoomLoadSpinnerArrow
+	farjp LoadSpinnerArrowTiles
 
 GiovannisRoom_TextPointers:
 	dw GiovannisRoomText1

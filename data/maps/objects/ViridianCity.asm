@@ -7,7 +7,7 @@ ViridianCity_Object:
 	warp_event 21, 15, VIRIDIAN_SCHOOL_HOUSE, 1
 	warp_event 21,  9, VIRIDIAN_NICKNAME_HOUSE, 1
 	warp_event 32,  7, VIRIDIAN_GYM, 1
-	warp_event 32,  3, GIOVANNIS_ROOM, 2
+	warp_event 33,  3, GIOVANNIS_ROOM, 2
 	warp_event 12, 15, VIRIDIAN_PRE_GYM, 1
 
 	def_bg_events

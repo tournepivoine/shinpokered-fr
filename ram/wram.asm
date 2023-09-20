@@ -2112,7 +2112,8 @@ wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
 wBattleTentCurScript:: db
-	ds 5
+wGiovannisRoomCurScript:: db
+	ds 4
 wGameProgressFlagsEnd::
 
 UNION

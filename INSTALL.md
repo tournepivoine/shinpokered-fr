@@ -1,3 +1,13 @@
+# NOTICE
+
+This file comes with base pokered. To install KEP, use https://github.com/PlagueVonKarma/kep-hack whenever the link to the pokered repository comes up.
+
+Also, **PLEASE** read this carefully. 99.9% of the install issues you will face will come from not reading this properly. Follow it to the letter, just with the above considered.
+
+Should issues persist, I cannot give much support other than directing you to [pret's Discord](https://discord.gg/hu55wwjdAT). Please be kind and respectful to them, and ask detailed questions. Don't just post the error log, so on, so forth.
+
+~ Plague von Karma.
+
 # Instructions
 
 These instructions explain how to set up the tools required to build **pokered**, including [**rgbds**](https://github.com/gbdev/rgbds), which assembles the source files into a ROM.
