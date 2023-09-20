@@ -1,5 +1,5 @@
 # Information
-The border you see in this folder is for use with Nintendo Super Ultimate Injector for 3DS.
+The border you see in this folder is for use with New Super Ultimate Injector for 3DS.
 
 Borders must be 400x240 in dimensions, with a transparent bounding rectangle of 161x145 centred in the middle for the screen.
 
