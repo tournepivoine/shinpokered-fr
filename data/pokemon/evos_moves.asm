@@ -226,7 +226,7 @@ EvosMovesPointerTable:
 	dw ElectivireEvosMoves
 	dw MagmortarEvosMoves
 	dw DisturbanEvosMoves
-	dw KokanaEvosMoves
+	dw GentlarvaEvosMoves
 	dw PupalEvosMoves
 	dw CarapthorEvosMoves
 	dw MagnezoneEvosMoves
@@ -2840,7 +2840,7 @@ DisturbanEvosMoves:
 	db 50, POISON_GAS
 	db 0
 	
-KokanaEvosMoves:
+GentlarvaEvosMoves:
 ; Evolutions
 	db EV_LEVEL, 7, PUPAL
 	db 0

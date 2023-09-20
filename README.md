@@ -217,6 +217,7 @@ QoL Enhancements
 Bug Fixes
 ====
 Many non-multiplayer, non-battle related bugs have been fixed. Battle-related bugs have been preserved for the sake of the RBY battle experience. Bugs that are fixed are ones that objectively hurt the gameplay experience, so glitches like the Mew Glitch, which arguably add to the gameplay, are preserved. Much of the fixes made here can be attributed to [the tutorials](https://github.com/pret/pokered/wiki/Bugs-and-Glitches) made by the good people at pret.
+- Added the Infinite Nugget glitch from FireRed/LeafGreen. Why? It's funny, I dunno.
 - Fixed various translation errors/retcons (eg. Route 14 Birdkeeper's "birds of prey" line, Koji and Atsuko in Fuschia.)
 - More accurate translations from FRLG/LGPE (eg. Bill not being a PokeManiac, but a "Pokemon fanatic" from LGPE) have been ported.
 - Some grammar tweaks have been made (eg. If a move is disabled, it now has an upper-case D instead of a lower-case one.)
@@ -313,7 +314,7 @@ Kanto Beta Pokemon:
 - Coinpur -> Meowth | L14
 - Decilla -> Gawarhed | L40
 - Gyopin -> Goldeen | L16
-- Kokana -> Pupal | L7
+- Gentlarva -> Pupal | L7
 - Pupal -> Carapthor | L10
 - Kotora -> Gaotora -> Gorotora | L16, L36
 - Kolta -> Ponyta | L20

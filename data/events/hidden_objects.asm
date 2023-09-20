@@ -89,6 +89,7 @@ HiddenObjectMaps:
 	db VERMILION_DOCK
 	db MT_MOON_CRATER
 	db DAYCARE
+	db MT_MOON_SQUARE
 	db -1 ; end
 
 HiddenObjectPointers:
@@ -183,6 +184,7 @@ HiddenObjectPointers:
 	dw VermilionDockHiddenObjects
 	dw MtMoonCraterHiddenObjects
 	dw DaycareHiddenItems
+	dw MtMoonSquareHiddenItems
 
 MACRO hidden_object
 	db \2 ; y coord
@@ -660,4 +662,8 @@ MtMoonCraterHiddenObjects:
 
 DaycareHiddenItems:
 	hidden_object  4,  1, SPRITE_FACING_UP, OpenPokemonCenterPC
+	db -1
+
+MtMoonSquareHiddenItems:
+	hidden_object  5,  5, MOON_STONE, HiddenItems
 	db -1

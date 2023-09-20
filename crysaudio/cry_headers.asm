@@ -44,7 +44,7 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      238,  129 ; WEEDLE
 	mon_cry CRY_BLASTOISE,   255,  129 ; KAKUNA
 	mon_cry CRY_BLASTOISE,    96,  256 ; BEEDRILL
-	mon_cry CRY_NIDORAN_M,     0,    0 ; KOKANA	(incomplete)
+	mon_cry CRY_NIDORAN_M,     0,    0 ; GENTLARVA	(incomplete)
 	mon_cry CRY_NIDORAN_M,     0,    0 ; PUPAL	(incomplete)
 	mon_cry CRY_NIDORAN_M,     0,    0 ; CARAPTHOR	(incomplete)
 	mon_cry CRY_KANGASKHAN,  163,  129 ; KOTORA

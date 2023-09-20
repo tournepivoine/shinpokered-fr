@@ -43,7 +43,7 @@
 	const DEX_WEEDLE     ; 13	(037)
 	const DEX_KAKUNA     ; 14	(038)
 	const DEX_BEEDRILL   ; 15	(039)
-	const DEX_KOKANA     ; 		(040)
+	const DEX_GENTLARVA     ; 		(040)
 	const DEX_PUPAL      ; 		(041)
 	const DEX_CARAPTHOR  ; 		(042)
 	const DEX_KOTORA     ;		(043)

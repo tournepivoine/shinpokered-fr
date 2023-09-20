@@ -7,6 +7,6 @@ Download the software [here](https://www.gamebrew.org/wiki/New_Super_Ultimate_In
 
 # Credits
 * Shawesome (Initial suggestion)
-* Gecko557 (Information & [Template](https://cdn.discordapp.com/attachments/1014321591657709569/1147616605166108744/3DSVCBorderForGBandGBC.png))
+* Gecko557 (Information, Paradox Pokemon Border, & [Template](https://cdn.discordapp.com/attachments/1014321591657709569/1147616605166108744/3DSVCBorderForGBandGBC.png))
 * Plague von Karma (KEP OG Dimensions Border)
 * Mephistopheles (Prototype RG Expanded Border)

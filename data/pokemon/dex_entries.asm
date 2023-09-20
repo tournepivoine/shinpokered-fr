@@ -214,7 +214,7 @@ PokedexEntryPointers:
 	dw ElectivireDexEntry
 	dw MagmortarDexEntry
 	dw DisturbanDexEntry
-	dw KokanaDexEntry
+	dw GentlarvaDexEntry
 	dw PupalDexEntry
 	dw CarapthorDexEntry
 	dw MagnezoneDexEntry
@@ -1749,11 +1749,11 @@ DisturbanDexEntry:
 	text_far _DisturbanDexEntry
 	text_end
 	
-KokanaDexEntry:
+GentlarvaDexEntry:
 	db "GRUB@"
 	db 1,0
 	dw 80
-	text_far _KokanaDexEntry
+	text_far _GentlarvaDexEntry
 	text_end
 
 PupalDexEntry:

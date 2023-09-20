@@ -214,8 +214,8 @@ MonsterNames::
 	db "ELECTIVIRE"
 	db "MAGMORTAR@"
 	db "DISTURBAN@"
-	db "KOKANA@@@@"
-	db "PUPAL@@@@@"
+	db "GENTLARVA@" ; Gentlarva
+	db "PUPAL@@@@@" ; Kasanagi
 	db "CARAPTHOR@"
 	db "MAGNEZONE@"
 	db "PORYGON-Z@"

@@ -103,17 +103,18 @@ Route24TrainerHeader5:
 	trainer EVENT_BEAT_ROUTE_24_TRAINER_5, 1, Route24BattleText6, Route24EndBattleText6, Route24AfterBattleText6
 	db -1 ; end
 
+; We added the infinite Nugget glitch from FRLG to own the libs
 Route24Text1:
 	text_asm
 	ResetEvent EVENT_NUGGET_REWARD_AVAILABLE
-	CheckEvent EVENT_GOT_NUGGET
-	jr nz, .got_item
+	;CheckEvent EVENT_GOT_NUGGET
+	;jr nz, .got_item
 	ld hl, Route24Text_51510
 	call PrintText
 	lb bc, NUGGET, 1
 	call GiveItem
 	jr nc, .bag_full
-	SetEvent EVENT_GOT_NUGGET
+	;SetEvent EVENT_GOT_NUGGET - Introduces the Nugget glitch from FRLG
 	ld hl, Route24Text_5151a
 	call PrintText
 	ld hl, Route24Text_51526

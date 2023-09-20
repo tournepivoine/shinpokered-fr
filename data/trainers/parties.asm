@@ -91,17 +91,17 @@ YoungsterData:
 BugCatcherData:
 ; Viridian Forest
 	db 6, WEEDLE, CATERPIE, 0
-	db 7, CATERPIE, KAKUNA, KOKANA, 0
+	db 7, CATERPIE, KAKUNA, GENTLARVA, 0
 	db 9, VENONAT, 0
 ; Route 3
-	db 10, KOKANA, PUPAL, 0 ; trimmed down to create counterpart trainers
+	db 10, GENTLARVA, PUPAL, 0 ; trimmed down to create counterpart trainers
 	db 10, WEEDLE, KAKUNA, 0 
 	db 10, CATERPIE, METAPOD, 0
 ; Mt. Moon 1F
 	db 12, PARAS, 0 
 	db 10, PUPAL, PARAS, 0
 ; Route 24
-	db 14, KOKANA, WEEDLE, 0
+	db 14, GENTLARVA, WEEDLE, 0
 ; Route 6
 	db 16, VENONAT, PARAS, 0 ; By this point, the player has fought like, 2 "three bugs" trainers. Toning it down.
 	db 17, BUTTERFREE, 0 ; this is that one boss fight-like one, levelled down for learnset reasons

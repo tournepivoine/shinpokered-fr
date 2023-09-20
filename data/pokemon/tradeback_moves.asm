@@ -219,7 +219,7 @@ TradebackMovesPointerTable:
 	dw ElectivireTradebackMoves
 	dw MagmortarTradebackMoves
 	dw DisturbanTradebackMoves
-	dw KokanaTradebackMoves
+	dw GentlarvaTradebackMoves
 	dw PupalTradebackMoves
 	dw CarapthorTradebackMoves
 	dw MagnezoneTradebackMoves
@@ -1977,7 +1977,7 @@ DisturbanTradebackMoves:
 	db 1, SCREECH
 	db 0
 	
-KokanaTradebackMoves:
+GentlarvaTradebackMoves:
 	db 0
 
 PupalTradebackMoves:

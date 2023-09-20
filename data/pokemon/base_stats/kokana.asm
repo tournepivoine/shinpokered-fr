@@ -1,4 +1,4 @@
-	db DEX_KOKANA ; pokedex id
+	db DEX_GENTLARVA ; pokedex id
 
 	db  40,  35,  30,  45,  25
 	;   hp  atk  def  spd  spc
@@ -8,7 +8,7 @@
 	db 54 ; base exp
 
 	INCBIN "gfx/pokemon/front/kokana.pic", 0, 1 ; sprite dimensions
-	dw KokanaPicFront, KokanaPicBack
+	dw GentlarvaPicFront, GentlarvaPicBack
 
 	db LEECH_LIFE, STRING_SHOT, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -17,5 +17,5 @@
 	tmhm
 	; end
 
-	db BANK(KokanaPicFront)
-	assert BANK(KokanaPicFront) == BANK(KokanaPicBack)
+	db BANK(GentlarvaPicFront)
+	assert BANK(GentlarvaPicFront) == BANK(GentlarvaPicBack)

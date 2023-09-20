@@ -63,4 +63,5 @@ HiddenItemCoords:
 	hidden_item MT_MOON_CRATER,				   20,  17 ; Black Augurite
 	hidden_item MT_MOON_CRATER,				   32,  45 ; Old Amber
 	hidden_item DAYCARE,					    4,   1 ; Daycare PC
+	hidden_item MT_MOON_SQUARE,				    5,   5 ; Moon Stone
 	db -1 ; end

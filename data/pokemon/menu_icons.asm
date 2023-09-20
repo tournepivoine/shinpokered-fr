@@ -39,7 +39,7 @@ MonPartyData:
 	nybble ICON_BUG       ; Weedle
 	nybble ICON_BUG       ; Kakuna
 	nybble ICON_BUG       ; Beedrill
-	nybble ICON_BUG       ; Kokana
+	nybble ICON_BUG       ; Gentlarva
 	nybble ICON_BUG       ; Pupal
 	nybble ICON_BUG       ; Carapthor
 	nybble ICON_CAT 	  ; Kotora

@@ -335,7 +335,7 @@ _PidgeyDexEntry:: ; new entry
 
 	page "grass, feeding on"
 	next "bugs like CATERPIE"
-	next "and KOKANA"
+	next "and GENTLARVA"
 	dex
 
 _SlowpokeDexEntry::

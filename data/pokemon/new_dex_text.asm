@@ -398,7 +398,7 @@ _DisturbanDexEntry::
 	next "it with venom"
 	dex
 
-_KokanaDexEntry::
+_GentlarvaDexEntry::
 	text "Closely related to"
 	next "WEEDLE. Due to the"
 	next "lack of a horn,"

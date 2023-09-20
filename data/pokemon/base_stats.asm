@@ -39,7 +39,7 @@ INCLUDE "data/pokemon/base_stats/butterfree.asm"
 INCLUDE "data/pokemon/base_stats/weedle.asm"
 INCLUDE "data/pokemon/base_stats/kakuna.asm"
 INCLUDE "data/pokemon/base_stats/beedrill.asm"
-INCLUDE "data/pokemon/base_stats/kokana.asm"
+INCLUDE "data/pokemon/base_stats/kokana.asm" ; Gentlarva
 INCLUDE "data/pokemon/base_stats/pupal.asm"
 INCLUDE "data/pokemon/base_stats/carapthor.asm"
 INCLUDE "data/pokemon/base_stats/kotora.asm"
