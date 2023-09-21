@@ -3105,6 +3105,7 @@ wUnusedD721:: ; d721	;joenote - use to set various wram flags
 	ds 1
 	;bit 0 - player is female trainer if set (reserved for _FPLAYER tagged code)
 	;bit 2 - override bit 0 for specific bank switching instances (usually reserved for _FPLAYER tagged code)
+	;bit 3 - if set, the enemy trainer AI will not use intelligent switching
 	;bit 4 - 60fps option flag
 ;;;;;;;;;;;;;;joenote - use these unused locations for debugging and parsing DV scores
 wUnusedD722:: 
