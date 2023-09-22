@@ -2942,9 +2942,11 @@ IsNextTileShoreOrWater:
 	call IsInArray
 	jr nc, .notShoreOrWater
 	ld a, [wCurMapTileset]
-	cp SHIP_PORT ; Vermilion Dock tileset
+	ld hl, NonShoreTilesets
+	ld de, 1
+	call IsInArray ; check if shore tiles should be skipped
 	ld a, [wTileInFrontOfPlayer] ; tile in front of player
-	jr z, .skipShoreTiles ; if it's the Vermilion Dock tileset
+	jr c, .skipShoreTiles ; if it's the Vermilion Dock tileset
 	cp $48 ; eastern shore tile in Safari Zone
 	jr z, .shoreOrWater
 	cp $32 ; usual eastern shore tile
