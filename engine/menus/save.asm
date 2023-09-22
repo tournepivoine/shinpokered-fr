@@ -25,6 +25,8 @@ LoadSAV:
 	ld a, $1 ; bad checksum
 .goodsum
 	ld [wSaveFileStatus], a
+	ld a, 1
+	ld [wOptionsInitialized], a
 	ret
 
 FileDataDestroyedText:
