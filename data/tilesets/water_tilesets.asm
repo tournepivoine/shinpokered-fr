@@ -12,3 +12,8 @@ WaterTilesets:
 	db CITRINE
 	db CELESTE
 	db -1 ; end
+	
+NonShoreTilesets:
+	db GYM
+	db SHIP_PORT
+	db -1 ; end

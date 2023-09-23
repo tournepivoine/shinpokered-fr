@@ -203,6 +203,7 @@ ENDU
 SECTION "Overworld Map", WRAM0
 
 UNION
+wTempLevel::
 wOverworldMap:: ds 1300
 wOverworldMapEnd::
 

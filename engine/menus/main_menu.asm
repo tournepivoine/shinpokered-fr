@@ -681,7 +681,7 @@ SetCursorPositionsFromOptions:
 ; 00: X coordinate of menu cursor
 ; 01: delay after printing a letter (in frames)
 TextSpeedOptionData:
-	db 14, TEXT_DELAY_SLOW
+	db 15, TEXT_DELAY_SLOW
 	db  9, TEXT_DELAY_MEDIUM
 	db  1, TEXT_DELAY_FAST
 	db  9, -1 ; end (default X coordinate)
