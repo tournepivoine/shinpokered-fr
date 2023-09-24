@@ -43,7 +43,9 @@ OverworldLoop::
 	call Check60fps
 	call z, DelayFrame
 OverworldLoopLessDelay::
-	call DelayFrame
+	;call DelayFrame
+	predef SetCPUSpeed	;2x speed
+	call CheckForSpinAndDelay
 	call LoadGBPal
 	ld a, [wd736]
 	bit 6, a ; jumping down a ledge?
@@ -219,21 +221,25 @@ OverworldLoopLessDelay::
 	call CollisionCheckOnLand
 	jr nc, .noCollision
 ; collision occurred
+;joenote - going to adjust how the thud sfx is played
 	push hl
 	ld hl, wd736
 	bit 2, [hl] ; standing on warp flag
 	pop hl
-	jp z, OverworldLoop
+;	jp z, OverworldLoop
+	jp z, PlayThudAndLoop
 ; collision occurred while standing on a warp
 	push hl
 	call ExtraWarpCheck ; sets carry if there is a potential to warp
 	pop hl
 	jp c, CheckWarpsCollision
-	jp OverworldLoop
-
+;	jp OverworldLoop
+	jp PlayThudAndLoop
+	
 .surfing
 	call CollisionCheckOnWater
-	jp c, OverworldLoop
+;	jp c, OverworldLoop
+	jp c, PlayThudAndLoop
 
 .noCollision
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -456,8 +462,9 @@ CheckWarpsCollision::
 	inc hl
 	dec c
 	jr nz, .loop
-	jp OverworldLoop
-
+;	jp OverworldLoop
+	jp PlayThudAndLoop
+	
 CheckWarpsNoCollisionRetry1::
 	inc hl
 CheckWarpsNoCollisionRetry2::
@@ -484,17 +491,28 @@ WarpFound2::
 	ld [wLastMap], a
 	;ld a, [wCurMapWidth]
 	;ld [wUnusedD366], a ; not read
-	ld a, [hWarpDestinationMap]
+
+;joenote - this order is kinda wonky and makes the map sound play after the fade-out when entering rock tunnel
+	; ld a, [hWarpDestinationMap]
+	; ld [wCurMap], a
+	; cp ROCK_TUNNEL_1
+	; jr nz, .notRockTunnel
+	; ld a, $06
+	; ld [wMapPalOffset], a
+	; call GBFadeOutToBlack
+; .notRockTunnel
+	; call PlayMapChangeSound
+	; jr .done
+;joenote - let's fix the order of things
+	call PlayMapChangeSound		;wCurMap is not needed right now, so play the map sound first (along with fade-out)
+	ld a, [hWarpDestinationMap]	;now update wCurMap
 	ld [wCurMap], a
-	cp ROCK_TUNNEL_1
-	jr nz, .notRockTunnel
+	cp ROCK_TUNNEL_1	;if rock tunnel, set wMapPalOffset to 6
+	jr nz, .done		;done here if not rock tunnel since the map sound already played and the view faded out
 	ld a, $06
 	ld [wMapPalOffset], a
-	call GBFadeOutToBlack
-.notRockTunnel
-	call PlayMapChangeSound
 	jr .done
-
+	
 ; for maps that can have the 0xFF destination map, which means to return to the outside map
 ; not all these maps are necessarily indoors, though
 .indoorMaps
@@ -577,8 +595,17 @@ PlayMapChangeSound::
 	call PlaySound
 	ld a, [wMapPalOffset]
 	and a
-	ret nz
-	jp GBFadeOutToBlack
+;	ret nz
+;	jp GBFadeOutToBlack
+;joenote - failure to black out the palette makes the color look strange when exiting a dark cave to outside
+	jp z, GBFadeOutToBlack
+	push af
+	inc a
+	ld [wMapPalOffset], a
+	call LoadGBPal
+	pop af
+	ld [wMapPalOffset], a
+	ret
 
 CheckIfInOutsideMap::
 ; If the player is in an outside map (a town or route), set the z flag
@@ -625,6 +652,7 @@ ExtraWarpCheck::
 	jp Bankswitch
 
 MapEntryAfterBattle::
+	call DelayFrame	;joenote - delay 1 frame to clear out the garbage tiles when playing on the DMG
 	callba IsPlayerStandingOnWarp ; for enabling warp testing after collisions
 	ld a, [wMapPalOffset]
 	and a
@@ -1121,12 +1149,12 @@ CollisionCheckOnLand::
 	jr c, .collision
 	call CheckTilePassable
 	jr nc, .noCollision
-.collision
-	ld a, [wChannelSoundIDs + Ch4]
-	cp SFX_COLLISION ; check if collision sound is already playing
-	jr z, .setCarry
-	ld a, SFX_COLLISION
-	call PlaySound ; play collision sound (if it's not already playing)
+.collision ;joenote - consolidated into its own function
+;	ld a, [wChannelSoundIDs + Ch4]
+;	cp SFX_COLLISION ; check if collision sound is already playing
+;	jr z, .setCarry
+;	ld a, SFX_COLLISION
+;	call PlaySound ; play collision sound (if it's not already playing)
 .setCarry
 	scf
 	ret
@@ -1206,15 +1234,15 @@ CheckForTilePairCollisions::
 	jr .retry
 .currentTileMatchesFirstInPair
 	inc hl
-	ld a, [hl]
+	ld a, [hli]	;joenote - bug: this should be [hli] instead of [hl]
 	cp c
 	jr z, .foundMatch
 	jr .tilePairCollisionLoop
 .currentTileMatchesSecondInPair
 	dec hl
 	ld a, [hli]
+	inc hl	;joenote - move the inc up two lines to prevent any potential issues with the flag register
 	cp c
-	inc hl
 	jr nz, .tilePairCollisionLoop
 .foundMatch
 	scf
@@ -1819,7 +1847,8 @@ CollisionCheckOnWater::
 	ld d, a
 	ld a, [wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)
 	and d ; check if a sprite is in the direction the player is trying to go
-	jr nz, .checkIfNextTileIsPassable ; bug?
+	;jr nz, .checkIfNextTileIsPassable ; bug?
+	jr nz, .collision ; joenote - this fixes the aforementioned bug
 	ld hl, TilePairCollisionsWater
 	call CheckForJumpingAndTilePairCollisions
 	jr c, .collision
@@ -1844,12 +1873,12 @@ CollisionCheckOnWater::
 	cp c
 	jr z, .stopSurfing ; stop surfing if the tile is passable
 	jr .loop
-.collision
-	ld a, [wChannelSoundIDs + Ch4]
-	cp SFX_COLLISION ; check if collision sound is already playing
-	jr z, .setCarry
-	ld a, SFX_COLLISION
-	call PlaySound ; play collision sound (if it's not already playing)
+.collision	;joenote - consolidated into its own function
+;	ld a, [wChannelSoundIDs + Ch4]
+;	cp SFX_COLLISION ; check if collision sound is already playing
+;	jr z, .setCarry
+;	ld a, SFX_COLLISION
+;	call PlaySound ; play collision sound (if it's not already playing)
 .setCarry
 	scf
 	jr .done
@@ -1896,22 +1925,26 @@ RunMapScript::
 .return
 	ret
 
+;joenote - modified to properly load female trainer sprites using the _FPLAYER tag
 LoadWalkingPlayerSpriteGraphics::
-	ld de, RedSprite
+	callba LoadRedSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
-	ld de, SeelSprite
+	callba LoadSeelSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
-	ld de, RedCyclingSprite
+	callba LoadRedCyclingSpriteToDE
+;	ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
 	ld hl, vNPCSprites
 	push de
 	push hl
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	call CopyVideoData
 	pop hl
 	pop de
@@ -1922,9 +1955,21 @@ LoadPlayerSpriteGraphicsCommon::
 	inc d
 .noCarry
 	set 3, h
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	jp CopyVideoData
-
+.isfemaletrainer
+IF DEF(_FPLAYER)
+	lb bc, BANK(RedFSprite), $0c
+	ld a, [wUnusedD721]
+	;load the regular sprite bank if female bit cleared or overriding female bit set
+	;otherwise load the female player sprite bank
+	and %00000101
+	xor %00000001
+	jr z, .donefemale
+ENDC
+	lb bc, BANK(RedSprite), $0c
+.donefemale
+	ret
 
 ; function to load data from the map header
 LoadMapHeader::
@@ -2220,7 +2265,6 @@ CopyMapConnectionHeader::
 LoadMapData::
 	ld a, [H_LOADEDROMBANK]
 	push af
-	call DisableLCD
 	ld a, $98
 	ld [wMapViewVRAMPointer + 1], a
 	xor a
@@ -2233,6 +2277,12 @@ LoadMapData::
 	ld [wSpriteSetID], a
 	call LoadTextBoxTilePatterns
 	call LoadMapHeader
+
+;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
+;	call DisableLCD
+	ld hl, hFlagsFFFA
+	set 3, [hl]
+
 	callba InitMapSprites ; load tile pattern data for sprites
 	call LoadTileBlockMap
 	call LoadTilesetTilePatternData
@@ -2241,14 +2291,14 @@ LoadMapData::
 	coord hl, 0, 0
 	ld de, vBGMap0
 	ld b, 18
-.vramCopyLoop
 	ld c, 20
-.vramCopyInnerLoop
-	ld a, [hli]
-	ld [de], a
-	inc e
-	dec c
-	jr nz, .vramCopyInnerLoop
+.vramCopyLoop
+
+	push bc
+	ld b, 0
+	call CopyData
+	pop bc
+
 	ld a, 32 - 20
 	add e
 	ld e, a
@@ -2259,7 +2309,12 @@ LoadMapData::
 	jr nz, .vramCopyLoop
 	ld a, $01
 	ld [wUpdateSpritesEnabled], a
-	call EnableLCD
+
+;joenote - No need to disable/enable lcd. Pick a spare bit to use as a flag instead.
+;	call EnableLCD
+	ld hl, hFlagsFFFA
+	res 3, [hl]
+
 	ld b, SET_PAL_OVERWORLD
 	call RunPaletteCommand
 	call LoadPlayerSpriteGraphics
@@ -2269,7 +2324,7 @@ LoadMapData::
 	ld a, [wFlags_D733]
 	bit 1, a
 	jr nz, .restoreRomBank
-	call UpdateMusic6Times
+;	call UpdateMusic6Times		;joenote - not needed if the LCD is not disabled to write to vram above
 	call PlayDefaultMusicFadeOutCurrent
 .restoreRomBank
 	pop af
@@ -2322,3 +2377,26 @@ Check60fps:
 	ld a, [wUnusedD721]
 	bit 4, a
 	ret
+
+;joenote - This functions checks if the spin frame is going to update for the spinning arrow tile state.
+;			If so, do not delay a frame because this will happen during LoadSpinnerArrowTiles.
+CheckForSpinAndDelay:
+	ld a, [wd736]
+	bit 7, a
+	jr z, .noSpinning
+	ld a, [wSpinnerTileFrameCount]
+	dec a
+	ret z	
+.noSpinning
+	call DelayFrame
+	ret
+
+;joenote - consolidate the collision thud to its own place
+PlayThudAndLoop:
+	ld a, [wChannelSoundIDs + Ch4]
+	cp SFX_COLLISION ; check if collision sound is already playing
+	jr z, .jump
+	ld a, SFX_COLLISION
+	call PlaySound ; play collision sound (if it's not already playing)
+.jump
+	jp OverworldLoop

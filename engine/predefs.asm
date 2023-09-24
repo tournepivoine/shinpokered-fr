@@ -162,3 +162,7 @@ PredefPointers::
 	add_predef PlayerDisableHandler
 	add_predef EnemyDisableHandler
 	add_predef SetAttackAnimPal
+	add_predef SetCPUSpeed
+	add_predef SingleCPUSpeed
+	add_predef PrintPlayTime
+	add_predef GetCriticalHitProbability

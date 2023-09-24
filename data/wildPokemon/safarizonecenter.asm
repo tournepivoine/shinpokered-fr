@@ -1,6 +1,6 @@
 ZoneMonsCenter:
 	db $1E
-	IF (DEF(_RED) || DEF(_BLUEJP))
+	IF (DEF(_ENCRED) || DEF(_ENCBLUEJP))
 		db 22,NIDORAN_M
 		db 25,RHYHORN
 		db 22,VENONAT
@@ -11,7 +11,7 @@ ZoneMonsCenter:
 		db 30,PARASECT
 		db 23,SCYTHER
 		db 23,CHANSEY
-	ELIF (DEF(_BLUE) || DEF(_GREEN))
+	ELIF DEF(_ENCBLUEGREEN)
 		db 22,NIDORAN_F
 		db 25,RHYHORN
 		db 22,VENONAT

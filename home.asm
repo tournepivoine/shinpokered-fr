@@ -565,25 +565,26 @@ GetMonHeader::
 	push af
 	ld a, [wd0b5]
 	ld [wd11e], a
-;joenote - modifying for a stable missingno that can be loaded
-	cp MISSINGNO_B5 ; stablized missingno with actual stats
-	jr z, .missingno	
+;joenote - checks for special ID
+	
+	
 	ld de, FossilKabutopsPic
-	ld b, $66 ; size of Kabutops fossil and Ghost sprites
+	ld b, Bank(FossilKabutopsPic)
 	cp FOSSIL_KABUTOPS
 	jr z, .specialID
 	ld de, GhostPic
-	cp MON_GHOST ; Ghost
+	ld b, Bank(GhostPic)
+	cp MON_GHOST
 	jr z, .specialID
 	ld de, FossilAerodactylPic
-	ld b, $77 ; size of Aerodactyl fossil sprite
-	cp FOSSIL_AERODACTYL ; Aerodactyl fossil
+	ld b, Bank(FossilAerodactylPic)
+	cp FOSSIL_AERODACTYL
 	jr z, .specialID
-	;cp MEW	
-	;jr z, .mew
+
 	predef IndexToPokedex   ; convert pokemon ID in [wd11e] to pokedex number
 	ld a, [wd11e]
-	dec a
+	sub $01
+	jr c, .missingno	;joenote - missingno has a pokedex index of 0
 	ld bc, MonBaseStatsEnd - MonBaseStats
 	ld hl, BaseStats
 	call AddNTimes
@@ -592,6 +593,13 @@ GetMonHeader::
 	call CopyData
 	jr .done
 .specialID
+	;joenote - dynamically get pic size of special ID
+	ld a, b
+	call BankswitchHome
+	ld a, [de]
+	ld b, a
+	call BankswitchBack
+
 	ld hl, wMonHSpriteDim
 	ld [hl], b ; write sprite dimensions
 	inc hl
@@ -734,36 +742,49 @@ UncompressMonSprite::
 	ld [wSpriteInputPtr+1], a
 ;joenote - expanding this to use 7 rom banks to fit the spaceworld back sprites if desired
 ; define (by index number) the bank that a pokemon's image is in
+;joenote - redoing this so that each 'mon header stores the bank of its front and back pic
+;			- now the bank doesn't matter so long as a mon's front and back pic are in the same bank
+;			- also assumes the tower ghost and the fossil front pics are kept together in the same bank
 	ld a, [wcf91] ; XXX name for this ram location
-	ld b, a
-	cp MEW
-	ld a, BANK(MewPicFront)
-	jr z, .GotBank
-	ld a, b
-	cp SHELLDER + 1
-	ld a, BANK(ShellderPicFront)
-	jr c, .GotBank
-	ld a, b
-	cp DROWZEE + 1
-	ld a, BANK(DrowzeePicFront)
-	jr c, .GotBank
-	ld a, b
-	cp NINETALES + 1
-	ld a, BANK(NinetalesPicFront)
-	jr c, .GotBank
-	ld a, b
-	cp KAKUNA + 1
-	ld a, BANK(KakunaPicFront)
-	jr c, .GotBank
-	ld a, b
-	cp CLEFABLE + 1
-	ld a, BANK(ClefablePicFront)
-	jr c, .GotBank
-	ld a, b
-	cp PORYGON + 1
-	ld a, BANK(PorygonPicFront)
-	jr c, .GotBank
-	ld a, BANK(VictreebelPicFront)
+	; ld b, a
+	; cp MEW
+	; ld a, BANK(MewPicFront)
+	; jr z, .GotBank
+	; ld a, b
+	; cp SHELLDER + 1
+	; ld a, BANK(ShellderPicFront)
+	; jr c, .GotBank
+	; ld a, b
+	; cp DROWZEE + 1
+	; ld a, BANK(DrowzeePicFront)
+	; jr c, .GotBank
+	; ld a, b
+	; cp NINETALES + 1
+	; ld a, BANK(NinetalesPicFront)
+	; jr c, .GotBank
+	; ld a, b
+	; cp KAKUNA + 1
+	; ld a, BANK(KakunaPicFront)
+	; jr c, .GotBank
+	; ld a, b
+	; cp CLEFABLE + 1
+	; ld a, BANK(ClefablePicFront)
+	; jr c, .GotBank
+	; ld a, b
+	; cp PORYGON + 1
+	; ld a, BANK(PorygonPicFront)
+	; jr c, .GotBank
+	; ld a, BANK(VictreebelPicFront)
+	cp FOSSIL_KABUTOPS
+	jr z, .bankFossilOrGhost
+	cp FOSSIL_AERODACTYL
+	jr z, .bankFossilOrGhost
+	cp MON_GHOST
+	jr z, .bankFossilOrGhost
+	ld a, [wMonHPicBank]
+	jr .GotBank
+.bankFossilOrGhost
+	ld a, BANK(FossilKabutopsPic)
 .GotBank
 	jp UncompressSpriteData
 
@@ -1091,6 +1112,11 @@ DisplayTextID::
 	jp z, DisplayPlayerBlackedOutText
 	cp TEXT_REPEL_WORE_OFF
 	jp z, DisplayRepelWoreOffText
+	
+	;joenote - close if $FF is the textID or sprite index
+	cp $FF
+	jp z, CloseTextDisplay
+	
 	ld a, [wNumSprites]
 	ld e, a
 	ld a, [hSpriteIndexOrTextID] ; sprite ID
@@ -1153,13 +1179,20 @@ DisplayTextID::
 	call PrintText_NoCreatingTextBox ; display the text
 	ld a, [wDoNotWaitForButtonPressAfterDisplayingText]
 	and a
-	jr nz, HoldTextDisplayOpen
+;	jr nz, HoldTextDisplayOpen
+;joenote - If you don't want to wait for a button press after displaying text, 
+;			then don't hold the text open. It should just be closed.
+;			This fixes some things like gate binoculars pausing the overworld.
+	jr nz, CloseTextDisplay
 
 AfterDisplayingTextID::
 	ld a, [wEnteringCableClub]
 	and a
 	jr nz, HoldTextDisplayOpen
 	call WaitForTextScrollButtonPress ; wait for a button press after displaying all the text
+	; The fall-through to HoldTextDisplayOpen means that the text waits until A button is pressed,
+	; but then it closes the text only upon the button's release. 
+	jr CloseTextDisplay	;joenote - this will make the text close when pressing A down instead of releasing it
 
 ; loop to hold the dialogue box open as long as the player keeps holding down the A button
 HoldTextDisplayOpen::
@@ -1475,9 +1508,9 @@ DisplayListMenuIDLoop::
 	call PlaceUnfilledArrowMenuCursor
 
 ; pointless because both values are overwritten before they are read
-	ld a, $01
-	ld [wMenuExitMethod], a
-	ld [wChosenMenuItem], a
+	;ld a, $01
+	;ld [wMenuExitMethod], a
+	;ld [wChosenMenuItem], a
 
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
@@ -1516,6 +1549,13 @@ DisplayListMenuIDLoop::
 	call GetItemPrice
 	pop hl
 	ld a,[wListMenuID]
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - needed to make Mateo's move deleter/relearner work
+IF DEF(_MOVENPCS)
+	cp a, MOVESLISTMENU
+	jr z, .skipStoringItemName
+ENDC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	cp ITEMLISTMENU
 	jr nz, .skipGettingQuantity
 ; if it's an item menu
@@ -1525,8 +1565,17 @@ DisplayListMenuIDLoop::
 .skipGettingQuantity
 	ld a, [wcf91]
 	ld [wd0b5], a
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote need to load the proper bank for TM/HM
+	cp HM_01
 	ld a, BANK(ItemNames)
 	ld [wPredefBank], a
+	jr c, .go_get_name
+	;else it's a tm/hm
+	ld a, BANK(tmhmNames)
+	ld [wPredefBank], a
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+.go_get_name
 	call GetName
 	jr .storeChosenEntry
 .pokemonList
@@ -1542,6 +1591,7 @@ DisplayListMenuIDLoop::
 .storeChosenEntry ; store the menu entry that the player chose and return
 	ld de, wcd6d
 	call CopyStringToCF4B ; copy name to wcf4b
+.skipStoringItemName ;joenote - skip here if skipping storing item name
 	ld a, CHOSE_MENU_ITEM
 	ld [wMenuExitMethod], a
 	ld a, [wCurrentMenuItem]
@@ -1938,84 +1988,102 @@ GetMonName::
 GetItemName::
 ; given an item ID at [wd11e], store the name of the item into a string
 ;     starting at wcd6d
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - rewriting this function for list of tm & hm names
 	push hl
 	push bc
-	ld a, [wd11e]
-	cp HM_01 ; is this a TM/HM?
-	jr nc, .Machine
-
-	ld [wd0b5], a
 	ld a, ITEM_NAME
 	ld [wNameListType], a
+	ld a, [wd11e]
+	ld [wd0b5], a
+	cp HM_01 ; is this a TM/HM?
+	jr nc, .Machine
 	ld a, BANK(ItemNames)
+	jr .Finish
+.Machine
+	ld a, BANK(tmhmNames)
+.Finish
 	ld [wPredefBank], a
 	call GetName
-	jr .Finish
-
-.Machine
-	call GetMachineName
-.Finish
 	ld de, wcd6d ; pointer to where item name is stored in RAM
 	pop bc
 	pop hl
 	ret
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	push hl
+;	push bc
+;	ld a, [wd11e]
+;	cp HM_01 ; is this a TM/HM?
+;	jr nc, .Machine
+;	ld [wd0b5], a
+;	ld a, ITEM_NAME
+;	ld [wNameListType], a
+;	ld a, BANK(ItemNames)
+;	ld [wPredefBank], a
+;	call GetName
+;	jr .Finish
+;.Machine
+;;	call GetMachineName
+;.Finish
+;	ld de, wcd6d ; pointer to where item name is stored in RAM
+;	pop bc
+;	pop hl
+;	ret
 
-GetMachineName::
-; copies the name of the TM/HM in [wd11e] to wcd6d
-	push hl
-	push de
-	push bc
-	ld a, [wd11e]
-	push af
-	cp TM_01 ; is this a TM? [not HM]
-	jr nc, .WriteTM
-; if HM, then write "HM" and add 5 to the item ID, so we can reuse the
-; TM printing code
-	add 5
-	ld [wd11e], a
-	ld hl, HiddenPrefix ; points to "HM"
-	ld bc, 2
-	jr .WriteMachinePrefix
-.WriteTM
-	ld hl, TechnicalPrefix ; points to "TM"
-	ld bc, 2
-.WriteMachinePrefix
-	ld de, wcd6d
-	call CopyData
-
-; now get the machine number and convert it to text
-	ld a, [wd11e]
-	sub TM_01 - 1
-	ld b, "0"
-.FirstDigit
-	sub 10
-	jr c, .SecondDigit
-	inc b
-	jr .FirstDigit
-.SecondDigit
-	add 10
-	push af
-	ld a, b
-	ld [de], a
-	inc de
-	pop af
-	ld b, "0"
-	add b
-	ld [de], a
-	inc de
-	ld a, "@"
-	ld [de], a
-	pop af
-	ld [wd11e], a
-	pop bc
-	pop de
-	pop hl
-	ret
-
-TechnicalPrefix::
-	db "TM"
-HiddenPrefix::
-	db "HM"
+;GetMachineName::	;joenote - not needed since using list for tm and hm names
+;; copies the name of the TM/HM in [wd11e] to wcd6d
+;	push hl
+;	push de
+;	push bc
+;	ld a, [wd11e]
+;	push af
+;	cp TM_01 ; is this a TM? [not HM]
+;	jr nc, .WriteTM
+;; if HM, then write "HM" and add 5 to the item ID, so we can reuse the
+;; TM printing code
+;	add 5
+;	ld [wd11e], a
+;	ld hl, HiddenPrefix ; points to "HM"
+;	ld bc, 2
+;	jr .WriteMachinePrefix
+;.WriteTM
+;	ld hl, TechnicalPrefix ; points to "TM"
+;	ld bc, 2
+;.WriteMachinePrefix
+;	ld de, wcd6d
+;	call CopyData
+;; now get the machine number and convert it to text
+;	ld a, [wd11e]
+;	sub TM_01 - 1
+;	ld b, "0"
+;.FirstDigit
+;	sub 10
+;	jr c, .SecondDigit
+;	inc b
+;	jr .FirstDigit
+;.SecondDigit
+;	add 10
+;	push af
+;	ld a, b
+;	ld [de], a
+;	inc de
+;	pop af
+;	ld b, "0"
+;	add b
+;	ld [de], a
+;	inc de
+;	ld a, "@"
+;	ld [de], a
+;	pop af
+;	ld [wd11e], a
+;	pop bc
+;	pop de
+;	pop hl
+;	ret
+;TechnicalPrefix::
+;	db "TM"
+;HiddenPrefix::
+;	db "HM"
 
 ; sets carry if item is HM, clears carry if item is not HM
 ; Input: a = item ID
@@ -2425,10 +2493,21 @@ TalkToTrainer::
 
 ; checks if any trainers are seeing the player and wanting to fight
 CheckFightingMapTrainers::
+;joenote - This allows for the trainer escape glitch to occur. 
+;			The player has to enter a wild battle on the exact space that would also result in being spotted.
+;			The player must then lose the wild battle and black out.
+;			This function will run regardless and the player will black out and escape being spotted.
+
+	;this will plug-up the escape glitch
+	ld a, [wIsInBattle]
+	cp $ff		;If the player has lost the last battle (blacking out), then don't even check and just exit.
+	jr z, .skip_and_exit
+	
 	call CheckForEngagingTrainers
 	ld a, [wSpriteIndex]
 	cp $ff
 	jr nz, .trainerEngaging
+.skip_and_exit
 	xor a
 	ld [wSpriteIndex], a
 	ld [wTrainerHeaderFlagBit], a
@@ -3240,12 +3319,29 @@ LoadHpBarAndStatusTilePatterns::
 	ld de, vChars2 + $620
 	ld bc, HpBarAndStatusGraphicsEnd - HpBarAndStatusGraphics
 	ld a, BANK(HpBarAndStatusGraphics)
-	jp FarCopyData2 ; if LCD is off, transfer all at once
+;joenote - load exp bar
+	;jp FarCopyData2 ; if LCD is off, transfer all at once
+IF DEF(_EXPBAR)
+	call FarCopyData2
+	ld hl, EXPBarGraphics
+	ld de, vChars1 + $400
+	ld bc, EXPBarGraphicsEnd - EXPBarGraphics
+	ld a, BANK(EXPBarGraphics)
+ENDC
+	jp FarCopyData2
 .on
 	ld de, HpBarAndStatusGraphics
 	ld hl, vChars2 + $620
 	lb bc, BANK(HpBarAndStatusGraphics), (HpBarAndStatusGraphicsEnd - HpBarAndStatusGraphics) / $10
-	jp CopyVideoData ; if LCD is on, transfer during V-blank
+;joenote - load exp bar
+	;jp CopyVideoData ; if LCD is on, transfer during V-blank
+IF DEF(_EXPBAR)
+	call CopyVideoData
+	ld de,EXPBarGraphics
+	ld hl, vChars1 + $400
+	lb bc, BANK(EXPBarGraphics), (EXPBarGraphicsEnd - EXPBarGraphics) / $10
+ENDC
+	jp CopyVideoData
 
 
 FillMemory::
@@ -3346,7 +3442,7 @@ WaitForSoundToFinish::
 NamePointers::
 	dw MonsterNames
 	dw MoveNames
-	dw ItemNames;joenote-dummy value to replace UnusedNames
+	dw tmhmNames;	dw UnusedNames	;joenote - replaced these with tm & hm names (selection 3)
 	dw ItemNames
 	dw wPartyMonOT ; player's OT names list
 	dw wEnemyMonOT ; enemy's OT names list
@@ -3374,9 +3470,16 @@ GetName::
 	jr nz, .notMachine	;if the list type is not items, then A cannot be referring to a machine
 	;At this line, definitely working with an item list. So see if it's a machine or item
 	cp HM_01
-	jp nc, GetMachineName	;joenote - function removed. Handle list-based tm & hm names here.
+	;jp nc, GetMachineName	;joenote - function removed. Handle list-based tm & hm names here.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - do some stuff if the item is a machine
+	jr c, .notMachine
+	sub (HM_01 - 1)	;need to shift things because tm and hm constants are offset by +$C3 from the first item constant
+	ld [wd0b5], a
+	ld a, TMHM_NAME	
+	ld [wNameListType], a
 .notMachine
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, [H_LOADEDROMBANK]
 	push af
 	push hl
@@ -3437,8 +3540,16 @@ GetName::
 .gotPtr
 ;	ld a, e
 ;	ld [wUnusedCF8D], a
-	ld a, d
+;	ld a, d
 ;	ld [wUnusedCF8D + 1], a
+
+	ld a, [wd11e]
+	cp HM_01
+	jr c, .notMachine2
+	ld a, ITEM_NAME	;this needs to be reset because machines can be in the same listings as items	
+	ld [wNameListType], a
+.notMachine2
+
 	pop de
 	pop bc
 	pop hl
@@ -3534,6 +3645,7 @@ JoypadLowSensitivity::
 	and a ; have any buttons been newly pressed since last check?
 	jr z, .noNewlyPressedButtons
 .newlyPressedButtons
+	ld [hJoy5], a
 	ld a, 30 ; half a second delay
 	ld [H_FRAMECOUNTER], a
 	ret
@@ -3657,34 +3769,9 @@ PrintLetterDelay::
 	push hl
 	push de
 	push bc
-	ld a, [wLetterPrintingDelayFlags]
-	bit 0, a
-	jr z, .waitOneFrame
-	ld a, [wOptions]
-	and $f
-	ld [H_FRAMECOUNTER], a
-	jr .checkButtons
-.waitOneFrame
-	ld a, 1
-	ld [H_FRAMECOUNTER], a
-.checkButtons
-	call Joypad
-	ld a, [hJoyHeld]
-.checkAButton
-	bit 0, a ; is the A button pressed?
-	jr z, .checkBButton
-	jr .endWait
-.checkBButton
-	bit 1, a ; is the B button pressed?
-	jr z, .buttonsNotPressed
-.endWait
-	call DelayFrame
-	jr .done
-.buttonsNotPressed ; if neither A nor B is pressed
-	ld a, [H_FRAMECOUNTER]
-	and a
-	jr nz, .checkButtons
-.done
+	push af
+	callba PrintLetterDelay_	;joenote - moved to text_box.asm to free up space in bank 0
+	pop af
 	pop bc
 	pop de
 	pop hl
@@ -4026,6 +4113,7 @@ HandleMenuInput::
 	xor a
 	ld [wPartyMenuAnimMonEnabled], a
 
+;joenote - adjusted this so that pressing A or B has priority over pressing up or down
 HandleMenuInput_::
 	ld a, [H_DOWNARROWBLINKCNT1]
 	push af
@@ -4074,7 +4162,13 @@ HandleMenuInput_::
 	ld [wCheckFor180DegreeTurn], a
 	ld a, [hJoy5]
 	ld b, a
-	bit 6, a ; pressed Up key?
+
+	;joenote - fix from pokeyellow to prioritize the A button over the directional buttons
+;		- costs 4 bytes
+	bit BIT_A_BUTTON, a ; pressed A key?
+	jr nz, .checkOtherKeys
+
+	bit BIT_D_UP, a ; pressed Up key?
 	jr z, .checkIfDownPressed
 .upPressed
 	ld a, [wCurrentMenuItem] ; selected menu item
@@ -4091,8 +4185,9 @@ HandleMenuInput_::
 	ld a, [wMaxMenuItem]
 	ld [wCurrentMenuItem], a ; wrap to the bottom of the menu
 	jr .checkOtherKeys
+
 .checkIfDownPressed
-	bit 7, a
+	bit BIT_D_DOWN, a
 	jr z, .checkOtherKeys
 .downPressed
 	ld a, [wCurrentMenuItem]
@@ -4109,19 +4204,18 @@ HandleMenuInput_::
 .notAtBottom
 	ld a, c
 	ld [wCurrentMenuItem], a
+
 .checkOtherKeys
 	ld a, [wMenuWatchedKeys]
 	and b ; does the menu care about any of the pressed keys?
 	jp z, .loop1
 .checkIfAButtonOrBButtonPressed
-	ld a, [hJoy5]
+	ld a, b		;joenote - load from b, which contains [hJoy5], to save 1 byte
 	and A_BUTTON | B_BUTTON
 	jr z, .skipPlayingSound
 .AButtonOrBButtonPressed
-	push hl
-	ld hl, wFlags_0xcd60
-	bit 5, [hl]
-	pop hl
+	ld a, [wFlags_0xcd60]	;joenote - remove push/pop with hl to save 2 bytes
+	bit 5, a
 	jr nz, .skipPlayingSound
 	ld a, SFX_PRESS_AB
 	call PlaySound
@@ -4132,15 +4226,17 @@ HandleMenuInput_::
 	ld [H_DOWNARROWBLINKCNT1], a ; restore previous values
 	xor a
 	ld [wMenuWrappingEnabled], a ; disable menu wrapping
-	ld a, [hJoy5]
+	ld a, b	;joenote - load from b, which contains [hJoy5], to save 1 byte
 	ret
+
 .noWrappingAround
 	ld a, [wMenuWatchMovingOutOfBounds]
 	and a ; should we return if the user tried to go past the top or bottom?
 	jr z, .checkOtherKeys
 	jr .checkIfAButtonOrBButtonPressed
 
-PlaceMenuCursor::
+	
+PlaceMenuCursor::	
 	ld a, [wTopMenuItemY]
 	and a ; is the y coordinate 0?
 	jr z, .adjustForXCoord
@@ -4586,6 +4682,31 @@ SetMapTextPointer::
 	ld [wMapTextPtr], a
 	ld a, h
 	ld [wMapTextPtr + 1], a
+	ret
+	
+Random_BiasDV::
+; Return a random number 0-15 in A and B with a bias towards higher numbers
+	push hl
+	push de
+	push bc
+	callba _Random_BiasDV
+	pop bc
+	ld b, e
+	ld a, d
+	pop de
+	pop hl
+	ret
+Random_DV::
+; Return a random number 0-15 in A and B with a adjustments for being a wild pokemon DV
+	push hl
+	push de
+	push bc
+	callba _Random_DV
+	pop bc
+	ld b, e
+	ld a, d
+	pop de
+	pop hl
 	ret
 	
 StatModifierRatios:

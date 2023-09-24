@@ -46,7 +46,7 @@ _CeruleanHouse2Text_74e9b::
 	prompt
 
 _CeruleanHouse2Text_74ea0:: ;joenote - updated with correct information
-	text "The DEFENCE of all"
+	text "The DEFENSE of all"
 	line "#MON increases"
 	cont "a little bit."
 

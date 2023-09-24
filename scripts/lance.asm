@@ -143,6 +143,8 @@ LanceTrainerHeader0:
 
 LanceText1:
 	TX_ASM
+	ld a, 8
+	ld [wGymLeaderNo], a	;joenote - manually set music for various reasons
 	ld hl, LanceTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd

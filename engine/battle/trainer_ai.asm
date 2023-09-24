@@ -1,6 +1,28 @@
 ; creates a set of moves that may be used and returns its address in hl
 ; unused slots are filled with 0, all used slots may be chosen with equal probability
 AIEnemyTrainerChooseMoves:
+;joenote - let's make wild pokemon have some AI in choosing moves
+	ld a, [wIsInBattle]
+	dec a
+	jr nz, .notwildbattle
+	;wild battle confirmed at this point
+	ld hl, wEnemyMonMoves	;restore this address which was clobbered by callba
+	;ret z ; wild encounter	;uncomment this line to restore default wildmon behavior
+	;but let's do a little something else
+	;only do wildmon AI move choice for Mewtwo while in SET mode
+	;after all, it is still a cunning foe even as a wild pokemon
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a ;check for hard mode
+	ret z ;wild AI as normal in outside of hard mode
+	ld a, [wEnemyMon]	
+	cp MEWTWO
+	ret nz
+	;load the Sailor class since it only uses AI routines 1 and 3
+	ld a, SAILOR
+	ld [wTrainerClass], a
+	;should be fine to let AIEnemyTrainerChooseMoves run at this point
+.notwildbattle
+	
 	ld a, $a
 	ld hl, wBuffer ; init temporary move selection array. Only the moves with the lowest numbers are chosen in the end
 	ld [hli], a   ; move 1
@@ -159,15 +181,18 @@ AIMoveChoiceModification1:
 	ld a, [wEnemyMoveEffect]	;load the move effect
 	cp SWITCH_AND_TELEPORT_EFFECT	;see if it is a battle-ending effect
 	jp z, .heavydiscourage	;heavily discourage if so
-;and dont try to use rage either
-;	cp RAGE_EFFECT	
-;	jp z, .heavydiscourage
+;and dont try to use splash either
+	cp SPLASH_EFFECT	
+	jp z, .heavydiscourage
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;joenote - do not use dream eater if enemy not asleep, otherwise encourage it
 	ld a, [wEnemyMoveEffect]	;load the move effect
 	cp DREAM_EATER_EFFECT	;see if it is dream eater
 	jr nz, .notdreameater	;skip out if move is not dream eater
+	ld a, [wActionResultOrTookBattleTurn]
+	and a
+	jp nz, .nextMove	;if player switched or used an item, AI should be blind to the change
 	ld a, [wBattleMonStatus]	;load the player pkmn non-volatile status
 	and $7	;check bits 0 to 2 for sleeping turns
 	jp z, .heavydiscourage	;heavily discourage using dream eater on non-sleeping pkmn
@@ -278,6 +303,27 @@ AIMoveChoiceModification1:
 	inc [hl]
 	
 .twoturndone
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - discourage the use of fly or dig if a slower player is doing the same
+; this is because the faster 'mon always misses if both decide to use fly/dig
+	ld a, [wEnemyMoveNum]
+	call IsDigOrFly
+	jr nz, .end_bothusedigorfly
+	ld a, [wPlayerMoveNum]
+	call IsDigOrFly
+	jr nz, .end_bothusedigorfly
+	ld a, [wPlayerBattleStatus1]
+	bit 6, a
+	jr nz, .end_bothusedigorfly	;player is already in dig/fly invulnerability if nz, so move on
+	call StrCmpSpeed
+	jr z, .end_bothusedigorfly	;speeds equal if z, so move on
+	jr c, .end_bothusedigorfly	;speed is less than player if carry, so move on
+	;else AI is faster than player
+	;discourage because AI will miss and player will hit
+	inc [hl]
+	inc [hl]
+.end_bothusedigorfly
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, [wEnemyMovePower]
@@ -545,32 +591,34 @@ AIMoveChoiceModification1:
 	pop de
 	pop hl
 	jr nc, .spamprotection	;If not found on list, run anti-spam on it
+	;if it is in the list, has only a chance of anti-spam being run on it
 
 ;let's try to blind the AI a bit so that it won't just status the player immediately after using
 ;a restorative item or switching
-	;effect found on list of spam-exempt moves, is this a status move?
+	;effect found on list of spam-exempt moves, is this a status move (includes status-like effects)?
 	ld a, [wEnemyMoveEffect]
 	push hl
 	push de
 	push bc
-	ld hl, StatusAilmentMoveEffects
+	ld hl, StatusAilmentMoveEffectsExtended
 	ld de, $0001
 	call IsInArray
 	pop bc
 	pop de
 	pop hl
-	jr nc, .skipoutspam	;skip if not in the list of status effects
+	jr nc, .skipoutspam	;skip if not in the list of status effects (it's healing or a substitute or something)
 	
 	;effect is a status move, did the player use an item or switch?
 	ld a, [wActionResultOrTookBattleTurn]
 	and a
 	jr z, .skipoutspam	;skip if player did not use an item or switch
 	
-	;50% chance that the AI predicts the player would switch or use an item
+	;79.68% chance per move that the AI is blind to the fact that the player switched or used an item
+	;with three status moves on an AI mon, this works out to ~50% chance overall
 	call Random
-	rla
-	jr c, .skipoutspam	;if carry set, then proceed as normal
-	;else run spam protection on the status move
+	cp 204
+	jr nc, .skipoutspam	; if >= 204, proceed as normal
+	;else run spam protection on the status move to simulate not predicting the player
 	
 .spamprotection
 ;heavily discourage 0 BP moves if health is below 1/3 max
@@ -606,12 +654,13 @@ AIMoveChoiceModification1:
 	jp .nextMove
 
 EffectsToNotDissuade:
+	db HEAL_EFFECT
+	db SUBSTITUTE_EFFECT
+	;fall through
+StatusAilmentMoveEffectsExtended:
 	db CONFUSION_EFFECT
 	db LEECH_SEED_EFFECT
 	db DISABLE_EFFECT
-	db HEAL_EFFECT
-	db FOCUS_ENERGY_EFFECT
-	db SUBSTITUTE_EFFECT
 	;fall through
 StatusAilmentMoveEffects:
 	db $01 ; unused sleep effect
@@ -725,6 +774,9 @@ AIMoveChoiceModification3:
 	ld a, [wEnemyMoveEffect]
 	cp POISON_EFFECT
 	jr nz, .notpoisoneffect
+	ld a, [wActionResultOrTookBattleTurn]
+	cp $A
+	jp nz, .notpoisoneffect	;if player switched blind the AI to the player mon status
 	ld a, [wBattleMonType]
 	cp POISON
 	jp z, .heavydiscourage2
@@ -821,6 +873,17 @@ AIMoveChoiceModification3:
 .specialBPend
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;90.625% chance per move that AI is blind to the player switching, so treat the move as neutrally effective
+	ld a, [wActionResultOrTookBattleTurn]
+	cp $A
+	jr nz, .blind_end
+	call Random
+	cp 232
+	jr c, .neutral_effective	; if <, treat move as neutral damage
+	;else proceed as normal
+.blind_end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;joenote - heavily discourage attack moves that have no effect due to typing
 	push hl
 	push bc
@@ -838,9 +901,13 @@ AIMoveChoiceModification3:
 	and a 	;check if it's zero
 	jr nz, .skipout2	;skip if it's not immune
 .heavydiscourage2	;at this line the move has no effect due to immunity or other circumstance
-	ld a, [hl]	
-	add $5 ; heavily discourage move
-	ld [hl], a
+;heavily discourage move
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	inc [hl]
+.lightlydiscourage
+	inc [hl]
 	jp .nextMove
 .skipout2
 	;if thunder wave is being used against a non-immune target, neither encourage nor discourage it
@@ -853,6 +920,9 @@ AIMoveChoiceModification3:
 	ld a, [wEnemyMoveEffect]	;load the move effect
 	cp OHKO_EFFECT	;see if it is ohko move
 	jr nz, .skipout3	;skip ahead if not ohko move
+	ld a, [wEnemyBattleStatus2]
+	bit USING_X_ACCURACY, a
+	jp nz, .nextMove	;X-accuracy is being used so ohko move viable
 	call StrCmpSpeed	;do a speed compare
 	jp c, .nextMove	;ai is fast enough so ohko move viable
 	;else ai is slower so don't bother
@@ -871,19 +941,19 @@ AIMoveChoiceModification3:
 	jp .nextMove	;else neither encourage nor discourage
 .skipout4
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;jump if the move is not very effective
+;jump if the move is not very effective or is super effective
 	ld a, [wTypeEffectiveness]
 	cp $0A
 	jr c, .notEffectiveMove
+	jr nz, .isSuperEffectiveMove
+;move has neutral effectiveness at this line
+.neutral_effective
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;if the type effectiveness is neutral, randomly apply slight preference if there is STAB
-	jr nz, .notneutraleffective
-	
+;since the type effectiveness is neutral, randomly apply slight preference if there is STAB	
 	;25% chance to check for and prefer a stab move
 	call Random
 	cp 192
-	jp c, .nextMove
-	
+	jr c, .skipout5
 	push bc
 	ld a, [wEnemyMoveType]
 	ld b, a
@@ -898,9 +968,32 @@ AIMoveChoiceModification3:
 	cp b
 	pop bc
 	jp z, .givepref
-	jp .nextMove
-.notneutraleffective
+.skipout5
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;if attack is < special and move is physical, slightly discourage
+;if attack is > special and move is special, slightly discourage
+;25% chance to enact this
+	call Random
+	cp 192
+	jr c, .skipout6
+	call StrCmpAtkSPA
+	jr z, .skipout6	;jump if stats equal
+	push af
+	ld a, [wEnemyMoveType]
+	cp FIRE
+	jr nc, .special_move
+.physical_move
+	pop af
+	jp c, .lightlydiscourage	;jump if attack < special
+	jr .skipout6
+.special_move
+	pop af
+	jp nc, .lightlydiscourage		;jump if special < attack
+.skipout6
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	jp .nextMove
+.isSuperEffectiveMove
 	;at this line, move is super effective
 .givepref	;joenote - added marker
 	dec [hl] ; slightly encourage this move
@@ -948,6 +1041,10 @@ AIMoveChoiceModification3:
 	jp .nextMove
 	
 AIMoveChoiceModification4:	;this unused routine now handles intelligent trainer switching
+	ld a, [wUnusedD721]
+	bit BIT_BATTLE_NOSWITCH, a
+	jp nz, .skipSwitchEnd	;don't do anything if intelligent switching is deactivated
+	
 	ld a, [wUnusedC000]
 	set 5, a ; sets the bit that signifies trainer has intelligent switching
 	ld [wUnusedC000], a
@@ -1283,6 +1380,20 @@ TrainerAI:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ld a, [wPlayerBattleStatus1]
+	bit USING_TRAPPING_MOVE, a ; caught in player's trapping move (e.g. wrap)
+	jr z, .notbeingtrapped
+	call CheckandResetSwitchBit	
+	jp nz, AISwitchIfEnoughMons	;switch if switch bit is set and stuck in the player's trapping move
+.notbeingtrapped
+;	...otherwise
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - AI should not use actions if the null move has been selected
+	ld a, [wEnemySelectedMove]
+	cp $FF
+	ret z
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;joenote - AI should not use actions if in a move that prevents such a thing
 	ld a, [wEnemyBattleStatus2]
@@ -1539,6 +1650,7 @@ AIPlayRestoringSFX:
 	jp PlaySoundWaitForCurrent
 
 AIUseFullRestore:
+	call AIPlayRestoringSFX
 	call AICureStatus
 	ld a, FULL_RESTORE
 	ld [wAIItem], a
@@ -1564,18 +1676,21 @@ AIUseFullRestore:
 
 AIUsePotion:
 ; enemy trainer heals his monster with a potion
+	call AIPlayRestoringSFX
 	ld a, POTION
 	ld b, 20
 	jr AIRecoverHP
 
 AIUseSuperPotion:
 ; enemy trainer heals his monster with a super potion
+	call AIPlayRestoringSFX
 	ld a, SUPER_POTION
 	ld b, 50
 	jr AIRecoverHP
 
 AIUseHyperPotion:
 ; enemy trainer heals his monster with a hyper potion
+	call AIPlayRestoringSFX
 	ld a, HYPER_POTION
 	ld b, 200
 	; fallthrough
@@ -1627,6 +1742,11 @@ AIPrintItemUseAndUpdateHPBar:
 	xor a
 	ld [wHPBarType], a
 	predef UpdateHPBar2
+	
+	push af
+	callba DrawEnemyHUDAndHPBar		;joenote - need to redraw the enemy trainer hud 
+	pop af
+
 	jp DecrementAICount
 
 AISwitchIfEnoughMons:
@@ -1754,6 +1874,11 @@ AICureStatus:	;joenote - modified to be more robust and also undo stat changes o
 	ld [wEnemyToxicCounter], a	;clear toxic counter
 	ld hl, wEnemyBattleStatus3
 	res BADLY_POISONED, [hl]	;clear toxic bit
+
+	push af
+	callba DrawEnemyHUDAndHPBar		;joenote - need to redraw the enemy trainer hud 
+	pop af
+
 	ret
 
 AIUseXAccuracy: 
@@ -1911,6 +2036,31 @@ StrCmpSpeed:	;joenote - function for AI to compare pkmn speeds
 	pop bc
 	ret
 
+StrCmpAtkSPA:	;joenote - function for AI to its attack and special stats
+	push bc
+	push de
+	push hl
+	ld de, wEnemyMonAttack 
+	ld hl, wEnemyMonSpecial
+	ld c, $2	;bytes to copy
+.spdcmploop	
+	ld a, [de]	
+	cp [hl]
+	jr nz, .return
+	inc de
+	inc hl
+	dec c
+	jr nz, .spdcmploop
+	;At this point:
+	;zero flag set means stats equal
+	;carry flag not set means attack is greater
+	;carry flag set means special is greater
+.return
+	pop hl
+	pop de
+	pop bc
+	ret
+
 ;joenote - get the enemy move that has already been selected
 ;if it is found in the move list, increment the pp that was deducted when selecting the move
 UndoEnemySelectionPPDecrement:
@@ -1944,3 +2094,10 @@ UndoEnemySelectionPPDecrement:
 	pop bc
 	pop hl
 	ret
+
+;joenote - ret z if move in A is either Dig or Fly
+IsDigOrFly:
+	cp DIG
+	ret z
+	cp FLY
+	ret 

@@ -392,14 +392,33 @@ FishingAnim:
 	call DelayFrames
 	ld hl, wd736
 	set 6, [hl] ; reserve the last 4 OAM entries
+;joenote - support female trainer sprite
 	push af
+IF DEF(_FPLAYER)
+	ld de, RedFSprite
+	lb bc, BANK(RedFSprite), $c
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr nz, .donefemale
+ENDC
 	ld de, RedSprite
 	lb bc, BANK(RedSprite), $c
+.donefemale
 	pop af
 	ld hl, vNPCSprites
 	call CopyVideoData
 	ld a, $4
+;joenote - support female trainer sprite when fishing
+	push af
+IF DEF(_FPLAYER)
+	ld hl, RedFFishingTiles
+	ld a, [wUnusedD721]
+	bit 0, a	;check if girl
+	jr nz, .donefemale2
+ENDC
 	ld hl, RedFishingTiles
+.donefemale2
+	pop af
 	call LoadAnimSpriteGfx
 	ld a, [wSpriteStateData1 + 2]
 	ld c, a
@@ -509,6 +528,25 @@ RedFishingTiles:
 	dw RedFishingRodTiles
 	db 3, BANK(RedFishingRodTiles)
 	dw vNPCSprites2 + $7d0
+
+IF DEF(_FPLAYER)	;joenote - for female trainer
+RedFFishingTiles:
+	dw RedFFishingTilesFront
+	db 2, BANK(RedFFishingTilesFront)
+	dw vNPCSprites + $20
+
+	dw RedFFishingTilesBack
+	db 2, BANK(RedFFishingTilesBack)
+	dw vNPCSprites + $60
+
+	dw RedFFishingTilesSide
+	db 2, BANK(RedFFishingTilesSide)
+	dw vNPCSprites + $a0
+
+	dw RedFishingRodTiles
+	db 3, BANK(RedFishingRodTiles)
+	dw vNPCSprites2 + $7d0
+ENDC
 
 _HandleMidJump:
 	ld a, [wPlayerJumpingYScreenCoordsIndex]

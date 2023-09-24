@@ -115,9 +115,10 @@ OaksLabScript4:
 	ld a, SPRITE_FACING_UP
 	ld [hSpriteFacingDirection], a
 	call SetSpriteFacingDirectionAndDelay
-	;call UpdateSprites
+	call UpdateSprites
 	ld hl, wFlags_D733
 	res 1, [hl]
+	call DelayFrame	;joenote - Added protection against oak's lab music cutting a channel off
 	call PlayDefaultMusic
 
 	ld a, $5
@@ -977,12 +978,16 @@ OaksLabText5:
 	TX_ASM
 	CheckEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	jr nz, .asm_1d266
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
-	ld a, [wNumSetBits]
-	cp 2
-	jr c, .asm_1d279
+;	ld hl, wPokedexOwned
+;	ld b, wPokedexOwnedEnd - wPokedexOwned
+;	call CountSetBits
+;	ld a, [wNumSetBits]
+;	cp 2
+;	jp c, .asm_1d279
+;joenote - check an event instead of checking the pokedex
+	CheckEvent EVENT_01B
+	jp nz, .asm_1d279
+	
 	CheckEvent EVENT_GOT_POKEDEX
 	jr z, .asm_1d279
 .asm_1d266
@@ -1034,6 +1039,11 @@ OaksLabText5:
 	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	jr nz, .asm_1d2e7
 	lb bc, POKE_BALL, 5
+	;joenote - check to see if beaten on hard mode and give a different gift if true
+	CheckEvent EVENT_01C
+	jr z, .next
+	lb bc, GREAT_BALL, 5
+.next
 	call GiveItem
 	ld hl, OaksLabGivePokeballsText
 	call PrintText

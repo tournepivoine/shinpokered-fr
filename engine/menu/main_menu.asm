@@ -55,6 +55,45 @@ MainMenu:
 	ld de, VersionText
 	call PlaceString
 	
+	
+;joenote - detect a random seed of 01 01 01 01 and do something to help correct it
+	callba RNG_Correction
+
+	ld a, [hJoyInput]
+	cp A_BUTTON + SELECT
+	jr nz, .endseed
+;joedebug - print the random seed
+	ld hl, $DEF3
+	ld c, 4
+.seedloop
+	ld a, [hld]
+	push af
+	dec c
+	jr nz, .seedloop
+	coord hl, $00, $10
+	ld c, 4
+.seedloop2
+	pop af
+	push af
+	and $F0
+	swap a
+	call .printnybble
+	pop af
+	and $0F
+	call .printnybble
+	dec c
+	jr nz, .seedloop2
+	jr .endseed
+.printnybble
+	add $F6
+	jr nc, .printnybble_next
+	add $80
+.printnybble_next
+	ld [hli], a
+	ret
+.endseed
+	
+	
 	ld hl, wd730
 	res 6, [hl]
 	call UpdateSprites
@@ -110,19 +149,60 @@ MainMenu:
 	jp nz, .mainMenuLoop ; pressed B
 	jr .inputLoop
 .pressedA
+
+;joenote - check the rom hack version and give a choice for the pallet warp
+	ld a, [hJoyInput]
+	cp A_BUTTON + SELECT
+;	call z, ClearHackVersion	;this is a debug function to force a warp
+	ld a, [wRomHackVersion]
+	ld b, a		;use register b for temporarily holding the rom hack version
+	push bc
+	cp HACK_VERSION
+	jr z, .warpcheck_end
+	ld hl, RomHackVersionText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .warpcheck_end
+	ld a, HACK_VERSION
+	pop bc		;if picking "no", overwrite the temp value so that the warp won't happen
+	ld b, a
+	push bc
+.warpcheck_end
+	
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerDirection], a
+	ld [wPlayerLastStopDirection], a	;joenote - set face down as last direction for 180 degree turn frame
 	ResetEvent EVENT_10E	;joenote - reset ghost marowak for safety
 	ld c, 10
 	call DelayFrames
+
+;joenote - check the rom hack version of the save and update if necessary
+;Special warp to pallet town if the save is from a different version number
+;This will prevent a number of crashes and collision issues
+	pop bc
+	ld a, b
+	cp HACK_VERSION
+	jr nz, .pallet_warp
+
 	ld a, [wNumHoFTeams]
 	and a
 	jp z, SpecialEnterMap
 	ld a, [wCurMap] ; map ID
 	cp HALL_OF_FAME
 	jp nz, SpecialEnterMap
+.pallet_warp
+	;doing the special warp to pallet town so update some save-able parameters
+	ld a, HACK_VERSION
+	ld [wRomHackVersion], a	;update the working ram with the current rom hack version
+	ld a, [wNumHoFTeams]
+	and a
+	jr z, .noHoF
+	SetEvent EVENT_908	;if the elite 4 have been beaten, set the event flag for it
+.noHoF
 	xor a
 	ld [wDestinationMap], a
 	ld hl, wd732
@@ -131,10 +211,19 @@ MainMenu:
 	jp SpecialEnterMap
 
 InitOptions:
+	xor a
+	ld [wUnusedD721], a	;joenote - reset any extra optioins
 	ld a, 1 ; no delay
 	ld [wLetterPrintingDelayFlags], a
-	ld a, 3 ; medium speed
+	ld a, TEXT_DELAY_MEDIUM ; medium speed
 	ld [wOptions], a
+	ld a, [hGBC]
+	and a
+	ret z
+	;intialize 60 fps if on playing in GBC-mode
+	ld a, [wUnusedD721]
+	set 4, a
+	ld [wUnusedD721], a
 	ret
 
 LinkMenu:
@@ -286,7 +375,7 @@ LinkMenu:
 	inc a ; LINK_STATE_IN_CABLE_CLUB (makes a = 1)
 	ld [wLinkState], a
 	ld [wEnteringCableClub], a
-	jr SpecialEnterMap
+	jp SpecialEnterMap
 .choseCancel
 	xor a
 	ld [wMenuJoypadPollCount], a
@@ -343,7 +432,7 @@ HandshakeList:	;this serves as a version control passcode with FF as an end-of-l
 	db $b
 	db $ff
 VersionText:
-	db "v1.23L@"
+	db "v1.24.0L@"
 
 WhereWouldYouLikeText:
 	TX_FAR _WhereWouldYouLikeText
@@ -355,6 +444,10 @@ PleaseWaitText:
 
 LinkCanceledText:
 	TX_FAR _LinkCanceledText
+	db "@"
+
+RomHackVersionText:
+	TX_FAR _RomHackVersionText
 	db "@"
 
 StartNewGame:
@@ -410,8 +503,8 @@ DisplayContinueGameInfo:
 	call PrintNumBadges
 	coord hl, 16, 13
 	call PrintNumOwnedMons
-	coord hl, 13, 15
-	call PrintPlayTime
+	coord hl, 11, 15
+	call PrintPlayTime_local
 	ld a, 1
 	ld [H_AUTOBGTRANSFERENABLED], a
 	ld c, 30
@@ -436,8 +529,8 @@ PrintSaveScreenText:
 	call PrintNumBadges
 	coord hl, 16, 6
 	call PrintNumOwnedMons
-	coord hl, 13, 8
-	call PrintPlayTime
+	coord hl, 11, 8
+	call PrintPlayTime_local
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
 	ld c, 30
@@ -463,15 +556,19 @@ PrintNumOwnedMons:
 	lb bc, 1, 3
 	jp PrintNumber
 
-PrintPlayTime:
-	ld de, wPlayTimeHours
-	lb bc, 1, 3
-	call PrintNumber
-	ld [hl], $6d
-	inc hl
-	ld de, wPlayTimeMinutes
-	lb bc, LEADING_ZEROES | 1, 2
-	jp PrintNumber
+PrintPlayTime_local:
+	ld d, $6d
+	predef PrintPlayTime
+	ret
+;PrintPlayTime:	;joenote - moved this into a predef
+;	ld de, wPlayTimeHours
+;	lb bc, 1, 3
+;	call PrintNumber
+;	ld [hl], $6d
+;	inc hl
+;	ld de, wPlayTimeMinutes
+;	lb bc, LEADING_ZEROES | 1, 2
+;	jp PrintNumber
 
 SaveScreenInfoText:
 	db   "PLAYER"
@@ -506,6 +603,8 @@ DisplayOptionMenu:
 	call PlaceString
 	call PlaceSoundSetting	;joenote - display the sound setting
 	call Show60FPSSetting	;60fps - display current setting
+	call ShowHardModeSetting	;joenote - display marker for hard mode or not
+	call ShowNoSwitchSetting	;joenote - display marker for deactivated trainer switching or not
 	call ShowLaglessTextSetting	;joenote - display marker for lagless text or not
 	xor a
 	ld [wCurrentMenuItem], a
@@ -564,6 +663,11 @@ DisplayOptionMenu:
 	pop af
 	jr z, .loop
 .cursorInTextSpeed
+	bit 0, b	;A pressed
+	push af
+	call nz, ToggleNoSwitch
+	pop af
+	jp nz, .loop
 	bit 5, b ; Left pressed?
 	jp nz, .pressedLeftInTextSpeed
 	jp .pressedRightInTextSpeed
@@ -612,6 +716,10 @@ DisplayOptionMenu:
 	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleStyleCursorX], a
+	bit BIT_D_RIGHT, b	;Right button pressed
+	push af
+	call nz, ToggleHardMode	;joenote - for hard mode option
+	pop af
 	jp .eraseOldMenuCursor
 .pressedLeftInTextSpeed
 	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
@@ -648,10 +756,10 @@ DisplayOptionMenu:
 	ld a, [wOptions]
 	push af
 	add $10
-	and %00110000
+	and SOUND_STEREO_BITS
 	ld b, a
 	pop af
-	and %11001111
+	and (SOUND_STEREO_BITS ^ $FF)
 	or b
 	pop bc
 	ld [wOptions], a
@@ -690,7 +798,7 @@ OptionMenuEar3:
 PlaceSoundSetting:
 	ld hl, OptionMenuSoundText
 	ld a, [wOptions]
-	and %00110000
+	and SOUND_STEREO_BITS
 	swap a
 .loop
 	and a
@@ -710,10 +818,10 @@ PlaceSoundSetting:
 ;60fps - show the fps setting on the menu when activated
 OptionMenu60FPSText:
 	dw OptionMenu60FPSON
-	dw OptionMenu60FPSOFF
+	dw OptionMenu5SpacesOFF
 OptionMenu60FPSON:
 	db "60FPS@"
-OptionMenu60FPSOFF:
+OptionMenu5SpacesOFF:
 	db "     @"
 Toggle60FPSSetting:
 	ld a, [wUnusedD721]
@@ -735,6 +843,62 @@ Show60FPSSetting:
 	call PlaceString
 	ret
 
+;joenote - for deactivating intelligent trainer switching
+OptionMenuNoSwitch:
+	dw OptionMenuNoSwitchON
+	dw OptionMenuNoSwitchOFF
+OptionMenuNoSwitchON:
+	db "×sw@"
+OptionMenuNoSwitchOFF:
+	db "   @"
+ToggleNoSwitch:
+	ld a, [wUnusedD721]
+	xor BATTLE_NOSWITCH
+	ld [wUnusedD721], a
+	;fall through
+ShowNoSwitchSetting:
+	ld hl, OptionMenuNoSwitch
+	ld a, [wUnusedD721]
+	bit BIT_BATTLE_NOSWITCH, a
+	jr nz, .print
+	inc hl
+	inc hl
+.print
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	coord hl, $10, $1
+	call PlaceString
+	ret
+
+;joenote - for hard mode option
+OptionMenuHardMode:
+	dw OptionMenuHardModeON
+	dw OptionMenuHardModeOFF
+OptionMenuHardModeON:
+	db "!@"
+OptionMenuHardModeOFF:
+	db " @"
+ToggleHardMode:
+	ld a, [wOptions]
+	xor BATTLE_HARD_MODE
+	ld [wOptions], a
+	;fall through
+ShowHardModeSetting:
+	ld hl, OptionMenuHardMode
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a
+	jr nz, .print
+	inc hl
+	inc hl
+.print
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	coord hl, $0D, $0B
+	call PlaceString
+	ret
+
 ;joenote - for lagless text option
 OptionMenuLaglessText:
 	dw OptionMenuLaglessTextON
@@ -745,13 +909,13 @@ OptionMenuLaglessTextOFF:
 	db " @"
 ToggleLaglessText:
 	ld a, [wOptions]
-	xor %00000001
+	xor TEXT_DELAY_FAST
 	ld [wOptions], a
 	;fall through
 ShowLaglessTextSetting:
 	ld hl, OptionMenuLaglessText
 	ld a, [wOptions]
-	and %00001111
+	and TEXT_DELAY_BITS
 	jr z, .print
 	inc hl
 	inc hl
@@ -792,22 +956,22 @@ SetOptionsFromCursorPositions:
 	dec a
 	jr z, .battleAnimationOn
 .battleAnimationOff
-	set 7, d
+	set BIT_BATTLE_ANIMATION, d
 	jr .checkBattleStyle
 .battleAnimationOn
-	res 7, d
+	res BIT_BATTLE_ANIMATION, d
 .checkBattleStyle
 	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	dec a
 	jr z, .battleStyleShift
 .battleStyleSet
-	set 6, d
+	set BIT_BATTLE_SHIFT, d
 	jr .storeOptions
 .battleStyleShift
-	res 6, d
+	res BIT_BATTLE_SHIFT, d
 .storeOptions
-	ld a, [wOptions]	;joenote - preserve sound settings
-	and %00110000
+	ld a, [wOptions]	;joenote - preserve sound and hard mode settings
+	and (SOUND_STEREO_BITS | BATTLE_HARD_MODE)
 	or d
 	;ld a, d
 	ld [wOptions], a
@@ -817,9 +981,9 @@ SetOptionsFromCursorPositions:
 SetCursorPositionsFromOptions:
 	ld hl, TextSpeedOptionData + 1
 	ld a, [wOptions]
-	and %11001111	;joenote - bypass sound settings
+	and (SOUND_STEREO_BITS ^ $FF)	;joenote - bypass sound settings
 	ld c, a
-	and $3f
+	and TEXT_DELAY_BITS
 	push bc
 	ld de, 2
 	call IsInArray
@@ -828,7 +992,7 @@ SetCursorPositionsFromOptions:
 	
 	;joenote - set cursor position for lagless text
 	ld a, [wOptions]
-	and %00001111
+	and TEXT_DELAY_BITS
 	ld a, [hl]
 	jr nz, .settextspeed
 	ld a, 1
@@ -837,17 +1001,17 @@ SetCursorPositionsFromOptions:
 	ld [wOptionsTextSpeedCursorX], a ; text speed cursor X coordinate
 	coord hl, 0, 3
 	call .placeUnfilledRightArrow
-	sla c
+	bit BIT_BATTLE_ANIMATION, c
 	ld a, 1 ; On
-	jr nc, .storeBattleAnimationCursorX
+	jr z, .storeBattleAnimationCursorX
 	ld a, 10 ; Off
 .storeBattleAnimationCursorX
 	ld [wOptionsBattleAnimCursorX], a ; battle animation cursor X coordinate
 	coord hl, 0, 8
 	call .placeUnfilledRightArrow
-	sla c
+	bit BIT_BATTLE_SHIFT, c
 	ld a, 1
-	jr nc, .storeBattleStyleCursorX
+	jr z, .storeBattleStyleCursorX
 	ld a, 10
 .storeBattleStyleCursorX
 	ld [wOptionsBattleStyleCursorX], a ; battle style cursor X coordinate
@@ -902,4 +1066,9 @@ CheckForPlayerNameInSRAM:
 	ld [MBC1SRamEnable], a
 	ld [MBC1SRamBankingMode], a
 	scf
+	ret
+
+ClearHackVersion:
+	xor a
+	ld [wRomHackVersion], a
 	ret

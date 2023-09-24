@@ -1,3 +1,149 @@
+;universally prints the play clock
+PrintPlayTime:	;joenote - moved this into a predef
+	call GetPredefRegisters
+
+	ld a, [wPlayTimeMaxed]
+	push af
+	ld a, [wPlayTimeHours]
+	push af
+
+	push de
+	ld e, a
+	ld a, [wPlayTimeMaxed]
+	ld [wPlayTimeHours], a
+	ld a, e
+	ld [wPlayTimeMaxed], a
+	ld de, wPlayTimeHours
+	lb bc, 2, 5
+	call PrintNumber
+	pop de
+
+	pop af
+	ld [wPlayTimeHours], a
+	pop af
+	ld [wPlayTimeMaxed], a
+
+	ld a, d
+	ld [hl], a
+	inc hl
+	ld de, wPlayTimeMinutes
+	lb bc, LEADING_ZEROES | 1, 2
+	jp PrintNumber
+
+
+
+;sets both of the vermilion gym switches at the same time
+DetermineVermilionGymSwitches:
+;do first switch
+	call Random
+	and $e
+	ld [wFirstLockTrashCanIndex], a
+	
+;do second switch
+;did some improvements to this so it works better
+	ld hl, GymTrashCans
+	ld a, [wFirstLockTrashCanIndex]
+	; multiply by 5
+	ld b, a
+	add a
+	add a
+	add b
+	
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld a, [hli]
+	ld [hGymTrashCanRandNumMask], a
+
+	push hl
+	ld a, [hGymTrashCanRandNumMask]
+	ld b, a
+.tryagain
+	call Random
+	swap a
+	and $03
+	cp b
+	jr nc, .tryagain
+	pop hl
+
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld a, [hl]
+	and $f
+	ld [wSecondLockTrashCanIndex], a	
+	ret
+GymTrashCans:
+; byte 0: mask for random number
+; bytes 1-4: indices of the trash cans that can have the second lock
+; Note that the mask is simply the number of valid trash can indices that
+; follow. The remaining bytes are filled with 0 to pad the length of each entry
+; to 5 bytes.
+	db 2,  1,  3,  0,  0 ; 0
+	db 3,  0,  2,  4,  0 ; 1
+	db 2,  1,  5,  0,  0 ; 2
+	db 3,  0,  4,  6,  0 ; 3
+	db 4,  1,  3,  5,  7 ; 4
+	db 3,  2,  4,  8,  0 ; 5
+	db 3,  3,  7,  9,  0 ; 6
+	db 4,  4,  6,  8, 10 ; 7
+	db 3,  5,  7, 11,  0 ; 8
+	db 3,  6, 10, 12,  0 ; 9
+	db 4,  7,  9, 11, 13 ; 10
+	db 3,  8, 10, 14,  0 ; 11
+	db 2,  9, 13,  0,  0 ; 12
+	db 3, 10, 12, 14,  0 ; 13
+	db 2, 11, 13,  0,  0 ; 14
+
+
+;Sets the CPU speed of the GBC back to normal
+SingleCPUSpeed:
+	ld a, [hGBC]
+	and a
+	jr z, .return	;double speed is only a GBC feature
+	ld a, [rKEY1]
+	and %10000000
+	call nz, ToggleCPUSpeed
+.return
+	call GetPredefRegisters
+	ret
+;Set the cpu speed in GBC mode based on if 60fps mode is active
+SetCPUSpeed:
+	ld a, [hGBC]
+	and a
+	jr z, .return	;double speed is only a GBC feature
+	
+	ld a, [wUnusedD721]
+	and %00010000
+	rlca
+	rlca
+	rlca
+	ld b, a
+	ld a, [rKEY1]
+	and %10000000
+	cp b
+	call nz, ToggleCPUSpeed
+.return
+	call GetPredefRegisters
+	ret
+;Toggles between 2x and 1x cpu speed
+ToggleCPUSpeed:
+	di
+	ld a, [rIE]
+	push af
+	xor a
+	ld [rIE], a
+	ld [rIF], a
+	ld a, $30
+	ld [rJOYP], a
+	ld a, $01
+	ld [rKEY1], a
+	stop
+	pop af
+	ld [rIE], a
+	ei
+	ret
+
 ; This function called to store PKMN Levels. Usually at the beginning of battle.
 StorePKMNLevels:
 	push hl
@@ -145,7 +291,7 @@ _PrintNumber:
 
 ;joenote - adjusted to allow for 8 digits
 
-print_digit: macro
+MACRO print_digit
 
 if (\1) / $10000
 	ld a, \1 / $10000 % $100
@@ -166,7 +312,7 @@ endc
 
 	call .PrintDigit
 	call .NextDigit
-endm
+ENDM
 
 .tenmillions       print_digit 10000000
 .millions          print_digit 1000000

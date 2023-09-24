@@ -13,7 +13,8 @@ ViridianGymScript:
 Gym8CityName:
 	db "VIRIDIAN CITY@"
 Gym8LeaderName:
-	db "GIOVANNI@"
+;	db "GIOVANNI@"	;joenote - let's remove this funny nonsense spoiler
+	db "---@"
 
 ViridianGymScript_748d6:
 	xor a
@@ -294,12 +295,12 @@ ViridianGymText1:
 	ld hl, ViridianGymText_74ad3
 	ld de, ViridianGymText_74ad3
 	call SaveEndBattleTextPointers
+	ld a, $8
+	ld [wGymLeaderNo], a
 	ld a, [H_SPRITEINDEX]
 	ld [wSpriteIndex], a
 	call EngageMapTrainer
 	call InitBattleEnemyParameters
-	ld a, $8
-	ld [wGymLeaderNo], a
 	ld a, $3
 	ld [wViridianGymCurScript], a
 .asm_6dff7

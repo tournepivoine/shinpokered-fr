@@ -165,6 +165,9 @@ ClearAISwitched:
 	ret
 
 SetAISwitched:
+	ld a, [wUnusedC000]
+	bit 5, a
+	ret z	;no point to this function if AIMoveChoiceModification4 is not active
 	ld a, [de]	
 	cp $05
 	jr z, .party5
@@ -313,7 +316,7 @@ ScoreAIParty:
 	push bc
 	
 	;track which position mon we're on
-	ld a, 6
+	ld a, [wEnemyPartyCount]
 	sub b
 	ld [wWhichPokemon], a
 	
@@ -494,6 +497,21 @@ ScoreAIParty:
 	srl a	;-1/4 power
 	ld b, a
 	call .minus	
+;-15 to score if:
+;	-> the 'mon currently being scored is not the active 'mon
+;	-> and the player is not using a trapping move against the AI
+;this is to discourage switching a 'mon straight into a super-effective attack
+;but its safe to switch out of a trapping move because the player loses a turn
+	ld a, [wWhichPokemon]
+	ld b, a
+	ld a, [wEnemyMonPartyPos]
+	cp b
+	jp z, .playermoveloop
+	ld a, [wPlayerBattleStatus1]
+	bit USING_TRAPPING_MOVE, a
+	jp nz, .playermoveloop	
+	ld b, 15
+	call .minus
 	jp .playermoveloop
 .playermoveloop_done
 	;restore player move power and type as well as wBuffer

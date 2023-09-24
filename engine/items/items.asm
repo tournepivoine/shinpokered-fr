@@ -197,8 +197,21 @@ ItemUseBall:
 	ld a, [hl]
 
 ; The Master Ball always succeeds.
+;joenote - Adding an exception for Mewtwo! This is now the ultimate test of the player's catching skills.
+;		It will play its cry and keep the ball from having any effect.
+;		The ball is not wasted. Mewtwo's mental might prevents you from throwing it.
+;		This added difficulty is only available in hard mode.
 	cp MASTER_BALL
-	jp z, .captured
+	jr nz, .not_mball
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a ;check hard mode
+	jp z, .captured	;works as normal outside of hard mode
+	ld a, [wEnemyMon]
+	cp MEWTWO
+	jp nz, .captured ;works as normal if not mewtwo
+	call PlayCry
+	jp ItemUseNoEffect
+.not_mball
 
 ; Anything will do for the basic Poké Ball.
 	cp POKE_BALL
@@ -516,6 +529,17 @@ ItemUseBall:
 .skip6
 	ld a, [wcf91]
 	push af
+	
+	;joenote - made a catch, so adjust the BG palette for the resting pokeball
+	push de
+	ld d, CONVERT_OBP0
+	ld e, 3
+	ld a, PAL_MEWMON
+	add VICTREEBEL+1
+	ld [wcf91], a
+	callba TransferMonPal
+	pop de
+	
 	ld a, [wEnemyMonSpecies2]
 	ld [wcf91], a
 	ld a, [wEnemyMonLevel]
@@ -707,6 +731,8 @@ ItemUseSurfboard:
 	ld hl, TilePairCollisionsWater
 	call CheckForTilePairCollisions
 	jp c, SurfingAttemptFailed
+	call .checkSpriteCollision	;joenote - now checks for sprites hidden by menus
+	jp nz, SurfingAttemptFailed
 .surf
 	call .makePlayerMoveForward
 	ld hl, wd730
@@ -717,13 +743,7 @@ ItemUseSurfboard:
 	ld hl, SurfingGotOnText
 	jp PrintText
 .tryToStopSurfing
-	xor a
-	ld [hSpriteIndexOrTextID], a
-	ld d, 16 ; talking range in pixels (normal range)
-	call IsSpriteInFrontOfPlayer2
-	res 7, [hl]
-	ld a, [hSpriteIndexOrTextID]
-	and a ; is there a sprite in the way?
+	call .checkSpriteCollision	;joenote - now checks for sprites hidden by menus
 	jr nz, .cannotStopSurfing
 	ld hl, TilePairCollisionsWater
 	call CheckForTilePairCollisions
@@ -752,6 +772,7 @@ ItemUseSurfboard:
 	dec a
 	ld [wJoyIgnore], a
 	call PlayDefaultMusic ; play walking music
+	call GBPalWhiteOutWithDelay3 ;joenote - fix from pokeyellow that prevents garbled graphics when un-surfing from the menu
 	jp LoadWalkingPlayerSpriteGraphics
 ; uses a simulated button press to make the player move forward
 .makePlayerMoveForward
@@ -771,6 +792,21 @@ ItemUseSurfboard:
 	ld [wSimulatedJoypadStatesEnd], a
 	ld a, 1
 	ld [wSimulatedJoypadStatesIndex], a
+	ret
+.checkSpriteCollision	;joenote - return nz if sprite is in the way
+	xor a
+	ld [hSpriteIndexOrTextID], a
+	call IsSpriteInFrontOfPlayer	; check with talking range in pixels (normal range of $10)
+	res 7, [hl]
+	ld a, [hSpriteIndexOrTextID]
+	and a ; is there a sprite in the way?
+	ret nz
+	;joenote - this checks for sprites that cannot be seen due to the menu covering them
+	xor a
+	ld [hSpriteIndexOrTextID], a
+	callba IsOffScreenSpriteInFrontOfPlayer	; check with talking range in pixels (normal range of $10)
+	ld a, [hSpriteIndexOrTextID]
+	and a ; is there a sprite in the way?
 	ret
 
 SurfingGotOnText:
@@ -969,6 +1005,14 @@ ItemUseMedicine:
 	ld a, [wIsInBattle]
 	and a
 	jr z, .compareCurrentHPToMaxHP
+;joenote - at this point, trying to revive a fainted 'mon in battle
+;disallow this in hard mode
+	ld a, [wOptions]
+	bit BIT_BATTLE_HARD, a
+	jr z, .can_revive
+	call ItemUseNotTime
+	jp .done
+.can_revive	
 	push hl
 	push de
 	push bc
@@ -1326,7 +1370,8 @@ ItemUseMedicine:
 	ld a, [wcf91]
 	cp RARE_CANDY
 	jp z, .useRareCandy
-	push hl
+	push hl		;push wPartyMonX
+		
 	sub HP_UP
 	add a
 	ld bc, wPartyMon1HPExp - wPartyMon1
@@ -1346,7 +1391,7 @@ ItemUseMedicine:
 	ld a, 255
 .noCarry3
 	ld [hl], a
-	pop hl
+	pop hl		;pop wPartyMonX
 	call .recalculateStats
 	ld hl, VitaminText
 	ld a, [wcf91]
@@ -1371,12 +1416,24 @@ ItemUseMedicine:
 	ld hl, VitaminStatRoseText
 	call PrintText
 	jp RemoveUsedItem
+
 .vitaminNoEffect
-	pop hl
+	pop hl	;pop wPartyMonX
 	ld hl, VitaminNoEffectText
 	call PrintText
 	jp GBPalWhiteOut
+
 .recalculateStats
+	push hl		;push wPartyMonX
+	ld bc, wPartyMon1MaxHP - wPartyMon1
+	add hl, bc ; hl now points to MSB of max HP
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	pop hl		;pop wPartyMonX
+	push bc
+	push hl		;push wPartyMonX
+
 	ld bc, wPartyMon1Stats - wPartyMon1
 	add hl, bc
 	ld d, h
@@ -1384,9 +1441,31 @@ ItemUseMedicine:
 	ld bc, (wPartyMon1Exp + 2) - wPartyMon1Stats
 	add hl, bc ; hl now points to LSB of experience
 	ld b, 1
-	jp CalcStats ; recalculate stats
+	call CalcStats ; recalculate stats
+
+	pop hl		;pop wPartyMonX
+	ld bc, (wPartyMon1MaxHP + 1) - wPartyMon1
+	add hl, bc ; hl now points to LSB of max HP
+	pop bc
+	ld a, [hld]
+	sub c
+	ld c, a
+	ld a, [hl]
+	sbc b
+	ld b, a ; bc = the amount of max HP gained from leveling up
+; add the amount gained to the current HP
+	ld de, (wPartyMon1HP + 1) - wPartyMon1MaxHP
+	add hl, de ; hl now points to LSB of current HP
+	ld a, [hl]
+	add c
+	ld [hld], a
+	ld a, [hl]
+	adc b
+	ld [hl], a
+	ret
+
 .useRareCandy
-	push hl
+	push hl	;push wPartyMonX
 	ld bc, wPartyMon1Level - wPartyMon1
 	add hl, bc ; hl now points to level
 	ld a, [hl] ; a = level
@@ -1419,41 +1498,19 @@ ItemUseMedicine:
 	ld [hli], a
 	ld a, [hExperience + 2]
 	ld [hl], a
-	pop hl
+
+.returnDVMedicine
+
+	pop hl	;pop wPartyMonX
+	
 	ld a, [wWhichPokemon]
 	push af
 	ld a, [wcf91]
 	push af
 	push de
-	push hl
-	ld bc, wPartyMon1MaxHP - wPartyMon1
-	add hl, bc ; hl now points to MSB of max HP
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	pop hl
-	push bc
-	push hl
+
 	call .recalculateStats
-	pop hl
-	ld bc, (wPartyMon1MaxHP + 1) - wPartyMon1
-	add hl, bc ; hl now points to LSB of max HP
-	pop bc
-	ld a, [hld]
-	sub c
-	ld c, a
-	ld a, [hl]
-	sbc b
-	ld b, a ; bc = the amount of max HP gained from leveling up
-; add the amount gained to the current HP
-	ld de, (wPartyMon1HP + 1) - wPartyMon1MaxHP
-	add hl, de ; hl now points to LSB of current HP
-	ld a, [hl]
-	add c
-	ld [hld], a
-	ld a, [hl]
-	adc b
-	ld [hl], a
+
 	ld a, RARE_CANDY_MSG
 	ld [wPartyMenuTypeOrMessageID], a
 	call RedrawPartyMenu
@@ -1533,6 +1590,13 @@ BaitRockCommon:
 	cp 5
 	jr nc, .randomLoop
 	inc a ; increment the random number, giving a range from 1 to 5 inclusive
+	
+;joenote - There is a bug here. 
+;		- The 1-to-5 number is always decremented when PrintSafariZoneBattleText runs.
+;		- So getting a number of 1 will decrement immediately to zero and do nothing to the eating/angry state.
+;		- To get an effective 1-to-5 turns, increment once more to bump the range to 2-to-6
+	inc a
+	
 	ld b, a
 	ld a, [hl]
 	add b ; increase bait factor (for bait), increase escape factor (for rock)
@@ -1622,56 +1686,58 @@ ItemUseXAccuracy:
 
 ; This function is bugged and never works. It always jumps to ItemUseNotTime.
 ; The Card Key is handled in a different way.
+;joenote - debugging this but it's still code that goes completely unused. Commenting it all out.
 ItemUseCardKey:
-	xor a
-	ld [wUnusedD71F], a
-	call GetTileAndCoordsInFrontOfPlayer
-	ld a, [GetTileAndCoordsInFrontOfPlayer]
-	cp $18
-	jr nz, .next0
-	ld hl, CardKeyTable1
-	jr .next1
-.next0
-	cp $24
-	jr nz, .next2
-	ld hl, CardKeyTable2
-	jr .next1
-.next2
-	cp $5e
-	jp nz, ItemUseNotTime
-	ld hl, CardKeyTable3
-.next1
-	ld a, [wCurMap]
-	ld b, a
-.loop
-	ld a, [hli]
-	cp $ff
-	jp z, ItemUseNotTime
-	cp b
-	jr nz, .nextEntry1
-	ld a, [hli]
-	cp d
-	jr nz, .nextEntry2
-	ld a, [hli]
-	cp e
-	jr nz, .nextEntry3
-	ld a, [hl]
-	ld [wUnusedD71F], a
-	jr .done
-.nextEntry1
-	inc hl
-.nextEntry2
-	inc hl
-.nextEntry3
-	inc hl
-	jr .loop
-.done
-	ld hl, ItemUseText00
-	call PrintText
-	;joenote - removed because this bit is never used by anything (old key card implementation)
-	;ld hl, wd728
-	;set 7, [hl]
-	ret
+	jp ItemUseNotTime
+;	xor a
+;	ld [wUnusedD71F], a
+;	call GetTileAndCoordsInFrontOfPlayer
+;	;ld a, [GetTileAndCoordsInFrontOfPlayer]
+;	ld a, [wTileInFrontOfPlayer]	;load from the correct ram address
+;	cp $18	;horizontal doors
+;	jr nz, .next0
+;	ld hl, CardKeyTable1
+;	jr .next1
+;.next0
+;	cp $24	;vertical doors
+;	jr nz, .next2
+;	ld hl, CardKeyTable2
+;	jr .next1
+;.next2
+;	cp $5e	;horizontal doors on silph co 11f
+;	jp nz, ItemUseNotTime
+;	ld hl, CardKeyTable3
+;.next1
+;	ld a, [wCurMap]
+;	ld b, a
+;.loop
+;	ld a, [hli]
+;	cp $ff
+;	jp z, ItemUseNotTime
+;	cp b
+;	jr nz, .nextEntry1
+;	ld a, [hli]
+;	cp d
+;	jr nz, .nextEntry2
+;	ld a, [hli]
+;	cp e
+;	jr nz, .nextEntry3
+;	ld a, [hl]
+;	ld [wUnusedD71F], a
+;	jr .done
+;.nextEntry1
+;	inc hl
+;.nextEntry2
+;	inc hl
+;.nextEntry3
+;	inc hl
+;	jr .loop
+;.done
+;	ld hl, ItemUseText00
+;	call PrintText
+;	ld hl, wd728
+;	set 7, [hl]
+;	ret
 
 ; These tables are probably supposed to be door locations in Silph Co.,
 ; but they are unused.
@@ -1683,36 +1749,36 @@ ItemUseCardKey:
 ; 02: X
 ; 03: ID?
 
-CardKeyTable1:
-	db  SILPH_CO_2F,$04,$04,$00
-	db  SILPH_CO_2F,$04,$05,$01
-	db  SILPH_CO_4F,$0C,$04,$02
-	db  SILPH_CO_4F,$0C,$05,$03
-	db  SILPH_CO_7F,$06,$0A,$04
-	db  SILPH_CO_7F,$06,$0B,$05
-	db  SILPH_CO_9F,$04,$12,$06
-	db  SILPH_CO_9F,$04,$13,$07
-	db SILPH_CO_10F,$08,$0A,$08
-	db SILPH_CO_10F,$08,$0B,$09
-	db $ff
+;CardKeyTable1:
+;	db  SILPH_CO_2F,$04,$04,$00
+;	db  SILPH_CO_2F,$04,$05,$01
+;	db  SILPH_CO_4F,$0C,$04,$02
+;	db  SILPH_CO_4F,$0C,$05,$03
+;	db  SILPH_CO_7F,$06,$0A,$04
+;	db  SILPH_CO_7F,$06,$0B,$05
+;	db  SILPH_CO_9F,$04,$12,$06
+;	db  SILPH_CO_9F,$04,$13,$07
+;	db SILPH_CO_10F,$08,$0A,$08
+;	db SILPH_CO_10F,$08,$0B,$09
+;	db $ff
 
-CardKeyTable2:
-	db SILPH_CO_3F,$08,$09,$0A
-	db SILPH_CO_3F,$09,$09,$0B
-	db SILPH_CO_5F,$04,$07,$0C
-	db SILPH_CO_5F,$05,$07,$0D
-	db SILPH_CO_6F,$0C,$05,$0E
-	db SILPH_CO_6F,$0D,$05,$0F
-	db SILPH_CO_8F,$08,$07,$10
-	db SILPH_CO_8F,$09,$07,$11
-	db SILPH_CO_9F,$08,$03,$12
-	db SILPH_CO_9F,$09,$03,$13
-	db $ff
+;CardKeyTable2:
+;	db SILPH_CO_3F,$08,$09,$0A
+;	db SILPH_CO_3F,$09,$09,$0B
+;	db SILPH_CO_5F,$04,$07,$0C
+;	db SILPH_CO_5F,$05,$07,$0D
+;	db SILPH_CO_6F,$0C,$05,$0E
+;	db SILPH_CO_6F,$0D,$05,$0F
+;	db SILPH_CO_8F,$08,$07,$10
+;	db SILPH_CO_8F,$09,$07,$11
+;	db SILPH_CO_9F,$08,$03,$12
+;	db SILPH_CO_9F,$09,$03,$13
+;	db $ff
 
-CardKeyTable3:
-	db SILPH_CO_11F,$08,$09,$14
-	db SILPH_CO_11F,$09,$09,$15
-	db $ff
+;CardKeyTable3:
+;	db SILPH_CO_11F,$08,$09,$14
+;	db SILPH_CO_11F,$09,$09,$15
+;	db $ff
 
 ItemUsePokedoll:
 	ld a, [wIsInBattle]
@@ -1766,8 +1832,20 @@ ItemUseXStat:
 	ld a, [hl]
 	push af ; save [wPlayerMoveEffect]
 	push hl
-	ld a, [wcf91]
-	sub X_ATTACK - ATTACK_UP1_EFFECT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - ;double the effect if using hard mode
+	ld a, [wOptions]	;load game options
+	bit BIT_BATTLE_HARD, a			;check battle style (bit set if hard mode)
+	ld a, [wcf91]	;load item#
+	jr nz, .double_effect
+	
+	sub X_ATTACK - ATTACK_UP1_EFFECT ;this is the normal 1x effect
+	jr .storeX_ItemEffect
+	
+.double_effect
+	sub X_ATTACK - ATTACK_UP2_EFFECT ;this is the 2x effect
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+.storeX_ItemEffect
 	ld [hl], a ; store player move effect
 	call PrintItemUseTextAndRemoveItem
 	ld a, XSTATITEM_ANIM ; X stat item animation ID
@@ -1838,6 +1916,19 @@ ItemUsePokeflute:
 	ld [hl], a
 	ld hl, wEnemyMonStatus
 	ld a, [hl]
+
+;joenote - There is an oversight here. 
+;wWereAnyMonsAsleep can never get set off of a wild pokemon.
+;As as result, the wrong message plays when only the wild pokemon is woken up.
+;Need to check and set wWereAnyMonsAsleep here in order to fix it.
+	push af
+	and SLP ; is pokemon asleep?
+	jr z, .notAsleep
+	ld a, 1
+	ld [wWereAnyMonsAsleep], a ; indicate that a pokemon had to be woken up
+.notAsleep
+	pop af
+
 	and b ; remove Sleep status
 	ld [hl], a
 	call LoadScreenTilesFromBuffer2 ; restore saved screen
@@ -3038,7 +3129,8 @@ INCLUDE "data/super_rod.asm"
 ; for items that cause the overworld to be displayed
 ItemUseReloadOverworldData:
 	call LoadCurrentMapView
-	jp UpdateSprites
+	call UpdateSprites
+	jp DelayFrame	;joenote - need to make sure OAM data gets updated too
 
 ; creates a list at wBuffer of maps where the mon in [wd11e] can be found.
 ; this is used by the pokedex to display locations the mon can be found on the map.

@@ -52,6 +52,8 @@ GaryScript2:
 	call Delay3
 	xor a
 	ld [wJoyIgnore], a
+	ld a, 9
+	ld [wGymLeaderNo], a	;joenote - manually set music for various reasons
 	ld hl, wOptions
 	res 7, [hl]  ; Turn on battle animations to make the battle feel more epic.
 	ld a, $1

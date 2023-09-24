@@ -1,6 +1,18 @@
 ;This function is for teleporting you home from the start menu if you get stuck
 SoftlockTeleport:
+;make it not work for inside the cable club
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ld a, [wCurMap]
+	cp TRADE_CENTER
+	ret z
+	cp COLOSSEUM
+	ret z
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	ld a, [hJoyInput]
+	cp D_UP + B_BUTTON + SELECT
+	jp z, ResetAllOptions
+	cp D_DOWN + A_BUTTON + SELECT
+	jp z, ShowDamageValues
 	cp D_DOWN + B_BUTTON + SELECT
 	ret nz
 	CheckEvent EVENT_GOT_POKEDEX
@@ -38,7 +50,35 @@ SoftlockTeleport:
 	ret
 	
 	
-;this function handles tracking of how bast to go on or off a bike
+ShowDamageValues:	;joenote - toggle damage values being shown in battle
+	call WaitForSoundToFinish
+	CheckAndResetEvent EVENT_910
+	ld a, SFX_TURN_OFF_PC
+	jr nz, .return
+	SetEvent EVENT_910
+	ld a, SFX_ENTER_PC
+.return
+	call PlaySound	
+	ret
+	
+ResetAllOptions: ;joenote - reset all the special options (like for patching-up)
+	ld a, SFX_LEVEL_UP
+	call PlaySound
+	
+	ld a, [wOptions]
+	and %11000000
+	set 0, a
+	ld [wOptions], a
+
+	ld a, [wUnusedD721]
+	and %11100111
+	ld [wUnusedD721], a
+
+	ResetEvent EVENT_910
+	ret
+
+	
+;this function handles tracking of how fast to go on or off a bike
 ;biking ORs with $2
 ;running by holding B ORs with $1
 TrackRunBikeSpeed:
@@ -47,9 +87,14 @@ TrackRunBikeSpeed:
 	ld a, [wWalkBikeSurfState]
 	dec a ; riding a bike? (0 value = TRUE)
 	call z, IsRidingBike
+IF DEF(_RUNSHOES)
 	ld a, [hJoyHeld]
 	and B_BUTTON	;holding B to speed up? (non-zero value = TRUE)
-	;call nz, IsRunning	;joenote - uncomment this line to make holding B do double-speeed while walking/surfing/biking
+	call nz, IsRunning	;joenote - make holding B do double-speeed while walking/surfing/biking
+ENDC
+	ld a, [wd736]
+	bit 7, a
+	call nz, IsSpinArrow	;player sprite spinning due to spin tiles (Rocket hideout / Viridian Gym)
 	ld a, [wUnusedD119]
 	cp 2	;is biking without speedup being done?
 	jr z, .skip	;if not make the states a value from 1 to 4 (excluding biking without speedup, which needs to be 2)
@@ -63,12 +108,50 @@ IsRidingBike:
 	ld[wUnusedD119], a
 	ret
 IsRunning:
+IsSpinArrow:
 	ld a, [wUnusedD119]
 	or $1
 	ld[wUnusedD119], a
 	ret
 	
 
+	
+;Overworld female trainer sprite functions
+LoadRedSpriteToDE:
+	ld a, [wUnusedD721]
+IF DEF(_FPLAYER)
+	ld de, RedFSprite
+	bit 0, a	;check if girl
+	jr nz, .next
+ENDC
+	ld de, RedSprite
+.next
+	res 2, a
+	ld [wUnusedD721], a
+	ret
+	
+LoadSeelSpriteToDE:
+	ld de, SeelSprite
+	ld a, [wUnusedD721]
+	set 2, a	;regardless if boy or girl, need to set override bit to use the regular sprite bank
+	ld [wUnusedD721], a
+	ret
+
+LoadRedCyclingSpriteToDE:
+	ld a, [wUnusedD721]
+IF DEF(_FPLAYER)
+	ld de, RedFCyclingSprite
+	bit 0, a	;check if girl
+	jr nz, .donefemale
+ENDC
+	ld de, RedCyclingSprite
+.donefemale
+	res 2, a
+	ld [wUnusedD721], a
+	ret
+
+
+	
 ;***************************************************************************************************
 ;these functions have been moved here from overworld.asm 
 ;and they have been modified to work with a bank call.
@@ -268,4 +351,108 @@ CheckSouthMap:
 	xor a
 	ret
 ;***************************************************************************************************
+
+
+
+;joenote - this function ONLY checks if a sprite is in front of the player
+;			wherein the sprite is unseen due to a menu (not being hidden)
+IsOffScreenSpriteInFrontOfPlayer:
+	ld d, $10 ; talking range in pixels (normal range)
+	lb bc, $3c, $40 ; Y and X position of player sprite
+	ld a, [wSpriteStateData1 + 9] ; direction the player is facing
+.checkIfPlayerFacingUp
+	cp SPRITE_FACING_UP
+	jr nz, .checkIfPlayerFacingDown
+; facing up
+	ld a, b
+	sub d
+	ld b, a
+	ld a, PLAYER_DIR_UP
+	jr .doneCheckingDirection
+
+.checkIfPlayerFacingDown
+	cp SPRITE_FACING_DOWN
+	jr nz, .checkIfPlayerFacingRight
+; facing down
+	ld a, b
+	add d
+	ld b, a
+	ld a, PLAYER_DIR_DOWN
+	jr .doneCheckingDirection
+
+.checkIfPlayerFacingRight
+	cp SPRITE_FACING_RIGHT
+	jr nz, .playerFacingLeft
+; facing right
+	ld a, c
+	add d
+	ld c, a
+	ld a, PLAYER_DIR_RIGHT
+	jr .doneCheckingDirection
+
+.playerFacingLeft
+; facing left
+	ld a, c
+	sub d
+	ld c, a
+	ld a, PLAYER_DIR_LEFT
+
+.doneCheckingDirection
+	ld [wPlayerDirection], a
+	ld a, [wNumSprites] ; number of sprites
+	and a
+	ret z
+
+; if there are sprites
+	ld hl, wSpriteStateData1 + $10
+	ld d, a
+	ld e, $01
+.spriteLoop
+	push hl
+
+	ld a, e
+	ld [H_CURRENTSPRITEOFFSET], a	
+	push de
+	push bc
+	predef IsObjectHidden
+	pop bc
+	pop de
+	pop hl
+	push hl
+	ld a, [$ffe5]
+	and a
+	jp nz, .nextSprite
+	
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hli] ; Y location
+	cp b
+	jr nz, .nextSprite
+	
+	inc hl
+	ld a, [hl] ; X location
+	cp c
+	jr z, .foundSpriteInFrontOfPlayer
+	
+.nextSprite
+	pop hl
+	ld a, l
+	add $10
+	ld l, a
+	inc e
+	dec d
+	jr nz, .spriteLoop
+	ret
+
+.foundSpriteInFrontOfPlayer
+	pop hl
+	ld a, l
+	and $f0
+	inc a
+	ld l, a ; hl = $c1x1
+	ld a, e
+	ld [hSpriteIndexOrTextID], a
+	ret
 

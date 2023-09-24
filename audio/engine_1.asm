@@ -1221,13 +1221,22 @@ Audio1_InitPitchBendVars:
 ; This means that the result will be 0x200 greater than it should be if the
 ; low byte of the current frequency is greater than the low byte of the
 ; target frequency.
-	ld a, d
-	sbc b
-	ld d, a
+;	ld a, d
+;	sbc b
+;	ld d, a
+;
+;	ld hl, wChannelPitchBendTargetFrequencyHighBytes
+;	add hl, bc
+;	ld a, [hl]
 
+;joenote - time to implement a fix for this
+	push af		;preserve the carry bit in the F register
 	ld hl, wChannelPitchBendTargetFrequencyHighBytes
-	add hl, bc
-	ld a, [hl]
+	add hl, bc	;this will clobber the carry bit
+	pop af		;get the original carry bit back
+	ld a, [hl]	;the target Hi byte is now in A
+	sbc b		;Update the target Hi byte for any borrowing that may have been required
+
 	sub d
 	ld d, a
 	ld b, 0
@@ -1548,7 +1557,7 @@ Audio1_9972:
 	push af
 	push bc
 	ld a, [wOptions]
-	and %110000 ; channel options
+	and SOUND_STEREO_BITS ; channel options
 	srl a
 	ld c, a
 	ld b, 0
