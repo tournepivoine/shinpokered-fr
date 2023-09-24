@@ -8,8 +8,8 @@ RockTunnelB1FWildMons:
 	db 18, ZUBAT
 	db 17, MACHOP
 	db 17, ONIX
-	db 13, GAVILLAIN
-	db 18, GAVILLAIN
+	db 16, GAVILLAIN
+	db 17, GAVILLAIN
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

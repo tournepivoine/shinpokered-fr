@@ -8,7 +8,7 @@ RockTunnel1FWildMons:
 	db 18, SLOWPOKE
 	db 17, SLOWPOKE
 	db 17, MACHOP
-	db 13, ONIX
+	db 15, ONIX
 	db 15, GAVILLAIN
 	end_grass_wildmons
 
