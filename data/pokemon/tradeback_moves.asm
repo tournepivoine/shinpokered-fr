@@ -1961,6 +1961,7 @@ ElectivireTradebackMoves:
 	db 1, KARATE_CHOP
 	db 1, MEDITATE
 	db 1, ROLLING_KICK
+	db 1, FLAMETHROWER
 	db 0
 	
 MagmortarTradebackMoves:
