@@ -30,6 +30,17 @@ BoulderText::
 	pop af 
 	ld [wWhichPokemon], a 
 	call GetPartyMonName2 
+	ld a, [wWhichPokemon]
+	ld hl, wPartySpecies
+	ld c, a
+	ld a, l
+	add a, c
+	ld l, a
+	jr nc, .noCarry
+	inc h
+.noCarry
+	ld a, [hl]
+	ld [wcf91], a
 	predef PrintStrengthTxt
 .done 
     jp TextScriptEnd 
