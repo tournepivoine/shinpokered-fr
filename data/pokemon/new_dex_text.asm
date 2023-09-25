@@ -314,7 +314,7 @@ _GavillainDexEntry::
 	next "its surroundings."
 
 	page "Those who gaze at"
-	next "it for too long"
+	next "them for too long"
 	next "become immobile"
 	dex
 
