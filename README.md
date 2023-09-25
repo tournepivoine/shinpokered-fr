@@ -369,6 +369,7 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
 * LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music
+* thornAvery - Various bug fixes, notably to text speed errors.
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance
 * Paulluxx - Showdown Mod assistance
