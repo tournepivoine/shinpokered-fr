@@ -1,3 +1,5 @@
+;Note: These warp tiles act like teleporters, initiating the warp when the player steps over them.
+;		Used for things like house entrances, cave entrances, etc.
 WarpTileIDPointers:
 	table_width 2, WarpTileIDPointers
 	dw .OverworldWarpTileIDs
@@ -103,16 +105,16 @@ ENDM
 	warp_tiles $1B, $1C, $0B, $0C, $58, $59
 
 .CelesteWarpTileIDs:
-	warp_tiles $5A, $5C, $3A, $30, $50, $51 ; Like Forest but a bit better
+	warp_tiles $5A, $5C, $3A	; Like Forest but a bit better
 
 .RocketHouseWarpTileIDs:
-	warp_tiles $53
+	warp_tiles
 
 .BetaMartWarpTileIDs:
-	warp_tiles $1C, $1D, $1E, $1F, $0C, $0D, $0E, $0F, $4B, $4C
+	warp_tiles $1C, $1D, $1E, $1F, $0C, $0D, $0E, $0F, $4B
 
 .JackyWarpTileIDs:
-	warp_tiles $04, $14
+	warp_tiles
 
 .ShipPortWarpTileIDs:
 .ClubWarpTileIDs:
