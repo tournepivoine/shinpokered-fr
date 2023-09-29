@@ -1216,7 +1216,8 @@ CheepEvosMoves:
 	db 34, SEISMIC_TOSS
 	db 36, WATERFALL
 	db 40, HI_JUMP_KICK
-	db 48, HYDRO_PUMP
+	db 44, HYDRO_PUMP
+	db 48, DRILL_PECK
 	db 0
 
 JabettaEvosMoves:
@@ -1227,10 +1228,10 @@ JabettaEvosMoves:
 	db 21, BUBBLEBEAM
 	db 25, LOW_KICK
 	db 30, JUMP_KICK
-	db 34, SEISMIC_TOSS
-	db 36, WATERFALL
-	db 40, HI_JUMP_KICK
-	db 48, HYDRO_PUMP
+	db 36, SEISMIC_TOSS
+	db 38, WATERFALL
+	db 46, HI_JUMP_KICK
+	db 52, DRILL_PECK
 	db 0
 
 VulpiiiEvosMoves:

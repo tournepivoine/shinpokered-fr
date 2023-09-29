@@ -368,7 +368,8 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * Ema Skye - Developer, Maps (Silph Co. and Pokemon Tower shortening), Mt. Moon Crater Guard, Showdown Mod assistance.
 * BlueZangoose / Vimescarrot - Pokemon box expansion, Instatext option, general assistance.
 * Albatross - Many of the new sprites used in the hack (A significant number of post-Gen 1 evolutions, all regional variants, Meltan and Carapthor lines, etc.)
-* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music
+* LuciShrimp - Mewtwo & FireRed/LeafGreen Legendary custom battle music; Area Zero map theme for Mt. Moon Crater.
+* jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of. Thanks specifically to Mateo's Red++ for the ferry system! Jojobear also provided bug fixes!
 * thornAvery - Various bug fixes, notably to text speed errors.
 * pret et al - Pokémon Red and Blue Disassembly Project, many tutorials helped us!
 * ausma - Showdown Mod assistance
@@ -385,7 +386,6 @@ If you use our implementations of anything at all, it is encouraged to submit Pu
 * Helix Chamber, RacieBeep, loumilouminosus, Orchid, GBCRetro, & catstorm26 - Prototype Pokémon sprites. Precise credits are available [here](https://cdn.discordapp.com/attachments/1014321591657709569/1015347305483878521/unknown.png).
 * Vortiene/Vortyne - Reused a bit of code from their pureRGB hack, including their Trainer AI. Assisted in bug fixes. Used their sprite sheet generator.
 * Pigu-A, RevoSucks, walle303 - Contributors to Pokemon Anniversary Red's repository, where we reused the Green/FemC sprites and the Battle Tent.
-* jojobear13 & Mateo - DV/StatExp display, move deleter, & move relearner functionality from Shin Pokered, followed [this guide](https://github.com/jojobear13/shinpokered/blob/master/how%20to%20guides/how%20to%20add%20the%20move%20relearner%26deleter.txt). Tweaks were made to make it compatible with the pokered version we worked off of. Thanks specifically to Mateo's Red++ for the ferry system!
 * Rangi - Reused a bit of code from their Red* / Blue* hack to make HMs usable in the overworld, and generally being an amazing individual.
 * BGVC - Composed the original 4-channel version of the unused Koukan (trading) music.
 * SatoMew - Technical advice.

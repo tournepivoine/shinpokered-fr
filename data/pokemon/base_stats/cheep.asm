@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/cheep.pic", 0, 1 ; sprite dimensions
 	dw CheepPicFront, CheepPicBack
 
-	db BUBBLE, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db BUBBLE, PECK, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
