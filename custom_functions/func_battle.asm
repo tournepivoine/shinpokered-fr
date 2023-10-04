@@ -96,6 +96,8 @@ UndoDivision4ExpAll:
 	dec b
 	
 	jr nz, .exp_stat_loop
+	xor a
+	ld [wUnusedD155], a		;clear backup location for how many pkmn recieve exp	
 	ret
 
 	
