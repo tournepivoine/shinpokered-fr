@@ -18,10 +18,10 @@ DisplayExtraOptionMenu:
 	ld c, 18
 	call TextBoxBorder
 ;draw text box border for master options
-	coord hl, 0, 8
-	ld b, 2
-	ld c, 18
-	call TextBoxBorder
+;	coord hl, 0, 8
+;	ld b, 2
+;	ld c, 18
+;	call TextBoxBorder
 
 	call PlaceExtraOptionStrings
 	
@@ -32,8 +32,8 @@ DisplayExtraOptionMenu:
 	call ShowNoSwitchSetting	;joenote - display marker for deactivated trainer switching or not
 	call ShowGammaSetting
 	
-	call ShowBadgeCap	;joenote - show the level cap depending on badge
-	call ShowNuzlocke
+;	call ShowBadgeCap	;joenote - show the level cap depending on badge
+;	call ShowNuzlocke
 
 	call Delay3
 .loop
@@ -66,10 +66,10 @@ DisplayExtraOptionMenu:
 	jr z, .cursorAISwitch
 	cp $6 ;cursor over gamma shader?
 	jr z, .cursorGamma
-	cp $9 ; cursor over lvl cap?
-	jr z, .cursorLvlCap
-	cp $A ; cursor over nuzlocke?
-	jr z, .cursorNuzlocke
+;	cp $9 ; cursor over lvl cap?
+;	jr z, .cursorLvlCap
+;	cp $A ; cursor over nuzlocke?
+;	jr z, .cursorNuzlocke
 	cp $10 ; is the cursor on Back?
 	jr z, .exitMenu
 	jr .getJoypadStateLoop
@@ -92,12 +92,12 @@ DisplayExtraOptionMenu:
 .cursorGamma
 	call ToggleGammaShader
 	jr .getJoypadStateLoop
-.cursorLvlCap
-	call ToggleBadgeCap
-	jr .getJoypadStateLoop
-.cursorNuzlocke
-	call ToggleNuzlocke
-	jr .getJoypadStateLoop
+;.cursorLvlCap
+;	call ToggleBadgeCap
+;	jr .getJoypadStateLoop
+;.cursorNuzlocke
+;	call ToggleNuzlocke
+;	jr .getJoypadStateLoop
 
 .checkDirectionKeys
 	ld a, [wTopMenuItemY]
@@ -115,11 +115,11 @@ DisplayExtraOptionMenu:
 	ld b, -15
 	jr z, .updateMenuVariables
 	cp 6
-	ld b, 3
+	ld b, 10	;	ld b, 3
 	jr z, .updateMenuVariables
-	cp 10
-	ld b, 6
-	jr z, .updateMenuVariables
+;	cp 10
+;	ld b, 6
+;	jr z, .updateMenuVariables
 	;else
 	ld b, 1
 	jr .updateMenuVariables
@@ -127,11 +127,11 @@ DisplayExtraOptionMenu:
 	cp 1
 	ld b, 15
 	jr z, .updateMenuVariables
-	cp 9
-	ld b, -3
-	jr z, .updateMenuVariables
+;	cp 9
+;	ld b, -3
+;	jr z, .updateMenuVariables
 	cp 16
-	ld b, -6
+	ld b, -10	;ld b, -6
 	jr z, .updateMenuVariables
 	;else
 	ld b, -1
@@ -187,14 +187,14 @@ PlaceExtraOptionStrings:
 	call PlaceString
 
 ;place lvl cap text
-	coord hl, 1, 9
-	ld de, TextAILevelCap
-	call PlaceString
+;	coord hl, 1, 9
+;	ld de, TextAILevelCap
+;	call PlaceString
 
 ;place nuzlocke text
-	coord hl, 1, 10
-	ld de, TextNuzlocke
-	call PlaceString
+;	coord hl, 1, 10
+;	ld de, TextNuzlocke
+;	call PlaceString
 
 	ret
 
@@ -382,82 +382,82 @@ ShowGammaSetting:
 
 	
 ;joenote - show /toggle badge cap for level
-ToggleBadgeCap:
-	ld a, [wUnusedD721]
-	xor %00100000
-	ld [wUnusedD721], a
-	;fall through
-ShowBadgeCap:
-	ld de, OptionMenu5Spaces
-	coord hl, $0E, $9
-	call PlaceString
-	ld de, OptionMenu5SpacesOFF
-	ld a, [wUnusedD721]	;check if obedience level cap is active
-	bit 5, a
-	jr z, .print
-	ld de, OptionMenuCapLevelText
-.print
-	push af
-	coord hl, $0E, $9
-	call PlaceString
-	pop af
-	ret z
+; ToggleBadgeCap:
+	; ld a, [wUnusedD721]
+	; xor %00100000
+	; ld [wUnusedD721], a
+	; ;fall through
+; ShowBadgeCap:
+	; ld de, OptionMenu5Spaces
+	; coord hl, $0E, $9
+	; call PlaceString
+	; ld de, OptionMenu5SpacesOFF
+	; ld a, [wUnusedD721]	;check if obedience level cap is active
+	; bit 5, a
+	; jr z, .print
+	; ld de, OptionMenuCapLevelText
+; .print
+	; push af
+	; coord hl, $0E, $9
+	; call PlaceString
+	; pop af
+	; ret z
 	
-.printnum	
-	callba GetBadgeCap
-	ld a, d
-	ld [wNumSetBits], a
-	coord hl, $10, $9
-	ld de, wNumSetBits
-	lb bc, 1, 3
-	call PrintNumber
-	ret
-OptionMenuCapLevelText:
-	db "L:@"
-OptionMenu5SpacesOFF:
-	db "  OFF@"
-OptionMenu5Spaces:
-	db "     @"
+; .printnum	
+	; callba GetBadgeCap
+	; ld a, d
+	; ld [wNumSetBits], a
+	; coord hl, $10, $9
+	; ld de, wNumSetBits
+	; lb bc, 1, 3
+	; call PrintNumber
+	; ret
+; OptionMenuCapLevelText:
+	; db "L:@"
+; OptionMenu5SpacesOFF:
+	; db "  OFF@"
+; OptionMenu5Spaces:
+	; db "     @"
 
 
-;joenote - show /toggle badge cap for level
-ToggleNuzlocke:
-	ld a, [wUnusedD721]
-	xor %01000000
-	ld [wUnusedD721], a
-	bit 6, a
-	call nz, NuzlockeSettings
-	;fall through
-ShowNuzlocke:
-	ld de, OptionMenuTextOFF
-	ld a, [wUnusedD721]	;check if nuzlocke is active
-	bit 6, a
-	jr z, .print
-	ld de, OptionMenuTextON
-.print
-	coord hl, $10, $A
-	call PlaceString
-	ret
-;default to recommended settings when turned on
-NuzlockeSettings:
-	push hl
-	ld hl, wUnusedD721
-	res 3, [hl]	;make sure trainers use smart switching
-;activate or deactivate level cap depending on state of trainer scaling
-	set 5, [hl]
-	CheckEvent EVENT_90C
-	jr z, .next
-	res 5, [hl]
-.next
-	call ShowBadgeCap
-	call ShowNoSwitchSetting
-	;battle mode SET and HARD
-	ld hl, wOptions
-	set BIT_BATTLE_HARD, [hl]
-	set BIT_BATTLE_SHIFT, [hl]
-	call ShowHardModeSetting
-	pop hl
-	ret
+; ;joenote - show /toggle badge cap for level
+; ToggleNuzlocke:
+	; ld a, [wUnusedD721]
+	; xor %01000000
+	; ld [wUnusedD721], a
+	; bit 6, a
+	; call nz, NuzlockeSettings
+	; ;fall through
+; ShowNuzlocke:
+	; ld de, OptionMenuTextOFF
+	; ld a, [wUnusedD721]	;check if nuzlocke is active
+	; bit 6, a
+	; jr z, .print
+	; ld de, OptionMenuTextON
+; .print
+	; coord hl, $10, $A
+	; call PlaceString
+	; ret
+; ;default to recommended settings when turned on
+; NuzlockeSettings:
+	; push hl
+	; ld hl, wUnusedD721
+	; res 3, [hl]	;make sure trainers use smart switching
+; ;activate or deactivate level cap depending on state of trainer scaling
+	; set 5, [hl]
+	; CheckEvent EVENT_90C
+	; jr z, .next
+	; res 5, [hl]
+; .next
+	; call ShowBadgeCap
+	; call ShowNoSwitchSetting
+	; ;battle mode SET and HARD
+	; ld hl, wOptions
+	; set BIT_BATTLE_HARD, [hl]
+	; set BIT_BATTLE_SHIFT, [hl]
+	; call ShowHardModeSetting
+	; pop hl
+	; ret
 
 
 TextAudio:
@@ -475,10 +475,10 @@ TextGamma:
 TextBack:
 	db " BACK@"
 
-TextAILevelCap:
-	db " LVL CAP@"
-TextNuzlocke:
-	db " NUZLOCKE@"
+;TextAILevelCap:
+;	db " LVL CAP@"
+;TextNuzlocke:
+;	db " NUZLOCKE@"
 	
 OptionMenuOnOffText:
 	dw OptionMenuTextON
