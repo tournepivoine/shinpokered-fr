@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.0
+Version 1.24.1
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -66,6 +66,14 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 -----------
 **Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.1  
+- Fixed typed effectiveness being applied the wrong way to static damage moves
+- All the extra options on the option menu have been moved to their own separate menu
+- Fixed a bug catcher on route 9 being able to walk onto a ledge
+- The message for substitute taking damage now only displays after the first attack of a multi-attack move
+- Multi-attack moves display effectivenes only on first attack instead of the last attack
+- Twineedle does not print redundant messages like other multi-hit moves
 
 
 #Bugfixes
@@ -269,6 +277,10 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
   
 
 - Audio fixes
+  - Audio engine has been back-ported from Yellow version
+    - Fixes some channel conflicts between cries and the low-health alarm
+    - Fixes some audio hiccups with Yellow's color palettes on the GBC
+    - Press SELECT on the option menu to go to the extra menu and change the audio mixing option under "AUDIO"
   - Fuschia gym plays the correct sfx when getting the TM from Koga
   - Vermilion gym plays the correct sfx when getting the TM from Surge
   - Restored sfx for getting a badge
@@ -356,9 +368,11 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
  
 #Tweaks
 -----------
+- Press SELECT on the option menu to get to the extra options menu and toggle various new features
 - Added built-in gamma shader for backlit LCD screens in GBC mode (press SELECT at the copyright screen)
   - Gamma shader defaults ON if the destination code in the rom header is set to 00 (JP)
   - Pressing SELECT at the copyright info now switches the shader from its default state
+  - It can also be toggled in the extra menu under "Y SHADER" so you don't have to reset the game to change it
   - The default state of the gamma shader can be changed with any gameboy rom header editor
   - Alternately, remove the 'j' in 'cjsv' in the Makefile to compile with a JP destination code
 - The Gameboy Color palette functionality from pokemon Yellow has been back-ported into the game
@@ -374,13 +388,12 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
   - Tossing pokeballs have color in GBC mode
 - Added an option to make the overworld run in 60fps
   - Feature is a proof-of-concept and is still a bit rusty
-  - Toggle by placing the cursor in the options screen over CANCEL and pressing left or right
+  - Toggle this in the extra options menu
   - Takes advantage of double-speed CPU mode when played as a GBC game
 - Starting a New Game while in GBC-mode will default 60FPS mode to ON
-- Text with zero frame delay can be toggled in the options menu; press LEFT with the cursor on FAST
+- Text with zero frame delay can be toggled in the extra options menu
 - A hard mode option has been added to provide increased difficulty
-  - Pressing RIGHT while the cursor is in the BATTLE STYLE box will toggle the feature on/off
-  - Contrasting this, pressing LEFT will let you select a battle style without toggling difficulty
+  - Toggle this in the extra options menu
   - Enemy trainer pokemon are assigned level-appropriate stat exp
   - Enemy trainer pokemon have randomized DVs that are above-average
   - Boss trainers (giovanni, elite 4, gym leaders, later-game rival) cannot have DVs below 8
@@ -579,10 +592,9 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
   -jr trainer M/F, pokemaniac, hiker, cueball, psychic, tamer, black belt, rocket, cooltrainer M/F, gentleman, channeler
   -all rival phases, all gym leaders, elite-4, prof.oak, chief
   
-- Trainer switching (ai routine #4)can now be deactivated
-  - This feature disallows enemy trainers to switch intelligently, just like in the original retail games.
-  - With the cursor in the TEXT SPEED section of the option menu, press A to toggle this feature on and off.
-  - the letters "x sw" will appear in the corner of the option menu to indicate that trainer switching is inactive.
+- Trainer switching (ai routine #4)can now toggled ON and OFF
+  - While OFF, trainers will not switch intelligently just like in the original retail games.
+  - Press SELECT on the option menu to go to the extra menu and toggle this option under "AI SWAPS"
   - Note that Jugglers are unaffected because their official gimmick is that they switch randomly.
 
 - Trainer stat DVs are now randomly generated to a degree (only in hard mode) to be above-average
