@@ -111,9 +111,14 @@ _AddPartyMon:
 	jr nz, .copyEnemyMonData
 
 ; Not wild.
-	call Random ; generate random IVs
-	ld b, a
-	call Random
+	call Random_DV	;generate DVs as if it is a wild pokemon
+;	;joenote - makes pkmn given to player (being sent to the party) have average IVs at minimum
+;	push af
+;	ld a, b
+;	or $88
+;	ld b, a
+;	pop af
+;	or $98
 
 .next4
 	push bc
