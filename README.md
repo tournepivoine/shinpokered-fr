@@ -668,6 +668,7 @@ v1.24.1
 - SPazzzi95 for documenting localization changes
 - easyaspi314 for optimizations to the gamma shader and wavy-line animation bugfix
 - Dracrius' pocketrgb-en project for finding corrections to jp-build inaccuracies
+- powderpup for box covers using Sugimori cardass art
 
 The following folks for their great tutorials, glitch videos, and explanations across the internet
 - TheFakeMateo 
