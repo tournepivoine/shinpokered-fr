@@ -68,6 +68,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.24.1  
+- Fixed wrong color for move animation when it comes after self-inflicted confusion damage
 - Reworked the prize mon level function and synchronized DVs for gift pokemon added to party or box
 - Fixed typed effectiveness being applied the wrong way to static damage moves
 - All the extra options on the option menu have been moved to their own separate menu
