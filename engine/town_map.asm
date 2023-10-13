@@ -133,7 +133,11 @@ LoadTownMap_Nest:
 	push hl
 	call DisplayWildLocations
 	call GetMonName
+IF (DEF(_REDGREENJP) || DEF(_BLUEJP))
+	coord hl, 9, 0
+ELSE
 	coord hl, 8, 0
+ENDC
 	call PlaceString
 	coord hl, 1, 0
 	ld de, MonsNestText
@@ -147,7 +151,7 @@ LoadTownMap_Nest:
 
 MonsNestText:
 IF (DEF(_REDGREENJP) || DEF(_BLUEJP))
-	db "NIDS@"
+	db "NIDS DE @"
 ELSE
 	db "NID DE @"
 ENDC

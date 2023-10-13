@@ -51,8 +51,8 @@ _CeruleanHouse2Text_74e9b::
 	cont "des combats."
 	prompt
 
-_CeruleanHouse2Text_74ea0::
-	text "La VITESSE de"
+_CeruleanHouse2Text_74ea0:: ;joenote - updated with correct information
+	text "La DEFENSE de"
 	line "tous tes #MON"
 	cont "sera un peu"
 	cont "augmentée."
@@ -77,8 +77,8 @@ _CeruleanHouse2Text_74ea5::
 	cont "FORCE."
 	prompt
 
-_CeruleanHouse2Text_74eaa::
-	text "La DEFENSE de"
+_CeruleanHouse2Text_74eaa:: ;joenote - updated with correct information
+	text "La VITESSE de"
 	line "tous tes #MON"
 	cont "sera augmentée."
 

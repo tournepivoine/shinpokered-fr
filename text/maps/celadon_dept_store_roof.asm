@@ -43,7 +43,7 @@ _CeladonMartRoofText_4850a::
 	line "@"
 	TX_RAM wcf4b
 	text "!@@"
-	
+
 _CeladonMartRoofText_4850f::
 	db $0
 	para "@"
@@ -69,20 +69,20 @@ _CeladonMartRoofText_48515::
 _ReceivedTM49Text::
 	text "<PLAYER> reçoit:"
 	line "CT49!@@"
-	
+
 _CeladonMartRoofText_48520::
 	db $0
 	para "TM49..."
 	line "TRIPLATTAQUE!@@"
-	
+
 _CeladonMartRoofText_48526::
 	text "Plus de place!@@"
-	
+
 _CeladonMartRoofText_4852c::
 	text "Heu..."
 	line "Non merci."
 	cont "A pu soif!@@"
-	
+
 _CeladonMartRoofText1::
 	text "Ma soeur est"
 	line "dresseur. Tu le"

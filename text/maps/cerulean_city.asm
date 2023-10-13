@@ -222,12 +222,21 @@ _CeruleanCityText13::
 	cont "lution l'annule."
 	done
 
+IF DEF(_JPTXT)
+_CeruleanCityText16::
+	text "Plus vite que le"
+	line "vent, plus vite"
+	cont "dans les villes!"
+	cont "...MIRACLE CYCLE"
+	done
+ELSE
 _CeruleanCityText16::
 	text "Plus vite que le"
 	line "vent, plus vite"
 	cont "dans les villes!"
 	cont "...CYCLES A GOGO"
 	done
+ENDC
 
 _CeruleanCityText17::
 	text "AZURIA"

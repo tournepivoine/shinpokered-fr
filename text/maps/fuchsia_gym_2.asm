@@ -11,7 +11,7 @@ _KogaExplainToxicText::
 
 _FuchsiaGymText9::
 	text "Le BADGE AME fera"
-	line "monter la DEFENSE"
+	line "monter la VITESSE"	;joenote - changed DEFENSE to SPEED in order to fix a typo
 	cont "de tes #MON!"
 
 	para "Il te permettra"

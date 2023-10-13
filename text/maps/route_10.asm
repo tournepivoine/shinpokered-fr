@@ -20,6 +20,20 @@ _Route10BattleText2::
 	text "Ha-hahah-ah-ha!"
 	done
 
+IF DEF(_JPTXT)
+_Route10EndBattleText2::
+	text "Ha-haha!"
+	line "Hahhhhh ...!"
+	cont "Oh mec..."
+	cont "J'ai mangé des"
+	cont "champignons au"
+	cont "goût étrange."
+
+_Route10AfterBattleText2::
+	text "Haha-ha-haha!"
+	line "Hahahahaha!"
+	cont "...... ......"
+ELSE
 _Route10EndBattleText2::
 	text "Ha!"
 	line "Je ris pas!"
@@ -31,6 +45,7 @@ _Route10AfterBattleText2::
 	line "Nyahahahaha!"
 	cont "Hohohoho!"
 	done
+ENDC
 
 _Route10BattleText3::
 	text "Hé, gamin! Tu"

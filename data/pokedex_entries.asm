@@ -1252,7 +1252,7 @@ VictreebelDexEntry:
 	TX_FAR _VictreebelDexEntry
 	db "@"
 
-	MissingNoDexEntry:
+MissingNoDexEntry:
 	db "???@"
 	db 10 ; 1.0 m
 	db 100 ; 10.0 kg

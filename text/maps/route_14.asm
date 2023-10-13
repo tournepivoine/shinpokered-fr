@@ -86,10 +86,14 @@ _Route14EndBattleText5::
 	prompt
 
 _Route14AfterBattleText5::
-	text "Les 3 #MON"
+;	text "Les 3 #MON"			;joenote - slight correction to this translation
+;	line "légendaires sont"
+;	cont "des oiseaux"
+;	cont "de proie."
+	text "On dit que les 3"
+	line "#MON"
 	line "légendaires sont"
-	cont "des oiseaux"
-	cont "de proie."
+	cont "tous des oiseaux."
 	done
 
 _Route14BattleText6::

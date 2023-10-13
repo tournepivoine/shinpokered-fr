@@ -610,7 +610,7 @@ _CinnabarGymQuizIntroText::
 
 _CinnabarQuizQuestionsText1::
 ;	text "CHENIPAN évolue"	;joenote - this is supposed to be METAPOD
-	text "CHRYSACIER evolves"	
+	text "CHRYSACIER évolue"	
 	line "en PAPILUSION?"
 	done
 
@@ -640,11 +640,11 @@ _CinnabarQuizQuestionsText5::
 	text "Les #MON du"
 	line "même type et du"
 	cont "même niveau sont"
-	;	cont "différents?"	;joenote - re-worded 
+;	cont "différents?"	;joenote - re-worded 
 	cont "rarement"
 	cont "identiques?"
 	done
-
+ 
 _CinnabarQuizQuestionsText6::
 	text "CT28 contient"
 	line "FOSSE?"
@@ -873,8 +873,8 @@ _IndigoPlateauHQText::
 
 _RedBedroomSNESText::
 	text "<PLAYER> joue à la"
-	IF DEF(_REDGREENJP)
-line "NES!"	;joenote - the player still had an old famicom in japanese red & green
+IF DEF(_REDGREENJP)
+	line "NES!"	;joenote - the player still had an old famicom in japanese red & green
 ELSE
 	line "Super Nintendo!"
 ENDC
@@ -1120,17 +1120,17 @@ _PokemonBooksText::
 	line "les #MON!"
 	done
 
-	IF DEF(_JPTXT)
-	_DiglettSculptureText::
-		text "Une sculpture d'un"
-		line "gros Bouddha."
-		done
-	ELSE
-	_DiglettSculptureText::
-		text "Une sculpture de"
-		line "TAUPIQUEUR."
-		done
-	ENDC
+IF DEF(_JPTXT)
+_DiglettSculptureText::
+	text "Une sculpture d'un"
+	line "gros Bouddha."
+	done
+ELSE
+_DiglettSculptureText::
+	text "Une sculpture de"
+	line "TAUPIQUEUR."
+	done
+ENDC
 
 _ElevatorText::
 	text "Un ascenseur."
@@ -1552,7 +1552,7 @@ _BoostedText::
 	text_end
 
 _ExpPointsText::
-	text_decimal wExpAmountGained, 2, 4
+	text_decimal wExpAmountGained, 2, 5	;joenote - increased to 5 digits
 	text " points d'EXP!"
 	prompt
 
@@ -1959,7 +1959,7 @@ _MonWasReleasedText::
 	line "relâché. Adieu,"
 	cont "@"
 
-_CF50ExclamationText::
+_CF4BExclamationText::
 	text_ram wStringBuffer
 	text "!"
 	prompt
@@ -2038,74 +2038,7 @@ _LinkCanceledText::
 	line "échoué."
 	done
 
-_OakSpeechText1::
-	text "Bien le bonjour!"
-	line "Bienvenue dans le"
-	cont "monde magique des"
-	cont "#MON!"
-
-	para "Mon nom est CHEN!"
-	line "Les gens souvent"
-	cont "m'appellent le"
-	cont "PROF #MON!"
-	prompt
-
-_OakSpeechText2A::
-	text "Ce monde est"
-	line "peuplé de"
-	cont "créatures du nom"
-	cont "de #MON!@"
-	text_end
-
-_OakSpeechText2B::
-	text_start
-
-	para "Pour certains,"
-	line "les #MON sont"
-	cont "des animaux"
-	cont "domestiques, pour"
-	cont "d'autres, ils"
-	cont "sont un moyen de"
-	cont "combattre."
-
-	para "Pour ma part..."
-
-	para "L'étude des"
-	line "#MON est"
-	cont "ma profession."
-	prompt
-
-_IntroducePlayerText::
-	text "Tout d'abord,"
-	line "quel est ton nom?"
-	prompt
-
-_IntroduceRivalText::
-	text "Voici mon petit-"
-	line "fils. Il est ton"
-	cont "rival depuis sa"
-	cont "toute jeunesse."
-
-	para "...Heu..."
-	line "C'est quoi donc"
-	cont "son nom déjà?"
-	prompt
-
-_OakSpeechText3::
-	text "<PLAYER>!"
-
-	para "Ta quête des"
-	line "#MON est sur"
-	cont "le point de"
-	cont "commencer!"
-
-	para "Un tout nouveau"
-	line "monde de rêves,"
-	cont "d'aventures et"
-	cont "de #MON"
-	cont "t'attend! Dingue!"
-	done
-
+INCLUDE "text/oakspeech.asm"
 
 _DoYouWantToNicknameText::
 	text "Voulez-vous"
@@ -2557,7 +2490,7 @@ _ColosseumText1::
 	text "!"
 	done
 
-	INCLUDE "text/maps/reds_house_1f.asm"
+INCLUDE "text/maps/reds_house_1f.asm"
 INCLUDE "text/maps/blues_house.asm"
 INCLUDE "text/maps/oaks_lab.asm"
 INCLUDE "text/maps/viridian_pokecenter.asm"

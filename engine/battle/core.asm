@@ -2948,7 +2948,7 @@ SelectMenuItem:
 	call PlaceString
 	jr .select
 .battleselect
-ld a, [wFlags_D733]
+	ld a, [wFlags_D733]
 	bit BIT_TEST_BATTLE, a
 	jr nz, .select
 	call PrintMenuItem

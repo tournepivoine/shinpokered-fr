@@ -267,7 +267,7 @@ ViridianSchoolBlackboardText2:
 	TX_FAR _ViridianSchoolBlackboardText2
 	db "@"
 
-	StatusAilmentText1:
+StatusAilmentText1:
 	db   " SOM"
 	next " PSN"
 	next " PAR@"
