@@ -1548,11 +1548,11 @@ VitaminNoEffectText:
 	db "@"
 
 VitaminText:
-	db "HEALTH@"
-	db "ATTACK@"
-	db "DEFENSE@"
-	db "SPEED@"
-	db "SPECIAL@"
+	db "VIE@"
+	db "FOR@"
+	db "DEF@"
+	db "VIT@"
+	db "SPE@"
 
 ItemUseBait:
 	ld hl, ThrewBaitText

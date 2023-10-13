@@ -166,9 +166,9 @@ TextBoxTextAndCoordTable:
 	db 3,0   ; text coordinates
 
 	db USE_TOSS_MENU_TEMPLATE
-	db 13,10,19,14 ; text box coordinates
+	db 12,10,19,14 ; text box coordinates
 	dw UseTossText
-	db 15,11 ; text coordinates
+	db 14,11 ; text coordinates
 
 	db JP_SAVE_MESSAGE_MENU_TEMPLATE
 	db 0,0,7,5     ; text box coordinates
@@ -181,9 +181,9 @@ TextBoxTextAndCoordTable:
 	db 2,7   ; text coordinates
 
 	db BATTLE_MENU_TEMPLATE
-	db 8,12,19,17  ; text box coordinates
+	db 6,12,19,17  ; text box coordinates
 	dw BattleMenuText
-	db 10,14 ; text coordinates
+	db 8,14 ; text coordinates
 
 	db SAFARI_BATTLE_MENU_TEMPLATE
 	db 0,12,19,17  ; text box coordinates
@@ -218,13 +218,13 @@ TextBoxTextAndCoordTable:
 ; note that there is no terminator
 
 BuySellQuitText:
-	db   "BUY"
-	next "SELL"
-	next "QUIT@@"
+	db   "ACHETER"
+	next "VENDRE"
+	next "SALUT!@@"
 
 UseTossText:
-	db   "USE"
-	next "TOSS@"
+	db   "UTIL."
+	next "JETER@"
 
 JapaneseSaveMessageText:
 	db   "きろく"
@@ -235,7 +235,7 @@ JapaneseSpeedOptionsText:
 	next "おそい@"
 
 MoneyText:
-	db "MONEY@"
+	db "ARG@"
 
 JapaneseMochimonoText:
 	db "もちもの@"
@@ -245,17 +245,17 @@ JapaneseMainMenuText:
 	next "さいしょから@"
 
 BattleMenuText:
-	db   "FIGHT ",$E1,$E2
-	next "ITEM  RUN@"
+	db   "ATTAQ ",$E1,$E2
+	next "OBJET FUITE@"
 
 SafariZoneBattleMenuText:
-	db   "BALL×       BAIT"
-	next "THROW ROCK  RUN@"
+	db   "BALL×      APPAT"
+	next "CAILLOU    FUITE@"
 
 SwitchStatsCancelText:
-	db   "SWITCH"
+	db   "ORDRE"
 	next "STATS"
-	next "CANCEL@"
+	next "RETOUR@"
 
 JapaneseAhText:
 	db "アッ!@"
@@ -544,11 +544,11 @@ IF DEF(_FPLAYER)	;joenote - text to ask if female trainer
 ENDC
 
 .NoYesMenu
-	db   "NO"
-	next "YES@"
+	db   "NON"
+	next "OUI@"
 .YesNoMenu
-	db   "YES"
-	next "NO@"
+	db   "OUI"
+	next "NON@"
 .NorthWestMenu
 	db   "NORTH"
 	next "WEST@"
@@ -559,15 +559,15 @@ ENDC
 	db   "NORTH"
 	next "EAST@"
 .TradeCancelMenu
-	db   "TRADE"
-	next "CANCEL@"
+	db   "ECHANGE"
+	next "RETOUR@"
 .HealCancelMenu
-	db   "HEAL"
-	next "CANCEL@"
+	db   "SOIN"
+	next "RETOUR@"
 IF DEF(_FPLAYER)	;joenote - text to ask if female trainer
 .BoyGirlMenu
-	db   "BOY"
-	next "GIRL@"	
+	db   "GARCON"
+	next "FILLE@"	
 ENDC
 
 DisplayFieldMoveMonMenu:
@@ -691,20 +691,20 @@ DisplayFieldMoveMonMenu:
 	jp PlaceString
 
 FieldMoveNames:
-	db "CUT@"
-	db "FLY@"
+	db "COUPE@"
+	db "VOL@"
 	db "@"
 	db "SURF@"
-	db "STRENGTH@"
+	db "FORCE@"
 	db "FLASH@"
-	db "DIG@"
+	db "TUNNEL@"
 	db "TELEPORT@"
-	db "SOFTBOILED@"
+	db "E-COQUE@"
 
 PokemonMenuEntries:
 	db   "STATS"
-	next "SWITCH"
-	next "CANCEL@"
+	next "ORDRE"
+	next "RETOUR@"
 
 GetMonFieldMoves:
 	ld a, [wWhichPokemon]

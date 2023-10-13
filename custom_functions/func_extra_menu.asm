@@ -247,11 +247,11 @@ OptionMenuSoundText:
 OptionMenuMono:
 	db "     MONO@"
 OptionMenuEar1:
-	db "EARPHONE1@"
+	db "ECOUTEUR1@"
 OptionMenuEar2:
-	db "EARPHONE2@"
+	db "ECOUTEUR2@"
 OptionMenuEar3:
-	db "EARPHONE3@"
+	db "ECOUTEUR3@"
 
 
 ;60fps - show the fps setting on the menu when activated
@@ -354,7 +354,7 @@ OptionMenuNoSwitch:
 OptionMenuNoSwitchON:
 	db "ORIG.@"
 OptionMenuNoSwitchOFF:
-	db "SMART@"
+	db "INTEL@"
 
 	
 ;joenote - for deactivating intelligent trainer switching
@@ -465,15 +465,15 @@ TextAudio:
 TextFPS:
 	db " FPS@"
 TextInstant:
-	db " INST. TXT@"
+	db " TXT INST.@"
 TextHardMode:
-	db " HARD MODE@"
+	db " MODE DIFF@"
 TextAISwitch:
-	db " AI SWAPS@"
+	db " CHANG AI@"
 TextGamma:
 	db " Y SHADER@"
 TextBack:
-	db " BACK@"
+	db " RETOUR@"
 
 ;TextAILevelCap:
 ;	db " LVL CAP@"

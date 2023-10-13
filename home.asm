@@ -1957,7 +1957,7 @@ PrintListMenuEntries::
 	jp PlaceString
 
 ListMenuCancelText::
-	db "CANCEL@"
+	db "RETOUR@"
 
 GetMonName::
 	push hl

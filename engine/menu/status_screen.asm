@@ -214,14 +214,14 @@ Type2Text:
 	db "TYPE2/", $4e
 
 IDNoText:
-	db $73, "№/", $4e
+	db "№", $73, "/", $4e
 
 OTText:
-	db   "OT/"
+	db   "DO/"
 	next "@"
 
 StatusText:
-	db "STATUS/@"
+	db "STATUT/@"
 
 OKText:
 	db "OK@"
@@ -292,10 +292,10 @@ PrintStat:
 	ret
 
 StatsText:
-	db   "ATTACK"
-	next "DEFENSE"
-	next "SPEED"
-	next "SPECIAL@"
+	db   "FOR"
+	next "DEF"
+	next "VIT"
+	next "SPE@"
 
 StatusScreen2:
 	ld a, [hTilesetType]
@@ -471,8 +471,8 @@ CalcExpToLevelUp:
 	ret
 
 StatusScreenExpText:
-	db   "EXP POINTS"
-	next "LEVEL UP@"
+	db   "PTS EXP."
+	next "PROCH.NIV.@"
 
 StatusScreen_ClearName:
 	ld bc, 10

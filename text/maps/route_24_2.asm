@@ -1,134 +1,100 @@
 _Route24BattleText1::
-	text "I saw your feat"
-	line "from the grass!"
+	text "Je t'ai vu!"
 	done
 
-_Route24EndBattleText1::
-	text "I"
-	line "thought not!"
+	_Route24EndBattleText1::
+	text "Oh!"
+	line "J'ai vu ma"
+	cont "défaite!"
 	prompt
 
 _Route24AfterBattleText1::
-	text "I hid because the"
-	line "people on the"
-	cont "bridge scared me!"
+	text "Je me cache, les"
+	line "gens sur le pont"
+	cont "me font peur!"
 	done
 
 _Route24BattleText2::
-	text "OK! I'm No. 5!"
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	line "This time, I'll"
-	cont "be your partner."
-ELSE
-	line "I'll stomp you!"
-ENDC
+	text "OK! J'suis le 5!"
+	line "J'vais te broyer!"
 	done
 
 _Route24EndBattleText2::
-	text "Whoa!"
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	line "You're too wild"
-	cont "for me!"
-ELSE
-	line "Too much!"
-ENDC
+	text "Ah!"
+	line "Purée!"
 	prompt
 
 _Route24AfterBattleText2::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "Pas de regrets,"
+	line "j'ai fait de mon"
+	cont "mieux!"
 	done
 
 _Route24BattleText3::
-	text "I'm No. 4!"
-	line "Getting tired?"
+	text "Je suis la 4ème!"
+	line "T'en veux encore?"
 	done
 
 _Route24EndBattleText3::
-	text "I lost"
-	line "too!"
+	text "Tu..."
+	line "...m'as battue!"
 	prompt
 
 _Route24AfterBattleText3::
-	text "I did my best, so"
-	line "I've no regrets!"
+	text "J'ai participé,"
+	line "et j'ai perdu!"
 	done
 
 _Route24BattleText4::
-	text "Here's No. 3!"
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	line "I won't finish"
-	cont "so quickly!"
-ELSE
-	line "I won't be easy!"
-ENDC
+	text "Je suis le 3ème!"
+	line "C'est pas gagné!"
 	done
 
 _Route24EndBattleText4::
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	text "Ugh!"
-	line "I can't last"
-	cont "any longer."
-ELSE
-	text "Ow!"
-	line "Stomped flat!"
-ENDC
+	text "Oh!"
+	line "Tu m'as écrasé!"
 	prompt
 
 _Route24AfterBattleText4::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "J'ai fait de mon"
+	line "mieux!"
 	done
 
 _Route24BattleText5::
-	text "I'm second!"
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	line "I'm ready to go"
-	cont "all the way!"
-ELSE
-	line "Now it's serious!"
-ENDC
+	text "Je suis la 2ème!"
+	line "Ca rigole plus!"
 	done
 
 _Route24EndBattleText5::
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	text "That was"
-	line "unbelieveable."
-ELSE
-	text "How could I"
-	line "lose?"
-ENDC
+	text "Ben..."
+	line "Tu m'as battue?"
 	prompt
 
 _Route24AfterBattleText5::
-;joenote - girls are supposed to be slightly different
-;	text "I did my best, I"
-;	line "have no regrets!"
-	text "I did my best, so"
-	line "I've no regrets!"
+	text "J'ai fait de mon"
+	line "mieux!"
 	done
 
 _Route24BattleText6::
-	text "This is NUGGET"
-	line "BRIDGE! Beat us 5"
-	cont "trainers and win"
-IF DEF(_JPTXT)	;joenote - dirty joke lost in translation
-	cont "a surprise from"
-	cont "the nugget sack!"
-ELSE
-	cont "a fabulous prize!"
-ENDC
+	text "Voici le PONT"
+	line "PEPITE!"
+	cont "5 dresseurs"
+	cont "défendent ce"
+	cont "pont! Bats-nous"
+	cont "et tu seras"
+	cont "super content!"
 
-	para "Think you got"
-	line "what it takes?"
+	para "Tu crois pouvoir"
+	line "y arriver?"
 	done
 
 _Route24EndBattleText6::
-	text "Whoo!"
-	line "Good stuff!"
+	text "Haha!"
+	line "Bien joué!"
 	prompt
 
 _Route24AfterBattleText6::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "J'ai fait de mon"
+	line "mieux. Si si!"
+	cont "C'est vrai!"
 	done

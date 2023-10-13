@@ -1,132 +1,101 @@
 _TM18PreReceiveText::
-	text "Oh, hi! I finally"
-	line "finished #MON!"
+	text "J'ai fini!!!!"
+	line "J'ai fini"
+	cont "#MON!!!!"
 
-	para "Not done yet?"
-	line "This might be"
-	cont "useful!"
+	para "Pas toi? Yahaha!"
+	line "Prends donc ceci,"
+	cont "petit!"
 	prompt
 
 _ReceivedTM18Text::
-	text "<PLAYER> received"
+	text "<PLAYER> reçoit"
 	line "@"
 	TX_RAM wcf4b
 	text "!@@"
-
-_TM18ExplanationText::
-	text "TM18 is COUNTER!"
-	line "Not like the one"
-	cont "I'm leaning on,"
-	cont "mind you!"
 	
-	para "It meets NORMAL"
-	line "or FIGHTING moves"
-	cont "with 2x damage!"
+_TM18ExplanationText::
+	text "CT18: RIPOSTE!"
+	line "Bon allez..."
+	cont "Bonne chance!"
 	done
 
 _TM18NoRoomText::
-	text "Your pack is full"
-	line "of items!"
+	text "Ton sac est plein"
+	line "à craquer!"
 	done
 
 _CeladonMart3Text2::
-	text "Captured #MON"
-	line "are registered"
-	cont "with an ID No."
-	cont "and OT, the name"
-	cont "of the Original"
-	cont "Trainer that"
-	cont "caught it!"
+	text "Tous les #MON"
+	line "capturés ont un"
+	cont "numéro d'immatri-"
+	cont "culation et un"
+	cont "nom de DO"
+	cont "(Dresseur"
+	cont "d'Origine)!"
 	done
 
-IF DEF(_JPTXT)	;joenote - this was changed in the localization for some reason
 _CeladonMart3Text3::
-	text "All right!"
+	text "Ouaiiis!"
 
-	para "My buddy's going"
-	line "to trade me his"
-	cont "KANGASKHAN for my"
-	cont "HAUNTER!"
+	para "Mon pote va"
+	line "m'échanger son"
+	cont "KANGOUREX contre"
+	cont "mon GRAVALANCH!"
 	done
 
 _CeladonMart3Text4::
-	text "Come on, my sweet"
-	line "HAUNTY-pie!"
+	text "Cool! Un"
+	line "GRAVALANCH!"
 
-	para "I'm an absolute"
-	line "HAUNTER maniac."
+	para "J'adore les"
+	line "GRAVALANCH!"
 
-	para "... ...Huh?"
+	para "Qu...Hein??"
 
-	para "HAUNTER turned"
-	line "into a different"
-	cont "#MON!"
+	para "GRAVALANCH se"
+	line "transforme en un"
+	cont "autre #MON!"
 	done
-ELSE
-_CeladonMart3Text3::
-	text "All right!"
-
-	para "My buddy's going"
-	line "to trade me his"
-	cont "KANGASKHAN for my"
-	cont "GRAVELER!"
-	done
-
-_CeladonMart3Text4::
-	text "Come on GRAVELER!"
-
-	para "I love GRAVELER!"
-	line "I collect them!"
-
-	para "Huh?"
-
-	para "GRAVELER turned"
-	line "into a different"
-	cont "#MON!"
-	done
-ENDC
 
 _CeladonMart3Text5::
-	text "You can identify"
-	line "#MON you got"
-	cont "in trades by"
-	cont "their ID Numbers!"
+	text "Le numéro d'imma-"
+	line "triculation d'un"
+	cont "#MON sert à"
+	cont "l'identifier lors"
+	cont "d'un échange!"
 	done
 
 _CeladonMart3Text6::
-	text "It's an SNES!"
+	text "Une SUPER"
+	line "NINTENDO!"
 	done
 
 _CeladonMart3Text7::
-	text "An RPG! There's"
-	line "no time for that!"
+	text "Un RPG! Cool..."
+	line "Mais trop dur!"
 	done
 
 _CeladonMart3Text9::
-	text "A sports game!"
-	line "Dad'll like that!"
+	text "Un jeu de sport!"
+	line "Vive le foot!"
 	done
 
 _CeladonMart3Text11::
-	text "A puzzle game!"
-	line "Looks addictive!"
+	text "Quatre lignes!"
+	line "En un seul coup!"
 	done
 
 _CeladonMart3Text13::
-	text "A fighting game!"
-	line "Looks tough!"
+	text "Kan contre Ryo!"
+	line "Hadoh Ken!"
 	done
 
 _CeladonMart3Text14::
-	text "3F: TV GAME SHOP"
+	text "2ème: JEUX VIDEO"
 	done
 
 _CeladonMart3Text15::
-IF DEF(_JPTXT)
-	text "Red and Green!"
-ELSE
-	text "Red and Blue!"
-ENDC
-	line "Both are #MON!"
+	text "Rouge et Bleu!"
+	line "Deux #MON!"
 	done
-

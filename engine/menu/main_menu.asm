@@ -432,7 +432,7 @@ HandshakeList:	;this serves as a version control passcode with FF as an end-of-l
 	db $b
 	db $ff
 VersionText:
-	db "v1.24.2L@"
+	db "v1.24.2L-FR@"
 
 WhereWouldYouLikeText:
 	TX_FAR _WhereWouldYouLikeText
@@ -475,16 +475,16 @@ SpecialEnterMap:
 	jp EnterMap
 
 ContinueText:
-	db "CONTINUE", $4e
+	db "CONTINUER", $4e
 
 NewGameText:
-	db   "NEW GAME"
+	db   "NOUVEAU JEU"
 	next "OPTION@"
 
 CableClubOptionsText:
-	db   "TRADE CENTER"
-	next "COLOSSEUM"
-	next "CANCEL@"
+	db   "CENTRE TROC"
+	next "COLISEE"
+	next "RETOUR@"
 
 DisplayContinueGameInfo:
 	xor a
@@ -571,10 +571,10 @@ PrintPlayTime_local:
 ;	jp PrintNumber
 
 SaveScreenInfoText:
-	db   "PLAYER"
+	db   "JOUEUR"
 	next "BADGES    "
 	next "#DEX    "
-	next "TIME@"
+	next "TEMPS@"
 
 DisplayOptionMenu:
 	coord hl, 0, 0
@@ -743,22 +743,22 @@ DisplayOptionMenu:
 	jp DisplayOptionMenu
 
 TextSpeedOptionText:
-	db   "TEXT SPEED"
-	next " FAST  MEDIUM SLOW@"
+	db   "VIT. TEXTE"
+	next " 3     2      1   @"
 
 BattleAnimationOptionText:
-	db   "BATTLE ANIMATION"
-	next " ON       OFF@"
+	db   "ANIMATION COMBAT"
+	next " OUI      NON@"
 
 BattleStyleOptionText:
-	db   "BATTLE STYLE"
-	next " SHIFT    SET@"
+	db   "STYLE COMBAT"
+	next " CHOIX    DEFINI@"
 
 OptionMenuCancelText:
-	db "CANCEL@"
+	db "RETOUR@"
 
 OptionMenuSelectText:	;joenote - text for getting to extra options screen
-	db "SEL",$ED,"NEXT@"
+	db "SEL",$ED,"SUIV@"
 
 ; sets the options variable according to the current placement of the menu cursors in the options menu
 SetOptionsFromCursorPositions:
