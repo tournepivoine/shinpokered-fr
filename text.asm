@@ -1215,9 +1215,9 @@ _UseNextMonText::
 	done
 
 ;_Sony1WinText::	;joenote - made redundant
-;   text "<RIVAL>: Ouaiiis!"
-;   line "J'suis trop bon,"
-;   cont "ou bien?"
+;	text "<RIVAL>: Ouaiiis!"
+;	line "J'suis trop bon,"
+;	cont "ou bien?"
 ;	prompt
 
 _PlayerBlackedOutText2::
@@ -3338,9 +3338,13 @@ _AfterTrade2Text::
 	text "Ton @"
 	text_ram wInGameTradeGiveMonName
 	text_start
+IF DEF(_ENCBLUEJP)
 	line "a évolué pendant"
 
-	para "l'échange!"
+	para "l'échange!"	;Blue-JP trade uses Kadabra so this makes sense
+ELSE
+	line "apprend vite!"	;joenote - fixed nonsense about evolving
+ENDC
 	done
 
 _WannaTrade3Text::

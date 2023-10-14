@@ -137,12 +137,21 @@ _CeladonCityText15::
 _CeladonCityText16::
 	text "ASTUCE"
 
+;joenote - this description is totally wrong about guard spec
+;	para "DEFENSE SPEC"
+;	line "protège les"
+;	cont "#MON des atta-"
+;	cont "ques SPECIALES"
+;	cont "telles que le feu"
+;	cont "ou l'eau!"
 	para "DEFENSE SPEC"
 	line "protège les"
 	cont "#MON des atta-"
-	cont "ques SPECIALES"
-	cont "telles que le feu"
-	cont "ou l'eau!"
+	cont "ques de réduction"
+	cont "de statistiques"
+	cont "telles que"
+	cont "GROZ'YEUX et"
+	cont "RUGISSEMENT!"
 
 	para "Y'a tout c'qui"
 	line "t'faut au CENTRE"

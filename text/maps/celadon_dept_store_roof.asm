@@ -17,7 +17,7 @@ _CeladonMartRoofText_484f3::
 	line "@"
 	TX_RAM wcf4b
 	text "!@@"
-	
+
 _CeladonMartRoofText_484fe::
 	db $0
 	para "@"

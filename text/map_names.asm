@@ -1,6 +1,6 @@
 MapNames:
 PalletTownName:
-    db "BOURG PALETTE@"
+	db "BOURG PALETTE@"
 ViridianCityName:
 	db "JADIELLE@"
 PewterCityName:

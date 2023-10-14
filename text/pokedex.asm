@@ -973,8 +973,13 @@ _DugtrioDexEntry::
 	next "crée des séismes"
 
 	page "en creusant à"
+IF DEF(_METRIC)
 	next "plus de 100km de"
 	next "profondeur"
+ELSE
+	next "plus de 60 miles"
+	next "de profondeur"
+ENDC
 	dex
 
 _VenomothDexEntry::

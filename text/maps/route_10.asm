@@ -28,11 +28,13 @@ _Route10EndBattleText2::
 	cont "J'ai mangé des"
 	cont "champignons au"
 	cont "goût étrange."
+	prompt
 
 _Route10AfterBattleText2::
 	text "Haha-ha-haha!"
 	line "Hahahahaha!"
 	cont "...... ......"
+	done
 ELSE
 _Route10EndBattleText2::
 	text "Ha!"
