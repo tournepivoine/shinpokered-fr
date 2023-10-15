@@ -24,9 +24,8 @@ _SchoolText3::
 	cont "#MON en un"
 	cont "seul coup!"
 
-	para "Mais seulement si"
-	line "ton #MON"
-	cont "attaque en"
-	cont "premier et en de"
-	cont "rares occasions."
+	para "Mais c'est rare"
+	line "et ton #MON"
+	cont "dois attaquer en"
+	cont "premier."
 	done
