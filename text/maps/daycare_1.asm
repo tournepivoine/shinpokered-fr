@@ -39,9 +39,11 @@ _DayCareMonHasGrownText::
 	prompt
 
 _DayCareOweMoneyText::
-	text "Donne-moi ¥@"
+;	text "Donne-moi ¥@"	tournenote fix ¥ position
+	text "Donne-moi @"
 	text_bcd wDayCareTotalCost, 2 | LEADING_ZEROES | LEFT_ALIGN
-	text_start
+;	text_start
+	text "¥"
 	line "et je te rends"
 	cont "ton #MON."
 	done

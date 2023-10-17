@@ -331,7 +331,7 @@ StatusScreen2:
 	ld b, a ; Number of moves ?
 	coord hl, 11, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, $72 ; special P tile id
+	ld a, "P"
 	call StatusScreen_PrintPP ; Print "PP"
 	ld a, b
 	and a

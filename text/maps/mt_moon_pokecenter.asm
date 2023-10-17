@@ -26,7 +26,8 @@ _MagikarpSalesmanText1::
 
 	para "Je t'offre une"
 	line "MAGICARPE pour"
-	cont "juste ¥500!"
+;	cont "juste ¥500!"	tournenote - fix ¥ position
+	cont "juste 500¥!"
 	cont "Qu'en dis-tu?"
 	done
 

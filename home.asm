@@ -487,11 +487,9 @@ PrintStatusCondition::
 	pop de
 	jr nz, PrintStatusConditionNotFainted
 ; if the pokemon's HP is 0, print "FNT"
-	ld a, "F"
-	ld [hli], a
-	ld a, "N"
-	ld [hli], a
-	ld [hl], "T"
+	ld a,"K"
+	ld [hli],a
+	ld [hl],"O"
 	and a
 	ret
 
@@ -1644,6 +1642,8 @@ DisplayChooseQuantityMenu::
 	ld a, [wListMenuID]
 	cp PRICEDITEMLISTMENU
 	jr nz, .printInitialQuantity
+	ld a,"¥"
+	ld [wTileMap + 218],a
 	coord hl, 8, 10
 .printInitialQuantity
 	ld de, InitialQuantityText
@@ -1727,7 +1727,7 @@ DisplayChooseQuantityMenu::
 	ld de, SpacesBetweenQuantityAndPriceText
 	call PlaceString
 	ld de, hMoney ; total price
-	ld c, $a3
+	ld c, LEADING_ZEROES | 3
 	call PrintBCDNumber
 	coord hl, 9, 10
 .printQuantity
@@ -1852,8 +1852,9 @@ PrintListMenuEntries::
 	pop hl
 	ld bc, SCREEN_WIDTH + 5 ; 1 row down and 5 columns right
 	add hl, bc
-	ld c, $a3 ; no leading zeroes, right-aligned, print currency symbol, 3 bytes
+	ld c, LEADING_ZEROES | 3
 	call PrintBCDNumber
+	ld [hl], "¥"
 .skipPrintingItemPrice
 	ld a, [wListMenuID]
 	and a

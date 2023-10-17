@@ -235,7 +235,7 @@ JapaneseSpeedOptionsText:
 	next "おそい@"
 
 MoneyText:
-	db "ARG@"
+	db "ARG.@"
 
 JapaneseMochimonoText:
 	db "もちもの@"
@@ -277,8 +277,11 @@ DisplayMoneyBox:
 	ld c, 6
 	call ClearScreenArea
 	coord hl, 12, 1
+	ld de, CurrencyString
+	call PlaceString
+	coord hl, 12, 1
 	ld de, wPlayerMoney
-	ld c, $a3
+	ld c, LEADING_ZEROES | 3
 	call PrintBCDNumber
 	ld hl, wd730
 	res 6, [hl]

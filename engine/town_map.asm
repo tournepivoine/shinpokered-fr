@@ -293,7 +293,7 @@ IF (DEF(_REDGREENJP) || DEF(_BLUEJP))
 ;nothing
 ELSE
 ToText:
-	db " ‘@"
+	db " →@"
 ENDC
 
 BuildFlyLocationsList:

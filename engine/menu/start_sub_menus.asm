@@ -648,8 +648,9 @@ ENDC
 	call PlaceString
 	coord hl, 8, 4
 	ld de, wPlayerMoney
-	ld c, $e3
+	ld c, LEFT_ALIGN | LEADING_ZEROES | 3
 	call PrintBCDNumber
+	ld [hl], "¥"
 	coord hl, 7, 6
 ;	ld de, wPlayTimeHours ; hours
 ;	lb bc, LEFT_ALIGN | 1, 3
