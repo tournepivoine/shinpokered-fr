@@ -2443,7 +2443,7 @@ DisplayBattleMenu:
 	ld de, wNumSafariBalls
 	lb bc, 1, 2
 	call PrintNumber
-	ld b, $d ; top menu item X
+	ld b, $c ; top menu item X
 .rightColumn_WaitForInput
 	ld hl, wTopMenuItemY
 	ld a, $e
