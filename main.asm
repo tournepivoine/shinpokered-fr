@@ -215,6 +215,8 @@ TextBoxGraphics:                INCBIN "gfx/text_box_green.2bpp"
 ELSE
 GamefreakLogoGraphics:          INCBIN "gfx/gamefreak.2bpp"
 GamefreakLogoGraphicsEnd:
+Unk9Graphic: 					INCBIN "gfx/unk_9.2bpp"
+Unk9GraphicEnd:
 TextBoxGraphics:                INCBIN "gfx/text_box.2bpp"
 ENDC
 TextBoxGraphicsEnd:

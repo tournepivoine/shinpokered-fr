@@ -479,7 +479,7 @@ ContinueText:
 
 NewGameText:
 	db   "NOUVEAU JEU"
-	next "OPTION@"
+	next "OPTIONS@"
 
 CableClubOptionsText:
 	db   "CENTRE TROC"
