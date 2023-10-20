@@ -218,15 +218,20 @@ DisplayIntroNameTextBox:
 IF DEF(_FPLAYER) && (DEF(_GREEN) || DEF(_REDJP) || DEF(_BLUEJP))
 DefaultNamesPlayerF:
 	db   "NOM:"
-	next "BLUE" ;tournenote name of third trainer in the Japanese version of the manga adaptation Pocket Monsters Special
+; tournenote - name of third trainer in the Japanese version of the manga
+; adaptation Pocket Monsters Special and made canon in Let's Go, Pikachu/Evee!
+	next "BLUE"
 	next "CLAIRE"
 	next "JILL"
 	db   "@"
 ELIF DEF(_FPLAYER)
 DefaultNamesPlayerF:
 	db   "NOM:"
-	next "GREEN" ;tournenote name of third trainer in the manga adaptation Pocket Monsters Special
-	next "OLGA" ;tournenote name of the character in the first french edition of the manga
+; tournenote - name of third trainer in the English version of the manga
+; adaptation Pocket Monsters Special and made canon in Let's Go, Pikachu/Evee!
+	next "GREEN"
+; tournenote - name of the character in the first French edition of the manga
+	next "OLGA"
 	next "CLAIRE"
 	db   "@"
 ENDC
@@ -333,14 +338,14 @@ GetDefaultName:
 IF DEF(_FPLAYER) && (DEF(_GREEN) || DEF(_REDJP) || DEF(_BLUEJP))
 DefaultNamesPlayerListF:
 	db "NOM:@"
-	db "BLUE@" ;tournenote name of third trainer in the Japanese version of the manga adaptation Pocket Monsters Special
+	db "BLUE@"
 	db "CLAIRE@"
 	db "JILL@"
 ELIF DEF(_FPLAYER)
 DefaultNamesPlayerListF:
 	db "NOM:@"
-	db "GREEN@" ;tournenote name of third trainer in the manga adaptation Pocket Monsters Special
-	db "OLGA@" ;tournenote name of the character in the first french edition of the manga
+	db "GREEN@"
+	db "OLGA@"
 	db "CLAIRE@"
 ENDC
 

@@ -474,7 +474,7 @@ CalcStringLength:
 	inc c
 	jr .loop
 
-	PrintNamingText:
+PrintNamingText:
 	coord hl, 0, 1
 	ld a, [wNamingScreenType]
 	ld de, YourTextString
@@ -495,7 +495,6 @@ CalcStringLength:
 	coord hl, 1, 3
 	ld de, NicknameTextString
 	jr .placeString
-
 .placeString
 	jp PlaceString
 
