@@ -68,6 +68,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.24.1  
+- Fades in or out to white in GBC mode with gamma shader enabled will no longer have a frame of incorrect color
 - The move Transform now decrements PP properly when used by the AI recursively
 - Spinner tiles animate properly without resorting to vblank-induced slowdown
 - Fixed wrong color for move animation when it comes after self-inflicted confusion damage
