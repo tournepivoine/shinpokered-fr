@@ -68,6 +68,8 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.24.1  
+- Trainers will not use non-healing items if they or the player are at low HP, making them more aggressive
+- AI will not switch if its HP is below 25% as it's ususally not worth it
 - Fades in or out to white in GBC mode with gamma shader enabled will no longer have a frame of incorrect color
 - The move Transform now decrements PP properly when used by the AI recursively
 - Spinner tiles animate properly without resorting to vblank-induced slowdown
@@ -567,7 +569,7 @@ v1.24.1
 	- The AI might still favor a STAB move or a move that works better with its own stats
 
 - Trainer ai routine #4 is no longer unused. It now does rudimentary trainer switching.
-  - 25% chance to switch if active pkmn is below 1/3 HP and player also outspeeds AI
+  - AI will not switch if its HP is below 25% as it's ususally not worth it 
   - chance to switch based on power of incoming supereffective move
   - 12.5% chance to switch if a move is disabled
   - 12.5% chance to switch if afflicted with leech seed
@@ -615,6 +617,7 @@ v1.24.1
   - Originally these get reset every time the opponent send out a pkmn (even switching)
   - Was never really noticed since most trainers never switch nor would have the opportunity
   - Changed based on user feedback since many trainers now try to switch
+- Trainers will not use non-healing items if they or the player are at low HP, making them more aggressive
 
 - Adjustments to learnsets and base stats
   - Mewtwo can learn Swift by TM 
