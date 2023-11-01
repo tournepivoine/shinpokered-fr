@@ -535,7 +535,7 @@ TwoOptionMenuStrings:
 	dw .YesNoMenu
 	db 6,3,0
 	dw .NorthEastMenu
-	db 7,3,0
+	db 8,3,0
 	dw .TradeCancelMenu
 	db 7,4,1
 	dw .HealCancelMenu

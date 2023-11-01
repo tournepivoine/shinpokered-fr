@@ -601,9 +601,9 @@ ReturnToCableClubRoom:
 	ret
 
 TradeCenter_DrawCancelBox:
-	coord hl, 11, 15
+	coord hl, 8, 15
 	ld a, $7e
-	ld bc, 2 * SCREEN_WIDTH + 9
+	ld bc, 2 * SCREEN_WIDTH + 12
 	call FillMemory
 	coord hl, 0, 15
 	ld b, 1
