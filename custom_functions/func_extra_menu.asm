@@ -345,16 +345,16 @@ ShowNoSwitchSetting:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, $E, $5
+	coord hl, $D, $5
 	call PlaceString
 	ret
 OptionMenuNoSwitch:
 	dw OptionMenuNoSwitchON
 	dw OptionMenuNoSwitchOFF
 OptionMenuNoSwitchON:
-	db "ORIG.@"
+	db " ORIG.@"
 OptionMenuNoSwitchOFF:
-	db "INTEL@"
+	db "INTEL.@"
 
 	
 ;joenote - for deactivating intelligent trainer switching
@@ -465,13 +465,13 @@ TextAudio:
 TextFPS:
 	db " FPS@"
 TextInstant:
-	db " TXT INST.@"
+	db " TEXTE INST.@"
 TextHardMode:
-	db " MODE DIFF@"
+	db " MODE DIFFI.@"
 TextAISwitch:
-	db " CHANG AI@"
+	db " CHANG. IA@"
 TextGamma:
-	db " Y SHADER@"
+	db " SHADER Y@"
 TextBack:
 	db " RETOUR@"
 
@@ -484,6 +484,6 @@ OptionMenuOnOffText:
 	dw OptionMenuTextON
 	dw OptionMenuTextOFF
 OptionMenuTextON:
-	db "ON @"
+	db "OUI@"
 OptionMenuTextOFF:
-	db "OFF@"
+	db "NON@"
