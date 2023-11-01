@@ -1926,6 +1926,7 @@ INCLUDE "engine/gamefreak.asm"	;gbcnote - moved here to make space
 INCLUDE "engine/in_game_trades.asm"	;joenote - moved here to make space
 
 INCLUDE "custom_functions/func_gamma.asm"
+INCLUDE "custom_functions/func_extra_menu.asm"
 
 SECTION "Pics 1", ROMX, BANK[PICS_1]
 INCLUDE "constants/pic_banks/pic1.asm"

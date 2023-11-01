@@ -1055,6 +1055,12 @@ AIMoveChoiceModification4:	;this unused routine now handles intelligent trainer 
 	pop hl
 	jp nc, .skipSwitchEnd	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;it is typically better to not switch if HP is low rather than give the player a free hit
+	ld a, 4
+	call AICheckIfHPBelowFraction
+	jp c, .skipSwitchEnd	;if hp below 1/a then do not switch
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;better chance to switch if afflicted with toxic-style poison
 	ld a, [wEnemyBattleStatus3]
 	bit 0, a	;check a for the toxic bit (sets or clears zero flag)
@@ -1217,31 +1223,32 @@ AIMoveChoiceModification4:	;this unused routine now handles intelligent trainer 
 	jp nz, .skipSwitchEnd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;commented this out because it is better to not switch if HP is low rather than give the player a free hit
 ;switch if HP is low. 
 ;but don't switch based on low HP if enemy outspeeds player mon
-	ld a, 3	;
-	call AICheckIfHPBelowFraction
-	jr nc, .skipSwitchHPend	;if hp not below 1/3 then skip to the end of this block
-	call Random	;put a random number in 'a' between 0 and 255
-	cp $40	;set carry if rand num < $40	/	;25% chance to switch
-	jr nc, .skipSwitchHPend
-	ld a, [wBattleMonSpeed]
-	push bc
-	ld b, a	;store hi byte of player speed in b
-	ld a, [wEnemyMonSpeed]	;store hi byte of enemy speed in a
-	cp b
-	pop bc
-	jr nz, .next1	;if bytes are not equal, then rely on carry bit to see which is greater
-	;else check the lo bytes
-	ld a, [wBattleMonSpeed + 1]
-	push bc
-	ld b, a	;store lo byte of player speed in b
-	ld a, [wEnemyMonSpeed + 1]	;store lo byte of enemy speed in a
-	cp b
-	pop bc
-.next1
-	jp c, .setSwitch	;if carry is set, then enemy mon has less speed --> switch out
-.skipSwitchHPend
+;	ld a, 3	;
+;	call AICheckIfHPBelowFraction
+;	jr nc, .skipSwitchHPend	;if hp not below 1/3 then skip to the end of this block
+;	call Random	;put a random number in 'a' between 0 and 255
+;	cp $40	;set carry if rand num < $40	/	;25% chance to switch
+;	jr nc, .skipSwitchHPend
+;	ld a, [wBattleMonSpeed]
+;	push bc
+;	ld b, a	;store hi byte of player speed in b
+;	ld a, [wEnemyMonSpeed]	;store hi byte of enemy speed in a
+;	cp b
+;	pop bc
+;	jr nz, .next1	;if bytes are not equal, then rely on carry bit to see which is greater
+;	;else check the lo bytes
+;	ld a, [wBattleMonSpeed + 1]
+;	push bc
+;	ld b, a	;store lo byte of player speed in b
+;	ld a, [wEnemyMonSpeed + 1]	;store lo byte of enemy speed in a
+;	cp b
+;	pop bc
+;.next1
+;	jp c, .setSwitch	;if carry is set, then enemy mon has less speed --> switch out
+;.skipSwitchHPend
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;chance to switch if afflicted with non-volatile status (except sleep)
@@ -1431,6 +1438,9 @@ TrainerAI:
 	ld l, a
 	call Random
 	jp hl
+.NoItem
+	xor a	;make sure to clear the A register and flags before returning
+	ret
 
 TrainerAIPointers:
 ; one entry per trainer class
@@ -1493,21 +1503,29 @@ JugglerAI:
 	ret
 	
 BlackbeltAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $20
 	jp c, AIUseXAttack	
 	ret
 	
 GiovanniAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jp c, AIUseGuardSpec
 	ret
 
 CooltrainerMAI:	
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jp c, AIUseXAttack
 	ret
 	
 CooltrainerFAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jr nc, .coolFreturn
 	ld a, $5
@@ -1524,11 +1542,15 @@ BrockAI:
 	ret 
 
 MistyAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jp c, AIUseXDefend
 	ret
 	
 LtSurgeAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jp c, AIUseXSpeed
 	ret
@@ -1543,6 +1565,8 @@ ErikaAI:
 	ret
 
 KogaAI:
+	call AIItemsLowHPCheck
+	jp c, TrainerAI.NoItem
 	cp $40
 	jp c, AIUseXAttack
 	ret
@@ -1952,6 +1976,56 @@ AICheckIfHPBelowFraction:
 	pop hl
 	ret
 
+AICheckIfPlayerHPBelowFraction:
+; return carry if player's current HP is below 1 / a of the maximum
+;joenote - first preserve stuff onto the stack
+	push hl
+	push bc
+	push de
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;joenote - handle an 'a' value of 1
+	cp 1
+	jr nz, .not_one
+	ld a, [wBattleMonMaxHP]
+	ld b, a
+	ld a, [wBattleMonHP]
+	cp b	;a = HP MSB an b = MAXHP MSB so do a - b and set carry if negative
+	jr c, .return
+	ld a, [wBattleMonMaxHP + 1]
+	ld b, a
+	ld a, [wBattleMonHP + 1]
+	cp b	;a = HP LSB an b = MAXHP LSB so do a - b and set carry if negative
+	jr .return
+.not_one
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	ld [H_DIVISOR], a
+	ld hl, wBattleMonMaxHP
+	ld a, [hli]
+	ld [H_DIVIDEND], a
+	ld a, [hl]
+	ld [H_DIVIDEND + 1], a
+	ld b, 2
+	call Divide
+	ld a, [H_QUOTIENT + 3]
+	ld c, a
+	ld a, [H_QUOTIENT + 2]
+	ld b, a
+	ld hl, wBattleMonHP + 1
+	ld a, [hld]
+	ld e, a
+	ld a, [hl]
+	ld d, a
+	ld a, d
+	sub b
+	jr nz, .return
+	ld a, e
+	sub c
+.return	;joenote - consolidating returns with the stack
+	pop de
+	pop bc
+	pop hl
+	ret
+
 AIUseXAttack:
 	ld b, $A
 	ld a, X_ATTACK
@@ -2101,3 +2175,20 @@ IsDigOrFly:
 	ret z
 	cp FLY
 	ret 
+	
+;joenote - see if either the player or AI trainer has low HP since it might be better to not use an item
+AIItemsLowHPCheck:
+	push bc
+	ld b, a
+	
+	ld a, 2
+	call AICheckIfPlayerHPBelowFraction
+	jr c, .return
+
+	ld a, 2
+	call AICheckIfHPBelowFraction
+
+.return
+	ld a, b
+	pop bc
+	ret
