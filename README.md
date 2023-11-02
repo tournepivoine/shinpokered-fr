@@ -67,6 +67,9 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 **Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
+v1.24.2  
+- Fixed a text bug on multi-hit moves
+
 v1.24.1  
 - Optimized smooth fades to eliminate graphical jank during battle black-outs
 - Trainers will not use non-healing items if they or the player are at low HP, making them more aggressive
