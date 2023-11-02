@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.1
+Version 1.24.2
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
