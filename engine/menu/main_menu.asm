@@ -432,7 +432,7 @@ HandshakeList:	;this serves as a version control passcode with FF as an end-of-l
 	db $b
 	db $ff
 VersionText:
-	db "v1.24.1L@"
+	db "v1.24.2L@"
 
 WhereWouldYouLikeText:
 	TX_FAR _WhereWouldYouLikeText
