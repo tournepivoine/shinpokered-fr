@@ -92,7 +92,7 @@ _Route14AfterBattleText5::
 ;	cont "de proie."
 	text "On dit que les 3"
 	line "#MON"
-	line "légendaires sont"
+	cont "légendaires sont"
 	cont "tous des oiseaux."
 	done
 
