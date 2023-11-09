@@ -632,8 +632,9 @@ _CinnabarQuizQuestionsText4::	;joenote - re-worded to be less contrived
 	text "Les techniques de"
 	line "type ELECTRIK"
 	cont "sont efficaces"
-	cont "contre les #MON"
-	cont " de type SOL?"
+	cont "contre les"
+	cont "#MON de type"
+	cont "SOL?"
 	done
 
 _CinnabarQuizQuestionsText5::
