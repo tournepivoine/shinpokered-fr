@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.2
+Version 1.24.3
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -66,6 +66,9 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 -----------
 **Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.3  
+- Fixed a text bug on multi-hit moves
 
 v1.24.2  
 - Fixed a text bug on multi-hit moves
