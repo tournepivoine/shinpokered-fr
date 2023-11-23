@@ -68,7 +68,13 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.24.3  
-- Fixed a text bug on multi-hit moves
+- Disable and static damage moves will not crit or show super/not very effectiveness
+- Fixed an issue with NPCs overlapping menu and text boxes
+- Adjusted the parity of in-game trades across versions
+- Option menu graphics tweak
+- Toggling the gamma shader in the extra options menu now automatically updates the palette
+- Moved NPC in celadon prize house two spaces to the right
+- Optimized the GBC smooth fading a little bit
 
 v1.24.2  
 - Fixed a text bug on multi-hit moves
