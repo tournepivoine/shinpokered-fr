@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.2
+Version 1.24.3
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -66,6 +66,15 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 -----------
 **Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.3  
+- Disable and static damage moves will not crit or show super/not very effectiveness
+- Fixed an issue with NPCs overlapping menu and text boxes
+- Adjusted the parity of in-game trades across versions
+- Option menu graphics tweak
+- Toggling the gamma shader in the extra options menu now automatically updates the palette
+- Moved NPC in celadon prize house two spaces to the right
+- Optimized the GBC smooth fading a little bit
 
 v1.24.2  
 - Fixed a text bug on multi-hit moves
@@ -144,6 +153,7 @@ v1.24.1
 	  - Fixed a conflict where transforming while disabled can leave the new moves disabled
 	  - Fixed transformed 'mons reseting their moves when learning a level-up move
 	  - Fixed a typo so now transformed 'mons retain their original palette
+  - disable cannot critically hit nor print effectiveness message
   - dire hit/focus energy now quadruples crit rate instead of quarters
   - sleep now normal-chance hits a pkmn recharging from hyperbeam, but has no effect if it's already status-effected
   - the fly/dig invulnerability bit is cleared when a pkmn hurts itself from confusion or is fully paralyzed
@@ -450,6 +460,7 @@ v1.24.1
 - Daycare allows HM moves on entered pokemon
 - Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - The silhouette effect at the start of battle now displays when playing on a DMG gameboy
+- Adjusted the parity of in-game trades across versions
 
 - Fixed mistakes in the game text
   - Attacks reduced to zero damage now say the target is unaffected instead of missing
