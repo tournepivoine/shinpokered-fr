@@ -65,7 +65,10 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 #Changelog From the Last Full Release
 -----------
 **Note: Changelogs may contain spoilers**  
-[View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+[View the Consolidated Changelog Document from 1.23 to 1.24.0](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.x
+- Increased the speed of the HP bar animation
 
 v1.24.3  
 - Disable and static damage moves will not crit or show super/not very effectiveness
@@ -461,6 +464,7 @@ v1.24.1
 - Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - The silhouette effect at the start of battle now displays when playing on a DMG gameboy
 - Adjusted the parity of in-game trades across versions
+- Increased the speed of the HP bar animation
 
 - Fixed mistakes in the game text
   - Attacks reduced to zero damage now say the target is unaffected instead of missing
