@@ -68,6 +68,7 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 [View the Consolidated Changelog Document from 1.23 to 1.24.0](/patches_and_info/changelog_from_v1.23.md)  
 
 v1.24.x
+- Adjusted some city names on signs
 - Lance and the player will face each other when speaking.
 - Increased the speed of the HP bar animation
 
@@ -489,6 +490,7 @@ v1.24.1
   - Fixed woman on silph co 10F having a blank line in her text 
   - Viridian gym statue will not spoil the gym leader's name reveal
   - Fixed inaccurate text when getting the rock slide TM
+  - Adjusted some city names on signs
 - Made adjustments to the game text
   - When a pkmn is caught and fills the box, a reminder is printed that the box is full
   - PC has a text prompt to tell you if its full after depositing
