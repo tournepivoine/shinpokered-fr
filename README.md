@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.4
+Version 1.24.5
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -66,6 +66,9 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 -----------
 **Note: Changelogs may contain spoilers**  
 [View the Consolidated Changelog Document from 1.23 to 1.24.0](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.5
+- Fix Psywave symmetry
 
 v1.24.4
 - Can no longer fish or surf using the right wall corner tile on the SS Anne.
