@@ -2928,8 +2928,7 @@ _BoxIsFullText::
 _BoxIsFullReminderText::
 	text "La BOITE #MON"
 	line "est maintenant"
-	line "pleine."
-
+	cont "pleine."
 	cont "Elle ne pourra"
 	cont "plus contenir de"
 	cont "#MON"
