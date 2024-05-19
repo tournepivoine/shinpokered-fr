@@ -159,6 +159,6 @@ _Route8AfterBattleText9::
 
 _Route8Text10::
 	text "SOUTERRAIN"
-	line "CELADOPOLE -"
-	cont "LAVANVILLE"
+	line "LAVANVILLE -"
+	cont "CELADOPOLE"
 	done

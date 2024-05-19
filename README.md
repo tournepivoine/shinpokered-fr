@@ -1,6 +1,6 @@
 # Shin Pokémon Red, Blue, Green, Red-JP, & Blue-JP
 
-Version 1.24.2
+Version 1.24.5
 
 Future bugfixes here will be eventually migrated to the Shin Pokemon master branch
 
@@ -65,7 +65,26 @@ To fix this, you must use the Softlock Warp detailed below to teleport back to P
 #Changelog From the Last Full Release
 -----------
 **Note: Changelogs may contain spoilers**  
-[View the Consolidated Changelog Document](/patches_and_info/changelog_from_v1.23.md)  
+[View the Consolidated Changelog Document from 1.23 to 1.24.0](/patches_and_info/changelog_from_v1.23.md)  
+
+v1.24.5
+- Fix Psywave symmetry
+
+v1.24.4
+- Can no longer fish or surf using the right wall corner tile on the SS Anne.
+- Fixed incorrect sign text in safari area 1
+- Adjusted some city names on signs
+- Lance and the player will face each other when speaking.
+- Increased the speed of the HP bar animation
+
+v1.24.3  
+- Disable and static damage moves will not crit or show super/not very effectiveness
+- Fixed an issue with NPCs overlapping menu and text boxes
+- Adjusted the parity of in-game trades across versions
+- Option menu graphics tweak
+- Toggling the gamma shader in the extra options menu now automatically updates the palette
+- Moved NPC in celadon prize house two spaces to the right
+- Optimized the GBC smooth fading a little bit
 
 v1.24.2  
 - Fixed a text bug on multi-hit moves
@@ -144,6 +163,7 @@ v1.24.1
 	  - Fixed a conflict where transforming while disabled can leave the new moves disabled
 	  - Fixed transformed 'mons reseting their moves when learning a level-up move
 	  - Fixed a typo so now transformed 'mons retain their original palette
+  - disable cannot critically hit nor print effectiveness message
   - dire hit/focus energy now quadruples crit rate instead of quarters
   - sleep now normal-chance hits a pkmn recharging from hyperbeam, but has no effect if it's already status-effected
   - the fly/dig invulnerability bit is cleared when a pkmn hurts itself from confusion or is fully paralyzed
@@ -330,6 +350,7 @@ v1.24.1
   - Can't use surf/teleport/escape rope to escape from trainer encounters
   - Fixed trainer escape glitch via blacking out from a wild battle
   - Can't fish or surf in the bases of statues
+  - Can no longer fish or surf using the right wall corner tile on the SS Anne
   - Seafoam islands fast current applied to the right steps on floor B3
   - Each of the two boulder puzzles in seafoam islands will fully reset until completed
   - The boulder switches never reset while inside victory road and they will always reset upon leaving
@@ -375,6 +396,7 @@ v1.24.1
   - Fixed the tiles in Mt. Moon floor 3 that prevent encounters
   - Fixed picking a fossil causing all trainers on Mt. Moon floor 3 to lose line of sight
   - Fixed an underflow issue which caused trainers above the player to not see beyond 3 spaces downward
+  - Lance and the player will face each other when speaking.
  
  
 #Tweaks
@@ -450,6 +472,8 @@ v1.24.1
 - Daycare allows HM moves on entered pokemon
 - Improved fade-in and fade-out to black/white transitions when playing on GBC in 60FPS mode
 - The silhouette effect at the start of battle now displays when playing on a DMG gameboy
+- Adjusted the parity of in-game trades across versions
+- Increased the speed of the HP bar animation
 
 - Fixed mistakes in the game text
   - Attacks reduced to zero damage now say the target is unaffected instead of missing
@@ -472,6 +496,8 @@ v1.24.1
   - Fixed woman on silph co 10F having a blank line in her text 
   - Viridian gym statue will not spoil the gym leader's name reveal
   - Fixed inaccurate text when getting the rock slide TM
+  - Adjusted some city names on signs
+  - Fixed incorrect sign text in safari area 1
 - Made adjustments to the game text
   - When a pkmn is caught and fills the box, a reminder is printed that the box is full
   - PC has a text prompt to tell you if its full after depositing

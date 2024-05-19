@@ -48,10 +48,10 @@ _Route18AfterBattleText3::
 	cont "#MON!"
 	done
 
-_Route18Text4::
+_Route18Text4::	;joenote - swapped city order
 	text "ROUTE 18"
-	line "CELADOPOLE -"
-	cont "PARMANIE"
+	line "PARMANIE -"
+	cont "CELADOPOLE"
 	done
 
 _Route18Text5::

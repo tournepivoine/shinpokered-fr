@@ -94,6 +94,6 @@ _Route6AfterBattleText6::
 
 _Route6Text7::
 	text "SOUTERRAIN"
-	line "AZURIA -"
-	cont "CARMIN SUR MER"
+	line "CARMIN SUR MER -"
+	cont "AZURIA"
 	done

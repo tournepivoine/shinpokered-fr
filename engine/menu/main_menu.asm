@@ -429,10 +429,11 @@ HandshakeList:	;this serves as a version control passcode with FF as an end-of-l
 	db $1
 	db $2
 	db $4
+	db $5
 	db $b
 	db $ff
 VersionText:
-	db "v1.24.2L-FR@"
+	db "v1.24.5L-FR@"
 
 WhereWouldYouLikeText:
 	TX_FAR _WhereWouldYouLikeText
@@ -758,7 +759,7 @@ OptionMenuCancelText:
 	db "RETOUR@"
 
 OptionMenuSelectText:	;joenote - text for getting to extra options screen
-	db "SEL",$ED,"SUIV@"
+	db "SELECT",$E3,$ED,"@"
 
 ; sets the options variable according to the current placement of the menu cursors in the options menu
 SetOptionsFromCursorPositions:
